@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#1F3044"/>
+      <stop offset="0.6" stop-color="#121B26"/>
+      <stop offset="1" stop-color="#0A0F15"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8AAEE0" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#8AAEE0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E3E8ED" stop-opacity="0"/>
+      <stop offset="1" stop-color="#E3E8ED" stop-opacity="0.9"/>
+    </linearGradient>
+    <clipPath id="eye">
+      <path d="M142 512 C 290 262, 734 262, 882 512 C 734 762, 290 762, 142 512 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- faint radar grid -->
+  <g fill="none" stroke="#8AAEE0" stroke-opacity="0.10" stroke-width="2">
+    <circle cx="512" cy="512" r="440"/>
+    <circle cx="512" cy="512" r="360"/>
+    <line x1="512" y1="40" x2="512" y2="984"/>
+    <line x1="40" y1="512" x2="984" y2="512"/>
+  </g>
+
+  <circle cx="512" cy="512" r="300" fill="url(#glow)"/>
+
+  <!-- eye -->
+  <path d="M142 512 C 290 262, 734 262, 882 512 C 734 762, 290 762, 142 512 Z" fill="#0E151D" stroke="#E3E8ED" stroke-width="22" stroke-linejoin="round"/>
+
+  <g clip-path="url(#eye)">
+    <!-- iris: four hypothesis arcs (A amber, B teal, C violet, D red) -->
+    <g fill="none" stroke-width="58" stroke-linecap="butt">
+      <path d="M 512 342 A 170 170 0 0 1 682 512" stroke="#D9A441" transform="rotate(4 512 512)" stroke-dasharray="258 1000"/>
+      <path d="M 682 512 A 170 170 0 0 1 512 682" stroke="#5DB8B3" transform="rotate(4 512 512)" stroke-dasharray="258 1000"/>
+      <path d="M 512 682 A 170 170 0 0 1 342 512" stroke="#B18ACB" transform="rotate(4 512 512)" stroke-dasharray="258 1000"/>
+      <path d="M 342 512 A 170 170 0 0 1 512 342" stroke="#E07A6F" transform="rotate(4 512 512)" stroke-dasharray="258 1000"/>
+    </g>
+    <!-- gauge ticks -->
+    <g stroke="#0E151D" stroke-width="5">
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(20 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(40 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(60 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(110 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(130 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(150 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(200 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(220 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(240 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(290 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(310 512 512)"/>
+      <line x1="512" y1="338" x2="512" y2="400" transform="rotate(330 512 512)"/>
+    </g>
+    <!-- pupil -->
+    <circle cx="512" cy="512" r="108" fill="#05080C"/>
+    <!-- radar sweep -->
+    <line x1="512" y1="512" x2="660" y2="428" stroke="url(#sweep)" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="512" cy="512" r="12" fill="#E3E8ED"/>
+    <!-- glint -->
+    <circle cx="566" cy="462" r="22" fill="#FFFFFF" fill-opacity="0.9"/>
+  </g>
+</svg>
