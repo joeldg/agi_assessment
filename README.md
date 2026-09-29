@@ -15,7 +15,8 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 | --- | --- |
 | `index.html`, `assets/` | The dashboard. It is static and reads `data/runs.json` in the browser. |
 | `data/runs.json` | One entry per daily run: probabilities, confidence, summary, changes, news roundup (grouped by topic), timeline notes, signals, key sources, report link. |
-| `feed.xml` | RSS 2.0 feed for RSS-to-email (Kit). One item per full report, with an email-ready issue in `content:encoded`. Generated; do not hand-edit. |
+| `feed.xml` | RSS 2.0 feed for feed readers. Kit's RSS-to-email is a paid feature, so issues reach Kit through the API instead. One item per full report, with an email-ready issue in `content:encoded`. Generated; do not hand-edit. |
+| `scripts/kit_broadcast.py` | Pushes a report's email issue to Kit through its API (a draft by default). Needs `KIT_API_KEY` or `KIT_API_SECRET` in the environment. Records pushed dates in `data/kit_broadcasts.json`. |
 | `sitemap.xml` | Sitemap for search engines: the dashboard and every report. Generated; do not hand-edit. |
 | `scripts/build_feed.py` | Rebuilds `feed.xml` and `sitemap.xml` from `data/runs.json`. |
 | `assets/brand/` | Profile picture and favicon. |
@@ -28,7 +29,8 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 3. Write `reports/<today>.html`, copying the structure of the previous report. Keep the Kit subscribe box (`<div class="subscribe">` linking to https://hidden-agi.kit.com/f2b4d2f30e) after the header and before the footer. Include the Open Graph and Twitter card meta tags (copy them from the previous report and update the title, description and `og:url`); `og:image` is always `assets/brand/avatar.png`.
 4. Append the day's entry to `data/runs.json`, keeping the same schema. The `probs` keys are `A`, `B`, `C`, `D` and `Dopen`, each with `now`, `y2030` and `y2035` in percent plus `conf`.
 5. Run `python3 scripts/build_feed.py` to rebuild `feed.xml` and `sitemap.xml`.
-6. Commit and push to `main`. Pages deploys from the root of `main`, and Kit picks up the new feed item.
+6. Run `python3 scripts/kit_broadcast.py` to create that day's Kit broadcast (a draft unless `--send-at` is given).
+7. Commit and push to `main`. Pages deploys from the root of `main`.
 
 Feed URL: <https://joeldg.github.io/agi_assessment/feed.xml>
 Sitemap URL: <https://joeldg.github.io/agi_assessment/sitemap.xml>
