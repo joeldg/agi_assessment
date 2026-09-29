@@ -29,7 +29,7 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 3. Write `reports/<today>.html`, copying the structure of the previous report. Keep the Kit subscribe box (`<div class="subscribe">` linking to https://hidden-agi.kit.com/f2b4d2f30e) after the header and before the footer. Include the Open Graph and Twitter card meta tags (copy them from the previous report and update the title, description and `og:url`); `og:image` is always `assets/brand/avatar.png`.
 4. Append the day's entry to `data/runs.json`, keeping the same schema. The `probs` keys are `A`, `B`, `C`, `D` and `Dopen`, each with `now`, `y2030` and `y2035` in percent plus `conf`.
 5. Run `python3 scripts/build_feed.py` to rebuild `feed.xml` and `sitemap.xml`.
-6. Run `python3 scripts/kit_broadcast.py` to create that day's Kit broadcast (a draft unless `--send-at` is given).
+6. Run `python3 scripts/kit_broadcast.py --send-at 10am` to create that day's Kit broadcast, scheduled for 10:00 Pacific. If 10am has already passed, it stays a draft.
 7. Commit and push to `main`. Pages deploys from the root of `main`.
 
 Feed URL: <https://joeldg.github.io/agi_assessment/feed.xml>
