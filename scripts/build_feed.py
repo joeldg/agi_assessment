@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build feed.xml (RSS 2.0) from data/runs.json for RSS-to-email services such as Kit.
+"""Build feed.xml (RSS 2.0, for RSS-to-email via Kit) and sitemap.xml from data/runs.json.
 
 Each run that has a full report becomes one item. The item's content:encoded holds an
 email-ready HTML issue with inline styles only, since email clients ignore stylesheets.
@@ -130,8 +130,26 @@ def cdata(s):
     return "<![CDATA[" + s.replace("]]>", "]]]]><![CDATA[>") + "]]>"
 
 
+def write_sitemap(runs):
+    dates = {}
+    for run in runs:
+        if run.get("report"):
+            dates[run["report"]] = max(dates.get(run["report"], ""), run["date"])
+    urls = [(SITE, max((r["date"] for r in runs), default=""))]
+    urls += sorted(((SITE + path, d) for path, d in dates.items()), key=lambda u: u[1], reverse=True)
+    entries = "\n".join(
+        f"  <url><loc>{escape(loc)}</loc>" + (f"<lastmod>{d}</lastmod>" if d else "") + "</url>"
+        for loc, d in urls)
+    (ROOT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{entries}\n</urlset>\n")
+    print(f"sitemap.xml: {len(urls)} URL(s)")
+
+
 def main():
     runs = json.loads((ROOT / "data/runs.json").read_text())
+    write_sitemap(runs)
     items = []
     for i, run in enumerate(runs):
         if not run.get("report"):
