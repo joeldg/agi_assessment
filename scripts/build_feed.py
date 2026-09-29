@@ -12,6 +12,7 @@ from html import escape
 from pathlib import Path
 
 SITE = "https://joeldg.github.io/agi_assessment/"
+SUBSCRIBE = "https://hidden-agi.kit.com/f2b4d2f30e"
 ROOT = Path(__file__).resolve().parent.parent
 SERIES = [
     ("A", "A: AGI exists, undisclosed"),
@@ -119,6 +120,7 @@ def issue_html(run, prev):
     out.append(p(f'{link(report_url, "Read the full report")} (definitions, evidence for and against, base rates, '
                  f'probabilities and what would change the estimates) · {link(SITE, "Dashboard and history")}',
                  "margin-top:22px"))
+    out.append(p(f'Forwarded this? {link(SUBSCRIBE, "Subscribe to Hidden AGI watch")}. It\'s free.'))
     out.append(p(f'<span style="color:{MUTED};font-size:13px">Researched and drafted daily with AI assistance (Claude). '
                  f'Methodology and every source are public. Not investment, policy or security advice.</span>'))
     return "".join(out)

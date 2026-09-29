@@ -102,3 +102,7 @@ footer{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid va
 @media (max-width:720px){.roundup{grid-template-columns:1fr}}
 .rgroup h3{margin-top:14px}
 .rdate{font-size:13px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* subscribe */
+.subscribe{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--sA);border-radius:6px;padding:14px 16px;margin:20px 0}
+.subscribe .btn{text-decoration:none;white-space:nowrap}
