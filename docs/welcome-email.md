@@ -26,7 +26,7 @@ This file keeps the full version for a separate welcome email, if the account mo
 >
 > Thanks for reading, Hidden AGI watch
 >
-> Researched and drafted daily with AI assistance (Claude). The method and every source are public. Not investment, policy or security advice.
+> Researched and drafted daily by a custom AI agent. The method and every source are public. Not investment, policy or security advice.
 
 ## Full welcome email (for a sequence, sent right after confirming)
 

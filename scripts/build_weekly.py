@@ -151,7 +151,7 @@ def weekly_email_html(w):
             out.append(p(escape(note) + " " + link(SITE + href, "Full section")))
     out.append(p(f'{link(url, "See the full wrap-up with graphs")} · {link(SITE, "Today’s reading")}', "margin-top:22px"))
     out.append(p(f'Forwarded this? {link("https://hidden-agi.kit.com/f2b4d2f30e", "Subscribe to Hidden AGI watch")}. It\'s free.'))
-    out.append(p(f'<span style="color:{MUTED};font-size:13px">Researched and drafted with AI assistance (Claude). '
+    out.append(p(f'<span style="color:{MUTED};font-size:13px">Researched and drafted by a custom AI agent. '
                  f'Methodology and every source are public. Not investment, policy or security advice.</span>'))
     return "".join(out)
 

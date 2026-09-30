@@ -72,7 +72,7 @@ def page(*, path, title, description, body, active="", og_image=None, og_w=1200,
 {body}
 {subscribe_box()}
   <footer>
-    Produced by an automated analyst run (Claude), researched and drafted with AI assistance. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="{root}style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
+    Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="{root}style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
   </footer>
 </main>
 {scripts}

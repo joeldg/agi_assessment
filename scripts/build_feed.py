@@ -150,7 +150,7 @@ def issue_html(run, prev):
                  f'probabilities and what would change the estimates) · {link(SITE, "Dashboard and history")}',
                  "margin-top:22px"))
     out.append(p(f'Forwarded this? {link(SUBSCRIBE, "Subscribe to Hidden AGI watch")}. It\'s free.'))
-    out.append(p(f'<span style="color:{MUTED};font-size:13px">Researched and drafted daily with AI assistance (Claude). '
+    out.append(p(f'<span style="color:{MUTED};font-size:13px">Researched and drafted daily by a custom AI agent. '
                  f'Methodology and every source are public. Not investment, policy or security advice.</span>'))
     return "".join(out)
 
