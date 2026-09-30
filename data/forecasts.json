@@ -1,5 +1,5 @@
 {
- "note": "Short-range, checkable forecasts. Each has a probability, a deadline and a resolution rule. Resolved forecasts are scored with the Brier score (lower is better; always guessing 50% scores 0.25).",
+ "note": "Short-range, checkable forecasts. Each has a probability, a deadline and a resolution rule. Resolved forecasts are scored with the Brier score (lower is better; always guessing 50% scores 0.25). A badly posed forecast (one that can't resolve as asked, or asks about something that doesn't exist) may be withdrawn unscored; it stays listed with the reason and the date.",
  "forecasts": [
   {
    "id": "gemini4-by-nov30",
@@ -28,6 +28,11 @@
     {
      "date": "2026-09-30",
      "text": "The second pause began Friday Sept 25 (Fortune, NBC), not Sept 27. OpenAI stated its conditions: validate that the DNS sandbox gap is fixed and do more red-teaming, then restart training from scratch. All inference on its most capable models is stopped.",
+     "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+    },
+    {
+     "date": "2026-09-30",
+     "text": "Clarification of the resolution rule (the rule itself is unchanged): OpenAI says it will restart training from scratch once the DNS sandbox fix is validated. A fresh, from-scratch training run of a frontier model counts as resuming training, as does restarting the paused runs. Restarting inference alone, or training only small or non-frontier models, doesn't count.",
      "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
     }
    ]
@@ -78,15 +83,16 @@
    "resolution": "A public design document or report released by the state.",
    "context": "Newsom's Sept 18 executive order set the deadline.",
    "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
-   "outcome": null,
-   "resolved": null,
+   "outcome": "void",
+   "resolved": "2026-09-30",
    "corrections": [
     {
      "date": "2026-09-30",
      "text": "EO N-9-26 §3 orders state agencies to send the Governor recommendations by Nov 16, including on requiring a frontier-model kill switch. It does not order a design and does not require publication.",
      "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
     }
-   ]
+   ],
+   "voidReason": "It asked for a kill-switch \"design\" that EO N-9-26 never orders: §3 asks for recommendations to the Governor's office by Nov 16 and doesn't require publishing them. Replaced by a forecast that California publishes the recommendations by Nov 30, 2026 (ca-eo-n926-recs-published-by-nov30)"
   },
   {
    "id": "grok5-by-dec31",
@@ -141,15 +147,40 @@
    "resolution": "A Clay Mathematics Institute announcement.",
    "context": "Clay review is pending, and Clay rules normally require publication plus two years.",
    "url": "https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/",
-   "outcome": null,
-   "resolved": null,
+   "outcome": "void",
+   "resolved": "2026-09-30",
    "corrections": [
     {
      "date": "2026-09-30",
      "text": "Clay review is not pending. Clay takes no submissions and considers a result only after journal publication plus two years, and OpenAI says it won't claim the prize.",
      "url": "https://www.claymath.org/millennium-problems/rules/"
     }
-   ]
+   ],
+   "voidReason": "It couldn't resolve Yes by its deadline: Clay considers a result only two years after journal publication, and OpenAI says it won't claim the prize. Replaced by a forecast on journal acceptance by Sep 30, 2027 (navier-journal-by-sep30-2027)"
+  },
+  {
+   "id": "navier-journal-by-sep30-2027",
+   "made": "2026-09-30",
+   "question": "A peer-reviewed journal accepts OpenAI's Navier–Stokes paper for publication by Sep 30, 2027",
+   "p": 30,
+   "deadline": "2027-09-30",
+   "resolution": "Yes if, by Sep 30, 2027, a peer-reviewed mathematics or science journal accepts or publishes the paper (or a version with the same main result), shown by the journal's site, an \"accepted\" note on arXiv or the authors' pages, or a credible report. Preprints, Lean formalisations and conference talks don't count.",
+   "context": "Replaces the withdrawn Clay forecast. The proof checks in Lean and its correctness is uncontested; credit and how autonomously it was found are disputed. Refereeing a result of this size usually takes one to three years, and we don't know whether OpenAI has submitted it to a journal. Journal publication is the first step Clay's rules need.",
+   "url": "https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "ca-eo-n926-recs-published-by-nov30",
+   "made": "2026-09-30",
+   "question": "California publishes the recommendations due under EO N-9-26 by Nov 30, 2026",
+   "p": 30,
+   "deadline": "2026-11-30",
+   "resolution": "Yes if, by Nov 30, 2026, the Governor's office, the Government Operations Agency or Cal OES publicly releases the §3 recommendations: the document itself, or a summary that states the recommendation on each of items a–d (onsite verifiers, verified safety filings, a kill switch, loss-of-control incident reporting). A statement that recommendations were delivered, without their content, doesn't count.",
+   "context": "Replaces the withdrawn kill-switch forecast. The signed order (Sept 18) tells the Government Operations Agency, with Cal OES, to submit recommendations to the Governor's office no later than Nov 16, 2026. It doesn't require publishing them, so release depends on the Governor's office; deadlines like this often slip.",
+   "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf",
+   "outcome": null,
+   "resolved": null
   }
  ]
 }

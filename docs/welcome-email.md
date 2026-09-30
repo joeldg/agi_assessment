@@ -4,11 +4,13 @@ Kit's free plan has no email sequences, so a condensed version of this welcome l
 
 This file keeps the sign-up copy on record, so a change to the site's wording or cadence can be checked against it, plus the full version for a separate welcome email, if the account moves to a plan with sequences.
 
-**Nothing in the repo updates Kit.** The owner pastes the landing-page and confirmation-email copy below into Kit by hand. Until then, the live copy is what's recorded under "Live in Kit".
+**Nothing in the repo updates Kit.** Copy is pasted into Kit by hand.
+
+**Status (2026-09-30):** the "Proposed changes" landing-page line and the confirmation-email copy below are LIVE in Kit (pasted, saved, published and verified on the public page). The "Live in Kit" block below is the previous version, kept for the record.
 
 ## Landing page
 
-### Live in Kit (as fetched from https://hidden-agi.kit.com/f2b4d2f30e on 2026-09-29, late evening Pacific)
+### Previous version (live until 2026-09-30; fetched from https://hidden-agi.kit.com/f2b4d2f30e on 2026-09-29)
 
 - Page title (also og:title and twitter:title): "Hidden AGI watch: is AGI already here and hidden?"
 - Meta and og description: "Daily, sourced probabilities on whether AGI, self-improving AI or covert AI actors already exist in secret. Free daily email, no hype."
@@ -17,7 +19,7 @@ This file keeps the sign-up copy on record, so a change to the site's wording or
 - Form: an "Email" field and a "Get the daily reading" button, then "We respect your privacy. Unsubscribe at any time."
 - Line under the form: "One email a day at 10am Pacific. Free. Researched and drafted with AI assistance, with every source linked."
 
-### Proposed changes (to paste into Kit)
+### Current version (live in Kit since 2026-09-30)
 
 - Replace the line under the form. "One email a day" is wrong on Fridays and on alarm days, and "with AI assistance" understates the AI's role:
   > A daily reading at 10am Pacific, a Friday wrap-up at 3pm, and a short alert only if our fire-alarm level changes. Free. Researched and written daily by a custom AI agent, with every source linked.
@@ -25,7 +27,7 @@ This file keeps the sign-up copy on record, so a change to the site's wording or
 
 ## Confirmation email
 
-Proposed copy, replacing the version that went live on 2026-09-29. Before pasting, check the live copy in Kit for any leftover "with AI assistance" wording from before the author wording changed (the first version also named the model), and remove it: the site never names the model, only "a custom AI agent".
+Live in Kit since 2026-09-30 (replacing the 2026-09-29 version). The site and emails never name the model, only "a custom AI agent".
 
 **Subject:** One click to start Hidden AGI watch
 

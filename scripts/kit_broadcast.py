@@ -16,13 +16,15 @@ pushes each issue in directly. The daily email body is the same HTML as the feed
     python3 scripts/kit_broadcast.py --date 2026-09-30 --cancel  # delete a recorded draft or scheduled broadcast
 
 Sending rules:
-- Never late. A send time must be at least 10 minutes away. A Pacific hour like '10am' only
-  schedules today's issue (and, for --weekly, only on a Friday). Anything else stays a DRAFT.
+- Sent, never left as a draft (owner directive, 2026-09-30). A Pacific hour like '10am' schedules
+  today's issue (and, for --weekly, only on a Friday). If that time has passed or is under 10 minutes
+  away, the issue SENDS AS SOON AS POSSIBLE: scheduled 15 minutes out, after the live check.
+  Only a past date's issue (not today's) stays a DRAFT.
 - Never a broken email. With a send time (and no --dry-run), the script first checks that HEAD is
   pushed to origin/main and that the report and card return 200 on the live site, retrying for up
   to 10 minutes. If they don't, it creates nothing and exits 2. --skip-live-check overrides this.
-- Alarm news waits for a person. If the fire-alarm level changed that day (for the weekly: that day
-  or the day before), the issue is created as a DRAFT and the output says HELD AS DRAFT.
+- Alarm alerts wait for a person. The daily and weekly issues still send on a day the fire-alarm level
+  changes; the separate breaking alert (--alarm) is ALWAYS a draft for the owner to approve.
 - Never twice. data/kit_broadcasts.json records each push. A "pending" entry is written before
   the POST; if the outcome is unclear (a timeout, a dropped connection, a 5xx, a reply with no id),
   the entry stays "unknown" and the script exits 2. The next run looks the broadcast up in Kit and
@@ -64,7 +66,8 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "data/kit_broadcasts.json"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 V4, V3 = "https://api.kit.com/v4/", "https://api.convertkit.com/v3/"
-MIN_LEAD = timedelta(minutes=10)      # a send time closer than this stays a draft
+MIN_LEAD = timedelta(minutes=10)      # Kit needs at least this much lead for a scheduled send
+SEND_SOON = timedelta(minutes=15)     # owner directive: a late issue is SENT this far out, never left as a draft
 RECONCILE_SLACK = timedelta(minutes=5)  # clock skew allowed when matching an earlier attempt in Kit
 LIVE_WAIT_S, LIVE_EVERY_S = 600, 20   # how long to wait for GitHub Pages, and how often to look
 CLIP_WARN = 70_000  # bytes; Kit's template and tracking links add ~15-25 KB, and Gmail clips at ~102 KB
@@ -340,8 +343,10 @@ def resolve_send_at(value, run_date, friday_only=False):
     if not clock and local.date().isoformat() != run_date:
         print(f"warning: --send-at is on {local:%Y-%m-%d} Pacific, not the issue date {run_date}.", file=sys.stderr)
     if utc - _now() < MIN_LEAD:
-        print(f"{shown} has passed or is under 10 minutes away, so this stays a DRAFT. Send it by hand in Kit.")
-        return None
+        soon = (_now() + SEND_SOON).astimezone(timezone.utc)
+        print(f"{shown} has passed or is under 10 minutes away, so it SENDS AS SOON AS POSSIBLE: "
+              f"{soon.astimezone(PACIFIC):%H:%M %Z} ({_iso(soon)}).")
+        return _iso(soon)
     print(f"Send time: {shown}.")
     return _iso(utc)
 
@@ -417,8 +422,9 @@ def still_ahead(send_at):
     """After waiting on the live check, keep the send time only if it's still at least 10 minutes away."""
     t = parse_ts(send_at)
     if t and t - _now() < MIN_LEAD:
-        print(f"{send_at} is now under 10 minutes away, so this stays a DRAFT. Send it by hand in Kit.")
-        return None
+        soon = _iso((_now() + SEND_SOON).astimezone(timezone.utc))
+        print(f"{send_at} is now under 10 minutes away, so it sends as soon as possible instead: {soon}.")
+        return soon
     return send_at
 
 
@@ -651,8 +657,8 @@ HELD = "alarm level changed"
 
 
 def hold_line(change, when, what):
-    return (f"ALARM LEVEL CHANGED {when} (L{change['from']}→L{change['to']}): {what} HELD AS DRAFT "
-            "for owner review with the alarm alert")
+    return (f"ALARM LEVEL CHANGED {when} (L{change['from']}→L{change['to']}): the {what} still sends; "
+            "the breaking alarm alert is created separately as a DRAFT for owner review")
 
 
 # ---- the three kinds of email ----
@@ -810,9 +816,8 @@ def push_weekly(args):
     why = draft_reason(args.send_at, send_at)
     change = weekly_alarm_change(date)
     hold = hold_line(change, "THIS WEEK", "weekly wrap-up") if change else ""
-    if hold:
+    if hold:  # owner directive 2026-09-30: the issue still SENDS; only the breaking alarm alert is a draft
         print(hold)
-        send_at, why = None, HELD
     k = w["keyNumbers"]
     hook = (str(w.get("subject") or "").strip().rstrip(" .")
             or preview(str(w.get("headline") or "").strip(), 50).rstrip(" .") or "Weekly wrap-up")
@@ -867,9 +872,8 @@ def push_daily(args):
     why = draft_reason(args.send_at, send_at)
     change = alarm_change(date, run, prev)
     hold = hold_line(change, "TODAY", "daily issue") if change else ""
-    if hold:
+    if hold:  # owner directive 2026-09-30: the issue still SENDS; only the breaking alarm alert is a draft
         print(hold)
-        send_at, why = None, HELD
     needle = run.get("needle") or {}
     fields = {
         "subject": daily_subject(run),

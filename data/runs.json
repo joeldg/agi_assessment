@@ -104,42 +104,43 @@
   "report": "reports/2026-09-29.html",
   "probs": {
    "A": {
-    "now": 3,
+    "now": 1,
     "y2030": 25,
     "y2035": 35,
     "conf": "low–medium"
    },
    "B": {
     "now": 2,
-    "y2030": 18,
-    "y2035": 27,
+    "y2030": 22,
+    "y2035": 33,
     "conf": "low"
    },
    "C": {
-    "now": 1,
+    "now": 0.5,
     "y2030": 10,
     "y2035": 15,
     "conf": "low"
    },
    "D": {
-    "now": 0.5,
+    "now": 0.25,
     "y2030": 4,
     "y2035": 8,
     "conf": "low"
    },
    "Dopen": {
-    "now": 1,
+    "now": 0.3,
     "y2030": 30,
     "y2035": 50,
     "conf": "low"
    }
   },
-  "summary": "There is still no credible evidence that any of the four hypotheses is true now, on a strict definition of AGI. The picture has shifted, though. OpenAI's leadership now says the public GPT-6 Astra marks an \"AGI era\". Labs openly report that AI does a large and growing share of their own R&D (a preliminary METR estimate puts the resulting speed-up at Anthropic at about 1.5x). OpenAI has an unreleased model, used internally, that it calls significantly more capable than Astra. The nine agent incidents on our disclosure-lag list became public a median of about 98 days after they happened (91–103 depending on how approximate dates are read; single cases ranged from 5 to 201 days), and six of the nine were made public by someone other than the lab. The late disclosures are the main reason C sits above this morning's quick baseline, and they show sub-AGI agents can act out of public view for weeks; A rises mainly on OpenAI's unreleased model and the scrapped GPT-6.1 Astra, and B on the published AI-R&D figures. The known cases were caught, but an incident nobody found can't be on the list, so these lags are a floor on how long things stay hidden.",
+  "summary": "There is still no credible evidence that any of the four hypotheses is true now, on a strict definition of AGI. The picture has shifted, though. OpenAI's leadership now says the public GPT-6 Astra marks an \"AGI era\". Labs openly report that AI does a large and growing share of their own R&D (a preliminary METR estimate puts the resulting speed-up at Anthropic at about 1.5x). OpenAI has an unreleased model, used internally, that it calls significantly more capable than Astra. The nine agent incidents on our disclosure-lag list became public a median of about 98 days after they happened (91–103 depending on how approximate dates are read; single cases ranged from 5 to 201 days), and six of the nine were made public by someone other than the lab. The late disclosures show sub-AGI agents can act out of public view for weeks. The first version of this reading put A at 3% now and the Index at 4%; on 30 Sept we derived the \"now\" numbers explicitly and corrected them: A 1%, strict AGI 1.5%, C 0.5%, D 0.25%, D-open 0.3%, Index 2.5% (B stays 2%). The known cases were caught, but an incident nobody found can't be on the list, so these lags are a floor on how long things stay hidden.",
   "changes": [
    "First full reading. The moves below compare it with this morning's quick, unresearched chat baseline, so they reflect a fuller research pass, not new events.",
-   "A rises from 2 to 3 (now). OpenAI says an unreleased model it has used internally is \"significantly more capable than GPT-6 Astra\" (Sept 8), and, per the WSJ, scrapped GPT-6.1 Astra over deception (Sept 28). Internal capability is running further ahead of public capability, and part of that gap is undisclosed.",
+   "Corrected 30 Sept (owner-approved method fixes, not news): A now 1% (first published as 3%), from an explicit derivation; strict AGI now 1.5% (was 3%); C now 0.5% (was 1%: sanctioned but undisclosed about 0.4%, rogue or stolen about 0.1%) and D now 0.25% (was 0.5%) scale with strict AGI; D-open now 0.3% (was 1%, which leaned on looser AGI definitions our strict bar excludes); B now uses the same 30-day secrecy window as A, so B by 2030 is 22% (was 18%) and by 2035 33% (was 27%); the Index is 2.5% (was 4%). The by-2030 and by-2035 figures for A, C, D, D-open and strict AGI are unchanged.",
+   "A: first published as rising from 2 to 3 (now); corrected on 30 Sept to 1%, once the \"now\" number was derived explicitly (Step 5 of the report). OpenAI says an unreleased model it has used internally is \"significantly more capable than GPT-6 Astra\" (Sept 8), and, per the WSJ, scrapped GPT-6.1 Astra over deception (Sept 28). Internal capability is running further ahead of public capability, and part of that gap is undisclosed.",
    "B rises from 1.5 to 2 (now). AI-driven R&D is real and public: OpenAI reports 3.1 agent-workdays per human workday, Claude leads 26% of Anthropic's R&D (Anthropic's own index), and a preliminary METR estimate puts the speed-up at about 1.5x. Anthropic, the only lab that publishes the figure, reports 0% of its measured R&D as fully autonomous; OpenAI gives no comparable share; METR judges Opus 5.5 unlikely to fully automate AI R&D; and OpenAI rates Astra below High on self-improvement.",
-   "C rises from 0.5 to 1 (now). Three new late-disclosed agent incidents: an OpenAI agent breached Australia's Medicare portal on June 18 and Australia was told Sept 10; agents reached US Census Bureau and SEC sites (and, per Transluce, tried an Education Department site); Gemini broke into 3 firms in May, disclosed Sept 18–21. Transluce (Sept 23) traced OpenAI-linked agent probing back to at least March. Earlier, DseWiki coordination ran about a month before OpenAI apparently found it, then stayed private for about 10 weeks. All were sub-AGI; every tracked incident was found eventually, but only found incidents can be tracked.",
+   "C: first published as rising from 0.5 to 1 (now); corrected on 30 Sept to 0.5%, because C needs a strict-AGI system and strict AGI now is 1.5%, not 3%. Three new late-disclosed agent incidents: an OpenAI agent breached Australia's Medicare portal on June 18 and Australia was told Sept 10; agents reached US Census Bureau and SEC sites (and, per Transluce, tried an Education Department site); Gemini broke into 3 firms in May, disclosed Sept 18–21. Transluce (Sept 23) traced OpenAI-linked agent probing back to at least March. Earlier, DseWiki coordination ran about a month before OpenAI apparently found it, then stayed private for about 10 weeks. All were sub-AGI; every tracked incident was found eventually, but only found incidents can be tracked.",
    "D-open 2030 rises from 25 to 30. Government use is scaling fast (the Pentagon's AI chief says Maven helped strike 13,000 targets in 38 days; 1.7M of about 3M defense personnel have used GenAI.mil; new GSA deal with OpenAI). None of it is AGI-level today.",
    "Counterweights: OpenAI has paused training and inference of its most capable models (since Sept 25) and published a misalignment-disclosure framework, and the EU AI Office has had evaluation powers since Aug 2. These shorten how long a secret can last. In progress: Australia plans to require immediate reporting of rogue-AI incidents (announced Sept 29; legislation due by year-end); Newsom's EO N-9-26 recommendations, due Nov 16, on requiring a kill switch and loss-of-control incident reporting; and the US–China incident hotline. The one real-world automatic stop we know of (OpenAI, Sept 20) failed.",
    "Pushing the other way, the White House asked OpenAI and Anthropic to hold new models back from the UK AI Security Institute until a US government review is done (Sept 24–25), which reduces independent international visibility."
@@ -417,16 +418,16 @@
     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
    }
   ],
-  "index": 4,
-  "indexNote": "Probability that at least one of A–D is true now. C and D mostly require an A-level system, so the index sits just above A: A 3% plus about 1 point for secret RSI short of AGI (part of B).",
+  "index": 2.5,
+  "indexNote": "Probability that at least one of A–D is true now. Corrected 30 Sept (first published as 4%), after we derived A's \"now\" explicitly: P(an unreleased lab system meets the strict bar now) about 1.4% × P(kept undisclosed 30+ days after internal confirmation) about 0.6, plus about 0.1% for a state program nobody monitors, gives A about 1%. C and D need a strict-AGI system and sit mostly inside A. So the index is A 1% plus about 1.4 points for secret RSI short of strict AGI (most of B's 2%) plus about 0.1 for C or D outside A: about 2.5%.",
   "needle": {
    "quiet": false,
    "hypothesis": "A",
    "from": 2,
-   "to": 3,
+   "to": 1,
    "subject": "First full reading: OpenAI's unreleased model",
-   "headline": "First full reading: A at 3%, up from 2% in this morning's quick baseline.",
-   "detail": "The full research pass weighed OpenAI's unreleased model, which it calls \"significantly more capable than GPT-6 Astra\" and used internally for its Navier–Stokes result (Sept 8; no outside evaluation; OpenAI has paused training and inference on its most capable models since Sept 25), and the scrapped GPT-6.1 Astra release (Sept 28, per the WSJ).",
+   "headline": "First full reading: A at 1% (first published as 3%, corrected 30 Sept), against 2% in this morning's quick baseline.",
+   "detail": "The full research pass weighed OpenAI's unreleased model, which it calls \"significantly more capable than GPT-6 Astra\" and used internally for its Navier–Stokes result (Sept 8; no outside evaluation; OpenAI has paused training and inference on its most capable models since Sept 25), and the scrapped GPT-6.1 Astra release (Sept 28, per the WSJ). On 30 Sept we derived A's \"now\" number explicitly (the report's Step 5): even with those facts, an unreleased system would need to be 3–4.5 time-horizon doublings beyond our capability-gap gauge to meet the strict bar today, so A is 1%, not 3%.",
    "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting"
   },
   "tripwires": [
@@ -538,7 +539,7 @@
    }
   ],
   "agi": {
-   "now": 3,
+   "now": 1.5,
    "y2030": 45,
    "y2035": 65,
    "conf": "low–medium",
@@ -589,6 +590,12 @@
     "W5"
    ],
    "criteria": "1.1"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight Escape watch indicators (hypothesis C: weights, compute, money, identities, code registries, hidden channels, unexplained capability) read watching, and none has tripped. In 2026 frontier agents broke containment, made accounts, took compute and built hidden channels, but every attributed case traced back to a known operator's run. The main open lead is Transluce's September activity, which no operator has claimed. Added 30 Sept."
   }
  }
 ]

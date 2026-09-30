@@ -31,6 +31,7 @@
 <main>
   <nav class="site" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
+    <a class="nav-key" href="./escape.html">Escape watch</a>
     <a href="./start-here.html">Start here</a>
     <a href="./alarm.html">Fire alarm</a>
     <a href="./weekly/">Weekly</a>
@@ -55,7 +56,7 @@
   <section id="withdrawn-sec" hidden><h2>Withdrawn forecasts</h2><p class="muted">Withdrawn forecasts aren't scored. Each shows why it was withdrawn.</p><div id="withdrawn"></div></section>
   <section class="prose"><h2>How scoring works</h2>
     <p>Each resolved forecast scores (probability − outcome)², where the outcome is 1 or 0. The Brier score is the average: 0 is perfect, and always guessing 50% scores 0.25. A raw Brier score depends on how predictable the questions were, so we also show a skill score against always forecasting the base rate of the resolved questions (above 0 beats it), and, where a prediction market priced the same question, the market's Brier score on those same questions. Every score shows how many forecasts it rests on; a handful proves little.</p>
-    <p>New forecasts are added in each weekly wrap-up, and nothing is edited after it's made; if a forecast's stated context turns out to be wrong we add a dated correction and still score the original probability.</p>
+    <p>New forecasts are added in each weekly wrap-up, and nothing is edited after it's made; if a forecast's stated context turns out to be wrong we add a dated correction and still score the original probability. Ill-posed forecasts can be withdrawn unscored; the reason is always shown.</p>
   </section>
 
 <div class="subscribe">
@@ -80,7 +81,7 @@ const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);
 
 const d = await j("data/forecasts.json"), h = K.util.h;
 const all = (Array.isArray(d.forecasts) ? d.forecasts : []).filter(f => f && typeof f === "object");
-const isVoid = f => f.outcome === "void" || f.void === true;
+const isVoid = f => f.outcome === "void" || f.void === true || f.withdrawn === true;
 const scored = all.filter(f => f.outcome === true || f.outcome === false);
 const withdrawn = all.filter(isVoid);
 const open = all.filter(f => f.outcome == null && !isVoid(f)).sort((a,b)=>String(a.deadline).localeCompare(String(b.deadline)));
@@ -119,7 +120,10 @@ else {
 if(withdrawn.length){
   document.getElementById("withdrawn-sec").hidden = false;
   const ul = h("ul",{class:"plain"});
-  withdrawn.forEach(f => { const li = h("li"); li.append(h("strong",{}, f.question || "–")); li.append(h("div",{class:"muted small"}, (f.made ? `Made ${fd(f.made)} at ${f.p}%` : `${f.p}%`) + ". Withdrawn: " + (f.voidReason || f.void_reason || "no reason recorded") + ".")); ul.append(li); });
+  const when = f => { const w = f.withdrawnOn || f.resolved; return w && !isNaN(new Date(w)) ? " " + fd(w) : ""; };
+  const reason = f => String(f.voidReason || f.void_reason || f.withdrawnReason || "no reason recorded").trim().replace(/[.]+$/,"");
+  const why = f => { const r = reason(f); return /^withdrawn\b/i.test(r) ? r + "." : "Withdrawn" + when(f) + ", unscored. Reason: " + r + "."; };   // a reason may already say when
+  withdrawn.forEach(f => { const li = h("li"); li.append(h("strong",{}, f.question || "–")); li.append(h("div",{class:"small"}, why(f))); li.append(h("div",{class:"muted small"}, (f.made ? `Made ${fd(f.made)} at ${f.p}%` : `${f.p}%`) + (f.deadline ? `; deadline ${fd(f.deadline)}.` : "."))); ul.append(li); });
   document.getElementById("withdrawn").append(ul);
 }
 

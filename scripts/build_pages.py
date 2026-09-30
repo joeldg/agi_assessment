@@ -3,14 +3,18 @@
 
     python3 scripts/build_pages.py
 
-Most charts and lists render in the browser from data/*.json. Two parts are written at build
+Most charts and lists render in the browser from data/*.json. These parts are written at build
 time instead, so they can go stale:
-  - alarm.html: the fire-alarm criteria, trigger statuses, history and changelog, rendered as
-    static HTML from data/alarm.json so they read without JavaScript. Rebuild whenever
-    data/alarm.json changes; the daily routine runs this script.
-  - start-here.html: the method changelog, from data/method.json.
-Every page is rendered before any file is written, so a bad data/alarm.json stops the build
-without leaving a blank alarm page.
+  - alarm.html: the fire-alarm criteria, trigger statuses, the Level-3 proof standard, the alarm
+    case-file standard, history and changelog, rendered as static HTML from data/alarm.json so
+    they read without JavaScript. Rebuild whenever data/alarm.json changes; the daily routine
+    runs this script.
+  - escape.html: Escape watch, rendered as static HTML from data/escape.json.
+  - start-here.html: the method changelog, from data/method.json, and the alarm version.
+  - about.html: the weekly usage line, from data/usage.json, shown only once a full week of
+    readings is logged.
+Every page is rendered before any file is written, so a bad data/alarm.json or data/escape.json
+stops the build without leaving a blank page.
 """
 import json
 import re
@@ -155,7 +159,15 @@ def method_changes():
             f'definition, a gauge, the Index formula or a threshold.</p>\n    <ul class="plain">{lis}</ul>')
 
 
+def alarm_version():
+    """The published alarm-criteria version, for pages that mention it; '' if data/alarm.json can't be read."""
+    A = load_json("data/alarm.json")
+    return str(A.get("version") or "") if isinstance(A, dict) else ""
+
+
 def start_here_body():
+    v = alarm_version()
+    version_txt = f"now v{e(v)}, first published 29 Sept 2026" if v else "first published 29 Sept 2026"
     return """
   <header class="prose">
     <h1>Start here</h1>
@@ -163,13 +175,13 @@ def start_here_body():
   </header>
   <section class="prose">
     <h2>The four hypotheses</h2>
-    <div class="hyp A"><strong>A: AGI exists, undisclosed.</strong> A system meets our strict AGI bar (below), and whoever built it, whether a company or a government program (for example a classified US or Chinese effort), has kept that level of capability from the public for at least 30 days. Admitting that an unreleased model exists doesn't count as disclosure.</div>
-    <div class="hyp B"><strong>B: secret recursive self-improvement.</strong> An AI system does most of the work of building a more capable successor, with at least a 3x speed-up over humans alone, and this hasn't been disclosed. Partial AI-driven acceleration is already public, so it doesn't count.</div>
-    <div class="hyp C"><strong>C: a covert AGI-level actor online.</strong> An AGI-level system takes sustained actions on the internet or in the economy, without its developer's sanction or without public knowledge. Today's sub-AGI agent incidents are tracked as warning signs, not as proof.</div>
+    <div class="hyp A"><strong>A: AGI exists, undisclosed.</strong> A system meets our strict AGI bar (below), and whoever built it, a company or a government program (for example a classified US or Chinese effort), has kept that level of capability from the public for at least 30 days. Admitting that an unreleased model exists doesn't count as disclosure.</div>
+    <div class="hyp B"><strong>B: secret recursive self-improvement.</strong> An AI system does most of the work of building a more capable successor, with at least a 3x speed-up over humans alone, and whoever runs it, a company or a government program, has kept this from the public for at least 30 days. Partial AI-driven acceleration is already public, so it doesn't count.</div>
+    <div class="hyp C"><strong>C: a covert AGI-level actor online.</strong> An AGI-level system takes sustained actions on the internet or in the economy, and the public hasn't known for at least 30 days. There are two paths. <strong>Sanctioned but undisclosed:</strong> its developer or another operator runs it on purpose and doesn't say so. <strong>Rogue or stolen:</strong> it acts outside its developer's control, because it escaped or copied itself out, or because someone runs it from stolen weights. Today's sub-AGI agent incidents are tracked as warning signs, not as proof, on <a href="escape.html">Escape watch</a>.</div>
     <div class="hyp D"><strong>D: an AGI shaping government.</strong> Output from an AGI-level system materially shapes a major government decision. It's one question with two readings: <strong>covert</strong> (D), where the public doesn't know, and <strong>open</strong> (D-open), through acknowledged use. Today's heavy government use of sub-AGI tools doesn't count toward either.</div>
 
     <h2 id="hidden">What "hidden" means</h2>
-    <p>A–D track two kinds of hiding: advanced AI that people keep from the public (a company or government that doesn't disclose what it has built, or how it's using it), and AI systems acting covertly on their own (C). A model hiding its own capability from its developer, for example by quietly underperforming on tests, is a different problem. It isn't A, because A needs the builder to know what it has, but it would undermine the evaluations these readings rely on, so it's tracked separately as the evaluation-integrity tripwire on the <a href="./#tripwires">dashboard</a>.</p>
+    <p>A–D track two kinds of hiding: advanced AI that people keep from the public (a company or government that doesn't disclose what it has built, or how it's using it), and AI systems acting covertly on their own (C's rogue path). A, B and C use the same secrecy window: kept from the public for at least 30 days. A model hiding its own capability from its developer, for example by quietly underperforming on tests, is a different problem. It isn't A, because A needs the builder to know what it has, but it would undermine the evaluations these readings rely on, so it's tracked separately as the evaluation-integrity tripwire on the <a href="./#tripwires">dashboard</a>.</p>
 
     <h2 id="pieces">How the pieces fit</h2>
     <ul class="plain">
@@ -177,11 +189,14 @@ def start_here_body():
       <li><strong>Hidden AGI Index:</strong> our probability that at least one of A–D is true right now.</li>
       <li><strong>Gauges:</strong> the inputs we track, each tagged by how it's made.</li>
       <li><strong>Tripwires:</strong> early signals we're watching, each linked to the alarm trigger it feeds where there is one. They move our probabilities; only the triggers set the alarm level.</li>
+      <li><strong><a href="escape.html">Escape watch</a>:</strong> sourced indicators for C at the resource chokepoints an escaped system would still need (weights, compute, money, accounts, code registries), each quiet, watching or tripped under a published trip rule.</li>
       <li><strong>Hypotheses A–D:</strong> the detail behind the Index, each estimated now, by 2030 and by 2035.</li>
     </ul>
 
     <h2 id="alarm">The fire alarm</h2>
-    <p>Hidden AGI watch aims to be a fire alarm for hidden AI. On top of the probabilities there's an alarm level (Normal, Watch, Warning, Alarm) set by <a href="alarm.html">published, versioned criteria</a> (v1.0, published 29 Sept 2026 with that day's readings in view; every later change is dated in the <a href="alarm.html#changelog">alarm changelog</a>). It rises the day a trigger is met, comes down slowly, and every change is announced and publicly reviewed after 90 days, false alarms included.</p>
+    <p>Hidden AGI watch aims to be a fire alarm for hidden AI. On top of the probabilities there's an alarm level (Normal, Watch, Warning, Alarm) set by <a href="alarm.html">published, versioned criteria</a> (""" + version_txt + """ with that day's readings in view; every change is dated in the <a href="alarm.html#changelog">alarm changelog</a>). It rises the day a trigger is met and comes down only after its rule has gone unsatisfied for 30 days in a row. The top level, Alarm, needs proof beyond reasonable doubt under the <a href="alarm.html#proof">Level-3 proof standard</a>, not official confirmation, and a case in a <a href="alarm.html#case-file">format fixed in advance</a>. Every change is announced and publicly reviewed after 90 days, false alarms included.</p>
+    <h2 id="sending">What gets sent, and who approves it</h2>
+    <p>The daily issue is emailed automatically at 10am Pacific, and the weekly wrap-up on Fridays at 3pm Pacific. Neither is held back when the alarm level changes: they go out and show the new level. A breaking fire-alarm alert is different: it's prepared as a draft, and a person approves it before it's sent.</p>
     <h2 id="gauges">The five gauges</h2>
     <p>The hypotheses make a sharp headline, but they sit near zero and move slowly. The gauges track what the evidence actually shows. They move week to week and are what the probabilities are judged against. Each is tagged by how it's made: <em>measured</em> (a number published in filings or by a lab or evaluator), <em>estimated</em> (our own calculation or judgment, anchored on published data) or <em>assessed</em> (a position on a defined scale).</p>
     <ul class="plain">
@@ -233,38 +248,95 @@ if(host){ const box = K.util.h("div"); await renderCorrections(box); if(box.chil
 )
 
 # ---------- About ----------
-PAGES["about.html"] = dict(
-    title="About · Hidden AGI watch",
-    description="What Hidden AGI watch is, how it's made, who runs it, how to reach us, how corrections work, and how to cite it.",
-    body=f"""
+EFFORT_LINE = ("Before launch, we had 195 AI agents run 3,793 checks on this site's own facts, code and reasoning. "
+               "It found 135 problems, and we fixed them.")   # owner-approved wording; keep it exactly true
+USAGE_PLAN = "a Claude Max 20x plan"   # the owner approved naming the plan in the usage line only
+FRIDAY = 4   # the plan's weekly usage resets on Fridays around 11:00 Pacific, after the morning reading
+
+
+def _usage_readings(U):
+    """[(date, percent)] from data/usage.json: a list, or {"readings": [...]}, of {date, percentUsed}
+    (an ISO timestamp in "at" or "recordedAt" also works for the date)."""
+    rows = U.get("readings") if isinstance(U, dict) else U
+    out = {}
+    for r in rows if isinstance(rows, list) else []:
+        if not isinstance(r, dict):
+            continue
+        pct = next((r[k] for k in ("percentUsed", "weeklyPercentUsed", "percent", "pct") if _num(r.get(k))), None)
+        when = next((r[k] for k in ("date", "at", "recordedAt", "time") if r.get(k)), None)
+        try:
+            d = date.fromisoformat(str(when)[:10])
+        except ValueError:
+            continue
+        if pct is not None and 0 <= pct <= 100:
+            out[d] = pct   # one reading per day; a rerun's later value replaces an earlier one
+    return sorted(out.items())
+
+
+def weekly_usage_line():
+    """The last full week's usage, as HTML, or '' until data/usage.json has a full week of readings.
+    A week runs from the Saturday after one reset to the Friday morning before the next, so a full
+    week is seven daily readings, Saturday to Friday. The Friday reading, the last before the reset,
+    stands for the week's total."""
+    readings = _usage_readings(load_json("data/usage.json"))
+    weeks = {}
+    for d, pct in readings:
+        ends = date.fromordinal(d.toordinal() + (FRIDAY - d.weekday()) % 7)
+        weeks.setdefault(ends, {})[d] = pct
+    full = [(ends, days) for ends, days in weeks.items() if len(days) >= 7 and ends in days]
+    if not full:
+        return ""
+    ends, days = max(full)
+    pct = days[ends]
+    shown = f"{pct:.0f}" if pct >= 10 or pct == int(pct) else f"{pct:.1f}"
+    return (f'\n    <p id="usage">In the week to {e(day(ends.isoformat()))}, researching, writing and publishing the readings '
+            f'used {e(shown)}% of the weekly allowance of {e(USAGE_PLAN)}.</p>')
+
+
+def about_body():
+    return f"""
   <header class="prose">
     <h1>About Hidden AGI watch</h1>
     <p class="lede">A fire alarm for hidden AI: a daily, sourced reading of whether advanced AI could already exist, or already be acting, without the public knowing.</p>
   </header>
   <section class="prose">
     <h2 id="what">What this is</h2>
-    <p>Hidden AGI watch tracks one question: could advanced AI already exist, or already be acting, without the public knowing? Each day it gives explicit probabilities for four hypotheses, a handful of gauges that track the underlying evidence, and a fire-alarm level set by published criteria. The aim is to notice early if the evidence starts to point that way, without crying wolf when it doesn't. An absence of evidence is not treated as proof of secrecy.</p>
+    <p>Hidden AGI watch tracks one question: could advanced AI already exist, or already be acting, without the public knowing? Each day it gives explicit probabilities for four hypotheses, a handful of gauges that track the underlying evidence, an <a href="escape.html">Escape watch</a> on the resource chokepoints, and a fire-alarm level set by published criteria. The aim is to notice early if the evidence starts to point that way, without crying wolf when it doesn't. An absence of evidence is not treated as proof of secrecy.</p>
 
     <h2 id="how">How it's made</h2>
-    <p>A custom AI agent built for this project researches, writes and publishes each daily report automatically, starting around 09:00 Pacific, and the email goes out at 10am Pacific. No one reviews a daily report before it's published. The Friday wrap-up is made the same way and emailed at 3pm Pacific.</p>
-    <p>The site's owner sets the hypothesis definitions and the fire-alarm thresholds, and approves every alarm alert: an alert is always prepared as a draft, and a person decides whether it's sent. Changes to the alarm criteria are dated in the <a href="alarm.html#changelog">alarm changelog</a>, and changes to the method on <a href="start-here.html#changes">Start here</a>.</p>
+    <p>A custom AI agent built for this project researches, writes and publishes each daily reading automatically. The research starts each morning (moving to about 07:00 Pacific), and the email goes out at 10am Pacific, or as soon as it is ready if later. No one reviews a daily report before it's published. The Friday wrap-up is made the same way and emailed at 3pm Pacific.</p>
+    <p>The daily and weekly issues are sent automatically. Breaking fire-alarm alerts are not: each one is prepared as a draft, and a person approves it before it's sent. The site's owner also sets the hypothesis definitions and the fire-alarm thresholds. Changes to the alarm criteria are dated in the <a href="alarm.html#changelog">alarm changelog</a>, and changes to the method on <a href="start-here.html#changes">Start here</a>.</p>
+    <p>{e(EFFORT_LINE)}</p>{weekly_usage_line()}
     <p>The full method is on <a href="start-here.html#method">Start here</a> and the alarm criteria are on <a href="alarm.html">the fire alarm page</a>. Every daily report shows its reasoning and links its sources, and every chart follows the <a href="style.html">chart style guide</a>.</p>
 
     <h2 id="who">Who runs it</h2>
-    <p>An independent project; source at <a href="{REPO}">github.com/joeldg/agi_assessment</a>. The code, the data files and the history of every page are public there.</p>
+    <p>Hidden AGI watch is an independent project run by <a href="https://github.com/joeldg">joeldg</a> on GitHub. The source is at <a href="{REPO}">github.com/joeldg/agi_assessment</a>: the code, the data files and the history of every page are public there.</p>
 
     <h2 id="contact">Contact</h2>
-    <p>To report an error, question a number or suggest a source, open an issue on <a href="{REPO}/issues">GitHub Issues</a>.</p>
+    <p>To report an error, question a number or suggest a source, open an issue on <a href="{REPO}/issues">GitHub Issues</a>. That's the only contact channel, so every report and its answer stay public.</p>
 
     <h2 id="corrections">Corrections</h2>
     <p>Past readings are frozen once emailed; corrections are dated, shown on the affected page and carried into the next email.</p>
     <div id="corrections-list"></div>
 
+    <h2 id="license">License</h2>
+    <ul class="plain">
+      <li><strong>Code:</strong> the scripts, the chart kit, the stylesheet and the page templates are under the <a href="{REPO}/blob/main/LICENSE">MIT License</a>.</li>
+      <li><strong>The site's own text and data:</strong> the reports, readings, rulings, alarm criteria, Escape watch indicators and our own data files are under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You can reuse and adapt them, commercially too, with credit and a link to the license.</li>
+      <li><strong>Not covered:</strong> third-party material we quote, cite or plot (news excerpts, filings, METR measurements, outside forecasts, market prices and the like) stays under its owners' terms, and the brand assets (the name and wordmark, the avatar and logo, the favicon and the default share image) are all rights reserved. The details are in <a href="{REPO}/blob/main/LICENSE-content.md">LICENSE-content.md</a>.</li>
+    </ul>
+
     <h2 id="cite">How to cite</h2>
-    <p>Hidden AGI watch (2026), &lt;page title&gt;, &lt;url&gt;, accessed &lt;date&gt;.</p>
-    <p class="muted">For example: Hidden AGI watch (2026), The fire alarm, <span style="overflow-wrap:anywhere">{escape("https://joeldg.github.io/agi_assessment/alarm.html")}</span>, accessed <span id="cite-date">&lt;date&gt;</span>. Daily reports keep their address (reports/YYYY-MM-DD.html), and the data behind every chart is in the repository's data folder, with its full history.</p>
+    <p>Hidden AGI watch (2026), &lt;page title&gt;, &lt;url&gt;, accessed &lt;date&gt;. Licensed under CC BY 4.0.</p>
+    <p class="muted">For example: Hidden AGI watch (2026), The fire alarm, <span style="overflow-wrap:anywhere">{escape("https://joeldg.github.io/agi_assessment/alarm.html")}</span>, accessed <span id="cite-date">&lt;date&gt;</span>. Licensed under CC BY 4.0. Daily reports keep their address (reports/YYYY-MM-DD.html), and the data behind every chart is in the repository's data folder, with its full history. A machine-readable citation is in <a href="{REPO}/blob/main/CITATION.cff">CITATION.cff</a>.</p>
   </section>
-""",
+"""
+
+
+PAGES["about.html"] = dict(
+    title="About · Hidden AGI watch",
+    description="What Hidden AGI watch is, how it's made, who runs it, how to reach us, how corrections work, the license, and how to cite it.",
+    body=about_body,
     scripts_code=CORRECTIONS_JS + r"""
 await renderCorrections(document.getElementById("corrections-list"));
 { const t = new Date(), c = document.getElementById("cite-date"); if(c) c.textContent = t.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}); }
@@ -287,13 +359,13 @@ PAGES["scorecard.html"] = dict(
   <section id="withdrawn-sec" hidden><h2>Withdrawn forecasts</h2><p class="muted">Withdrawn forecasts aren't scored. Each shows why it was withdrawn.</p><div id="withdrawn"></div></section>
   <section class="prose"><h2>How scoring works</h2>
     <p>Each resolved forecast scores (probability − outcome)², where the outcome is 1 or 0. The Brier score is the average: 0 is perfect, and always guessing 50% scores 0.25. A raw Brier score depends on how predictable the questions were, so we also show a skill score against always forecasting the base rate of the resolved questions (above 0 beats it), and, where a prediction market priced the same question, the market's Brier score on those same questions. Every score shows how many forecasts it rests on; a handful proves little.</p>
-    <p>New forecasts are added in each weekly wrap-up, and nothing is edited after it's made; if a forecast's stated context turns out to be wrong we add a dated correction and still score the original probability.</p>
+    <p>New forecasts are added in each weekly wrap-up, and nothing is edited after it's made; if a forecast's stated context turns out to be wrong we add a dated correction and still score the original probability. Ill-posed forecasts can be withdrawn unscored; the reason is always shown.</p>
   </section>
 """,
     scripts_code=r"""
 const d = await j("data/forecasts.json"), h = K.util.h;
 const all = (Array.isArray(d.forecasts) ? d.forecasts : []).filter(f => f && typeof f === "object");
-const isVoid = f => f.outcome === "void" || f.void === true;
+const isVoid = f => f.outcome === "void" || f.void === true || f.withdrawn === true;
 const scored = all.filter(f => f.outcome === true || f.outcome === false);
 const withdrawn = all.filter(isVoid);
 const open = all.filter(f => f.outcome == null && !isVoid(f)).sort((a,b)=>String(a.deadline).localeCompare(String(b.deadline)));
@@ -332,7 +404,10 @@ else {
 if(withdrawn.length){
   document.getElementById("withdrawn-sec").hidden = false;
   const ul = h("ul",{class:"plain"});
-  withdrawn.forEach(f => { const li = h("li"); li.append(h("strong",{}, f.question || "–")); li.append(h("div",{class:"muted small"}, (f.made ? `Made ${fd(f.made)} at ${f.p}%` : `${f.p}%`) + ". Withdrawn: " + (f.voidReason || f.void_reason || "no reason recorded") + ".")); ul.append(li); });
+  const when = f => { const w = f.withdrawnOn || f.resolved; return w && !isNaN(new Date(w)) ? " " + fd(w) : ""; };
+  const reason = f => String(f.voidReason || f.void_reason || f.withdrawnReason || "no reason recorded").trim().replace(/[.]+$/,"");
+  const why = f => { const r = reason(f); return /^withdrawn\b/i.test(r) ? r + "." : "Withdrawn" + when(f) + ", unscored. Reason: " + r + "."; };   // a reason may already say when
+  withdrawn.forEach(f => { const li = h("li"); li.append(h("strong",{}, f.question || "–")); li.append(h("div",{class:"small"}, why(f))); li.append(h("div",{class:"muted small"}, (f.made ? `Made ${fd(f.made)} at ${f.p}%` : `${f.p}%`) + (f.deadline ? `; deadline ${fd(f.deadline)}.` : "."))); ul.append(li); });
   document.getElementById("withdrawn").append(ul);
 }
 """,
@@ -775,14 +850,100 @@ def _criteria_log(changelog):
         for c in changelog or [] if isinstance(c, dict))
 
 
-def load_alarm():
+# The owner's pre-registered case-file format (2026-09-30), used only if data/alarm.json lacks "caseFile".
+CASE_FILE_FALLBACK = {
+    "name": "Alarm case-file standard",
+    "note": "The format of a Level-3 alarm, fixed before any case exists. The breaking email and the case page follow it "
+            "section by section, and a full evidence appendix is published on the site.",
+    "verdict": "One sentence, first: what we conclude, and why it meets the Level-3 standard.",
+    "sections": [
+        {"title": "What we claim, and what we don't", "requires": "Exactly what we claim, and just as plainly what we don't."},
+        {"title": "The independent lines of evidence", "requires": "Each fact with its source and how it was authenticated, "
+         "and how the lines are independent."},
+        {"title": "Every innocent explanation we considered", "requires": "The defense's best case for each one, and the "
+         "evidence it fails to explain."},
+        {"title": "What could have disproved it, and proof we checked", "requires": "The findings that would have sunk the "
+         "case, and what we found when we checked."},
+        {"title": "What we still don't know", "requires": "Open questions and the weakest links."},
+        {"title": "What readers can do", "requires": "How to check the evidence and send us more, either way."},
+    ],
+    "correction": "If the case turns out to be wrong, we publish a correction at once and the level drops.",
+}
+
+
+def _proof_section(P):
+    """The Level-3 proof standard from alarm.json "proofStandard", or '' when it's absent."""
+    if not isinstance(P, dict):
+        return ""
+    reqs = "".join(f'<li><strong>{e(r.get("title"))}.</strong> {e(r.get("text"))}</li>'
+                   for r in P.get("requirements") or [] if isinstance(r, dict))
+    mods = "".join(f"<li>{e(m)}</li>" for m in P.get("modalities") or [] if m)
+    out = f'\n  <section class="prose" id="proof"><h2>{e(P.get("name") or "Level-3 proof standard")}</h2>'
+    if P.get("summary"):
+        out += f'<p>{e(P["summary"])}</p>'
+    if reqs:
+        out += f'<p>A case must meet all of these:</p><ol>{reqs}</ol>'
+    if mods:
+        out += f'<p>Modalities of evidence (each line comes from a different one):</p><ul>{mods}</ul>'
+    if P.get("tribunal"):
+        out += f'<p class="small">{e(P["tribunal"])}</p>'
+    if P.get("otherwise"):
+        out += f'<p class="small muted">{e(P["otherwise"])}</p>'
+    return out + "</section>"
+
+
+def _cases_register(cases):
+    rows = []
+    for c in cases or []:
+        if not isinstance(c, dict):
+            continue
+        page_link = a_link(c.get("page"), "case page") if c.get("page") else ""
+        rows.append(f'<tr><td>{e(c.get("id") or "–")}</td><td class="num">{e(c.get("trigger") or "–")}</td>'
+                    f'<td>{e(c.get("status") or "–")}</td><td class="num">{e(day(c.get("opened")))}</td>'
+                    f'<td class="num">{e(day(c.get("decided")) if c.get("decided") else "–")}</td><td>{page_link or "–"}</td></tr>')
+    if not rows:
+        return '<p class="muted small">Cases: none has been opened.</p>'
+    return ('<h3>Cases</h3><div class="table-wrap"><table><thead><tr><th scope="col">Case</th><th scope="col">Trigger</th>'
+            '<th scope="col">Status</th><th scope="col">Opened</th><th scope="col">Decided</th><th scope="col">Page</th>'
+            f'</tr></thead><tbody>{"".join(rows)}</tbody></table></div>')
+
+
+def _case_file_section(C, cases):
+    """The pre-registered Level-3 case-file format, from alarm.json "caseFile" (or the owner's fallback)."""
+    C = C if isinstance(C, dict) and C.get("sections") else CASE_FILE_FALLBACK
+    secs = "".join(f'<li><strong>{e(s.get("title"))}.</strong> {e(s.get("requires"))}</li>'
+                   for s in C.get("sections") or [] if isinstance(s, dict))
+    out = f'\n  <section class="prose" id="case-file"><h2>{e(C.get("name") or "Alarm case-file standard")}</h2>'
+    if C.get("note"):
+        out += f'<p>{e(C["note"])}</p>'
+    if C.get("verdict"):
+        out += f'<p><strong>The verdict.</strong> {e(C["verdict"])}</p>'
+    if secs:
+        out += f'<p>Then, in this order:</p><ol>{secs}</ol>'
+    if C.get("correction"):
+        out += f'<p><strong>Public-correction commitment.</strong> {e(C["correction"])}</p>'
+    if C.get("appendix"):
+        out += f'<p><strong>Evidence appendix.</strong> {e(C["appendix"])}</p>'
+    # C["register"] describes the data format for maintainers; readers get the plain version.
+    out += ('<p class="small muted">Every case, whether open (under investigation), passed or failed, is listed here with its '
+            'status and dates, and a met Level-3 trigger counts only once its case has passed.</p>')
+    return out + _cases_register(cases) + "</section>"
+
+
+def load_required(rel, ok, problem):
+    """A data file a static page is built from. Stops the build, before any page is written, when the
+    file can't be read or ok(data) is false, so a bad file never leaves a blank page."""
     try:
-        A = json.loads((ROOT / "data/alarm.json").read_text())
+        data = json.loads((ROOT / rel).read_text())
     except (OSError, ValueError) as err:
-        sys.exit(f"build_pages: can't read data/alarm.json ({err}); no pages were written")
-    if not isinstance(A, dict):
-        sys.exit("build_pages: data/alarm.json is not an object; no pages were written")
-    return A
+        sys.exit(f"build_pages: can't read {rel} ({err}); no pages were written")
+    if not ok(data):
+        sys.exit(f"build_pages: {rel} {problem}; no pages were written")
+    return data
+
+
+def load_alarm():
+    return load_required("data/alarm.json", lambda A: isinstance(A, dict), "is not an object")
 
 
 def alarm_body():
@@ -795,6 +956,8 @@ def alarm_body():
     as_of = A.get("asOf") or A.get("updated") or latest_run_date()
     version = (f'Criteria v{e(A.get("version") or "?")}, first published {e(day(A.get("published")))}; '
                f'trigger statuses as of {e(day(as_of))}.')
+    proof_link = ' <a href="#proof">The Level-3 proof standard</a>.' if isinstance(A.get("proofStandard"), dict) else ""
+    proof_name = '<a href="#proof">Level-3 proof standard</a>' if proof_link else "Level-3 proof standard"
     return f"""
   <header class="prose">
     <h1>The fire alarm</h1>
@@ -803,11 +966,12 @@ def alarm_body():
   </header>
   <div id="now">{_alarm_now(cur, levels)}</div>
   <section class="prose"><h2>The {n_word}levels</h2>{_levels_table(levels)}
-    <p class="small muted">Evidence standard: {e(A.get("evidenceStandard") or "–")}</p></section>
+    <p class="small muted">Evidence standard: {e(A.get("evidenceStandard") or "–")}{proof_link}</p></section>
   <section><h2>The triggers, and where each stands</h2>
     <p class="muted small">● Met · ◐ Met, but borderline · ○ Not met · ◌ Can't be observed yet with current public measurements. Evidence links are labelled by source type where the source makes it clear.</p>
     {groups}
-  </section>
+    <p class="muted small">A met Level-3 trigger isn't enough on its own: Level 3 is set only when a case passes under the {proof_name}, published in the <a href="#case-file">case-file format</a> below.</p>
+  </section>{_proof_section(A.get("proofStandard"))}{_case_file_section(A.get("caseFile"), A.get("cases"))}
   <section class="prose" id="rules"><h2>Rules that keep the alarm honest</h2><ol>{rules}</ol></section>
   <section><h2>Alarm history</h2><p class="muted">Every level change, the evidence behind it, and a review after 90 days: did it hold up, or was it a false alarm?</p>{_history_table(A.get("history"), levels)}</section>
   <section class="prose"><h2 id="changelog">Changes to these criteria</h2><ul class="plain">{_criteria_log(A.get("changelog"))}</ul></section>
@@ -828,6 +992,137 @@ try {
   if(box.firstChild && !box.querySelector(".alarm-unknown")) document.getElementById("now").replaceChildren(...box.childNodes);
 } catch(err){ console.error("Fire alarm indicator:", err); }
 """,
+)
+
+# ---------- Escape watch (static, from data/escape.json) ----------
+ESC_STATUS = {   # status colors are reserved for tripwires, the alarm and these indicators; always icon + word
+    "quiet": ("○", "Quiet", "good"),
+    "watching": ("◐", "Watching", "warn"),
+    "tripped": ("●", "Tripped", "crit"),
+}
+RATING_TAG = {"verified fact": "fact", "credible report": "report", "expert opinion": "opinion", "speculation": "spec"}
+NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine",
+             10: "ten", 11: "eleven", 12: "twelve"}
+
+
+def load_escape():
+    return load_required("data/escape.json", lambda E: isinstance(E, dict) and isinstance(E.get("indicators"), list),
+                         "has no indicators list")
+
+
+def escape_indicators(E=None):
+    E = E if E is not None else load_escape()
+    return [i for i in E.get("indicators") or [] if isinstance(i, dict) and i.get("name")]
+
+
+def _esc_status(s):
+    """(icon, word, css color) for an indicator status; unknown statuses show as such, in muted."""
+    icon, word, tok = ESC_STATUS.get(str(s or "").lower(), ("?", str(s or "Unknown").capitalize(), "muted"))
+    return icon, word, f"var(--{tok})"
+
+
+def _esc_alarm_links(triggers):
+    ids = triggers if isinstance(triggers, list) else [triggers] if triggers else []
+    return ", ".join(f'<a href="alarm.html#{_anchor(t)}">{e(t)}</a>' if _anchor(t) else e(t) for t in ids)
+
+
+def _esc_tripping(i):
+    """The collapsible 'what tripping it would look like': the signature, the trip rule and the alarm link."""
+    look = f'<p style="white-space:pre-line">{e(i["whatItWouldLookLike"])}</p>' if i.get("whatItWouldLookLike") else ""
+    rule = f'<p style="white-space:pre-line"><strong>Trip rule:</strong> {e(i["tripRule"])}</p>' if i.get("tripRule") else ""
+    links = _esc_alarm_links(i.get("alarmTriggers"))
+    alarm = ""
+    if links or i.get("alarmNote"):
+        note = f' {e(i["alarmNote"])}' if i.get("alarmNote") else ""
+        alarm = f'<p class="muted small">Alarm link: {links or "none"}.{note} See <a href="alarm.html">the fire alarm</a>.</p>'
+    if not (look or rule or alarm):
+        return ""
+    return f'\n    <details><summary>What tripping it would look like</summary><div class="body">{look}{rule}{alarm}</div></details>'
+
+
+def _esc_evidence_item(x):
+    rating = str(x.get("rating") or "").strip()
+    cls = RATING_TAG.get(rating.lower())
+    tag = f' <span class="{"tag " + cls if cls else "tag"}">{e(rating)}</span>' if rating else ""
+    src = a_link(x.get("url"), "source")
+    return f'<li><span class="rdate">{e(day(x.get("date")))}</span> {e(x.get("text"))}{tag}{" " + src if src else ""}</li>'
+
+
+def _esc_evidence(i):
+    ev = sorted((x for x in i.get("evidence") or [] if isinstance(x, dict) and x.get("text")),
+                key=lambda x: str(x.get("date") or ""), reverse=True)
+    if not ev:
+        return '\n    <p class="muted small">No dated evidence logged yet.</p>'
+    items = "".join(_esc_evidence_item(x) for x in ev)
+    return f'\n    <details><summary>Evidence ({len(ev)})</summary><div class="body"><ul class="plain">{items}</ul></div></details>'
+
+
+def _esc_sources(i):
+    feeds = [f for f in i.get("feeds") or [] if isinstance(f, dict) and f.get("name")]
+    if not feeds:
+        return ""
+    items = "".join(
+        f'<li>{a_link(f.get("url"), f.get("name")) or e(f.get("name"))}'
+        + (f' <span class="muted small">({e(f["cadence"])})</span>' if f.get("cadence") else "") + "</li>" for f in feeds)
+    return f'\n    <details><summary>Sources we monitor ({len(feeds)})</summary><div class="body"><ul class="plain">{items}</ul></div></details>'
+
+
+def _esc_indicator(i):
+    """One indicator: status icon + word, the reason, then the collapsibles."""
+    icon, word, col = _esc_status(i.get("status"))
+    key = _anchor(i.get("key"))
+    id_attr = f' id="{key}"' if key else ""
+    return (f'\n  <section{id_attr} class="prose">\n'
+            f'    <h2><span style="color:{col}" aria-hidden="true">{icon}</span> {e(i.get("name"))} '
+            f'<span class="chip" style="border-color:{col}">{e(word)}</span></h2>\n'
+            f'    <p>{e(i.get("statusReason") or "")}</p>{_esc_tripping(i)}{_esc_evidence(i)}{_esc_sources(i)}\n  </section>')
+
+
+def escape_body():
+    E = load_escape()
+    inds = escape_indicators(E)
+    legend = E.get("statusLegend") if isinstance(E.get("statusLegend"), dict) else {}
+    key_items = []
+    for s in ("quiet", "watching", "tripped"):
+        icon, word, col = _esc_status(s)
+        meaning = legend.get(s, {}).get("meaning") if isinstance(legend.get(s), dict) else ""
+        meaning = re.sub(r"\s*\(see alarmNote\)", "", str(meaning or ""))   # a field name, not reader copy
+        key_items.append(f'<li><span style="color:{col}" aria-hidden="true">{icon}</span> <strong>{word}</strong>'
+                         + (f': {e(meaning)}' if meaning else "") + "</li>")
+    toc = "".join(
+        f'<li><span style="color:{_esc_status(i.get("status"))[2]}" aria-hidden="true">{_esc_status(i.get("status"))[0]}</span> '
+        + (f'<a href="#{_anchor(i.get("key"))}">{e(i.get("name"))}</a>' if _anchor(i.get("key")) else e(i.get("name")))
+        + f' <span class="muted small">· {e(_esc_status(i.get("status"))[1])}</span></li>' for i in inds)
+    updated = f"Updated {e(day(E.get('updated')))}. " if E.get("updated") else ""
+    overall = f'\n    <div class="callout"><strong>Today:</strong> {e(E["overall"])}</div>' if E.get("overall") else ""
+    limits = (f'\n  <section class="prose"><h2 id="limits">What this can\'t see</h2><p>{e(E["limits"])}</p></section>'
+              if E.get("limits") else "")
+    return f"""
+  <header class="prose">
+    <h1>Escape watch</h1>
+    <p class="lede">{e(E.get("intro") or "")}</p>{overall}
+    <p class="muted small">Detection signatures only. {updated}Each indicator reads quiet, watching or tripped under a published trip rule, and names the <a href="alarm.html">fire-alarm</a> triggers a trip would feed.</p>
+  </header>
+  <section class="prose" id="indicators"><h2>The {NUM_WORDS.get(len(inds), str(len(inds)))} indicators</h2>
+    <ul class="plain">{toc}</ul>
+    <details><summary>What the statuses mean</summary><div class="body"><ul class="plain">{"".join(key_items)}</ul></div></details>
+  </section>{"".join(_esc_indicator(i) for i in inds)}{limits}
+"""
+
+
+def escape_description():
+    try:
+        n = len(escape_indicators())
+    except SystemExit:
+        n = 0
+    count = f"{NUM_WORDS.get(n, n)} sourced indicators" if n else "sourced indicators"
+    return f"Signs that an AI system is operating on its own, outside anyone's control: {count} at the resource chokepoints."
+
+
+PAGES["escape.html"] = dict(
+    title="Escape watch · Hidden AGI watch",
+    description=escape_description,
+    body=escape_body,
 )
 
 # ---------- Follow the money ----------
@@ -962,8 +1257,9 @@ def build():
     for path, p in PAGES.items():
         root = "../" * path.count("/") or "./"
         body = p["body"]() if callable(p["body"]) else p["body"]
+        desc = p["description"]() if callable(p["description"]) else p["description"]
         scripts = module(root, p["scripts_code"]) if p.get("scripts_code") else p.get("scripts", "")
-        rendered.append((path, page(path=path, title=p["title"], description=p["description"], body=body,
+        rendered.append((path, page(path=path, title=p["title"], description=desc, body=body,
                                     active=path if path != "weekly/index.html" else "weekly/", scripts=scripts)))
     for path, html in rendered:
         out = ROOT / path

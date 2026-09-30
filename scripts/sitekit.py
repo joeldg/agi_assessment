@@ -15,6 +15,7 @@ LATEST_CARD_ALT = ("Share card for the latest daily reading: the Hidden AGI Inde
                    "the A–D probabilities and the fire-alarm level")
 NAV = [
     ("", "Hidden AGI watch", "brand"),
+    ("escape.html", "Escape watch", "nav-key"),   # hypothesis C's chokepoint indicators, kept prominent
     ("start-here.html", "Start here", ""),
     ("alarm.html", "Fire alarm", ""),
     ("weekly/", "Weekly", ""),

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About · Hidden AGI watch</title>
-<meta name="description" content="What Hidden AGI watch is, how it&#x27;s made, who runs it, how to reach us, how corrections work, and how to cite it.">
+<meta name="description" content="What Hidden AGI watch is, how it&#x27;s made, who runs it, how to reach us, how corrections work, the license, and how to cite it.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hidden AGI watch">
 <meta property="og:title" content="About · Hidden AGI watch">
-<meta property="og:description" content="What Hidden AGI watch is, how it&#x27;s made, who runs it, how to reach us, how corrections work, and how to cite it.">
+<meta property="og:description" content="What Hidden AGI watch is, how it&#x27;s made, who runs it, how to reach us, how corrections work, the license, and how to cite it.">
 <meta property="og:url" content="https://joeldg.github.io/agi_assessment/about.html">
 <meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 <meta property="og:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About · Hidden AGI watch">
-<meta name="twitter:description" content="What Hidden AGI watch is, how it&#x27;s made, who runs it, how to reach us, how corrections work, and how to cite it.">
+<meta name="twitter:description" content="What Hidden AGI watch is, how it&#x27;s made, who runs it, how to reach us, how corrections work, the license, and how to cite it.">
 <meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <meta name="twitter:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,7 @@
 <main>
   <nav class="site" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
+    <a class="nav-key" href="./escape.html">Escape watch</a>
     <a href="./start-here.html">Start here</a>
     <a href="./alarm.html">Fire alarm</a>
     <a href="./weekly/">Weekly</a>
@@ -50,26 +51,34 @@
   </header>
   <section class="prose">
     <h2 id="what">What this is</h2>
-    <p>Hidden AGI watch tracks one question: could advanced AI already exist, or already be acting, without the public knowing? Each day it gives explicit probabilities for four hypotheses, a handful of gauges that track the underlying evidence, and a fire-alarm level set by published criteria. The aim is to notice early if the evidence starts to point that way, without crying wolf when it doesn't. An absence of evidence is not treated as proof of secrecy.</p>
+    <p>Hidden AGI watch tracks one question: could advanced AI already exist, or already be acting, without the public knowing? Each day it gives explicit probabilities for four hypotheses, a handful of gauges that track the underlying evidence, an <a href="escape.html">Escape watch</a> on the resource chokepoints, and a fire-alarm level set by published criteria. The aim is to notice early if the evidence starts to point that way, without crying wolf when it doesn't. An absence of evidence is not treated as proof of secrecy.</p>
 
     <h2 id="how">How it's made</h2>
-    <p>A custom AI agent built for this project researches, writes and publishes each daily report automatically, starting around 09:00 Pacific, and the email goes out at 10am Pacific. No one reviews a daily report before it's published. The Friday wrap-up is made the same way and emailed at 3pm Pacific.</p>
-    <p>The site's owner sets the hypothesis definitions and the fire-alarm thresholds, and approves every alarm alert: an alert is always prepared as a draft, and a person decides whether it's sent. Changes to the alarm criteria are dated in the <a href="alarm.html#changelog">alarm changelog</a>, and changes to the method on <a href="start-here.html#changes">Start here</a>.</p>
+    <p>A custom AI agent built for this project researches, writes and publishes each daily reading automatically. The research starts each morning (moving to about 07:00 Pacific), and the email goes out at 10am Pacific, or as soon as it is ready if later. No one reviews a daily report before it's published. The Friday wrap-up is made the same way and emailed at 3pm Pacific.</p>
+    <p>The daily and weekly issues are sent automatically. Breaking fire-alarm alerts are not: each one is prepared as a draft, and a person approves it before it's sent. The site's owner also sets the hypothesis definitions and the fire-alarm thresholds. Changes to the alarm criteria are dated in the <a href="alarm.html#changelog">alarm changelog</a>, and changes to the method on <a href="start-here.html#changes">Start here</a>.</p>
+    <p>Before launch, we had 195 AI agents run 3,793 checks on this site&#x27;s own facts, code and reasoning. It found 135 problems, and we fixed them.</p>
     <p>The full method is on <a href="start-here.html#method">Start here</a> and the alarm criteria are on <a href="alarm.html">the fire alarm page</a>. Every daily report shows its reasoning and links its sources, and every chart follows the <a href="style.html">chart style guide</a>.</p>
 
     <h2 id="who">Who runs it</h2>
-    <p>An independent project; source at <a href="https://github.com/joeldg/agi_assessment">github.com/joeldg/agi_assessment</a>. The code, the data files and the history of every page are public there.</p>
+    <p>Hidden AGI watch is an independent project run by <a href="https://github.com/joeldg">joeldg</a> on GitHub. The source is at <a href="https://github.com/joeldg/agi_assessment">github.com/joeldg/agi_assessment</a>: the code, the data files and the history of every page are public there.</p>
 
     <h2 id="contact">Contact</h2>
-    <p>To report an error, question a number or suggest a source, open an issue on <a href="https://github.com/joeldg/agi_assessment/issues">GitHub Issues</a>.</p>
+    <p>To report an error, question a number or suggest a source, open an issue on <a href="https://github.com/joeldg/agi_assessment/issues">GitHub Issues</a>. That's the only contact channel, so every report and its answer stay public.</p>
 
     <h2 id="corrections">Corrections</h2>
     <p>Past readings are frozen once emailed; corrections are dated, shown on the affected page and carried into the next email.</p>
     <div id="corrections-list"></div>
 
+    <h2 id="license">License</h2>
+    <ul class="plain">
+      <li><strong>Code:</strong> the scripts, the chart kit, the stylesheet and the page templates are under the <a href="https://github.com/joeldg/agi_assessment/blob/main/LICENSE">MIT License</a>.</li>
+      <li><strong>The site's own text and data:</strong> the reports, readings, rulings, alarm criteria, Escape watch indicators and our own data files are under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You can reuse and adapt them, commercially too, with credit and a link to the license.</li>
+      <li><strong>Not covered:</strong> third-party material we quote, cite or plot (news excerpts, filings, METR measurements, outside forecasts, market prices and the like) stays under its owners' terms, and the brand assets (the name and wordmark, the avatar and logo, the favicon and the default share image) are all rights reserved. The details are in <a href="https://github.com/joeldg/agi_assessment/blob/main/LICENSE-content.md">LICENSE-content.md</a>.</li>
+    </ul>
+
     <h2 id="cite">How to cite</h2>
-    <p>Hidden AGI watch (2026), &lt;page title&gt;, &lt;url&gt;, accessed &lt;date&gt;.</p>
-    <p class="muted">For example: Hidden AGI watch (2026), The fire alarm, <span style="overflow-wrap:anywhere">https://joeldg.github.io/agi_assessment/alarm.html</span>, accessed <span id="cite-date">&lt;date&gt;</span>. Daily reports keep their address (reports/YYYY-MM-DD.html), and the data behind every chart is in the repository's data folder, with its full history.</p>
+    <p>Hidden AGI watch (2026), &lt;page title&gt;, &lt;url&gt;, accessed &lt;date&gt;. Licensed under CC BY 4.0.</p>
+    <p class="muted">For example: Hidden AGI watch (2026), The fire alarm, <span style="overflow-wrap:anywhere">https://joeldg.github.io/agi_assessment/alarm.html</span>, accessed <span id="cite-date">&lt;date&gt;</span>. Licensed under CC BY 4.0. Daily reports keep their address (reports/YYYY-MM-DD.html), and the data behind every chart is in the repository's data folder, with its full history. A machine-readable citation is in <a href="https://github.com/joeldg/agi_assessment/blob/main/CITATION.cff">CITATION.cff</a>.</p>
   </section>
 
 <div class="subscribe">
