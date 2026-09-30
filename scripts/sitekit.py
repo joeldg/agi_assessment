@@ -16,6 +16,7 @@ NAV = [
     ("agi-claims.html", "AGI claims", ""),
     ("calendar.html", "Calendar", ""),
     ("steelman.html", "Steelman", ""),
+    ("trends.html", "Trends", ""),
 ]
 
 

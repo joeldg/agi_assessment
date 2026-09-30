@@ -191,3 +191,10 @@ nav.site .brand{font-family:var(--serif);font-weight:600;color:var(--ink)}
 .timeline-list li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule)}
 .timeline-list .when{font-weight:600;font-variant-numeric:tabular-nums}
 .chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;border:1px solid var(--rule);border-radius:3px;padding:0 5px;color:var(--muted);margin-left:6px}
+.lg-ring{width:10px;height:10px;border-radius:50%;border:2px solid var(--ink);display:inline-block;box-sizing:border-box}
+.lg-band{width:16px;height:10px;border-radius:2px;background:var(--ink);opacity:.15;display:inline-block}
+.lg-dash{width:16px;height:0;border-top:2px dashed var(--accent);display:inline-block}
+.forecast-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.forecast-grid .mini{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.forecast-grid .mini h3{font-size:15px;margin:0 0 4px;display:flex;gap:6px;align-items:center}
+.forecast-grid .mini p{font-size:13px;margin:4px 0 0}

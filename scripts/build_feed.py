@@ -170,7 +170,7 @@ def write_sitemap(runs):
     last_week = max((w["date"] for w in wraps), default=latest)
     urls = [(SITE, latest), (SITE + "weekly/", last_week)]
     urls += [(SITE + pg, last_week) for pg in ("start-here.html", "scorecard.html", "disclosure-lag.html",
-                                               "agi-claims.html", "calendar.html", "steelman.html", "style.html")]
+                                               "agi-claims.html", "calendar.html", "steelman.html", "trends.html", "style.html")]
     urls += [(SITE + f"weekly/{w['date']}.html", w["date"]) for w in sorted(wraps, key=lambda w: w["date"], reverse=True)]
     urls += sorted(((SITE + path, d) for path, d in dates.items()), key=lambda u: u[1], reverse=True)
     entries = "\n".join(

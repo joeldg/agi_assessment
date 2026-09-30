@@ -26,7 +26,8 @@ SECTIONS = [("scorecard", "Forecast scorecard", "scorecard.html"),
             ("lag", "Disclosure lag", "disclosure-lag.html"),
             ("claims", "AGI claims ledger", "agi-claims.html"),
             ("calendar", "Coming up", "calendar.html"),
-            ("steelman", "Weekly steelman", "steelman.html")]
+            ("steelman", "Weekly steelman", "steelman.html"),
+            ("trends", "Trend watch", "trends.html")]
 
 
 def pretty(d):
@@ -80,7 +81,8 @@ def page_body(w):
     for key, title, href in SECTIONS:
         chart = {"scorecard": '<div id="fc"></div>', "lag": '<div class="chart-wrap"><div id="lag"></div></div>',
                  "claims": '<div class="chart-wrap"><div id="claims"></div></div>',
-                 "calendar": '<ul class="timeline-list" id="cal"></ul>', "steelman": ""}[key]
+                 "calendar": '<ul class="timeline-list" id="cal"></ul>', "steelman": "",
+                 "trends": '<div class="chart-wrap"><div id="metr"></div></div>'}[key]
         sec_html += (f'\n  <section id="{key}"><h2>{title}</h2><p>{escape(notes.get(key, ""))}</p>{chart}'
                      f'<p class="small"><a href="../{href}">Full section →</a></p></section>')
     return f"""
@@ -100,7 +102,11 @@ def page_script(w):
     return """<script type="module">
 import * as K from "../assets/charts.js";
 const j = p => fetch(p,{cache:"no-cache"}).then(r=>r.json());
-const [runs, fc, inc, cl, cal] = await Promise.all(["../data/runs.json","../data/forecasts.json","../data/incidents.json","../data/agi_claims.json","../data/calendar.json"].map(j));
+const [runs, fc, inc, cl, cal, tr] = await Promise.all(["../data/runs.json","../data/forecasts.json","../data/incidents.json","../data/agi_claims.json","../data/calendar.json","../data/trends.json"].map(j));
+const M = tr.metr, fr = M.models.filter(m=>m.sota && m.date>="2023-01-01");
+K.trendChart(document.getElementById("metr"), {title:"METR time horizon", color:"--accent", history: fr.map(m=>({date:m.date, v:m.p50, name:m.id+" · 50%"})), projection: M.p50.projection,
+  secondary:{label:"80% horizon", color:"--ink", history: fr.filter(m=>m.p80).map(m=>({date:m.date, v:m.p80, name:m.id+" · 80%"})), projection: M.p80.projection},
+  thresholds:[{v:M.thresholds.workWeek, label:"1 work-week"},{v:M.thresholds.workMonth, label:"1 work-month"}]});
 const days = [...new Map(runs.filter(r=>r.date<=%(date)s).map(r=>[r.date,r])).values()];
 K.lineChart(document.getElementById("trend"), {title:"Probability true now", series:[
   {label:"Hidden AGI Index", short:"Index", color:"--ink", values:days.map(r=>({x:r.date,y:r.index}))},
@@ -111,7 +117,7 @@ K.dotTimeline(document.getElementById("claims"), cl.claims, {title:"Public AGI c
 const h = K.util.h, list = document.getElementById("cal"), soon = new Date(%(date)s+"T12:00:00"); soon.setDate(soon.getDate()+45);
 cal.events.filter(e=>e.date>=%(date)s && new Date(e.date+"T12:00:00")<=soon).forEach(e=>{ const li=h("li"); li.append(h("div",{class:"when"},K.util.fmtDate(e.date,{day:"numeric",month:"short"})), h("div",{},e.title)); list.append(li); });
 if(!list.children.length) list.append(h("li",{},"Nothing dated in the next six weeks."));
-</script>""" % {"date": json.dumps(w["date"])}
+</script>""".replace("%(date)s", json.dumps(w["date"]))
 
 
 def weekly_email_html(w):

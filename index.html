@@ -37,6 +37,7 @@
     <a href="agi-claims.html">AGI claims</a>
     <a href="calendar.html">Calendar</a>
     <a href="steelman.html">Steelman</a>
+    <a href="trends.html">Trends</a>
   </nav>
   <header>
     <h1>Hidden AGI watch</h1>
@@ -79,15 +80,19 @@
   </section>
 
   <section>
-    <div class="chart-head">
-      <h2>Assessments over time</h2>
-      <div class="seg" role="group" aria-label="Time horizon">
-        <button data-h="now" aria-pressed="true">True now</button>
-        <button data-h="y2030" aria-pressed="false">By 2030</button>
-        <button data-h="y2035" aria-pressed="false">By 2035</button>
-      </div>
-    </div>
+    <h2>The readings over time</h2>
+    <p class="muted">The probability that each hypothesis is true <em>now</em>, one point per daily reading.</p>
     <div class="chart-wrap"><div id="chart"></div></div>
+  </section>
+
+  <section id="forecast">
+    <h2>Where it's heading: our forecast to 2035</h2>
+    <p class="muted">The line joins what we say today: the probability now, by the end of 2030 and by the end of 2035. It is our forecast, not an extrapolation of the daily line, because a calibrated estimate shouldn't have a predictable drift. The shaded band shows how confident we are. Hollow rings are outside forecasts, most of which use looser definitions.</p>
+    <h3>Strict AGI exists, public or hidden</h3>
+    <div class="chart-wrap"><div id="fc-agi"></div></div>
+    <h3>The four hypotheses</h3>
+    <div class="forecast-grid" id="fc-grid"></div>
+    <p class="small"><a href="trends.html">What the measured trends say: METR task length, AI share of AI research →</a></p>
   </section>
 
   <section class="cols">
@@ -122,6 +127,7 @@
       <a class="card" href="agi-claims.html"><strong>AGI claims ledger</strong><span>Who has said AGI is here, and whether it meets any definition.</span></a>
       <a class="card" href="calendar.html"><strong>Coming up</strong><span>Dated events that could move the numbers.</span></a>
       <a class="card" href="steelman.html"><strong>Weekly steelman</strong><span>The best case for the side the numbers disfavour.</span></a>
+      <a class="card" href="trends.html"><strong>Trend watch</strong><span>Measured trends projected forward, with when they would cross key thresholds.</span></a>
       <a class="card" href="start-here.html"><strong>Start here</strong><span>The four hypotheses, the index and the method, explained.</span></a>
     </div>
   </section>

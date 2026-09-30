@@ -43,6 +43,7 @@ PAGES["start-here.html"] = dict(
       <li><strong>Daily:</strong> an automated analyst (Claude) searches the news, research, lab system cards and independent evaluations such as METR, Epoch AI and the AI Security Institutes. It then reassesses each hypothesis now, by 2030 and by 2035. Each daily report shows its full reasoning, including base rates, the steelman of both sides, and what would change its mind.</li>
       <li><strong>Evidence ratings:</strong> every claim is tagged <span class="tag fact">verified fact</span> <span class="tag report">credible report</span> <span class="tag opinion">expert opinion</span> or <span class="tag spec">speculation</span>.</li>
       <li><strong>Tripwires:</strong> the specific, observable signals that would move the numbers most. Each is marked quiet, watching or tripped.</li>
+      <li><strong>Forecast chart:</strong> the dashboard draws our stated numbers (now, by 2030, by 2035) with a band for our confidence and outside forecasts for comparison. We don't extrapolate our own daily line: if we expected our estimate to rise, we should already have raised it. <a href="trends.html">Trend watch</a> projects <em>measured</em> trends instead, such as how long a task AI can finish on its own.</li>
       <li><strong>What moved the needle:</strong> each day names the one development that changed an estimate most, or says plainly that it was a quiet day.</li>
       <li><strong>Weekly (Fridays, 3pm Pacific):</strong> a wrap-up with the week's key numbers and graphs, plus the <a href="scorecard.html">forecast scorecard</a>, <a href="disclosure-lag.html">disclosure lag</a>, <a href="agi-claims.html">AGI claims</a>, <a href="calendar.html">calendar</a> and <a href="steelman.html">steelman</a>.</li>
     </ul>
@@ -191,6 +192,72 @@ else { const c=h("div",{class:"cards"}); [...d.wrapups].sort((a,b)=>b.date.local
 """,
 )
 
+# ---------- Trend watch ----------
+PAGES["trends.html"] = dict(
+    title="Trend watch · Hidden AGI watch",
+    description="Measured AI trends projected forward: METR task length, AI's share of AI research, and when they would cross key thresholds.",
+    body="""
+  <header class="prose">
+    <h1>Trend watch</h1>
+    <p class="lede">Our probabilities are judgments. These are measurements. Here we extend real trends forward to see when they would cross the thresholds that matter for the hypotheses, if they hold. A projection is not a prediction: trends bend and break, and the bands show how quickly the uncertainty grows.</p>
+  </header>
+  <div class="tiles" id="tiles"></div>
+  <section>
+    <h2>How long a task AI can finish on its own</h2>
+    <p class="muted">METR's time horizon: the length of task, measured in skilled-human time, that frontier models complete with 50% or 80% success. Log scale, so a straight line means steady doubling. Dots are measured frontier models. The dashed line and band are the projection.</p>
+    <div class="chart-wrap"><div id="metr"></div><div class="legend" id="metr-legend"></div></div>
+    <div class="table-wrap"><table id="cross"></table></div>
+    <p class="muted small" id="metr-method"></p>
+  </section>
+  <section class="prose">
+    <h2>What this means for our numbers</h2>
+    <p>Our strict AGI bar is roughly the <strong>80% horizon reaching a month of work</strong>, with that reliability holding on real, messy jobs rather than benchmark tasks. If the trend holds, that crossing lands around <span id="agi-cross">–</span>. We put strict AGI at 45% by the end of 2030, which is more cautious than the straight line, for three reasons:</p>
+    <ul class="plain">
+      <li>Benchmark tasks are cleaner than real work.</li>
+      <li>METR's task suite saturates above about 16 hours, so the recent top end is measured least well.</li>
+      <li>Trends like this can bend with compute, energy, data or safety pauses. OpenAI has paused training twice in three months.</li>
+    </ul>
+    <p>If the dots keep landing on or above the dashed line, our 2030 number should rise. If they fall below the band, it should fall.</p>
+  </section>
+  <section>
+    <h2>How much AI research AI is already doing</h2>
+    <p class="muted" id="rd-note"></p>
+    <div class="chart-wrap"><div id="rd"></div></div>
+  </section>
+  <section class="prose"><h2>Other trends we watch</h2>
+    <ul class="plain">
+      <li><strong>Frontier training compute</strong> grows about 5x a year, doubling every ~5 months (<a href="https://epoch.ai/trends">Epoch AI</a>). A large run with no matching public release would be a tripwire for A.</li>
+      <li><strong>Disclosure lag</strong>: see <a href="disclosure-lag.html">how long incidents stay hidden</a>. There are too few incidents yet for a trend line.</li>
+    </ul>
+  </section>
+""",
+    scripts_code="""
+const t = await j("data/trends.json"), M = t.metr, h = K.util.h;
+const nm = id => id.replace(/_inspect$/,"").replace(/_/g," ").replace(/\\b(gpt|o\\d)\\b/gi,s=>s.toUpperCase()).replace(/\\bclaude\\b/i,"Claude").replace(/\\bgemini\\b/i,"Gemini");
+const fr = M.models.filter(m=>m.sota && m.date>="2023-01-01");
+const mo = d => d ? K.util.fmtDate(d,{month:"short",year:"numeric"}) : "–";
+K.trendChart(document.getElementById("metr"), {title:"METR time horizon", color:"--accent",
+  history: fr.map(m=>({date:m.date, v:m.p50, lo:m.p50lo, hi:m.p50hi, name:nm(m.id)+" · 50%"})),
+  projection: M.p50.projection,
+  secondary: {label:"80% horizon", color:"--ink", history: fr.filter(m=>m.p80).map(m=>({date:m.date, v:m.p80, name:nm(m.id)+" · 80%"})), projection: M.p80.projection},
+  thresholds: [{v:M.thresholds.workWeek, label:"1 work-week (40 hours)"},{v:M.thresholds.workMonth, label:"1 work-month (167 hours)"}]});
+const lg = document.getElementById("metr-legend");
+[["--accent","50% success (measured)"],["--ink","80% success (measured)"]].forEach(([c,l])=>{ const it=h("span",{class:"lg-item"}); const sw=h("span",{class:"swatch"}); sw.style.background=K.util.css(c); it.append(sw, document.createTextNode(l)); lg.append(it); });
+{ const it=h("span",{class:"lg-item"}); it.append(h("span",{class:"lg-dash"}), document.createTextNode("Projection, with 95% band")); lg.append(it); }
+const tb = document.getElementById("cross");
+const hr=h("tr"); ["If the trend holds…","Central","Range (fast – slow)"].forEach(c=>hr.append(h("th",{},c))); tb.append(hr);
+[["50% horizon reaches a work-week","p50","workWeek"],["50% horizon reaches a work-month","p50","workMonth"],["80% horizon reaches a work-week","p80","workWeek"],["80% horizon reaches a work-month (≈ our strict AGI bar)","p80","workMonth"]].forEach(([l,m,k])=>{ const c=M[m].crossings[k]; const tr=h("tr"); tr.append(h("td",{},l), h("td",{class:"num"},mo(c.mid)), h("td",{class:"num"},mo(c.fast)+" – "+mo(c.slow))); tb.append(tr); });
+document.getElementById("agi-cross").textContent = mo(M.p80.crossings.workMonth.mid) + " (range " + mo(M.p80.crossings.workMonth.fast) + " – " + mo(M.p80.crossings.workMonth.slow) + ")";
+document.getElementById("metr-method").textContent = M.method + " Our fit gives a 50%-horizon doubling time of " + M.p50.doublingDays + " days; METR's own fit since 2023 is " + (M.metrDoublingDays?.from_2023_on?.point_estimate?.toFixed(0) ?? "–") + " days. Data refreshed " + t.updated + " from METR.";
+const last = fr[fr.length-1];
+const tiles = document.getElementById("tiles");
+[["Doubling time (50%)", M.p50.doublingDays.toFixed(0)+" days"],["Latest frontier, 50%", K.fmtDur(last.p50)],["80% horizon hits a work-month", mo(M.p80.crossings.workMonth.mid)],["Our strict AGI by 2030", "45%"]].forEach(([l,v])=>{ const x=h("div",{class:"tile"}); x.append(h("div",{class:"label"},l), h("div",{class:"value"},v)); tiles.append(x); });
+const R = t.manual.rdShare;
+document.getElementById("rd-note").textContent = R.label + ". " + R.note;
+K.lineChart(document.getElementById("rd"), {title:R.label, yMax:100, endLabels:true, series:[{label:R.label, short:"AI-led", color:"--accent", values:R.points.map(p=>({x:p.date,y:p.v}))}]});
+""",
+)
+
 # ---------- Chart style guide ----------
 PAGES["style.html"] = dict(
     title="Chart style guide · Hidden AGI watch",
@@ -222,6 +289,8 @@ PAGES["style.html"] = dict(
       <li><strong>Text stays ink.</strong> Labels and values use the text colors. The colored mark beside them carries identity.</li>
       <li><strong>Emphasis over rainbow.</strong> When one thing matters (disclosed by outsiders, our forecast), it gets the accent and everything else goes gray.</li>
       <li><strong>Every chart is interactive and readable without the picture.</strong> Hover or tap shows a tooltip, and every chart has a "Show as table" view.</li>
+      <li><strong>Forecasts vs projections.</strong> Our forecast is a solid line through the three numbers we actually state (now, end-2030, end-2035), with a shaded confidence band. A projection of a measured trend is dashed, with a 95% band. We never extrapolate our own daily probability line: a calibrated estimate shouldn't drift in a predictable direction. Outside forecasts are hollow rings.</li>
+      <li><strong>Log scales for growth.</strong> Exponential trends go on a log axis labelled in human units (a workday, a work-week), so a straight line means steady doubling.</li>
       <li><strong>Type.</strong> Headings in Source Serif 4. Everything else, including big numbers, in Public Sans. Aligned columns use tabular figures.</li>
     </ul>
   </section>
@@ -230,6 +299,8 @@ PAGES["style.html"] = dict(
   <section><h2>Range bars: how long something lasted</h2><div class="chart-wrap"><div id="ex-lag"></div></div></section>
   <section><h2>Meters: a probability, with market odds as a hollow ring</h2><div id="ex-fc"></div></section>
   <section><h2>Status board: tripwires</h2><div id="ex-tw"></div></section>
+  <section><h2>Forecast: stated numbers, confidence band, outside forecasts</h2><div class="chart-wrap"><div id="ex-fcst"></div></div></section>
+  <section><h2>Projection: measured trend on a log scale</h2><div class="chart-wrap"><div id="ex-trend"></div></div></section>
 """,
     scripts_code="""
 K.dial(document.getElementById("ex-dial"), 4, {size:240});
@@ -238,7 +309,12 @@ const demo={A:[1.5,2,2,2.5,3],B:[1,1,1.5,1.5,2],C:[0.3,0.4,0.5,0.8,1],D:[0.2,0.3
 K.lineChart(document.getElementById("ex-line"),{title:"Example (illustrative data)",series:Object.entries(demo).map(([k,v])=>({label:K.SERIES[k].label+" (example)",short:k,color:K.SERIES[k].color,values:days.map((d,i)=>({x:d,y:v[i]}))}))});
 const inc = await j("data/incidents.json"); K.lagChart(document.getElementById("ex-lag"), inc.incidents.slice(0,4));
 const fc = await j("data/forecasts.json"); K.forecastBars(document.getElementById("ex-fc"), fc.forecasts.filter(f=>f.market!=null).concat(fc.forecasts.slice(0,1)));
-const runs = await j("data/runs.json"); K.tripwireBoard(document.getElementById("ex-tw"), (runs[runs.length-1].tripwires||[]).filter((w,i,a)=>a.findIndex(x=>x.status===w.status)===i));
+const ext = await j("data/external_forecasts.json"), tr = await j("data/trends.json");
+const runs = await j("data/runs.json"); const lastRun = runs[runs.length-1];
+if(lastRun.agi) K.forecastChart(document.getElementById("ex-fcst"), {title:"Strict AGI exists", today:lastRun.date, yMax:100, series:[{label:"Our forecast: strict AGI exists", color:"--ink", ...lastRun.agi}], markers:ext.forecasts});
+const fr = tr.metr.models.filter(m=>m.sota && m.date>="2023-01-01");
+K.trendChart(document.getElementById("ex-trend"), {title:"METR 50% horizon", history:fr.map(m=>({date:m.date,v:m.p50,name:m.id})), projection:tr.metr.p50.projection, thresholds:[{v:tr.metr.thresholds.workMonth,label:"1 work-month"}]});
+K.tripwireBoard(document.getElementById("ex-tw"), (runs[runs.length-1].tripwires||[]).filter((w,i,a)=>a.findIndex(x=>x.status===w.status)===i));
 """,
 )
 

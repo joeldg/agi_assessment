@@ -15,10 +15,12 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 | --- | --- |
 | `index.html`, `assets/app.js` | The daily dashboard: Hidden AGI Index dial, what moved the needle, tripwires, readings, trend chart, roundup, history. It reads `data/runs.json` in the browser. |
 | `assets/charts.js`, `assets/style.css` | The one chart kit and stylesheet for every page. `style.html` is the chart style guide: validated palette, rules and live examples. |
-| `data/runs.json` | One entry per daily run: `probs` (A, B, C, D, Dopen → now/y2030/y2035/conf), `index`, `indexNote`, `needle`, `tripwires`, summary, changes, `roundup`, timeline, signals, sources, report link. |
+| `data/runs.json` | One entry per daily run: `probs` (A, B, C, D, Dopen → now/y2030/y2035/conf), `agi` (strict AGI exists: now/y2030/y2035/conf), `index`, `indexNote`, `needle`, `tripwires`, summary, changes, `roundup`, timeline, signals, sources, report link. |
 | `reports/YYYY-MM-DD.html` | The full daily report: index, needle, probability table, tripwires, timeline, news roundup, Steps 1–6, bottom line. |
 | `cards/` | 1200×630 share cards (`YYYY-MM-DD.png`, `latest.png`, `weekly-YYYY-MM-DD.png`), used for link previews and at the top of emails. |
 | `start-here.html`, `scorecard.html`, `disclosure-lag.html`, `agi-claims.html`, `calendar.html`, `steelman.html` | Standing sections, rendered in the browser from `data/forecasts.json`, `data/incidents.json`, `data/agi_claims.json`, `data/calendar.json` and `data/steelman.json`. Updated weekly. |
+| `trends.html`, `data/trends.json`, `scripts/update_trends.py` | Trend watch: METR time horizons pulled from METR's published data, fitted and projected with a 95% band and threshold-crossing dates, plus hand-curated series (AI share of AI R&D). |
+| `data/external_forecasts.json` | Outside AGI forecasts (Metaculus, markets, AI Futures, lab leaders), plotted as rings on the dashboard forecast chart. |
 | `weekly/`, `data/weekly/` | Friday wrap-ups: `data/weekly/YYYY-MM-DD.json` (editorial plus computed key numbers) → `weekly/YYYY-MM-DD.html`. `data/weekly/index.json` lists them. |
 | `feed.xml`, `sitemap.xml` | RSS feed and sitemap. Generated; do not hand-edit. |
 | `scripts/build_feed.py` | Rebuilds `feed.xml` and `sitemap.xml`, and defines the daily email body. |
@@ -40,7 +42,7 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 
 ## Weekly wrap-up (Fridays: built about 1pm, emailed at 3pm Pacific)
 
-1. Update `data/forecasts.json` (resolve due forecasts; add new ones; never edit a made forecast), `data/incidents.json`, `data/agi_claims.json`, `data/calendar.json`, and add a new entry to `data/steelman.json`.
+1. Update `data/forecasts.json` (resolve due forecasts; add new ones; never edit a made forecast), `data/incidents.json`, `data/agi_claims.json`, `data/calendar.json`, `data/external_forecasts.json`; run `python3 scripts/update_trends.py`; add a new entry to `data/steelman.json`.
 2. Write `data/weekly/<today>.json` (headline, summary, moves, section notes).
 3. Run `python3 scripts/build_weekly.py <today>`, then `python3 scripts/build_feed.py`. Commit and push.
 4. Run `python3 scripts/kit_broadcast.py --weekly <today> --send-at 3pm`.

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trend watch · Hidden AGI watch</title>
+<meta name="description" content="Measured AI trends projected forward: METR task length, AI&#x27;s share of AI research, and when they would cross key thresholds.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hidden AGI watch">
+<meta property="og:title" content="Trend watch · Hidden AGI watch">
+<meta property="og:description" content="Measured AI trends projected forward: METR task length, AI&#x27;s share of AI research, and when they would cross key thresholds.">
+<meta property="og:url" content="https://joeldg.github.io/agi_assessment/trends.html">
+<meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trend watch · Hidden AGI watch">
+<meta name="twitter:description" content="Measured AI trends projected forward: METR task length, AI&#x27;s share of AI research, and when they would cross key thresholds.">
+<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="Hidden AGI watch" href="./feed.xml">
+<link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
+</head>
+<body>
+<main>
+  <nav class="site" aria-label="Site">
+    <a class="brand" href="./">Hidden AGI watch</a>
+    <a href="./start-here.html">Start here</a>
+    <a href="./weekly/">Weekly wrap-up</a>
+    <a href="./scorecard.html">Scorecard</a>
+    <a href="./disclosure-lag.html">Disclosure lag</a>
+    <a href="./agi-claims.html">AGI claims</a>
+    <a href="./calendar.html">Calendar</a>
+    <a href="./steelman.html">Steelman</a>
+    <a href="./trends.html" aria-current="page">Trends</a>
+  </nav>
+
+  <header class="prose">
+    <h1>Trend watch</h1>
+    <p class="lede">Our probabilities are judgments. These are measurements. Here we extend real trends forward to see when they would cross the thresholds that matter for the hypotheses, if they hold. A projection is not a prediction: trends bend and break, and the bands show how quickly the uncertainty grows.</p>
+  </header>
+  <div class="tiles" id="tiles"></div>
+  <section>
+    <h2>How long a task AI can finish on its own</h2>
+    <p class="muted">METR's time horizon: the length of task, measured in skilled-human time, that frontier models complete with 50% or 80% success. Log scale, so a straight line means steady doubling. Dots are measured frontier models. The dashed line and band are the projection.</p>
+    <div class="chart-wrap"><div id="metr"></div><div class="legend" id="metr-legend"></div></div>
+    <div class="table-wrap"><table id="cross"></table></div>
+    <p class="muted small" id="metr-method"></p>
+  </section>
+  <section class="prose">
+    <h2>What this means for our numbers</h2>
+    <p>Our strict AGI bar is roughly the <strong>80% horizon reaching a month of work</strong>, with that reliability holding on real, messy jobs rather than benchmark tasks. If the trend holds, that crossing lands around <span id="agi-cross">–</span>. We put strict AGI at 45% by the end of 2030, which is more cautious than the straight line, for three reasons:</p>
+    <ul class="plain">
+      <li>Benchmark tasks are cleaner than real work.</li>
+      <li>METR's task suite saturates above about 16 hours, so the recent top end is measured least well.</li>
+      <li>Trends like this can bend with compute, energy, data or safety pauses. OpenAI has paused training twice in three months.</li>
+    </ul>
+    <p>If the dots keep landing on or above the dashed line, our 2030 number should rise. If they fall below the band, it should fall.</p>
+  </section>
+  <section>
+    <h2>How much AI research AI is already doing</h2>
+    <p class="muted" id="rd-note"></p>
+    <div class="chart-wrap"><div id="rd"></div></div>
+  </section>
+  <section class="prose"><h2>Other trends we watch</h2>
+    <ul class="plain">
+      <li><strong>Frontier training compute</strong> grows about 5x a year, doubling every ~5 months (<a href="https://epoch.ai/trends">Epoch AI</a>). A large run with no matching public release would be a tripwire for A.</li>
+      <li><strong>Disclosure lag</strong>: see <a href="disclosure-lag.html">how long incidents stay hidden</a>. There are too few incidents yet for a trend line.</li>
+    </ul>
+  </section>
+
+<div class="subscribe">
+  <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
+  <a class="btn" href="https://hidden-agi.kit.com/f2b4d2f30e" target="_blank" rel="noopener">Subscribe</a>
+</div>
+
+  <footer>
+    Produced by an automated analyst run (Claude), researched and drafted with AI assistance. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
+  </footer>
+</main>
+<script type="module">
+import * as K from "./assets/charts.js";
+const j = p => fetch(p,{cache:"no-cache"}).then(r=>r.json());
+
+const t = await j("data/trends.json"), M = t.metr, h = K.util.h;
+const nm = id => id.replace(/_inspect$/,"").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini");
+const fr = M.models.filter(m=>m.sota && m.date>="2023-01-01");
+const mo = d => d ? K.util.fmtDate(d,{month:"short",year:"numeric"}) : "–";
+K.trendChart(document.getElementById("metr"), {title:"METR time horizon", color:"--accent",
+  history: fr.map(m=>({date:m.date, v:m.p50, lo:m.p50lo, hi:m.p50hi, name:nm(m.id)+" · 50%"})),
+  projection: M.p50.projection,
+  secondary: {label:"80% horizon", color:"--ink", history: fr.filter(m=>m.p80).map(m=>({date:m.date, v:m.p80, name:nm(m.id)+" · 80%"})), projection: M.p80.projection},
+  thresholds: [{v:M.thresholds.workWeek, label:"1 work-week (40 hours)"},{v:M.thresholds.workMonth, label:"1 work-month (167 hours)"}]});
+const lg = document.getElementById("metr-legend");
+[["--accent","50% success (measured)"],["--ink","80% success (measured)"]].forEach(([c,l])=>{ const it=h("span",{class:"lg-item"}); const sw=h("span",{class:"swatch"}); sw.style.background=K.util.css(c); it.append(sw, document.createTextNode(l)); lg.append(it); });
+{ const it=h("span",{class:"lg-item"}); it.append(h("span",{class:"lg-dash"}), document.createTextNode("Projection, with 95% band")); lg.append(it); }
+const tb = document.getElementById("cross");
+const hr=h("tr"); ["If the trend holds…","Central","Range (fast – slow)"].forEach(c=>hr.append(h("th",{},c))); tb.append(hr);
+[["50% horizon reaches a work-week","p50","workWeek"],["50% horizon reaches a work-month","p50","workMonth"],["80% horizon reaches a work-week","p80","workWeek"],["80% horizon reaches a work-month (≈ our strict AGI bar)","p80","workMonth"]].forEach(([l,m,k])=>{ const c=M[m].crossings[k]; const tr=h("tr"); tr.append(h("td",{},l), h("td",{class:"num"},mo(c.mid)), h("td",{class:"num"},mo(c.fast)+" – "+mo(c.slow))); tb.append(tr); });
+document.getElementById("agi-cross").textContent = mo(M.p80.crossings.workMonth.mid) + " (range " + mo(M.p80.crossings.workMonth.fast) + " – " + mo(M.p80.crossings.workMonth.slow) + ")";
+document.getElementById("metr-method").textContent = M.method + " Our fit gives a 50%-horizon doubling time of " + M.p50.doublingDays + " days; METR's own fit since 2023 is " + (M.metrDoublingDays?.from_2023_on?.point_estimate?.toFixed(0) ?? "–") + " days. Data refreshed " + t.updated + " from METR.";
+const last = fr[fr.length-1];
+const tiles = document.getElementById("tiles");
+[["Doubling time (50%)", M.p50.doublingDays.toFixed(0)+" days"],["Latest frontier, 50%", K.fmtDur(last.p50)],["80% horizon hits a work-month", mo(M.p80.crossings.workMonth.mid)],["Our strict AGI by 2030", "45%"]].forEach(([l,v])=>{ const x=h("div",{class:"tile"}); x.append(h("div",{class:"label"},l), h("div",{class:"value"},v)); tiles.append(x); });
+const R = t.manual.rdShare;
+document.getElementById("rd-note").textContent = R.label + ". " + R.note;
+K.lineChart(document.getElementById("rd"), {title:R.label, yMax:100, endLabels:true, series:[{label:R.label, short:"AI-led", color:"--accent", values:R.points.map(p=>({x:p.date,y:p.v}))}]});
+
+</script>
+</body>
+</html>

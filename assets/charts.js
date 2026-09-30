@@ -246,3 +246,88 @@ export function dotTimeline(host, items, {lane="who", title="Timeline"}={}){
 }
 
 export const util = {css, h, fmtPct, fmtDate, parseDate, DAY, legend, tableView, showTip, hideTip};
+
+/* ---- forecast: our stated probabilities (now, end-2030, end-2035) with a confidence band ----
+   The band is NOT a statistical interval: it widens with our stated confidence
+   (low → roughly ×0.5–×1.6 of the point; high → ×0.85–×1.15). Outside forecasts are hollow rings. */
+const CONF_BAND = {"low":[0.5,1.6], "low–medium":[0.6,1.45], "medium":[0.75,1.3], "medium–high":[0.8,1.2], "high":[0.85,1.15]};
+export function forecastChart(host, {series, markers=[], today, height=300, yMax, title="Forecast", compact=false}){
+  host.replaceChildren();
+  const box = h("div",{class:"chart"}); host.append(box);
+  const W = Math.max(box.clientWidth || host.clientWidth || 600, compact?160:300), H = height;
+  const L = compact?42:44, R = compact?12:(markers.length?16:96), T = 12, B = 28;
+  const t0 = parseDate(today).getTime(), t1 = parseDate("2036-01-01").getTime();
+  const x = d => L + (parseDate(d).getTime()-t0)/(t1-t0)*(W-L-R);
+  const pts = se => [{x:today,y:se.now},{x:"2030-12-31",y:se.y2030},{x:"2035-12-31",y:se.y2035}];
+  const bands = se => { const [lo,hi] = CONF_BAND[se.conf] || CONF_BAND.low; return pts(se).map(p=>({x:p.x, lo:Math.max(0,p.y*lo), hi:Math.min(100,p.y*hi)})); };
+  const all = series.flatMap(se => bands(se).map(b=>b.hi)).concat(markers.map(m=>m.p));
+  const {top:ymax, ticks} = yMax ? {top:yMax, ticks:[0,yMax/4,yMax/2,yMax*3/4,yMax]} : niceTicks(Math.max(...all,1)*1.05, compact?3:4);
+  const y = v => T + (1 - v/ymax) * (H-T-B);
+  const s = svg("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":title});
+  const g = svg("g",{class:"axis"}); s.append(g);
+  ticks.forEach((v,i)=>{ g.append(svg("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),class:i?"grid":"base"})); const tx=svg("text",{x:L-6,y:y(v)+4,"text-anchor":"end"}); tx.textContent=fmtPct(v); g.append(tx); });
+  const years = compact ? [2028,2031,2034] : [2027,2028,2029,2030,2031,2032,2033,2034,2035];
+  years.forEach(yr=>{ const px=x(`${yr}-01-01`); const tx=svg("text",{x:px,y:H-8,"text-anchor":"middle"}); tx.textContent=String(yr); g.append(tx); });
+  const tl = svg("line",{x1:x(today),x2:x(today),y1:T,y2:H-B,class:"crosshair"}); s.append(tl);
+  if(!compact){ const tt=svg("text",{x:x(today)+4,y:T+10,class:"row-label"}); tt.textContent="Today"; s.append(tt); }
+  const surface = css("--surface");
+  series.forEach(se => {
+    const col = css(se.color) || se.color;
+    const b = bands(se);
+    s.append(svg("polygon",{points:[...b.map(p=>`${x(p.x)},${y(p.hi)}`), ...[...b].reverse().map(p=>`${x(p.x)},${y(p.lo)}`)].join(" "), fill:col, opacity:0.1}));
+    const P = pts(se);
+    s.append(svg("polyline",{points:P.map(p=>`${x(p.x)},${y(p.y)}`).join(" "),fill:"none",stroke:col,"stroke-width":2,"stroke-linejoin":"round"}));
+    P.forEach(p => s.append(svg("circle",{cx:x(p.x),cy:y(p.y),r:4,fill:col,stroke:surface,"stroke-width":2})));
+    if(!compact){ const last=P[P.length-1]; const tx=svg("text",{x:x(last.x)+8,y:y(last.y)+4,class:"end-label"}); tx.textContent=`${se.short||""} ${fmtPct(last.y)}`.trim(); if(!markers.length) s.append(tx); }
+  });
+  markers.forEach(m => { const c=svg("circle",{cx:x(m.date),cy:y(m.p),r:6,fill:surface,stroke:css("--ink"),"stroke-width":2}); c.addEventListener("mousemove",ev=>showTip(ev.clientX,ev.clientY,[{label:m.what},{label:"Probability",value:m.p+"%"},{label:"By",value:fmtDate(m.date,{month:"short",year:"numeric"})},{label:m.definition}],m.who)); c.addEventListener("mouseleave",hideTip); s.append(c); });
+  // hover: read the three anchor points
+  const hit = svg("rect",{x:L,y:T,width:W-L-R,height:H-T-B,fill:"transparent"}); s.insertBefore(hit, s.querySelector("circle"));
+  hit.addEventListener("mousemove", ev => { const rows=[]; series.forEach(se=>{ rows.push({label:se.label+" now", value:fmtPct(se.now), color:css(se.color)||se.color}); rows.push({label:"by 2030", value:fmtPct(se.y2030)}); rows.push({label:"by 2035", value:fmtPct(se.y2035)}); }); showTip(ev.clientX, ev.clientY, rows, "Our forecast (confidence: "+series.map(se=>se.conf).join(", ")+")"); });
+  hit.addEventListener("mouseleave", hideTip);
+  box.append(s);
+  if(!compact){
+    const items = series.map(se=>({label:se.label, color:se.color, line:true}));
+    const lg = legend(items);
+    if(markers.length){ const it=h("span",{class:"lg-item"}); const ring=h("span",{class:"lg-ring"}); it.append(ring, document.createTextNode("Outside forecasts (hover for details)")); lg.append(it); }
+    const band=h("span",{class:"lg-item"}); const bs=h("span",{class:"lg-band"}); band.append(bs, document.createTextNode("Shaded band: our confidence")); lg.append(band);
+    host.append(lg);
+    host.append(tableView(title, ["Series","Now","By end-2030","By end-2035","Confidence"], series.map(se=>[se.label, fmtPct(se.now), fmtPct(se.y2030), fmtPct(se.y2035), se.conf||"–"]).concat(markers.map(m=>[m.who+": "+m.what, "–", "", fmtDate(m.date,{month:"short",year:"numeric"})+" · "+m.p+"%", m.rating]))));
+  }
+}
+
+/* ---- trend: measured history on a log scale, fitted line, dashed projection with a band, thresholds ---- */
+const fmtDur = m => m < 1 ? `${Math.round(m*60)} sec` : m < 60 ? `${m<10?m.toFixed(1):Math.round(m)} min` : m < 60*24 ? `${(m/60)<10?(m/60).toFixed(1):Math.round(m/60)} hr` : `${Math.round(m/60)} hr`;
+export function trendChart(host, {history, projection, thresholds=[], from="2023-01-01", to="2031-01-01", title="Trend", color="--accent", secondary, height=320}){
+  host.replaceChildren();
+  const box = h("div",{class:"chart"}); host.append(box);
+  const W = Math.max(box.clientWidth || 600, 300), H = height, L = 86, R = 16, T = 12, B = 30;
+  const t0 = parseDate(from).getTime(), t1 = parseDate(to).getTime();
+  const x = d => L + (parseDate(d).getTime()-t0)/(t1-t0)*(W-L-R);
+  const TICKS = [[1/6,"10 sec"],[1,"1 min"],[10,"10 min"],[60,"1 hr"],[480,"8 hr (a workday)"],[2400,"1 work-week"],[10020,"1 work-month"],[120000,"1 work-year"]];
+  const vals = history.map(p=>p.v).concat(thresholds.map(t=>t.v)).concat(secondary?secondary.history.map(p=>p.v):[]).filter(v=>v>0);
+  const vmin = Math.min(...vals), vmax = 120000; // cap the scale at a work-year; the projection is clipped beyond it
+  const ticks = TICKS.filter(([v])=>v>=vmin/1.5 && v<=vmax);
+  const lmin = Math.log10(Math.min(ticks[0][0], vmin)), lmax = Math.log10(vmax);
+  const y = v => T + (1 - (Math.log10(Math.max(v,10**lmin)) - lmin)/(lmax-lmin)) * (H-T-B);
+  const s = svg("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":title});
+  s.append(svg("defs"));
+  const clipId = "plot-" + Math.random().toString(36).slice(2,7); const cp=svg("clipPath",{id:clipId}); cp.append(svg("rect",{x:L,y:T,width:W-L-R,height:H-T-B})); s.querySelector("defs").append(cp);
+  const g = svg("g",{class:"axis"}); s.append(g);
+  ticks.forEach(([v,lab],i)=>{ g.append(svg("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),class:i?"grid":"base"})); const tx=svg("text",{x:L-6,y:y(v)+4,"text-anchor":"end"}); tx.textContent=lab.replace(" (a workday)",""); g.append(tx); });
+  for(let yr=parseDate(from).getFullYear()+1; yr<parseDate(to).getFullYear()+1; yr++){ const px=x(`${yr}-01-01`); if(px>W-R) break; const tx=svg("text",{x:px,y:H-8,"text-anchor":"middle"}); tx.textContent=String(yr); g.append(tx); }
+  const plot = svg("g",{"clip-path":`url(#${clipId})`}); s.append(plot);
+  const col = css(color) || color, surface = css("--surface");
+  thresholds.forEach(t => { plot.append(svg("line",{x1:L,x2:W-R,y1:y(t.v),y2:y(t.v),stroke:css("--ink"),"stroke-width":1,opacity:0.5})); const tx=svg("text",{x:L+6,y:y(t.v)-5,class:"row-label"}); tx.textContent=t.label; s.append(tx); });
+  const drawProj = (proj, c) => {
+    if(!proj?.length) return;
+    plot.append(svg("polygon",{points:[...proj.map(p=>`${x(p.date)},${y(p.hi)}`), ...[...proj].reverse().map(p=>`${x(p.date)},${y(p.lo)}`)].join(" "), fill:c, opacity:0.1}));
+    plot.append(svg("polyline",{points:proj.map(p=>`${x(p.date)},${y(p.mid)}`).join(" "),fill:"none",stroke:c,"stroke-width":2,"stroke-dasharray":"6 5"}));
+  };
+  if(secondary){ const c2 = css(secondary.color)||secondary.color; drawProj(secondary.projection, c2); secondary.history.filter(p=>p.date>=from).forEach(p=>{ const c=svg("circle",{cx:x(p.date),cy:y(p.v),r:4,fill:c2,stroke:surface,"stroke-width":2}); c.addEventListener("mousemove",ev=>showTip(ev.clientX,ev.clientY,[{label:secondary.label,value:fmtDur(p.v)}],p.name||fmtDate(p.date))); c.addEventListener("mouseleave",hideTip); plot.append(c); }); }
+  drawProj(projection, col);
+  history.filter(p=>p.date>=from).forEach(p => { const c=svg("circle",{cx:x(p.date),cy:y(p.v),r:p.faint?3:4.5,fill:col,opacity:p.faint?0.4:1,stroke:surface,"stroke-width":2}); c.addEventListener("mousemove",ev=>showTip(ev.clientX,ev.clientY,[{label:"Horizon",value:fmtDur(p.v)},{label:"Released",value:fmtDate(p.date,{day:"numeric",month:"short",year:"numeric"})}].concat(p.lo?[{label:"95% CI",value:`${fmtDur(p.lo)} – ${fmtDur(p.hi)}`}]:[]),p.name)); c.addEventListener("mouseleave",hideTip); plot.append(c); });
+  box.append(s);
+  return {fmtDur};
+}
+export {fmtDur};

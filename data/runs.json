@@ -88,7 +88,13 @@
   ],
   "summary": "No credible evidence that any hypothesis is true now. Undisclosed AGI is very unlikely today (about 2%), but if AGI arrives before 2030 (about 40% on a strict definition) a gap of weeks to months before public disclosure is fairly plausible. Sub-AGI agents have already acted covertly online, which raises C-type risk later rather than now.",
   "timeline": "Working definition: AGI reliably does at least 80% of remote professional tasks at a median skilled professional's level, including multi-week projects. On that definition I put about 40% on AGI by end of 2030 and 60% by end of 2035. That sits between the Metaculus community median (January 2033, 25% by 2029) and real-money markets (roughly even odds by 2030); the AI Futures Project is more aggressive (automated coder around November 2027 on Kokotajlo's median).\n\nThe secrecy hypotheses are driven mainly by whether the capability exists, not by how long a lab could hide it. Secrets involving thousands of staff and large commercial value have historically held for months, not years, and the one known 2026 concealment lasted a few months before outsiders exposed it.\n\nKey trend to watch across runs: METR 80% time horizons and lab-reported AI share of research work. A sharp above-trend jump in either would raise A and B quickly.",
-  "index": 3
+  "index": 3,
+  "agi": {
+   "now": 2,
+   "y2030": 40,
+   "y2035": 60,
+   "conf": "low–medium"
+  }
  },
  {
   "date": "2026-09-29",
@@ -445,6 +451,13 @@
     "note": "None reported.",
     "since": "2026-09-29"
    }
-  ]
+  ],
+  "agi": {
+   "now": 3,
+   "y2030": 45,
+   "y2035": 65,
+   "conf": "low–medium",
+   "note": "Strict AGI exists (public or hidden): at least 80% of remote professional tasks, including multi-week projects, done reliably."
+  }
  }
 ]

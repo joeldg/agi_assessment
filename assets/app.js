@@ -1,4 +1,4 @@
-import {lineChart, dial, tripwireBoard} from "./charts.js";
+import {lineChart, dial, tripwireBoard, forecastChart} from "./charts.js";
 
 const SERIES = [
   {k:"A", short:"A: AGI undisclosed", c:"--sA"},
@@ -7,9 +7,7 @@ const SERIES = [
   {k:"D", short:"D: Covert govt influence", c:"--sD"},
   {k:"Dopen", short:"D-open: Open govt influence", c:"--sE"}
 ];
-const HLABEL = {now:"now", y2030:"by 2030", y2035:"by 2035"};
 let runs = [];
-let horizon = "now";
 
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const el = (tag, attrs={}, text) => { const e=document.createElement(tag); for(const [a,v] of Object.entries(attrs)) e.setAttribute(a,v); if(text!=null) e.textContent=text; return e; };
@@ -55,9 +53,28 @@ function renderChart(){
   const byDate=new Map(); runs.forEach(r=>byDate.set(r.date,r)); // one point per day: the latest run
   const days=[...byDate.values()];
   lineChart(document.getElementById("chart"), {
-    title:`Probability ${HLABEL[horizon]} for each hypothesis`,
-    series: SERIES.map(s=>({label:s.short, short:s.k==="Dopen"?"D-open":s.k, color:s.c, values:days.map(r=>({x:r.date, y:val(r,s.k,horizon)}))}))
+    title:"Probability true now for each hypothesis",
+    series: SERIES.map(s=>({label:s.short, short:s.k==="Dopen"?"D-open":s.k, color:s.c, values:days.map(r=>({x:r.date, y:val(r,s.k,"now")}))}))
   });
+}
+
+let outside = [];
+function renderForecast(){
+  const last=runs[runs.length-1]; if(!last) return;
+  const today=last.date;
+  if(last.agi) forecastChart(document.getElementById("fc-agi"), {title:"Strict AGI exists, public or hidden", today, yMax:100,
+    series:[{label:"Our forecast: strict AGI exists", short:"AGI", color:"--ink", ...last.agi}], markers:outside});
+  const grid=document.getElementById("fc-grid"); grid.replaceChildren();
+  const todo=[]; // lay out every card first, then draw, so each chart measures its final width
+  SERIES.forEach(s=>{
+    const p=last.probs?.[s.k]; if(!p) return;
+    const m=el("div",{class:"mini"}); const h3=el("h3"); const sw=el("span",{class:"swatch"}); sw.style.background=css(s.c); h3.append(sw, document.createTextNode(s.short)); m.append(h3);
+    const c=el("div"); m.append(c);
+    m.append(el("p",{class:"muted"},`${fmt(p.now)}% now → ${fmt(p.y2030)}% by 2030 → ${fmt(p.y2035)}% by 2035 · ${p.conf} confidence`));
+    grid.append(m);
+    todo.push(()=>forecastChart(c, {title:s.short, today, compact:true, height:150, series:[{label:s.short, color:s.c, now:p.now, y2030:p.y2030, y2035:p.y2035, conf:p.conf}]}));
+  });
+  todo.forEach(f=>f());
 }
 
 function renderHero(){
@@ -166,15 +183,10 @@ function renderAll(){
   if(!runs.length){ st.textContent="No runs stored yet."; return; }
   const last=runs[runs.length-1];
   st.textContent=`${runs.length} run${runs.length>1?"s":""} recorded. Latest: ${fmtDate(last.date)}.`;
-  renderHero(); renderTripwires(); renderReadings(); renderChart(); renderChanges(); renderRoundup(); renderTimeline(); renderHistory();
+  renderHero(); renderTripwires(); renderReadings(); renderChart(); renderForecast(); renderChanges(); renderRoundup(); renderTimeline(); renderHistory();
 }
 
-document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
-  horizon=b.dataset.h;
-  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
-  if(runs.length) renderChart();
-});
-let rt; addEventListener("resize",()=>{ clearTimeout(rt); rt=setTimeout(()=>runs.length&&renderChart(),150); });
+let rt; addEventListener("resize",()=>{ clearTimeout(rt); rt=setTimeout(()=>{ if(runs.length){ renderChart(); renderForecast(); } },150); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>{ if(runs.length){ document.getElementById("tripwires").replaceChildren(); renderAll(); } });
 
 (async()=>{
@@ -182,6 +194,7 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>{ if(
   try{
     const res=await fetch("data/runs.json",{cache:"no-cache"});
     runs=(await res.json()).map((r,i)=>({...r,_i:i})).sort((a,b)=>String(a.date).localeCompare(String(b.date))||a._i-b._i);
+    try{ outside=(await (await fetch("data/external_forecasts.json",{cache:"no-cache"})).json()).forecasts; }catch(e){ outside=[]; }
     renderAll();
   }catch(e){ st.textContent="Couldn't load data/runs.json. Reload to try again."; }
 })();
