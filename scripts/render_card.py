@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Render 1200x630 share cards with headless Chrome.
 
-    python3 scripts/render_card.py                  # daily card for the latest run -> cards/<date>.png + cards/latest.png
-    python3 scripts/render_card.py --date 2026-09-29
+    python3 scripts/render_card.py                  # daily card for the latest report -> cards/<date>.png + cards/latest.png
+    python3 scripts/render_card.py --date 2026-09-29   # re-render one day; latest.png changes only if it's the newest report
     python3 scripts/render_card.py --weekly 2026-10-02   # weekly card -> cards/weekly-<date>.png
 
-Cards always use the dark palette so they look the same everywhere they're shared.
+Cards always use the dark palette so they look the same everywhere they're shared. Each card shows the
+fire-alarm level in force on its own date, with that level's meaning, so a screenshot carries the bottom line.
 """
 import argparse
 import json
@@ -19,20 +20,26 @@ from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_feed import fmt, prob  # noqa: E402
+from build_feed import SITE, alarm_level_on, changed, delta_amount, fmt, prev_published, prob  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DARK = {"bg": "#141A21", "surface": "#1B232C", "ink": "#E3E8ED", "muted": "#98A5B3", "axis": "#34414E",
         "accent": "#D9A441", "A": "#C4861A", "B": "#139A8C", "C": "#A36ED0", "D": "#DC564A", "Dopen": "#4F82DC"}
 LABELS = {"A": "AGI undisclosed", "B": "Secret RSI", "C": "Covert AGI online", "D": "Covert govt influence"}
+SITE_LABEL = SITE.split("://", 1)[-1].rstrip("/")
+CHROME_TIMEOUT = 120  # seconds
+
+
+def pct(v):
+    return "–" if v is None else fmt(v) + "%"
 
 
 def dial_svg(value, S=420):
     c, r_out, r_in = S / 2, S * 0.27, S * 0.19
     eye = (f"M {S*.03} {c} C {S*.26} {S*.1}, {S*.74} {S*.1}, {S*.97} {c} "
            f"C {S*.74} {S*.9}, {S*.26} {S*.9}, {S*.03} {c} Z")
-    lit = round(min(100, max(0, value)))
+    lit = 0 if value is None else round(min(100, max(0, float(value))))
     ticks = []
     for i in range(100):
         a = i / 100 * 2 * math.pi - math.pi / 2
@@ -44,10 +51,10 @@ def dial_svg(value, S=420):
             f'<defs><clipPath id="eye"><path d="{eye}"/></clipPath></defs><g clip-path="url(#eye)">{"".join(ticks)}</g>'
             f'<circle cx="{c}" cy="{c}" r="{r_in*.86:.1f}" fill="{DARK["bg"]}"/>'
             f'<path d="{eye}" fill="none" stroke="{DARK["ink"]}" stroke-width="{S*.018:.1f}" stroke-linejoin="round"/>'
-            f'<text x="{c}" y="{c+S*.035:.1f}" text-anchor="middle" fill="{DARK["ink"]}" font-family="Public Sans" font-weight="600" font-size="{S*.1:.0f}">{fmt(value)}%</text></svg>')
+            f'<text x="{c}" y="{c+S*.035:.1f}" text-anchor="middle" fill="{DARK["ink"]}" font-family="Public Sans" font-weight="600" font-size="{S*.1:.0f}">{pct(value)}</text></svg>')
 
 
-def card_html(kicker, date_label, index, rows, footer):
+def card_html(kicker, date_label, index, rows, footer, context=""):
     items = "".join(
         f'<div class="row"><span class="dot" style="background:{DARK[k]}"></span><span class="k">{k}</span>'
         f'<span class="lab">{escape(LABELS[k])}</span><span class="v">{escape(v)}</span>'
@@ -65,11 +72,12 @@ h1{{font-family:"Source Serif 4",Georgia,serif;font-size:44px;font-weight:600;ma
 .v{{font-weight:600;font-size:26px;text-align:right}} .d{{font-size:17px;color:{DARK['muted']};text-align:right}}
 .foot{{position:absolute;left:56px;right:56px;bottom:26px;font-size:18px;color:{DARK['muted']};display:flex;justify-content:space-between}}
 .foot b{{color:{DARK['ink']}}}
+.ctx{{border-top:1px solid {DARK['axis']};padding-top:12px;font-size:18px;line-height:1.35;color:{DARK['ink']}}}
 </style></head><body>
 <div>{dial_svg(index)}</div>
 <div><div class="kicker">{escape(kicker)}</div><h1>{escape(date_label)}</h1>
-<div class="idx">Hidden AGI Index <b>{fmt(index)}%</b> · chance at least one is true now</div>{items}</div>
-<div class="foot"><span>{escape(footer)}</span><span><b>joeldg.github.io/agi_assessment</b></span></div>
+<div class="idx">Hidden AGI Index <b>{pct(index)}</b> · chance at least one is true now</div>{items}{f'<div class="ctx">{escape(context)}</div>' if context else ""}</div>
+<div class="foot"><span>{escape(footer)}</span><span><b>{escape(SITE_LABEL)}</b></span></div>
 </body></html>"""
 
 
@@ -77,53 +85,81 @@ def shoot(html, out):
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / "card.html"
         src.write_text(html)
-        subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--window-size=1200,630",
-                        "--virtual-time-budget=4000", f"--screenshot={out}", src.as_uri()],
-                       check=True, capture_output=True)
+        try:
+            subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--window-size=1200,630",
+                            "--virtual-time-budget=4000", f"--screenshot={out}", src.as_uri()],
+                           check=True, capture_output=True, timeout=CHROME_TIMEOUT)
+        except subprocess.TimeoutExpired:
+            sys.exit(f"render_card: headless Chrome timed out after {CHROME_TIMEOUT} s; {out.name} was not written.")
+        except FileNotFoundError:
+            sys.exit(f"render_card: Chrome not found at {CHROME}; {out.name} was not written.")
+        except subprocess.CalledProcessError as e:
+            err = (e.stderr or b"").decode(errors="replace").strip()[-600:]
+            sys.exit(f"render_card: headless Chrome failed (exit {e.returncode}); {out.name} was not written.\n{err}")
     print("wrote", out.relative_to(ROOT))
 
 
-def alarm_label():
-    try:
-        a = json.loads((ROOT / "data/alarm.json").read_text())
-        lv = next(l for l in a["levels"] if l["level"] == a["current"]["level"])
-        return f'{lv["icon"]} {lv["name"]}'
-    except Exception:
+def alarm_label(run):
+    """(label, meaning) for the fire-alarm level in force on the run's date, or None before the alarm existed."""
+    lv = alarm_level_on(run["date"], run)
+    if not lv:
         return None
+    return f'{lv["icon"]} {lv["name"]}', f'{lv["name"]}: {lv.get("meaning", "")}'.rstrip(": ")
 
 
 def delta(cur, prev):
-    if cur is None or prev is None:
-        return "new"
-    d = float(cur) - float(prev)
-    return "no change" if abs(d) < 0.05 else ("▲ +" if d > 0 else "▼ −") + fmt(abs(d))
+    if cur is None:
+        return "–"
+    if prev is None:
+        return "first reading"
+    if not changed(cur, prev):
+        return "no change"
+    return ("▲ +" if float(cur) > float(prev) else "▼ −") + delta_amount(cur, prev)
 
 
 def daily(date=None):
     runs = json.loads((ROOT / "data/runs.json").read_text())
-    idx = [i for i, r in enumerate(runs) if r.get("report") and (not date or r["date"] == date)]
+    reports = [i for i, r in enumerate(runs) if r.get("report")]
+    idx = [i for i in reports if not date or runs[i]["date"] == date]
+    if not idx:
+        sys.exit(f"render_card: no run with a report for {date or 'any date'} in data/runs.json; nothing rendered.")
     i = idx[-1]
-    run, prev = runs[i], (runs[i - 1] if i else None)
-    rows = [(k, fmt(prob(run, k, "now")) + "%", delta(prob(run, k, "now"), prob(prev, k, "now") if prev else None)) for k in LABELS]
+    run, prev = runs[i], prev_published(runs, i)
+    rows = [(k, pct(prob(run, k, "now")), delta(prob(run, k, "now"), prob(prev, k, "now") if prev else None)) for k in LABELS]
     n = run.get("needle") or {}
     foot = ("Quiet day: nothing moved." if n.get("quiet") else f"Moved the needle: {n.get('headline','')}")[:92]
     label = datetime.strptime(run["date"], "%Y-%m-%d").strftime("%-d %B %Y")
     out = ROOT / "cards" / f"{run['date']}.png"
     out.parent.mkdir(exist_ok=True)
-    lvl = alarm_label()
-    shoot(card_html("Daily reading" + (f" · Fire alarm {lvl}" if lvl else " · Hidden AGI watch"), label, run.get("index", prob(run, "A", "now")), rows, foot), out)
-    shutil.copyfile(out, ROOT / "cards/latest.png")
+    lvl, meaning = alarm_label(run) or (None, "")
+    shoot(card_html("Daily reading" + (f" · Fire alarm {lvl}" if lvl else " · Hidden AGI watch"), label, run.get("index"),
+                    rows, foot, meaning), out)
+    if i == reports[-1]:  # only the newest report updates the site-wide preview image
+        shutil.copyfile(out, ROOT / "cards/latest.png")
+    else:
+        print("note: not the newest report, so cards/latest.png was left unchanged")
     return out
 
 
 def weekly(date):
     w = json.loads((ROOT / f"data/weekly/{date}.json").read_text())
     k = w["keyNumbers"]
-    rows = [(h, fmt(k["now"][h]) + "%", delta(k["now"][h], k["weekAgo"].get(h)) + " wk") for h in LABELS]
+    since_first = k.get("sinceFirst") and k.get("weekAgo") and k.get("weekAgoDate") != k.get("asOf")
+
+    def change(h):
+        cur, prev = k["now"].get(h), (k.get("weekAgo") or {}).get(h)
+        d = delta(cur, prev)
+        return d + " wk" if cur is not None and prev is not None and not since_first else d
+
+    rows = [(h, pct(k["now"].get(h)), change(h)) for h in LABELS]
     label = "Week to " + datetime.strptime(date, "%Y-%m-%d").strftime("%-d %B %Y")
+    kicker = ("Weekly wrap-up · change since " + datetime.strptime(k["weekAgoDate"], "%Y-%m-%d").strftime("%-d %b")
+              if since_first else "Hidden AGI watch · weekly wrap-up")
+    lv = k.get("alarm") or alarm_level_on(k.get("asOf") or date)
+    meaning = f'{lv["name"]}: {lv.get("meaning", "")}'.rstrip(": ") if lv else ""
     out = ROOT / "cards" / f"weekly-{date}.png"
     out.parent.mkdir(exist_ok=True)
-    shoot(card_html("Hidden AGI watch · weekly wrap-up", label, k["index"], rows, w.get("headline", "")[:92]), out)
+    shoot(card_html(kicker, label, k.get("index"), rows, w.get("headline", "")[:92], meaning), out)
     return out
 
 

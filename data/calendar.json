@@ -4,27 +4,27 @@
   {
    "date": "2026-10-01",
    "kind": "policy",
-   "title": "GSA OneGov deal with OpenAI starts; Anthropic and Google deals lapsed Sept 30",
+   "title": "OpenAI's token-based GSA OneGov deal starts (to Dec 31, 2028); Anthropic's $1 Claude deal extended to Oct 31, Google's Gemini deal to Nov 15",
    "hyp": "Dopen",
    "certainty": "fixed",
-   "url": "https://www.nextgov.com/acquisition/2026/09/gsa-unveils-new-token-based-onegov-discount-openai/415908/"
+   "url": "https://www.nextgov.com/acquisition/2026/09/google-extends-gemini-onegov-deal-november/416320/"
   },
   {
-   "date": "2026-10-15",
+   "date": "2026-11-03",
    "kind": "industry",
-   "title": "Anthropic Nasdaq listing (mid-October target)",
+   "title": "US midterms; Reuters (Sept 28) reports Anthropic's IPO is likely to come after them (no date set; a public S-1 must appear at least 15 days before the roadshow)",
    "hyp": "A",
-   "certainty": "target",
-   "why": "Public-company disclosure rules become a new forced-disclosure channel.",
-   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/"
+   "certainty": "approximate",
+   "why": "Public-company disclosure rules become a forced-disclosure channel.",
+   "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html"
   },
   {
    "date": "2026-11-16",
    "kind": "policy",
-   "title": "Deadline for California's AI kill-switch design (EO N-9-26)",
+   "title": "Due: agency recommendations to the Governor on AI-law changes, including a frontier-model kill-switch requirement (EO N-9-26 §3)",
    "hyp": "C",
    "certainty": "fixed",
-   "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/"
+   "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
   },
   {
    "date": "2026-11-21",
@@ -41,6 +41,24 @@
    "hyp": "A",
    "certainty": "target",
    "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "models",
+   "title": "Altman's stated target: an internal OpenAI system he would call AGI (TIME, Aug 26)",
+   "hyp": "A",
+   "certainty": "target",
+   "why": "He said OpenAI is \"not quite yet\" there; internal-but-unannounced is the gap Hypothesis A measures.",
+   "url": "https://time.com/article/2026/08/26/openai-sam-altman-interview/"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "policy",
+   "title": "Australian government's aim to introduce legislation for national AI standards, including a duty to report rogue-AI incidents to the affected organisation and to cyber authorities (ABC, Sept 29)",
+   "hyp": "C",
+   "certainty": "target",
+   "why": "A second mandatory incident-reporting channel, outside the US, prompted by the Medicare breach.",
+   "url": "https://www.abc.net.au/news/2026-09-29/openai-medicare-breach-fuels-tougher-approach-to-rogue-ai/107204948"
   },
   {
    "date": "2027-01-01",
@@ -62,12 +80,12 @@
  "undated": [
   {
    "kind": "models",
-   "title": "OpenAI resumes training after the Sept 27 pause",
+   "title": "OpenAI resumes training after the Sept 25 pause",
    "hyp": "B"
   },
   {
    "kind": "research",
-   "title": "Clay Institute review of OpenAI's Navier–Stokes claim",
+   "title": "OpenAI's Navier–Stokes proof: journal submission or independent verification",
    "hyp": "B"
   },
   {

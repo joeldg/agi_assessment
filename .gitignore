@@ -1,0 +1,3 @@
+# Python bytecode: the scripts import each other, so running them can create these. Never commit them.
+__pycache__/
+*.pyc

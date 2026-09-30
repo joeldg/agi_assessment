@@ -23,7 +23,14 @@
    "context": "This is the second pause in three months, and the safeguards needed to resume are unspecified.",
    "url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "The second pause began Friday Sept 25 (Fortune, NBC), not Sept 27. OpenAI stated its conditions: validate that the DNS sandbox gap is fixed and do more red-teaming, then restart training from scratch. All inference on its most capable models is stopped.",
+     "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+    }
+   ]
   },
   {
    "id": "anthropic-ipo-by-oct31",
@@ -32,10 +39,23 @@
    "p": 75,
    "deadline": "2026-10-31",
    "resolution": "The first day of public trading.",
-   "context": "The prospectus went public Sept 28, targeting mid-October.",
-   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
+   "context": "No public S-1 was on EDGAR as of Sept 29. A public S-1 must appear at least 15 days before the roadshow, and Reuters reports the listing is likely after the Nov 3 midterms.",
+   "original_context": "The prospectus went public Sept 28, targeting mid-October.",
+   "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
+   "original_url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
+   "market": 4,
+   "marketAsOf": "2026-09-29",
+   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API (bid/ask 4.0/4.8)",
+   "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "The Sept 28 prospectus was a leaked draft seen by Reuters and the FT, not a public filing; Anthropic's S-1 is still confidential (submitted June 1). The 75% rested on that error; it stands as made and will be scored.",
+     "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html"
+    }
+   ]
   },
   {
    "id": "metr-astra-horizon-by-nov30",
@@ -59,7 +79,14 @@
    "context": "Newsom's Sept 18 executive order set the deadline.",
    "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "EO N-9-26 §3 orders state agencies to send the Governor recommendations by Nov 16, including on requiring a frontier-model kill switch. It does not order a design and does not require publication.",
+     "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
+    }
+   ]
   },
   {
    "id": "grok5-by-dec31",
@@ -68,10 +95,18 @@
    "p": 55,
    "deadline": "2026-12-31",
    "resolution": "An official release to outside users.",
-   "context": "Reportedly still training on Colossus 2.",
-   "url": "https://geotoolbox.ai/blog/grok-5",
+   "context": "xAI's Jan 6, 2026 funding announcement said Grok 5 was \"currently in training\"; we found no later official statement and no release date.",
+   "original_context": "Reportedly still training on Colossus 2.",
+   "url": "https://x.ai/news/series-e",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "The context cited an aggregator blog that doesn't meet our sourcing standard. It now cites xAI's own Jan 6, 2026 statement that Grok 5 was in training; we found nothing official since. The question, probability and resolution rule are unchanged.",
+     "url": "https://x.ai/news/series-e"
+    }
+   ]
   },
   {
    "id": "agi-declared-by-mar31",
@@ -80,11 +115,22 @@
    "p": 30,
    "deadline": "2027-03-31",
    "resolution": "An official company declaration (not an executive's offhand remark), such as OpenAI invoking its charter's AGI definition. Kalshi's question is similar.",
-   "context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
-   "url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
-   "market": 62,
+   "context": "Kalshi's any-company AGI-announcement market traded near 32% on Sept 29 (thin market; it spiked after the GPT-6 Astra launch, closing at 62% on Sept 7). Both questions require an explicit achieved-AGI statement; Kalshi counts any company, we count only a major lab, so we sit at or just below it.",
+   "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
+   "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "market": 32,
+   "marketAsOf": "2026-09-29",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API (bid/ask 31/33)",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "An earlier version cited 62%, a brief Sept 7 spike reported by Benzinga, as the current market price; the price when this forecast was made was about 32%. It also gave the wrong reason for our gap (Kalshi's rules also exclude offhand remarks) and called Kalshi's question similar; it is broader (any company). The resolution rule itself is unchanged.",
+     "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
+    }
+   ]
   },
   {
    "id": "clay-navier-by-dec31",
@@ -96,7 +142,14 @@
    "context": "Clay review is pending, and Clay rules normally require publication plus two years.",
    "url": "https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "Clay review is not pending. Clay takes no submissions and considers a result only after journal publication plus two years, and OpenAI says it won't claim the prize.",
+     "url": "https://www.claymath.org/millennium-problems/rules/"
+    }
+   ]
   }
  ]
 }

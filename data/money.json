@@ -1,0 +1,976 @@
+{
+ "updated": "2026-09-30",
+ "capexDefinition": "Cash purchases of property and equipment from each company's SEC filings (XBRL: PaymentsToAcquirePropertyPlantAndEquipment; for Amazon, PaymentsToAcquireProductiveAssets), converted from year-to-date to quarterly values. Excludes finance leases.",
+ "capexByCompany": {
+  "MSFT": [
+   {
+    "q": "2023Q1",
+    "end": "2023-03-31",
+    "usd_b": 6.61,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q2",
+    "end": "2023-06-30",
+    "usd_b": 8.94,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/",
+    "form": "10-K"
+   },
+   {
+    "q": "2023Q3",
+    "end": "2023-09-30",
+    "usd_b": 9.92,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024118967/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q4",
+    "end": "2023-12-31",
+    "usd_b": 9.73,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010491/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q1",
+    "end": "2024-03-31",
+    "usd_b": 10.95,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q2",
+    "end": "2024-06-30",
+    "usd_b": 13.87,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/",
+    "form": "10-K"
+   },
+   {
+    "q": "2024Q3",
+    "end": "2024-09-30",
+    "usd_b": 14.92,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q4",
+    "end": "2024-12-31",
+    "usd_b": 15.8,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q1",
+    "end": "2025-03-31",
+    "usd_b": 16.75,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q2",
+    "end": "2025-06-30",
+    "usd_b": 17.08,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/",
+    "form": "10-K"
+   },
+   {
+    "q": "2025Q3",
+    "end": "2025-09-30",
+    "usd_b": 19.39,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q4",
+    "end": "2025-12-31",
+    "usd_b": 29.88,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q1",
+    "end": "2026-03-31",
+    "usd_b": 30.88,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q2",
+    "end": "2026-06-30",
+    "usd_b": 35.8,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/",
+    "form": "10-K"
+   }
+  ],
+  "GOOGL": [
+   {
+    "q": "2023Q1",
+    "end": "2023-03-31",
+    "usd_b": 6.29,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000053/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q2",
+    "end": "2023-06-30",
+    "usd_b": 6.89,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000079/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q3",
+    "end": "2023-09-30",
+    "usd_b": 8.05,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000118/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q4",
+    "end": "2023-12-31",
+    "usd_b": 11.02,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/",
+    "form": "10-K"
+   },
+   {
+    "q": "2024Q1",
+    "end": "2024-03-31",
+    "usd_b": 12.01,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000043/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q2",
+    "end": "2024-06-30",
+    "usd_b": 13.19,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000062/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q3",
+    "end": "2024-09-30",
+    "usd_b": 13.06,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000091/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q4",
+    "end": "2024-12-31",
+    "usd_b": 14.28,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/",
+    "form": "10-K"
+   },
+   {
+    "q": "2025Q1",
+    "end": "2025-03-31",
+    "usd_b": 17.2,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q2",
+    "end": "2025-06-30",
+    "usd_b": 22.45,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q3",
+    "end": "2025-09-30",
+    "usd_b": 23.95,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000091/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q4",
+    "end": "2025-12-31",
+    "usd_b": 27.85,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/",
+    "form": "10-K"
+   },
+   {
+    "q": "2026Q1",
+    "end": "2026-03-31",
+    "usd_b": 35.67,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q2",
+    "end": "2026-06-30",
+    "usd_b": 44.92,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/",
+    "form": "10-Q"
+   }
+  ],
+  "AMZN": [
+   {
+    "q": "2023Q1",
+    "end": "2023-03-31",
+    "usd_b": 14.21,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q2",
+    "end": "2023-06-30",
+    "usd_b": 11.46,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q3",
+    "end": "2023-09-30",
+    "usd_b": 12.48,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q4",
+    "end": "2023-12-31",
+    "usd_b": 14.59,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/",
+    "form": "10-K"
+   },
+   {
+    "q": "2024Q1",
+    "end": "2024-03-31",
+    "usd_b": 14.93,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000036/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q2",
+    "end": "2024-06-30",
+    "usd_b": 17.62,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000086/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q3",
+    "end": "2024-09-30",
+    "usd_b": 22.62,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000123/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q4",
+    "end": "2024-12-31",
+    "usd_b": 27.83,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/",
+    "form": "10-K"
+   },
+   {
+    "q": "2025Q1",
+    "end": "2025-03-31",
+    "usd_b": 25.02,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q2",
+    "end": "2025-06-30",
+    "usd_b": 32.18,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q3",
+    "end": "2025-09-30",
+    "usd_b": 35.09,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000123/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q4",
+    "end": "2025-12-31",
+    "usd_b": 39.52,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/",
+    "form": "10-K"
+   },
+   {
+    "q": "2026Q1",
+    "end": "2026-03-31",
+    "usd_b": 44.2,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q2",
+    "end": "2026-06-30",
+    "usd_b": 54.21,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/",
+    "form": "10-Q"
+   }
+  ],
+  "META": [
+   {
+    "q": "2023Q1",
+    "end": "2023-03-31",
+    "usd_b": 6.82,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000049/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q2",
+    "end": "2023-06-30",
+    "usd_b": 6.13,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000069/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q3",
+    "end": "2023-09-30",
+    "usd_b": 6.5,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000081/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2023Q4",
+    "end": "2023-12-31",
+    "usd_b": 7.59,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/",
+    "form": "10-K"
+   },
+   {
+    "q": "2024Q1",
+    "end": "2024-03-31",
+    "usd_b": 6.4,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000054/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q2",
+    "end": "2024-06-30",
+    "usd_b": 8.17,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025036791/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q3",
+    "end": "2024-09-30",
+    "usd_b": 8.26,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047240/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2024Q4",
+    "end": "2024-12-31",
+    "usd_b": 14.43,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/",
+    "form": "10-K"
+   },
+   {
+    "q": "2025Q1",
+    "end": "2025-03-31",
+    "usd_b": 12.94,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q2",
+    "end": "2025-06-30",
+    "usd_b": 16.54,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q3",
+    "end": "2025-09-30",
+    "usd_b": 18.83,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047240/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2025Q4",
+    "end": "2025-12-31",
+    "usd_b": 21.38,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/",
+    "form": "10-K"
+   },
+   {
+    "q": "2026Q1",
+    "end": "2026-03-31",
+    "usd_b": 19.0,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q2",
+    "end": "2026-06-30",
+    "usd_b": 30.12,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/",
+    "form": "10-Q"
+   }
+  ]
+ },
+ "capexTotal": [
+  {
+   "q": "2023Q1",
+   "end": "2023-03-31",
+   "usd_b": 33.9,
+   "by": {
+    "MSFT": 6.61,
+    "GOOGL": 6.29,
+    "AMZN": 14.21,
+    "META": 6.82
+   }
+  },
+  {
+   "q": "2023Q2",
+   "end": "2023-06-30",
+   "usd_b": 33.4,
+   "by": {
+    "MSFT": 8.94,
+    "GOOGL": 6.89,
+    "AMZN": 11.46,
+    "META": 6.13
+   }
+  },
+  {
+   "q": "2023Q3",
+   "end": "2023-09-30",
+   "usd_b": 37.0,
+   "by": {
+    "MSFT": 9.92,
+    "GOOGL": 8.05,
+    "AMZN": 12.48,
+    "META": 6.5
+   }
+  },
+  {
+   "q": "2023Q4",
+   "end": "2023-12-31",
+   "usd_b": 42.9,
+   "by": {
+    "MSFT": 9.73,
+    "GOOGL": 11.02,
+    "AMZN": 14.59,
+    "META": 7.59
+   }
+  },
+  {
+   "q": "2024Q1",
+   "end": "2024-03-31",
+   "usd_b": 44.3,
+   "by": {
+    "MSFT": 10.95,
+    "GOOGL": 12.01,
+    "AMZN": 14.93,
+    "META": 6.4
+   }
+  },
+  {
+   "q": "2024Q2",
+   "end": "2024-06-30",
+   "usd_b": 52.9,
+   "by": {
+    "MSFT": 13.87,
+    "GOOGL": 13.19,
+    "AMZN": 17.62,
+    "META": 8.17
+   }
+  },
+  {
+   "q": "2024Q3",
+   "end": "2024-09-30",
+   "usd_b": 58.9,
+   "by": {
+    "MSFT": 14.92,
+    "GOOGL": 13.06,
+    "AMZN": 22.62,
+    "META": 8.26
+   }
+  },
+  {
+   "q": "2024Q4",
+   "end": "2024-12-31",
+   "usd_b": 72.3,
+   "by": {
+    "MSFT": 15.8,
+    "GOOGL": 14.28,
+    "AMZN": 27.83,
+    "META": 14.43
+   }
+  },
+  {
+   "q": "2025Q1",
+   "end": "2025-03-31",
+   "usd_b": 71.9,
+   "by": {
+    "MSFT": 16.75,
+    "GOOGL": 17.2,
+    "AMZN": 25.02,
+    "META": 12.94
+   }
+  },
+  {
+   "q": "2025Q2",
+   "end": "2025-06-30",
+   "usd_b": 88.2,
+   "by": {
+    "MSFT": 17.08,
+    "GOOGL": 22.45,
+    "AMZN": 32.18,
+    "META": 16.54
+   }
+  },
+  {
+   "q": "2025Q3",
+   "end": "2025-09-30",
+   "usd_b": 97.3,
+   "by": {
+    "MSFT": 19.39,
+    "GOOGL": 23.95,
+    "AMZN": 35.09,
+    "META": 18.83
+   }
+  },
+  {
+   "q": "2025Q4",
+   "end": "2025-12-31",
+   "usd_b": 118.6,
+   "by": {
+    "MSFT": 29.88,
+    "GOOGL": 27.85,
+    "AMZN": 39.52,
+    "META": 21.38
+   }
+  },
+  {
+   "q": "2026Q1",
+   "end": "2026-03-31",
+   "usd_b": 129.8,
+   "by": {
+    "MSFT": 30.88,
+    "GOOGL": 35.67,
+    "AMZN": 44.2,
+    "META": 19.0
+   }
+  },
+  {
+   "q": "2026Q2",
+   "end": "2026-06-30",
+   "usd_b": 165.1,
+   "by": {
+    "MSFT": 35.8,
+    "GOOGL": 44.92,
+    "AMZN": 54.21,
+    "META": 30.12
+   }
+  }
+ ],
+ "ttm": {
+  "asOf": "2026Q2",
+  "usd_b": 510.8,
+  "prevYear_b": 291.3,
+  "yoyPct": 75.4
+ },
+ "spendVsCapability": [
+  {
+   "q": "2023Q1",
+   "end": "2023-03-31",
+   "spend": 100.0,
+   "capability": 100.0,
+   "capabilityModel": "gpt_4",
+   "capabilityDate": "2023-03-14",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2023Q2",
+   "end": "2023-06-30",
+   "spend": 98.5,
+   "capability": 100.0,
+   "capabilityModel": "gpt_4",
+   "capabilityDate": "2023-03-14",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2023Q3",
+   "end": "2023-09-30",
+   "spend": 109.1,
+   "capability": 100.0,
+   "capabilityModel": "gpt_4",
+   "capabilityDate": "2023-03-14",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2023Q4",
+   "end": "2023-12-31",
+   "spend": 126.5,
+   "capability": 101.3,
+   "capabilityModel": "gpt_4_1106_inspect",
+   "capabilityDate": "2023-11-06",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2024Q1",
+   "end": "2024-03-31",
+   "spend": 130.7,
+   "capability": 101.3,
+   "capabilityModel": "gpt_4_1106_inspect",
+   "capabilityDate": "2023-11-06",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2024Q2",
+   "end": "2024-06-30",
+   "spend": 156.0,
+   "capability": 285.7,
+   "capabilityModel": "claude_3_5_sonnet_20240620_inspect",
+   "capabilityDate": "2024-06-20",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2024Q3",
+   "end": "2024-09-30",
+   "spend": 173.7,
+   "capability": 509.5,
+   "capabilityModel": "o1_preview",
+   "capabilityDate": "2024-09-12",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2024Q4",
+   "end": "2024-12-31",
+   "spend": 213.3,
+   "capability": 973.2,
+   "capabilityModel": "o1_inspect",
+   "capabilityDate": "2024-12-05",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2025Q1",
+   "end": "2025-03-31",
+   "spend": 212.1,
+   "capability": 1513.5,
+   "capabilityModel": "claude_3_7_sonnet_inspect",
+   "capabilityDate": "2025-02-24",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2025Q2",
+   "end": "2025-06-30",
+   "spend": 260.2,
+   "capability": 3000.8,
+   "capabilityModel": "o3_inspect",
+   "capabilityDate": "2025-04-16",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2025Q3",
+   "end": "2025-09-30",
+   "spend": 287.0,
+   "capability": 5088.0,
+   "capabilityModel": "gpt_5_2025_08_07_inspect",
+   "capabilityDate": "2025-08-07",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2025Q4",
+   "end": "2025-12-31",
+   "spend": 349.9,
+   "capability": 8828.3,
+   "capabilityModel": "gpt_5_2",
+   "capabilityDate": "2025-12-11",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2026Q1",
+   "end": "2026-03-31",
+   "spend": 382.9,
+   "capability": 18015.3,
+   "capabilityModel": "claude_opus_4_6_inspect",
+   "capabilityDate": "2026-02-05",
+   "aboveSuiteRange": false,
+   "stale": false
+  },
+  {
+   "q": "2026Q2",
+   "end": "2026-06-30",
+   "spend": 487.0,
+   "capability": 26185.0,
+   "capabilityModel": "claude_mythos_preview_early_inspect",
+   "capabilityDate": "2026-04-07",
+   "aboveSuiteRange": true,
+   "stale": true
+  }
+ ],
+ "latestMeasured": {
+  "model": "claude_mythos_preview_early_inspect",
+  "date": "2026-04-07",
+  "p50": 1044.78,
+  "aboveSuiteRange": true
+ },
+ "nvdaDatacenter": [
+  {
+   "q": "FY2024Q1",
+   "end": "2023-04-30",
+   "usd_b": 4.284,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000087/q1fy24cfocommentary.htm"
+  },
+  {
+   "q": "FY2024Q2",
+   "end": "2023-07-30",
+   "usd_b": 10.323,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000225/q3fy24cfocommentary.htm"
+  },
+  {
+   "q": "FY2024Q3",
+   "end": "2023-10-29",
+   "usd_b": 14.514,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000225/q3fy24cfocommentary.htm"
+  },
+  {
+   "q": "FY2024Q4",
+   "end": "2024-01-28",
+   "usd_b": 18.404,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000028/q4fy24cfocommentary.htm"
+  },
+  {
+   "q": "FY2025Q1",
+   "end": "2024-04-28",
+   "usd_b": 22.563,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm"
+  },
+  {
+   "q": "FY2025Q2",
+   "end": "2024-07-28",
+   "usd_b": 26.272,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000315/q3fy25cfocommentary.htm"
+  },
+  {
+   "q": "FY2025Q3",
+   "end": "2024-10-27",
+   "usd_b": 30.771,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000315/q3fy25cfocommentary.htm"
+  },
+  {
+   "q": "FY2025Q4",
+   "end": "2025-01-26",
+   "usd_b": 35.58,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25cfocommentary.htm"
+  },
+  {
+   "q": "FY2026Q1",
+   "end": "2025-04-27",
+   "usd_b": 39.112,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000115/q1fy26cfocommentary.htm"
+  },
+  {
+   "q": "FY2026Q2",
+   "end": "2025-07-27",
+   "usd_b": 41.096,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26cfocommentary.htm"
+  },
+  {
+   "q": "FY2026Q3",
+   "end": "2025-10-26",
+   "usd_b": 51.215,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm"
+  },
+  {
+   "q": "FY2026Q4",
+   "end": "2026-01-25",
+   "usd_b": 62.314,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm"
+  },
+  {
+   "q": "FY2027Q1",
+   "end": "2026-04-26",
+   "usd_b": 75.246,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm"
+  },
+  {
+   "q": "FY2027Q2",
+   "end": "2026-07-26",
+   "usd_b": 89.023,
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000073/q2fy27cfocommentary.htm"
+  }
+ ],
+ "labRevenue": [
+  {
+   "company": "Anthropic",
+   "date": "2025-01-15",
+   "metric": "annualized run-rate",
+   "usd_b": 1.0,
+   "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+   "note": "Company statement: about $1B at the beginning of 2025"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2025-08-31",
+   "metric": "annualized run-rate",
+   "usd_b": 5.0,
+   "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+   "note": "Company statement: 'over $5 billion' by August 2025 (a floor)"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2025-12-31",
+   "metric": "annual revenue (2025)",
+   "usd_b": 4.6,
+   "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
+   "note": "From a draft IPO prospectus reviewed by Reuters (not a public SEC filing)"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2026-02-12",
+   "metric": "annualized run-rate",
+   "usd_b": 14.0,
+   "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
+   "note": "Company statement (Series G)"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2026-03-31",
+   "metric": "quarterly revenue (Q1 2026)",
+   "usd_b": 4.73,
+   "url": "https://fortune.com/2026/09/29/anthropic-ipo-s-1-prospectus-income-statement/",
+   "note": "From the leaked draft prospectus, as reported by Fortune"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2026-05-28",
+   "metric": "annualized run-rate",
+   "usd_b": 47.0,
+   "url": "https://www.anthropic.com/news/series-h",
+   "note": "Company statement (Series H): crossed $47B in May 2026 (a floor)"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2026-06-30",
+   "metric": "quarterly revenue (Q2 2026)",
+   "usd_b": 11.5,
+   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
+   "note": "From the draft prospectus (Reuters/FT); the WSJ reported $11.6B"
+  },
+  {
+   "company": "Anthropic",
+   "date": "2026-07-31",
+   "metric": "annualized run-rate",
+   "usd_b": 65.0,
+   "url": "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/",
+   "note": "Told to investors, reported by Bloomberg"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2025-06-09",
+   "metric": "annualized run-rate",
+   "usd_b": 10.0,
+   "url": "https://techcrunch.com/2025/06/09/openai-claims-to-have-hit-10b-in-annual-revenue/",
+   "note": "Company spokesperson"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2025-12-31",
+   "metric": "annual revenue (2025)",
+   "usd_b": 13.07,
+   "url": "https://fortune.com/2026/06/16/openai-financials-leaked-losses-revenue-profit/",
+   "note": "Audited figure from leaked financial statements, verified by the FT"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2026-01-19",
+   "metric": "annualized run-rate",
+   "usd_b": 20.0,
+   "url": "https://finance.yahoo.com/news/openai-cfo-says-annualized-revenue-173519097.html",
+   "note": "CFO Sarah Friar: 'surpassed $20 billion' in 2025 (a floor)"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2026-03-31",
+   "metric": "quarterly revenue (Q1 2026)",
+   "usd_b": 5.7,
+   "url": "https://finance.yahoo.com/technology/ai/articles/openai-q2-growth-trails-anthropic-102250259.html",
+   "note": "Told to investors, per the WSJ"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2026-06-30",
+   "metric": "quarterly revenue (Q2 2026)",
+   "usd_b": 6.7,
+   "url": "https://thenextweb.com/news/openai-q2-revenue-anthropic-surpasses",
+   "note": "Told to investors, per the WSJ; operating loss $12.3B"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2026-08-13",
+   "metric": "annualized run-rate",
+   "usd_b": 40.0,
+   "url": "https://finance.yahoo.com/technology/ai/articles/openai-revenue-run-rate-tops-224009196.html",
+   "note": "'Surpassed $40 billion', per Bloomberg (a floor)"
+  }
+ ],
+ "predictionMarkets": [
+  {
+   "market": "Any company announces it has achieved AGI before Jan 1, 2027",
+   "venue": "Kalshi",
+   "date": "2026-09-30",
+   "price_pct": 19,
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "note": "Live API, last trade; bid/ask 17/20; thin market"
+  },
+  {
+   "market": "Any company announces it has achieved AGI before Apr 1, 2027",
+   "venue": "Kalshi",
+   "date": "2026-09-30",
+   "price_pct": 32,
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "note": "Live API, last trade; bid/ask 31/33; thin market (~17.6k contracts)"
+  },
+  {
+   "market": "Any company announces it has achieved AGI before Jan 1, 2028",
+   "venue": "Kalshi",
+   "date": "2026-09-30",
+   "price_pct": 61,
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "note": "Live API, last trade; bid/ask 62/63"
+  },
+  {
+   "market": "OpenAI announces it has attained AGI by Dec 31, 2026",
+   "venue": "Kalshi",
+   "date": "2026-09-30",
+   "price_pct": 13,
+   "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
+   "note": "Live API; volume ~351k"
+  },
+  {
+   "market": "OpenAI announces it has attained AGI by Dec 31, 2027",
+   "venue": "Kalshi",
+   "date": "2026-09-30",
+   "price_pct": 50,
+   "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
+   "note": "Live API"
+  },
+  {
+   "market": "OpenAI announces it has achieved AGI before 2027",
+   "venue": "Polymarket",
+   "date": "2026-09-30",
+   "price_pct": 17.5,
+   "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
+   "note": "Live API midpoint; volume ~$285k"
+  }
+ ],
+ "signals": [],
+ "notes": [
+  "Capex is cash purchases of property and equipment and excludes finance leases, so it is lower than the 'capex including finance leases' headline some companies quote (Microsoft in particular; Meta's headline adds about $1B a quarter in lease principal). Amazon is gross, not net of incentives.",
+  "An independent read of each company's earnings releases matches the SEC XBRL-derived quarterly capex exactly.",
+  "Not yet reported: calendar Q3 2026 capex (late October) and Nvidia Q3 FY2027 (late November).",
+  "Anthropic figures labelled 'draft prospectus' come from a leaked, non-public draft reported by Reuters, Fortune and the FT. No public S-1 was found as of Sept 29, 2026, and Reuters reports the IPO is likely after the November midterms.",
+  "Run-rates annualize one recent period and are often floors; they are not comparable with quarterly revenue and are never plotted on the same axis.",
+  "Kalshi's 'any company before Apr 1, 2027' market traded at 32% on Sept 30, 2026 (live API). A widely repeated 62% figure from early September does not match the current price."
+ ],
+ "method": "Context, not a test. Capex is total cash purchases of property and equipment by Microsoft, Alphabet, Amazon and Meta (mostly AI data centers; also non-AI spending such as Amazon logistics), summed by calendar quarter when all four have reported. The capability line is the best METR-measured frontier time horizon released by each quarter end; readings above 16 hours are beyond METR's reliable range, and quarters after METR's latest measurement can miss newer models. Models take months to train on new capacity, so spending often leads releases. Our actual test for hidden compute is trigger X4."
+}

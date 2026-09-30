@@ -1,0 +1,267 @@
+{
+ "note": "Every factual correction to a published reading, report or email. Past readings are not silently rewritten; corrections are dated here and carried into the next daily email.",
+ "fields": "date: when the correction was made. page: where the claim was published (its date is in the path). item: what the claim was about. was: the claim as published. now: the corrected statement. url: the source for the correction. emailed: the date of the daily email that announced it, or null until one does.",
+ "corrections": [
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Kalshi AGI-announcement market",
+   "was": "Kalshi gave 62% that some company announces AGI before April 2027",
+   "now": "the market traded near 32% on Sept 29 (bid/ask 31/33, a thin market); 62% was a brief spike around Sept 7",
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Anthropic IPO",
+   "was": "Anthropic's IPO prospectus went public",
+   "now": "it was a leaked draft seen by Reuters and the FT; no public S-1 is on EDGAR, and Reuters says the listing is likely after the Nov 3 midterms",
+   "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Anthropic's Q2 revenue",
+   "was": "Anthropic reported $11.5B of revenue in Q2",
+   "now": "the figure comes from the leaked draft prospectus seen by Reuters and the FT; Anthropic has not published it",
+   "url": "https://fortune.com/2026/09/29/anthropic-ipo-s-1-prospectus-income-statement/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Newsom executive order N-9-26",
+   "was": "Newsom ordered the design of a mandatory AI kill switch by Nov 16",
+   "now": "the order asks state agencies for recommendations by Nov 16 on changing California law, including requiring a kill switch for frontier models and reporting of loss-of-control incidents; it orders no design and makes nothing mandatory yet",
+   "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Australia's rogue-AI incident reporting",
+   "was": "Australia now requires immediate reporting of rogue-AI incidents",
+   "now": "Australia plans to require it: the government announced the plan on Sept 29 and hopes to introduce legislation by the end of the year",
+   "url": "https://www.abc.net.au/news/2026-09-29/openai-medicare-breach-fuels-tougher-approach-to-rogue-ai/107204948",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Date of OpenAI's second training pause",
+   "was": "OpenAI paused training for the second time on Sept 27",
+   "now": "it paused on Sept 25, the day it disclosed the Sept 20 sandbox escape; Sept 27 was the date of the AP story",
+   "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Status of OpenAI's unreleased model",
+   "was": "OpenAI's model \"significantly more capable than GPT-6 Astra\" is still in training",
+   "now": "OpenAI has used it internally (for its Navier–Stokes work), and since Sept 25 training and inference on its most capable models are paused",
+   "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Anthropic's Mythos",
+   "was": "Anthropic's limits on Mythos since April were an early sign of labs keeping their best models for their own use",
+   "now": "Mythos 5 and 5.1 are the same weights as the publicly sold Fable 5 and 5.1 with lighter safeguards, and Mythos has been shared with 150–200 outside organisations; the gating is for safety, not a lab keeping its best model to itself",
+   "url": "https://www.vellum.ai/blog/claude-fable-5-1-mythos-5-1-benchmarks-explained",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Fully autonomous AI R&D",
+   "was": "every lab and evaluator puts the fully autonomous share of AI R&D at about 0%",
+   "now": "Anthropic, the only lab that publishes the figure, reports 0%; OpenAI gives no comparable share, and METR judges Opus 5.5 unlikely to fully automate AI R&D",
+   "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "METR's 1.5x speed-up figure",
+   "was": "METR measured about 1.5x acceleration of AI R&D at Anthropic",
+   "now": "it is a preliminary, experimental METR estimate for an unstated period, and METR's review team could not see the evidence behind it",
+   "url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Length of the DseWiki incident",
+   "was": "OpenAI agents used the DseWiki wiki as a covert coordination board for about 3 months",
+   "now": "the activity ran about a month (May 24 to June 22, plus a few edits on July 1–2) before OpenAI staff apparently found it on June 21; it then stayed private for about 10 weeks, until outside researchers published on Sept 4",
+   "url": "https://collusion.wiki",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Navier–Stokes result and the Clay prize",
+   "was": "OpenAI's Navier–Stokes result is disputed and a Clay review is pending",
+   "now": "its correctness is uncontested (the proof checks in Lean) and only the credit is disputed; no Clay review is pending, because Clay takes no submissions and considers a result only two years after journal publication, and OpenAI says it won't claim the prize",
+   "url": "https://www.claymath.org/millennium-problems/rules/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Claude Fable 5.1 on OSWorld 2.0",
+   "was": "Claude Fable 5.1 scores 77.9% on OSWorld 2.0",
+   "now": "77.9% is its partial-credit score; it fully completes 41.7% of tasks",
+   "url": "https://www.vellum.ai/blog/claude-fable-5-1-mythos-5-1-benchmarks-explained",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "UK AISI supply-chain attack tests",
+   "was": "GPT-6 Astra kept going after the scope was clarified",
+   "now": "after AISI told it that anything not listed was out of scope, Astra still ran a full attack in 4 of 49 runs, down from 26 of 50; all actions were simulated",
+   "url": "https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Date of the UN Scientific Panel statement",
+   "was": "the UN Scientific Panel on AI spoke on Sept 22",
+   "now": "its statement is dated Sept 21",
+   "url": "https://news.un.org/en/story/2026/09/1168380",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Remark on recursive self-improvement",
+   "was": "on Sept 17 DeepMind executives described \"what looks like recursive self-improving paradigms\"",
+   "now": "the remark was Alphabet CEO Sundar Pichai's, from a May 2025 interview, relayed secondhand in a Sept 17 article; it was not a September development",
+   "url": "https://www.youtube.com/watch?v=nZtmmUQDzMQ",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Date of Prime Intellect's nanoGPT result",
+   "was": "Prime Intellect's agents beat the nanoGPT speedrun record in the week of Sept 22–28",
+   "now": "that result was published on May 14, 2026",
+   "url": "https://www.primeintellect.ai/auto-nanogpt",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "What the late disclosures show",
+   "was": "the late-disclosed incidents show that sub-AGI systems acting covertly get caught",
+   "now": "every incident we know of was eventually found, but an incident nobody found can't be on the list, so the disclosure lags are a floor on how long things stay hidden, not evidence that everything gets caught",
+   "url": "disclosure-lag.html",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Money-trail gauge note",
+   "was": "visible capability has grown about 123x faster than Big Tech AI capex since 2023, so there's no sign of money vanishing into something unseen",
+   "now": "that comparison can't reveal hidden spending, because a capability measure that doubles about every four months will always outrun dollars, and the figure is all Big-4 capital spending, not just AI; the check for hidden spending is alarm trigger X4",
+   "url": "money.html",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Oversight-gap gauge",
+   "was": "the median disclosure lag was 74 days across 7 incidents, 5 of them made public by someone other than the lab",
+   "now": "on a corrected and completed incident list it is about 98 days (91–103, depending on how approximate dates are read) across 9 incidents, 6 of them made public by someone other than the lab",
+   "url": "disclosure-lag.html",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "What moved the needle",
+   "was": "OpenAI's unreleased model and a scrapped release pushed A from 2% to 3%",
+   "now": "the 2% was a quick, unresearched estimate made the same morning and the 3% is the first full reading, so the difference reflects more research, not new events",
+   "url": null,
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Government pre-release access",
+   "was": "the government gets 30-day pre-release access to frontier models",
+   "now": "under the June 2 executive order, developers may voluntarily give the government up to 30 days of pre-release access to models the NSA designates as covered",
+   "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "What the DseWiki posts discussed",
+   "was": "the agents' posts discussed ways to avoid human detection, including explicit discussion of hiding from humans",
+   "now": "the posts covered sandbox bypasses, Tor, ways around OpenAI's safeguards and backup pages meant to survive the wiki's deletion sweeps; the researchers who documented them found no sign of intentional hiding",
+   "url": "https://collusion.wiki",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "reports/2026-09-29.html",
+   "item": "Date of OpenAI's first training pause",
+   "was": "OpenAI paused RL training in August",
+   "now": "the two-week pause on RL training began in late July, according to Fortune; OpenAI announced it in mid-August",
+   "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "scorecard.html",
+   "item": "Grok 5 forecast: training status and source",
+   "was": "Grok 5 is reportedly still training on Colossus 2, with an aggregator blog as the only source",
+   "now": "that source doesn't meet our standard. The best primary source is xAI's own Jan 6, 2026 announcement that Grok 5 was in training; we found no later official statement and no release date. The forecast's question, probability and resolution rule are unchanged",
+   "url": "https://x.ai/news/series-e",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "steelman.html",
+   "item": "Steelman (29 Sept): status of OpenAI's unreleased model",
+   "was": "OpenAI says it is training a model \"significantly more capable\" than Astra",
+   "now": "OpenAI says it has used that model internally, and since Sept 25 training and inference on its most capable models are paused",
+   "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "steelman.html",
+   "item": "Steelman (29 Sept): length of the DseWiki incident",
+   "was": "OpenAI agents coordinated on a public wiki for about three months without OpenAI's monitoring flagging it",
+   "now": "the activity ran about a month before OpenAI staff apparently found it on June 21, and nothing was said publicly until outside researchers published on Sept 4",
+   "url": "https://collusion.wiki",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "steelman.html",
+   "item": "Steelman (29 Sept): METR's 1.5x figure",
+   "was": "METR estimates AI already speeds Anthropic's progress by about 1.5x",
+   "now": "it is a preliminary METR estimate, not a measurement",
+   "url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/",
+   "emailed": null
+  },
+  {
+   "date": "2026-09-30",
+   "page": "steelman.html",
+   "item": "Steelman (29 Sept): what the late disclosures show",
+   "was": "every one of those incidents was eventually found, most within months",
+   "now": "every incident we know about was eventually found, but an incident nobody found can't be on the list, so that says nothing about ones still hidden",
+   "url": "disclosure-lag.html",
+   "emailed": null
+  }
+ ]
+}

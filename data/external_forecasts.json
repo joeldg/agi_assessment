@@ -1,25 +1,17 @@
 {
- "note": "Outside forecasts of when AGI arrives, plotted against our strict-AGI curve. Most use looser or different definitions than ours, noted for each. A median is plotted as a 50% point at that date.",
+ "note": "Outside forecasts of when AGI arrives, plotted against our strict-AGI curve. None uses our exact definition. Each entry's bar says how it compares: announcement (measures an announcement, not whether a system exists), narrower (an easier milestone, so an early bound), stricter (a harder milestone, so a late bound), different (a different test) or own-definition (the forecaster's own, unstated bar); gap says how in one line. A median is plotted as a 50% point at that date. Market prices come from the market's public API, dated in Pacific time.",
  "forecasts": [
-  {
-   "who": "Metaculus community",
-   "what": "Strong AGI, community median",
-   "date": "2033-04-15",
-   "p": 50,
-   "asOf": "2026-08",
-   "definition": "Metaculus's strong-AGI question (a stricter, test-based bar)",
-   "rating": "secondhand: Metaculus blocked automated access",
-   "url": "https://aitoolsreview.co.uk/insights/agi-timeline-predictions-2026"
-  },
   {
    "who": "Kalshi market",
    "what": "Any company announces AGI before Apr 1, 2027",
    "date": "2027-04-01",
-   "p": 62,
-   "asOf": "2026-09-07",
-   "definition": "An announcement, not our strict bar",
-   "rating": "market price",
-   "url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/"
+   "p": 32,
+   "asOf": "2026-09-29",
+   "definition": "Any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-era/AGI-like remarks. Not our strict bar. Spiked briefly after GPT-6 Astra (closes of 65% on Sept 4 and 62% on Sept 7, intraday high 84%); 24–34% since Sept 17.",
+   "bar": "announcement",
+   "gap": "Measures an announcement, not the existence of a strict-bar system.",
+   "rating": "market price (Kalshi API last trade; thin market)",
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
   },
   {
    "who": "Daniel Kokotajlo (AI Futures)",
@@ -27,17 +19,21 @@
    "date": "2027-11-15",
    "p": 50,
    "asOf": "2026-08-16",
-   "definition": "Automated coder: a narrower milestone than our bar",
+   "definition": "Automated coder: narrower than our bar (coding only), so an early bound",
+   "bar": "narrower",
+   "gap": "Coding only, so it should arrive before our bar.",
    "rating": "expert opinion",
    "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
   },
   {
-   "who": "Eli Lifland (AI Futures)",
-   "what": "Automated coder, median",
-   "date": "2030-01-15",
+   "who": "Daniel Kokotajlo (AI Futures)",
+   "what": "Top-expert-dominating AI (TED-AI), median",
+   "date": "2028-11-15",
    "p": 50,
    "asOf": "2026-08-16",
-   "definition": "Automated coder: a narrower milestone than our bar",
+   "definition": "Top-expert-dominating AI: as good as top experts at virtually all cognitive tasks; stricter than our bar, so a late bound",
+   "bar": "stricter",
+   "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar.",
    "rating": "expert opinion",
    "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
   },
@@ -47,9 +43,47 @@
    "date": "2030-01-01",
    "p": 50,
    "asOf": "2026-05-27",
-   "definition": "DeepMind's own definition; plotted as a rough median",
+   "definition": "DeepMind's own definition; point estimate \"2029 or 2030\", no probability given; plotted at 50% as an approximation",
+   "bar": "own-definition",
+   "gap": "His own definition and a two-year point estimate, not a probability.",
    "rating": "expert opinion (lab leader)",
    "url": "https://sherwood.news/tech/google-deepminds-hassabis-agi-is-3-to-4-years-away/"
+  },
+  {
+   "who": "Eli Lifland (AI Futures)",
+   "what": "Automated coder, median",
+   "date": "2030-01-15",
+   "p": 50,
+   "asOf": "2026-08-16",
+   "definition": "Automated coder: narrower than our bar (coding only), so an early bound",
+   "bar": "narrower",
+   "gap": "Coding only, so it should arrive before our bar.",
+   "rating": "expert opinion",
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+  },
+  {
+   "who": "Eli Lifland (AI Futures)",
+   "what": "Top-expert-dominating AI (TED-AI), median",
+   "date": "2032-07-15",
+   "p": 50,
+   "asOf": "2026-08-16",
+   "definition": "Top-expert-dominating AI: as good as top experts at virtually all cognitive tasks; stricter than our bar, so a late bound",
+   "bar": "stricter",
+   "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar.",
+   "rating": "expert opinion",
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+  },
+  {
+   "who": "Metaculus community",
+   "what": "First general AI system, community median",
+   "date": "2033-01-15",
+   "p": 50,
+   "asOf": "2026-07-15",
+   "definition": "Metaculus general-AI question: requires a public announcement plus robotics and an adversarial Turing test; stricter on robotics, can't resolve on a hidden system.",
+   "bar": "different",
+   "gap": "Adds robotics and needs a public announcement, so it can never count a hidden system.",
+   "rating": "secondhand: Metaculus blocked automated access",
+   "url": "https://aitoolsreview.co.uk/insights/agi-timeline-predictions-2026"
   }
  ]
 }

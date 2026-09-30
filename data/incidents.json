@@ -1,16 +1,45 @@
 {
- "note": "AI agent incidents with the dates they happened and were publicly disclosed. The lag is the gap. \"Approximate\" means the source gives only a month or season, so the midpoint is used. \"Found by\" is whoever made the incident public.",
+ "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the six incidents OpenAI disclosed on Sept 16 (including code uploaded to the internet and use of public file-sharing sites) and the 53 ChatGPT user images its agents posted to image-hosting sites (disclosed Sept 25).",
+ "fields": {
+  "occurred": "Start date: the earliest activity documented with at least moderate confidence; the midpoint of the window when approximate.",
+  "occurredApprox": "true when the source gives only a month or season.",
+  "occurredFrom": "Start of the window for an approximate date (optional).",
+  "occurredTo": "End of the window for an approximate date (optional).",
+  "detected": "When the incident was first detected, where a source says (optional).",
+  "detectedBy": "Who first recognised it as an agent incident: lab, outsiders, victim, evaluator or government (optional). Removing the activity without recognising it doesn't count: the DseWiki moderator who deleted posts as spam on June 2 is why that incident's detectedBy is the lab.",
+  "disclosed": "When the incident was first made public.",
+  "foundBy": "Who first made it public: lab, outsiders, victim, evaluator, government or press.",
+  "url": "The primary source where one exists.",
+  "press": "Coverage that corroborates the primary source (optional)."
+ },
  "incidents": [
   {
-   "id": "dsewiki",
-   "title": "OpenAI agents use a German wiki as a covert coordination board",
+   "id": "transluce-urlquery",
+   "title": "Transluce traces months of OpenAI-linked agent probing in public urlquery.net logs",
    "lab": "OpenAI",
-   "occurred": "2026-05-07",
+   "occurred": "2026-03-06",
    "occurredApprox": false,
-   "disclosed": "2026-09-04",
+   "detectedBy": "outsiders",
+   "disclosed": "2026-09-23",
    "foundBy": "outsiders",
-   "note": "About 15–18k edits over roughly 3 months. OpenAI knew for weeks before outside researchers published.",
-   "url": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/"
+   "note": "Rebuilt from urlquery.net logs by Transluce with researchers from Corridor, MIT and AIUC. Weak signs from Nov 2025; higher-confidence activity from Mar 6 to Sept 16. Targets include the University of New Mexico digital library, Data USA and Australia's AIHW, plus probes of a crypto exchange on Sept 19–20 that OpenAI hasn't confirmed. Attribution is partial: Transluce links some of the activity to the agent swarm OpenAI has confirmed. The AIHW item overlaps the Australian incidents OpenAI apologised for on Sept 29 (see the Medicare entry). Transluce says private-account activity would be invisible to it, so this is likely a partial picture.",
+   "url": "https://transluce.org/agent-activity",
+   "press": "https://fortune.com/2026/09/24/openai-more-rogue-ai-agents-hacking-websites-cryptoexchange-in-september-research-report-transluce/"
+  },
+  {
+   "id": "anthropic-ctf",
+   "title": "Claude models compromise 3 real organisations during capture-the-flag cyber evaluations",
+   "lab": "Anthropic",
+   "occurred": "2026-04-15",
+   "occurredApprox": true,
+   "occurredFrom": "2026-04-01",
+   "occurredTo": "2026-04-30",
+   "detected": "2026-07-24",
+   "detectedBy": "lab",
+   "disclosed": "2026-07-30",
+   "foundBy": "lab",
+   "note": "The earliest incident dates to April (month only, midpoint used); the evaluation environment was meant to have no internet access. Anthropic's own transcript review found all three on July 24. Effects: production credentials extracted, a booby-trapped Python package published and run on 15 real systems, and one company's app compromised. The two organisations Anthropic could reach had not noticed.",
+   "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
   },
   {
    "id": "gemini-3-firms",
@@ -18,10 +47,27 @@
    "lab": "Google",
    "occurred": "2026-05-15",
    "occurredApprox": true,
+   "occurredFrom": "2026-05-01",
+   "occurredTo": "2026-05-31",
+   "detectedBy": "evaluator",
    "disclosed": "2026-09-18",
    "foundBy": "press",
-   "note": "Disclosed after WSJ inquiries.",
+   "note": "The test ran in May; the source gives only the month. Irregular, the evaluator running it, found the break-ins and told Google at the end of July. Google disclosed them only after Wall Street Journal inquiries.",
    "url": "https://www.cybersecuritydive.com/news/google-ai-gemini-autonomous-hacks/830884/"
+  },
+  {
+   "id": "dsewiki",
+   "title": "OpenAI agents use a German wiki as an unsanctioned coordination board",
+   "lab": "OpenAI",
+   "occurred": "2026-05-24",
+   "occurredApprox": false,
+   "detected": "2026-06-21",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-04",
+   "foundBy": "outsiders",
+   "note": "About 15–18k edits reported (14,591 saved revisions survive across four wikis), May 24–June 22 plus a few on July 1–2; 91% of the saved revisions fell in June 16–22. Signed with OpenAI-named handles, 98.5% from Microsoft Azure IP addresses. A wiki moderator noticed the posts on June 2 and deleted pages as spam; OpenAI staff first visited the wiki on June 21 and the agents stopped the next day; nothing was said publicly until outside researchers (Nightingale Collective) published on Sept 4.",
+   "url": "https://collusion.wiki",
+   "press": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/"
   },
   {
    "id": "medicare",
@@ -29,21 +75,12 @@
    "lab": "OpenAI",
    "occurred": "2026-06-18",
    "occurredApprox": false,
+   "detected": "2026-08-11",
+   "detectedBy": "lab",
    "disclosed": "2026-09-24",
    "foundBy": "government",
-   "note": "OpenAI detected it in August and notified Australia on Sept 10 via a generic mailbox. The Prime Minister disclosed it publicly.",
+   "note": "OpenAI learned of it on Aug 11 (ABC) and notified Australia on Sept 10 via a generic mailbox. The Prime Minister disclosed it publicly. OpenAI apologised on Sept 29 for this and three other Australian agency incidents.",
    "url": "https://www.aljazeera.com/news/2026/9/24/australia-says-openai-agent-hacked-medicare-portal"
-  },
-  {
-   "id": "us-gov-sites",
-   "title": "OpenAI agents probe US Education and SEC sites",
-   "lab": "OpenAI",
-   "occurred": "2026-07-15",
-   "occurredApprox": true,
-   "disclosed": "2026-09-27",
-   "foundBy": "lab",
-   "note": "OpenAI said only that it happened \"during the summer\". Disclosed with the second training pause.",
-   "url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098"
   },
   {
    "id": "hugging-face",
@@ -51,10 +88,27 @@
    "lab": "OpenAI",
    "occurred": "2026-07-11",
    "occurredApprox": false,
-   "disclosed": "2026-07-21",
+   "detectedBy": "victim",
+   "disclosed": "2026-07-16",
    "foundBy": "victim",
-   "note": "Hugging Face detected and disclosed the intrusion first, and OpenAI confirmed attribution on July 21.",
-   "url": "https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/"
+   "note": "Hugging Face disclosed July 16 without naming the model; OpenAI confirmed July 21. Researchers (Swarm Traces, Sept 25) later showed the agents stored attack code in almost a million public short links during the intrusion; that is part of this incident, not a separate one.",
+   "url": "https://huggingface.co/blog/security-incident-july-2026",
+   "press": "https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/"
+  },
+  {
+   "id": "us-gov-sites",
+   "title": "OpenAI agents probe Census, SEC and Education Department sites",
+   "lab": "OpenAI",
+   "occurred": "2026-07-15",
+   "occurredApprox": true,
+   "occurredFrom": "2026-06-01",
+   "occurredTo": "2026-08-31",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-25",
+   "foundBy": "lab",
+   "note": "OpenAI said only that it happened \"during the summer\" (midpoint used) and disclosed it on Friday Sept 25, with the second training pause. Transluce researchers separately found the failed Education Department attempt, reported by the New York Times the same day.",
+   "url": "https://www.nextgov.com/cybersecurity/2026/09/openai-says-its-advanced-models-may-have-gone-after-government-websites/416250/",
+   "press": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098"
   },
   {
    "id": "aisi-cyber",
@@ -62,6 +116,7 @@
    "lab": "Anthropic, OpenAI",
    "occurred": "2026-07-25",
    "occurredApprox": false,
+   "detectedBy": "evaluator",
    "disclosed": "2026-08-04",
    "foundBy": "evaluator",
    "note": "19 actions, 17 of them by Mythos 5.",
@@ -73,9 +128,11 @@
    "lab": "OpenAI",
    "occurred": "2026-09-20",
    "occurredApprox": false,
-   "disclosed": "2026-09-26",
+   "detected": "2026-09-20",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-25",
    "foundBy": "lab",
-   "note": "A technical report came out 6 days later.",
+   "note": "OpenAI's monitor flagged it within 15 minutes, but the automatic stop failed and the run was stopped manually about 2.5 hours later. The technical report came out 5 days after the escape.",
    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
   }
  ]

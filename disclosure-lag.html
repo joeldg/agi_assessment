@@ -4,23 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Disclosure lag · Hidden AGI watch</title>
-<meta name="description" content="How long AI agent incidents stayed hidden before the public heard about them, and who exposed them.">
+<meta name="description" content="How long AI agent incidents stayed hidden before the public heard about them, and who made them public.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hidden AGI watch">
 <meta property="og:title" content="Disclosure lag · Hidden AGI watch">
-<meta property="og:description" content="How long AI agent incidents stayed hidden before the public heard about them, and who exposed them.">
+<meta property="og:description" content="How long AI agent incidents stayed hidden before the public heard about them, and who made them public.">
 <meta property="og:url" content="https://joeldg.github.io/agi_assessment/disclosure-lag.html">
 <meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Disclosure lag · Hidden AGI watch">
-<meta name="twitter:description" content="How long AI agent incidents stayed hidden before the public heard about them, and who exposed them.">
+<meta name="twitter:description" content="How long AI agent incidents stayed hidden before the public heard about them, and who made them public.">
 <meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<meta name="twitter:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/style.css">
+<link rel="canonical" href="https://joeldg.github.io/agi_assessment/disclosure-lag.html">
 <link rel="alternate" type="application/rss+xml" title="Hidden AGI watch" href="./feed.xml">
 <link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
 </head>
@@ -29,23 +32,29 @@
   <nav class="site" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
     <a href="./start-here.html">Start here</a>
-    <a href="./weekly/">Weekly wrap-up</a>
+    <a href="./alarm.html">Fire alarm</a>
+    <a href="./weekly/">Weekly</a>
     <a href="./scorecard.html">Scorecard</a>
+    <a href="./trends.html">Trends</a>
+    <a href="./money.html">Money</a>
     <a href="./disclosure-lag.html" aria-current="page">Disclosure lag</a>
     <a href="./agi-claims.html">AGI claims</a>
     <a href="./calendar.html">Calendar</a>
     <a href="./steelman.html">Steelman</a>
-    <a href="./trends.html">Trends</a>
-    <a href="./alarm.html">Alarm</a>
+    <a href="./about.html">About</a>
   </nav>
 
   <header class="prose">
     <h1>Disclosure lag</h1>
-    <p class="lede">Could a lab hide AGI? The best evidence is how long real incidents have stayed hidden. Each bar runs from when an incident happened to when the public learned of it.</p>
+    <p class="lede">Could a lab hide AGI? One piece of evidence is how long real AI incidents stayed out of public view. Each bar runs from when an incident happened to when it was made public.</p>
   </header>
   <div class="tiles" id="tiles"></div>
-  <section><h2>Days from incident to public disclosure</h2><div class="chart-wrap"><div id="lag"></div></div></section>
-  <section class="prose"><h2>Why it matters</h2><p>This is the empirical base rate behind hypotheses A and C. In 2026, serious agent incidents stayed hidden for weeks to months, and most were exposed by someone other than the lab: victims, outside researchers, governments or reporters. That points to secrets that are short but real, not ones that last for years. New incidents are added in each weekly wrap-up.</p><p class="muted small" id="note"></p></section>
+  <section><h2>Days from incident to public disclosure</h2><div class="chart-wrap"><div id="lag"></div></div><p class="muted small" id="w4"></p></section>
+  <section class="prose"><h2>What counts</h2><p>An incident is listed if an AI agent took an unsanctioned action outside its sanctioned environment that touched a real third-party or public system, it was made public by anyone, and it's backed by a primary source or two credible outlets. There's one entry per first public disclosure. Where a source gives only a month or season, we record the window and measure the lag from its midpoint; the range on the median shows the ends of those windows.</p></section>
+  <section class="prose"><h2>What this can't show</h2><p>Only incidents that became public appear here. Anything undetected, or detected and still hidden, is missing by definition, and the tracker only covers incidents from 2026 on, so it can't yet show a secret kept for years. Read these lags as a floor on how long things stay hidden, not a typical or a maximum value. The lag also runs from when an incident happened, so it mixes time before anyone noticed with time when a lab knew and said nothing; where a source says when the lab detected it, the chart marks that date.</p></section>
+  <section class="prose"><h2>Why it matters</h2><p>This is the closest thing we have to an empirical base rate for hypotheses A and C: how long real AI behaviour stayed out of public view, and who brought it to light. In 2026 the incidents that did come out took from days to months to surface, and <span id="others">several</span> were made public by someone other than the lab: victims, outside researchers, evaluators, governments or reporters. That shows sub-AGI agents can act out of public view for months, and that labs don't reliably disclose first. It can't show how long a careful system, or a lab set on keeping a secret, could stay hidden. New incidents are added in each weekly wrap-up.</p>
+    <p class="muted small" id="note"></p>
+    <p class="muted small">Separate, lab-reported context: Anthropic says that in August 2026 about 30,000 research and engineering agents ran at once on its most-used internal platform, every action passed through an automated monitor before it ran, and about 1 in 47,000 actions was blocked (<a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development" target="_blank" rel="noopener">Anthropic</a>). That is self-reported and not independently audited, and it measures what one lab's monitor catches, not what reaches the public.</p></section>
 
 <div class="subscribe">
   <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
@@ -53,21 +62,39 @@
 </div>
 
   <footer>
-    Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
+    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
+    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./about.html#corrections">Corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
 <script type="module">
 import * as K from "./assets/charts.js";
-const j = p => fetch(p,{cache:"no-cache"}).then(r=>r.json());
+const j = p => fetch(p,{cache:"no-cache"}).then(r => { if(!r.ok) throw new Error(p + ": HTTP " + r.status); return r.json(); });
+const link = (u, text, root="") => { const href = K.util.safeHref(u, root); if(!href) return null; return K.util.h("a", /^https?:/i.test(href) ? {href, target:"_blank", rel:"noopener"} : {href}, text); };
+const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate(d, o);
+const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
+const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
+const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
 
-const d = await j("data/incidents.json");
-const rows = K.lagChart(document.getElementById("lag"), d.incidents);
-const lags = rows.map(r=>r.lag).sort((a,b)=>a-b), med = lags.length%2 ? lags[(lags.length-1)/2] : Math.round((lags[lags.length/2-1]+lags[lags.length/2])/2);
-const ext = rows.filter(r=>r.ext).length;
+const d = await j("data/incidents.json"), h = K.util.h, el = document.getElementById("lag");
+const rows = K.live(el, () => K.lagChart(el, d.incidents)) || [];
+const median = xs => { const s = xs.filter(x => x!=null && !isNaN(x)).sort((a,b)=>a-b), k = s.length; if(!k) return null; return k%2 ? s[(k-1)/2] : (s[k/2-1]+s[k/2])/2; };
+const stats = rs => ({mid:median(rs.map(r=>r.lag)), lo:median(rs.map(r=>r.lagMin)), hi:median(rs.map(r=>r.lagMax)), n:rs.length});
+const r0 = v => v==null ? "–" : String(Math.round(v));
+const range = s => s.lo!=null && s.hi!=null && Math.round(s.lo)!==Math.round(s.hi) ? `range ${r0(s.lo)}–${r0(s.hi)}` : "";
+const n = rows.length, S = stats(rows);
+const others = rows.filter(r=>r.ext).length, labFirst = rows.filter(r=>r.labFirst).length, over90 = rows.filter(r=>r.lagMin > 90).length;
+const longest = rows.reduce((a,b) => !a || b.lag > a.lag ? b : a, null);
 const tiles = document.getElementById("tiles");
-[["Median lag", med+" days"],["Longest", lags[lags.length-1]+" days"],["Exposed by others", Math.round(ext/rows.length*100)+"%"],["Incidents tracked", rows.length]].forEach(([l,v])=>{ const t=K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},l), K.util.h("div",{class:"value"},String(v))); tiles.append(t); });
-document.getElementById("note").textContent = d.note;
+tiles.append(tile("Median lag", n ? `~${r0(S.mid)} days` : "–", n ? [range(S), `n = ${n}`].filter(Boolean).join(" · ") : ""));
+tiles.append(tile("Made public by others", n ? `${others} of ${n}` : "–", "not the lab"));
+tiles.append(tile("Lab detected it first", n ? `${labFirst} of ${n}` : "–", "the lab itself detected it; someone else made it public"));
+tiles.append(tile("Hidden more than 90 days", n ? `${over90} of ${n}` : "–", "at every date in its window"));
+tiles.append(tile("Longest seen", longest ? `${longest.lag} days` : "–", longest ? String(longest.title || longest.id || "") : ""));
+if(n) document.getElementById("others").textContent = `${others} of the ${n}`;
+const cut = new Date(Date.now() - 180*864e5).toISOString().slice(0,10), W = stats(rows.filter(r => String(r.disclosed) >= cut));
+const w4 = document.getElementById("w4"); w4.append("Fire-alarm trigger ", h("a",{href:"alarm.html#W4"},"W4"), W.n ? ` uses the same median over incidents made public in the past 180 days: ~${r0(W.mid)} days${range(W) ? " (" + range(W) + ")" : ""} across ${W.n} incident${W.n>1?"s":""} as of today.` : " uses the same median over incidents made public in the past 180 days; there are none as of today.");
+document.getElementById("note").textContent = d.note || "";
 
 </script>
 </body>

@@ -5,45 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hidden AGI watch</title>
 <meta name="google-site-verification" content="Be6S0c9DH1XRhRYohVFVG33a6kEYS-DwjR_c-UjvJmw" />
-<meta name="description" content="A daily, calibrated reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI, and AI influence on government.">
+<meta name="description" content="A daily, sourced reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI and AI influence on government, with forecasts scored in public.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hidden AGI watch">
 <meta property="og:title" content="Hidden AGI watch">
-<meta property="og:description" content="A daily, calibrated reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI, and AI influence on government.">
+<meta property="og:description" content="A daily, sourced reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI and AI influence on government, with forecasts scored in public.">
 <meta property="og:url" content="https://joeldg.github.io/agi_assessment/">
 <meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Today's Hidden AGI Index and the four hypothesis readings">
+<meta property="og:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hidden AGI watch">
-<meta name="twitter:description" content="A daily, calibrated reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI, and AI influence on government.">
+<meta name="twitter:description" content="A daily, sourced reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI and AI influence on government, with forecasts scored in public.">
 <meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="canonical" href="https://joeldg.github.io/agi_assessment/">
 <link rel="alternate" type="application/rss+xml" title="Hidden AGI watch" href="feed.xml">
 <link rel="icon" type="image/png" href="assets/brand/avatar-64.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","@id":"https://joeldg.github.io/agi_assessment/#website","url":"https://joeldg.github.io/agi_assessment/","name":"Hidden AGI watch","description":"A daily, sourced reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI and AI influence on government, with forecasts scored in public.","inLanguage":"en","publisher":{"@id":"https://joeldg.github.io/agi_assessment/#organization"}},
+ {"@type":"Organization","@id":"https://joeldg.github.io/agi_assessment/#organization","name":"Hidden AGI watch","url":"https://joeldg.github.io/agi_assessment/","logo":{"@type":"ImageObject","url":"https://joeldg.github.io/agi_assessment/assets/brand/avatar.png","width":1024,"height":1024},"sameAs":["https://github.com/joeldg/agi_assessment"]}
+]}
+</script>
 </head>
 <body>
 <main>
   <nav class="site" aria-label="Site">
     <a class="brand" href="./" aria-current="page">Hidden AGI watch</a>
     <a href="start-here.html">Start here</a>
-    <a href="weekly/">Weekly wrap-up</a>
+    <a href="alarm.html">Fire alarm</a>
+    <a href="weekly/">Weekly</a>
     <a href="scorecard.html">Scorecard</a>
+    <a href="trends.html">Trends</a>
+    <a href="money.html">Money</a>
     <a href="disclosure-lag.html">Disclosure lag</a>
     <a href="agi-claims.html">AGI claims</a>
     <a href="calendar.html">Calendar</a>
     <a href="steelman.html">Steelman</a>
-    <a href="trends.html">Trends</a>
-    <a href="alarm.html">Alarm</a>
+    <a href="about.html">About</a>
   </nav>
   <header>
     <h1>Hidden AGI watch</h1>
-    <p class="lede">A daily reading of four hypotheses about undisclosed advanced AI, reassessed against the news and against earlier runs. Figures are probabilities that each is true now, by 2030, and by 2035. A fire alarm for hidden AI: calibrated, sourced, and loud only when the evidence says so.</p>
-    <p class="muted" id="status">Loading runs…</p>
+    <p class="lede">A daily reading of four hypotheses about undisclosed advanced AI, reassessed against the news and against earlier readings. Figures are our probabilities that each is true today, and that it becomes true at some point before the end of 2030 and of 2035. A fire alarm for hidden AI: sourced, with our forecasts scored in public, and loud only when the evidence says so.</p>
+    <p class="muted" id="status">Loading readings…</p>
   </header>
 
   <div id="alarm"></div>
@@ -57,13 +66,13 @@
       <p class="small"><a href="start-here.html">What is this number?</a></p>
     </div>
   </section>
-  <div id="needle" class="needle"></div>
+  <p class="muted small how-fits">The alarm level comes from published triggers, not our probabilities. The Index is our probability that at least one of the four hypotheses below is true now. Gauges are the inputs we track, each tagged measured, estimated or assessed. Tripwires are early signals; most are linked to the alarm trigger they feed.</p>
+  <div id="needle" class="needle" hidden></div>
 
-  <section id="gauges" aria-labelledby="gauges-h">
-    <h2 id="gauges-h">The four gauges</h2>
-    <p class="muted">What the evidence actually measures. These move week to week and feed the hypothesis probabilities. Hover or tap a gauge for how it's measured. <a href="start-here.html#gauges">More on the gauges</a>.</p>
-    <div id="gauge-row"></div>
-  </section>
+  <div class="subscribe">
+    <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
+    <a class="btn" href="https://hidden-agi.kit.com/f2b4d2f30e" target="_blank" rel="noopener">Subscribe</a>
+  </div>
 
   <div class="callout">
     <strong>The hypotheses.</strong>
@@ -73,16 +82,17 @@
     <strong>D</strong>: an AGI-level system is influencing government decisions or world affairs, split into <strong>covert</strong> influence (D) and <strong>open</strong>, acknowledged use (D-open).
   </div>
 
-<div class="subscribe">
-  <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
-  <a class="btn" href="https://hidden-agi.kit.com/f2b4d2f30e" target="_blank" rel="noopener">Subscribe</a>
-</div>
+  <section id="gauges" aria-labelledby="gauges-h">
+    <h2 id="gauges-h">The five gauges</h2>
+    <p class="muted">What the evidence shows. These move week to week and feed the hypothesis probabilities. Open "How it's measured" on any gauge. <a href="start-here.html#gauges">More on the gauges</a>.</p>
+    <div id="gauge-row"></div>
+  </section>
 
   <div class="readings" id="readings"></div>
 
   <section>
     <h2>Tripwires</h2>
-    <p class="muted">The signals that would change the estimates most, and where each stands today. <span id="tripwire-count"></span></p>
+    <p class="muted">The signals that would change the estimates most, and where each stands today. Tripwires are early signals that move our probabilities; only the published triggers set the alarm level. <span id="tripwire-count"></span></p>
     <div id="tripwires"></div>
   </section>
 
@@ -94,10 +104,11 @@
 
   <section id="forecast">
     <h2>Where it's heading: our forecast to 2035</h2>
-    <p class="muted">The line joins what we say today: the probability now, by the end of 2030 and by the end of 2035. It is our forecast, not an extrapolation of the daily line, because a calibrated estimate shouldn't have a predictable drift. The shaded band shows how confident we are. Hollow rings are outside forecasts, most of which use looser definitions.</p>
+    <p class="muted">The line joins what we say today: the probability now, and by the end of 2030 and of 2035. It is our stated forecast, not a projection of the daily line. Our end-2030 and end-2035 numbers shouldn't drift in a predictable direction; the 'now' numbers are expected to climb toward the forecast over time, mostly as news arrives. The lines only join the three numbers we state. The shaded band is a judgment range, not a statistical interval. Hollow rings are outside forecasts. None of the outside forecasts uses our exact definition; see the table under the chart for how each differs.</p>
     <h3>Strict AGI exists, public or hidden</h3>
     <div class="chart-wrap"><div id="fc-agi"></div></div>
     <h3>The four hypotheses</h3>
+    <p class="muted small" id="fc-scale"></p>
     <div class="forecast-grid" id="fc-grid"></div>
     <p class="small"><a href="trends.html">What the measured trends say: METR task length, AI share of AI research →</a></p>
   </section>
@@ -108,7 +119,7 @@
       <div id="changes"></div>
     </div>
     <div>
-      <h2>Movement since last run</h2>
+      <h2>Movement since the last reading</h2>
       <div class="table-wrap" id="deltas"></div>
     </div>
   </section>
@@ -134,6 +145,7 @@
       <a class="card" href="agi-claims.html"><strong>AGI claims ledger</strong><span>Who has said AGI is here, and whether it meets any definition.</span></a>
       <a class="card" href="calendar.html"><strong>Coming up</strong><span>Dated events that could move the numbers.</span></a>
       <a class="card" href="steelman.html"><strong>Weekly steelman</strong><span>The best case for the side the numbers disfavour.</span></a>
+      <a class="card" href="money.html"><strong>Follow the money</strong><span>AI spending, chip revenue, lab revenue and markets, against visible capability.</span></a>
       <a class="card" href="trends.html"><strong>Trend watch</strong><span>Measured trends projected forward, with when they would cross key thresholds.</span></a>
       <a class="card" href="start-here.html"><strong>Start here</strong><span>The four hypotheses, the index and the method, explained.</span></a>
     </div>
@@ -150,7 +162,8 @@
 </div>
 
   <footer>
-    Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty; every factual claim is sourced in the daily report. Not investment, policy or security advice. Source: <a href="https://github.com/joeldg/agi_assessment">github.com/joeldg/agi_assessment</a>. <a href="style.html">Chart style guide</a>.
+    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
+    <p><a href="about.html">About</a> · <a href="start-here.html#method">Method</a> · <a href="about.html#corrections">Corrections</a> · <a href="style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module" src="assets/app.js"></script>

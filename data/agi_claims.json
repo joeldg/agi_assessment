@@ -8,11 +8,11 @@
  },
  "claims": [
   {
-   "date": "2026-03-22",
+   "date": "2026-03-23",
    "who": "Jensen Huang",
    "role": "Nvidia CEO",
-   "quote": "we've achieved AGI",
-   "venue": "Lex Fridman podcast",
+   "quote": "I think we've achieved AGI",
+   "venue": "Lex Fridman Podcast #494",
    "model": "(general)",
    "meets": {
     "strict": "no",
@@ -20,9 +20,27 @@
     "charter": "no",
     "narrow": "yes"
    },
-   "narrowDef": "An AI that could start and run a $1B company.",
+   "narrowDef": "Fridman's bar, which Huang accepted: an AI that could start, grow and run a tech company worth over $1B.",
    "interest": "Sells the chips that AI is trained on.",
-   "url": "https://www.techradar.com/ai-platforms-assistants/i-think-weve-achieved-agi-er-jensen-i-dont-think-we-have"
+   "url": "https://lexfridman.com/jensen-huang-transcript/",
+   "press": "https://www.techradar.com/ai-platforms-assistants/i-think-weve-achieved-agi-er-jensen-i-dont-think-we-have"
+  },
+  {
+   "date": "2026-08-26",
+   "who": "Jensen Huang",
+   "role": "Nvidia CEO",
+   "quote": "for many tasks, we could say that we've already achieved AGI",
+   "venue": "Nvidia Q2 FY2027 earnings call",
+   "model": "(general)",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "partial"
+   },
+   "narrowDef": "\"In a lot of ways, and for many tasks\"; in the same answer he called AGI milestones \"kind of senseless at this point\".",
+   "interest": "Sells the chips that AI is trained on.",
+   "url": "https://www.fool.com/earnings/call-transcripts/2026/08/31/nvidia-nvda-q2-2027-earnings-call-transcript/"
   },
   {
    "date": "2026-09-03",
@@ -42,21 +60,22 @@
    "url": "https://fortune.com/2026/09/03/openai-debuts-gpt-6-astra-computer-use-greg-brockman-says-start-of-agi/"
   },
   {
-   "date": "2026-09-07",
+   "date": "2026-09-06",
    "who": "Jensen Huang",
    "role": "Nvidia CEO",
    "quote": "AGI has arrived",
-   "venue": "Post after GPT-6 Astra, amplified by Brockman",
+   "venue": "Post on X (reply to Crusoe CEO Chase Lochmiller); shared by Greg Brockman",
    "model": "GPT-6 Astra",
    "meets": {
     "strict": "no",
     "levels": "partial",
     "charter": "no",
-    "narrow": "yes"
+    "narrow": "unclear"
    },
-   "narrowDef": "As in March.",
+   "narrowDef": "None stated in the post.",
    "interest": "Sells the chips that AI is trained on.",
-   "url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/"
+   "url": "https://x.com/JensenHuang/status/2096700264569090384",
+   "press": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/"
   }
  ]
 }

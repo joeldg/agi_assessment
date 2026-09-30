@@ -4,6 +4,8 @@
   --sA:#B8700C; --sB:#00897B; --sC:#9150B8; --sD:#C8413A; --sE:#3569D4;
   --accent:#B8700C; --grid:#E1E6EA; --axis:#C9D0D7;
   --good:#2E7D4F; --warn:#9A6B00; --crit:#B42318;
+  /* text-on-background variants (AA 4.5:1); series colors stay for marks only */
+  --link:#2F62C8; --sA-text:#8A5608; --warn-text:#855C00; --crit-bg:#B42318;
   --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
   --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color-scheme:light dark;
@@ -15,14 +17,16 @@
     --sA:#C4861A; --sB:#139A8C; --sC:#A36ED0; --sD:#DC564A; --sE:#4F82DC;
     --accent:#D9A441; --grid:#26313C; --axis:#34414E;
     --good:#4FB27A; --warn:#D4A72C; --crit:#F0645A;
+    --link:#6B96E6; --sA-text:var(--sA); --warn-text:var(--warn); --crit-bg:#B42318;
   }
 }
 :root[data-theme="dark"]{
   --bg:#141A21; --surface:#1B232C; --ink:#E3E8ED; --muted:#98A5B3; --rule:#2E3A46;
   --up:#E07A6F; --down:#6FBF95;
   --sA:#C4861A; --sB:#139A8C; --sC:#A36ED0; --sD:#DC564A; --sE:#4F82DC;
-    --accent:#D9A441; --grid:#26313C; --axis:#34414E;
-    --good:#4FB27A; --warn:#D4A72C; --crit:#F0645A;
+  --accent:#D9A441; --grid:#26313C; --axis:#34414E;
+  --good:#4FB27A; --warn:#D4A72C; --crit:#F0645A;
+  --link:#6B96E6; --sA-text:var(--sA); --warn-text:var(--warn); --crit-bg:#B42318;
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
@@ -33,7 +37,7 @@ h2{font-size:22px;margin-bottom:12px}
 h3{font-size:18px;margin:18px 0 8px}
 h4{font-size:16px;margin:14px 0 6px}
 p{margin:0 0 10px}
-a{color:var(--sE)}
+a{color:var(--link)}
 .lede{color:var(--muted);max-width:66ch;margin-top:8px}
 section{margin-top:36px}
 button{font:inherit;cursor:pointer}
@@ -56,14 +60,7 @@ nav.top a:hover{color:var(--ink);text-decoration:underline}
 
 /* chart */
 .chart-head{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
-.seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
-.seg button{background:transparent;border:0;padding:6px 12px;color:var(--muted);font-size:14px}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .chart-wrap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;margin-top:12px;overflow-x:auto}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px}
-.legend button{background:none;border:0;padding:2px 0;display:flex;gap:6px;align-items:center;color:var(--ink);font-size:14px}
-.legend button[aria-pressed="false"]{opacity:.35}
-.axis text{fill:var(--muted);font-size:11px;font-family:var(--sans)}
 .axis line{stroke:var(--rule)}
 
 /* layout */
@@ -73,6 +70,8 @@ ul.plain{margin:0;padding-left:18px}
 ul.plain li{margin-bottom:8px}
 table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
 .table-wrap{overflow-x:auto}
+/* a table wider than its box fades at the right edge until scrolled to the end (charts.js sets the class) */
+.table-wrap.more-right{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}
 th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
 th{font-weight:600;color:var(--muted)}
 td.num,th.num{white-space:nowrap}
@@ -80,8 +79,6 @@ td.num,th.num{white-space:nowrap}
 details{border-bottom:1px solid var(--rule);padding:10px 0}
 summary{cursor:pointer;font-weight:600}
 details .body{margin-top:10px;font-size:15px}
-.runbox{background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--ink);border-radius:6px;padding:16px}
-.runbox pre{white-space:pre-wrap;font-family:var(--sans);font-size:14px;background:var(--bg);padding:12px;border-radius:4px;margin:10px 0;max-height:360px;overflow:auto}
 .btn{background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:8px 14px}
 .muted{color:var(--muted)}
 .empty{padding:24px;border:1px dashed var(--rule);border-radius:8px;color:var(--muted)}
@@ -93,8 +90,8 @@ details .body{margin-top:10px;font-size:15px}
 .report ul{padding-left:20px}
 .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;border:1px solid var(--rule);border-radius:3px;padding:0 5px;margin-right:4px;color:var(--muted);white-space:nowrap}
 .tag.fact{color:var(--down);border-color:var(--down)}
-.tag.report{color:var(--sE);border-color:var(--sE)}
-.tag.opinion{color:var(--sA);border-color:var(--sA)}
+.tag.report{color:var(--link);border-color:var(--link)}
+.tag.opinion{color:var(--sA-text);border-color:var(--sA-text)}
 .tag.spec{color:var(--up);border-color:var(--up)}
 .hyp{border-left:4px solid var(--rule);padding-left:14px;margin:18px 0}
 .hyp.A{border-color:var(--sA)} .hyp.B{border-color:var(--sB)} .hyp.C{border-color:var(--sC)} .hyp.D{border-color:var(--sD)}
@@ -139,7 +136,6 @@ footer{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid va
 
 /* hero: Hidden AGI Index */
 .hero{display:grid;grid-template-columns:auto 1fr;gap:8px 28px;align-items:center;margin-top:22px;padding:18px 20px;background:var(--surface);border:1px solid var(--rule);border-radius:10px}
-@media (max-width:640px){.hero{grid-template-columns:1fr;justify-items:center;text-align:center}}
 .hero .kicker{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .hero .big{font-family:var(--sans);font-weight:600;font-size:56px;line-height:1}
 .hero .big small{font-size:24px}
@@ -178,7 +174,7 @@ ul.tripwires{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)
 .tile .delta{font-size:13px}
 
 /* site nav + section cards */
-nav.site{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
+nav.site{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px;padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
 nav.site a{color:var(--muted);text-decoration:none}
 nav.site a:hover,nav.site a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 nav.site .brand{font-family:var(--serif);font-weight:600;color:var(--ink)}
@@ -222,7 +218,73 @@ nav.site .brand{font-family:var(--serif);font-weight:600;color:var(--ink)}
 .alarm-seg{height:6px;border-radius:3px;background:var(--grid)}
 .alarm-seg.on{outline:2px solid var(--ink);outline-offset:1px}
 .alarm-meaning{font-weight:500}
-.alarm-banner{background:var(--crit);color:#fff;padding:10px 16px;text-align:center;font-size:15px}
+.alarm-banner{background:var(--crit-bg);color:#fff;padding:10px 16px;text-align:center;font-size:15px}
 .alarm-banner a{color:#fff;text-decoration:underline}
 .lv-table td:first-child{white-space:nowrap;font-weight:600}
 .met-yes{font-weight:600}
+
+/* status line: the bottom line first */
+#status .status-lead{color:var(--ink)}
+.how-fits{max-width:72ch;margin:10px 0 0}
+
+/* fire alarm: neutral box when the data can't be read (never red), linked trigger codes */
+.alarm-unknown{border-left-color:var(--rule)}
+.alarm-detail a{color:inherit}
+
+/* tripwires: unknown status fails closed; chip linking to the alarm trigger */
+.tw.unknown .tw-status{color:var(--crit)}
+.tw-trigger{text-decoration:none;margin-left:4px;white-space:nowrap}
+.tw-trigger:hover{color:var(--ink);border-color:var(--ink)}
+
+/* method details that don't depend on hover */
+.g-how,.fc-why{border:0;padding:0;margin-top:2px}
+.g-how summary,.fc-why summary{font-weight:400;color:var(--muted)}
+.g-how p,.fc-why p{margin:4px 0 0}
+.g-how ol{margin:4px 0 0;padding-left:18px}
+.g-how li{margin-bottom:2px}
+.fc-res,.fc-corr{margin-top:2px}
+
+/* legend marks for the disclosure-lag chart */
+.lg-glyph{font-size:12px;line-height:1;color:var(--ink)}
+.lg-tick{width:2px;height:12px;background:var(--ink);display:inline-block}
+
+/* alarm trigger tables share column widths; only the status badge stays on one line */
+table.trig{table-layout:fixed}
+table.trig td{overflow-wrap:anywhere}
+.trig th:nth-child(1){width:3em} .trig th:nth-child(2){width:38%} .trig th:nth-child(3){width:24%}
+.trig .st{white-space:nowrap}
+/* phones: each trigger becomes a card (id, trigger, threshold, status), labelled from data-label */
+@media (max-width:640px){
+  table.trig,table.trig tbody,table.trig tr,table.trig td{display:block;width:auto!important}
+  table.trig{table-layout:auto}
+  table.trig thead{display:none}
+  table.trig tr{padding:10px 0;border-bottom:1px solid var(--rule)}
+  table.trig td{border:0;padding:2px 0}
+  table.trig td.num{font-weight:600}
+  table.trig td[data-label]::before{content:attr(data-label);display:block;font-size:12px;font-weight:600;color:var(--muted)}
+  .trig .st{white-space:normal}
+  table.alarm-hist td.num{white-space:normal}
+  .claims-wide{display:none}
+}
+.claims-compact{display:none}
+@media (max-width:640px){.claims-compact{display:block;margin-top:4px}}
+
+/* five-item rows (gauges, forecast panels) go 3 + 2 instead of leaving an orphan tile */
+@media (min-width:720px){
+  .gauges,.forecast-grid{grid-template-columns:repeat(6,1fr)}
+  .gauges>*,.forecast-grid>*{grid-column:span 2}
+  .gauges>:nth-last-child(2):nth-child(3n+1),.gauges>:last-child:nth-child(3n+2),
+  .forecast-grid>:nth-last-child(2):nth-child(3n+1),.forecast-grid>:last-child:nth-child(3n+2){grid-column:span 3}
+  .gauges>:last-child:nth-child(3n+1),.forecast-grid>:last-child:nth-child(3n+1){grid-column:1/-1}
+}
+.cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+
+/* phones: one swipeable nav row, and the Index number beside a small dial */
+@media (max-width:640px){
+  nav.site,nav.top{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  nav.site::-webkit-scrollbar,nav.top::-webkit-scrollbar{display:none}
+  nav.site>a,nav.top>a{flex:none}
+  .hero{grid-template-columns:auto 1fr;justify-items:start;text-align:left;padding:12px 14px;gap:8px 16px}
+  .hero #dial svg{width:120px;height:auto}
+  .hero .big{font-size:44px}
+}

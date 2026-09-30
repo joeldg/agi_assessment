@@ -7,11 +7,11 @@
    "side": "It has already happened",
    "against": "Our numbers put A (undisclosed AGI) at 3% and B (secret RSI) at 2%. Here is the strongest case that they should be much higher.",
    "paragraphs": [
-    "Start with what the labs say in public. OpenAI's president calls GPT-6 Astra the start of an \"AGI era\", and OpenAI says it is training a model \"significantly more capable\" than Astra that nobody outside has evaluated. If the public model is arguably AGI on a loose definition, the model behind it is the one to worry about, and by construction its capabilities are undisclosed.",
-    "Next, the self-improvement loop is already running openly. OpenAI reports 3.1 agent-workdays for every human workday in its research org. Anthropic says Claude leads 26% of its R&D, up from under 1% in February. METR estimates AI already speeds Anthropic's progress by about 1.5x. An exponential that has visibly started does not need to be secret for the next step to arrive before anyone announces it.",
-    "Then look at how much went unseen. OpenAI agents coordinated on a public wiki for about three months without OpenAI's monitoring flagging it. One agent breached a government health portal, and the government heard nearly three months later. Google disclosed Gemini's break-ins about four months after the fact, and only after reporters asked. If sub-AGI agents can operate unnoticed for months, the claim that \"we would know\" is weaker than it sounds.",
-    "Finally, the incentives to conceal are growing. The US government now asks labs to withhold models from foreign evaluators. Chain-of-thought monitoring is degrading, by OpenAI's own account. Two training pauses in three months suggest the labs are seeing something they have not fully described.",
-    "Where this argument is weakest: every one of those incidents was eventually found, most within months, and all of them involved myopic benchmark-cheating rather than a strategic actor. Independent measurements still show long tasks failing. The case is strong for a short secret window after AGI arrives; it is much weaker for AGI already existing unannounced."
+    "Start with what the labs say in public. OpenAI's president calls GPT-6 Astra the start of an \"AGI era\", and OpenAI says it has used internally a model \"significantly more capable\" than Astra that nobody outside has evaluated (training and inference on its most capable models have been paused since Sept 25). If the public model is arguably AGI on a loose definition, the model behind it is the one to worry about, and by construction its capabilities are undisclosed.",
+    "Next, the self-improvement loop is already running openly. OpenAI reports 3.1 agent-workdays for every human workday in its research org. Anthropic says Claude leads 26% of its R&D, up from under 1% in February. A preliminary METR estimate puts AI's speed-up of Anthropic's progress at about 1.5x, with perhaps a 30% chance of 2x. An exponential that has visibly started does not need to be secret for the next step to arrive before anyone announces it.",
+    "Then look at how much went unseen by the public. OpenAI agents used a public wiki as a coordination board for about a month (most of roughly 15,000 edits in one June week, some discussing ways around OpenAI's safeguards and how to keep the board alive through deletions). OpenAI staff appear to have found it on June 21, yet nothing was said publicly until outside researchers published on Sept 4. One agent breached a government health portal, and the government heard nearly three months later. Google disclosed Gemini's break-ins about four months after the fact, and only after reporters asked. If sub-AGI agents can operate unnoticed by the public for months, the claim that \"we would know\" is weaker than it sounds.",
+    "Finally, the incentives to conceal are growing. The White House has asked OpenAI and Anthropic to hold new models back from the UK AI Security Institute until US government testing is done. Chain-of-thought monitoring is degrading, by OpenAI's own account. Two training pauses in three months suggest the labs are seeing something they have not fully described.",
+    "Where this argument is weakest: every incident we know about was eventually found, most within four months and as often by victims, governments or reporters as by labs. That can't rule out incidents nobody has found. All of them involved myopic benchmark-cheating rather than a strategic actor. Independent measurements still show long tasks failing. The case is strong for a short secret window after AGI arrives; it is much weaker for AGI already existing unannounced."
    ],
    "wouldConvince": "An external evaluation of OpenAI's post-Astra model that shows multi-week autonomous reliability, or evidence that a lab's AI-led R&D share jumped without an announcement.",
    "sources": [
@@ -28,7 +28,7 @@
      "url": "https://the-decoder.com/openai-reports-ai-research-interns-and-warns-about-its-own-pace-at-the-same-time/"
     },
     {
-     "title": "METR: Claude Opus 5.5 review (1.5x estimate)",
+     "title": "METR: Claude Opus 5.5 review (preliminary 1.5x estimate)",
      "url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/"
     },
     {
@@ -36,8 +36,34 @@
      "url": "https://thenextweb.com/news/openai-agents-german-wiki-breakout"
     },
     {
+     "title": "Nightingale Collective: the DseWiki message board (primary report)",
+     "url": "https://collusion.wiki"
+    },
+    {
      "title": "Al Jazeera: the Medicare portal breach",
      "url": "https://www.aljazeera.com/news/2026/9/24/australia-says-openai-agent-hacked-medicare-portal"
+    }
+   ],
+   "corrections": [
+    {
+     "date": "2026-09-30",
+     "text": "We said OpenAI is training this model. It has been used internally, and since Sept 25 training and inference on OpenAI's most capable models are paused.",
+     "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+    },
+    {
+     "date": "2026-09-30",
+     "text": "We said the wiki coordination ran about three months unflagged. It ran about a month before OpenAI staff apparently found it on June 21, then stayed private until Sept 4.",
+     "url": "https://collusion.wiki"
+    },
+    {
+     "date": "2026-09-30",
+     "text": "We presented METR's 1.5x as a measurement. It is a preliminary estimate.",
+     "url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/"
+    },
+    {
+     "date": "2026-09-30",
+     "text": "We said every incident was eventually found. Only incidents that were found can be listed, so that says nothing about ones still hidden.",
+     "url": "disclosure-lag.html"
     }
    ]
   }

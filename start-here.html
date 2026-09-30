@@ -13,14 +13,17 @@
 <meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Start here · Hidden AGI watch">
 <meta name="twitter:description" content="What Hidden AGI watch tracks, what the Hidden AGI Index means, and how the daily and weekly readings are made.">
 <meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<meta name="twitter:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/style.css">
+<link rel="canonical" href="https://joeldg.github.io/agi_assessment/start-here.html">
 <link rel="alternate" type="application/rss+xml" title="Hidden AGI watch" href="./feed.xml">
 <link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
 </head>
@@ -29,14 +32,16 @@
   <nav class="site" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
     <a href="./start-here.html" aria-current="page">Start here</a>
-    <a href="./weekly/">Weekly wrap-up</a>
+    <a href="./alarm.html">Fire alarm</a>
+    <a href="./weekly/">Weekly</a>
     <a href="./scorecard.html">Scorecard</a>
+    <a href="./trends.html">Trends</a>
+    <a href="./money.html">Money</a>
     <a href="./disclosure-lag.html">Disclosure lag</a>
     <a href="./agi-claims.html">AGI claims</a>
     <a href="./calendar.html">Calendar</a>
     <a href="./steelman.html">Steelman</a>
-    <a href="./trends.html">Trends</a>
-    <a href="./alarm.html">Alarm</a>
+    <a href="./about.html">About</a>
   </nav>
 
   <header class="prose">
@@ -50,31 +55,54 @@
     <div class="hyp C"><strong>C: a covert AGI-level actor online.</strong> An AGI-level system takes sustained actions on the internet or in the economy, without its developer's sanction or without public knowledge. Today's sub-AGI agent incidents are tracked as warning signs, not as proof.</div>
     <div class="hyp D"><strong>D: an AGI shaping government.</strong> Output from an AGI-level system materially shapes a major government decision. It's one question with two readings: <strong>covert</strong> (D), where the public doesn't know, and <strong>open</strong> (D-open), through acknowledged use. Today's heavy government use of sub-AGI tools doesn't count toward either.</div>
 
+    <h2 id="hidden">What "hidden" means</h2>
+    <p>A–D track two kinds of hiding: advanced AI that people keep from the public (a company or government that doesn't disclose what it has built, or how it's using it), and AI systems acting covertly on their own (C). A model hiding its own capability from its developer, for example by quietly underperforming on tests, is a different problem. It isn't A, because A needs the builder to know what it has, but it would undermine the evaluations these readings rely on, so it's tracked separately as the evaluation-integrity tripwire on the <a href="./#tripwires">dashboard</a>.</p>
+
+    <h2 id="pieces">How the pieces fit</h2>
+    <ul class="plain">
+      <li><strong>Fire alarm:</strong> are pre-committed warning conditions met? It's set by <a href="alarm.html">published rules</a>, not by our probabilities.</li>
+      <li><strong>Hidden AGI Index:</strong> our probability that at least one of A–D is true right now.</li>
+      <li><strong>Gauges:</strong> the inputs we track, each tagged by how it's made.</li>
+      <li><strong>Tripwires:</strong> early signals we're watching, each linked to the alarm trigger it feeds where there is one. They move our probabilities; only the triggers set the alarm level.</li>
+      <li><strong>Hypotheses A–D:</strong> the detail behind the Index, each estimated now, by 2030 and by 2035.</li>
+    </ul>
+
     <h2 id="alarm">The fire alarm</h2>
-    <p>Hidden AGI watch aims to be a fire alarm for hidden AI. On top of the probabilities there's an alarm level (Normal, Watch, Warning, Alarm) set by <a href="alarm.html">published criteria</a> fixed in advance. It rises the day a trigger is met, comes down slowly, and every change is announced and publicly reviewed after 90 days, false alarms included.</p>
-    <h2 id="gauges">The four gauges</h2>
-    <p>The hypotheses make a sharp headline, but they sit near zero and move slowly. The gauges measure what the evidence actually tracks. They move week to week and are what the probabilities are judged against. Each is tagged by how it's made: <em>measured</em> (a published number), <em>estimated</em> (our judgment anchored on a measurement) or <em>assessed</em> (a position on a defined scale).</p>
+    <p>Hidden AGI watch aims to be a fire alarm for hidden AI. On top of the probabilities there's an alarm level (Normal, Watch, Warning, Alarm) set by <a href="alarm.html">published, versioned criteria</a> (v1.0, published 29 Sept 2026 with that day's readings in view; every later change is dated in the <a href="alarm.html#changelog">alarm changelog</a>). It rises the day a trigger is met, comes down slowly, and every change is announced and publicly reviewed after 90 days, false alarms included.</p>
+    <h2 id="gauges">The five gauges</h2>
+    <p>The hypotheses make a sharp headline, but they sit near zero and move slowly. The gauges track what the evidence actually shows. They move week to week and are what the probabilities are judged against. Each is tagged by how it's made: <em>measured</em> (a number published in filings or by a lab or evaluator), <em>estimated</em> (our own calculation or judgment, anchored on published data) or <em>assessed</em> (a position on a defined scale).</p>
     <ul class="plain">
       <li><strong>Capability gap</strong> (estimated, feeds A and B): how many months ahead of public models labs' unreleased models are. A growing gap is the room in which something could be hidden.</li>
-      <li><strong>AI doing AI research</strong> (measured, feeds B): the published share of frontier AI research led by AI, with METR's speed-up estimate alongside. It's the most direct precursor of self-improvement.</li>
-      <li><strong>Oversight gap</strong> (measured, feeds A and C): the median time AI agent incidents stay hidden before the public hears, and how often outsiders rather than the lab expose them. See <a href="disclosure-lag.html">disclosure lag</a>.</li>
+      <li><strong>AI doing AI research</strong> (measured, feeds B): the latest lab-published share of AI research led by AI. Today that's one lab's self-report: Anthropic's prototype index, whose levels are assigned by a Claude model and which isn't independently audited. METR's preliminary speed-up estimate sits alongside. It's the most direct precursor of self-improvement.</li>
+      <li><strong>Oversight gap</strong> (estimated, feeds A and C): the median time AI agent incidents stayed hidden before the public heard, and how often someone other than the lab made them public. We compute it from our own <a href="disclosure-lag.html">incident list</a>, so it's a floor: incidents nobody has disclosed can't be counted.</li>
+      <li><strong>Money trail</strong> (measured, feeds A): Big Tech's total capital spending over the last 12 months (all property and equipment, mostly data centers) and its growth, on the <a href="money.html">Follow the money</a> page, with the compute test in <a href="alarm.html#X4">X4</a>. Spending alone can't reveal hidden capability: the test is X4, a training run or cluster twice the largest known with no matching release.</li>
       <li><strong>Delegation to AI</strong> (assessed, feeds D): how much consequential government decision-making runs through AI, on a 5-level scale from "admin and drafting" to "AI decides without human review".</li>
     </ul>
     <h2>Our AGI bar</h2>
     <p>AGI here means a system that reliably (80% or better) does at least 80% of economically valuable remote professional tasks at the level of a median skilled professional, including multi-week projects, with no task-specific human scaffolding. It is deliberately strict. Looser definitions, such as "we're in the AGI era", are tracked on the <a href="agi-claims.html">AGI claims ledger</a>.</p>
     <h2>The Hidden AGI Index</h2>
     <p>The headline number is the probability that <em>at least one</em> of A–D is true right now. The hypotheses overlap: C and D mostly require an A-level system to exist. So the index sits just above the largest single hypothesis rather than being their sum. The dial shows it as an eye whose iris has 100 ticks, one per percentage point.</p>
-    <h2>How the numbers are made</h2>
+    <h2 id="method">How the numbers are made</h2>
     <ul class="plain">
-      <li><strong>Daily:</strong> a custom AI agent, built for this project, searches the news, research, lab system cards and independent evaluations such as METR, Epoch AI and the AI Security Institutes. It then reassesses each hypothesis now, by 2030 and by 2035. Each daily report shows its full reasoning, including base rates, the steelman of both sides, and what would change its mind.</li>
+      <li><strong>Daily:</strong> a custom AI agent, built for this project, searches the news, research, lab system cards and independent evaluations such as METR, Epoch AI and the AI Security Institutes. It then reassesses each hypothesis now, by 2030 and by 2035, and publishes the report automatically. Each daily report shows its full reasoning, including base rates, the steelman of both sides, and what would change its mind.</li>
+      <li><strong>What the horizons mean:</strong> Now = true today. By 2030 / by 2035 = true at any point before 1 Jan 2031 / 1 Jan 2036 (cumulative, so never below "now").</li>
+      <li><strong>Rounding:</strong> estimates move in 0.1-point steps below 1%, 0.5-point steps from 1% to 10%, and whole points above 10%. Finer steps would claim more precision than these judgments have.</li>
       <li><strong>Evidence ratings:</strong> every claim is tagged <span class="tag fact">verified fact</span> <span class="tag report">credible report</span> <span class="tag opinion">expert opinion</span> or <span class="tag spec">speculation</span>.</li>
-      <li><strong>Tripwires:</strong> the specific, observable signals that would move the numbers most. Each is marked quiet, watching or tripped.</li>
-      <li><strong>Forecast chart:</strong> the dashboard draws our stated numbers (now, by 2030, by 2035) with a band for our confidence and outside forecasts for comparison. We don't extrapolate our own daily line: if we expected our estimate to rise, we should already have raised it. <a href="trends.html">Trend watch</a> projects <em>measured</em> trends instead, such as how long a task AI can finish on its own.</li>
+      <li><strong>Tripwires:</strong> the specific, observable signals that would move the numbers most. Each is marked quiet, watching or tripped, and names the alarm trigger it feeds where there is one.</li>
+      <li><strong>Forecast chart:</strong> the dashboard draws our stated numbers (now, by 2030, by 2035) with outside forecasts for comparison. We don't project our daily line forward. Our end-2030/2035 numbers should move only on evidence, never in a predictable direction; our 'now' numbers are expected to rise over time along that forecast. The shaded band is a judgment range, not a statistical interval: roughly how far our number could plausibly move as new evidence arrives, wider when our confidence is lower. <a href="trends.html">Trend watch</a> projects <em>measured</em> trends instead, such as how long a task AI can finish on its own.</li>
       <li><strong>What moved the needle:</strong> each day names the one development that changed an estimate most, or says plainly that it was a quiet day.</li>
       <li><strong>Weekly (Fridays, 3pm Pacific):</strong> a wrap-up with the week's key numbers and graphs, plus the <a href="scorecard.html">forecast scorecard</a>, <a href="disclosure-lag.html">disclosure lag</a>, <a href="agi-claims.html">AGI claims</a>, <a href="calendar.html">calendar</a> and <a href="steelman.html">steelman</a>.</li>
     </ul>
     <h2>Honesty notes</h2>
-    <p>The research and drafting are done by our custom AI agent, and the method and sources are public. The probabilities are subjective and uncertain. We try not to treat an absence of evidence as proof of secrecy, and we score our own short-range forecasts in public so you can judge our calibration.</p>
+    <p>The research, writing and publishing are done by our custom AI agent, and the method and sources are public. The probabilities are subjective and uncertain. We try not to treat an absence of evidence as proof of secrecy.</p>
+    <p>Our incident data has a built-in blind spot. An incident nobody detected or disclosed can't be on our list, so the lags we report are a floor on how long things stay hidden, not a ceiling, and "every tracked incident was eventually found" is true by construction.</p>
+    <p>We aim for calibration; we haven't shown it yet. The A–D probabilities themselves can't resolve, so the <a href="scorecard.html">scorecard</a> of short-range, checkable forecasts is our track record.</p>
+    <p>A daily reading is frozen once its email goes out. Later fixes are dated corrections, shown on the affected page and carried into the next email. Changes to the method are logged below.</p>
+
+    <h2 id="changes">Method changes and corrections</h2>
+    <p class="small muted">Current method: v1.0. We bump the version for any change to a definition, a gauge, the Index formula or a threshold.</p>
+    <ul class="plain"><li><strong>v1.0</strong> · 29 Sep 2026 · Launch method: hypotheses A–D and D-open (A covers company or government programs), strict AGI bar, Hidden AGI Index, five gauges, tripwires, fire alarm v1.0. <span class="muted">Reason: Launch.</span></li></ul>
+    <div id="corrections-list"></div>
     <p><a class="btn" href="./">Go to today's reading</a></p>
   </section>
 
@@ -84,10 +112,44 @@
 </div>
 
   <footer>
-    Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
+    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
+    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./about.html#corrections">Corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
+<script type="module">
+import * as K from "./assets/charts.js";
+const j = p => fetch(p,{cache:"no-cache"}).then(r => { if(!r.ok) throw new Error(p + ": HTTP " + r.status); return r.json(); });
+const link = (u, text, root="") => { const href = K.util.safeHref(u, root); if(!href) return null; return K.util.h("a", /^https?:/i.test(href) ? {href, target:"_blank", rel:"noopener"} : {href}, text); };
+const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate(d, o);
+const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
+const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
+const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
 
+async function renderCorrections(host, root=""){
+  if(!host) return;
+  let d; try{ d = await j(root + "data/corrections.json"); }catch(e){ return; }
+  const h = K.util.h, list = (Array.isArray(d) ? d : Array.isArray(d?.corrections) ? d.corrections : []).filter(c => c && typeof c === "object");
+  host.replaceChildren();
+  if(!list.length){ host.append(h("p",{class:"muted"},"No corrections so far.")); return; }
+  const clean = s => String(s).trim().replace(/[.]+$/,"");
+  const ul = h("ul",{class:"plain corrections"});
+  [...list].sort((a,b)=>String(b.date||"").localeCompare(String(a.date||""))).forEach(c => {
+    const li = h("li"), was = c.was ?? c.claim, now = c.now ?? c.correction;
+    li.append(h("strong",{}, c.date ? fd(c.date) : "Undated"));
+    if(c.item) li.append(" · " + clean(c.item) + ".");
+    if(was) li.append(` We said ${clean(was)}.`);
+    if(now) li.append(` ${was ? "That was wrong: " : ""}${clean(now)}.`);
+    const pg = link(c.page, "affected page", root), src = link(c.url, "source");
+    if(pg) li.append(" ", pg); if(pg && src) li.append(" ·"); if(src) li.append(" ", src);
+    if(c.emailed) li.append(h("span",{class:"muted"}, ` Carried in the ${fd(c.emailed)} email.`));
+    ul.append(li);
+  });
+  host.append(ul);
+}
+const host = document.getElementById("corrections-list");
+if(host){ const box = K.util.h("div"); await renderCorrections(box); if(box.childNodes.length){ host.append(K.util.h("h3",{},"Corrections")); host.append(...box.childNodes); } }
+
+</script>
 </body>
 </html>
