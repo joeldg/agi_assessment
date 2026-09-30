@@ -458,6 +458,33 @@
    "y2035": 65,
    "conf": "low–medium",
    "note": "Strict AGI exists (public or hidden): at least 80% of remote professional tasks, including multi-week projects, done reliably."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "note": "METR measured about 2 months in the spring. Since then OpenAI has confirmed an unreleased model \"significantly more capable\" than GPT-6 Astra and withheld GPT-6.1 Astra, so the gap has likely widened.",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "note": "Claude leads 26% of Anthropic's AI R&D (August), up from under 1% in February. METR estimates about a 1.5x overall speed-up. Fully autonomous share: 0%.",
+    "url": "https://shattered.io/anthropic-claude-26-percent-ai-rd-2026/"
+   },
+   "oversight": {
+    "value": 74,
+    "display": "74 days",
+    "note": "The median across 7 tracked incidents. 5 of 7 (71%) were made public by someone other than the lab.",
+    "url": "disclosure-lag.html"
+   },
+   "delegation": {
+    "value": 3,
+    "display": "Level 3 of 5",
+    "note": "AI generates options that humans approve at scale: Maven reportedly helped strike 13,000 targets in 38 days, and 1.7M US defense personnel can use frontier models. There is no known case of AI deciding without human sign-off.",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/"
+   }
   }
  }
 ]

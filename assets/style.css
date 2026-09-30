@@ -198,3 +198,14 @@ nav.site .brand{font-family:var(--serif);font-weight:600;color:var(--ink)}
 .forecast-grid .mini{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
 .forecast-grid .mini h3{font-size:15px;margin:0 0 4px;display:flex;gap:6px;align-items:center}
 .forecast-grid .mini p{font-size:13px;margin:4px 0 0}
+
+/* gauge row */
+.gauges{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:12px}
+.gauge{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--accent);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.g-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.g-label{font-family:var(--serif);font-weight:600;font-size:17px}
+.g-kind{margin:0}
+.g-value{font-family:var(--sans);font-weight:600;font-size:30px;line-height:1.15;margin-top:4px}
+.g-spark{display:block;margin:2px 0}
+.g-note{line-height:1.45}
+.g-feeds{margin-top:auto;padding-top:4px}

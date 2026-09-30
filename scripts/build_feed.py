@@ -77,6 +77,29 @@ def link(url, text):
     return f'<a href="{escape(url, quote=True)}" style="color:#4A6FA5">{escape(text)}</a>'
 
 
+def gauges_html(run, prev):
+    """Compact gauge table for email: reading, change vs the previous reading, what it measures."""
+    defs = json.loads((ROOT / "data/gauges.json").read_text())["gauges"]
+    th = f'style="{SANS}font-size:12px;color:{MUTED};text-align:left;padding:5px 8px;border-bottom:1px solid {RULE}"'
+    td = f'style="{SANS}font-size:14px;color:{INK};padding:6px 8px;border-bottom:1px solid {RULE};vertical-align:top"'
+    rows = [f"<tr><th {th}>Gauge</th><th {th}>Reading</th><th {th}>Change</th></tr>"]
+    for d in defs:
+        g = run["gauges"].get(d["key"])
+        if not g:
+            continue
+        pg = ((prev or {}).get("gauges") or {}).get(d["key"])
+        if pg and pg.get("value") is not None and g.get("value") is not None:
+            dv = g["value"] - pg["value"]
+            ch = "no change" if abs(dv) < 1e-9 else ("▲ " if dv > 0 else "▼ ") + fmt(abs(dv))
+        else:
+            ch = "first reading"
+        rows.append(f'<tr><td {td}><strong>{escape(d["label"])}</strong><br><span style="color:{MUTED};font-size:12px">'
+                    f'{escape(d["question"])}</span></td><td {td}><strong>{escape(g["display"])}</strong></td>'
+                    f'<td {td}><span style="color:{MUTED}">{ch}</span></td></tr>')
+    return (f'<div style="{SANS}font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600;margin-top:10px">The four gauges</div>'
+            f'<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:4px 0 12px">{"".join(rows)}</table>')
+
+
 def issue_html(run, prev):
     report_url = SITE + run["report"]
     out = [p(f'<span style="color:{MUTED}">Daily reading of four hypotheses about hidden advanced AI. '
@@ -90,6 +113,8 @@ def issue_html(run, prev):
                      f'{delta_cell(run["index"], prev.get("index") if prev else None)} '
                      f'<span style="color:{MUTED}">· the chance at least one hypothesis is true now. '
                      f'{link(SITE + "start-here.html", "What is this?")}</span>'))
+    if run.get("gauges"):
+        out.append(gauges_html(run, prev))
     n = run.get("needle")
     if n:
         kicker = "Quiet day" if n.get("quiet") else "What moved the needle"

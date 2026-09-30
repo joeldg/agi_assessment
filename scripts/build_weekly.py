@@ -50,6 +50,8 @@ def key_numbers(date):
         "index": now.get("index"), "indexWeekAgo": ago.get("index"),
         "now": {k: prob(now, k, "now") for k in KEYS}, "weekAgo": {k: prob(ago, k, "now") for k in KEYS},
         "y2030": {k: prob(now, k, "y2030") for k in KEYS}, "y2035": {k: prob(now, k, "y2035") for k in KEYS},
+        "gauges": {k: (now.get("gauges") or {}).get(k) for k in ("gap", "rd", "oversight", "delegation")},
+        "gaugesWeekAgo": {k: ((ago.get("gauges") or {}).get(k) or {}).get("value") for k in ("gap", "rd", "oversight", "delegation")},
         "tripwires": tw, "dailyRuns": len({r["date"] for r in runs if r["date"] > cutoff}),
     }
 
@@ -70,6 +72,14 @@ def page_body(w):
     k = w["keyNumbers"]
     tiles = [tile("Hidden AGI Index", f'{fmt(k["index"])}%', wk_delta(k["index"], k["indexWeekAgo"]))]
     tiles += [tile(LABELS[h], f'{fmt(k["now"][h])}%', wk_delta(k["now"][h], k["weekAgo"][h])) for h in KEYS]
+    gdefs = {d["key"]: d for d in json.loads((ROOT / "data/gauges.json").read_text())["gauges"]}
+    for gk, g in (k.get("gauges") or {}).items():
+        if not g:
+            continue
+        prev_v = (k.get("gaugesWeekAgo") or {}).get(gk)
+        sub = "first reading" if prev_v is None or k["weekAgoDate"] == k["asOf"] else (
+            "no change this week" if abs(g["value"] - prev_v) < 1e-9 else f'{"▲" if g["value"] > prev_v else "▼"} {fmt(abs(g["value"] - prev_v))} this week')
+        tiles.append(tile(gdefs[gk]["label"], escape(g["display"]), sub))
     tiles.append(tile("Tripwires", f'{k["tripwires"]["tripped"]} tripped',
                       f'{k["tripwires"]["watching"]} watching · {k["tripwires"]["quiet"]} quiet'))
     moves = "".join(
@@ -137,6 +147,10 @@ def weekly_email_html(w):
     rows += [f'<tr><td {td}>{escape(LABELS[h])}</td><td {td}><strong>{fmt(k["now"][h])}%</strong></td>'
              f'<td {td}>{delta_cell(k["now"][h], k["weekAgo"][h])}</td><td {td}>{fmt(k["y2030"][h])}%</td></tr>' for h in KEYS]
     out.append(f'<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin:6px 0 14px">{"".join(rows)}</table>')
+    gdefs = {d["key"]: d for d in json.loads((ROOT / "data/gauges.json").read_text())["gauges"]}
+    gl = [f'<strong>{escape(gdefs[gk]["label"])}:</strong> {escape(g["display"])}' for gk, g in (k.get("gauges") or {}).items() if g]
+    if gl:
+        out.append(p("<strong>The four gauges.</strong> " + " · ".join(gl)))
     tw = k["tripwires"]
     out.append(p(f'<strong>Tripwires:</strong> {tw["tripped"]} tripped, {tw["watching"]} watching, {tw["quiet"]} quiet. '
                  f'{link(SITE + "#tripwires", "See them all")}.'))

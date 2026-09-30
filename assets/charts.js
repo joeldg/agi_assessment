@@ -331,3 +331,39 @@ export function trendChart(host, {history, projection, thresholds=[], from="2023
   return {fmtDur};
 }
 export {fmtDur};
+
+/* ---- gauge row: four measured quantities under the dial ----
+   Each tile: label, the question, the reading, change vs the previous reading, a kind tag
+   (measured / estimated / assessed), a sparkline of past readings, and the evidence. */
+export function gaugeRow(host, defs, runs, {root=""}={}){
+  host.replaceChildren();
+  const withG = runs.filter(r=>r.gauges);
+  const last = withG[withG.length-1], prev = withG[withG.length-2];
+  if(!last){ host.append(h("p",{class:"muted"},"No gauge readings yet.")); return; }
+  const row = h("div",{class:"gauges"});
+  defs.forEach(d => {
+    const g = last.gauges[d.key]; if(!g) return;
+    const p = prev?.gauges?.[d.key];
+    const tile = h("div",{class:"gauge"});
+    const top = h("div",{class:"g-top"}); top.append(h("span",{class:"g-label"},d.label), h("span",{class:"tag g-kind"},d.kind)); tile.append(top);
+    tile.append(h("div",{class:"g-q muted small"}, d.question));
+    tile.append(h("div",{class:"g-value"}, g.display));
+    let delta = "first reading";
+    if(p && p.value!=null && g.value!=null){ const dv=g.value-p.value; delta = Math.abs(dv)<1e-9 ? "no change" : (dv>0?"▲ up ":"▼ down ")+String(+Math.abs(dv).toFixed(1)); }
+    tile.append(h("div",{class:"g-delta muted small"}, (g.range?`range ${g.range} · `:"") + delta));
+    // sparkline of past readings (text-free; the value above carries the number)
+    const vals = withG.map(r=>r.gauges[d.key]?.value).filter(v=>v!=null);
+    const W=120,H=24, s=svg("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,"aria-hidden":"true",class:"g-spark"});
+    if(vals.length<2) s.append(svg("line",{x1:0,x2:W,y1:H-4,y2:H-4,stroke:css("--grid"),"stroke-width":1}));
+    else { const mx=Math.max(...vals), mn=Math.min(...vals), rg=(mx-mn)||1; s.append(svg("polyline",{points:vals.map((v,i)=>`${2+i*(W-4)/(vals.length-1)},${H-3-(v-mn)/rg*(H-6)}`).join(" "),fill:"none",stroke:css("--accent"),"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"})); }
+    tile.append(s);
+    const note = h("div",{class:"g-note small"}, g.note + " ");
+    if(g.url){ const u = /^https?:/.test(g.url) ? g.url : root + g.url; note.append(h("a",{href:u, ...( /^https?:/.test(g.url)?{target:"_blank",rel:"noopener"}:{})},"evidence")); }
+    tile.append(note);
+    tile.append(h("div",{class:"g-feeds muted small"}, "Feeds hypothesis " + d.feeds));
+    tile.addEventListener("mousemove", ev => showTip(ev.clientX, ev.clientY, [{label:d.how}].concat(d.scale?d.scale.map(x=>({label:x})):[]), d.label + " · " + d.unit));
+    tile.addEventListener("mouseleave", hideTip);
+    row.append(tile);
+  });
+  host.append(row);
+}
