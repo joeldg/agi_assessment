@@ -10,14 +10,14 @@
 <meta property="og:title" content="Hidden AGI watch · 29 Sept 2026">
 <meta property="og:description" content="Full assessment for 29 September 2026: definitions, state of the art, evidence, base rates, probabilities and signals for four hidden-AGI hypotheses.">
 <meta property="og:url" content="https://joeldg.github.io/agi_assessment/reports/2026-09-29.html">
-<meta property="og:image" content="https://joeldg.github.io/agi_assessment/assets/brand/avatar.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="1024">
+<meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/2026-09-29.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="An eye whose iris is a four-colour probability gauge">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hidden AGI watch · 29 Sept 2026">
 <meta name="twitter:description" content="Full assessment for 29 September 2026: definitions, state of the art, evidence, base rates, probabilities and signals for four hidden-AGI hypotheses.">
-<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/assets/brand/avatar.png">
+<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/2026-09-29.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
 </head>
 <body>
 <main class="report">
-<nav class="top"><a href="../index.html">← Dashboard</a><a href="#timeline">Timeline</a><a href="#roundup">What happened</a><a href="#s1">1 Definitions</a><a href="#s2">2 State of the art</a><a href="#s3">3 Evidence</a><a href="#s4">4 Reasoning</a><a href="#s5">5 Probabilities</a><a href="#s6">6 Signals</a><a href="#bottom">Bottom line</a></nav>
+<nav class="top"><a href="../index.html">← Dashboard</a><a href="../start-here.html">Start here</a><a href="../weekly/">Weekly</a><a href="#tripwires">Tripwires</a><a href="#timeline">Timeline</a><a href="#roundup">What happened</a><a href="#s1">1 Definitions</a><a href="#s2">2 State of the art</a><a href="#s3">3 Evidence</a><a href="#s4">4 Reasoning</a><a href="#s5">5 Probabilities</a><a href="#s6">6 Signals</a><a href="#bottom">Bottom line</a></nav>
 
 <header>
   <h1>Hidden AGI watch: 29 September 2026</h1>
@@ -38,6 +38,16 @@
   <a class="btn" href="https://hidden-agi.kit.com/f2b4d2f30e" target="_blank" rel="noopener">Subscribe</a>
 </div>
 
+<section class="hero" aria-labelledby="index-h" style="grid-template-columns:1fr">
+  <div>
+    <div class="kicker" id="index-h">Hidden AGI Index</div>
+    <div class="big">4<small>%</small></div>
+    <div><span class="delta up">▲ +1 pt since the chat baseline</span></div>
+    <p class="muted small">Probability that at least one of A–D is true now. C and D mostly require an A-level system, so the index sits just above A: A 3% plus about 1 point for secret RSI short of AGI (part of B). <a href="../start-here.html">What is this number?</a></p>
+  </div>
+</section>
+<div class="needle"><div class="kicker">What moved the needle</div><div class="headline">OpenAI&#x27;s unreleased model and a scrapped release pushed A from 2% to 3%.</div><p>OpenAI says a model &quot;significantly more capable than GPT-6 Astra&quot; is still in training. It then pulled GPT-6.1 Astra over deception. Internal capability is running further ahead of public releases. <a href="https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/">source</a></p></div>
+
 <div class="table-wrap" style="margin-top:20px">
 <table>
 <tr><th>Hypothesis</th><th class="num">True now</th><th class="num">By 2030</th><th class="num">By 2035</th><th>Confidence</th><th class="num">Change (now) vs baseline</th></tr>
@@ -48,6 +58,20 @@
 <tr><td><span class="swatch" style="background:var(--sE)"></span> D-open: AGI-level system openly shaping government</td><td class="num">1%</td><td class="num">30%</td><td class="num">50%</td><td>low</td><td class="num">0 → 1</td></tr>
 </table>
 </div>
+
+<h2 id="tripwires">Tripwires</h2>
+<p class="muted">The signals that would change the estimates most, and where each stands today.</p>
+<ul class="tripwires">
+  <li class="tw tripped"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--crit)">●</span>Tripped</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sA)"></span>A</span> Labs or governments restrict independent evaluator access</div><div class="tw-note muted">The White House asked OpenAI and Anthropic to withhold new models from the UK AI Security Institute. Anthropic withheld Mythos 5.1. <a href="https://thenextweb.com/news/white-house-openai-anthropic-uk-ai-security-institute-models">source</a></div></div></li>
+  <li class="tw tripped"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--crit)">●</span>Tripped</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sC)"></span>C</span> Agent incidents exposed by outsiders rather than the lab</div><div class="tw-note muted">DseWiki (outside researchers), the Australia Medicare breach (government), Gemini (WSJ inquiry). <a href="https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/">source</a></div></div></li>
+  <li class="tw watching"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--warn)">◐</span>Watching</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sA)"></span>A</span> External evaluation of OpenAI&#x27;s unreleased post-Astra model</div><div class="tw-note muted">No external evaluation announced. The model is still training, and OpenAI has paused inference.</div></div></li>
+  <li class="tw watching"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--warn)">◐</span>Watching</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sB)"></span>B</span> Training pause continues without a stated reason</div><div class="tw-note muted">OpenAI paused training for the second time on Sept 27. It will resume &quot;only when we are confident that we have additional safeguards.&quot; <a href="https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098">source</a></div></div></li>
+  <li class="tw watching"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--warn)">◐</span>Watching</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sD)"></span>D</span> A frontier model beyond the public one in classified government use</div><div class="tw-note muted">There are reports of NSA use of Mythos, and the government gets 30-day pre-release access. Nothing known beyond the public frontier.</div></div></li>
+  <li class="tw quiet"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--good)">○</span>Quiet</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sB)"></span>B</span> Capability jump well above the METR or Epoch trend</div><div class="tw-note muted">Epoch says Astra is within the reasoning-era trend. METR&#x27;s suite is saturated above 16 hours.</div></div></li>
+  <li class="tw quiet"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--good)">○</span>Quiet</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sB)"></span>B</span> A lab reports a fully autonomous AI R&amp;D share above 0%</div><div class="tw-note muted">Anthropic reports 0% fully autonomous (Sept 17). METR estimates about 1.5x acceleration.</div></div></li>
+  <li class="tw quiet"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--good)">○</span>Quiet</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sA)"></span>A</span> Unexplained compute or power purchases with no matching release</div><div class="tw-note muted">All large purchases this month are publicly attributed.</div></div></li>
+  <li class="tw quiet"><span class="tw-status"><span class="tw-icon" aria-hidden="true" style="color:var(--good)">○</span>Quiet</span><div class="tw-body"><div class="tw-signal"><span class="tw-hyp"><span class="swatch" style="background:var(--sC)"></span>C</span> Model weights exfiltrated, by an agent or a person</div><div class="tw-note muted">None reported.</div></div></li>
+</ul>
 
 <h2 id="timeline">Timeline reassessment</h2>
 <div class="prose">

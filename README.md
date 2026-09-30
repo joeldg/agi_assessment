@@ -13,24 +13,37 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 
 | Path | What it holds |
 | --- | --- |
-| `index.html`, `assets/` | The dashboard. It is static and reads `data/runs.json` in the browser. |
-| `data/runs.json` | One entry per daily run: probabilities, confidence, summary, changes, news roundup (grouped by topic), timeline notes, signals, key sources, report link. |
-| `feed.xml` | RSS 2.0 feed for feed readers. Kit's RSS-to-email is a paid feature, so issues reach Kit through the API instead. One item per full report, with an email-ready issue in `content:encoded`. Generated; do not hand-edit. |
-| `scripts/kit_broadcast.py` | Pushes a report's email issue to Kit through its API (a draft by default). Needs `KIT_API_KEY` or `KIT_API_SECRET` in the environment. Records pushed dates in `data/kit_broadcasts.json`. |
-| `sitemap.xml` | Sitemap for search engines: the dashboard and every report. Generated; do not hand-edit. |
-| `scripts/build_feed.py` | Rebuilds `feed.xml` and `sitemap.xml` from `data/runs.json`. |
-| `assets/brand/` | Profile picture and favicon. |
-| `reports/YYYY-MM-DD.html` | The full report for each day, with a news roundup, Steps 1–6 and a bottom line, with every claim cited. |
+| `index.html`, `assets/app.js` | The daily dashboard: Hidden AGI Index dial, what moved the needle, tripwires, readings, trend chart, roundup, history. It reads `data/runs.json` in the browser. |
+| `assets/charts.js`, `assets/style.css` | The one chart kit and stylesheet for every page. `style.html` is the chart style guide: validated palette, rules and live examples. |
+| `data/runs.json` | One entry per daily run: `probs` (A, B, C, D, Dopen → now/y2030/y2035/conf), `index`, `indexNote`, `needle`, `tripwires`, summary, changes, `roundup`, timeline, signals, sources, report link. |
+| `reports/YYYY-MM-DD.html` | The full daily report: index, needle, probability table, tripwires, timeline, news roundup, Steps 1–6, bottom line. |
+| `cards/` | 1200×630 share cards (`YYYY-MM-DD.png`, `latest.png`, `weekly-YYYY-MM-DD.png`), used for link previews and at the top of emails. |
+| `start-here.html`, `scorecard.html`, `disclosure-lag.html`, `agi-claims.html`, `calendar.html`, `steelman.html` | Standing sections, rendered in the browser from `data/forecasts.json`, `data/incidents.json`, `data/agi_claims.json`, `data/calendar.json` and `data/steelman.json`. Updated weekly. |
+| `weekly/`, `data/weekly/` | Friday wrap-ups: `data/weekly/YYYY-MM-DD.json` (editorial plus computed key numbers) → `weekly/YYYY-MM-DD.html`. `data/weekly/index.json` lists them. |
+| `feed.xml`, `sitemap.xml` | RSS feed and sitemap. Generated; do not hand-edit. |
+| `scripts/build_feed.py` | Rebuilds `feed.xml` and `sitemap.xml`, and defines the daily email body. |
+| `scripts/render_card.py` | Renders share cards with headless Chrome. |
+| `scripts/build_pages.py`, `scripts/sitekit.py` | Generate the standing pages and the style guide from one page shell. Rerun only when their layout or copy changes. |
+| `scripts/build_weekly.py` | Builds a wrap-up page and card, and defines the weekly email body. |
+| `scripts/kit_broadcast.py` | Pushes the daily issue (`--send-at 10am`) or the weekly wrap-up (`--weekly DATE --send-at 3pm`) to Kit through its API. Needs `KIT_API_KEY` / `KIT_API_SECRET`. Records pushes in `data/kit_broadcasts.json`. |
+| `assets/brand/` | Avatar, favicon and share image. |
 
-## Daily update procedure
+## Daily update procedure (09:02 Pacific)
 
-1. Read `data/runs.json` and the latest report to see the previous reading.
-2. Research the news since the last run.
-3. Write `reports/<today>.html`, copying the structure of the previous report. Keep the Kit subscribe box (`<div class="subscribe">` linking to https://hidden-agi.kit.com/f2b4d2f30e) after the header and before the footer. Include the Open Graph and Twitter card meta tags (copy them from the previous report and update the title, description and `og:url`); `og:image` is always `assets/brand/avatar.png`.
-4. Append the day's entry to `data/runs.json`, keeping the same schema. The `probs` keys are `A`, `B`, `C`, `D` and `Dopen`, each with `now`, `y2030` and `y2035` in percent plus `conf`.
-5. Run `python3 scripts/build_feed.py` to rebuild `feed.xml` and `sitemap.xml`.
-6. Run `python3 scripts/kit_broadcast.py --send-at 10am` to create that day's Kit broadcast, scheduled for 10:00 Pacific. If 10am has already passed, it stays a draft.
-7. Commit and push to `main`. Pages deploys from the root of `main`.
+1. Read `data/runs.json` and the latest report, then research the news since the last run.
+2. Decide the index, the needle (or a quiet day) and each tripwire's status.
+3. Write `reports/<today>.html`, following the previous report's structure.
+4. Append the day's entry to `data/runs.json`.
+5. Run `python3 scripts/render_card.py`, then `python3 scripts/build_feed.py`.
+6. Commit and push to `main`.
+7. Run `python3 scripts/kit_broadcast.py --send-at 10am` (via `zsh -ic` so the keys load), then commit `data/kit_broadcasts.json`.
+
+## Weekly wrap-up (Fridays: built about 1pm, emailed at 3pm Pacific)
+
+1. Update `data/forecasts.json` (resolve due forecasts; add new ones; never edit a made forecast), `data/incidents.json`, `data/agi_claims.json`, `data/calendar.json`, and add a new entry to `data/steelman.json`.
+2. Write `data/weekly/<today>.json` (headline, summary, moves, section notes).
+3. Run `python3 scripts/build_weekly.py <today>`, then `python3 scripts/build_feed.py`. Commit and push.
+4. Run `python3 scripts/kit_broadcast.py --weekly <today> --send-at 3pm`.
 
 Feed URL: <https://joeldg.github.io/agi_assessment/feed.xml>
 Sitemap URL: <https://joeldg.github.io/agi_assessment/sitemap.xml>

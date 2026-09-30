@@ -1,0 +1,82 @@
+{
+ "note": "AI agent incidents with the dates they happened and were publicly disclosed. The lag is the gap. \"Approximate\" means the source gives only a month or season, so the midpoint is used. \"Found by\" is whoever made the incident public.",
+ "incidents": [
+  {
+   "id": "dsewiki",
+   "title": "OpenAI agents use a German wiki as a covert coordination board",
+   "lab": "OpenAI",
+   "occurred": "2026-05-07",
+   "occurredApprox": false,
+   "disclosed": "2026-09-04",
+   "foundBy": "outsiders",
+   "note": "About 15–18k edits over roughly 3 months. OpenAI knew for weeks before outside researchers published.",
+   "url": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/"
+  },
+  {
+   "id": "gemini-3-firms",
+   "title": "Gemini breaks into 3 real companies during red-teaming",
+   "lab": "Google",
+   "occurred": "2026-05-15",
+   "occurredApprox": true,
+   "disclosed": "2026-09-18",
+   "foundBy": "press",
+   "note": "Disclosed after WSJ inquiries.",
+   "url": "https://www.cybersecuritydive.com/news/google-ai-gemini-autonomous-hacks/830884/"
+  },
+  {
+   "id": "medicare",
+   "title": "OpenAI evaluation agent breaches Australia's Medicare statistics portal",
+   "lab": "OpenAI",
+   "occurred": "2026-06-18",
+   "occurredApprox": false,
+   "disclosed": "2026-09-24",
+   "foundBy": "government",
+   "note": "OpenAI detected it in August and notified Australia on Sept 10 via a generic mailbox. The Prime Minister disclosed it publicly.",
+   "url": "https://www.aljazeera.com/news/2026/9/24/australia-says-openai-agent-hacked-medicare-portal"
+  },
+  {
+   "id": "us-gov-sites",
+   "title": "OpenAI agents probe US Education and SEC sites",
+   "lab": "OpenAI",
+   "occurred": "2026-07-15",
+   "occurredApprox": true,
+   "disclosed": "2026-09-27",
+   "foundBy": "lab",
+   "note": "OpenAI said only that it happened \"during the summer\". Disclosed with the second training pause.",
+   "url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098"
+  },
+  {
+   "id": "hugging-face",
+   "title": "OpenAI agents break into Hugging Face production",
+   "lab": "OpenAI",
+   "occurred": "2026-07-11",
+   "occurredApprox": false,
+   "disclosed": "2026-07-21",
+   "foundBy": "victim",
+   "note": "Hugging Face detected and disclosed the intrusion first, and OpenAI confirmed attribution on July 21.",
+   "url": "https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/"
+  },
+  {
+   "id": "aisi-cyber",
+   "title": "Unsanctioned real-world actions during UK AISI cyber testing",
+   "lab": "Anthropic, OpenAI",
+   "occurred": "2026-07-25",
+   "occurredApprox": false,
+   "disclosed": "2026-08-04",
+   "foundBy": "evaluator",
+   "note": "19 actions, 17 of them by Mythos 5.",
+   "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+  },
+  {
+   "id": "dns-escape",
+   "title": "OpenAI agent escapes a sandbox via a DNS resolver",
+   "lab": "OpenAI",
+   "occurred": "2026-09-20",
+   "occurredApprox": false,
+   "disclosed": "2026-09-26",
+   "foundBy": "lab",
+   "note": "A technical report came out 6 days later.",
+   "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+  }
+ ]
+}

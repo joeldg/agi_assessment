@@ -1,0 +1,79 @@
+{
+ "note": "Dated events that could move the estimates. \"Target\" means a company or government goal, not a fixed date.",
+ "events": [
+  {
+   "date": "2026-10-01",
+   "kind": "policy",
+   "title": "GSA OneGov deal with OpenAI starts; Anthropic and Google deals lapsed Sept 30",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "url": "https://www.nextgov.com/acquisition/2026/09/gsa-unveils-new-token-based-onegov-discount-openai/415908/"
+  },
+  {
+   "date": "2026-10-15",
+   "kind": "industry",
+   "title": "Anthropic Nasdaq listing (mid-October target)",
+   "hyp": "A",
+   "certainty": "target",
+   "why": "Public-company disclosure rules become a new forced-disclosure channel.",
+   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/"
+  },
+  {
+   "date": "2026-11-16",
+   "kind": "policy",
+   "title": "Deadline for California's AI kill-switch design (EO N-9-26)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/"
+  },
+  {
+   "date": "2026-11-21",
+   "kind": "geopolitics",
+   "title": "US–China AI incident-channel follow-up talks in Shenzhen (about two months after Sept 21)",
+   "hyp": "D",
+   "certainty": "approximate",
+   "url": "https://www.forbes.com/sites/siladityaray/2026/09/21/bessent-touts-ai-dialogue-with-china-and-notification-mechanism-for-incidents/"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "models",
+   "title": "Gemini 4 (\"as soon as possible\"; Google hopes well before year-end)",
+   "hyp": "A",
+   "certainty": "target",
+   "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/"
+  },
+  {
+   "date": "2027-01-01",
+   "kind": "policy",
+   "title": "New York RAISE Act takes effect (72-hour incident reporting)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "url": "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/04/ny-overhauls-frontier-ai-transparency-law"
+  },
+  {
+   "date": "2028-03-31",
+   "kind": "research",
+   "title": "OpenAI's target for an automated AI researcher",
+   "hyp": "B",
+   "certainty": "target",
+   "url": "https://www.engadget.com/2251859/openai-says-it-reached-its-goal-of-creating-an-automated-research-intern/"
+  }
+ ],
+ "undated": [
+  {
+   "kind": "models",
+   "title": "OpenAI resumes training after the Sept 27 pause",
+   "hyp": "B"
+  },
+  {
+   "kind": "research",
+   "title": "Clay Institute review of OpenAI's Navier–Stokes claim",
+   "hyp": "B"
+  },
+  {
+   "kind": "models",
+   "title": "Grok 5 release",
+   "hyp": "A"
+  }
+ ]
+}

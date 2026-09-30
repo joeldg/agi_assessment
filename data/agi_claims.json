@@ -1,0 +1,62 @@
+{
+ "note": "Public claims that AGI has already been achieved, and how each claim fares under the main definitions. Predictions of future AGI are excluded.",
+ "definitions": {
+  "strict": "This site's strict bar: at least 80% of remote professional tasks, including multi-week projects, done reliably.",
+  "levels": "DeepMind's \"Levels of AGI\": general \"Competent\" (50th percentile of skilled adults) across most tasks.",
+  "charter": "OpenAI charter: highly autonomous systems that outperform humans at most economically valuable work.",
+  "narrow": "The claimant's own definition."
+ },
+ "claims": [
+  {
+   "date": "2026-03-22",
+   "who": "Jensen Huang",
+   "role": "Nvidia CEO",
+   "quote": "we've achieved AGI",
+   "venue": "Lex Fridman podcast",
+   "model": "(general)",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "yes"
+   },
+   "narrowDef": "An AI that could start and run a $1B company.",
+   "interest": "Sells the chips that AI is trained on.",
+   "url": "https://www.techradar.com/ai-platforms-assistants/i-think-weve-achieved-agi-er-jensen-i-dont-think-we-have"
+  },
+  {
+   "date": "2026-09-03",
+   "who": "Greg Brockman",
+   "role": "OpenAI president",
+   "quote": "Welcome to the AGI era",
+   "venue": "GPT-6 Astra launch",
+   "model": "GPT-6 Astra",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "unclear"
+   },
+   "narrowDef": "Left \"up to the reader\".",
+   "interest": "OpenAI is raising capital, and its charter and Microsoft terms hinge on AGI.",
+   "url": "https://fortune.com/2026/09/03/openai-debuts-gpt-6-astra-computer-use-greg-brockman-says-start-of-agi/"
+  },
+  {
+   "date": "2026-09-07",
+   "who": "Jensen Huang",
+   "role": "Nvidia CEO",
+   "quote": "AGI has arrived",
+   "venue": "Post after GPT-6 Astra, amplified by Brockman",
+   "model": "GPT-6 Astra",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "yes"
+   },
+   "narrowDef": "As in March.",
+   "interest": "Sells the chips that AI is trained on.",
+   "url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/"
+  }
+ ]
+}

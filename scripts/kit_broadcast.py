@@ -19,6 +19,7 @@ create duplicates.
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -70,11 +71,13 @@ def resolve_send_at(value, run_date):
     """Turn --send-at into a UTC ISO time, or None (draft) if a local time has already passed."""
     if not value:
         return None
-    if value.lower() != "10am":
+    m = re.fullmatch(r"(\d{1,2})(am|pm)", value.lower())
+    if not m:
         return value
-    local = datetime.strptime(run_date, "%Y-%m-%d").replace(hour=10, tzinfo=ZoneInfo("America/Los_Angeles"))
+    hour = int(m.group(1)) % 12 + (12 if m.group(2) == "pm" else 0)
+    local = datetime.strptime(run_date, "%Y-%m-%d").replace(hour=hour, tzinfo=ZoneInfo("America/Los_Angeles"))
     if local <= datetime.now(timezone.utc):
-        print(f"10am Pacific on {run_date} has already passed, so this issue stays a DRAFT. Send it by hand in Kit.")
+        print(f"{value} Pacific on {run_date} has already passed, so this issue stays a DRAFT. Send it by hand in Kit.")
         return None
     return local.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -85,13 +88,45 @@ def preview(text, limit=140):
     return text[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "…"
 
 
+def push_weekly(args):
+    from build_weekly import weekly_email_html
+    date = args.weekly
+    w = json.loads((ROOT / f"data/weekly/{date}.json").read_text())
+    if "keyNumbers" not in w:
+        sys.exit(f"Run scripts/build_weekly.py {date} first.")
+    key = f"weekly-{date}"
+    state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    if key in state and not args.force and not args.dry_run:
+        print(f"Already pushed the {date} wrap-up to Kit (broadcast {state[key]['id']}).")
+        return
+    send_at = resolve_send_at(args.send_at, date)
+    fields = {
+        "subject": f"Weekly wrap-up · Hidden AGI Index {fmt(w['keyNumbers']['index'])}% · {w['headline']}",
+        "preview_text": preview(w.get("summary") or ""),
+        "description": f"Weekly wrap-up for {date}",
+        "content": weekly_email_html(w),
+        "public": True,
+        "send_at": send_at,
+    }
+    if args.dry_run:
+        print(f"Subject: {fields['subject']}\nBody: {len(fields['content'])} chars\nMode: {'scheduled ' + send_at if send_at else 'draft'}")
+        return
+    api, bc = create_broadcast(fields)
+    state[key] = {"id": bc.get("id"), "api": api, "send_at": send_at, "report": f"{SITE}weekly/{date}.html"}
+    STATE.write_text(json.dumps(state, indent=1) + "\n")
+    print(f"Created Kit weekly broadcast {bc.get('id')} via {api} ({'scheduled ' + send_at if send_at else 'draft'}).")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", help="run date (YYYY-MM-DD); defaults to the latest report")
-    ap.add_argument("--send-at", help="ISO 8601 UTC time, or '10am' for 10:00 Pacific on the run date; omit for a draft")
+    ap.add_argument("--send-at", help="ISO 8601 UTC time, or a Pacific hour like '10am' / '3pm' on the run date; omit for a draft")
+    ap.add_argument("--weekly", metavar="DATE", help="push the weekly wrap-up for DATE (built by build_weekly.py) instead of a daily issue")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true", help="create even if this date was already pushed")
     args = ap.parse_args()
+    if args.weekly:
+        return push_weekly(args)
 
     runs = json.loads((ROOT / "data/runs.json").read_text())
     idx = [i for i, r in enumerate(runs) if r.get("report") and (not args.date or r["date"] == args.date)]
@@ -106,9 +141,12 @@ def main():
         return
 
     send_at = resolve_send_at(args.send_at, run["date"])
-    headline = " · ".join(f"{k} {fmt(prob(run, k, 'now'))}%" for k in ("A", "B", "C", "D"))
+    needle = run.get("needle") or {}
+    hook = "Quiet day" if needle.get("quiet") else (needle.get("headline") or " · ".join(
+        f"{k} {fmt(prob(run, k, 'now'))}%" for k in ("A", "B", "C", "D")))
+    idx = run.get("index")
     fields = {
-        "subject": f"Hidden AGI watch, {pretty_date(run['date'])}: {headline}",
+        "subject": (f"Hidden AGI Index {fmt(idx)}% · " if idx is not None else "Hidden AGI watch · ") + hook,
         "preview_text": preview(run.get("summary") or ""),
         "description": f"Daily issue for {run['date']}",
         "content": issue_html(run, prev),

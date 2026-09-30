@@ -1,3 +1,5 @@
+import {lineChart, dial, tripwireBoard} from "./charts.js";
+
 const SERIES = [
   {k:"A", short:"A: AGI undisclosed", c:"--sA"},
   {k:"B", short:"B: Secret RSI", c:"--sB"},
@@ -8,7 +10,6 @@ const SERIES = [
 const HLABEL = {now:"now", y2030:"by 2030", y2035:"by 2035"};
 let runs = [];
 let horizon = "now";
-const hidden = new Set();
 
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const el = (tag, attrs={}, text) => { const e=document.createElement(tag); for(const [a,v] of Object.entries(attrs)) e.setAttribute(a,v); if(text!=null) e.textContent=text; return e; };
@@ -31,7 +32,7 @@ function sparkline(k){
   if(vals.length<2){ s.appendChild(svgEl("line",{x1:0,x2:w,y1:h-4,y2:h-4,stroke:css("--rule")})); return s; }
   const max=Math.max(...vals,1);
   const pts=vals.map((v,i)=>[i*(w-4)/(vals.length-1)+2, h-3-v/max*(h-6)]);
-  s.appendChild(svgEl("polyline",{points:pts.map(p=>p.join(",")).join(" "),fill:"none",stroke:css(SERIES.find(x=>x.k===k).c),"stroke-width":1.6}));
+  s.appendChild(svgEl("polyline",{points:pts.map(p=>p.join(",")).join(" "),fill:"none",stroke:css(SERIES.find(x=>x.k===k).c),"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"}));
   return s;
 }
 
@@ -50,39 +51,37 @@ function renderReadings(){
   });
 }
 
-function niceMax(m){ for(const s of [1,2,5,10,20,25,50,75,100]) if(m<=s) return s; return 100; }
-
 function renderChart(){
-  const host=document.getElementById("chart"); host.replaceChildren();
-  const W=Math.max(host.clientWidth||600, 300), H=300, L=40, R=16, T=14, B=34;
-  const vis=SERIES.filter(s=>!hidden.has(s.k));
-  const all=runs.flatMap(r=>vis.map(s=>val(r,s.k,horizon))).filter(v=>v!=null);
-  const ymax=niceMax(Math.max(...all,1)*1.1);
-  const svg=svgEl("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":`Probability ${HLABEL[horizon]} for each hypothesis across ${runs.length} runs`});
-  const ax=svgEl("g",{class:"axis"}); svg.append(ax);
-  const x = i => runs.length<2 ? L+(W-L-R)/2 : L + i*(W-L-R)/(runs.length-1);
-  const y = v => T + (1-v/ymax)*(H-T-B);
-  for(let i=0;i<=4;i++){ const v=ymax*i/4; ax.append(svgEl("line",{x1:L,x2:W-R,y1:y(v),y2:y(v)})); const t=svgEl("text",{x:L-6,y:y(v)+4,"text-anchor":"end"}); t.textContent=fmt(v)+"%"; ax.append(t); }
-  const every=Math.max(1,Math.ceil(runs.length/6));
-  runs.forEach((r,i)=>{ if(i%every && i!==runs.length-1) return; const t=svgEl("text",{x:x(i),y:H-10,"text-anchor":"middle"}); t.textContent=fmtDate(r.date).replace(/,? \d{4}$/,""); ax.append(t); });
-  vis.forEach(s=>{
-    const col=css(s.c);
-    const pts=runs.map((r,i)=>[x(i),val(r,s.k,horizon)]).filter(p=>p[1]!=null).map(p=>[p[0],y(p[1])]);
-    if(pts.length>1) svg.append(svgEl("polyline",{points:pts.map(p=>p.join(",")).join(" "),fill:"none",stroke:col,"stroke-width":2,"stroke-dasharray":s.k==="Dopen"?"5 4":"0"}));
-    pts.forEach(p=>{ const c=svgEl("circle",{cx:p[0],cy:p[1],r:3.5,fill:col}); c.append(svgEl("title")); c.firstChild.textContent=`${s.short}: ${fmt(ymax*(1-(p[1]-T)/(H-T-B)))}%`; svg.append(c); });
+  const byDate=new Map(); runs.forEach(r=>byDate.set(r.date,r)); // one point per day: the latest run
+  const days=[...byDate.values()];
+  lineChart(document.getElementById("chart"), {
+    title:`Probability ${HLABEL[horizon]} for each hypothesis`,
+    series: SERIES.map(s=>({label:s.short, short:s.k==="Dopen"?"D-open":s.k, color:s.c, values:days.map(r=>({x:r.date, y:val(r,s.k,horizon)}))}))
   });
-  host.append(svg);
 }
 
-function renderLegend(){
-  const lg=document.getElementById("legend"); lg.replaceChildren();
-  SERIES.forEach(s=>{
-    const b=el("button",{"aria-pressed":String(!hidden.has(s.k))});
-    const sw=el("span",{class:"swatch"}); sw.style.background=css(s.c);
-    b.append(sw, document.createTextNode(s.short));
-    b.onclick=()=>{ hidden.has(s.k)?hidden.delete(s.k):hidden.add(s.k); renderLegend(); renderChart(); };
-    lg.append(b);
-  });
+function renderHero(){
+  const last=runs[runs.length-1], prev=runs[runs.length-2];
+  if(last?.index==null) return;
+  dial(document.getElementById("dial"), last.index, {size:220});
+  document.getElementById("index-value").replaceChildren(document.createTextNode(fmt(last.index)), el("small",{},"%"));
+  const d=document.getElementById("index-delta"); d.replaceChildren(deltaNode(last.index, prev?.index));
+  if(last.indexNote) document.getElementById("index-note").textContent=last.indexNote;
+  const n=last.needle, box=document.getElementById("needle"); box.replaceChildren();
+  if(!n){ box.hidden=true; return; }
+  box.className="needle"+(n.quiet?" quiet":"");
+  box.append(el("div",{class:"kicker"}, n.quiet?"Quiet day":"What moved the needle"));
+  box.append(el("div",{class:"headline"}, n.headline));
+  if(n.detail){ const p=el("p",{},n.detail+" "); if(n.url) p.append(el("a",{href:n.url,target:"_blank",rel:"noopener"},"source")); box.append(p); }
+}
+
+function renderTripwires(){
+  const last=runs[runs.length-1];
+  const host=document.getElementById("tripwires");
+  if(!last?.tripwires?.length){ host.append(el("p",{class:"muted"},"No tripwires recorded.")); return; }
+  tripwireBoard(host, last.tripwires);
+  const c={tripped:0,watching:0,quiet:0}; last.tripwires.forEach(w=>c[w.status]++);
+  document.getElementById("tripwire-count").textContent=`${c.tripped} tripped, ${c.watching} watching, ${c.quiet} quiet.`;
 }
 
 function renderChanges(){
@@ -167,7 +166,7 @@ function renderAll(){
   if(!runs.length){ st.textContent="No runs stored yet."; return; }
   const last=runs[runs.length-1];
   st.textContent=`${runs.length} run${runs.length>1?"s":""} recorded. Latest: ${fmtDate(last.date)}.`;
-  renderReadings(); renderLegend(); renderChart(); renderChanges(); renderRoundup(); renderTimeline(); renderHistory();
+  renderHero(); renderTripwires(); renderReadings(); renderChart(); renderChanges(); renderRoundup(); renderTimeline(); renderHistory();
 }
 
 document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
@@ -176,7 +175,7 @@ document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
   if(runs.length) renderChart();
 });
 let rt; addEventListener("resize",()=>{ clearTimeout(rt); rt=setTimeout(()=>runs.length&&renderChart(),150); });
-matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>runs.length&&renderAll());
+matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>{ if(runs.length){ document.getElementById("tripwires").replaceChildren(); renderAll(); } });
 
 (async()=>{
   const st=document.getElementById("status");

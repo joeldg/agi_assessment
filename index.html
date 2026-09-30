@@ -11,14 +11,14 @@
 <meta property="og:title" content="Hidden AGI watch">
 <meta property="og:description" content="A daily, calibrated reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI, and AI influence on government.">
 <meta property="og:url" content="https://joeldg.github.io/agi_assessment/">
-<meta property="og:image" content="https://joeldg.github.io/agi_assessment/assets/brand/avatar.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:alt" content="An eye whose iris is a four-colour probability gauge">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Today's Hidden AGI Index and the four hypothesis readings">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hidden AGI watch">
 <meta name="twitter:description" content="A daily, calibrated reading of four hypotheses about undisclosed AGI, secret recursive self-improvement, covert autonomous AI, and AI influence on government.">
-<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/assets/brand/avatar.png">
+<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,11 +28,33 @@
 </head>
 <body>
 <main>
+  <nav class="site" aria-label="Site">
+    <a class="brand" href="./" aria-current="page">Hidden AGI watch</a>
+    <a href="start-here.html">Start here</a>
+    <a href="weekly/">Weekly wrap-up</a>
+    <a href="scorecard.html">Scorecard</a>
+    <a href="disclosure-lag.html">Disclosure lag</a>
+    <a href="agi-claims.html">AGI claims</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="steelman.html">Steelman</a>
+  </nav>
   <header>
     <h1>Hidden AGI watch</h1>
     <p class="lede">A daily reading of four hypotheses about undisclosed advanced AI, reassessed against the news and against earlier runs. Figures are probabilities that each is true now, by 2030, and by 2035. The goal is calibration, not alarm.</p>
     <p class="muted" id="status">Loading runs…</p>
   </header>
+
+  <section class="hero" aria-labelledby="index-h">
+    <div id="dial"></div>
+    <div>
+      <div class="kicker" id="index-h">Hidden AGI Index</div>
+      <div class="big" id="index-value">–</div>
+      <div id="index-delta"></div>
+      <p class="muted small" id="index-note"></p>
+      <p class="small"><a href="start-here.html">What is this number?</a></p>
+    </div>
+  </section>
+  <div id="needle" class="needle"></div>
 
   <div class="callout">
     <strong>The hypotheses.</strong>
@@ -51,6 +73,12 @@
   <div class="readings" id="readings"></div>
 
   <section>
+    <h2>Tripwires</h2>
+    <p class="muted">The signals that would change the estimates most, and where each stands today. <span id="tripwire-count"></span></p>
+    <div id="tripwires"></div>
+  </section>
+
+  <section>
     <div class="chart-head">
       <h2>Assessments over time</h2>
       <div class="seg" role="group" aria-label="Time horizon">
@@ -60,7 +88,6 @@
       </div>
     </div>
     <div class="chart-wrap"><div id="chart"></div></div>
-    <div class="legend" id="legend"></div>
   </section>
 
   <section class="cols">
@@ -86,6 +113,20 @@
   </section>
 
   <section>
+    <h2>Every Friday: the weekly wrap-up</h2>
+    <p class="muted">Key numbers for the week, then the deeper sections, each updated weekly.</p>
+    <div class="cards">
+      <a class="card" href="weekly/"><strong>Weekly wrap-up</strong><span>The week's numbers, moves and graphs, every Friday at 3pm Pacific.</span></a>
+      <a class="card" href="scorecard.html"><strong>Forecast scorecard</strong><span>Checkable predictions, scored when they resolve.</span></a>
+      <a class="card" href="disclosure-lag.html"><strong>Disclosure lag</strong><span>How long AI incidents stay hidden before the public hears.</span></a>
+      <a class="card" href="agi-claims.html"><strong>AGI claims ledger</strong><span>Who has said AGI is here, and whether it meets any definition.</span></a>
+      <a class="card" href="calendar.html"><strong>Coming up</strong><span>Dated events that could move the numbers.</span></a>
+      <a class="card" href="steelman.html"><strong>Weekly steelman</strong><span>The best case for the side the numbers disfavour.</span></a>
+      <a class="card" href="start-here.html"><strong>Start here</strong><span>The four hypotheses, the index and the method, explained.</span></a>
+    </div>
+  </section>
+
+  <section>
     <h2>Run history</h2>
     <div id="history"></div>
   </section>
@@ -96,9 +137,9 @@
 </div>
 
   <footer>
-    Produced by an automated analyst run (Claude). Probabilities are subjective estimates with wide uncertainty; every factual claim is sourced in the daily report. Not investment, policy or security advice. Source: <a href="https://github.com/joeldg/agi_assessment">github.com/joeldg/agi_assessment</a>.
+    Produced by an automated analyst run (Claude). Probabilities are subjective estimates with wide uncertainty; every factual claim is sourced in the daily report. Not investment, policy or security advice. Source: <a href="https://github.com/joeldg/agi_assessment">github.com/joeldg/agi_assessment</a>. <a href="style.html">Chart style guide</a>.
   </footer>
 </main>
-<script src="assets/app.js"></script>
+<script type="module" src="assets/app.js"></script>
 </body>
 </html>

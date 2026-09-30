@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chart style guide · Hidden AGI watch</title>
+<meta name="description" content="The one graphics style used for every chart on Hidden AGI watch: palette, marks, labels and interaction.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hidden AGI watch">
+<meta property="og:title" content="Chart style guide · Hidden AGI watch">
+<meta property="og:description" content="The one graphics style used for every chart on Hidden AGI watch: palette, marks, labels and interaction.">
+<meta property="og:url" content="https://joeldg.github.io/agi_assessment/style.html">
+<meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chart style guide · Hidden AGI watch">
+<meta name="twitter:description" content="The one graphics style used for every chart on Hidden AGI watch: palette, marks, labels and interaction.">
+<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="Hidden AGI watch" href="./feed.xml">
+<link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
+</head>
+<body>
+<main>
+  <nav class="site" aria-label="Site">
+    <a class="brand" href="./">Hidden AGI watch</a>
+    <a href="./start-here.html">Start here</a>
+    <a href="./weekly/">Weekly wrap-up</a>
+    <a href="./scorecard.html">Scorecard</a>
+    <a href="./disclosure-lag.html">Disclosure lag</a>
+    <a href="./agi-claims.html">AGI claims</a>
+    <a href="./calendar.html">Calendar</a>
+    <a href="./steelman.html">Steelman</a>
+  </nav>
+
+  <header class="prose">
+    <h1>Chart style guide</h1>
+    <p class="lede">One quiet, consistent style for every graph, so readers learn it once. The data is the only thing allowed to be loud. Every chart on the site is drawn by <code>assets/charts.js</code>, and the email and share-card images follow the same rules.</p>
+  </header>
+  <section><h2>Palette</h2>
+    <p class="prose">Each hypothesis has a fixed color everywhere: on the dashboard, in charts, on cards and in email. Colors follow the hypothesis, never its rank, and the order is always A, B, C, D, D-open. Both sets pass a colorblind-safety check (lightness band, chroma floor, deuteranopia and tritanopia separation, and contrast), and dark mode uses its own validated steps rather than an automatic flip.</p>
+    <div class="table-wrap"><table><tr><th>Series</th><th>Light</th><th>Dark</th><th>Used for</th></tr>
+    <tr><td><span class="swatch" style="background:#B8700C"></span> A</td><td>#B8700C</td><td>#C4861A</td><td>AGI undisclosed</td></tr>
+    <tr><td><span class="swatch" style="background:#00897B"></span> B</td><td>#00897B</td><td>#139A8C</td><td>Secret RSI</td></tr>
+    <tr><td><span class="swatch" style="background:#9150B8"></span> C</td><td>#9150B8</td><td>#A36ED0</td><td>Covert AGI online</td></tr>
+    <tr><td><span class="swatch" style="background:#C8413A"></span> D</td><td>#C8413A</td><td>#DC564A</td><td>Covert government influence</td></tr>
+    <tr><td><span class="swatch" style="background:#3569D4"></span> D-open</td><td>#3569D4</td><td>#4F82DC</td><td>Open government influence</td></tr>
+    <tr><td><span class="swatch" style="background:#B8700C"></span> Accent</td><td>#B8700C</td><td>#D9A441</td><td>The one thing a single-series chart is about: the index, highlights, forecast bars</td></tr>
+    </table></div>
+    <p class="prose"><strong>Status colors are reserved for tripwires</strong> and always come with an icon and a word: ○ Quiet (green), ◐ Watching (amber), ● Tripped (red). They never stand in for a hypothesis.</p>
+  </section>
+  <section class="prose"><h2>Rules</h2>
+    <ul class="plain">
+      <li><strong>Pick the form first.</strong> One number gets a stat tile or the dial, not a chart. Change over time gets lines. Durations get range bars. Probabilities get meters.</li>
+      <li><strong>Thin marks.</strong> 2px lines with round joins. Dots at least 8px with a 2px ring in the surface color. Bars no thicker than 24px, with 4px rounded ends.</li>
+      <li><strong>Recessive chrome.</strong> Gridlines and axes are 1px solid hairlines one step off the surface, never dashed. Ticks fall on clean values.</li>
+      <li><strong>One axis.</strong> Never two y-scales on one chart. Different measures get separate charts.</li>
+      <li><strong>Identity is never color alone.</strong> Two or more series always have a legend, plus a few direct labels at line ends where they don't collide. Never a number on every point.</li>
+      <li><strong>Text stays ink.</strong> Labels and values use the text colors. The colored mark beside them carries identity.</li>
+      <li><strong>Emphasis over rainbow.</strong> When one thing matters (disclosed by outsiders, our forecast), it gets the accent and everything else goes gray.</li>
+      <li><strong>Every chart is interactive and readable without the picture.</strong> Hover or tap shows a tooltip, and every chart has a "Show as table" view.</li>
+      <li><strong>Type.</strong> Headings in Source Serif 4. Everything else, including big numbers, in Public Sans. Aligned columns use tabular figures.</li>
+    </ul>
+  </section>
+  <section><h2>The Hidden AGI Index dial</h2><p class="muted">An eye whose iris has 100 ticks, one per percentage point, lit in the accent color.</p><div id="ex-dial"></div></section>
+  <section><h2>Lines: change over time</h2><div class="chart-wrap"><div id="ex-line"></div></div></section>
+  <section><h2>Range bars: how long something lasted</h2><div class="chart-wrap"><div id="ex-lag"></div></div></section>
+  <section><h2>Meters: a probability, with market odds as a hollow ring</h2><div id="ex-fc"></div></section>
+  <section><h2>Status board: tripwires</h2><div id="ex-tw"></div></section>
+
+<div class="subscribe">
+  <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
+  <a class="btn" href="https://hidden-agi.kit.com/f2b4d2f30e" target="_blank" rel="noopener">Subscribe</a>
+</div>
+
+  <footer>
+    Produced by an automated analyst run (Claude), researched and drafted with AI assistance. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
+  </footer>
+</main>
+<script type="module">
+import * as K from "./assets/charts.js";
+const j = p => fetch(p,{cache:"no-cache"}).then(r=>r.json());
+
+K.dial(document.getElementById("ex-dial"), 4, {size:240});
+const days=["2026-09-01","2026-09-08","2026-09-15","2026-09-22","2026-09-29"];
+const demo={A:[1.5,2,2,2.5,3],B:[1,1,1.5,1.5,2],C:[0.3,0.4,0.5,0.8,1],D:[0.2,0.3,0.3,0.4,0.5]};
+K.lineChart(document.getElementById("ex-line"),{title:"Example (illustrative data)",series:Object.entries(demo).map(([k,v])=>({label:K.SERIES[k].label+" (example)",short:k,color:K.SERIES[k].color,values:days.map((d,i)=>({x:d,y:v[i]}))}))});
+const inc = await j("data/incidents.json"); K.lagChart(document.getElementById("ex-lag"), inc.incidents.slice(0,4));
+const fc = await j("data/forecasts.json"); K.forecastBars(document.getElementById("ex-fc"), fc.forecasts.filter(f=>f.market!=null).concat(fc.forecasts.slice(0,1)));
+const runs = await j("data/runs.json"); K.tripwireBoard(document.getElementById("ex-tw"), (runs[runs.length-1].tripwires||[]).filter((w,i,a)=>a.findIndex(x=>x.status===w.status)===i));
+
+</script>
+</body>
+</html>

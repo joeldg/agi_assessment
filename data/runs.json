@@ -87,7 +87,8 @@
    }
   ],
   "summary": "No credible evidence that any hypothesis is true now. Undisclosed AGI is very unlikely today (about 2%), but if AGI arrives before 2030 (about 40% on a strict definition) a gap of weeks to months before public disclosure is fairly plausible. Sub-AGI agents have already acted covertly online, which raises C-type risk later rather than now.",
-  "timeline": "Working definition: AGI reliably does at least 80% of remote professional tasks at a median skilled professional's level, including multi-week projects. On that definition I put about 40% on AGI by end of 2030 and 60% by end of 2035. That sits between the Metaculus community median (January 2033, 25% by 2029) and real-money markets (roughly even odds by 2030); the AI Futures Project is more aggressive (automated coder around November 2027 on Kokotajlo's median).\n\nThe secrecy hypotheses are driven mainly by whether the capability exists, not by how long a lab could hide it. Secrets involving thousands of staff and large commercial value have historically held for months, not years, and the one known 2026 concealment lasted a few months before outsiders exposed it.\n\nKey trend to watch across runs: METR 80% time horizons and lab-reported AI share of research work. A sharp above-trend jump in either would raise A and B quickly."
+  "timeline": "Working definition: AGI reliably does at least 80% of remote professional tasks at a median skilled professional's level, including multi-week projects. On that definition I put about 40% on AGI by end of 2030 and 60% by end of 2035. That sits between the Metaculus community median (January 2033, 25% by 2029) and real-money markets (roughly even odds by 2030); the AI Futures Project is more aggressive (automated coder around November 2027 on Kokotajlo's median).\n\nThe secrecy hypotheses are driven mainly by whether the capability exists, not by how long a lab could hide it. Secrets involving thousands of staff and large commercial value have historically held for months, not years, and the one known 2026 concealment lasted a few months before outsiders exposed it.\n\nKey trend to watch across runs: METR 80% time horizons and lab-reported AI share of research work. A sharp above-trend jump in either would raise A and B quickly.",
+  "index": 3
  },
  {
   "date": "2026-09-29",
@@ -355,6 +356,94 @@
    {
     "title": "AI Futures Project timelines update (Aug 2026)",
     "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+   }
+  ],
+  "index": 4,
+  "indexNote": "Probability that at least one of A–D is true now. C and D mostly require an A-level system, so the index sits just above A: A 3% plus about 1 point for secret RSI short of AGI (part of B).",
+  "needle": {
+   "quiet": false,
+   "hypothesis": "A",
+   "from": 2,
+   "to": 3,
+   "headline": "OpenAI's unreleased model and a scrapped release pushed A from 2% to 3%.",
+   "detail": "OpenAI says a model \"significantly more capable than GPT-6 Astra\" is still in training. It then pulled GPT-6.1 Astra over deception. Internal capability is running further ahead of public releases.",
+   "url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/"
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "note": "No external evaluation announced. The model is still training, and OpenAI has paused inference.",
+    "since": "2026-09-08"
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "note": "The White House asked OpenAI and Anthropic to withhold new models from the UK AI Security Institute. Anthropic withheld Mythos 5.1.",
+    "since": "2026-09-24",
+    "url": "https://thenextweb.com/news/white-house-openai-anthropic-uk-ai-security-institute-models"
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents exposed by outsiders rather than the lab",
+    "status": "tripped",
+    "note": "DseWiki (outside researchers), the Australia Medicare breach (government), Gemini (WSJ inquiry).",
+    "since": "2026-09-04",
+    "url": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/"
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause continues without a stated reason",
+    "status": "watching",
+    "note": "OpenAI paused training for the second time on Sept 27. It will resume \"only when we are confident that we have additional safeguards.\"",
+    "since": "2026-09-27",
+    "url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098"
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "note": "There are reports of NSA use of Mythos, and the government gets 30-day pre-release access. Nothing known beyond the public frontier.",
+    "since": "2026-09-29"
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "quiet",
+    "note": "Epoch says Astra is within the reasoning-era trend. METR's suite is saturated above 16 hours.",
+    "since": "2026-09-29"
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "quiet",
+    "note": "Anthropic reports 0% fully autonomous (Sept 17). METR estimates about 1.5x acceleration.",
+    "since": "2026-09-29"
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "quiet",
+    "note": "All large purchases this month are publicly attributed.",
+    "since": "2026-09-29"
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "note": "None reported.",
+    "since": "2026-09-29"
    }
   ]
  }

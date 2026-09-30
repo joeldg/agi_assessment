@@ -1,0 +1,102 @@
+{
+ "note": "Short-range, checkable forecasts. Each has a probability, a deadline and a resolution rule. Resolved forecasts are scored with the Brier score (lower is better; always guessing 50% scores 0.25).",
+ "forecasts": [
+  {
+   "id": "gemini4-by-nov30",
+   "made": "2026-09-29",
+   "question": "Google releases Gemini 4 (any tier, public or paid preview) by Nov 30, 2026",
+   "p": 70,
+   "deadline": "2026-11-30",
+   "resolution": "An official Google announcement of availability to outside users.",
+   "context": "Kavukcuoglu said Sept 23–24 that Google wants it out \"as soon as possible\".",
+   "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "openai-resume-by-oct31",
+   "made": "2026-09-29",
+   "question": "OpenAI says it has resumed training its frontier models by Oct 31, 2026",
+   "p": 45,
+   "deadline": "2026-10-31",
+   "resolution": "An OpenAI statement or credible report that the Sept 27 training pause has ended.",
+   "context": "This is the second pause in three months, and the safeguards needed to resume are unspecified.",
+   "url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-ipo-by-oct31",
+   "made": "2026-09-29",
+   "question": "Anthropic shares begin trading on Nasdaq by Oct 31, 2026",
+   "p": 75,
+   "deadline": "2026-10-31",
+   "resolution": "The first day of public trading.",
+   "context": "The prospectus went public Sept 28, targeting mid-October.",
+   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "metr-astra-horizon-by-nov30",
+   "made": "2026-09-29",
+   "question": "METR publishes a time-horizon estimate for GPT-6 Astra by Nov 30, 2026",
+   "p": 50,
+   "deadline": "2026-11-30",
+   "resolution": "A GPT-6 Astra entry on METR's time-horizons page or blog.",
+   "context": "METR's page has shown nothing newer than May 8, and its suite is saturated above 16 hours.",
+   "url": "https://metr.org/time-horizons/",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "newsom-killswitch-by-nov16",
+   "made": "2026-09-29",
+   "question": "California publishes the AI \"kill switch\" design ordered by EO N-9-26 by its Nov 16 deadline",
+   "p": 55,
+   "deadline": "2026-11-16",
+   "resolution": "A public design document or report released by the state.",
+   "context": "Newsom's Sept 18 executive order set the deadline.",
+   "url": "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "grok5-by-dec31",
+   "made": "2026-09-29",
+   "question": "xAI releases Grok 5 by Dec 31, 2026",
+   "p": 55,
+   "deadline": "2026-12-31",
+   "resolution": "An official release to outside users.",
+   "context": "Reportedly still training on Colossus 2.",
+   "url": "https://geotoolbox.ai/blog/grok-5",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "agi-declared-by-mar31",
+   "made": "2026-09-29",
+   "question": "A major lab formally declares it has achieved AGI by Mar 31, 2027",
+   "p": 30,
+   "deadline": "2027-03-31",
+   "resolution": "An official company declaration (not an executive's offhand remark), such as OpenAI invoking its charter's AGI definition. Kalshi's question is similar.",
+   "context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
+   "url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
+   "market": 62,
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "clay-navier-by-dec31",
+   "made": "2026-09-29",
+   "question": "The Clay Institute accepts OpenAI's Navier–Stokes result as solving the Millennium Prize problem by Dec 31, 2026",
+   "p": 7,
+   "deadline": "2026-12-31",
+   "resolution": "A Clay Mathematics Institute announcement.",
+   "context": "Clay review is pending, and Clay rules normally require publication plus two years.",
+   "url": "https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/",
+   "outcome": null,
+   "resolved": null
+  }
+ ]
+}

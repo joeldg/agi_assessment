@@ -23,7 +23,7 @@ SERIES = [
 ]
 MAX_ITEMS = 30
 
-INK, MUTED, RULE, UP, DOWN = "#1C2733", "#5A6775", "#C9D0D7", "#A33A30", "#2D6A4F"
+INK, MUTED, RULE, UP, DOWN, ACCENT = "#1C2733", "#5A6775", "#C9D0D7", "#A33A30", "#2D6A4F", "#B8700C"
 FONT = "font-family:Georgia,'Times New Roman',serif;"
 SANS = "font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"
 
@@ -81,6 +81,23 @@ def issue_html(run, prev):
     report_url = SITE + run["report"]
     out = [p(f'<span style="color:{MUTED}">Daily reading of four hypotheses about hidden advanced AI. '
              f'Probabilities are subjective and sourced in the {link(report_url, "full report")}.</span>')]
+    if (ROOT / "cards" / f"{run['date']}.png").exists():
+        out.append(f'<a href="{SITE}"><img src="{SITE}cards/{run["date"]}.png" width="600" alt="Hidden AGI Index '
+                   f'{fmt(run.get("index"))}% on {pretty_date(run["date"])}" style="display:block;width:100%;max-width:600px;'
+                   f'height:auto;border:0;border-radius:8px;margin:8px 0 14px"></a>')
+    if run.get("index") is not None:
+        out.append(p(f'<strong>Hidden AGI Index: {fmt(run["index"])}%</strong> '
+                     f'{delta_cell(run["index"], prev.get("index") if prev else None)} '
+                     f'<span style="color:{MUTED}">· the chance at least one hypothesis is true now. '
+                     f'{link(SITE + "start-here.html", "What is this?")}</span>'))
+    n = run.get("needle")
+    if n:
+        kicker = "Quiet day" if n.get("quiet") else "What moved the needle"
+        src = " " + link(n["url"], "source") if n.get("url") else ""
+        out.append(f'<div style="border-left:4px solid {ACCENT};padding:8px 12px;margin:10px 0 16px;background:#F8F9FA">'
+                   f'<div style="{SANS}font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600">{kicker}</div>'
+                   f'<div style="{FONT}font-size:18px;font-weight:600;color:{INK};margin:4px 0">{escape(n.get("headline",""))}</div>'
+                   f'<div style="{SANS}font-size:14px;line-height:1.5;color:{INK}">{escape(n.get("detail",""))}{src}</div></div>')
 
     th = f'style="{SANS}font-size:13px;color:{MUTED};text-align:left;padding:6px 8px;border-bottom:1px solid {RULE}"'
     td = f'style="{SANS}font-size:14px;color:{INK};padding:6px 8px;border-bottom:1px solid {RULE};vertical-align:top"'
@@ -95,6 +112,18 @@ def issue_html(run, prev):
 
     if run.get("summary"):
         out.append(p(escape(run["summary"])))
+    if run.get("tripwires"):
+        icon = {"tripped": ("●", "#B42318", "Tripped"), "watching": ("◐", "#9A6B00", "Watching"), "quiet": ("○", "#2E7D4F", "Quiet")}
+        live = [w for w in run["tripwires"] if w["status"] != "quiet"]
+        quiet = len(run["tripwires"]) - len(live)
+        out.append(h2("Tripwires"))
+        items = []
+        for w in sorted(live, key=lambda w: 0 if w["status"] == "tripped" else 1):
+            ic, col, lab = icon[w["status"]]
+            items.append(f'<span style="color:{col};font-weight:600">{ic} {lab}</span> · <strong>{escape(w["signal"])}</strong>. '
+                         f'<span style="color:{MUTED}">{escape(w.get("note",""))}</span>')
+        out.append(ul(items))
+        out.append(p(f'<span style="color:{MUTED}">{quiet} more quiet. {link(SITE + "#tripwires", "See all tripwires")}.</span>'))
     if run.get("changes"):
         out.append(h2("What changed"))
         out.append(ul(escape(c) for c in run["changes"]))
@@ -135,7 +164,14 @@ def write_sitemap(runs):
     for run in runs:
         if run.get("report"):
             dates[run["report"]] = max(dates.get(run["report"], ""), run["date"])
-    urls = [(SITE, max((r["date"] for r in runs), default=""))]
+    latest = max((r["date"] for r in runs), default="")
+    weekly_index = ROOT / "data/weekly/index.json"
+    wraps = json.loads(weekly_index.read_text())["wrapups"] if weekly_index.exists() else []
+    last_week = max((w["date"] for w in wraps), default=latest)
+    urls = [(SITE, latest), (SITE + "weekly/", last_week)]
+    urls += [(SITE + pg, last_week) for pg in ("start-here.html", "scorecard.html", "disclosure-lag.html",
+                                               "agi-claims.html", "calendar.html", "steelman.html", "style.html")]
+    urls += [(SITE + f"weekly/{w['date']}.html", w["date"]) for w in sorted(wraps, key=lambda w: w["date"], reverse=True)]
     urls += sorted(((SITE + path, d) for path, d in dates.items()), key=lambda u: u[1], reverse=True)
     entries = "\n".join(
         f"  <url><loc>{escape(loc)}</loc>" + (f"<lastmod>{d}</lastmod>" if d else "") + "</url>"
