@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fire alarm · Hidden AGI watch</title>
+<meta name="description" content="The published criteria for Hidden AGI watch&#x27;s fire alarm for hidden AI: four levels, fixed triggers, and a public history.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hidden AGI watch">
+<meta property="og:title" content="Fire alarm · Hidden AGI watch">
+<meta property="og:description" content="The published criteria for Hidden AGI watch&#x27;s fire alarm for hidden AI: four levels, fixed triggers, and a public history.">
+<meta property="og:url" content="https://joeldg.github.io/agi_assessment/alarm.html">
+<meta property="og:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fire alarm · Hidden AGI watch">
+<meta name="twitter:description" content="The published criteria for Hidden AGI watch&#x27;s fire alarm for hidden AI: four levels, fixed triggers, and a public history.">
+<meta name="twitter:image" content="https://joeldg.github.io/agi_assessment/cards/latest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="Hidden AGI watch" href="./feed.xml">
+<link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
+</head>
+<body>
+<main>
+  <nav class="site" aria-label="Site">
+    <a class="brand" href="./">Hidden AGI watch</a>
+    <a href="./start-here.html">Start here</a>
+    <a href="./weekly/">Weekly wrap-up</a>
+    <a href="./scorecard.html">Scorecard</a>
+    <a href="./disclosure-lag.html">Disclosure lag</a>
+    <a href="./agi-claims.html">AGI claims</a>
+    <a href="./calendar.html">Calendar</a>
+    <a href="./steelman.html">Steelman</a>
+    <a href="./trends.html">Trends</a>
+    <a href="./alarm.html" aria-current="page">Alarm</a>
+  </nav>
+
+  <header class="prose">
+    <h1>The fire alarm</h1>
+    <p class="lede" id="purpose"></p>
+  </header>
+  <div id="now"></div>
+  <section class="prose"><h2>The four levels</h2><div class="table-wrap"><table class="lv-table" id="levels"></table></div>
+    <p class="small muted" id="standard"></p></section>
+  <section><h2>The triggers, and where each stands</h2><div id="groups"></div></section>
+  <section class="prose"><h2>Rules that keep the alarm honest</h2><ol id="rules"></ol></section>
+  <section><h2>Alarm history</h2><p class="muted">Every level change, the evidence behind it, and a review after 90 days: did it hold up, or was it a false alarm?</p><div class="table-wrap"><table id="history"></table></div></section>
+  <section class="prose"><h2>Changes to these criteria</h2><ul class="plain" id="changelog"></ul></section>
+
+<div class="subscribe">
+  <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
+  <a class="btn" href="https://hidden-agi.kit.com/f2b4d2f30e" target="_blank" rel="noopener">Subscribe</a>
+</div>
+
+  <footer>
+    Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
+  </footer>
+</main>
+<script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
+<script type="module">
+import * as K from "./assets/charts.js";
+const j = p => fetch(p,{cache:"no-cache"}).then(r=>r.json());
+
+const A = await j("data/alarm.json"), h = K.util.h, fd = d => d ? K.util.fmtDate(d,{day:"numeric",month:"short",year:"numeric"}) : "–";
+document.getElementById("purpose").textContent = A.purpose;
+K.alarmIndicator(document.getElementById("now"), A, {root:""});
+const lt = document.getElementById("levels"); { const tr=h("tr"); ["Level","What it means"].forEach(c=>tr.append(h("th",{},c))); lt.append(tr); }
+A.levels.forEach(l=>{ const tr=h("tr"); const c=h("td"); const ic=h("span",{},l.icon+" "); ic.style.color=K.util.css("--"+l.status); c.append(ic, document.createTextNode(`${l.level} · ${l.name}`)); tr.append(c, h("td",{},l.meaning)); lt.append(tr); });
+document.getElementById("standard").textContent = "Evidence standard: " + A.evidenceStandard;
+const G = document.getElementById("groups");
+A.groups.forEach(g=>{ const lv=A.levels.find(l=>l.level===g.level); G.append(h("h3",{},`Level ${g.level} · ${lv.name}: ${g.rule}`));
+  const wrap=h("div",{class:"table-wrap"}); const t=h("table"); const hr=h("tr"); ["#","Trigger","Threshold","Status"].forEach(c=>hr.append(h("th",{},c))); t.append(hr);
+  g.triggers.forEach(x=>{ const tr=h("tr"); tr.append(h("td",{class:"num"},x.id)); const td=h("td"); td.append(h("div",{},x.trigger)); if(x.why) td.append(h("div",{class:"muted small"},"Why this threshold: "+x.why)); tr.append(td); tr.append(h("td",{},x.threshold||"–"));
+    const st=h("td"); const b=h("div",{class:x.met?"met-yes":""}, x.met?"● Met":"○ Not met"); b.style.color=K.util.css(x.met?(g.level>1?"--crit":"--warn"):"--muted"); st.append(b); if(x.met&&x.since) st.append(h("div",{class:"muted small"},"since "+fd(x.since))); if(x.evidence){ const e=h("div",{class:"small"},x.evidence+" "); if(x.url) e.append(h("a",{href:x.url,...(/^https?:/.test(x.url)?{target:"_blank",rel:"noopener"}:{})},"source")); st.append(e);} tr.append(st); t.append(tr); });
+  wrap.append(t); G.append(wrap); });
+const R = document.getElementById("rules"); A.rules.forEach(r=>R.append(h("li",{},r)));
+const H = document.getElementById("history"); { const tr=h("tr"); ["Date","Change","Triggers","Why","90-day review"].forEach(c=>tr.append(h("th",{},c))); H.append(tr); }
+[...A.history].reverse().forEach(e=>{ const name=l=>l==null?"–":`${l} · ${A.levels.find(x=>x.level===l).name}`; const tr=h("tr"); tr.append(h("td",{class:"num"},fd(e.date)), h("td",{},`${name(e.from)} → ${name(e.to)}`), h("td",{},e.triggers.join(", ")), h("td",{},e.note), h("td",{},e.review?e.review:`due ${fd(e.reviewDue)}`)); H.append(tr); });
+const C = document.getElementById("changelog"); A.changelog.forEach(c=>C.append(h("li",{},`v${c.version} (${fd(c.date)}): ${c.change}`)));
+
+</script>
+</body>
+</html>

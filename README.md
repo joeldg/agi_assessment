@@ -20,6 +20,7 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 | `cards/` | 1200×630 share cards (`YYYY-MM-DD.png`, `latest.png`, `weekly-YYYY-MM-DD.png`), used for link previews and at the top of emails. |
 | `start-here.html`, `scorecard.html`, `disclosure-lag.html`, `agi-claims.html`, `calendar.html`, `steelman.html` | Standing sections, rendered in the browser from `data/forecasts.json`, `data/incidents.json`, `data/agi_claims.json`, `data/calendar.json` and `data/steelman.json`. Updated weekly. |
 | `trends.html`, `data/trends.json`, `scripts/update_trends.py` | Trend watch: METR time horizons pulled from METR's published data, fitted and projected with a 95% band and threshold-crossing dates, plus hand-curated series (AI share of AI R&D). |
+| `alarm.html`, `data/alarm.json` | The fire alarm: four levels (Normal, Watch, Warning, Alarm), published triggers and rules, current status, public history and changelog. `scripts/kit_broadcast.py --alarm` drafts a breaking alert on a level change (always a draft for the owner). |
 | `data/gauges.json` | Definitions of the four gauges (capability gap, AI doing AI research, oversight gap, delegation to AI). Daily readings live in `data/runs.json` → `gauges`. |
 | `data/external_forecasts.json` | Outside AGI forecasts (Metaculus, markets, AI Futures, lab leaders), plotted as rings on the dashboard forecast chart. |
 | `weekly/`, `data/weekly/` | Friday wrap-ups: `data/weekly/YYYY-MM-DD.json` (editorial plus computed key numbers) → `weekly/YYYY-MM-DD.html`. `data/weekly/index.json` lists them. |
@@ -34,7 +35,7 @@ A scheduled Claude routine updates the site once a day. Each run searches curren
 ## Daily update procedure (09:02 Pacific)
 
 1. Read `data/runs.json` and the latest report, then research the news since the last run.
-2. Decide the index, the needle (or a quiet day), the four gauge readings and each tripwire's status.
+2. Re-check the fire-alarm triggers (`data/alarm.json`), then decide the index, the needle (or a quiet day), the four gauge readings and each tripwire's status. If the alarm level changes, draft a breaking alert with `kit_broadcast.py --alarm`; never send it.
 3. Write `reports/<today>.html`, following the previous report's structure.
 4. Append the day's entry to `data/runs.json`.
 5. Run `python3 scripts/render_card.py`, then `python3 scripts/build_feed.py`.

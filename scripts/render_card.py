@@ -83,6 +83,15 @@ def shoot(html, out):
     print("wrote", out.relative_to(ROOT))
 
 
+def alarm_label():
+    try:
+        a = json.loads((ROOT / "data/alarm.json").read_text())
+        lv = next(l for l in a["levels"] if l["level"] == a["current"]["level"])
+        return f'{lv["icon"]} {lv["name"]}'
+    except Exception:
+        return None
+
+
 def delta(cur, prev):
     if cur is None or prev is None:
         return "new"
@@ -101,7 +110,8 @@ def daily(date=None):
     label = datetime.strptime(run["date"], "%Y-%m-%d").strftime("%-d %B %Y")
     out = ROOT / "cards" / f"{run['date']}.png"
     out.parent.mkdir(exist_ok=True)
-    shoot(card_html("Hidden AGI watch · daily reading", label, run.get("index", prob(run, "A", "now")), rows, foot), out)
+    lvl = alarm_label()
+    shoot(card_html("Daily reading" + (f" · Fire alarm {lvl}" if lvl else " · Hidden AGI watch"), label, run.get("index", prob(run, "A", "now")), rows, foot), out)
     shutil.copyfile(out, ROOT / "cards/latest.png")
     return out
 

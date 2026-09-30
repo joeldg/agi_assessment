@@ -108,6 +108,13 @@ def issue_html(run, prev):
         out.append(f'<a href="{SITE}"><img src="{SITE}cards/{run["date"]}.png" width="600" alt="Hidden AGI Index '
                    f'{fmt(run.get("index"))}% on {pretty_date(run["date"])}" style="display:block;width:100%;max-width:600px;'
                    f'height:auto;border:0;border-radius:8px;margin:8px 0 14px"></a>')
+    alarm_path = ROOT / "data/alarm.json"
+    if alarm_path.exists():
+        a = json.loads(alarm_path.read_text())
+        lv = next(l for l in a["levels"] if l["level"] == a["current"]["level"])
+        col = {"good": "#2E7D4F", "warn": "#9A6B00", "crit": "#B42318"}[lv["status"]]
+        out.append(p(f'<span style="color:{col};font-weight:600">{lv["icon"]} Fire alarm: Level {lv["level"]}, {lv["name"]}.</span> '
+                     f'<span style="color:{MUTED}">{escape(lv["meaning"])} {link(SITE + "alarm.html", "How the alarm works")}</span>'))
     if run.get("index") is not None:
         out.append(p(f'<strong>Hidden AGI Index: {fmt(run["index"])}%</strong> '
                      f'{delta_cell(run["index"], prev.get("index") if prev else None)} '
@@ -195,7 +202,7 @@ def write_sitemap(runs):
     last_week = max((w["date"] for w in wraps), default=latest)
     urls = [(SITE, latest), (SITE + "weekly/", last_week)]
     urls += [(SITE + pg, last_week) for pg in ("start-here.html", "scorecard.html", "disclosure-lag.html",
-                                               "agi-claims.html", "calendar.html", "steelman.html", "trends.html", "style.html")]
+                                               "agi-claims.html", "calendar.html", "steelman.html", "trends.html", "alarm.html", "style.html")]
     urls += [(SITE + f"weekly/{w['date']}.html", w["date"]) for w in sorted(wraps, key=lambda w: w["date"], reverse=True)]
     urls += sorted(((SITE + path, d) for path, d in dates.items()), key=lambda u: u[1], reverse=True)
     entries = "\n".join(

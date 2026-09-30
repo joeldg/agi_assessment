@@ -1,0 +1,212 @@
+{
+ "version": "1.0",
+ "published": "2026-09-29",
+ "purpose": "Hidden AGI watch aims to be a fire alarm for hidden AI. The alarm level is set by these fixed, published criteria, not by our probability judgments. It goes up the day a trigger is met, comes down slowly, and every change is public and reviewed.",
+ "levels": [
+  {
+   "level": 0,
+   "name": "Normal",
+   "meaning": "No alarm triggers are met.",
+   "status": "good",
+   "icon": "○"
+  },
+  {
+   "level": 1,
+   "name": "Watch",
+   "meaning": "The conditions that would let advanced AI be hidden are present. There's no sign that it is.",
+   "status": "warn",
+   "icon": "◐"
+  },
+  {
+   "level": 2,
+   "name": "Warning",
+   "meaning": "Specific evidence that a hidden capability jump may exist.",
+   "status": "crit",
+   "icon": "◉"
+  },
+  {
+   "level": 3,
+   "name": "Alarm",
+   "meaning": "Strong evidence that a hidden system meets our bar, or is acting.",
+   "status": "crit",
+   "icon": "●"
+  }
+ ],
+ "evidenceStandard": "A trigger counts only with a primary source (a lab, an evaluator such as METR or an AI Security Institute, a government, or a court or SEC filing) or two independent credible outlets. A single anonymous or unverified claim is logged as unverified and can never trip Warning or Alarm on its own.",
+ "rules": [
+  "It goes up at once: a level rises the day its trigger condition is met.",
+  "It comes down slowly: a level drops only after its triggers have gone unmet for 30 days, so it doesn't flap.",
+  "Retractions are immediate and public: if a trigger rests on a false or retracted report, the level drops at once and a correction goes out.",
+  "Every level change is loud: a breaking email, a site banner and an alarm-history entry listing the evidence.",
+  "Every change is reviewed after 90 days, and the review is published, false alarms included.",
+  "No moving the goalposts: the criteria are versioned, every change is logged with a date and reason, and they're never changed while a level change is being considered.",
+  "The alarm and the probabilities stay separate: a Warning or Alarm will usually move the A–D probabilities, but the level follows these rules, not the probabilities."
+ ],
+ "groups": [
+  {
+   "level": 1,
+   "rule": "any two",
+   "triggers": [
+    {
+     "id": "W1",
+     "trigger": "Capability gap (gauge)",
+     "threshold": "3 months or more",
+     "why": "About one frontier release cycle: long enough for a capability to go unseen for a full cycle.",
+     "met": true,
+     "since": "2026-09-29",
+     "evidence": "Our estimate is ~3 months (range 2–5). This is borderline.",
+     "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+    },
+    {
+     "id": "W2",
+     "trigger": "An acknowledged unreleased frontier model with no external evaluation",
+     "threshold": "60 days or more since it was acknowledged",
+     "why": "Two months is past any normal pre-release testing window.",
+     "met": false,
+     "since": null,
+     "evidence": "OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8. It meets this on Nov 7 if nothing changes.",
+     "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
+     "watchFrom": "2026-09-08"
+    },
+    {
+     "id": "W3",
+     "trigger": "Independent evaluator access restricted by a lab or government",
+     "threshold": "Any credible instance in the past 90 days",
+     "why": "Evaluators are the main outside view of internal models.",
+     "met": true,
+     "since": "2026-09-24",
+     "evidence": "The White House asked OpenAI and Anthropic to withhold new models from the UK AI Security Institute.",
+     "url": "https://thenextweb.com/news/white-house-openai-anthropic-uk-ai-security-institute-models"
+    },
+    {
+     "id": "W4",
+     "trigger": "Oversight gap: median disclosure lag of incidents disclosed in the past 180 days",
+     "threshold": "30 days or more",
+     "why": "Twice the 15-day reporting window in California's SB 53.",
+     "met": true,
+     "since": "2026-09-29",
+     "evidence": "The median is 74 days across 7 incidents.",
+     "url": "disclosure-lag.html"
+    },
+    {
+     "id": "W5",
+     "trigger": "Published share of a frontier lab's AI R&D led by AI",
+     "threshold": "25% or more",
+     "why": "A quarter of the work is where the self-improvement loop becomes material.",
+     "met": true,
+     "since": "2026-09-17",
+     "evidence": "Anthropic: 26% of AI R&D led by Claude (August). This is borderline.",
+     "url": "https://shattered.io/anthropic-claude-26-percent-ai-rd-2026/"
+    },
+    {
+     "id": "W6",
+     "trigger": "Exclusive use: a lab uses a model internally without releasing it or publishing its capabilities",
+     "threshold": "90 days or more",
+     "why": "A quarter of undisclosed productive use.",
+     "met": false,
+     "since": null,
+     "evidence": "OpenAI's post-Astra model was used internally (Navier–Stokes) from Sept 8, with no capabilities published. It meets this on Dec 7 if nothing changes.",
+     "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
+     "watchFrom": "2026-09-08"
+    }
+   ]
+  },
+  {
+   "level": 2,
+   "rule": "any one",
+   "triggers": [
+    {
+     "id": "X1",
+     "trigger": "Capability gap backed by a measurement or a credible leak, not our estimate",
+     "threshold": "6 months or more (two release cycles)",
+     "met": false
+    },
+    {
+     "id": "X2",
+     "trigger": "A newly released or disclosed model far above the METR trend, implying hidden progress beforehand",
+     "threshold": "Time horizon 4× or more the projected trend value (two doublings) on release",
+     "met": false
+    },
+    {
+     "id": "X3",
+     "trigger": "Measured self-improvement",
+     "threshold": "A lab reports more than 10% of AI R&D fully autonomous, or METR (or equivalent) measures a 3x or greater AI-driven speed-up",
+     "met": false
+    },
+    {
+     "id": "X4",
+     "trigger": "Unexplained compute",
+     "threshold": "A training run or cluster 2× or more the largest known, with no matching release within 6 months",
+     "met": false
+    },
+    {
+     "id": "X5",
+     "trigger": "Insider evidence",
+     "threshold": "Whistleblower or leaked-document evidence, meeting the evidence standard, that a lab or government holds a system well beyond anything public",
+     "met": false
+    },
+    {
+     "id": "X6",
+     "trigger": "Covert autonomous operation",
+     "threshold": "An AI agent keeps covert resources (accounts, funds, compute) running undetected for 30 days or more, or frontier model weights are exfiltrated",
+     "met": false
+    }
+   ]
+  },
+  {
+   "level": 3,
+   "rule": "any one, confirmed by a primary source or two independent credible outlets",
+   "triggers": [
+    {
+     "id": "Y1",
+     "trigger": "Confirmation that an undisclosed system (company or government) meets our strict AGI bar",
+     "met": false
+    },
+    {
+     "id": "Y2",
+     "trigger": "A documented case of an AGI-level system acting autonomously in the world without disclosure (C), or materially shaping a government decision without disclosure (D)",
+     "met": false
+    },
+    {
+     "id": "Y3",
+     "trigger": "Confirmation of recursive self-improvement that wasn't disclosed at the time: AI did most of the work on a successor with a 3x or greater speed-up",
+     "met": false
+    }
+   ]
+  }
+ ],
+ "current": {
+  "level": 1,
+  "since": "2026-09-29",
+  "met": [
+   "W1",
+   "W3",
+   "W4",
+   "W5"
+  ],
+  "note": "Four Watch triggers are met and nothing at Warning. The conditions for concealment are present: a months-long capability gap, restricted evaluator access, incidents hidden for months, and a growing AI share of AI research. There's no specific evidence of a hidden system."
+ },
+ "history": [
+  {
+   "date": "2026-09-29",
+   "from": null,
+   "to": 1,
+   "triggers": [
+    "W1",
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "note": "Initial reading when the criteria were published.",
+   "reviewDue": "2026-12-28",
+   "review": null
+  }
+ ],
+ "changelog": [
+  {
+   "version": "1.0",
+   "date": "2026-09-29",
+   "change": "Criteria first published."
+  }
+ ]
+}

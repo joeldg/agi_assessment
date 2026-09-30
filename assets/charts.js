@@ -367,3 +367,34 @@ export function gaugeRow(host, defs, runs, {root=""}={}){
   });
   host.append(row);
 }
+
+/* ---- fire alarm: the current level, with icon + word (never color alone) ---- */
+export function alarmIndicator(host, alarm, {root="", compact=false}={}){
+  host.replaceChildren();
+  const cur = alarm.current, lv = alarm.levels.find(l=>l.level===cur.level);
+  const box = h("div",{class:`alarm alarm-${cur.level}`,role:"status"});
+  const col = css("--" + lv.status);
+  const scale = h("div",{class:"alarm-scale","aria-hidden":"true"});
+  alarm.levels.forEach(l => { const seg=h("span",{class:"alarm-seg"+(l.level===cur.level?" on":"")}); if(l.level<=cur.level) seg.style.background=css("--"+l.status); scale.append(seg); });
+  const head = h("div",{class:"alarm-head"});
+  const ic = h("span",{class:"alarm-icon"}, lv.icon); ic.style.color = col;
+  head.append(h("span",{class:"alarm-kicker"},"Fire alarm"), ic, h("strong",{class:"alarm-name"},`Level ${cur.level}: ${lv.name}`));
+  box.append(head, scale);
+  box.append(h("div",{class:"alarm-meaning"}, lv.meaning));
+  if(!compact){
+    box.append(h("div",{class:"muted small"}, `Since ${fmtDate(cur.since,{day:"numeric",month:"short",year:"numeric"})} · triggers met: ${cur.met.join(", ") || "none"}. ${cur.note}`));
+  }
+  const a = h("a",{href:root+"alarm.html",class:"small"},"How the alarm works and what would raise it →"); box.append(a);
+  host.append(box);
+}
+/* A banner on every page, shown only at Warning (2) or Alarm (3). */
+export async function alarmBanner(root=""){
+  try{
+    const alarm = await fetch(root+"data/alarm.json",{cache:"no-cache"}).then(r=>r.json());
+    if(alarm.current.level < 2) return;
+    const lv = alarm.levels.find(l=>l.level===alarm.current.level);
+    const b = h("div",{class:"alarm-banner",role:"alert"});
+    b.append(h("strong",{},`${lv.icon} Fire alarm: Level ${lv.level}, ${lv.name}. `), document.createTextNode(alarm.current.note+" "), h("a",{href:root+"alarm.html"},"Details"));
+    document.body.prepend(b);
+  }catch(e){}
+}

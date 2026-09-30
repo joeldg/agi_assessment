@@ -17,6 +17,7 @@ NAV = [
     ("calendar.html", "Calendar", ""),
     ("steelman.html", "Steelman", ""),
     ("trends.html", "Trends", ""),
+    ("alarm.html", "Alarm", ""),
 ]
 
 
@@ -75,6 +76,7 @@ def page(*, path, title, description, body, active="", og_image=None, og_w=1200,
     Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="{root}style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
   </footer>
 </main>
+<script type="module">import {{alarmBanner}} from "{root}assets/charts.js"; alarmBanner("{root}");</script>
 {scripts}
 </body>
 </html>

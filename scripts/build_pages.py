@@ -35,6 +35,8 @@ PAGES["start-here.html"] = dict(
     <div class="hyp C"><strong>C: a covert AGI-level actor online.</strong> An AGI-level system takes sustained actions on the internet or in the economy, without its developer's sanction or without public knowledge. Today's sub-AGI agent incidents are tracked as warning signs, not as proof.</div>
     <div class="hyp D"><strong>D: an AGI shaping government.</strong> Output from an AGI-level system materially shapes a major government decision. It's one question with two readings: <strong>covert</strong> (D), where the public doesn't know, and <strong>open</strong> (D-open), through acknowledged use. Today's heavy government use of sub-AGI tools doesn't count toward either.</div>
 
+    <h2 id="alarm">The fire alarm</h2>
+    <p>Hidden AGI watch aims to be a fire alarm for hidden AI. On top of the probabilities there's an alarm level (Normal, Watch, Warning, Alarm) set by <a href="alarm.html">published criteria</a> fixed in advance. It rises the day a trigger is met, comes down slowly, and every change is announced and publicly reviewed after 90 days, false alarms included.</p>
     <h2 id="gauges">The four gauges</h2>
     <p>The hypotheses make a sharp headline, but they sit near zero and move slowly. The gauges measure what the evidence actually tracks. They move week to week and are what the probabilities are judged against. Each is tagged by how it's made: <em>measured</em> (a published number), <em>estimated</em> (our judgment anchored on a measurement) or <em>assessed</em> (a position on a defined scale).</p>
     <ul class="plain">
@@ -264,6 +266,43 @@ const tiles = document.getElementById("tiles");
 const R = t.manual.rdShare;
 document.getElementById("rd-note").textContent = R.label + ". " + R.note;
 K.lineChart(document.getElementById("rd"), {title:R.label, yMax:100, endLabels:true, series:[{label:R.label, short:"AI-led", color:"--accent", values:R.points.map(p=>({x:p.date,y:p.v}))}]});
+""",
+)
+
+# ---------- Fire alarm ----------
+PAGES["alarm.html"] = dict(
+    title="Fire alarm · Hidden AGI watch",
+    description="The published criteria for Hidden AGI watch's fire alarm for hidden AI: four levels, fixed triggers, and a public history.",
+    body="""
+  <header class="prose">
+    <h1>The fire alarm</h1>
+    <p class="lede" id="purpose"></p>
+  </header>
+  <div id="now"></div>
+  <section class="prose"><h2>The four levels</h2><div class="table-wrap"><table class="lv-table" id="levels"></table></div>
+    <p class="small muted" id="standard"></p></section>
+  <section><h2>The triggers, and where each stands</h2><div id="groups"></div></section>
+  <section class="prose"><h2>Rules that keep the alarm honest</h2><ol id="rules"></ol></section>
+  <section><h2>Alarm history</h2><p class="muted">Every level change, the evidence behind it, and a review after 90 days: did it hold up, or was it a false alarm?</p><div class="table-wrap"><table id="history"></table></div></section>
+  <section class="prose"><h2>Changes to these criteria</h2><ul class="plain" id="changelog"></ul></section>
+""",
+    scripts_code="""
+const A = await j("data/alarm.json"), h = K.util.h, fd = d => d ? K.util.fmtDate(d,{day:"numeric",month:"short",year:"numeric"}) : "–";
+document.getElementById("purpose").textContent = A.purpose;
+K.alarmIndicator(document.getElementById("now"), A, {root:""});
+const lt = document.getElementById("levels"); { const tr=h("tr"); ["Level","What it means"].forEach(c=>tr.append(h("th",{},c))); lt.append(tr); }
+A.levels.forEach(l=>{ const tr=h("tr"); const c=h("td"); const ic=h("span",{},l.icon+" "); ic.style.color=K.util.css("--"+l.status); c.append(ic, document.createTextNode(`${l.level} · ${l.name}`)); tr.append(c, h("td",{},l.meaning)); lt.append(tr); });
+document.getElementById("standard").textContent = "Evidence standard: " + A.evidenceStandard;
+const G = document.getElementById("groups");
+A.groups.forEach(g=>{ const lv=A.levels.find(l=>l.level===g.level); G.append(h("h3",{},`Level ${g.level} · ${lv.name}: ${g.rule}`));
+  const wrap=h("div",{class:"table-wrap"}); const t=h("table"); const hr=h("tr"); ["#","Trigger","Threshold","Status"].forEach(c=>hr.append(h("th",{},c))); t.append(hr);
+  g.triggers.forEach(x=>{ const tr=h("tr"); tr.append(h("td",{class:"num"},x.id)); const td=h("td"); td.append(h("div",{},x.trigger)); if(x.why) td.append(h("div",{class:"muted small"},"Why this threshold: "+x.why)); tr.append(td); tr.append(h("td",{},x.threshold||"–"));
+    const st=h("td"); const b=h("div",{class:x.met?"met-yes":""}, x.met?"● Met":"○ Not met"); b.style.color=K.util.css(x.met?(g.level>1?"--crit":"--warn"):"--muted"); st.append(b); if(x.met&&x.since) st.append(h("div",{class:"muted small"},"since "+fd(x.since))); if(x.evidence){ const e=h("div",{class:"small"},x.evidence+" "); if(x.url) e.append(h("a",{href:x.url,...(/^https?:/.test(x.url)?{target:"_blank",rel:"noopener"}:{})},"source")); st.append(e);} tr.append(st); t.append(tr); });
+  wrap.append(t); G.append(wrap); });
+const R = document.getElementById("rules"); A.rules.forEach(r=>R.append(h("li",{},r)));
+const H = document.getElementById("history"); { const tr=h("tr"); ["Date","Change","Triggers","Why","90-day review"].forEach(c=>tr.append(h("th",{},c))); H.append(tr); }
+[...A.history].reverse().forEach(e=>{ const name=l=>l==null?"–":`${l} · ${A.levels.find(x=>x.level===l).name}`; const tr=h("tr"); tr.append(h("td",{class:"num"},fd(e.date)), h("td",{},`${name(e.from)} → ${name(e.to)}`), h("td",{},e.triggers.join(", ")), h("td",{},e.note), h("td",{},e.review?e.review:`due ${fd(e.reviewDue)}`)); H.append(tr); });
+const C = document.getElementById("changelog"); A.changelog.forEach(c=>C.append(h("li",{},`v${c.version} (${fd(c.date)}): ${c.change}`)));
 """,
 )
 

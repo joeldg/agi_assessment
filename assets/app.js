@@ -1,4 +1,4 @@
-import {lineChart, dial, tripwireBoard, forecastChart, gaugeRow} from "./charts.js";
+import {lineChart, dial, tripwireBoard, forecastChart, gaugeRow, alarmIndicator, alarmBanner} from "./charts.js";
 
 const SERIES = [
   {k:"A", short:"A: AGI undisclosed", c:"--sA"},
@@ -58,7 +58,7 @@ function renderChart(){
   });
 }
 
-let outside = [], gaugeDefs = [];
+let outside = [], gaugeDefs = [], alarm = null;
 function renderGauges(){ gaugeRow(document.getElementById("gauge-row"), gaugeDefs, runs); }
 function renderForecast(){
   const last=runs[runs.length-1]; if(!last) return;
@@ -184,7 +184,7 @@ function renderAll(){
   if(!runs.length){ st.textContent="No runs stored yet."; return; }
   const last=runs[runs.length-1];
   st.textContent=`${runs.length} run${runs.length>1?"s":""} recorded. Latest: ${fmtDate(last.date)}.`;
-  renderHero(); renderGauges(); renderTripwires(); renderReadings(); renderChart(); renderForecast(); renderChanges(); renderRoundup(); renderTimeline(); renderHistory();
+  if(alarm) alarmIndicator(document.getElementById("alarm"), alarm); renderHero(); renderGauges(); renderTripwires(); renderReadings(); renderChart(); renderForecast(); renderChanges(); renderRoundup(); renderTimeline(); renderHistory();
 }
 
 let rt; addEventListener("resize",()=>{ clearTimeout(rt); rt=setTimeout(()=>{ if(runs.length){ renderChart(); renderForecast(); } },150); });
@@ -197,6 +197,8 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>{ if(
     runs=(await res.json()).map((r,i)=>({...r,_i:i})).sort((a,b)=>String(a.date).localeCompare(String(b.date))||a._i-b._i);
     try{ outside=(await (await fetch("data/external_forecasts.json",{cache:"no-cache"})).json()).forecasts; }catch(e){ outside=[]; }
     try{ gaugeDefs=(await (await fetch("data/gauges.json",{cache:"no-cache"})).json()).gauges; }catch(e){ gaugeDefs=[]; }
+    try{ alarm=await (await fetch("data/alarm.json",{cache:"no-cache"})).json(); }catch(e){ alarm=null; }
+    alarmBanner("");
     renderAll();
   }catch(e){ st.textContent="Couldn't load data/runs.json. Reload to try again."; }
 })();

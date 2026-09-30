@@ -36,6 +36,7 @@
     <a href="./calendar.html">Calendar</a>
     <a href="./steelman.html">Steelman</a>
     <a href="./trends.html">Trends</a>
+    <a href="./alarm.html">Alarm</a>
   </nav>
 
   <header class="prose">
@@ -57,6 +58,7 @@
     Researched and drafted daily by a custom AI agent built for this project. Probabilities are subjective estimates with wide uncertainty, and every factual claim is sourced. Not investment, policy or security advice. <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a>.
   </footer>
 </main>
+<script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
 <script type="module">
 import * as K from "./assets/charts.js";
 const j = p => fetch(p,{cache:"no-cache"}).then(r=>r.json());

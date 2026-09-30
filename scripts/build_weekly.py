@@ -70,7 +70,13 @@ def wk_delta(cur, prev):
 
 def page_body(w):
     k = w["keyNumbers"]
-    tiles = [tile("Hidden AGI Index", f'{fmt(k["index"])}%', wk_delta(k["index"], k["indexWeekAgo"]))]
+    tiles = []
+    ap = ROOT / "data/alarm.json"
+    if ap.exists():
+        a = json.loads(ap.read_text())
+        lv = next(l for l in a["levels"] if l["level"] == a["current"]["level"])
+        tiles.append(tile("Fire alarm", f'{lv["icon"]} {lv["name"]}', f'Level {lv["level"]} of 3 · <a href="../alarm.html">criteria</a>'))
+    tiles += [tile("Hidden AGI Index", f'{fmt(k["index"])}%', wk_delta(k["index"], k["indexWeekAgo"]))]
     tiles += [tile(LABELS[h], f'{fmt(k["now"][h])}%', wk_delta(k["now"][h], k["weekAgo"][h])) for h in KEYS]
     gdefs = {d["key"]: d for d in json.loads((ROOT / "data/gauges.json").read_text())["gauges"]}
     for gk, g in (k.get("gauges") or {}).items():
@@ -137,6 +143,12 @@ def weekly_email_html(w):
     if (ROOT / f'cards/weekly-{w["date"]}.png').exists():
         out.append(f'<a href="{url}"><img src="{SITE}cards/weekly-{w["date"]}.png" width="600" alt="Weekly key numbers" '
                    f'style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:8px;margin:8px 0 14px"></a>')
+    ap = ROOT / "data/alarm.json"
+    if ap.exists():
+        a = json.loads(ap.read_text())
+        lv = next(l for l in a["levels"] if l["level"] == a["current"]["level"])
+        out.append(p(f'<strong>{lv["icon"]} Fire alarm: Level {lv["level"]}, {lv["name"]}.</strong> '
+                     f'<span style="color:{MUTED}">{escape(lv["meaning"])} {link(SITE + "alarm.html", "Criteria")}</span>'))
     out.append(f'<h1 style="{FONT}font-size:24px;color:{INK};margin:6px 0 8px">{escape(w["headline"])}</h1>')
     out.append(p(escape(w.get("summary", ""))))
     th = f'style="{SANS}font-size:13px;color:{MUTED};text-align:left;padding:6px 8px;border-bottom:1px solid {RULE}"'

@@ -88,6 +88,44 @@ def preview(text, limit=140):
     return text[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "…"
 
 
+def push_alarm(args):
+    """Breaking alert for the latest alarm-level change. Always created as a DRAFT: the owner approves every alarm email."""
+    from build_feed import FONT, INK, MUTED, SANS, link, p as para  # noqa: F401
+    from html import escape
+    a = json.loads((ROOT / "data/alarm.json").read_text())
+    e = a["history"][-1]
+    key = f"alarm-{e['date']}-{e['to']}"
+    state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    if key in state and not args.force and not args.dry_run:
+        print(f"Alarm alert for {e['date']} already drafted (broadcast {state[key]['id']}).")
+        return
+    lv = next(l for l in a["levels"] if l["level"] == e["to"])
+    up = e["from"] is None or e["to"] > e["from"]
+    trig = {t["id"]: t for g in a["groups"] for t in g["triggers"]}
+    items = "".join(f'<li><strong>{t}</strong>: {escape(trig[t]["trigger"])}. {escape(trig[t].get("evidence") or "")}'
+                    + (f' {link(trig[t]["url"] if trig[t]["url"].startswith("http") else SITE + trig[t]["url"], "source")}' if trig[t].get("url") else "")
+                    + "</li>" for t in e["triggers"] if t in trig)
+    body = (para(f'<span style="{SANS}font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:{MUTED};font-weight:600">Breaking · fire alarm</span>')
+            + f'<h1 style="{FONT}font-size:26px;color:{INK};margin:6px 0">{lv["icon"]} Level {lv["level"]}: {lv["name"]}</h1>'
+            + para(escape(lv["meaning"]))
+            + para(escape(e["note"]))
+            + para("<strong>Triggers met:</strong>") + f'<ul style="{SANS}font-size:15px;line-height:1.5;color:{INK}">{items}</ul>'
+            + para(f'These criteria were published in advance. The level {"rose" if up else "fell"} because the triggers above were met, under the '
+                   f'{link(SITE + "alarm.html", "published rules")}. This change will be reviewed publicly on {e["reviewDue"]}.')
+            + para(f'Forwarded this? {link("https://hidden-agi.kit.com/f2b4d2f30e", "Subscribe to Hidden AGI watch")}.')
+            + para(f'<span style="color:{MUTED};font-size:13px">Researched and drafted by a custom AI agent. Not investment, policy or security advice.</span>'))
+    fields = {"subject": f'{lv["icon"]} Fire alarm: Level {lv["level"]} ({lv["name"]}) · Hidden AGI watch',
+              "preview_text": preview(e["note"]), "description": f"Alarm change {e['date']}", "content": body,
+              "public": True, "send_at": None}
+    if args.dry_run:
+        print(f"Subject: {fields['subject']}\nBody: {len(body)} chars\nMode: draft (alarm alerts are always drafts)")
+        return
+    api, bc = create_broadcast(fields)
+    state[key] = {"id": bc.get("id"), "api": api, "send_at": None, "report": SITE + "alarm.html"}
+    STATE.write_text(json.dumps(state, indent=1) + "\n")
+    print(f"Created Kit ALARM broadcast {bc.get('id')} via {api} as a DRAFT. The owner must review and send it.")
+
+
 def push_weekly(args):
     from build_weekly import weekly_email_html
     date = args.weekly
@@ -121,10 +159,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", help="run date (YYYY-MM-DD); defaults to the latest report")
     ap.add_argument("--send-at", help="ISO 8601 UTC time, or a Pacific hour like '10am' / '3pm' on the run date; omit for a draft")
+    ap.add_argument("--alarm", action="store_true", help="create a BREAKING alert for the latest alarm-level change (always a draft for the owner to approve)")
     ap.add_argument("--weekly", metavar="DATE", help="push the weekly wrap-up for DATE (built by build_weekly.py) instead of a daily issue")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true", help="create even if this date was already pushed")
     args = ap.parse_args()
+    if args.alarm:
+        return push_alarm(args)
     if args.weekly:
         return push_weekly(args)
 
