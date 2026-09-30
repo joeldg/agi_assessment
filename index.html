@@ -37,6 +37,7 @@
 <main>
   <nav class="site" aria-label="Site">
     <a class="brand" href="./" aria-current="page">Hidden AGI watch</a>
+    <a class="nav-key" href="escape.html">Escape watch</a>
     <a href="start-here.html">Start here</a>
     <a href="alarm.html">Fire alarm</a>
     <a href="weekly/">Weekly</a>
@@ -66,7 +67,14 @@
       <p class="small"><a href="start-here.html">What is this number?</a></p>
     </div>
   </section>
-  <p class="muted small how-fits">The alarm level comes from published triggers, not our probabilities. The Index is our probability that at least one of the four hypotheses below is true now. Gauges are the inputs we track, each tagged measured, estimated or assessed. Tripwires are early signals; most are linked to the alarm trigger they feed.</p>
+  <section class="escape-watch" id="escape" aria-labelledby="escape-h">
+    <div class="kicker">Hypothesis C · covert AGI online</div>
+    <h2 id="escape-h">Escape watch</h2>
+    <p class="muted small esc-intro">An AI system operating on its own would most likely stay quiet, but it would still need chips, power, money and accounts. These indicators watch those chokepoints for what detection would look like. They see only what someone reports.</p>
+    <div id="escape-board"><p class="muted">Loading escape watch…</p></div>
+    <p class="esc-more-link"><a href="escape.html">Open escape watch: the evidence, feeds and trip rule for each indicator →</a></p>
+  </section>
+  <p class="muted small how-fits">The alarm level comes from published triggers, not our probabilities. The Index is our probability that at least one of the four hypotheses below is true now. Gauges are the inputs we track, each tagged measured, estimated or assessed. Tripwires are early signals; most are linked to the alarm trigger they feed. Escape watch tracks the resource chokepoints an autonomous hidden system would have to pass through.</p>
   <div id="needle" class="needle" hidden></div>
 
   <div class="subscribe">
@@ -92,7 +100,7 @@
 
   <section>
     <h2>Tripwires</h2>
-    <p class="muted">The signals that would change the estimates most, and where each stands today. Tripwires are early signals that move our probabilities; only the published triggers set the alarm level. <span id="tripwire-count"></span></p>
+    <p class="muted">The signals that would change the estimates most, and where each stands today. Tripwires are early signals that move our probabilities; only the published triggers set the alarm level. A tripped signal shows red only if it feeds a Warning- or Alarm-level trigger; one that feeds a Watch-level trigger, or none, shows amber as "Observed". <span id="tripwire-count"></span></p>
     <div id="tripwires"></div>
   </section>
 
@@ -162,7 +170,7 @@
 </div>
 
   <footer>
-    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
+    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The daily and weekly issues are published and emailed automatically; breaking alarm alerts are sent only after a person approves them. The site's owner sets the definitions and alarm thresholds. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
     <p><a href="about.html">About</a> · <a href="start-here.html#method">Method</a> · <a href="about.html#corrections">Corrections</a> · <a href="style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="feed.xml">RSS</a></p>
   </footer>
 </main>

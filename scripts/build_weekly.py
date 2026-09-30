@@ -15,7 +15,11 @@ reading and is labelled "since <date>", never "this week".
 
 The chart data is frozen: snapshot() stores what each section showed as of the wrap-up date in the
 JSON under "snapshot", computed once. The page draws only from that snapshot, so an archived
-wrap-up never changes after publication. The standing pages are the live views.
+wrap-up never changes after publication. The standing pages are the live views. Escape watch's
+statuses are frozen the same way, and its tile counts come from that snapshot.
+
+The plan-usage line ("This week's readings used X% of a Claude Max 20x plan's weekly allowance")
+stays hidden until data/usage.json holds a full completed week of daily readings (see usage_week).
 """
 import argparse
 import json
@@ -25,9 +29,10 @@ from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_feed import (CORRECTIONS_SHOWN, FONT, INK, MUTED, RULE, SANS, abs_url, alarm_level_on, as_list,  # noqa: E402
-                        changed, claim_date, corrections_box, data_table, delta_amount, delta_cell, email_footer, fmt,
-                        gauge_delta, h2, link, nice_date, outlet, p, prob, source_link, th_attr, ul)
+from build_feed import (CORRECTIONS_SHOWN, FONT, INK, MUTED, RULE, SANS, STATUS, abs_url, alarm_level_on,  # noqa: E402
+                        as_list, changed, claim_date, corrections_box, data_table, delta_amount, delta_cell,
+                        email_footer, escape_counts_text, escape_summary, fmt, gauge_delta, h2, link, nice_date, outlet,
+                        p, prob, source_link, th_attr, ul)
 from sitekit import SITE, SUBSCRIBE, page  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -40,7 +45,11 @@ SECTIONS = [("scorecard", "Forecast scorecard", "scorecard.html"),
             ("calendar", "Coming up", "calendar.html"),
             ("steelman", "Weekly steelman", "steelman.html"),
             ("trends", "Trend watch", "trends.html"),
-            ("money", "Follow the money", "money.html")]
+            ("money", "Follow the money", "money.html"),
+            ("escape", "Escape watch", "escape.html")]
+# The owner-approved wording for the plan-usage line. It appears only once data/usage.json holds a full week.
+USAGE_LINE = "This week's readings used {pct}% of a Claude Max 20x plan's weekly allowance"
+USAGE_MIN_READINGS = 7
 
 
 def pretty(d):
@@ -83,6 +92,87 @@ def week_corrections(week):
             if isinstance(c, dict) and c not in out:
                 out.append(c)
     return out
+
+
+def _usage_find(obj, words, path=""):
+    """(path, value) pairs for the leaves of a usage reading whose key contains one of `words`."""
+    out = []
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            out += _usage_find(v, words, f"{path}.{k}".lower())
+    elif path and any(w in path.rsplit(".", 1)[-1] for w in words):
+        out.append((path, obj))
+    return out
+
+
+def _usage_reading(r):
+    """(date, stamp, percent, reset) from one usage.json reading, or None when it lacks a date or a percentage.
+    Tolerant of the exact field names: the percentage is the numeric field whose key says 'percent' or 'pct'
+    (one under a 'week' key preferred, then 'all' models), the reset is any field whose key says 'reset'."""
+    if not isinstance(r, dict):
+        return None
+    stamp = next((str(r[k]) for k in ("at", "time", "takenAt", "recordedAt", "timestamp", "date") if r.get(k)), "")
+    day = str(r.get("date") or stamp)[:10]
+    try:
+        datetime.strptime(day, "%Y-%m-%d")
+    except ValueError:
+        return None
+    nums = [(p, v) for p, v in _usage_find(r, ("percent", "pct"))
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and 0 <= v <= 1000]
+    if not nums:
+        return None
+    nums.sort(key=lambda pv: ("week" not in pv[0], "all" not in pv[0]))
+    resets = [str(v) for p, v in _usage_find(r, ("reset",)) if v]
+    return day, stamp, float(nums[0][1]), (resets[0] if resets else None)
+
+
+def usage_week(date):
+    """The plan-usage figure for the last completed usage week, or None until there is a full one.
+    data/usage.json (written by the daily run each morning; absent until then) holds one reading per day:
+    a list, or {"readings": [...]}, each with a date and the "Weekly · all models" percent used. The week
+    resets on Fridays at about 11:00 PT, after the morning reading, so the last completed week for a wrap-up
+    is the seven days ending on the latest Friday on or before it. Readings that name a reset time are
+    grouped by it, and a week whose reset is still in the future isn't complete. The figure is the week's
+    last reading, shown only when the week has USAGE_MIN_READINGS daily readings or more.
+    Returns {"weekEnd", "readings", "percent"}."""
+    try:
+        doc = json.loads((ROOT / "data/usage.json").read_text())
+    except (OSError, ValueError):
+        return None
+    rows = doc if isinstance(doc, list) else (doc.get("readings") or doc.get("entries") or []) if isinstance(doc, dict) else []
+    d = datetime.strptime(date, "%Y-%m-%d")
+    end = (d - timedelta(days=(d.weekday() - 4) % 7)).strftime("%Y-%m-%d")  # Friday is weekday 4
+    start = shift(end, -6)
+    week = [x for x in (_usage_reading(r) for r in as_list(rows)) if x and start <= x[0] <= end]
+    if not week:
+        return None
+    week.sort(key=lambda x: (x[0], x[1]))
+
+    def reset_time(r):
+        try:
+            t = datetime.fromisoformat(r.replace("Z", "+00:00"))
+            return t if t.tzinfo else None
+        except ValueError:
+            return None
+
+    resets = {x[3] for x in week if x[3]}
+    if resets:
+        # a reading taken after the reset belongs to the next week; a reset still in the future means not complete
+        done = [r for r in resets if reset_time(r) is None or reset_time(r) <= datetime.now(reset_time(r).tzinfo)]
+        if not done:
+            return None
+        reset = max(done, key=lambda r: (reset_time(r) is not None, reset_time(r).timestamp() if reset_time(r) else 0, r))
+        week = [x for x in week if x[3] in (reset, None)]
+    days = len({x[0] for x in week})
+    if days < USAGE_MIN_READINGS:
+        return None
+    return {"weekEnd": end, "readings": days, "percent": week[-1][2]}
+
+
+def usage_text(k):
+    """The usage line, or '' while there is no complete week of readings."""
+    u = (k or {}).get("usage")
+    return USAGE_LINE.format(pct=fmt(u["percent"])) + "." if u and u.get("percent") is not None else ""
 
 
 def key_numbers(date, allow_stale=False):
@@ -187,6 +277,15 @@ def snapshot(date):
     mo = load("data/money.json", "money")
     if mo is not None:
         snap["money"] = [row for row in mo.get("spendVsCapability", []) if row.get("end", "9999") <= date]
+    esc = load("data/escape.json", "Escape watch") if (ROOT / "data/escape.json").exists() else None
+    if esc is not None:
+        if str(esc.get("updated") or "") > date:
+            print(f"warning: snapshot: data/escape.json was updated {esc.get('updated')}, after {date}; "
+                  "Escape watch is left out rather than showing later statuses.", file=sys.stderr)
+        else:  # the statuses as of the wrap-up, frozen like the charts
+            snap["escape"] = {"updated": esc.get("updated"), "overall": esc.get("overall"),
+                              "indicators": [{x: i.get(x) for x in ("key", "name", "status")}
+                                             for i in as_list(esc.get("indicators")) if isinstance(i, dict)]}
     return snap
 
 
@@ -220,6 +319,21 @@ def corrections_html(k):
             f'<p class="small muted">Every correction is logged on the <a href="../about.html#corrections">About page</a>.</p></div></section>')
 
 
+def escape_list_html(esc):
+    """Escape watch on the wrap-up page: the counts, the overall line and each indicator that isn't quiet with
+    its status (status colour, always with the icon and the label), from the frozen snapshot."""
+    if not esc:
+        return '<p class="muted small">Escape watch was not recorded in this wrap-up\'s snapshot.</p>'
+    rows = "".join(
+        f'<li><span style="color:var(--{ {"tripped": "crit", "watching": "warn", "quiet": "good"}[i["status"]] });font-weight:600">'
+        f'<span aria-hidden="true">{STATUS[i["status"]][0]}</span> {STATUS[i["status"]][2]}</span> · {escape(i["name"])}</li>'
+        for i in esc["live"])
+    quiet = esc["counts"]["quiet"]
+    more = f'<li class="muted">{quiet} {"indicator" if quiet == 1 else "indicators"} quiet.</li>' if quiet else ""
+    return (f'<p><strong>{esc["total"]} indicators: {escape_counts_text(esc)}.</strong> {escape(esc.get("overall") or "")}</p>'
+            f'<ul class="plain">{rows}{more}</ul>')
+
+
 def page_body(w):
     k = w["keyNumbers"]
     span = span_label(k)
@@ -238,6 +352,10 @@ def page_body(w):
                           gauge_change(g, (k.get("gaugesWeekAgo") or {}).get(gk), span)))
     tiles.append(tile("Tripwires", f'{k["tripwires"]["tripped"]} tripped',
                       f'{k["tripwires"]["watching"]} watching · {k["tripwires"]["quiet"]} quiet'))
+    esc = k.get("escape")
+    if esc:
+        tiles.append(tile("Escape watch", f'{esc["counts"]["tripped"]} tripped',
+                          f'{esc["counts"]["watching"]} watching · {esc["counts"]["quiet"]} quiet'))
 
     def move_link(m):
         u = abs_url(m.get("url"))
@@ -255,9 +373,11 @@ def page_body(w):
                  "claims": '<div class="chart-wrap"><div id="claims"></div></div>',
                  "calendar": '<ul class="timeline-list" id="cal"></ul>', "steelman": "",
                  "trends": '<div class="chart-wrap"><div id="metr"></div></div>',
-                 "money": '<div class="chart-wrap"><div id="money"></div></div>'}[key]
+                 "money": '<div class="chart-wrap"><div id="money"></div></div>',
+                 "escape": escape_list_html(k.get("escape"))}[key]
         sec_html += (f'\n  <section id="{key}"><h2>{title}</h2><p>{escape(notes.get(key, ""))}</p>{chart}'
                      f'<p class="small"><a href="../{href}">Full section (live) →</a></p></section>')
+    usage = f'\n  <p class="muted small">{escape(usage_text(k))}</p>' if usage_text(k) else ""
     if k.get("firstReading"):
         caption = f'Probability each is true now, as of {pretty(k["asOf"])}. This is our first full reading, so changes appear from the next wrap-up.'
     elif k.get("sinceFirst"):
@@ -274,7 +394,7 @@ def page_body(w):
   <p class="muted small">{caption} {k["dailyRuns"]} daily reading{"s" if k["dailyRuns"] != 1 else ""} this week. <a href="../start-here.html">How to read these</a>.</p></section>
   <section><h2>This week's moves</h2><ul class="plain">{moves or "<li>A quiet week: nothing moved.</li>"}</ul></section>
   <section><div class="chart-head"><h2>The readings over time</h2></div><div class="chart-wrap"><div id="trend"></div></div></section>{sec_html}
-  <p class="muted small">The charts on this page are frozen as of {pretty(w["date"])}, so this wrap-up reads the same later. The linked sections show the live data.</p>
+  <p class="muted small">The charts on this page are frozen as of {pretty(w["date"])}, so this wrap-up reads the same later. The linked sections show the live data.</p>{usage}
 """
 
 
@@ -366,6 +486,10 @@ def weekly_email_html(w):
     tw = k["tripwires"]
     out.append(p(f'<strong>Tripwires:</strong> {tw["tripped"]} tripped, {tw["watching"]} watching, {tw["quiet"]} quiet. '
                  f'{link(SITE + "#tripwires", "See them all")}.'))
+    esc = k.get("escape")
+    if esc:
+        out.append(p(f'<strong>Escape watch:</strong> {escape_counts_text(esc)}. '
+                     f'{link(SITE + "escape.html", "See the indicators")}.'))
     if w.get("moves"):
         out.append(h2("This week's moves"))
         out.append(ul(f'<strong>{escape(m.get("date", ""))}</strong> <strong>{escape(m.get("hyp", ""))}</strong> {escape(m["text"])}'
@@ -376,6 +500,8 @@ def weekly_email_html(w):
             out.append(h2(title))
             out.append(p(escape(note) + " " + link(SITE + href, "Full section")))
     out.append(p(f'{link(url, "See the full wrap-up with graphs")} · {link(SITE, "Today’s reading")}', "margin-top:22px"))
+    if usage_text(k):
+        out.append(p(f'<span style="color:{MUTED};font-size:13px">{escape(usage_text(k))}</span>'))
     out.append(p(f'Forwarded this? {link(SUBSCRIBE, "Subscribe to Hidden AGI watch")}. It\'s free.'))
     out.append(email_footer("weekly"))
     return "".join(out)
@@ -390,6 +516,12 @@ def build(date, allow_stale=False, refresh_snapshot=False):
         if "snapshot" in w:
             print(f"note: replacing the frozen snapshot taken {w['snapshot'].get('taken', '?')} (--refresh-snapshot)")
         w["snapshot"] = snapshot(date)
+    esc = escape_summary(w["snapshot"].get("escape"))  # from the frozen snapshot, so the tile never drifts
+    if esc:
+        w["keyNumbers"]["escape"] = esc
+    usage = usage_week(date)
+    if usage:
+        w["keyNumbers"]["usage"] = usage
     src.write_text(json.dumps(w, indent=1, ensure_ascii=False) + "\n")
     import render_card
     render_card.weekly(date)

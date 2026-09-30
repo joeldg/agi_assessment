@@ -279,16 +279,39 @@ function triggerMet(alarm, id){
   for(const g of (Array.isArray(alarm?.groups) ? alarm.groups : [])) for(const t of (Array.isArray(g?.triggers) ? g.triggers : [])) if(t && t.id === id) return t.met === true;
   return Array.isArray(alarm?.current?.met) && alarm.current.met.includes(id);
 }
+/* The alarm level a trigger belongs to (1 Watch, 2 Warning, 3 Alarm): from alarm.json's groups,
+   else from the id's letter (W, X, Y). null for no trigger or one we can't place. */
+const LEVEL_BY_LETTER = {W:1, X:2, Y:3}, LEVEL_NAMES = ["Normal","Watch","Warning","Alarm"];
+export function triggerLevel(alarm, id){
+  id = String(id ?? "").trim(); if(!id) return null;
+  for(const g of (Array.isArray(alarm?.groups) ? alarm.groups : [])) if((Array.isArray(g?.triggers) ? g.triggers : []).some(t => t && t.id === id)) { const n = Number(g.level); if(Number.isInteger(n)) return n; }
+  const n = LEVEL_BY_LETTER[id[0].toUpperCase()]; return n == null ? null : n;
+}
+const levelName = (alarm, n) => (Array.isArray(alarm?.levels) ? alarm.levels : []).find(l => l && l.level === n)?.name || LEVEL_NAMES[n] || `Level ${n}`;
+/* A status for display. A status colour never outranks the alarm trigger it feeds: a tripped signal
+   is red only when it feeds a Warning- or Alarm-level trigger (X, Y). One that feeds a Watch-level
+   trigger (W), or no trigger, shows amber as "Observed". Unknown statuses fail closed (red, flagged). */
+export function statusView(status, trigger, alarm=null){
+  const k = String(status ?? "").trim().toLowerCase();
+  if(!has(STATUS,k)) return {key:"unknown", known:false, ...UNKNOWN_STATUS, label:`Unknown status: "${status ?? ""}"`};
+  if(k === "tripped"){
+    const lv = triggerLevel(alarm, trigger);
+    if(lv == null || lv < 2) return {key:"observed", known:true, icon:STATUS.tripped.icon, color:"--warn", capped:true,
+      label: lv === 1 ? `Observed · feeds ${levelName(alarm, 1)}` : "Observed · no alarm trigger"};
+  }
+  return {key:k, known:true, ...STATUS[k]};
+}
 export function tripwireBoard(host, wires, {root="", alarm=null}={}){
   host.replaceChildren();
-  const order = {tripped:1, watching:2, quiet:3};
-  const rank = w => { const k = statusKey(w); return has(order,k) ? order[k] : 0; };
+  const order = {tripped:1, observed:2, watching:3, quiet:4};
+  const view = w => statusView(w?.status, w?.trigger, alarm);
+  const rank = w => { const k = view(w).key; return has(order,k) ? order[k] : 0; };
   const list = h("ul",{class:"tripwires"});
   [...(wires||[])].sort((a,b)=>rank(a)-rank(b)).forEach(w => {
-    const k = statusKey(w), known = has(STATUS,k), st = known ? STATUS[k] : UNKNOWN_STATUS;
-    const li = h("li",{class:"tw "+(known?k:"unknown")});
+    const st = view(w);
+    const li = h("li",{class:"tw "+st.key});
     const badge = h("span",{class:"tw-status"}); const ic=h("span",{class:"tw-icon","aria-hidden":"true"},st.icon); ic.style.color=cssVar(st.color);
-    badge.append(ic, document.createTextNode(known ? st.label : `Unknown status: "${w?.status ?? ""}"`));
+    badge.append(ic, document.createTextNode(st.label));
     const body = h("div",{class:"tw-body"});
     const sig = h("div",{class:"tw-signal"}); const hy=h("span",{class:"tw-hyp"}); const sw=h("span",{class:"swatch"}); sw.style.background=cssVar(has(SERIES,w.hyp)?SERIES[w.hyp].color:"--muted"); hy.append(sw, document.createTextNode(w.hyp==="Dopen"?"D-open":(w.hyp||"?"))); sig.append(hy, document.createTextNode(" " + (w.signal||"")));
     if(w.trigger){
@@ -298,6 +321,67 @@ export function tripwireBoard(host, wires, {root="", alarm=null}={}){
     body.append(sig);
     const note = h("div",{class:"tw-note muted"}, w.note || ""); const a = dataLink(w.url, "source", root); if(a){ note.append(" ", a); } body.append(note);
     li.append(badge, body); list.append(li);
+  });
+  host.append(list);
+}
+
+/* ---- escape watch (hypothesis C): resource-chokepoint indicators, from data/escape.json ----
+   The overall line, then one tile per indicator: status (icon + word), name and a one-line reason,
+   each linking to its section on the escape page. Tripped tiles follow the same colour cap as
+   tripwires, using the indicator's main alarm trigger (alarmTriggers[0]). compact:false adds the
+   full reason and the linked alarm triggers, for a page that shows the board without the detail. */
+// One line from the reason: a short "short" field if the data has one, else the first sentence
+// (plus the next when the first only restates the status, e.g. "Watching, at the high end.").
+function oneLine(ind){
+  const s = String(ind?.short ?? "").trim(); if(s) return s;
+  const t = String(ind?.statusReason ?? "").trim(); if(!t) return "";
+  const ends = []; const re = /[.!?]["”’)]?(?=\s+["“‘(]?[A-Z0-9])/g; let m;
+  while((m = re.exec(t)) && ends.length < 2){ const head = t.slice(0, m.index+1); if(!/(?:\b[A-Z]\.|\b(?:vs|etc|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|Inc|Corp|Co|Ltd|No)\.)$/.test(head)) ends.push(m.index + m[0].length); }
+  if(!ends.length) return t;
+  return t.slice(0, ends[0] < 40 && ends[1] ? ends[1] : ends[0]).trim();
+}
+export function escapeBoard(host, data, {root="", alarm=null, compact=true, page="escape.html"}={}){
+  host.replaceChildren();
+  const inds = Array.isArray(data?.indicators) ? data.indicators.filter(i => i && typeof i === "object") : null;
+  const pageLink = (text, frag="") => h("a",{href:root+page+(frag ? "#"+encodeURIComponent(frag) : "")}, text);
+  if(!inds || !inds.length){
+    const p = h("p",{class:"muted"},"Escape watch data is unavailable right now. ");
+    p.append(pageLink("See the escape watch page")); host.append(p); return;
+  }
+  const view = i => statusView(i.status, Array.isArray(i.alarmTriggers) ? i.alarmTriggers[0] : null, alarm);
+  const order = {unknown:0, tripped:1, observed:2, watching:3, quiet:4};
+  const rows = inds.map((ind, n) => ({ind, st:view(ind), n})).sort((a,b) => (order[a.st.key] ?? 0) - (order[b.st.key] ?? 0) || a.n - b.n);
+  const count = {}; rows.forEach(r => { count[r.st.key] = (count[r.st.key]||0) + 1; });
+  const parts = [["tripped","tripped"],["observed","observed"],["watching","watching"],["quiet","quiet"],["unknown","with an unrecognized status (data error)"]]
+    .filter(([k]) => count[k] || k==="tripped" || k==="watching" || k==="quiet").map(([k,w]) => `${count[k]||0} ${w}`);
+  const top = rows[0].st;
+  const head = h("div",{class:"esc-overall"});
+  const badge = h("span",{class:"esc-status esc-status-lg"}); const ic = h("span",{class:"esc-icon","aria-hidden":"true"},top.icon); ic.style.color = cssVar(top.color);
+  badge.append(ic, document.createTextNode(top.key === "unknown" ? "Status unknown" : top.label));
+  const cnt = h("span",{class:"muted small"}, `${rows.length} indicator${rows.length===1?"":"s"}: ${parts.join(", ")}.` + (validDate(data.updated) ? ` Updated ${fullDate(data.updated)}.` : ""));
+  head.append(badge, cnt);
+  host.append(head);
+  if(data.overall) host.append(h("p",{class:"esc-line"}, String(data.overall)));
+  const list = h("ul",{class:"esc-grid"});
+  rows.forEach(({ind, st}) => {
+    const li = h("li",{class:"esc "+st.key});
+    const s = h("div",{class:"esc-status"}); const i2 = h("span",{class:"esc-icon","aria-hidden":"true"},st.icon); i2.style.color = cssVar(st.color);
+    s.append(i2, document.createTextNode(st.label));
+    const name = h("h3",{class:"esc-name"}); const key = String(ind.key ?? "").trim();
+    name.append(key ? pageLink(String(ind.name || key), key) : document.createTextNode(String(ind.name || "")));
+    li.append(s, name, h("p",{class:"esc-why small"}, oneLine(ind)));
+    if(!compact){
+      const trig = (Array.isArray(ind.alarmTriggers) ? ind.alarmTriggers : []).map(t => String(t).trim()).filter(Boolean);
+      if(trig.length){
+        const p = h("p",{class:"esc-trig small muted"},"Feeds alarm trigger" + (trig.length > 1 ? "s " : " "));
+        trig.forEach((id,n) => { if(n) p.append(" "); p.append(h("a",{class:"chip tw-trigger", href:root+"alarm.html#"+encodeURIComponent(id)}, id + (alarm && triggerMet(alarm, id) ? " · met" : ""))); });
+        li.append(p);
+      }
+      if(ind.statusReason && oneLine(ind) !== String(ind.statusReason).trim()){
+        const d = h("details",{class:"esc-more small"}); d.append(h("summary",{},"Full reason"), h("p",{}, String(ind.statusReason))); li.append(d);
+      }
+    }
+    list.append(li);
   });
   host.append(list);
 }

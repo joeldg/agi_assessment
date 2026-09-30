@@ -288,3 +288,43 @@ table.trig td{overflow-wrap:anywhere}
   .hero #dial svg{width:120px;height:auto}
   .hero .big{font-size:44px}
 }
+
+/* tripwires: room for "Observed · feeds Watch" (a tripped signal capped at its Watch-level trigger) */
+@media (min-width:561px){.tw{grid-template-columns:180px 1fr}}
+
+/* nav: the one emphasised entry, right after the brand (ink, not a status colour) */
+nav.site a.nav-key{color:var(--ink);font-weight:600;border:1px solid var(--ink);border-radius:999px;padding:0 9px;text-decoration:none}
+nav.site a.nav-key:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* escape watch (hypothesis C): a boxed section under the alarm and Index, status tiles with icon + word */
+.escape-watch{margin-top:18px;padding:16px 20px 12px;background:var(--surface);border:1px solid var(--rule);border-radius:10px}
+.escape-watch .kicker{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.escape-watch h2{margin:2px 0 4px;font-size:24px}
+.esc-intro{max-width:72ch}
+.esc-overall{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:10px}
+.esc-status{font-size:13px;font-weight:600;display:flex;gap:7px;align-items:center}
+.esc-status-lg{font-size:17px}
+.esc-icon{font-size:16px;line-height:1}
+.esc-status-lg .esc-icon{font-size:20px}
+.esc-line{max-width:78ch;margin:6px 0 0;font-size:15px}
+ul.esc-grid{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:10px}
+.esc{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.esc.unknown .esc-status{color:var(--crit)}
+.esc-name{font-family:var(--sans);font-size:15px;font-weight:600;line-height:1.3;margin:2px 0 0}
+.esc-name a{color:var(--ink);text-decoration:none}
+.esc-name a:hover{color:var(--link);text-decoration:underline}
+.esc-why{margin:0;color:var(--muted);line-height:1.45}
+.esc-trig{margin:4px 0 0}
+.esc-more{border:0;padding:0;margin-top:2px}
+.esc-more summary{font-weight:400;color:var(--muted)}
+.esc-more-link{margin:12px 0 2px;font-size:14px;font-weight:600}
+@media (min-width:900px){ul.esc-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:640px){
+  .escape-watch{padding:12px 14px 8px}
+  .esc-line{font-size:15px}
+  ul.esc-grid{gap:6px}
+  /* phones: status word and name share the first row, the reason runs underneath */
+  .esc{flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:10px;padding:8px 10px}
+  .esc-name{flex:1 1 55%;margin:0}
+  .esc-why,.esc-trig,.esc-more{flex-basis:100%}
+}

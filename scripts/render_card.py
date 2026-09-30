@@ -6,7 +6,8 @@
     python3 scripts/render_card.py --weekly 2026-10-02   # weekly card -> cards/weekly-<date>.png
 
 Cards always use the dark palette so they look the same everywhere they're shared. Each card shows the
-fire-alarm level in force on its own date, with that level's meaning, so a screenshot carries the bottom line.
+fire-alarm level in force on its own date, with that level's meaning, so a screenshot carries the bottom line,
+and, when Escape watch data exists for that date, one muted line with its counts.
 """
 import argparse
 import json
@@ -20,7 +21,7 @@ from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_feed import SITE, alarm_level_on, changed, delta_amount, fmt, prev_published, prob  # noqa: E402
+from build_feed import SITE, alarm_level_on, changed, delta_amount, escape_for_run, fmt, prev_published, prob  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -54,7 +55,7 @@ def dial_svg(value, S=420):
             f'<text x="{c}" y="{c+S*.035:.1f}" text-anchor="middle" fill="{DARK["ink"]}" font-family="Public Sans" font-weight="600" font-size="{S*.1:.0f}">{pct(value)}</text></svg>')
 
 
-def card_html(kicker, date_label, index, rows, footer, context=""):
+def card_html(kicker, date_label, index, rows, footer, context="", note=""):
     items = "".join(
         f'<div class="row"><span class="dot" style="background:{DARK[k]}"></span><span class="k">{k}</span>'
         f'<span class="lab">{escape(LABELS[k])}</span><span class="v">{escape(v)}</span>'
@@ -73,10 +74,11 @@ h1{{font-family:"Source Serif 4",Georgia,serif;font-size:44px;font-weight:600;ma
 .foot{{position:absolute;left:56px;right:56px;bottom:26px;font-size:18px;color:{DARK['muted']};display:flex;justify-content:space-between}}
 .foot b{{color:{DARK['ink']}}}
 .ctx{{border-top:1px solid {DARK['axis']};padding-top:12px;font-size:18px;line-height:1.35;color:{DARK['ink']}}}
+.note{{margin-top:8px;font-size:17px;color:{DARK['muted']}}}
 </style></head><body>
 <div>{dial_svg(index)}</div>
 <div><div class="kicker">{escape(kicker)}</div><h1>{escape(date_label)}</h1>
-<div class="idx">Hidden AGI Index <b>{pct(index)}</b> · chance at least one is true now</div>{items}{f'<div class="ctx">{escape(context)}</div>' if context else ""}</div>
+<div class="idx">Hidden AGI Index <b>{pct(index)}</b> · chance at least one is true now</div>{items}{f'<div class="ctx">{escape(context)}</div>' if context else ""}{f'<div class="note">{escape(note)}</div>' if note else ""}</div>
 <div class="foot"><span>{escape(footer)}</span><span><b>{escape(SITE_LABEL)}</b></span></div>
 </body></html>"""
 
@@ -107,6 +109,14 @@ def alarm_label(run):
     return f'{lv["icon"]} {lv["name"]}', f'{lv["name"]}: {lv.get("meaning", "")}'.rstrip(": ")
 
 
+def escape_note(s):
+    """'Escape watch: 8 watching · 0 tripped' (quiet only when some are), or '' without Escape watch data."""
+    if not s:
+        return ""
+    c = s["counts"]
+    return f'Escape watch: {c["watching"]} watching · {c["tripped"]} tripped' + (f' · {c["quiet"]} quiet' if c["quiet"] else "")
+
+
 def delta(cur, prev):
     if cur is None:
         return "–"
@@ -133,7 +143,7 @@ def daily(date=None):
     out.parent.mkdir(exist_ok=True)
     lvl, meaning = alarm_label(run) or (None, "")
     shoot(card_html("Daily reading" + (f" · Fire alarm {lvl}" if lvl else " · Hidden AGI watch"), label, run.get("index"),
-                    rows, foot, meaning), out)
+                    rows, foot, meaning, escape_note(escape_for_run(run))), out)
     if i == reports[-1]:  # only the newest report updates the site-wide preview image
         shutil.copyfile(out, ROOT / "cards/latest.png")
     else:
@@ -159,7 +169,7 @@ def weekly(date):
     meaning = f'{lv["name"]}: {lv.get("meaning", "")}'.rstrip(": ") if lv else ""
     out = ROOT / "cards" / f"weekly-{date}.png"
     out.parent.mkdir(exist_ok=True)
-    shoot(card_html(kicker, label, k.get("index"), rows, w.get("headline", "")[:92], meaning), out)
+    shoot(card_html(kicker, label, k.get("index"), rows, w.get("headline", "")[:92], meaning, escape_note(k.get("escape"))), out)
     return out
 
 

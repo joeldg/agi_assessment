@@ -6,7 +6,7 @@ is not used; the feed is for feed readers).
 Each run that has a full report becomes one feed item. A rerun or correction that repeats a report
 path replaces the earlier entry. The item's content:encoded holds the email-ready HTML issue, with
 inline styles only, since email clients ignore stylesheets. The helpers here (fmt, changed,
-prev_published, alarm_level_on, source_link, email_footer, ...) are shared with render_card.py,
+prev_published, alarm_level_on, source_link, email_footer, escape_for_run, ...) are shared with render_card.py,
 build_weekly.py and kit_broadcast.py.
 Run from the repo root: python3 scripts/build_feed.py
 """
@@ -18,7 +18,7 @@ from decimal import ROUND_HALF_UP, Decimal
 from email.utils import format_datetime
 from html import escape
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import quote, urljoin, urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sitekit import SITE, SUBSCRIBE  # noqa: E402  (one source of truth for both URLs)
@@ -125,6 +125,90 @@ def alarm_level_on(date, run=None):
     if lvl is None:
         return None
     return next((l for l in a.get("levels", []) if l.get("level") == lvl), None)
+
+
+# Status marks for tripwires and Escape watch, the only places (with the alarm) that use status colours,
+# always with the icon and the label: (icon, colour, label).
+STATUS = {"tripped": ("●", "#B42318", "Tripped"), "watching": ("◐", "#9A6B00", "Watching"), "quiet": ("○", "#2E7D4F", "Quiet")}
+STATUS_ORDER = {"tripped": 0, "watching": 1, "quiet": 2}
+
+
+def trigger_level(trigger):
+    """The alarm level (1 Watch, 2 Warning, 3 Alarm) of an alarm trigger id such as 'W3' or 'X6', from the
+    groups in data/alarm.json, else from its letter (W, X, Y). None for no trigger or an unknown id."""
+    tid = str(trigger or "").strip().upper()
+    if not tid:
+        return None
+    try:
+        for g in json.loads((ROOT / "data/alarm.json").read_text()).get("groups", []):
+            if any(str(t.get("id", "")).upper() == tid for t in g.get("triggers", [])):
+                return g.get("level")
+    except (OSError, ValueError):
+        pass
+    return {"W": 1, "X": 2, "Y": 3}.get(tid[:1])
+
+
+def tripwire_mark(w):
+    """(icon, colour, label) for a tripwire. The colour is capped at the level of the alarm trigger it feeds:
+    a tripped wire shows red only when it feeds a Warning or Alarm trigger (X or Y); one that feeds a Watch
+    trigger (W), or no trigger, stays amber, so the board never looks louder than the alarm it feeds."""
+    icon, col, lab = STATUS[w["status"]]
+    if w["status"] == "tripped" and (trigger_level(w.get("trigger")) or 0) < 2:
+        col = STATUS["watching"][1]
+    return icon, col, lab
+
+
+ESCAPE_SINCE = "2026-09-30"  # the first daily issue to carry Escape watch; earlier issues never gain it
+
+
+def escape_summary(doc):
+    """What the emails and cards show of Escape watch, from data/escape.json or a frozen copy of it:
+    {updated, overall, counts {tripped, watching, quiet}, total, live [{key, name, status}]}, where live
+    lists the indicators that aren't quiet, tripped first. None when there are no indicators."""
+    if not isinstance(doc, dict):
+        return None
+    inds = [i for i in as_list(doc.get("indicators")) if isinstance(i, dict) and i.get("name")]
+    if not inds:
+        return None
+    counts = {k: 0 for k in STATUS}
+    live = []
+    for i in inds:
+        st = str(i.get("status") or "").strip().lower()
+        if st not in STATUS:
+            print(f"warning: escape watch: indicator {i.get('key') or i['name']!r} has unknown status {i.get('status')!r}; "
+                  "left out of the counts.", file=sys.stderr)
+            continue
+        counts[st] += 1
+        if st != "quiet":
+            live.append({"key": i.get("key"), "name": i["name"], "status": st})
+    live.sort(key=lambda i: STATUS_ORDER[i["status"]])  # stable: data order within a status
+    return {"updated": doc.get("updated"), "overall": str(doc.get("overall") or "").strip(), "counts": counts,
+            "total": sum(counts.values()), "live": live}
+
+
+def escape_counts_text(s, sep=", "):
+    """'0 tripped, 8 watching, 0 quiet' (tripped first, since that is the number that matters)."""
+    return sep.join(f'{s["counts"][k]} {k}' for k in ("tripped", "watching", "quiet"))
+
+
+def escape_for_run(run):
+    """Escape watch as it stood on the run's date, or None. A run that recorded its own copy ("escape",
+    shaped like data/escape.json) uses that. Otherwise data/escape.json is used only for the newest
+    published run, dated on or after ESCAPE_SINCE, when the file's "updated" date isn't later than the run:
+    the file holds today's statuses only, so an older issue (a past feed item) never shows later ones."""
+    if isinstance(run.get("escape"), dict):
+        return escape_summary(run["escape"])
+    if run.get("date", "") < ESCAPE_SINCE:
+        return None
+    try:
+        runs = json.loads((ROOT / "data/runs.json").read_text())
+        doc = json.loads((ROOT / "data/escape.json").read_text())
+    except (OSError, ValueError):
+        return None
+    newest = max((r.get("date", "") for r in runs if r.get("report")), default="")
+    if run.get("date") != newest or str(doc.get("updated") or "") > run["date"]:
+        return None
+    return escape_summary(doc)
 
 
 def delta_cell(cur, prev):
@@ -321,6 +405,26 @@ def gauges_html(run, prev):
             + data_table(rows, "4px 0 12px"))
 
 
+def escape_html(run):
+    """Compact Escape watch block for the daily email (after the gauges): the overall line, the status counts,
+    one line per indicator that isn't quiet, and a link to escape.html. '' when escape_for_run has nothing."""
+    s = escape_for_run(run)
+    if not s:
+        return ""
+    lines = []
+    for i in s["live"]:
+        ic, col, lab = STATUS[i["status"]]
+        lines.append(f'<span style="color:{col};font-weight:600"><span aria-hidden="true">{ic}</span> {lab}</span> · {escape(i["name"])}')
+    lis = "".join(f'<li style="margin:0 0 3px">{x}</li>' for x in lines)
+    return (f'<div style="{SANS}font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600;margin-top:10px">Escape watch</div>'
+            + p(f'<strong>{s["total"]} indicators: {escape_counts_text(s)}.</strong> '
+                f'<span style="color:{MUTED}">{escape(s["overall"])}</span>', "font-size:14px;margin:4px 0 6px")
+            + (f'<ul style="{SANS}font-size:14px;line-height:1.45;color:{INK};padding-left:20px;margin:0 0 6px">{lis}</ul>' if lis else "")
+            + p(f'<span style="color:{MUTED};font-size:13px">Tracks hypothesis C at the chokepoints an AI system running on its own would still need: '
+                f'weights, compute, money and accounts. {link(SITE + "escape.html", "See the indicators and evidence")}</span>',
+                "margin:0 0 12px"))
+
+
 def needle_hook(run):
     """One line for the day: the needle's subject (or headline), or a quiet-day line. Used in the feed item title."""
     n = run.get("needle") or {}
@@ -395,13 +499,15 @@ def _prob_table(run, prev):
 def _tripwires(run):
     if not run.get("tripwires"):
         return []
-    icon = {"tripped": ("●", "#B42318", "Tripped"), "watching": ("◐", "#9A6B00", "Watching"), "quiet": ("○", "#2E7D4F", "Quiet")}
     live = [w for w in run["tripwires"] if w["status"] != "quiet"]
     quiet = len(run["tripwires"]) - len(live)
     items = []
     for w in sorted(live, key=lambda w: 0 if w["status"] == "tripped" else 1):
-        ic, col, lab = icon[w["status"]]
-        items.append(f'<span style="color:{col};font-weight:600"><span aria-hidden="true">{ic}</span> {lab}</span> · <strong>{escape(w["signal"])}</strong>. '
+        ic, col, lab = tripwire_mark(w)
+        tid = str(w.get("trigger") or "").strip()
+        feeds = (f' <span style="color:{MUTED}">· feeds {link(SITE + "alarm.html#" + quote(tid), "alarm trigger " + tid)}</span>'
+                 if tid else "")
+        items.append(f'<span style="color:{col};font-weight:600"><span aria-hidden="true">{ic}</span> {lab}</span>{feeds} · <strong>{escape(w["signal"])}</strong>. '
                      f'<span style="color:{MUTED}">{escape(w.get("note", ""))}</span>{source_link(w)}')
     return [h2("Tripwires"), ul(items),
             p(f'<span style="color:{MUTED}">{quiet} more quiet. {link(SITE + "#tripwires", "See all tripwires")}.</span>')]
@@ -496,7 +602,7 @@ def issue_html(run, prev, later=None):
     """The daily email (also each feed item's content). prev is prev_published(runs, i), or None.
     later: corrections logged since this issue went out whose page is this issue's report (the feed item
     shows them; the email that carries them is the next day's, through run["corrections"]).
-    Order: dated masthead, corrections, alarm, index, needle, gauges, probabilities, summary, tripwires,
+    Order: dated masthead, corrections, alarm, index, needle, gauges, Escape watch, probabilities, summary, tripwires,
     what changed, timeline, roundup, signals, then the share card next to the report link and the footer."""
     report_url = SITE + run["report"]
     t = datetime.strptime(run["date"], "%Y-%m-%d")
@@ -507,6 +613,7 @@ def issue_html(run, prev, later=None):
     out += _alarm_line(run) + _index_line(run, prev) + _needle_box(run.get("needle"))
     if run.get("gauges"):
         out.append(gauges_html(run, prev))
+    out.append(escape_html(run))
     out += _prob_table(run, prev)
     if run.get("summary"):
         out.append(p(escape(run["summary"])))

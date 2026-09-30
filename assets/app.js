@@ -1,4 +1,4 @@
-import {lineChart, dial, tripwireBoard, forecastChart, gaugeRow, alarmIndicator, alarmBanner, confBand, safeHref, SERIES as KSERIES, SERIES_ORDER, util} from "./charts.js";
+import {lineChart, dial, tripwireBoard, escapeBoard, statusView, forecastChart, gaugeRow, alarmIndicator, alarmBanner, confBand, safeHref, SERIES as KSERIES, SERIES_ORDER, util} from "./charts.js";
 
 const {h:el, fmtNum:fmt, sparkline} = util;   // fmt has no "%": the big figures put it in a <small>
 const SERIES = SERIES_ORDER.map(k => ({k, short:KSERIES[k].label, c:KSERIES[k].color, letter:k==="Dopen"?"D-open":k}));
@@ -105,10 +105,14 @@ function renderTripwires(){
   host.replaceChildren(); count.textContent="";
   if(!last?.tripwires?.length){ host.append(el("p",{class:"muted"},"No tripwires recorded.")); return; }
   tripwireBoard(host, last.tripwires, {root:"", alarm});
-  const c={tripped:0,watching:0,quiet:0}; let unknown=0;
-  last.tripwires.forEach(w=>{ const k=String(w?.status??"").trim().toLowerCase(); if(Object.prototype.hasOwnProperty.call(c,k)) c[k]++; else unknown++; });
-  count.textContent=`${c.tripped} tripped, ${c.watching} watching, ${c.quiet} quiet.` + (unknown?` ${unknown} with an unrecognized status (data error).`:"");
+  // counted as displayed: a tripped signal feeding a Watch-level trigger (or none) shows as "observed"
+  const c={tripped:0,observed:0,watching:0,quiet:0,unknown:0};
+  last.tripwires.forEach(w=>{ c[statusView(w?.status, w?.trigger, alarm).key]++; });
+  count.textContent=`${c.tripped} tripped, ` + (c.observed?`${c.observed} observed, `:"") + `${c.watching} watching, ${c.quiet} quiet.` + (c.unknown?` ${c.unknown} with an unrecognized status (data error).`:"");
 }
+
+let escape = null;
+function renderEscape(){ escapeBoard(document.getElementById("escape-board"), escape, {root:"", alarm}); }
 
 function renderChanges(){
   const last=lastRun, prev=prevRun;
@@ -224,7 +228,7 @@ function renderAll(){
   const sections = [
     // full detail (trigger codes, note) once the level is Warning or higher; alarm.html always has it
     ["fire alarm", () => { if(alarm) alarmIndicator(document.getElementById("alarm"), alarm, {compact: !(Number(alarm?.current?.level) >= 2)}); }],
-    ["index", renderHero], ["gauges", renderGauges], ["tripwires", renderTripwires], ["readings", renderReadings],
+    ["index", renderHero], ["escape watch", renderEscape], ["gauges", renderGauges], ["tripwires", renderTripwires], ["readings", renderReadings],
     ["readings chart", renderChart], ["forecast", renderForecast], ["latest reading", renderChanges],
     ["news roundup", renderRoundup], ["timeline", renderTimeline], ["history", renderHistory]
   ];
@@ -249,11 +253,12 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>{ if(
     runs=data.map((r,i)=>({...r,_i:i})).sort((a,b)=>String(a.date).localeCompare(String(b.date))||a._i-b._i);
   }catch(e){ console.error("Couldn't load data/runs.json:", e); st.textContent="Couldn't load data/runs.json. Reload to try again."; return; }
   const getJSON = async p => { const r=await fetch(p,{cache:"no-cache"}); if(!r.ok) throw new Error(p+": HTTP "+r.status); return r.json(); };
-  const [ext, gdefs, al, corr] = await Promise.all(["data/external_forecasts.json","data/gauges.json","data/alarm.json","data/corrections.json"].map(p => getJSON(p).catch(e => { console.error(e); return null; })));
+  const [ext, gdefs, al, corr, esc] = await Promise.all(["data/external_forecasts.json","data/gauges.json","data/alarm.json","data/corrections.json","data/escape.json"].map(p => getJSON(p).catch(e => { console.error(e); return null; })));
   corrections = Array.isArray(corr?.corrections) ? corr.corrections : [];
   outside = Array.isArray(ext?.forecasts) ? ext.forecasts : [];
   gaugeDefs = Array.isArray(gdefs?.gauges) ? gdefs.gauges : [];
   alarm = al;
+  escape = esc;
   alarmBanner("");
   renderAll();
 })();

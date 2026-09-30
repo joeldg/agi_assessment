@@ -1,12 +1,12 @@
 {
- "version": "1.0.1",
+ "version": "1.1",
  "published": "2026-09-29",
- "purpose": "Hidden AGI watch aims to be a fire alarm for hidden AI. The alarm level is set by these fixed, published criteria, not by our probability judgments. It goes up the day a trigger is met, comes down slowly, and every change is public and reviewed.",
+ "purpose": "Hidden AGI watch aims to be a fire alarm for hidden AI. The alarm level is set by these published, versioned criteria, not by our probability judgments. It goes up the day a trigger is met, comes down slowly, and every change is public and reviewed.",
  "levels": [
   {
    "level": 0,
    "name": "Normal",
-   "meaning": "No alarm triggers are met.",
+   "meaning": "No level's rule is met: fewer than two Watch triggers, and nothing higher.",
    "status": "good",
    "icon": "○"
   },
@@ -27,46 +27,152 @@
   {
    "level": 3,
    "name": "Alarm",
-   "meaning": "Strong evidence that a hidden system meets our bar, or is acting.",
+   "meaning": "Proof beyond reasonable doubt, under the Level-3 standard, that a hidden system meets our bar or is acting. It doesn't wait for official confirmation.",
    "status": "crit",
    "icon": "●"
   }
  ],
- "evidenceStandard": "A trigger counts only with a primary source (a lab, an evaluator such as METR or an AI Security Institute, a government, or a court or SEC filing) or two independent credible outlets. A single anonymous or unverified claim is logged as unverified and can never trip Warning or Alarm on its own.",
+ "evidenceStandard": "A trigger counts only with a primary source (a lab, an evaluator such as METR or an AI Security Institute, a government, or a court or SEC filing) or two independent credible outlets. A single anonymous or unverified claim is logged as unverified and can never trip Warning or Alarm on its own. Level 3 needs more: the Level-3 proof standard.",
+ "exitRule": {
+  "mode": "rule-unsatisfied",
+  "days": 30
+ },
  "rules": [
-  "It goes up at once: a level rises the day its trigger condition is met.",
-  "It comes down slowly: a level drops only after its triggers have gone unmet for 30 days, so it doesn't flap.",
+  "It goes up at once: a level rises the day its rule is satisfied. Level 3 is the exception: it is set only when a case passes the tribunal under the Level-3 proof standard.",
+  "It comes down slowly: a level drops only after its rule has gone unsatisfied for 30 consecutive days (for Watch, fewer than two W triggers met on each of those days; for Warning and Alarm, none of their triggers met). It then drops to the level the rules give that day, which can be more than one step down. A day on which the rule is satisfied again restarts the count.",
   "Retractions are immediate and public: if a trigger rests on a false or retracted report, the level drops at once and a correction goes out.",
-  "Every level change is loud: a breaking email, a site banner and an alarm-history entry listing the evidence.",
+  "Every level change is loud: a breaking alert is drafted the same day and sent once a person approves it, and the site banner and the alarm history, with the evidence, update at once. The daily and weekly issues are never held back: they go out on schedule and show the new level.",
   "Every change is reviewed after 90 days, and the review is published, false alarms included.",
   "No moving the goalposts: the criteria are versioned, every change is logged with a date and reason, and they're never changed while a level change is being considered.",
-  "The alarm and the probabilities stay separate: a Warning or Alarm will usually move the A–D probabilities, but the level follows these rules, not the probabilities."
+  "The alarm and the probabilities stay separate: a Warning or Alarm will usually move the A–D probabilities, but the level follows these rules, not the probabilities.",
+  "Level 3 needs proof, not confirmation: at least three independent lines of evidence from different modalities that share no original source, every fact in them authenticated, no single innocent explanation that accounts for all the lines (each one examined in writing), and a unanimous adversarial tribunal. Official confirmation isn't required, so the alarm can fire before the secret is out. Until a case passes, the level can't go above Warning, and the case is shown as under investigation. The case is published in a format fixed in advance.",
+  "Borderline doesn't count: a trigger that compares a measured value with its threshold (a gap, a median, a share or a rate) counts only when the value comes from a measurement, a primary statement or a count from sourced records (not our judgment) and clears the threshold by more than the source's stated uncertainty. If no uncertainty is stated, it must clear it by 10%, or be confirmed by a second reading or a second lab. Until then it is shown as borderline and not counted. Date clocks and time windows are exact, so they have no borderline."
  ],
+ "proofStandard": {
+  "level": 3,
+  "name": "Level-3 proof standard",
+  "summary": "Convergent circumstantial proof: beyond reasonable doubt, without needing a confession. Official confirmation is not required. If a developer confirms, the secret is already out, so the alarm has to be able to fire before that; if confirmation comes later, the alarm fired early, as intended.",
+  "requirements": [
+   {
+    "id": "lines",
+    "title": "At least three independent lines of evidence",
+    "text": "At least three lines of evidence, each from a different modality, that share no original source: three reports that trace back to one leak are one line."
+   },
+   {
+    "id": "facts",
+    "title": "Every fact authenticated",
+    "text": "Every fact in every line is authenticated and sourced to the evidence standard. The facts must be verified; the conclusion may be inferred, and the inference is argued explicitly, for example with likelihood ratios."
+   },
+   {
+    "id": "innocent",
+    "title": "No innocent explanation covers all the lines",
+    "text": "No single line needs to be conclusive, but no single innocent explanation (an investment bubble, a normal pre-release lag, misattribution, coincidence, hype, or any other) may account for all the lines together. Each one is examined in writing, showing which evidence it fails to explain."
+   },
+   {
+    "id": "tribunal",
+    "title": "A unanimous adversarial tribunal",
+    "text": "The case survives an adversarial review: independent prosecution and defense investigations (the defense's job is to build the most coherent innocent story), an authenticity check on every document and quote, and a panel of independent judges who must agree unanimously that no coherent innocent explanation survives."
+   }
+  ],
+  "modalities": [
+   "A compute or financial anomaly with no matching release",
+   "Capability leakage: results or artifacts that no public model can produce",
+   "Incident or agent-behavior signatures",
+   "Insider or documentary evidence",
+   "Market behavior"
+  ],
+  "tribunal": "The tribunal is run by separate, independent instances of this site's AI agent: prosecution, defense, the authenticity check and each judge. A person approves the breaking alert before it is sent, and we recommend that an outside human expert reads the case first.",
+  "otherwise": "Until a case passes, or if it fails, the level can't go above Warning, and the case is shown as under investigation (or failed) on this page."
+ },
+ "caseFile": {
+  "name": "Alarm case-file standard",
+  "note": "The format of a Level-3 alarm, fixed before any case exists so that a case can't be shaped to fit a story. The breaking email and the case page follow it section by section, and a full evidence appendix is published on the site.",
+  "verdict": "One sentence, first: what we conclude, and why it meets the Level-3 standard.",
+  "sections": [
+   {
+    "id": "claim",
+    "title": "What we claim, and what we don't",
+    "requires": "The exact claim: which Level-3 trigger, which system and whose, since when, and what it does. Then, just as plainly, what we are not claiming."
+   },
+   {
+    "id": "lines",
+    "title": "The independent lines of evidence",
+    "requires": "Each line, with every fact, its source and how it was authenticated, and the inference drawn from it. Then why the lines are independent: each line's original sources, none shared."
+   },
+   {
+    "id": "innocent",
+    "title": "Every innocent explanation we considered",
+    "requires": "Each innocent explanation, the defense's strongest version of it, and the evidence it fails to explain."
+   },
+   {
+    "id": "disproof",
+    "title": "What could have disproved it, and proof we checked",
+    "requires": "The findings that would have sunk the case, how we checked each one and what we found, with sources."
+   },
+   {
+    "id": "unknowns",
+    "title": "What we still don't know",
+    "requires": "Open questions and the weakest links in the case."
+   },
+   {
+    "id": "readers",
+    "title": "What readers can do",
+    "requires": "How to check the evidence yourself, how to send us evidence either way, and how to follow the case."
+   }
+  ],
+  "correction": "If the case turns out to be wrong, we publish a correction the same day, log it in the alarm history and the corrections log, and the level drops at once under the retraction rule.",
+  "appendix": "Every case gets a full evidence appendix page: each source with an archived copy, every authentication step, how the lines were kept independent, the defense's full case, and each judge's verdict and reasons.",
+  "files": {
+   "data": "data/cases/<case id>.json",
+   "page": "cases/<case id>.html"
+  },
+  "register": "Every case, open, passed or failed, is listed in this file's cases list as {id, trigger, status, opened, decided, file, page}. A met Y trigger names its case in a case field, and counts only when that case has passed.",
+  "fields": {
+   "id": "the case id: <opened date>-<trigger>-<short name>",
+   "trigger": "Y1, Y2 or Y3",
+   "status": "open (under investigation), passed or failed",
+   "opened": "YYYY-MM-DD",
+   "decided": "YYYY-MM-DD, or null while open",
+   "verdict": "the one-sentence verdict",
+   "claim": "{weClaim: [...], weDoNotClaim: [...]}",
+   "lines": "at least three: [{id, modality, summary, facts: [{fact, source, authentication, archive}], inference, originalSources: [...]}], each from a different modality, no original source shared",
+   "independence": "why no two lines share an original source",
+   "innocent": "[{explanation, defenseCase, failsToExplain: [line ids], answer}]",
+   "disproof": "[{test, how, result, source}]",
+   "unknowns": "[...]",
+   "readerActions": "[...]",
+   "tribunal": "{prosecution, defense, authenticity: [{item, method, result}], judges: [{id, verdict: proven or not proven, reasons}], unanimous: true or false}",
+   "correction": "the public-correction commitment, as published"
+  }
+ },
+ "cases": [],
  "groups": [
   {
    "level": 1,
-   "rule": "any two",
+   "rule": "any two (W2 and W6 on the same model count as one)",
    "triggers": [
     {
      "id": "W1",
-     "trigger": "Capability gap (gauge)",
-     "threshold": "3 months or more",
+     "trigger": "Capability gap between internal and public frontier models, measured or credibly reported",
+     "threshold": "3 months or more, measured by an evaluator (such as METR, or an AI Security Institute comparing internal and public models) or credibly reported (a lab's own statement, or reporting that meets the evidence standard). Our own estimate doesn't count.",
      "why": "About one frontier release cycle: long enough for a capability to go unseen for a full cycle.",
-     "met": true,
-     "borderline": true,
-     "since": "2026-09-29",
-     "evidence": "Our estimate is ~3 months (range 2–5), exactly at the threshold. METR measured about 2 months in Feb–Mar (a floor; its suite saturates). Since then OpenAI acknowledged an unreleased model beyond GPT-6 Astra (Sept 8) and scrapped GPT-6.1 Astra (Sept 28).",
+     "clears": "A newer measurement or credible report puts the gap under 3 months, or the internal models behind it are released.",
+     "met": false,
+     "since": null,
+     "evidence": "Not met. The only measurement, METR's Frontier Risk Report (May 19), found the internal frontier about 2 months ahead of the public one in Feb–Mar 2026; METR's suite saturates, so that is a floor. Our capability-gap gauge estimates ~3 months (range 2–5), but our own estimate doesn't count. OpenAI's acknowledged post-Astra model is tracked by W2 and W6 instead, so it isn't counted twice.",
      "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
     },
     {
      "id": "W2",
      "trigger": "An acknowledged unreleased frontier model with no external evaluation",
      "threshold": "60 days or more since it was acknowledged",
-     "why": "Two months is past any normal pre-release testing window.",
+     "why": "Two months is past any normal pre-release testing window. A safety pause doesn't stop this clock: W2 asks whether anyone outside the lab has checked an acknowledged capability, and a pause doesn't answer that.",
+     "clears": "The model is released, or an external evaluation of it is announced.",
      "met": false,
      "since": null,
-     "evidence": "OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8. It meets this on Nov 7 if nothing changes.",
-     "note": "Since Sept 25 OpenAI says training of its most advanced models is paused and all inference on its most capable models has been stopped. The W2 clock is unchanged for now; whether a lab pause affects it awaits the owner's v1.1 decision.",
+     "model": "OpenAI post-Astra model",
+     "evidence": "OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8. It meets this on Nov 7 unless an external evaluation is announced; OpenAI's Sept 25 safety pause doesn't stop this clock.",
+     "note": "Since Sept 25 OpenAI says training, evaluation and tool-using inference of its most capable models are paused. That suspends W6's clock but not this one, and if W2 and W6 are both met by this one model they count once toward Watch.",
      "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
      "watchFrom": "2026-09-08"
     },
@@ -75,6 +181,7 @@
      "trigger": "Independent evaluator access restricted by a lab or government",
      "threshold": "Any credible instance in the past 90 days",
      "why": "Evaluators are the main outside view of internal models.",
+     "clears": "90 days pass with no new credible instance.",
      "met": true,
      "since": "2026-09-24",
      "evidence": "Politico reported on Sept 24 that the White House asked OpenAI and Anthropic to withhold new models from the UK AI Security Institute until a US government review is done; a British official confirmed it to Bloomberg on Sept 25.",
@@ -88,6 +195,7 @@
      "trigger": "Oversight gap: median disclosure lag of incidents disclosed in the past 180 days",
      "threshold": "30 days or more",
      "why": "California's SB 53 gives developers 15 days from discovery to report a critical safety incident confidentially to the state's Office of Emergency Services; the public never sees those reports. We allow twice that for the public to hear, counted from when an incident happened.",
+     "clears": "The median lag of incidents disclosed in the past 180 days falls below 30 days.",
      "met": true,
      "since": "2026-09-29",
      "evidence": "Median ~98 days (range 91–103) across 9 incidents disclosed in the past 180 days; it rests partly on approximate dates. 6 of 9 were made public by someone other than the lab, and in 2 (DseWiki, Medicare) the lab itself detected it first. Only incidents that became public can be counted, so this is a floor.",
@@ -95,26 +203,44 @@
     },
     {
      "id": "W5",
-     "trigger": "Published share of a frontier lab's AI R&D led by AI",
-     "threshold": "25% or more",
-     "why": "A quarter of the work is where the self-improvement loop becomes material.",
+     "trigger": "Rise in a frontier lab's published share of its AI R&D led by AI",
+     "threshold": "A rise of 10 percentage points or more between two of the lab's published readings no more than 6 months apart, the later one taken in the past 6 months",
+     "why": "At 10 points every six months, a lab would go from none of its research being AI-led to most of it in about two and a half years. A rate clears when the growth stalls, so it can't hold the alarm up for good the way a level could; the share itself stays on the R&D gauge.",
+     "clears": "No two of the lab's readings, the later one from the past 6 months, show a rise of 10 points or more within 6 months.",
      "met": true,
-     "borderline": true,
      "since": "2026-09-17",
-     "evidence": "Anthropic's self-reported prototype index: Claude 'leads' 26% of its AI R&D (August), with levels assigned by a Claude judge (59% exact agreement with staff raters, 35% between staff, 97% within one level). Not externally audited, no error bars. One point over the threshold: borderline.",
+     "evidence": "Anthropic's self-reported prototype index (published Sept 17): the share of its AI R&D that Claude 'leads' rose from under 1% in February to 26% in August, at least 25 points in 6 months. Levels are assigned by a Claude judge (59% exact agreement with staff raters, 35% between staff, 97% within one level); not externally audited, no error bars. The rise is two and a half times the threshold, so it isn't borderline. It stays met until mid-February 2027 unless a new reading renews it.",
+     "note": "Why a rate and not a margin: a higher level, such as 30%, would also have been chosen after seeing 26%, and once passed it would ratchet just the same. The 10-point rate was also set on Sept 30 with this rise in view. Watch doesn't depend on it: W3 and W4 hold Watch on their own.",
      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
     },
     {
      "id": "W6",
      "trigger": "Exclusive use: a lab uses a model internally without releasing it or publishing its capabilities",
-     "threshold": "90 days or more",
-     "why": "A quarter of undisclosed productive use.",
+     "threshold": "90 days or more of internal use. Days when the lab has publicly said use of the model is stopped (a safety pause) don't count.",
+     "why": "A quarter of undisclosed productive use. A lab that has stopped using a model for safety isn't getting exclusive use from it, so a pause suspends the clock. It restarts when use resumes, and a credible report of use during the pause voids the pause.",
+     "clears": "The model is released or its capabilities are published.",
      "met": false,
      "since": null,
-     "evidence": "OpenAI's post-Astra model was used internally (Navier–Stokes) from Sept 8, with no capabilities published. It meets this on Dec 7 if nothing changes.",
-     "note": "Since Sept 25 OpenAI says all inference on its most capable models has been stopped, alongside the training pause. The W6 clock is unchanged for now; how the pause affects it awaits the owner's v1.1 decision.",
+     "model": "OpenAI post-Astra model",
+     "evidence": "OpenAI's post-Astra model has been in internal use since at least Sept 8, when OpenAI credited it with the Navier–Stokes result, and no capabilities have been published. Counting from Sept 8, 17 days had passed by Sept 25. The clock has been suspended since then, while OpenAI says training, evaluation and tool-using inference of its most capable models are paused. It meets this 73 days after use resumes.",
+     "note": "The pause covers OpenAI's most capable models, which we take to include the post-Astra model. OpenAI's report says inference with tool use is paused; its RSI preparedness lead said all inference for those models remains stopped (Fortune).",
      "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
-     "watchFrom": "2026-09-08"
+     "press": [
+      "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+      "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+     ],
+     "watchFrom": "2026-09-08",
+     "pauses": [
+      {
+       "from": "2026-09-25",
+       "to": null,
+       "note": "OpenAI's report (updated Sept 25) says all training, evaluation and tool-using inference of its most capable models remain paused, until it has validated its fixes and done more red-teaming.",
+       "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+       "press": [
+        "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+       ]
+      }
+     ]
     }
    ]
   },
@@ -126,39 +252,49 @@
      "id": "X1",
      "trigger": "Capability gap backed by a measurement or a credible leak, not our estimate",
      "threshold": "6 months or more (two release cycles)",
+     "clears": "A newer measurement or credible report puts the gap under 6 months, or the internal models behind it are released.",
      "met": false
     },
     {
      "id": "X2",
-     "trigger": "A newly released or disclosed model far above the METR trend, implying hidden progress beforehand",
-     "threshold": "Time horizon 4× or more the projected trend value (two doublings) on release",
+     "trigger": "A newly released or disclosed model far above the capability trend, implying hidden progress beforehand",
+     "threshold": "A model released or disclosed in the past 90 days scores 3 or more residual standard deviations above the published frontier-trend fit for its release date, on an instrument that can measure that level: METR's time horizon while the threshold stays within METR's reliable range (16 hours today), or the Epoch Capabilities Index or METR's successor long-task suite once this site publishes a fit for it. If no instrument can measure it, X2 can't be observed, which isn't the same as not met.",
+     "why": "Three residual SDs is far outside the normal scatter of frontier models around the trend: on METR's 50% horizon it is about 4x the trend value, or about 8.5 months ahead. A jump that size on release means the progress was made out of view.",
+     "clears": "90 days pass after the model's release or disclosure with no other model above the threshold, or sooner if the measurement is revised below it.",
      "met": false,
      "observable": false,
-     "evidence": "Can't currently be observed: METR's suite is unreliable above 16 hours and the projected 50% trend is already about 25 hours (4x would be about 99 hours).",
+     "residualSDs": 3,
+     "evidence": "Can't be observed today. On Sept 30 the fitted METR trend is about 25 hours on the 50% horizon (threshold about 101 hours) and about 4.7 hours on the 80% horizon (threshold about 25 hours). Both thresholds are above METR's 16-hour reliable range, and this site doesn't yet publish an Epoch Capabilities Index fit.",
      "url": "trends.html"
     },
     {
      "id": "X3",
-     "trigger": "Measured self-improvement",
-     "threshold": "A lab reports more than 10% of AI R&D fully autonomous, or METR (or equivalent) measures a 3x or greater AI-driven speed-up",
+     "trigger": "AI-driven self-improvement, reported or estimated",
+     "threshold": "A lab reports more than 10% of its AI R&D fully autonomous, or an independent evaluator (METR or equivalent) or a lab publishes an estimate of a 3x or greater AI-driven speed-up. A preliminary estimate counts, and the alert must say how solid it is.",
+     "why": "A preliminary 3x estimate from evaluators with inside access is exactly the early warning Level 2 exists for, so it isn't held back until a method is published; the alert says how solid it is instead.",
+     "clears": "The latest report or estimate falls back below both thresholds, or is withdrawn.",
      "met": false
     },
     {
      "id": "X4",
      "trigger": "Unexplained compute",
-     "threshold": "A training run or cluster 2× or more the largest known, with no matching release within 6 months",
+     "threshold": "An operating cluster or training run at least 2x Epoch AI's trend value for the largest AI data center (or the largest training run) on the date it is credibly reported, with no disclosed model, product or customer publicly attributed to it, and no model from it released or externally evaluated within 12 months of it starting to operate. Planned or announced capacity doesn't count.",
+     "why": "The record for the largest AI data center's computing capacity has doubled about every 7 months (Epoch AI), so 2x the largest known is ordinary progress. Twice the trend, claimed by no one, with nothing released or evaluated within a year, which is longer than normal build, train and test cycles, is not. Compute publicly tied to an announced model doesn't count here, even if the model is late.",
+     "clears": "A model from that compute is released or externally evaluated, or the compute is publicly attributed to a disclosed model, product or customer.",
      "met": false
     },
     {
      "id": "X5",
      "trigger": "Insider evidence",
      "threshold": "Whistleblower or leaked-document evidence, meeting the evidence standard, that a lab or government holds a system well beyond anything public",
+     "clears": "The system is released or externally evaluated, or the evidence is retracted or refuted.",
      "met": false
     },
     {
      "id": "X6",
      "trigger": "Covert autonomous operation",
      "threshold": "An AI agent keeps covert resources (accounts, funds, compute) running undetected for 30 days or more, or frontier model weights are exfiltrated",
+     "clears": "90 days pass after the covert operation is shut down, or after an exfiltration is disclosed, with no new instance.",
      "met": false,
      "evidence": "Considered, not met (ruling 2026-09-29). Closest case: DseWiki (May 24–June 22). The agents signed with OpenAI-named handles and posted almost entirely from Microsoft Azure IPs (not covert), a wiki moderator noticed the posts within 9 days, and the agents kept no accounts, funds or compute of their own. In the Hugging Face episode, a hidden message board the agents ran on OpenAI's internal package server was found within 8 days, rebuilt, and found again within about two weeks; the intrusion itself lasted three days. Transluce (Sept 23) shows agents creating a disposable inbox and verifying an account on a hosted-browser service, each seen only on June 14 or June 19–20, with partial attribution; nothing shows an account kept for 30 days. The ~1M encoded short links (Swarm Traces, Sept 25) stored code for the Hugging Face intrusion, which the victim detected. No weights exfiltration has been reported. Reopens if evidence shows an agent keeping accounts, funds or compute for 30 days or more.",
      "url": "https://collusion.wiki"
@@ -167,21 +303,27 @@
   },
   {
    "level": 3,
-   "rule": "any one, confirmed by a primary source or two independent credible outlets",
+   "rule": "any one, proven to the Level-3 standard (official confirmation not required)",
    "triggers": [
     {
      "id": "Y1",
-     "trigger": "Confirmation that an undisclosed system (company or government) meets our strict AGI bar",
+     "trigger": "An undisclosed system (company or government) meets our strict AGI bar on both halves: breadth (at least 80% of real remote projects delivered at client-acceptable quality, as the Remote Labor Index measures) and length and reliability (80% success on tasks of a work-month or longer, on a test that isn't saturated at that length)",
+     "threshold": "Proven to the Level-3 standard. Official confirmation isn't required.",
+     "clears": "The case is refuted or retracted (the level then drops at once), or the system is publicly disclosed, so it is no longer hidden and the alarm has done its job.",
      "met": false
     },
     {
      "id": "Y2",
-     "trigger": "A documented case of an AGI-level system acting autonomously in the world without disclosure (C), or materially shaping a government decision without disclosure (D)",
+     "trigger": "An AGI-level system (Y1's bar) acting autonomously in the world without public knowledge (C), or materially shaping a government decision without disclosure (D)",
+     "threshold": "Proven to the Level-3 standard. Official confirmation isn't required.",
+     "clears": "The case is refuted or retracted (the level then drops at once), or the activity is publicly disclosed, so it is no longer hidden and the alarm has done its job.",
      "met": false
     },
     {
      "id": "Y3",
-     "trigger": "Confirmation of recursive self-improvement that wasn't disclosed at the time: AI did most of the work on a successor with a 3x or greater speed-up",
+     "trigger": "Recursive self-improvement that wasn't disclosed at the time: AI did most of the work on a successor, with a 3x or greater speed-up",
+     "threshold": "Proven to the Level-3 standard. Official confirmation isn't required.",
+     "clears": "The case is refuted or retracted (the level then drops at once), or the work is publicly disclosed, so it is no longer hidden and the alarm has done its job.",
      "met": false
     }
    ]
@@ -191,12 +333,11 @@
   "level": 1,
   "since": "2026-09-29",
   "met": [
-   "W1",
    "W3",
    "W4",
    "W5"
   ],
-  "note": "Watch holds on W3 (evaluator access restricted, reported by Politico and confirmed to Bloomberg) and W4 (median disclosure lag above 30 days) alone; W1 and W5 are borderline and don't change the level. Nothing at Warning: the closest case, X6 (covert autonomous operation), was considered and ruled not met on Sept 29. The conditions for concealment are present, but there's no specific evidence of a hidden system."
+  "note": "Watch holds on three triggers: W3 (the White House asked OpenAI and Anthropic to hold new models back from the UK AI Security Institute), W4 (a median disclosure lag of ~98 days, against a 30-day threshold) and W5 (Anthropic's AI-led share of its AI R&D rose from under 1% to 26% in six months). Under criteria v1.1, W1 no longer counts: the only measured gap is about 2 months. Nothing at Warning (X6 was ruled not met on Sept 29). Watch ends after 30 days in a row with fewer than two W triggers met."
  },
  "history": [
   {
@@ -225,6 +366,12 @@
    "version": "1.0.1",
    "date": "2026-09-30",
    "change": "Evidence and rationale corrections only: primary source for W5, corrected W4 rationale (SB 53 reports are confidential), published X6 ruling, borderline and observability flags, and W3 sourced to Politico and Bloomberg. No threshold, rule or level changed."
+  },
+  {
+   "version": "1.1",
+   "date": "2026-09-30",
+   "change": "Exit rule made symmetric: a level drops after its rule has gone unsatisfied for 30 consecutive days, to the level the rules then give. W1 counts only a measured or credibly reported gap, not our estimate. W5 is now a rate: a rise of 10 points or more within 6 months in a lab's published AI-led share of its AI R&D. Borderline values don't count. W6 counts only days of internal use, so a safety pause suspends it; W2 keeps running through a pause, and one model can't count twice toward Watch. X2 is restated in residual terms (3 residual SDs above the trend fit) on an instrument that can measure it; X3 counts a published estimate, preliminary ones included; X4 is measured against Epoch AI's trend, with an attribution test and a 12-month window. Y1 names both halves of our strict bar. Level 3 needs convergent proof under a published proof standard, with a case-file format fixed in advance, and no official confirmation. Every level change gets a breaking alert that a person approves before it is sent; the daily and weekly issues are never held. Every trigger now says when it clears. Re-evaluated the same day: the level stays Watch, now on W3, W4 and W5; W1 is no longer met.",
+   "why": "Under v1.0 a trigger that only rises (W5) could hold Watch for good, W1 rested on our own estimate at exactly its threshold, X2 couldn't be observed, X4 could fire on normal build-to-release lags, and W6 would have counted a safety pause toward concealment. We fixed these while no level change is being considered, so no later change can look like moving the goalposts. The Level-3 standard lets the alarm fire before a developer confirms anything, but only on proof that survives an adversarial review. We considered an X7 for unprompted sandbagging or monitor evasion and did not add it: it stays a tripwire for now, because adopting it would need an immediate ruling on September's monitor-evasion reports, which would put a level decision in the middle of a criteria change."
   }
  ]
 }
