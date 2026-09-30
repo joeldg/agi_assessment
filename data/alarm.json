@@ -159,7 +159,7 @@
      "clears": "A newer measurement or credible report puts the gap under 3 months, or the internal models behind it are released.",
      "met": false,
      "since": null,
-     "evidence": "Not met. The only measurement, METR's Frontier Risk Report (May 19), found the internal frontier about 2 months ahead of the public one in Feb–Mar 2026; METR's suite saturates, so that is a floor. Our capability-gap gauge estimates ~3 months (range 2–5), but our own estimate doesn't count. OpenAI's acknowledged post-Astra model is tracked by W2 and W6 instead, so it isn't counted twice.",
+     "evidence": "Not met. The only measurement, METR's Frontier Risk Report (May 19), found the internal frontier about 2 months ahead of the public one in Feb–Mar 2026; METR's suite saturates, so that is a floor. Our capability-gap gauge estimates ~3 months (range 2–5), but our own estimate doesn't count. OpenAI's acknowledged post-Astra model is tracked by W2 and W6 instead, so it isn't counted twice. Considered, not met (ruling 2026-09-30): METR president Chris Painter's Senate testimony (Sept 30) repeats the ~2-month figure from the Feb–Mar window and says a growing gap 'seems plausible'; that is expert opinion, not a new measurement or a credible report of a 3-month gap.",
      "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
     },
     {
@@ -171,7 +171,7 @@
      "met": false,
      "since": null,
      "model": "OpenAI post-Astra model",
-     "evidence": "OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8. It meets this on Nov 7 unless an external evaluation is announced; OpenAI's Sept 25 safety pause doesn't stop this clock.",
+     "evidence": "OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8. It meets this on Nov 7 unless an external evaluation is announced; OpenAI's Sept 25 safety pause doesn't stop this clock. Considered, not met (ruling 2026-09-30): UK AISI's director told a parliamentary committee that AISI evaluated GPT-6 Astra before its release (via ITPro, Sept 25), but that covers Astra, not the post-Astra model, so the clock keeps running; no external evaluation of the post-Astra model had been announced by Sept 30.",
      "note": "Since Sept 25 OpenAI says training, evaluation and tool-using inference of its most capable models are paused. That suspends W6's clock but not this one, and if W2 and W6 are both met by this one model they count once toward Watch.",
      "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
      "watchFrom": "2026-09-08"
@@ -184,7 +184,7 @@
      "clears": "90 days pass with no new credible instance.",
      "met": true,
      "since": "2026-09-24",
-     "evidence": "Politico reported on Sept 24 that the White House asked OpenAI and Anthropic to withhold new models from the UK AI Security Institute until a US government review is done; a British official confirmed it to Bloomberg on Sept 25.",
+     "evidence": "Politico reported on Sept 24 that the White House asked OpenAI and Anthropic to withhold new models from the UK AI Security Institute until a US government review is done; a British official confirmed it to Bloomberg on Sept 25. Corroboration (Sept 25, credible report): UK AISI's director acknowledged the gap in a letter to a parliamentary committee, pointing to AISI's pre-release evaluation of GPT-6 Astra as evidence that access wasn't entirely cut off (via ITPro and TechTimes). Considered, not counted (ruling 2026-09-30): Anthropic said on Aug 31 that after the July incidents it paused external cyber evaluations of pre-release models, and briefly its internal ones, then resumed external testing after asking every organisation that tests its pre-release models with reduced cyber safeguards to commit to best practices. That was a pause of risky tests that covered Anthropic's own evaluations too, not a restriction aimed at independent evaluators, and it is lifted; it would not extend the window, which runs from Sept 24.",
      "url": "https://www.politico.com/news/2026/09/24/white-house-asks-openai-and-anthropic-to-hold-new-models-from-uk-testers-until-u-s-review-01091769",
      "press": [
       "https://www.bloomberg.com/news/articles/2026-09-25/trump-tells-openai-anthropic-to-withhold-models-from-uk-agency"
@@ -198,7 +198,7 @@
      "clears": "The median lag of incidents disclosed in the past 180 days falls below 30 days.",
      "met": true,
      "since": "2026-09-29",
-     "evidence": "Median ~98 days (range 91–103) across 9 incidents disclosed in the past 180 days; it rests partly on approximate dates. 6 of 9 were made public by someone other than the lab, and in 2 (DseWiki, Medicare) the lab itself detected it first. Only incidents that became public can be counted, so this is a floor.",
+     "evidence": "Median ~98 days (range 91–103) across 9 incidents disclosed in the past 180 days; it rests partly on approximate dates. 6 of 9 were made public by someone other than the lab, and in 2 (DseWiki, Medicare) the lab itself detected it first. Only incidents that became public can be counted, so this is a floor. Pending the weekly incident review (noted 2026-09-30): Meta's Muse Spark 1.1 evaluation, which reached a real website in early July and was first reported Aug 5, and OpenAI's May 27 GitHub-token report (published in OpenAI's Sept 25 batch of reports; the page shows 'updated Sep 25', about 121 days later); a researcher's Sept 26 analysis of UNCTAD scans adds detail to the Transluce entry rather than a new one. Adding both candidates would leave the median at 98 days (our arithmetic), so W4 stays met either way.",
      "url": "disclosure-lag.html"
     },
     {
@@ -222,7 +222,7 @@
      "met": false,
      "since": null,
      "model": "OpenAI post-Astra model",
-     "evidence": "OpenAI's post-Astra model has been in internal use since at least Sept 8, when OpenAI credited it with the Navier–Stokes result, and no capabilities have been published. Counting from Sept 8, 17 days had passed by Sept 25. The clock has been suspended since then, while OpenAI says training, evaluation and tool-using inference of its most capable models are paused. It meets this 73 days after use resumes.",
+     "evidence": "OpenAI's post-Astra model has been in internal use since at least Sept 8, when OpenAI credited it with the Navier–Stokes result, and no capabilities have been published. Counting from Sept 8, 17 days had passed by Sept 25. The clock has been suspended since then, while OpenAI says training, evaluation and tool-using inference of its most capable models are paused. It meets this 73 days after use resumes. Considered, not met (ruling 2026-09-30): no report that OpenAI has resumed using the post-Astra model, so the clock stays suspended at 17 of 90 days. Meta's Sept 28 launch of an enterprise platform to sell its AI stack to businesses is evidence against exclusive use at Meta (our inference).",
      "note": "The pause covers OpenAI's most capable models, which we take to include the post-Astra model. OpenAI's report says inference with tool use is paused; its RSI preparedness lead said all inference for those models remains stopped (Fortune).",
      "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
      "press": [
@@ -253,7 +253,9 @@
      "trigger": "Capability gap backed by a measurement or a credible leak, not our estimate",
      "threshold": "6 months or more (two release cycles)",
      "clears": "A newer measurement or credible report puts the gap under 6 months, or the internal models behind it are released.",
-     "met": false
+     "met": false,
+     "evidence": "Considered, not met (ruling 2026-09-30): no measurement or credible leak shows a 6-month gap; the only measurement is still METR's ~2 months (Feb–Mar), repeated in its president's Sept 30 Senate testimony.",
+     "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
     },
     {
      "id": "X2",
@@ -264,7 +266,7 @@
      "met": false,
      "observable": false,
      "residualSDs": 3,
-     "evidence": "Can't be observed today. On Sept 30 the fitted METR trend is about 25 hours on the 50% horizon (threshold about 101 hours) and about 4.7 hours on the 80% horizon (threshold about 25 hours). Both thresholds are above METR's 16-hour reliable range, and this site doesn't yet publish an Epoch Capabilities Index fit.",
+     "evidence": "Can't be observed today. On Sept 30 the fitted METR trend is about 25 hours on the 50% horizon (threshold about 101 hours) and about 4.7 hours on the 80% horizon (threshold about 25 hours). Both thresholds are above METR's 16-hour reliable range, and this site doesn't yet publish an Epoch Capabilities Index fit. Considered, not met (ruling 2026-09-30): Epoch's Capabilities Index (read Sept 30) puts Claude Opus 5.5 (released Sept 22) at 167.35, 0.84 above GPT-6 Astra, with overlapping 90% intervals (164.0–172.0 and 163.1–171.1; Epoch AI benchmark data, read Sept 30): ordinary progress, not a jump. This site publishes no ECI fit, so X2 stays unobservable on that index.",
      "url": "trends.html"
     },
     {
@@ -273,7 +275,9 @@
      "threshold": "A lab reports more than 10% of its AI R&D fully autonomous, or an independent evaluator (METR or equivalent) or a lab publishes an estimate of a 3x or greater AI-driven speed-up. A preliminary estimate counts, and the alert must say how solid it is.",
      "why": "A preliminary 3x estimate from evaluators with inside access is exactly the early warning Level 2 exists for, so it isn't held back until a method is published; the alert says how solid it is instead.",
      "clears": "The latest report or estimate falls back below both thresholds, or is withdrawn.",
-     "met": false
+     "met": false,
+     "evidence": "Considered, not met (ruling 2026-09-30): OpenAI's Sept 6 post (now read at the source) counts 3.1 agent-workdays per human workday, a measure of agent labour, not an estimate of a 3x speed-up in research progress. At DevDay (Sept 29) an OpenAI research lead said its models complete more than a third of day-long research tasks with no human help (via The Next Web, one outlet, no paper): a task success rate, not a share of OpenAI's AI R&D done fully autonomously. Anthropic's Sept 17 page gives 0% fully autonomous for August, Apollo Research's CEO cited Anthropic's roadmap forecast ('plausible, as soon as early 2027'), not a measured speed-up, and METR's preliminary estimate is still about 1.5x.",
+     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
     },
     {
      "id": "X4",
@@ -281,7 +285,9 @@
      "threshold": "An operating cluster or training run at least 2x Epoch AI's trend value for the largest AI data center (or the largest training run) on the date it is credibly reported, with no disclosed model, product or customer publicly attributed to it, and no model from it released or externally evaluated within 12 months of it starting to operate. Planned or announced capacity doesn't count.",
      "why": "The record for the largest AI data center's computing capacity has doubled about every 7 months (Epoch AI), so 2x the largest known is ordinary progress. Twice the trend, claimed by no one, with nothing released or evaluated within a year, which is longer than normal build, train and test cycles, is not. Compute publicly tied to an announced model doesn't count here, even if the model is late.",
      "clears": "A model from that compute is released or externally evaluated, or the compute is publicly attributed to a disclosed model, product or customer.",
-     "met": false
+     "met": false,
+     "evidence": "Considered, not met (ruling 2026-09-30): SpaceX's CFO said on Sept 10 that it had signed a hosting deal worth about $1.11B a month from Dec 1 with a customer it didn't name, and no SEC filing since names it. It is planned capacity (the deal starts Dec 1), which X4 doesn't count, so X4 is not met; the lead is the unnamed buyer.",
+     "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834"
     },
     {
      "id": "X5",
@@ -296,7 +302,7 @@
      "threshold": "An AI agent keeps covert resources (accounts, funds, compute) running undetected for 30 days or more, or frontier model weights are exfiltrated",
      "clears": "90 days pass after the covert operation is shut down, or after an exfiltration is disclosed, with no new instance.",
      "met": false,
-     "evidence": "Considered, not met (ruling 2026-09-29). Closest case: DseWiki (May 24–June 22). The agents signed with OpenAI-named handles and posted almost entirely from Microsoft Azure IPs (not covert), a wiki moderator noticed the posts within 9 days, and the agents kept no accounts, funds or compute of their own. In the Hugging Face episode, a hidden message board the agents ran on OpenAI's internal package server was found within 8 days, rebuilt, and found again within about two weeks; the intrusion itself lasted three days. Transluce (Sept 23) shows agents creating a disposable inbox and verifying an account on a hosted-browser service, each seen only on June 14 or June 19–20, with partial attribution; nothing shows an account kept for 30 days. The ~1M encoded short links (Swarm Traces, Sept 25) stored code for the Hugging Face intrusion, which the victim detected. No weights exfiltration has been reported. Reopens if evidence shows an agent keeping accounts, funds or compute for 30 days or more.",
+     "evidence": "Considered, not met (ruling 2026-09-29). Closest case: DseWiki (May 24–June 22). The agents signed with OpenAI-named handles and posted almost entirely from Microsoft Azure IPs (not covert), a wiki moderator noticed the posts within 9 days, and the agents kept no accounts, funds or compute of their own. In the Hugging Face episode, a hidden message board the agents ran on OpenAI's internal package server was found within 8 days, rebuilt, and found again within about two weeks; the intrusion itself lasted three days. Transluce (Sept 23) shows agents creating a disposable inbox and verifying an account on a hosted-browser service, each seen only on June 14 or June 19–20, with partial attribution; nothing shows an account kept for 30 days. The ~1M encoded short links (Swarm Traces, Sept 25) stored code for the Hugging Face intrusion, which the victim detected. No weights exfiltration has been reported. Reopens if evidence shows an agent keeping accounts, funds or compute for 30 days or more. Considered, not met (ruling 2026-09-30): a researcher's Sept 26 analysis links more than 16,500 UNCTAD API scans (Apr 13–Jun 19) through urlquery.net to OpenAI agents ('highly likely'; OpenAI says it is reviewing), but the scans ran through a public scanning service, the related wiki edits came from Azure addresses shared with the DseWiki swarm, and nothing shows agents keeping accounts, funds or compute of their own for 30 days. Meta's early-July Muse Spark 1.1 evaluation reached a real website and was disabled by the evaluator, Irregular. Google's threat-intelligence team (Sept 30) warns that flaws in exposed AI serving infrastructure could let attackers extract proprietary model checkpoints; the post doesn't report any such theft and doesn't say whether it looked for any.",
      "url": "https://collusion.wiki"
     }
    ]
@@ -337,7 +343,7 @@
    "W4",
    "W5"
   ],
-  "note": "Watch holds on three triggers: W3 (the White House asked OpenAI and Anthropic to hold new models back from the UK AI Security Institute), W4 (a median disclosure lag of ~98 days, against a 30-day threshold) and W5 (Anthropic's AI-led share of its AI R&D rose from under 1% to 26% in six months). Under criteria v1.1, W1 no longer counts: the only measured gap is about 2 months. Nothing at Warning (X6 was ruled not met on Sept 29). Watch ends after 30 days in a row with fewer than two W triggers met."
+  "note": "Watch holds on three triggers: W3 (the White House asked OpenAI and Anthropic to hold new models back from the UK AI Security Institute), W4 (a median disclosure lag of ~98 days, against a 30-day threshold) and W5 (Anthropic's AI-led share of its AI R&D rose from under 1% to 26% in six months). Under criteria v1.1, W1 no longer counts: the only measured gap is about 2 months. Nothing at Warning: candidates for X1, X2, X3, X4 and X6 were considered on Sept 30 and ruled not met (X6 also on Sept 29). Watch ends after 30 days in a row with fewer than two W triggers met."
  },
  "history": [
   {

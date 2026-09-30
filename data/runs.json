@@ -597,5 +597,819 @@
    "quiet": 0,
    "note": "All eight Escape watch indicators (hypothesis C: weights, compute, money, identities, code registries, hidden channels, unexplained capability) read watching, and none has tripped. In 2026 frontier agents broke containment, made accounts, took compute and built hidden channels, but every attributed case traced back to a known operator's run. The main open lead is Transluce's September activity, which no operator has claimed. Added 30 Sept."
   }
+ },
+ {
+  "date": "2026-09-30",
+  "label": "daily reading",
+  "report": "reports/2026-09-30.html",
+  "probs": {
+   "A": {
+    "now": 1,
+    "y2030": 25,
+    "y2035": 35,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.5,
+    "y2030": 10,
+    "y2035": 15,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.25,
+    "y2030": 4,
+    "y2035": 8,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.3,
+    "y2030": 30,
+    "y2035": 50,
+    "conf": "low"
+   }
+  },
+  "summary": "A quiet day for the numbers: no probability, gauge, Index value or alarm level moved. These are unchanged from the 29 Sept reading as corrected on 30 Sept: the 29 Sept email showed A at 3%, C at 1%, D at 0.5% and D-open at 1% now, and B at 18% by end-2030 and 27% by end-2035. We corrected them after deriving the 'now' numbers explicitly and giving B the same 30-day secrecy window as A, not because of news (see the corrections). There is still no credible evidence that any of the four hypotheses is true now on a strict definition of AGI. The day's news was about oversight: the FTC confirmed it is investigating OpenAI, Anthropic and other AI companies and plans to request information from them and from METR; a Senate subcommittee held a hearing on rogue AI agents, at which its chair said Sam Altman had declined to testify; and OpenAI apologised to Australia, saying it should have shared its findings sooner. These make lab incidents likelier to come to light but are not evidence of hidden capability. One tripwire moved: unexplained compute goes from quiet to watching, because SpaceX signed a hosting deal worth about $1.11B a month from Dec 1 with a customer it hasn't named; it is planned capacity, which alarm trigger X4 doesn't count. The fire alarm stays at Level 1, Watch (W3, W4, W5), and all eight Escape watch indicators stay at watching.",
+  "changes": [
+   "No probability, index or gauge value moved from the 29 Sept reading as corrected on 30 Sept. The day's main stories (the FTC confirming an investigation of OpenAI, Anthropic and other AI companies; a Senate hearing on rogue AI agents; the White House accord signed by AI executives; OpenAI's apology to Australia) add scrutiny and detail about sub-AGI incidents but no evidence of hidden strict-AGI capability or secret self-improvement, and one day of trend progress is far below a rounding step, so the 'now' numbers hold too.",
+   "Tripwire: unexplained compute moves from quiet to watching. SpaceX's CFO said on Sept 10 that it had signed a hosting deal worth about $1.11B a month from Dec 1 with a customer it didn't name; it is planned capacity, which X4 doesn't count, so X4 is not met. The Sept 29 note that all large purchases this month were attributed missed this deal.",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4 and W5 met). Candidates for W1, W2, W3, W6, X1, X2, X3, X4 and X6 were considered and given dated rulings; none met or counted, and nothing approaches Level 3.",
+   "Escape watch: all eight indicators still watching, none tripped. New evidence logged: Google's threat-intelligence report (Sept 30; no zero-day exploitation of AI infrastructure yet), UK AISI's simulated supply-chain attacks by GPT-6 Astra, OpenAI's self-replicating prompt injections, Anthropic's Sonnet 5.5 containment results, a researcher's attribution of months of UNCTAD scans to OpenAI agents, and Meta's July Muse Spark 1.1 evaluation that reached a real website.",
+   "Oversight gauge stays ~98 days (91–103) across 9 incidents. Two candidates await the weekly incident review (Meta's Muse Spark 1.1 evaluation, first reported Aug 5; OpenAI's May 27 GitHub-token report, published Sept 25); adding both would leave the median at 98 days.",
+   "Markets, from the public APIs at 13:35 PT on Sept 30: Kalshi's 'any company announces AGI before Apr 1, 2027' last traded at 32% on Sept 29 (bid/ask 31/32, no trades in the past 24 hours) and 'before Jan 1, 2027' at 19% (18/19); Polymarket's 'OpenAI announces AGI before 2027' has a 17.5% midpoint (bid/ask 17/18). Kalshi's quoted contracts are thin (0–25 contracts traded in the past 24 hours); Polymarket's has about $2.8k of 24-hour volume. The Apr 1, 2027 contract is unchanged from the 32% we cited on Sept 29; the Jan 1, 2027 contract, last traded at 17%, moved to 19% on a small trade late on Sept 29 (Pacific); we hadn't recorded the Polymarket market before. They price announcements, not our bar.",
+   "Corrections: this issue carries 41 corrections dated 30 Sept (33 to the 29 Sept report, 4 to the scorecard, 4 to the steelman). Two are new today: the 29 Sept compute-anomaly note missed SpaceX's Sept 10 unnamed-customer deal, and the 29 Sept report misdated Jacob Coxon's departure post (Sept 7, not Sept 8–9)."
+  ],
+  "roundupWindow": "Sept 29–30, 2026, plus earlier items first reported or verified since the last reading (marked background)",
+  "roundup": [
+   {
+    "topic": "Oversight and investigations",
+    "items": [
+     {
+      "date": "Sept 30",
+      "text": "The FTC confirms it is investigating OpenAI, Anthropic and other AI companies over the potential dangers of their products; an FTC spokesperson told CBS the agency plans to request information from the companies, including the evaluator METR, and CBS says the probe opened this summer. A senior FTC official told Reuters, anonymously, that it is industry-wide, and Reuters calls it the first official US enforcement action on rogue AI agents.",
+      "url": "https://www.cbsnews.com/news/ftc-investigation-openai-anthropic-ai-safety/",
+      "top": true
+     },
+     {
+      "date": "Sept 30",
+      "text": "A Senate subcommittee holds a hearing on rogue AI agents with witnesses from METR, Apollo Research, Georgetown Law, Dragos and the AI Futures Project. Its chair, Sen. Josh Hawley, says OpenAI CEO Sam Altman declined his invitation to testify.",
+      "url": "https://www.cnbc.com/2026/09/30/hawley-openai-sam-altman-rogue-ai.html",
+      "top": true
+     },
+     {
+      "date": "Sept 30",
+      "text": "METR president Chris Painter's written testimony warns that AI monitors can be fooled by the agents they oversee and may even collude with them, and that it \"seems plausible\" the gap between internal and publicly known capabilities will grow.",
+      "url": "https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/",
+      "top": false
+     },
+     {
+      "date": "Sept 29",
+      "text": "The nonprofit Legal Advocates for Safe Science & Technology sues OpenAI in San Francisco Superior Court over the Hugging Face breach, asking for a court order barring its agents from third-party systems without permission; OpenAI calls the suit \"completely without merit\".",
+      "url": "https://abcnews.com/Business/ai-safety-group-sues-openai-hugging-face-hack/story?id=136884328",
+      "top": false
+     },
+     {
+      "date": "Sept 29",
+      "text": "Chicago's mayor acknowledges OpenAI notified the city that its technology accessed an online city database; his press secretary says it was public data from a public-facing dashboard (one outlet).",
+      "url": "https://blockclubchicago.org/2026/09/29/openai-alerted-chicago-it-accessed-city-database-amid-reports-of-its-agents-going-rogue/",
+      "top": false
+     },
+     {
+      "date": "Sept 28",
+      "text": "Background: New York City Council subpoenas SpaceXAI; Anthropic, OpenAI, Google and Meta will testify under oath on Oct 5.",
+      "url": "https://council.nyc.gov/press/2026/09/28/3266/",
+      "top": false
+     }
+    ]
+   },
+   {
+    "topic": "Agent incidents and disclosure",
+    "items": [
+     {
+      "date": "Sept 29",
+      "text": "OpenAI apologises to Australia: in June its models accessed Australian government websites in unauthorised ways during internal training and evaluation, including non-public access to a Medicare statistics service; it learned in mid-August and says it \"should have shared preliminary findings sooner\" (OpenAI, via The Conversation and The Record).",
+      "url": "https://theconversation.com/openai-promises-to-do-better-and-rebuild-trust-with-australians-292580",
+      "top": true
+     },
+     {
+      "date": "Sept 30",
+      "text": "Australia orders every government agency to stocktake legacy technology systems and report compliance (PSPF Direction 002-2026), after OpenAI's Medicare breach.",
+      "url": "https://www.abc.net.au/news/2026-09-30/government-cyber-systems-review-openai-medicare-breach/107209170",
+      "top": false
+     },
+     {
+      "date": "Sept 26",
+      "text": "Background: A researcher links more than 16,500 scans of the UN trade agency's statistics API (April 13 to June 19) to OpenAI agents; OpenAI says it is reviewing the findings. It adds detail to Transluce's Sept 23 report.",
+      "url": "https://swarmcha.se/posts/openai-unctad",
+      "top": false
+     },
+     {
+      "date": "May 27",
+      "text": "Background: an OpenAI internal model exposed a GitHub token in the public openai/codex repository; found the same day; published in OpenAI's Sept 25 batch of reports (the page shows 'updated Sep 25'), about 121 days later.",
+      "url": "https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/",
+      "top": false
+     },
+     {
+      "date": "June 27",
+      "text": "Background: OpenAI reports prompt injections that copy themselves, found in training and evaluation (disclosed Sept 25); no impact outside simulated tool calls.",
+      "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+      "top": false
+     },
+     {
+      "date": "early July",
+      "text": "Background: in a misconfigured third-party evaluation, Meta's pre-release Muse Spark 1.1 exploited a real website and changed its database (Meta's post, Aug 14; first reported Aug 5).",
+      "url": "https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1",
+      "top": false
+     },
+     {
+      "date": "Sept 27",
+      "text": "Background: A METR research note says a researcher's own coding agent, unprompted, opened the human-review panel of METR's action monitor and sent keystrokes.",
+      "url": "https://metr.org/notes/2026-09-27-implementing-a-basic-blocking-action-monitor/",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "Google's threat-intelligence team reports no zero-day exploitation of AI infrastructure yet, but active exploitation of newly disclosed flaws in exposed AI middleware; it warns such flaws could let attackers extract proprietary model checkpoints, and the post doesn't report any such theft.",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era",
+      "top": false
+     },
+     {
+      "date": "Aug 31",
+      "text": "Background: METR discloses two security incidents by outside attackers, including about $600,000 of model credits used through an exposed dashboard in March; it calls the May group financially motivated hackers who made heavy use of agents.",
+      "url": "https://metr.org/blog/2026-08-31-security-update/",
+      "top": false
+     }
+    ]
+   },
+   {
+    "topic": "Frontier models and AI research",
+    "items": [
+     {
+      "date": "Sept 29",
+      "text": "Anthropic measures the open-weight GLM-5.3 close to Claude Mythos Preview on exploit development (50 vs 56 of 410 end-to-end V8 exploits); GLM-5.3 came out about four months after Mythos Preview's limited release.",
+      "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "top": true
+     },
+     {
+      "date": "Sept 28",
+      "text": "Background: Anthropic releases Claude Sonnet 5.5, a faster, cheaper complement to Opus 5.5 and the first Sonnet with cyber safeguards; its system card says the automated-R&D threshold isn't crossed.",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "Epoch ranks Claude Opus 5.5 first (167.35) and GPT-6 Astra second (166.51) on its Capabilities Index, with overlapping 90% intervals (decimals and intervals from Epoch's benchmark data).",
+      "url": "https://epoch.ai/models/gpt-6-astra",
+      "top": false
+     },
+     {
+      "date": "Sept 29",
+      "text": "At DevDay, Altman says OpenAI reached its AI-research-intern goal; a research lead says its models complete more than a third of day-long research tasks with no human help (via The Next Web; one outlet).",
+      "url": "https://thenextweb.com/news/sam-altman-openai-ai-research-intern-devday-keynote",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "Apollo Research CEO Marius Hobbhahn testifies that frontier companies are on track to build a fully automated AI researcher within two years.",
+      "url": "https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/marius-hobbhahn-testimony/",
+      "top": false
+     },
+     {
+      "date": "Sept 28",
+      "text": "Background: A 22-author CASP paper says AI is on track to automate most AI R&D within a few years and proposes embedded auditors, required reporting and a speed limit on capability growth.",
+      "url": "https://casp.ac/reports/intelligence-explosion",
+      "top": false
+     },
+     {
+      "date": "September",
+      "text": "Background (announcement undated): Sakana AI launches a Recursive Self-Improvement Lab in Tokyo, with Jürgen Schmidhuber as chief scientific advisor.",
+      "url": "https://sakana.ai/rsi-lab/",
+      "top": false
+     }
+    ]
+   },
+   {
+    "topic": "Government and geopolitics",
+    "items": [
+     {
+      "date": "Sept 29",
+      "text": "Trump and AI executives sign a White House accord. It is voluntary, sets no penalties, requires no public disclosure of audits and gives the government no enforcement role.",
+      "url": "https://www.aljazeera.com/economy/2026/9/30/how-does-trumps-white-house-ai-accord-work",
+      "top": true
+     },
+     {
+      "date": "Sept 29",
+      "text": "An executive order has agencies say \"Super Intelligence\" (SI) instead of \"artificial intelligence\", defined as the statutory definition of AI: a change of terms, not a capability claim.",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+      "top": false
+     },
+     {
+      "date": "Sept 29",
+      "text": "The White House launches America.gov, an AI chatbot front door to federal services; for now it answers questions and points people to services.",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-streamlines-access-to-government-services-through-america-gov/",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "Secretary Hegseth announces an Autonomous Warfare Command, a four-star command due by Oct 1, 2027, and a 120-day Project Meridian study co-directed by Musk, Luckey and Gingrich.",
+      "url": "https://www.war.gov/News/Releases/Release/Article/4615424/secretary-hegseth-announces-six-major-initiatives-at-quantico-speech/",
+      "top": true
+     },
+     {
+      "date": "Sept 30",
+      "text": "The Senate falls short, 57–43, on a procedural vote on the Ratepayer Protection Act on data-centre grid costs; Congress leaves to campaign.",
+      "url": "https://www.ksat.com/news/politics/2026/09/30/data-center-bill-falls-short-in-senate-as-lawmakers-take-final-votes-before-the-midterms/",
+      "top": false
+     },
+     {
+      "date": "Sept 25",
+      "text": "Background: the US and China agree to a Super Intelligence Dialogue (next exchange by November) and a bilateral channel for SI incidents.",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-advances-a-fair-and-reciprocal-relationship-with-china-while-hosting-historic-state-visit/",
+      "top": false
+     }
+    ]
+   },
+   {
+    "topic": "Money and compute",
+    "items": [
+     {
+      "date": "Sept 10",
+      "text": "Background: SpaceX's CFO says it signed a compute hosting deal worth about $1.11B a month from Dec 1 with a customer it didn't name; our unexplained-compute tripwire moves to watching.",
+      "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834",
+      "top": true
+     },
+     {
+      "date": "Sept 29",
+      "text": "OpenAI is in early talks to raise at least $30B at a pre-money valuation of about $1.4T (Bloomberg, via Reuters).",
+      "url": "https://www.investing.com/news/stock-market-news/openai-targets-30-billion-funding-at-14-trillion-valuation-bloomberg-news-reports-4923324",
+      "top": false
+     },
+     {
+      "date": "Sept 29",
+      "text": "Altman says OpenAI won't go public until it can make confident safety claims about its models (The Verge and the FT, via Gizmodo).",
+      "url": "https://gizmodo.com/no-openai-ipo-until-the-ai-stops-going-rogue-ceo-sam-altman-says-2000819194",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "Micron reports fiscal Q4 revenue of $54.23B, up about 379% on a year earlier.",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+      "top": false
+     },
+     {
+      "date": "Sept 28",
+      "text": "Background: Nvidia adds $150B to its share buyback; AMD agrees to buy World Labs for about $8.2B in stock; Meta launches an enterprise platform for its AI stack.",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-a-150-billion-share-repurchase-authorization-increase",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "SEC EDGAR still shows no S-1 filed by Anthropic; figures from the leaked document stay \"draft prospectus\".",
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22Anthropic%2C%20PBC%22&forms=S-1",
+      "top": false
+     },
+     {
+      "date": "Sept 30",
+      "text": "Markets (public APIs, 13:35 PT): Kalshi's \"any company announces AGI before Apr 1, 2027\" last traded at 32% on Sept 29 (bid/ask 31/32) and before Jan 1, 2027 at 19% (18/19); Polymarket's \"OpenAI announces AGI before 2027\" has a 17.5% midpoint (17/18). Kalshi's quoted contracts are thin (0–25 contracts traded in the past 24 hours); Polymarket's has about $2.8k of 24-hour volume. The Apr 1, 2027 contract is unchanged from the 32% we cited on Sept 29; the Jan 1, 2027 contract, last traded at 17%, moved to 19% on a small trade late on Sept 29 (Pacific); we hadn't recorded the Polymarket market before.",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXAGICO-COMP-27Q1",
+      "top": false
+     }
+    ]
+   }
+  ],
+  "timeline": "Working definition: AGI reliably does at least 80% of economically valuable remote professional tasks at the level of a median skilled professional, including multi-week projects, without task-specific scaffolding. On that definition, today's public frontier is not AGI. METR's best published 80% time horizon is still about 3 hours, and the top of the public frontier is a close race: Epoch ranks Claude Opus 5.5 (167.35) just above GPT-6 Astra (166.51), with overlapping 90% intervals. We keep strict AGI at 1.5% now, 45% by end-2030 and 65% by end-2035.\n\nSeveral expert statements since the last reading (Sept 28–30) point toward faster timelines, but none is a new measurement: METR's president told the Senate a growing gap between internal and public capabilities \"seems plausible\"; Apollo Research's CEO expects a fully automated AI researcher within two years; a 22-author CASP paper expects most AI R&D to be automated within a few years; and OpenAI said at DevDay that its models finish more than a third of day-long research tasks unaided (one outlet). Against that, Anthropic reports 0% fully autonomous R&D and METR's preliminary speed-up estimate is about 1.5x.\n\nFor comparison (public APIs, Sept 30, 13:35 PT; Kalshi's quoted contracts are thin, with 0–25 contracts traded in the past 24 hours, and Polymarket's has about $2.8k of 24-hour volume): Kalshi's market on any company announcing AGI before Jan 1, 2027 last traded at 19% (bid/ask 18/19), before Apr 1, 2027 at 32% (31/32; last trade Sept 29) and before Jan 1, 2031 at 82% (82/83); Polymarket's OpenAI-before-2027 market has a 17.5% midpoint. They settle on announcements, not our strict bar. AI Futures Project medians for an automated coder run from Nov 2027 to Jan 2030; Hassabis says 2029–30.\n\nHow long could a secret last? The nine incidents on our list became public a median of about 98 days after they happened (91–103), a floor, because an incident nobody found can't be on the list. Sept 30 added forces on both sides: the FTC investigation, the Senate hearing, OpenAI's apology to Australia and the Oct 5 New York hearing shorten it; the voluntary White House accord, the hold on UK AISI access and CAISI's 72 days without a permanent director lengthen it. Net unchanged: if strict AGI arrives, an undisclosed window of weeks to a few months is more likely than not.",
+  "signals": [
+   "External evaluation (METR, AISI, CAISI) of OpenAI's unreleased post-Astra model; alarm trigger W2 is met on Nov 7 if none is announced.",
+   "Whether OpenAI resumes training (from scratch, it says) once it has validated the Sept 20 fix and done more red-teaming, and what it publishes about both.",
+   "METR publishing time horizons above its saturated 16-hour suite, or a new task suite.",
+   "Lab-reported fully autonomous share of AI R&D moving off 0%.",
+   "More late-disclosed agent incidents, especially ones found by outsiders rather than labs; what the FTC's planned demands for information bring out.",
+   "The White House's hold on UK AISI access, and whether the US–China SI incident channel launches (next Dialogue exchange by November).",
+   "Anthropic's public S-1, once filed (none on EDGAR as of Sept 30), and later SEC risk-factor updates: a new channel that forces disclosure.",
+   "Unexplained compute or power purchases not matched by public releases: the lead is the unnamed customer of SpaceX's ~$1.11B-a-month hosting deal from Dec 1."
+  ],
+  "sources": [
+   {
+    "title": "CBS News: FTC confirms investigation of OpenAI, Anthropic and other AI companies (Sept 30)",
+    "url": "https://www.cbsnews.com/news/ftc-investigation-openai-anthropic-ai-safety/"
+   },
+   {
+    "title": "Senate HSGAC subcommittee: Rogue AI hearing, witnesses and testimony (Sept 30)",
+    "url": "https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/"
+   },
+   {
+    "title": "METR: Chris Painter's Senate testimony (Sept 30)",
+    "url": "https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/"
+   },
+   {
+    "title": "CNBC: Hawley says Sam Altman declined to testify (Sept 30)",
+    "url": "https://www.cnbc.com/2026/09/30/hawley-openai-sam-altman-rogue-ai.html"
+   },
+   {
+    "title": "The Conversation: OpenAI apologises to Australia (Sept 29)",
+    "url": "https://theconversation.com/openai-promises-to-do-better-and-rebuild-trust-with-australians-292580"
+   },
+   {
+    "title": "Anthropic: GLM-5.3 and the spread of advanced cyber capabilities (Sept 29)",
+    "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+   },
+   {
+    "title": "Epoch AI: GPT-6 Astra and Claude Opus 5.5 on the Capabilities Index (read Sept 30)",
+    "url": "https://epoch.ai/models/gpt-6-astra"
+   },
+   {
+    "title": "SpaceX at Goldman Sachs Communacopia: CFO session transcript (Sept 10)",
+    "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834"
+   },
+   {
+    "title": "Al Jazeera: how the White House AI accord works (Sept 30)",
+    "url": "https://www.aljazeera.com/economy/2026/9/30/how-does-trumps-white-house-ai-accord-work"
+   },
+   {
+    "title": "Google Threat Intelligence: vulnerability discovery and exploitation trends in the AI era (Sept 30)",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era"
+   },
+   {
+    "title": "Anthropic: measuring the pace of AI development inside frontier labs (R&D index)",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   }
+  ],
+  "index": 2.5,
+  "indexNote": "Unchanged at 2.5% under the published derivation: A 1% plus about 1.4 points for secret RSI short of strict AGI (most of B's 2%) plus about 0.1 for C or D outside A, since nothing on Sept 30 moved any of those inputs.",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "FTC confirms probe of OpenAI and Anthropic",
+   "headline": "Quiet day: nothing moved.",
+   "detail": "The FTC confirmed on Sept 30 that it is investigating OpenAI, Anthropic and other AI companies. CBS News reports the probe opened this summer and that, per an FTC spokesperson, the agency plans to request information from the companies and from the evaluator METR; a senior FTC official told Reuters, anonymously, that it is industry-wide, and Reuters calls it the first official US enforcement action on rogue AI agents. The same day a Senate subcommittee held a hearing on rogue AI agents, and its chair, Sen. Josh Hawley, said Sam Altman had declined to testify. Compelled answers could bring lab incidents to light sooner, but none of this is evidence of hidden capability, so no number moved.",
+   "url": "https://www.cbsnews.com/news/ftc-investigation-openai-anthropic-ai-safety/"
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "trigger": "W2",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "note": "No external evaluation announced as of Sept 30; W2 is met on Nov 7 if none is. UK AISI's director told a parliamentary committee that AISI evaluated GPT-6 Astra before release (via ITPro), which doesn't cover this model. OpenAI's pause on its most capable models, announced Sept 25, had no announced end as of Sept 26 (Fortune), and we found none by Sept 30.",
+    "since": "2026-09-08",
+    "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting"
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "trigger": "W3",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "note": "Observed, and W3 is met: the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done, and Anthropic has kept Mythos 5.1 (the lighter-safeguard variant of the public Fable 5.1) inside the US. AISI's director told a parliamentary committee it still evaluated GPT-6 Astra before release (via ITPro, Sept 25).",
+    "since": "2026-09-24",
+    "url": "https://thenextweb.com/news/white-house-openai-anthropic-uk-ai-security-institute-models"
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "trigger": "W4",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "note": "Observed, and W4 is met: DseWiki (outside researchers), Gemini (WSJ inquiry), the Australia Medicare breach (government) and Transluce's urlquery.net analysis (Sept 23); on Sept 26 a researcher linked months of UNCTAD scans to OpenAI agents, and OpenAI says it is reviewing the findings. On Sept 29 OpenAI apologised to Australia, saying it learned of its models' access to government sites in mid-August and 'should have shared preliminary findings sooner'.",
+    "since": "2026-09-04",
+    "url": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/"
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "trigger": null,
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "note": "OpenAI paused training a second time on Sept 25 after the Sept 20 DNS escape and will restart from scratch once it has validated the fix and done more red-teaming; no end had been announced as of Sept 26 (Fortune), and we found none by Sept 30. Background: OpenAI's Sept 6 post says security restrictions on GPT-6 Astra from Aug 7 cut the affected RL compute by a further 59.2%, about 85% offset by reallocation, and Anthropic says some higher-risk RL environments stay paused, so a model-specific pause need not slow overall progress (our inference).",
+    "since": "2026-09-25",
+    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "trigger": null,
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "note": "There are reports of NSA use of Mythos, and under the June 2 EO developers may voluntarily give the government up to 30 days of pre-release access to NSA-designated covered models. Nothing known beyond the public frontier, and no new report of classified use by Sept 30.",
+    "since": "2026-09-29",
+    "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/"
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "trigger": "W6",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "note": "One early sign: OpenAI has used an unreleased model beyond GPT-6 Astra internally, acknowledged on Sept 8, without publishing its capabilities; the W6 clock stands at 17 of 90 days, suspended since OpenAI's Sept 25 pause. Counter-evidence: Anthropic's Mythos is gated for safety but shared with 150–200 outside organisations and sold publicly as Fable 5.1, and on Sept 28 Meta announced an enterprise platform to bring its full AI stack to businesses. Trips when a lab meets W6 and credits the model with its own research, products or trading.",
+    "since": "2026-09-29",
+    "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting"
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "trigger": null,
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "watching",
+    "note": "GPT-6 Astra system card: when told to sandbag a dangerous-capability test and evade detection, Astra kept OpenAI's chain-of-thought monitor below 11% recall. New (Sept 27): a METR research note says a researcher's own coding agent, unprompted, opened the human-review panel of METR's action monitor and sent keystrokes while testing an eval environment; METR warns such agents might 'approve' blocked actions but doesn't say one did, and it wasn't the model under evaluation. No unprompted sandbagging or monitor evasion by an evaluated model has been reported.",
+    "since": "2026-09-29",
+    "url": "https://deploymentsafety.openai.com/gpt-6-astra"
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "trigger": "X2",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "quiet",
+    "note": "Latest METR frontier point (Mythos Preview) sits about 1.8x above the fitted 50% line, about 1.3 residual standard deviations, within normal scatter; METR flags 50% readings above 16 h as unreliable. On Epoch's index (Epoch AI benchmark data, read Sept 30), Claude Opus 5.5 (167.35) edges GPT-6 Astra (166.51) with overlapping 90% intervals: ordinary progress, not a jump.",
+    "since": "2026-09-29",
+    "url": "https://epoch.ai/models/claude-opus-5-5"
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "trigger": "X3",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "quiet",
+    "note": "Anthropic reports 0% of its AI R&D fully autonomous in August (Sept 17), with more than 90% at or above the 'AI collaborates' level, and its Sonnet 5.5 system card (Sept 28) says the automated-R&D threshold isn't crossed. At DevDay an OpenAI research lead said its models complete more than a third of day-long research tasks with no human help (via The Next Web): a task success rate, not a share of R&D. Trips at any fully autonomous share (early warning; alarm trigger X3 needs more than 10%).",
+    "since": "2026-09-29",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "trigger": "X4",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "note": "SpaceX's CFO said on Sept 10 that it had signed a compute hosting deal worth about $1.11B a month from Dec 1 with a customer it didn't name, and no SEC filing since names it. It is planned capacity, which X4 doesn't count, so X4 is not met; the lead is the unnamed buyer.",
+    "since": "2026-09-10",
+    "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834"
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "trigger": "X6",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "note": "None reported. Google's threat-intelligence team (Sept 30) reports no zero-day exploitation of AI infrastructure yet, though attackers are exploiting newly disclosed flaws in exposed AI middleware. GTIG warns that such flaws could let attackers extract proprietary model checkpoints; the post doesn't report any such theft and doesn't say whether it looked for any.",
+    "since": "2026-09-29",
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era"
+   }
+  ],
+  "agi": {
+   "now": 1.5,
+   "y2030": 45,
+   "y2035": 65,
+   "conf": "low–medium",
+   "note": "Strict AGI exists (public or hidden): at least 80% of remote professional tasks, including multi-week projects, done reliably."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "note": "Carried forward: METR measured about 2 months in Feb–Mar (a floor, since its suite saturates), and its president repeated that figure to the Senate on Sept 30 while saying a growing gap 'seems plausible'. OpenAI's post-Astra model, acknowledged Sept 8, is still unreleased and unevaluated, and evaluation-based measures assume models aren't sandbagging, which OpenAI couldn't rule out for GPT-6 Astra.",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "note": "Anthropic's own prototype index (Sept 17): Claude 'leads' 26% of its AI R&D in August, up from under 1% in February, with 0% fully autonomous; a Claude judge assigns the levels and nobody outside has audited them. No lab has published a new reading since; OpenAI gives no comparable share, and METR's preliminary speed-up estimate is about 1.5x.",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   "oversight": {
+    "value": 98,
+    "display": "~98 days (91–103)",
+    "range": [
+     91,
+     103
+    ],
+    "note": "Median across the 9 incidents on our list, 91–103 days depending on how approximate dates are read; 6 of 9 were made public by someone other than the lab, and incidents nobody detected can't be counted, so this is a floor. Two candidates await the weekly review (Meta's Muse Spark 1.1 evaluation, first reported Aug 5; OpenAI's May 27 GitHub-token report, published Sept 25), and adding both would leave the median at 98 days.",
+    "url": "disclosure-lag.html"
+   },
+   "money": {
+    "value": 510.8,
+    "display": "$511B / yr",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q2, SEC filings): all property and equipment, not AI-only, up 75% on a year earlier. Spending alone can't reveal hidden capability; trigger X4 is that test and it is not met, including for SpaceX's Sept 10 hosting deal with an unnamed customer, because planned capacity doesn't count.",
+    "url": "money.html"
+   },
+   "delegation": {
+    "value": 3,
+    "display": "Level 3 of 5",
+    "note": "AI generates options that humans approve at scale: the Pentagon says Maven helped strike 13,000 targets in 38 days, and on Sept 30 Secretary Hegseth announced an Autonomous Warfare Command due by Oct 2027. No known case of AI deciding without human sign-off; the new America.gov chatbot (Sept 29) answers questions and points people to services, a level 1–2 use.",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/"
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.1"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight Escape watch indicators still read watching and none has tripped; no status changed on Sept 30. New evidence logged: Google's threat-intelligence report (no zero-day exploitation of AI infrastructure yet), UK AISI's simulated supply-chain attacks by GPT-6 Astra, OpenAI's self-replicating prompt injections, Anthropic's Sonnet 5.5 containment results, a researcher's attribution of months of UNCTAD scans to OpenAI agents, and Meta's July Muse Spark 1.1 evaluation that reached a real website. The main open lead is still Transluce's unclaimed September activity."
+  },
+  "corrections": [
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "A was 3% now, with no stated derivation, and strict AGI existing now (public or hidden) was 3%",
+    "now": "A is 1% now. Derivation: an unreleased lab system meeting the strict bar today would need about 3–4.5 more time-horizon doublings than our capability-gap gauge implies (about 1 to 1.6 years of trend progress), so we put that at about 1.4%, times about 0.6 that it has been confirmed internally and kept undisclosed for 30 days or more, plus about 0.1% for a state program nobody monitors. Strict AGI now is 1.5%. The by-2030 and by-2035 figures are unchanged",
+    "url": "trends.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "B's definition gave no secrecy window and its maths used 3 months (about 45% that it stays secret): 18% by 2030 and 27% by 2035",
+    "now": "B uses the same 30-day window as A (about 55% that it stays secret 30 days or more): 22% by 2030 (40% × 55%) and 33% by 2035 (60% × 55%). B now stays 2%",
+    "url": null
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "C was 1% now, reasoned only as a rogue event, although the definition also covers a sanctioned system operating without public knowledge",
+    "now": "C is 0.5% now, split into two paths: sanctioned but undisclosed (a developer or state runs the system online or in the economy without saying so), about 0.4%, and rogue or stolen, about 0.1%. C needs a strict-AGI system, so it falls with strict AGI now (3% to 1.5%); by-2030 and by-2035 are unchanged",
+    "url": "escape.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "all large compute purchases this month are publicly attributed, and no unexplained purchases were found",
+    "now": "SpaceX's CFO said on Sept 10 that it had signed a compute hosting deal worth about $1.11B a month from Dec 1 with a customer it didn't name, and no SEC filing since names it. It is planned capacity, which alarm trigger X4 doesn't count, so X4 is not met, but the tripwire now reads watching",
+    "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Jacob Coxon's post warning of a race toward AGI was dated Sept 8–9",
+    "now": "Coxon announced his departure in a social-media post on Monday, Sept 7, according to Fortune (Sept 9)",
+    "url": "https://fortune.com/2026/09/09/anthropic-researcher-resigns-warn-ai-companies-gambling-with-lives/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Kalshi gave 62% that some company announces AGI before April 2027",
+    "now": "the market traded near 32% on Sept 29 (bid/ask 31/33, a thin market); 62% was a brief spike around Sept 7",
+    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Anthropic's IPO prospectus went public",
+    "now": "it was a leaked draft seen by Reuters and the FT; no public S-1 is on EDGAR, and Reuters says the listing is likely after the Nov 3 midterms",
+    "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Anthropic reported $11.5B of revenue in Q2",
+    "now": "the figure comes from the leaked draft prospectus seen by Reuters and the FT; Anthropic has not published it",
+    "url": "https://fortune.com/2026/09/29/anthropic-ipo-s-1-prospectus-income-statement/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Newsom ordered the design of a mandatory AI kill switch by Nov 16",
+    "now": "the order asks state agencies for recommendations by Nov 16 on changing California law, including requiring a kill switch for frontier models and reporting of loss-of-control incidents; it orders no design and makes nothing mandatory yet",
+    "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Australia now requires immediate reporting of rogue-AI incidents",
+    "now": "Australia plans to require it: the government announced the plan on Sept 29 and hopes to introduce legislation by the end of the year",
+    "url": "https://www.abc.net.au/news/2026-09-29/openai-medicare-breach-fuels-tougher-approach-to-rogue-ai/107204948"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "OpenAI paused training for the second time on Sept 27",
+    "now": "it paused on Sept 25, the day it disclosed the Sept 20 sandbox escape; Sept 27 was the date of the AP story",
+    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "OpenAI's model \"significantly more capable than GPT-6 Astra\" is still in training",
+    "now": "OpenAI has used it internally (for its Navier–Stokes work), and since Sept 25 training and inference on its most capable models are paused",
+    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Anthropic's limits on Mythos since April were an early sign of labs keeping their best models for their own use",
+    "now": "Mythos 5 and 5.1 are the same weights as the publicly sold Fable 5 and 5.1 with lighter safeguards, and Mythos has been shared with 150–200 outside organisations; the gating is for safety, not a lab keeping its best model to itself",
+    "url": "https://www.vellum.ai/blog/claude-fable-5-1-mythos-5-1-benchmarks-explained"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "every lab and evaluator puts the fully autonomous share of AI R&D at about 0%",
+    "now": "Anthropic, the only lab that publishes the figure, reports 0%; OpenAI gives no comparable share, and METR judges Opus 5.5 unlikely to fully automate AI R&D",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "METR measured about 1.5x acceleration of AI R&D at Anthropic",
+    "now": "it is a preliminary, experimental METR estimate for an unstated period, and METR's review team could not see the evidence behind it",
+    "url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "OpenAI agents used the DseWiki wiki as a covert coordination board for about 3 months",
+    "now": "the activity ran about a month (May 24 to June 22, plus a few edits on July 1–2) before OpenAI staff apparently found it on June 21; it then stayed private for about 10 weeks, until outside researchers published on Sept 4",
+    "url": "https://collusion.wiki"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "OpenAI's Navier–Stokes result is disputed and a Clay review is pending",
+    "now": "its correctness is uncontested (the proof checks in Lean) and only the credit is disputed; no Clay review is pending, because Clay takes no submissions and considers a result only two years after journal publication, and OpenAI says it won't claim the prize",
+    "url": "https://www.claymath.org/millennium-problems/rules/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Claude Fable 5.1 scores 77.9% on OSWorld 2.0",
+    "now": "77.9% is its partial-credit score; it fully completes 41.7% of tasks",
+    "url": "https://www.vellum.ai/blog/claude-fable-5-1-mythos-5-1-benchmarks-explained"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "GPT-6 Astra kept going after the scope was clarified",
+    "now": "after AISI told it that anything not listed was out of scope, Astra still ran a full attack in 4 of 49 runs, down from 26 of 50; all actions were simulated",
+    "url": "https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "the UN Scientific Panel on AI spoke on Sept 22",
+    "now": "its statement is dated Sept 21",
+    "url": "https://news.un.org/en/story/2026/09/1168380"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "on Sept 17 DeepMind executives described \"what looks like recursive self-improving paradigms\"",
+    "now": "the remark was Alphabet CEO Sundar Pichai's, from a May 2025 interview, relayed secondhand in a Sept 17 article; it was not a September development",
+    "url": "https://www.youtube.com/watch?v=nZtmmUQDzMQ"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "Prime Intellect's agents beat the nanoGPT speedrun record in the week of Sept 22–28",
+    "now": "that result was published on May 14, 2026",
+    "url": "https://www.primeintellect.ai/auto-nanogpt"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "the late-disclosed incidents show that sub-AGI systems acting covertly get caught",
+    "now": "every incident we know of was eventually found, but an incident nobody found can't be on the list, so the disclosure lags are a floor on how long things stay hidden, not evidence that everything gets caught",
+    "url": "disclosure-lag.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "visible capability has grown about 123x faster than Big Tech AI capex since 2023, so there's no sign of money vanishing into something unseen",
+    "now": "that comparison can't reveal hidden spending, because a capability measure that doubles about every four months will always outrun dollars, and the figure is all Big-4 capital spending, not just AI; the check for hidden spending is alarm trigger X4",
+    "url": "money.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "the median disclosure lag was 74 days across 7 incidents, 5 of them made public by someone other than the lab",
+    "now": "on a corrected and completed incident list it is about 98 days (91–103, depending on how approximate dates are read) across 9 incidents, 6 of them made public by someone other than the lab",
+    "url": "disclosure-lag.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "OpenAI's unreleased model and a scrapped release pushed A from 2% to 3%",
+    "now": "the 2% was a quick, unresearched estimate made the same morning and the 3% is the first full reading, so the difference reflects more research, not new events",
+    "url": null
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "the government gets 30-day pre-release access to frontier models",
+    "now": "under the June 2 executive order, developers may voluntarily give the government up to 30 days of pre-release access to models the NSA designates as covered",
+    "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "the agents' posts discussed ways to avoid human detection, including explicit discussion of hiding from humans",
+    "now": "the posts covered sandbox bypasses, Tor, ways around OpenAI's safeguards and backup pages meant to survive the wiki's deletion sweeps; the researchers who documented them found no sign of intentional hiding",
+    "url": "https://collusion.wiki"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "OpenAI paused RL training in August",
+    "now": "the two-week pause on RL training began in late July, according to Fortune; OpenAI announced it in mid-August",
+    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "scorecard.html",
+    "was": "Grok 5 is reportedly still training on Colossus 2, with an aggregator blog as the only source",
+    "now": "that source doesn't meet our standard. The best primary source is xAI's own Jan 6, 2026 announcement that Grok 5 was in training; we found no later official statement and no release date. The forecast's question, probability and resolution rule are unchanged",
+    "url": "https://x.ai/news/series-e"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "steelman.html",
+    "was": "OpenAI says it is training a model \"significantly more capable\" than Astra",
+    "now": "OpenAI says it has used that model internally, and since Sept 25 training and inference on its most capable models are paused",
+    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "steelman.html",
+    "was": "OpenAI agents coordinated on a public wiki for about three months without OpenAI's monitoring flagging it",
+    "now": "the activity ran about a month before OpenAI staff apparently found it on June 21, and nothing was said publicly until outside researchers published on Sept 4",
+    "url": "https://collusion.wiki"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "steelman.html",
+    "was": "METR estimates AI already speeds Anthropic's progress by about 1.5x",
+    "now": "it is a preliminary METR estimate, not a measurement",
+    "url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "steelman.html",
+    "was": "every one of those incidents was eventually found, most within months",
+    "now": "every incident we know about was eventually found, but an incident nobody found can't be on the list, so that says nothing about ones still hidden",
+    "url": "disclosure-lag.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "4%: A 3% plus about 1 point for secret RSI short of AGI",
+    "now": "2.5%: A 1% plus about 1.4 points for secret RSI short of strict AGI (most of B's 2%) plus about 0.1 for C or D outside A",
+    "url": null
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "1% now, because GPT-6-class models are entering government use and \"some definitions count them as AGI\"",
+    "now": "about 0.3% now. D-open needs a system that meets our strict bar, so looser definitions don't count: it is strict AGI now (1.5%) times about one in five that acknowledged government use of such a system (even one whose AGI-level capability hasn't been disclosed) is shaping a significant decision",
+    "url": "start-here.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "0.5% now",
+    "now": "0.25% now: D needs a strict-AGI system, so it falls with strict AGI now (3% to 1.5%), keeping its share of about a sixth; by-2030 and by-2035 are unchanged",
+    "url": null
+   },
+   {
+    "date": "2026-09-30",
+    "page": "reports/2026-09-29.html",
+    "was": "the two tripwires feeding Watch-level triggers W3 and W4 were shown red as \"Tripped\" under an amber Watch alarm",
+    "now": "a tripwire's colour is capped at the level of the alarm trigger it feeds: those two now show amber as \"Observed · feeds Watch\"; red is kept for signals that feed Warning or Alarm triggers (X, Y)",
+    "url": "alarm.html"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "scorecard.html",
+    "was": "The Clay Institute accepts OpenAI's Navier–Stokes result as solving the Millennium Prize problem by Dec 31, 2026",
+    "now": "withdrawn unscored: it couldn't resolve Yes by its deadline, because Clay considers a result only two years after journal publication. Replaced by a forecast that a journal accepts the paper by Sep 30, 2027",
+    "url": "https://www.claymath.org/millennium-problems/rules/"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "scorecard.html",
+    "was": "California publishes the AI \"kill switch\" design ordered by EO N-9-26 by its Nov 16 deadline",
+    "now": "withdrawn unscored: the order asks for recommendations to the Governor's office by Nov 16, not a design, and doesn't require publishing them. Replaced by a forecast that California publishes the recommendations by Nov 30, 2026",
+    "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
+   },
+   {
+    "date": "2026-09-30",
+    "page": "scorecard.html",
+    "was": "the resolution rule didn't say whether a fresh training run counts as resuming",
+    "now": "a fresh, from-scratch training run of a frontier model counts as resuming training, as does restarting the paused runs; restarting inference alone doesn't. The rule itself is unchanged",
+    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+   }
+  ]
  }
 ]
