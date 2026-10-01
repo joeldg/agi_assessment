@@ -328,7 +328,7 @@ def about_body():
 
     <h2 id="cite">How to cite</h2>
     <p>Hidden AGI watch (2026), &lt;page title&gt;, &lt;url&gt;, accessed &lt;date&gt;. Licensed under CC BY 4.0.</p>
-    <p class="muted">For example: Hidden AGI watch (2026), The fire alarm, <span style="overflow-wrap:anywhere">{escape("https://joeldg.github.io/agi_assessment/alarm.html")}</span>, accessed <span id="cite-date">&lt;date&gt;</span>. Licensed under CC BY 4.0. Daily reports keep their address (reports/YYYY-MM-DD.html), and the data behind every chart is in the repository's data folder, with its full history. A machine-readable citation is in <a href="{REPO}/blob/main/CITATION.cff">CITATION.cff</a>.</p>
+    <p class="muted">For example: Hidden AGI watch (2026), The fire alarm, <span style="overflow-wrap:anywhere">{escape("https://hiddenagi.com/alarm.html")}</span>, accessed <span id="cite-date">&lt;date&gt;</span>. Licensed under CC BY 4.0. Daily reports keep their address (reports/YYYY-MM-DD.html), and the data behind every chart is in the repository's data folder, with its full history. A machine-readable citation is in <a href="{REPO}/blob/main/CITATION.cff">CITATION.cff</a>.</p>
   </section>
 """
 

@@ -41,11 +41,11 @@ Live in Kit since 2026-09-30 (replacing the 2026-09-29 version). The site and em
 >
 > Every morning at 10am Pacific you'll get the Hidden AGI Index (the chance at least one of these is true right now), five gauges that track the evidence underneath it, what moved the needle and why, our tripwires, and the AI news that matters. Every Friday at 3pm Pacific comes the weekly wrap-up: the key numbers, our public forecast scorecard and the strongest case against our own view, with the full graphs on the web.
 >
-> We also run a fire alarm for hidden AI. It has four levels (Normal, Watch, Warning, Alarm), set by criteria published in advance, not by our own probabilities. If the level changes, you'll get a short alert explaining why. A person reviews every alert before it goes out. [See the alarm and its criteria](https://joeldg.github.io/agi_assessment/alarm.html).
+> We also run a fire alarm for hidden AI. It has four levels (Normal, Watch, Warning, Alarm), set by criteria published in advance, not by our own probabilities. If the level changes, you'll get a short alert explaining why. A person reviews every alert before it goes out. [See the alarm and its criteria](https://hiddenagi.com/alarm.html).
 >
 > The numbers are judgments, not facts, and we try to keep them honest. Every claim is sourced, and the full daily report rates each piece of evidence as fact, report, opinion or speculation. We score our own forecasts in public, and when nothing moves, we say so.
 >
-> New here? [Start here](https://joeldg.github.io/agi_assessment/start-here.html) for the method in five minutes, or see [today's reading](https://joeldg.github.io/agi_assessment/).
+> New here? [Start here](https://hiddenagi.com/start-here.html) for the method in five minutes, or see [today's reading](https://hiddenagi.com/).
 >
 > One ask: hit reply and tell us your own number. What's the chance, in your view, that AGI already exists somewhere and hasn't been announced? We read every reply, and we won't use your name unless you say we can.
 >
@@ -59,7 +59,7 @@ Live in Kit since 2026-09-30 (replacing the 2026-09-29 version). The site and em
 
 **Preview text:** Four hypotheses, one number, and why we score ourselves in public.
 
-1. Image: `https://joeldg.github.io/agi_assessment/cards/latest.png`, linked to the dashboard. It updates daily, so the welcome always shows the current reading.
+1. Image: `https://hiddenagi.com/cards/latest.png`, linked to the dashboard. It updates daily, so the welcome always shows the current reading.
 2. The text of the confirmation email above, with the four hypotheses as a bulleted list and the fire-alarm paragraph kept in.
 3. A "How to read us" section: the numbers are judgments; every claim is sourced, and the full daily report rates each piece of evidence as fact, report, opinion or speculation; no treating an absence of evidence as proof of secrecy; forecasts are scored in public; quiet days are called quiet.
 4. Three places to start: today's reading, Start here, and Trend watch ("if AI's ability to finish long tasks keeps doubling every ~4 months, when does it reach a month of work?").

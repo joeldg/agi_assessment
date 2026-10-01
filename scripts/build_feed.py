@@ -245,7 +245,7 @@ def link(url, text):
 # Link text for sources: the outlet's name, so readers can judge a source at a glance.
 # Hosts not listed show as the bare domain, never as a vague word like "source".
 OUTLETS = {
-    "joeldg.github.io": "Hidden AGI watch",
+    "hiddenagi.com": "Hidden AGI watch", "joeldg.github.io": "Hidden AGI watch",
     "techcrunch.com": "TechCrunch", "fortune.com": "Fortune", "nbcnews.com": "NBC News", "reuters.com": "Reuters",
     "apnews.com": "AP", "axios.com": "Axios", "bloomberg.com": "Bloomberg", "ft.com": "Financial Times",
     "nytimes.com": "The New York Times", "wsj.com": "The Wall Street Journal", "washingtonpost.com": "The Washington Post",

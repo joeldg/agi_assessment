@@ -1,13 +1,13 @@
 # Hidden AGI watch
 
-A daily, sourced assessment (aiming for calibration; the track record is on the [scorecard](https://joeldg.github.io/agi_assessment/scorecard.html)) of four hypotheses about advanced AI, published with GitHub Pages at <https://joeldg.github.io/agi_assessment/>:
+A daily, sourced assessment (aiming for calibration; the track record is on the [scorecard](https://hiddenagi.com/scorecard.html)) of four hypotheses about advanced AI, published with GitHub Pages at <https://hiddenagi.com/>:
 
 - **A**: AGI has been achieved but not publicly disclosed, by a company or a government program.
 - **B**: recursive self-improvement (RSI) has been achieved in secret.
 - **C**: an AGI-level system is operating autonomously online or in the economy without public knowledge, by one of two paths: sanctioned but undisclosed (its developer or operator runs it and says nothing), or rogue or stolen (escaped, self-exfiltrated, or run from stolen weights).
 - **D**: an AGI-level system is influencing government decisions or world affairs. It's one question with two readings: covert influence (D) and influence through open, acknowledged use (D-open).
 
-These are short labels. The exact definitions, the strict AGI bar, the 30-day secrecy window that A, B and C share and what "by 2030" means are on [Start here](https://joeldg.github.io/agi_assessment/start-here.html). Changes to them are dated in `data/method.json`.
+These are short labels. The exact definitions, the strict AGI bar, the 30-day secrecy window that A, B and C share and what "by 2030" means are on [Start here](https://hiddenagi.com/start-here.html). Changes to them are dated in `data/method.json`.
 
 A custom AI agent updates the site once a day. Each run searches current news, research and evaluations, reassesses the hypotheses, and adds a news roundup. It publishes automatically. The daily and weekly email issues are sent automatically; breaking fire-alarm alerts are approved by a person before they are sent. The owner sets the definitions and alarm thresholds.
 
@@ -111,7 +111,7 @@ python3 -m pip install --user -r requirements.txt
 4. Run `python3 scripts/build_weekly.py <date>`, `python3 scripts/build_pages.py`, `python3 scripts/build_feed.py`, `python3 scripts/check_data.py` and a headless smoke check. Commit the named paths and push.
 5. Run `python3 scripts/kit_broadcast.py --weekly <date> --send-at 3pm`.
 
-Feed URL: <https://joeldg.github.io/agi_assessment/feed.xml>
-Sitemap URL: <https://joeldg.github.io/agi_assessment/sitemap.xml>
+Feed URL: <https://hiddenagi.com/feed.xml>
+Sitemap URL: <https://hiddenagi.com/sitemap.xml>
 
 Probabilities are subjective estimates. The reports are not investment, policy or security advice.

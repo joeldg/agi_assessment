@@ -7,7 +7,7 @@ scripts import them from this module.
 from html import escape
 from urllib.parse import urlsplit
 
-SITE = "https://joeldg.github.io/agi_assessment/"
+SITE = "https://hiddenagi.com/"
 SUBSCRIBE = "https://hidden-agi.kit.com/f2b4d2f30e"
 REPO = "https://github.com/joeldg/agi_assessment"
 # The alt text for the default share card (cards/latest.png).

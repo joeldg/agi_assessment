@@ -1,6 +1,6 @@
 # Content license
 
-Copyright (c) 2026 joeldg. Hidden AGI watch: <https://joeldg.github.io/agi_assessment/>
+Copyright (c) 2026 joeldg. Hidden AGI watch: <https://hiddenagi.com/>
 
 This repository holds two kinds of material under two licenses.
 
@@ -20,7 +20,7 @@ You may copy, redistribute, adapt and build on this material for any purpose, in
 
 ### How to credit
 
-> Hidden AGI watch (2026), *page title*, <https://joeldg.github.io/agi_assessment/...>, accessed *date*. Licensed under CC BY 4.0.
+> Hidden AGI watch (2026), *page title*, <https://hiddenagi.com/...>, accessed *date*. Licensed under CC BY 4.0.
 
 A machine-readable citation is in [`CITATION.cff`](CITATION.cff). Please link to the page you used: our readings are dated, and corrections are logged on the page they affect.
 

@@ -41,7 +41,7 @@ from alarm_check import (  # noqa: E402  (shared arithmetic, one implementation)
 )
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = "https://joeldg.github.io/agi_assessment/"
+SITE = "https://hiddenagi.com/"
 SERIES = ["A", "B", "C", "D", "Dopen"]
 HORIZONS = ["now", "y2030", "y2035"]
 NEEDS_AGI = ["A", "C", "D", "Dopen"]  # B allows secret RSI short of AGI, so it isn't bounded by agi
