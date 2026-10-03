@@ -402,7 +402,7 @@
   ]
  },
  "capex_definition": "Cash purchases of property and equipment from each company's SEC filings (XBRL: PaymentsToAcquirePropertyPlantAndEquipment; for Amazon, PaymentsToAcquireProductiveAssets), converted from year-to-date to quarterly values. Excludes finance leases.",
- "capex_source": "SEC EDGAR XBRL company facts, pulled 2026-09-29",
+ "capex_source": "SEC EDGAR XBRL company facts, pulled 2026-10-02",
  "nvda_datacenter": [
   {
    "q": "FY2024Q1",
@@ -601,65 +601,107 @@
    "usd_b": 40.0,
    "url": "https://finance.yahoo.com/technology/ai/articles/openai-revenue-run-rate-tops-224009196.html",
    "note": "'Surpassed $40 billion', per Bloomberg (a floor)"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2026-09-29",
+   "metric": "annualized run-rate",
+   "usd_b": 70.0,
+   "url": "https://whbl.com/2026/09/29/openais-annual-recurring-revenue-nears-70-billion-axios-reports/",
+   "note": "'Approaching $70 billion' (a ceiling, not a floor), per a source who spoke to Reuters; Axios first reported it. Not confirmed by OpenAI"
   }
  ],
  "prediction_markets": [
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-09-29",
-   "price_pct": 19,
+   "date": "2026-10-02",
+   "price_pct": 18,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API, last trade; bid/ask 17/20; thin market"
+   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:14 PT; bid/ask 14/17; thin market: 3-point spread and the last trade above the ask (~25.5k contracts). Was 19 on Sept 29."
   },
   {
    "market": "Any company announces it has achieved AGI before Apr 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-09-29",
-   "price_pct": 32,
+   "date": "2026-10-02",
+   "price_pct": 30,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API, last trade; bid/ask 31/33; thin market (~17.6k contracts)"
+   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:14 PT; bid/ask 30/31; thin market (~17.9k contracts). Was 32 on Sept 29."
   },
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2028",
    "venue": "Kalshi",
-   "date": "2026-09-29",
+   "date": "2026-10-02",
    "price_pct": 61,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API, last trade; bid/ask 62/63"
+   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:14 PT; bid/ask 62/63; thin market (~14.0k contracts). Unchanged since Sept 29."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2026",
    "venue": "Kalshi",
-   "date": "2026-09-29",
-   "price_pct": 13,
+   "date": "2026-10-02",
+   "price_pct": 9.3,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API; volume ~351k"
+   "note": "Live API (OAIAGI-26), last trade as read at 13:14 PT; bid/ask 9.1/13.8; thin market: 4.7-point spread despite ~354k contracts traded. Was 13 on Sept 29."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2027",
    "venue": "Kalshi",
-   "date": "2026-09-29",
-   "price_pct": 50,
+   "date": "2026-10-02",
+   "price_pct": 44.1,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API"
+   "note": "Live API (OAIAGI-27), last trade as read at 13:14 PT; bid/ask 44.1/48.9; thin market: 4.8-point spread despite ~291k contracts traded. Was 50 on Sept 29."
   },
   {
    "market": "OpenAI announces it has achieved AGI before 2027",
    "venue": "Polymarket",
-   "date": "2026-09-29",
-   "price_pct": 17.5,
+   "date": "2026-10-02",
+   "price_pct": 16.5,
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "note": "Live API midpoint; volume ~$285k"
+   "note": "Live API midpoint, read 13:14 PT; bid/ask 16/17, last 17; volume ~$301k (USD). Was 17.5 on Sept 29."
+  },
+  {
+   "market": "Anthropic IPOs by Oct 31, 2026",
+   "venue": "Polymarket",
+   "date": "2026-10-02",
+   "price_pct": 1.35,
+   "url": "https://polymarket.com/event/anthropic-ipo-by",
+   "note": "Live API midpoint, read 13:14 PT; bid/ask 1.2/1.5, last 1.2; volume ~$1.14M (USD). Bid/ask was 4.0/4.8 on Sept 29."
   }
  ],
  "notes": [
   "Capex is cash purchases of property and equipment and excludes finance leases, so it is lower than the 'capex including finance leases' headline some companies quote (Microsoft in particular; Meta's headline adds about $1B a quarter in lease principal). Amazon is gross, not net of incentives.",
   "An independent read of each company's earnings releases matches the SEC XBRL-derived quarterly capex exactly.",
   "Not yet reported: calendar Q3 2026 capex (late October) and Nvidia Q3 FY2027 (late November).",
-  "Anthropic figures labelled 'draft prospectus' come from a leaked, non-public draft reported by Reuters, Fortune and the FT. No public S-1 was found as of Sept 29, 2026, and Reuters reports the IPO is likely after the November midterms.",
+  "Anthropic figures labelled 'draft prospectus' come from a leaked, non-public draft reported by Reuters, Fortune and the FT. An EDGAR full-text search showed no public Anthropic S-1, S-1/A, DRS or F-1 as of Oct 2, 2026 (confidential draft submissions are not public), and Reuters reports the IPO is likely after the November midterms.",
   "Run-rates annualize one recent period and are often floors; they are not comparable with quarterly revenue and are never plotted on the same axis.",
-  "Kalshi's 'any company before Apr 1, 2027' market traded at 32% on Sept 29, 2026 (Pacific) (live API). A widely repeated 62% figure from early September does not match the current price."
+  "Kalshi's 'any company before Apr 1, 2027' market traded at 30% on Oct 2, 2026 (Pacific) (live API, bid/ask 30/31, thin), down from 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price."
  ],
- "signals": []
+ "signals": [
+  {
+   "date": "2026-09-10",
+   "text": "SpaceX's CFO says it closed another AI hosting deal worth about $1.11B a month from Dec 1 (about $13B of annualized revenue) with a customer he did not name; he described its hosting deals as essentially 90-day terms with a 90-day out (verified fact: CFO on the record). Our X4 ruling: planned capacity, not a trip; the unnamed buyer remains the lead.",
+   "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834"
+  },
+  {
+   "date": "2026-09-18",
+   "text": "Anthropic commits about $11.6B over seven-year terms for dedicated Akamai cloud capacity. Akamai issues it a warrant for preferred stock convertible into up to about 7.7M common shares (about 5% of Akamai, per TechCrunch); later tranches vest with each further $3B Anthropic commits, up to $9B more (verified fact: Akamai 8-K, filed Sept 24).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1086222/000119312526401048/d288154d8k.htm"
+  },
+  {
+   "date": "2026-09-28",
+   "text": "Anthropic's draft prospectus (leaked, reviewed by Reuters) shows at least $518B of cloud, compute and infrastructure commitments over about a decade, about 80% payable regardless of use: Broadcom equipment leases about $161.2B, Google at least $111.1B, Amazon $110B, SpaceX/xAI up to $84.5B through 2029 (mostly cancelable on 90 days' notice), Microsoft $31.4B, AMD expected to exceed $20B. A draft prospectus, not a public SEC filing (credible report, via InvestmentNews).",
+   "url": "https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391"
+  },
+  {
+   "date": "2026-09-29",
+   "text": "OpenAI is in early talks to raise at least $30B at a valuation of about $1.4T before the new money, up from $852B in March; Altman has said it will not go public in 2026 (credible report: Bloomberg, via Reuters).",
+   "url": "https://www.investing.com/news/stock-market-news/openai-targets-30-billion-funding-at-14-trillion-valuation-bloomberg-news-reports-4923324"
+  },
+  {
+   "date": "2026-09-30",
+   "text": "Tencent reportedly agreed this year to a five-year lease of about 100,000 advanced AI chips in Oracle data centers in Southeast Asia, worth about $7B (credible report: FT, via Reuters, which could not verify it). Buyer and seller are named, so this is not an X4 candidate.",
+   "url": "https://kelo.com/2026/09/30/chinas-tencent-leases-100000-chips-from-oracle-to-accelerate-ai-push-ft-reports/"
+  }
+ ]
 }

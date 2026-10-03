@@ -48,9 +48,9 @@
    "original_context": "The prospectus went public Sept 28, targeting mid-October.",
    "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
    "original_url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
-   "market": 4,
-   "marketAsOf": "2026-09-29",
-   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API (bid/ask 4.0/4.8)",
+   "market": 1.35,
+   "marketAsOf": "2026-10-02",
+   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 1.2/1.5, last 1.2)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null,
@@ -125,9 +125,10 @@
    "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
    "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "market": 32,
-   "marketAsOf": "2026-09-29",
-   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API (bid/ask 31/33)",
+   "market": 30,
+   "marketAsOf": "2026-10-02",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:14 PT (bid/ask 30/31; thin, about 17.9k contracts traded in total)",
+   "marketUrl": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "outcome": null,
    "resolved": null,
    "corrections": [
@@ -179,6 +180,50 @@
    "resolution": "Yes if, by Nov 30, 2026, the Governor's office, the Government Operations Agency or Cal OES publicly releases the §3 recommendations: the document itself, or a summary that states the recommendation on each of items a–d (onsite verifiers, verified safety filings, a kill switch, loss-of-control incident reporting). A statement that recommendations were delivered, without their content, doesn't count.",
    "context": "Replaces the withdrawn kill-switch forecast. The signed order (Sept 18) tells the Government Operations Agency, with Cal OES, to submit recommendations to the Governor's office no later than Nov 16, 2026. It doesn't require publishing them, so release depends on the Governor's office; deadlines like this often slip.",
    "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "openai-postastra-eval-or-release-by-nov7",
+   "made": "2026-10-02",
+   "question": "OpenAI releases its post-Astra model, or an external evaluation of it is publicly announced, by Nov 7, 2026",
+   "p": 20,
+   "deadline": "2026-11-07",
+   "resolution": "Yes if, by the end of Nov 7, 2026 (Pacific), either (a) OpenAI announces that the frontier model it acknowledged on Sept 8, 2026 (the unreleased internal model it said is more capable than GPT-6 Astra) is available to outside users, or (b) an outside evaluator (such as METR, UK AISI, US CAISI, Apollo Research or Epoch AI), or OpenAI, publicly announces that an outside evaluator has evaluated that model. OpenAI's own internal evaluations, and access or testing that nobody announces, don't count. If GPT-6.1 Astra (whose release OpenAI cancelled on Sept 28) proves to be the same model, its release or announced external evaluation counts. No otherwise. This tracks our alarm trigger W2 (criteria v1.1), which this model meets on Nov 7 unless it is released or an external evaluation of it is announced.",
+   "context": "On Sept 8 OpenAI credited its Navier–Stokes result to an unreleased internal model that it says is significantly more capable than GPT-6 Astra. Since Sept 25 it has paused all training, evaluation and tool-using inference of its most capable models, and on Sept 28 it said it won't release GPT-6.1 Astra. As of our Oct 2 check, none of METR, UK AISI, Epoch, CAISI or Apollo Research lists an evaluation of the post-Astra model. Politico reported on Sept 24 (via The Next Web), citing a senior administration official, that the White House asked OpenAI and Anthropic not to share new models with UK AISI until the US government has tested them. We think a release before Nov 7 is unlikely during the pause, and US government pre-release testing is usually not made public.",
+   "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
+   "tests": [
+    "W2",
+    "gap"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-rd-index-new-reading-by-dec31",
+   "made": "2026-10-02",
+   "question": "Anthropic publishes a new reading of its AI-led share of AI R&D, for September 2026 or later, by Dec 31, 2026",
+   "p": 50,
+   "deadline": "2026-12-31",
+   "resolution": "Yes if, by Dec 31, 2026, Anthropic publishes (on its site, in a system card, report or filing it makes public) a value of the share of its AI R&D led by Claude, under the index first published Sept 17, 2026 or a successor it says replaces it, for a month or period ending after August 2026. Restating the August figure, or a leaked or reported figure that Anthropic hasn't published, doesn't count.",
+   "context": "Anthropic's prototype R&D Automation Index (published Sept 17) says Claude \"leads\" 26% of its AI R&D as of August 2026, up from under 1% in February, and that none of the measured work is fully autonomous. The page says Anthropic will keep releasing these measurements (\"we'll continue to do so\") but gives no schedule. It is the only published lab reading behind our R&D gauge and trigger W5.",
+   "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+   "tests": [
+    "rd",
+    "W5"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-public-s1-by-nov15",
+   "made": "2026-10-02",
+   "question": "Anthropic's IPO registration statement (S-1 or equivalent) is publicly filed on SEC EDGAR by Nov 15, 2026",
+   "p": 65,
+   "deadline": "2026-11-15",
+   "resolution": "Yes if, by Nov 15, 2026, a registration statement for an Anthropic initial public offering (Form S-1 or equivalent, including a publicly released draft registration statement) appears on SEC EDGAR under Anthropic's name. Leaked or reported drafts, and press reports of a filing, don't count unless the filing is on EDGAR.",
+   "context": "Anthropic said on June 1 that it had confidentially submitted a draft S-1, and Reuters reported on Sept 28 from a draft prospectus it had seen. Bloomberg reported on Oct 1 (via Stocktwits), citing unnamed sources, an Oct 14 investor event, marketing possibly from the week of Nov 9 and a debut before Thanksgiving, with specifics subject to change. SEC procedure requires a confidential filer to file publicly at least 15 days before its roadshow. An EDGAR full-text search showed no Anthropic registration statement as of Oct 2.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-reportedly-sends-investors-ipo-234834463.html",
    "outcome": null,
    "resolved": null
   }

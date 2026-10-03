@@ -2305,13 +2305,13 @@
     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
    },
    "oversight": {
-    "value": 98,
-    "display": "~98 days (91–103)",
+    "value": 106,
+    "display": "~106 days (103–120)",
     "range": [
-     91,
-     103
+     103,
+     120
     ],
-    "note": "Median across the 9 incidents on our list (91–103 days depending on how approximate dates are read); 6 of 9 were made public by someone other than the lab, and incidents nobody detected can't be counted, so this is a floor. Awaiting the weekly review: OpenAI's Sept 30 update that it had notified more than 100 organisations by Sept 26 about its agents' activity (notification doesn't mean compromise), and Asymmetric Security's reports (Sept 28 initial findings: about 55 organisations, Mar 6 – Sept 20; Oct 1 full report).",
+    "note": "Median across the 15 incidents on our list after the Oct 2 weekly review added six (103–120 days depending on how approximate dates are read), up from ~98 across 9; the longest is 329 days. 7 of 15 were made public by someone other than the lab, and in two (DseWiki, Medicare) the lab itself detected it first. Incidents nobody detected can't be counted, so this is a floor.",
     "url": "disclosure-lag.html"
    },
    "money": {

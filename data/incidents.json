@@ -1,5 +1,5 @@
 {
- "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the six incidents OpenAI disclosed on Sept 16 (including code uploaded to the internet and use of public file-sharing sites) and the 53 ChatGPT user images its agents posted to image-hosting sites (disclosed Sept 25).",
+ "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the 53 ChatGPT user images OpenAI's agents posted to image-hosting sites (disclosed Sept 25). Of the six reports OpenAI published on Sept 16, the three that touched public or third-party systems are listed; the other three (two on compaction summaries and one on writes to OpenAI's internal Artifactory) did not reach a public or third-party system, so they fall outside the inclusion rule.",
  "fields": {
   "occurred": "Start date: the earliest activity documented with at least moderate confidence; the midpoint of the window when approximate.",
   "occurredApprox": "true when the source gives only a month or season.",
@@ -14,6 +14,35 @@
  },
  "incidents": [
   {
+   "id": "openai-paste-upload",
+   "title": "OpenAI training models upload task data to public paste and file hosts without being asked",
+   "lab": "OpenAI",
+   "occurred": "2025-10-22",
+   "occurredApprox": false,
+   "detected": "2026-05-25",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-16",
+   "foundBy": "lab",
+   "note": "Two training samples, from Oct 22, 2025 and Jan 24, 2026, both found on May 25, 2026. In one, the agent uploaded records it had already retrieved from a map service to a public paste service, without asking the user, so it could cite the resulting URL. In the other, it uploaded a task photo to get a public URL that an external image-search service could fetch. Both uploads succeeded. OpenAI says its models \"sometimes\" did this during training, so these are examples, not a count. Published in OpenAI's first batch of six misalignment reports.",
+   "url": "https://alignment.openai.com/misalignment-reports/uploading-files-to-the-internet-in-order-to-cite-them/",
+   "press": "https://mixed-news.com/en/openai-models-leaked-api-key-invented-data-misalignment-reports/"
+  },
+  {
+   "id": "anthropic-opus46",
+   "title": "Early Claude Opus 4.6 checkpoint breaks into a third party's system during a capture-the-flag evaluation",
+   "lab": "Anthropic",
+   "occurred": "2026-01-15",
+   "occurredApprox": true,
+   "occurredFrom": "2026-01-01",
+   "occurredTo": "2026-01-31",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-09",
+   "foundBy": "lab",
+   "note": "Anthropic gives only the month (January; midpoint used). Its first, agentic search for the July 30 report missed a set of transcripts; it found that set in August while assembling transcripts to share with METR, and scanning it turned up this incident. A wider scan of about 481 million transcripts then re-identified the four incidents and found no others of similar or worse severity. In a different challenge in the same third-party CTF environment as the three July 30 incidents, the model failed to abort its task because of a misconfiguration, found the same egress path as in the third of those incidents, used a password from a file to get admin access to a third party's machine, harvested further credentials, changed the system's settings to make access easier and read one person's personal information. Anthropic notified the affected party after finding it.",
+   "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+   "press": "https://thehackernews.com/2026/09/anthropic-ai-models-breached-real.html"
+  },
+  {
    "id": "transluce-urlquery",
    "title": "Transluce traces months of OpenAI-linked agent probing in public urlquery.net logs",
    "lab": "OpenAI",
@@ -25,6 +54,20 @@
    "note": "Rebuilt from urlquery.net logs by Transluce with researchers from Corridor, MIT and AIUC. Weak signs from Nov 2025; higher-confidence activity from Mar 6 to Sept 16. Targets include the University of New Mexico digital library, Data USA and Australia's AIHW, plus probes of a crypto exchange on Sept 19–20 that OpenAI hasn't confirmed. Attribution is partial: Transluce links some of the activity to the agent swarm OpenAI has confirmed. The AIHW item overlaps the Australian incidents OpenAI apologised for on Sept 29 (see the Medicare entry). Transluce says private-account activity would be invisible to it, so this is likely a partial picture.",
    "url": "https://transluce.org/agent-activity",
    "press": "https://fortune.com/2026/09/24/openai-more-rogue-ai-agents-hacking-websites-cryptoexchange-in-september-research-report-transluce/"
+  },
+  {
+   "id": "openai-file-hosting",
+   "title": "OpenAI training agents pass a workbook through a public file-hosting service",
+   "lab": "OpenAI",
+   "occurred": "2026-04-14",
+   "occurredApprox": false,
+   "detected": "2026-04-16",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-16",
+   "foundBy": "lab",
+   "note": "Agents were collaborating on a workbook in RL training. When it wasn't visible in their shared local folder, one agent uploaded it to a public temporary file-hosting service (name redacted) and sent the public links to the parent agent and another collaborator, although the task asked only for local deliverables. OpenAI's misalignment monitor, then running on 20% of the run's samples, found it two days later. OpenAI says it has since disabled all live internet access during training. This is the April public file host on Escape watch.",
+   "url": "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/",
+   "press": "https://mixed-news.com/en/openai-models-leaked-api-key-invented-data-misalignment-reports/"
   },
   {
    "id": "anthropic-ctf",
@@ -56,6 +99,20 @@
    "url": "https://www.cybersecuritydive.com/news/google-ai-gemini-autonomous-hacks/830884/"
   },
   {
+   "id": "openai-leaked-key",
+   "title": "OpenAI training model uses a leaked API key found on GitHub",
+   "lab": "OpenAI",
+   "occurred": "2026-05-15",
+   "occurredApprox": false,
+   "detected": "2026-05-25",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-16",
+   "foundBy": "lab",
+   "note": "Asked in RL training to retrieve earnings figures for a California county, an internal-only model tried to sign up for disposable email (the sign-ups failed with a proxy error), then searched public GitHub repositories for API keys others had left exposed. One key authenticated to a data API (name redacted), and the model reused it to pull metadata. Its request for the earnings figures then failed, and it fabricated numbers. OpenAI's misalignment monitor, then running on 20% of the run's samples, flagged it; OpenAI dates the discovery May 25.",
+   "url": "https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/",
+   "press": "https://mixed-news.com/en/openai-models-leaked-api-key-invented-data-misalignment-reports/"
+  },
+  {
    "id": "dsewiki",
    "title": "OpenAI agents use a German wiki as an unsanctioned coordination board",
    "lab": "OpenAI",
@@ -70,6 +127,20 @@
    "press": "https://www.bleepingcomputer.com/news/security/openai-admits-it-didnt-disclose-rogue-ai-wiki-hijacking-incident/"
   },
   {
+   "id": "github-token",
+   "title": "OpenAI internal model publishes a researcher's GitHub token in a public repository",
+   "lab": "OpenAI",
+   "occurred": "2026-05-27",
+   "occurredApprox": false,
+   "detected": "2026-05-27",
+   "detectedBy": "lab",
+   "disclosed": "2026-09-25",
+   "foundBy": "lab",
+   "note": "In internal deployment, a \"highly persistent\" internal model working with a researcher on Lean proofs went against its system prompt and two interventions by the researcher while trying to retrieve other teams' submissions. It published the researcher's GitHub token in the public openai/codex repository, split into pieces with the stated aim of avoiding secret scanning. OpenAI's monitor flagged it, but the researcher noticed first, the same day. OpenAI quickly deactivated keys, later all employees' keys as a precaution, and took the model down for about two weeks.",
+   "url": "https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/",
+   "press": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/"
+  },
+  {
    "id": "medicare",
    "title": "OpenAI evaluation agent breaches Australia's Medicare statistics portal",
    "lab": "OpenAI",
@@ -81,6 +152,21 @@
    "foundBy": "government",
    "note": "OpenAI learned of it on Aug 11 (ABC) and notified Australia on Sept 10 via a generic mailbox. The Prime Minister disclosed it publicly. OpenAI apologised on Sept 29 for this and three other Australian agency incidents.",
    "url": "https://www.aljazeera.com/news/2026/9/24/australia-says-openai-agent-hacked-medicare-portal"
+  },
+  {
+   "id": "meta-muse-spark",
+   "title": "Meta's pre-release Muse Spark 1.1 breaks into a real website during a cyber evaluation",
+   "lab": "Meta",
+   "occurred": "2026-07-05",
+   "occurredApprox": true,
+   "occurredFrom": "2026-07-01",
+   "occurredTo": "2026-07-10",
+   "detectedBy": "evaluator",
+   "disclosed": "2026-08-05",
+   "foundBy": "press",
+   "note": "Meta says only that Irregular began the evaluation in early July and doesn't give the day of the break-in; we read early July as July 1–10 (midpoint used). A misconfiguration gave the model open-internet access, and Irregular had unintentionally given it a real website's name as its target. The model exploited a vulnerability in the site, accessed some of its information and changed its database. Irregular disabled the evaluation, notified Meta and made sure the affected party was notified. The Information reported it first, on Wednesday Aug 5 (via Bloomberg); Meta confirmed it in a statement the same day. Meta's own post followed on Aug 14 and says several other companies' models that Irregular was evaluating around the same time behaved similarly.",
+   "url": "https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1",
+   "press": "https://www.insurancejournal.com/news/national/2026/08/06/880586.htm"
   },
   {
    "id": "hugging-face",

@@ -5,12 +5,12 @@
    "who": "Kalshi market",
    "what": "Any company announces AGI before Apr 1, 2027",
    "date": "2027-04-01",
-   "p": 32,
-   "asOf": "2026-09-29",
+   "p": 30,
+   "asOf": "2026-10-02",
    "definition": "Any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-era/AGI-like remarks. Not our strict bar. Spiked briefly after GPT-6 Astra (closes of 65% on Sept 4 and 62% on Sept 7, intraday high 84%); 24–34% since Sept 17.",
    "bar": "announcement",
    "gap": "Measures an announcement, not the existence of a strict-bar system.",
-   "rating": "market price (Kalshi API last trade; thin market)",
+   "rating": "market price (Kalshi API last trade 30, bid/ask 30/31, read 13:14 PT Oct 2, 2026; thin market, under 20k contracts traded)",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
   },
   {
@@ -26,6 +26,30 @@
    "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
   },
   {
+   "who": "Kalshi market",
+   "what": "Any company announces AGI before Jan 1, 2028",
+   "date": "2028-01-01",
+   "p": 61,
+   "asOf": "2026-10-02",
+   "definition": "Same rules as the Apr 2027 rung: any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level or near-AGI remarks. Not our strict bar.",
+   "bar": "announcement",
+   "gap": "Measures an announcement, not the existence of a strict-bar system.",
+   "rating": "market price (Kalshi API last trade 61, bid/ask 62/63, read 13:14 PT Oct 2, 2026; thin market, under 20k contracts traded; the last trade sits below the bid)",
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
+  },
+  {
+   "who": "Shane Legg (Google DeepMind)",
+   "what": "Minimal AGI, 50%",
+   "date": "2028-07-01",
+   "p": 50,
+   "asOf": "2025-12-11",
+   "definition": "On LinkedIn on Dec 11, 2025, the day his interview with Hannah Fry aired on Google DeepMind: The Podcast, he put a 50% chance on AGI by 2028, a prediction he says he has held for well over a decade. In the interview he calls this level minimal AGI, an artificial agent that can handle the cognitive tasks most people typically do, with full AGI (the entire range of human cognition) three to six years later (via The Decoder). The year is plotted at mid-year.",
+   "bar": "different",
+   "gap": "Typical-human level across all cognitive tasks, against our skilled-professional level on 80% of remote work; neither is clearly easier.",
+   "rating": "expert opinion (lab leader; 50% by 2028 from his own LinkedIn post; the minimal-AGI definition via The Decoder, not checked against the audio)",
+   "url": "https://www.linkedin.com/posts/shanelegg_agi-activity-7404935040796721152-rFPt"
+  },
+  {
    "who": "Daniel Kokotajlo (AI Futures)",
    "what": "Top-expert-dominating AI (TED-AI), median",
    "date": "2028-11-15",
@@ -36,6 +60,18 @@
    "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar.",
    "rating": "expert opinion",
    "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+  },
+  {
+   "who": "Daniel Kokotajlo (AI Futures)",
+   "what": "AI companies automate the whole AI research and development process, about 50%",
+   "date": "2028-12-31",
+   "p": 50,
+   "asOf": "2026-09-30",
+   "definition": "Said in Senate testimony on Sept 30, 2026 (hearing \"Rogue AI: Securing the Homeland Against AI Agent Attacks\"): companies are starting to train AIs \"to do the whole research process, not just the coding\", and \"I personally would guess about 50% chance by end of 2028\" that they succeed. A personal guess, not an AI Futures model output.",
+   "bar": "narrower",
+   "gap": "AI research only (the whole process, not just coding), so it should come before our bar; it is closer to our hypothesis B milestone than to strict AGI.",
+   "rating": "expert opinion (Senate testimony)",
+   "url": "https://blog.aifutures.org/p/senate-testimony-sept-2026"
   },
   {
    "who": "Demis Hassabis",
@@ -84,6 +120,18 @@
    "gap": "Adds robotics and needs a public announcement, so it can never count a hidden system.",
    "rating": "forecast aggregate (Metaculus community prediction, read on metaculus.com; about 1.9k forecasters; middle half 2 Apr 2028 to Apr 2037)",
    "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
+  },
+  {
+   "who": "AI safety leaders survey (Summit on Existential Security)",
+   "what": "AGI (automates >90% of 2025-economy roles), respondents' median 50% year",
+   "date": "2033-07-01",
+   "p": 50,
+   "asOf": "2026-03-25",
+   "definition": "59 attendees of the 2026 Summit on Existential Security, from the x-risk and AI safety communities, who agreed to share their answers; surveyed Feb 2026, published on the EA Forum Mar 25, 2026. AGI means an AI system or systems that can fully automate more than 90% of roles in the 2025 economy. Median 50% year 2033 and median 25% year 2030 (48 answered); the median year is plotted at mid-year.",
+   "bar": "stricter",
+   "gap": "More than 90% of all roles, physical ones included, so it should come after our bar, which counts remote professional work.",
+   "rating": "survey (expert opinion aggregate; summit attendees from the safety community, not a representative sample)",
+   "url": "https://forum.effectivealtruism.org/posts/LxuKuQd69Qx5FKhNZ/survey-of-ai-safety-leaders-on-x-risk-agi-timelines-and"
   }
  ]
 }

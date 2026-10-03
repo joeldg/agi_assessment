@@ -10,6 +10,47 @@
    "url": "https://www.nextgov.com/acquisition/2026/09/google-extends-gemini-onegov-deal-november/416320/"
   },
   {
+   "date": "2026-10-05",
+   "kind": "policy",
+   "title": "New York City Council Committee of the Whole hearing: Anthropic, OpenAI, Google and Meta testify under oath on AI risks and the Council's proposed bills; SpaceXAI was subpoenaed on Sept 28 after it did not respond",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "Sworn testimony is a forced-disclosure channel for agent incidents.",
+   "url": "https://council.nyc.gov/press/2026/09/28/3266/"
+  },
+  {
+   "date": "2026-10-06",
+   "kind": "policy",
+   "title": "OpenAI's chief strategy officer Jason Kwon appears before the Australian Parliament's Joint Select Committee on Artificial Intelligence in Sydney on the June Medicare Statistics breach (an OpenAI spokesperson to AAP and Reuters, Sept 28); Anthropic is reported to send an envoy (Sydney Morning Herald, via AAP)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "url": "https://www.canberratimes.com.au/story/9358287/openai-executive-to-front-grilling-on-medicare-breach/"
+  },
+  {
+   "date": "2026-10-14",
+   "kind": "industry",
+   "title": "Anthropic's reported pre-IPO investor day at its San Francisco headquarters (Bloomberg, Oct 1, people familiar; no public S-1 on EDGAR as of Oct 2)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "url": "https://theedgemalaysia.com/node/820297"
+  },
+  {
+   "date": "2026-10-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: OpenAI says it has resumed training its frontier models (openai-resume-by-oct31)",
+   "hyp": "B",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-10-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic shares begin trading on Nasdaq (anthropic-ipo-by-oct31); Bloomberg reported on Oct 1 that formal IPO marketing could start as soon as the week of Nov 9",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
    "date": "2026-11-03",
    "kind": "industry",
    "title": "US midterms; Reuters (Sept 28) reports Anthropic's IPO is likely to come after them (no date set; a public S-1 must appear at least 15 days before the roadshow)",
@@ -17,6 +58,23 @@
    "certainty": "approximate",
    "why": "Public-company disclosure rules become a forced-disclosure channel.",
    "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html"
+  },
+  {
+   "date": "2026-11-07",
+   "kind": "alarm",
+   "title": "Alarm trigger W2 is met on this date unless OpenAI's post-Astra model (acknowledged Sept 8) is released or an external evaluation of it is announced first",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/alarm.html"
+  },
+  {
+   "date": "2026-11-09",
+   "kind": "industry",
+   "title": "Anthropic could start formal IPO marketing as soon as this week, putting it in line to begin trading before Thanksgiving on Nov 26, per Bloomberg (Oct 1); a public S-1 would have to appear at least 15 days before the roadshow",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "Public-company disclosure rules become a forced-disclosure channel.",
+   "url": "https://theedgemalaysia.com/node/820297"
   },
   {
    "date": "2026-11-16",
@@ -35,12 +93,29 @@
    "url": "https://www.forbes.com/sites/siladityaray/2026/09/21/bessent-touts-ai-dialogue-with-china-and-notification-mechanism-for-incidents/"
   },
   {
+   "date": "2026-11-28",
+   "kind": "policy",
+   "title": "Due: the President's science adviser (APST) submits proposed legislative language for a federal definition of \"Super Intelligence\" to the President (EO of Sept 29, Sec. 3(b), 60 days; an internal submission)",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "why": "For now the order defines SI as the existing statutory definition of AI (15 U.S.C. 9401(3)); a new definition would be a label, not a capability finding.",
+   "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/"
+  },
+  {
+   "date": "2026-11-30",
+   "kind": "forecast",
+   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30); METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30); California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
    "date": "2026-12-31",
    "kind": "models",
-   "title": "Gemini 4 (\"as soon as possible\"; Google hopes well before year-end)",
+   "title": "Gemini 4 wider release: Argon has been rolling out only to trusted cyber defenders (Fairwind Program) since Sept 30; paid API customers and Google AI Ultra subscribers come next, \"as soon as possible\" (Google DeepMind's Koray Kavukcuoglu said in the week of Sept 21 that he hoped for well before year-end)",
    "hyp": "A",
    "certainty": "target",
-   "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/"
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
   },
   {
    "date": "2026-12-31",
@@ -69,6 +144,14 @@
    "url": "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/04/ny-overhauls-frontier-ai-transparency-law"
   },
   {
+   "date": "2027-10-01",
+   "kind": "policy",
+   "title": "Pentagon's target date to establish a four-star Autonomous Warfare Command to scale autonomous and robotic systems (announced Sept 30; needs legislation from Congress)",
+   "hyp": "Dopen",
+   "certainty": "target",
+   "url": "https://defensescoop.com/2026/09/30/hegseth-announces-autonomous-warfare-command/"
+  },
+  {
    "date": "2028-03-31",
    "kind": "research",
    "title": "OpenAI's target for an automated AI researcher",
@@ -92,6 +175,11 @@
    "kind": "models",
    "title": "Grok 5 release",
    "hyp": "A"
+  },
+  {
+   "kind": "policy",
+   "title": "FTC civil investigative demands to OpenAI, Anthropic and METR (the FTC confirmed its probe on Sept 30; Semafor reports the demands will go out in the next few weeks)",
+   "hyp": "C"
   }
  ]
 }
