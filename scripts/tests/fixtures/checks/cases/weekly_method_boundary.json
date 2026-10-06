@@ -1,0 +1,14 @@
+{
+ "rule": "keyNumbers.methodBoundary matches the readings' definitions",
+ "ops": [
+  {
+   "file": "data/weekly/2026-10-09.json",
+   "set": [
+    "keyNumbers",
+    "methodBoundary"
+   ],
+   "value": false
+  }
+ ],
+ "expect": "keyNumbers.methodBoundary=false but the readings of 2026-10-05"
+}

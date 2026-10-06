@@ -1,0 +1,15 @@
+{
+ "rule": "history append-only",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "history",
+    0,
+    "why"
+   ],
+   "value": "edited"
+  }
+ ],
+ "expect": "agi_components.history[0]: why changed since HEAD"
+}

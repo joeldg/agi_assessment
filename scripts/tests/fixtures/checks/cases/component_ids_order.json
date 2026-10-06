@@ -1,0 +1,15 @@
+{
+ "rule": "exactly the 8 ids in order",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "id"
+   ],
+   "value": "scope"
+  }
+ ],
+ "expect": "must be exactly the 8 parts in order"
+}

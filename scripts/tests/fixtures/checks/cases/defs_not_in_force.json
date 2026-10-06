@@ -1,0 +1,14 @@
+{
+ "rule": "defs equals defs_in_force",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "defs"
+   ],
+   "value": "1.0"
+  }
+ ],
+ "expect": "but the definitions in force on 2026-10-06 are \"2.0\""
+}

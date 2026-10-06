@@ -1,0 +1,231 @@
+{
+ "note": "Staged edits for the definitions v2.0 method change (FINAL_SPEC 8.3-8.5). Applied by scripts/migrations/defs_v2.py --date <go-live date>; the script fills the date and the alarm re-evaluation sentence. Every edit is additive or a one-time display rewording; method.json and alarm.json changelogs are append-only.",
+ "numbersAsOf": "2026-10-05",
+ "v1Numbers": {
+  "note": "The v1.0 numbers the method entry's worked example quotes (the 2026-10-05 reading). The migration refuses to run if the newest published reading on or before --date has different numbers: the change text would then be wrong and must be recomputed with the same factors (FINAL_SPEC 8.3).",
+  "agi": {
+   "now": 1.5,
+   "y2030": 45,
+   "y2035": 65
+  },
+  "probs": {
+   "A": {
+    "now": 1,
+    "y2030": 25,
+    "y2035": 35
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33
+   },
+   "C": {
+    "now": 0.5,
+    "y2030": 10,
+    "y2035": 15
+   },
+   "D": {
+    "now": 0.25,
+    "y2030": 4,
+    "y2035": 8
+   },
+   "Dopen": {
+    "now": 0.3,
+    "y2030": 30,
+    "y2035": 50
+   }
+  },
+  "index": 2.5
+ },
+ "method": {
+  "version": "2.0",
+  "date": null,
+  "definitions": "2.0",
+  "definitionText": "AGI: a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining.",
+  "factors": {
+   "now": 0.57,
+   "y2030": 0.77,
+   "y2035": 0.89
+  },
+  "rule": "At the next reading, every number that needs an AGI-level system is re-derived through its published derivation with the factor applied to the chance of meeting the rest of the definition: AGI anywhere and A from their unrounded v1.0 inputs (today: lab term 1.4 and state term 0.1 times k; A also times the unchanged 0.6 kept-quiet factor); by end-2030 and end-2035 each v1.0 value times k; C, D and D-open keep their published shares of AGI; B is unchanged; the Index is re-derived from its parts; everything is rounded once to our grid (half up). Evidence moves that day are reported separately.",
+  "change": "Definitions v2.0 replace the v1.0 strict AGI bar wherever we use it: the 'AGI anywhere' forecast, hypotheses A, C, D and D-open, and alarm condition Y1. Our working definition: AGI is a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining. Physical and embodied work is out of scope. The v1.0 remote-work test (reliably, 80% or better, doing at least 80% of economically valuable remote professional tasks at the level of a median skilled professional, including multi-week projects, with no task-specific human scaffolding) stays as one of its tests, and we track the definition in eight parts with published tests on agi.html: breadth, quality, reliability, reasoning, planning and long projects, autonomy, learning on the job and generalization. v2.0 keeps every v1.0 requirement and adds learning on the job, generalization to new kinds of problem and open-ended reasoning, so we re-derived every number that needs an AGI-level system as its v1.0 value times our probability that a system meeting the remote-work test by that date also meets the rest of the definition: about 0.57 today, 0.77 by end-2030 and 0.89 by end-2035; of the parts v2.0 adds, generalization to new tasks holds the factor down most today, and learning on the job later. Today / by end-2030 / by end-2035, AGI anywhere (public or hidden) goes from 1.5% / 45% / 65% to 0.9% / 35% / 58%; A from 1% / 25% / 35% to 0.5% / 19% / 31%; C from 0.5% / 10% / 15% to 0.3% / 7.5% / 13%; D from 0.25% / 4% / 8% to 0.1% / 3% / 7%; and D-open from 0.3% / 30% / 50% to 0.2% / 23% / 45%. B doesn't depend on the AGI bar and stays at 2% / 22% / 33%, and the Hidden AGI Index stays at 2.5% (about 2.3 before rounding, down from about 2.5), most of it B. The other inputs are unchanged: the chance that an unreleased lab system meets the remote-work test, the chance it has been kept quiet for 30 days, the state-program term, and the shares of C, D and D-open. These moves come from the change of definition, not from news. Readings and forecasts published under v1.0 keep their meaning and resolve under v1.0. Y1 is restated on the new bar in its own alarm-criteria changelog entry (Y2, which uses Y1's bar, follows), and no other threshold changes.",
+  "why": "Readers couldn't see how our numbers identify AGI, and the v1.0 bar named only a remote-work test. v2.0 says what we mean by AGI, adds the abilities most outside definitions treat as central (learning on the job and handling new kinds of problem), and splits the definition into parts we can measure and show."
+ },
+ "alarm": {
+  "fromVersion": "1.1",
+  "version": "1.2",
+  "conditions": {
+   "Y1": {
+    "triggerFrom": "An undisclosed system (company or government) meets our strict AGI bar on both halves: breadth (at least 80% of real remote projects delivered at client-acceptable quality, as the Remote Labor Index measures) and length and reliability (80% success on tasks of a work-month or longer, on a test that isn't saturated at that length)",
+    "trigger": "An undisclosed system (company or government) meets AGI as defined in definitions v2.0 (agi.html; the eight parts' tests are in data/agi_components.json): evidence equivalent to passing all eight parts' tests at once (the same tests run by an evaluator or the lab, documented results, or insider evidence), including both halves of the remote-work test: breadth (at least 80% of real remote projects delivered at client-acceptable quality, as the Remote Labor Index measures) and length and reliability (80% success on tasks of a work-month or longer, on a test that isn't saturated at that length). Physical and embodied work is out of scope."
+   }
+  },
+  "changelog": {
+   "version": "1.2",
+   "date": null,
+   "change": "Y1 restated on definitions v2.0: an undisclosed system must meet AGI as defined on agi.html, on evidence equivalent to passing all eight parts' tests at once, including both halves of the earlier remote-work test; physical and embodied work is out of scope. Y2 refers to Y1's bar and follows it. No other condition, threshold, level or rule changes. Display only, not criteria: each condition gains a short label. Re-evaluated the same day: {reevaluated}",
+   "why": "Definitions v2.0 (method v2.0, same date) replace the strict bar everywhere, so the alarm's top level and our numbers use one definition of AGI. Made while no level change is being considered, as our rules require."
+  },
+  "short": {
+   "W1": "Capability gap of 3+ months, measured or credibly reported",
+   "W2": "Unreleased frontier model with no outside evaluation for 60+ days",
+   "W3": "Evaluator access restricted by a lab or government (past 90 days)",
+   "W4": "Median disclosure lag of 30+ days (incidents disclosed in past 180 days)",
+   "W5": "A lab's AI-led R&D share up 10+ points in 6 months",
+   "W6": "Exclusive internal use of an unreleased model for 90+ days",
+   "X1": "Measured or leaked capability gap of 6+ months",
+   "X2": "A new model 3+ residual SDs above the capability trend",
+   "X3": "AI-driven self-improvement: over 10% autonomous AI R&D, or 3x+ speed-up",
+   "X4": "Unexplained compute at 2x+ the trend for the largest AI data center",
+   "X5": "Insider evidence",
+   "X6": "Covert autonomous operation (30+ days) or weight exfiltration",
+   "Y1": "Undisclosed system meets AGI (definitions v2.0)",
+   "Y2": "AGI-level system acting covertly, or covertly shaping a government decision",
+   "Y3": "Undisclosed recursive self-improvement"
+  }
+ },
+ "agiClaims": {
+  "definitionV2": "Definitions v2.0 (agi.html): full human cognitive autonomy; all eight parts met at once; physical work out of scope.",
+  "meetsV2": "no",
+  "why": "No public system meets any of the eight parts, so no claim to date meets definitions v2.0."
+ },
+ "externalForecasts": {
+  "note": "Outside forecasts of when AGI arrives, plotted against our AGI-anywhere curve (definitions v2.0). None uses our exact definition. Each entry's bar says how it compares with definitions v2.0: announcement (measures an announcement, not whether a system exists), narrower (an easier milestone, so an early bound), stricter (a harder milestone, so a late bound), different (a different test) or own-definition (the forecaster's own, unstated bar); gap says how in one line. barV1 and gapV1 keep the comparison with the v1.0 strict bar. A median is plotted as a 50% point at that date. Market prices come from the market's public API, dated in Pacific time.",
+  "forecasts": [
+   {
+    "who": "Kalshi market",
+    "what": "Any company announces AGI before Apr 1, 2027",
+    "bar": "announcement",
+    "gap": "Measures an announcement, not whether a system meeting our definition exists."
+   },
+   {
+    "who": "Daniel Kokotajlo (AI Futures)",
+    "what": "Automated coder, median",
+    "bar": "narrower",
+    "gap": "Coding only, so it should arrive before a system meets our definition."
+   },
+   {
+    "who": "Kalshi market",
+    "what": "Any company announces AGI before Jan 1, 2028",
+    "bar": "announcement",
+    "gap": "Measures an announcement, not whether a system meeting our definition exists."
+   },
+   {
+    "who": "Shane Legg (Google DeepMind)",
+    "what": "Minimal AGI, 50%",
+    "bar": "narrower",
+    "gap": "The cognitive tasks a typical person does, an easier bar than our definition's full scope at a skilled professional's level, so an early bound. His full AGI, three to six years later, is closer to ours."
+   },
+   {
+    "who": "Daniel Kokotajlo (AI Futures)",
+    "what": "Top-expert-dominating AI (TED-AI), median",
+    "bar": "stricter",
+    "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after a system meets our definition."
+   },
+   {
+    "who": "Daniel Kokotajlo (AI Futures)",
+    "what": "AI companies automate the whole AI research and development process, about 50%",
+    "bar": "narrower",
+    "gap": "AI research only (the whole process, not just coding), so it should come before a system meets our definition; it is closer to our hypothesis B (hidden self-improvement) than to AGI."
+   },
+   {
+    "who": "Demis Hassabis",
+    "what": "AGI in \"2029 or 2030\"",
+    "bar": "own-definition",
+    "gap": "His own definition and a two-year point estimate, not a probability."
+   },
+   {
+    "who": "Eli Lifland (AI Futures)",
+    "what": "Automated coder, median",
+    "bar": "narrower",
+    "gap": "Coding only, so it should arrive before a system meets our definition."
+   },
+   {
+    "who": "Eli Lifland (AI Futures)",
+    "what": "Top-expert-dominating AI (TED-AI), median",
+    "bar": "stricter",
+    "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after a system meets our definition."
+   },
+   {
+    "who": "Metaculus community",
+    "what": "First general AI system, community median",
+    "bar": "different",
+    "gap": "Adds robotics and an adversarial Turing test and needs a public announcement, so it can never count a hidden system; it has no learning-on-the-job, multi-week or reliability test."
+   },
+   {
+    "who": "AI safety leaders survey (Summit on Existential Security)",
+    "what": "AGI (automates >90% of 2025-economy roles), respondents' median 50% year",
+    "bar": "stricter",
+    "gap": "More than 90% of all roles, physical ones included, so it should come after a system meets our definition, which leaves physical work out."
+   }
+  ]
+ },
+ "gauges": {
+  "delegation": {
+   "unit": [
+    "level (1–5)",
+    "rung (1–5)"
+   ],
+   "how": [
+    "The highest level with credible evidence of routine use by a major government.",
+    "The highest rung with credible evidence of routine use by a major government."
+   ]
+  },
+  "money": {
+   "how": [
+    "Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta over the last four reported quarters, from SEC filings. Mostly data centers, but includes non-AI spending such as Amazon logistics. Spending alone cannot reveal hidden capability; the money red flag is trigger X4 (a run or cluster 2x the largest known with no matching release).",
+    "Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta over the last four reported quarters, from SEC filings. Mostly data centers, but includes non-AI spending such as Amazon logistics. Spending alone cannot reveal hidden capability; the money red flag is condition X4 (an operating cluster or training run at least 2x Epoch AI's trend for the largest, with nothing publicly attributed to it and no model from it released or externally evaluated within 12 months)."
+   ]
+  }
+ },
+ "escape": {
+  "statusReasonLeads": {
+   "identity": {
+    "from": "Watching, ",
+    "to": "Open, "
+   },
+   "coordination": {
+    "from": "Watching, ",
+    "to": "Open, "
+   },
+   "leakage": {
+    "from": "Watching, ",
+    "to": "Open, "
+   }
+  },
+  "statusLegend": {
+   "quiet": {
+    "label": "Quiet",
+    "icon": "○",
+    "color": "--good",
+    "meaning": "Nothing inside the indicator's look-back window meets its rule for Open."
+   },
+   "watching": {
+    "label": "Open",
+    "icon": "◔",
+    "color": "--warn",
+    "meaning": "Precursors, attributed incidents or open leads inside the window, but no confirmed case. Open means no confirmed case yet, not that there is no case."
+   },
+   "tripped": {
+    "label": "Confirmed",
+    "icon": "●",
+    "color": "--crit",
+    "meaning": "A case confirmed to the indicator's confirm rule and the site's evidence standard. It goes to the linked alarm condition (see alarmNote) for a dated ruling; the alarm level changes only if that condition is met."
+   }
+  }
+ },
+ "calendar": {
+  "note": "Display-only short titles (14 words or fewer) for dated events whose titles cut badly in the report's dates line: build_report.calendar_short cuts a title at its first parenthesis, and the W2 clock's title read 'Alarm trigger W2 is met on this date unless OpenAI's post-Astra model' (and 'trigger' is a retired word; the display word is 'condition'). Matched by date, kind and the start of the title; a missing event is a note, never a refusal.",
+  "shorts": [
+   {
+    "date": "2026-11-07",
+    "kind": "alarm",
+    "titleStart": "Alarm trigger W2 is met on this date",
+    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
+   }
+  ]
+ },
+ "components": {
+  "definitionsVersion": "2.0"
+ }
+}

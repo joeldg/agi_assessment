@@ -1,0 +1,275 @@
+[
+ {
+  "date": "2026-10-05",
+  "label": "daily reading",
+  "report": "reports/2026-10-05.html",
+  "probs": {
+   "A": {
+    "now": 1,
+    "y2030": 25,
+    "y2035": 35,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.5,
+    "y2030": 10,
+    "y2035": 15,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.25,
+    "y2030": 4,
+    "y2035": 8,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.3,
+    "y2030": 30,
+    "y2035": 50,
+    "conf": "low"
+   }
+  },
+  "agi": {
+   "now": 1.5,
+   "y2030": 45,
+   "y2035": 65,
+   "conf": "low–medium",
+   "note": "Strict AGI exists (public or hidden): at least 80% of remote professional tasks, including multi-week projects, done reliably."
+  },
+  "index": 2.5,
+  "changes": [
+   "No probability, Index or gauge value moved from the Oct 4 reading. One day of time passing is well below a rounding step, so the 'now' numbers hold. The Oct 5 news concerns oversight and governance of sub-AGI systems, not capability kept from the public: the NYC Council hearing (labs testified under oath, per CNBC; researcher testimony; SpaceXAI's absence), the StarCraft benchmark report on GPT-6 Astra (credible report), Epoch's analysis of OpenAI's coding-agent spending, and new detail on OpenAI's June incidents in Australia."
+  ],
+  "summary": "A quiet day for the numbers: no probability, gauge, Index value or alarm level moved from the Oct 4 reading. The New York City Council's hearing on AI risks opened; former researchers Jacob Coxon, Daniel Kokotajlo and Alex Turner testified first, and by CNBC's update read at about 09:55 PT, Anthropic, OpenAI, Google and Meta had testified under oath and outlined their companies' safety measures, with no new incident or capability disclosure reported (credible report; CNBC). The operator of a StarCraft benchmark says GPT-6 Astra ran a third-party bot instead of its own code (credible report); Epoch AI finds OpenAI researchers' coding-agent spending doubling about monthly; and new detail emerged on OpenAI's June incidents at Australian agencies. There is still no credible evidence that any of the four hypotheses is true now on a strict definition of AGI. The fire alarm stays at Level 1, Watch (W3, W4, W5)."
+ },
+ {
+  "date": "2026-10-06",
+  "label": "first v2.0 reading",
+  "report": "reports/2026-10-06.html",
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-10-06-analysis.html",
+  "verdict": "Method change today: our numbers were re-derived under definitions v2.0; no evidence moved.",
+  "probs": {
+   "A": {
+    "now": 0.5,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 7.5,
+    "y2035": 13,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.1,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "note": "AGI anywhere, public or hidden (definitions v2.0).",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   }
+  },
+  "index": 2.5,
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.55
+   },
+   {
+    "key": "B",
+    "v": 1.7
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "indexNote": "2.5% under definitions v2.0, a method change.",
+  "summary": "Fixture summary.",
+  "timeline": "Fixture timeline.",
+  "timelineShort": "No public system meets the definition; the nearest parts are reasoning and generalization.",
+  "bottomLine": "What would change our mind: a public system passing the generalization test.",
+  "needle": {
+   "quiet": true,
+   "subject": "A quiet day",
+   "headline": "Quiet day: nothing moved.",
+   "brief": "Nothing moved on evidence today.",
+   "detail": "Full detail.",
+   "rating": "verified fact",
+   "url": "https://example.org/needle",
+   "source": "Example"
+  },
+  "roundup": [
+   {
+    "topic": "Labs",
+    "items": [
+     {
+      "date": "Oct 6",
+      "text": "Story 1 text with its source.",
+      "url": "https://example.org/story-1",
+      "top": true,
+      "short": "Story 1 in fewer than twenty-five words.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 6",
+      "text": "Story 2 text with its source.",
+      "url": "https://example.org/story-2",
+      "top": true,
+      "short": "Story 2 in fewer than twenty-five words.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 6",
+      "text": "Story 3 text with its source.",
+      "url": "https://example.org/story-3",
+      "top": true,
+      "short": "Story 3 in fewer than twenty-five words.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 6",
+      "text": "Not a top item.",
+      "url": "https://example.org/x"
+     }
+    ]
+   }
+  ],
+  "tripwires": [],
+  "tripwireChanges": [],
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months"
+   }
+  },
+  "escape": {
+   "tripped": 0,
+   "watching": 8,
+   "quiet": 0,
+   "changes": [],
+   "newEvidence": [
+    "compute"
+   ]
+  },
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 20.8%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 20.8%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 20.8%, against 50%.",
+    "basisShort": "overall figure only; RLI 20.8%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h"
+  },
+  "dates": [
+   {
+    "date": "2026-10-14",
+    "short": "Anthropic investor day"
+   }
+  ],
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "changes": [
+   "Method change (definitions v2.0): AGI anywhere goes from 1.5% to 0.9% now, 45% to 35% by end-2030 and 65% to 58% by end-2035. No evidence moved.",
+   "Method change (definitions v2.0): A goes from 1% to 0.5% now, 25% to 19% by end-2030 and 35% to 31% by end-2035; the chance of being kept quiet for 30 days is unchanged.",
+   "Method change (definitions v2.0): C goes from 0.5% to 0.3% now (10% to 7.5% by end-2030, 15% to 13% by end-2035); D from 0.25% to 0.1% (4% to 3%, 8% to 7%), now on our rounding grid; D-open from 0.3% to 0.2% (30% to 23%, 50% to 45%).",
+   "Method change (definitions v2.0): B is unchanged at 2% / 22% / 33% because it doesn't need AGI, and the Hidden AGI Index stays at 2.5%.",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4, W5 met)."
+  ],
+  "methodChange": {
+   "from": "1.0",
+   "to": "2.0",
+   "note": "Definitions v2.0 took effect on 2026-10-05."
+  },
+  "corrections": []
+ }
+]

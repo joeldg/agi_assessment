@@ -1,0 +1,16 @@
+{
+ "rule": "factors in (0, 1]",
+ "ops": [
+  {
+   "file": "data/method.json",
+   "set": [
+    "changelog",
+    -1,
+    "factors",
+    "y2035"
+   ],
+   "value": 1.2
+  }
+ ],
+ "expect": "factors.y2035=1.2 must be a number in (0, 1]"
+}

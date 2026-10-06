@@ -1,0 +1,16 @@
+{
+ "rule": "grid(sum indexParts) = index",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "indexParts",
+    1,
+    "v"
+   ],
+   "value": 1.0
+  }
+ ],
+ "expect": "which rounds to 1.5 on our grid, but index=2.5"
+}

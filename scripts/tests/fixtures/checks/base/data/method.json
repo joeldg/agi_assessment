@@ -1,0 +1,56 @@
+{
+ "note": "Changes to the method: definitions, gauges, the Hidden AGI Index formula and thresholds. Each change bumps the version and says why. Corrections to facts are logged separately in data/corrections.json.",
+ "version": "2.0",
+ "changelog": [
+  {
+   "version": "1.0",
+   "date": "2026-09-29",
+   "change": "Launch method: hypotheses A–D and D-open (A covers company or government programs), strict AGI bar, Hidden AGI Index, five gauges, tripwires, fire alarm v1.0.",
+   "why": "Launch"
+  },
+  {
+   "version": "1.1",
+   "date": "2026-09-30",
+   "change": "Fire-alarm criteria v1.1: a symmetric exit rule (a level drops after its rule has gone unsatisfied for 30 consecutive days, to the level the rules then give); W1 counts only a measured or credibly reported capability gap; W5 is a rate (a rise of 10 points or more within 6 months in a lab's published AI-led share of its AI R&D); borderline values don't count; W6 counts only days of internal use, so a safety pause suspends it, while W2 keeps running and one model can't count twice; X2 uses residuals (3 residual SDs above the trend fit) on an instrument that can measure them; X3 counts published estimates; X4 is measured against Epoch AI's trend; Y1 names both halves of the strict bar; every trigger says when it clears. Every level change gets a breaking alert that a person approves before it is sent, and the daily and weekly issues are never held. The level stays Watch, on W3, W4 and W5.",
+   "why": "Under v1.0 one rising trigger could hold Watch for good, W1 rested on our own estimate at exactly its threshold, X2 couldn't be observed and X4 could fire on normal build-to-release lags. Fixed while no level change is being considered; the details are in the alarm changelog."
+  },
+  {
+   "version": "1.1",
+   "date": "2026-09-30",
+   "change": "Level 3 (Alarm) needs convergent proof, not official confirmation: at least three independent lines of evidence from different modalities that share no original source, every fact authenticated, no single innocent explanation that covers all the lines, and a unanimous adversarial tribunal. The format of a Level-3 alert and its evidence page is published in advance.",
+   "why": "Being wrong at Alarm would cost the site its credibility, but waiting for a developer to confirm would make the alarm pointless, because by then the secret is out."
+  },
+  {
+   "version": "1.2",
+   "date": "2026-09-30",
+   "change": "The 'now' probability for A is derived explicitly and published with each reading: P(an unreleased system meets the strict bar now) × P(it has stayed undisclosed for 30+ days), plus a small state-program term, using the capability-gap gauge, METR's fitted time horizons and the suite's saturation limit. Strict AGI 'now' is set consistently with it, and C, D and D-open scale from it.",
+   "why": "The first reading's 3% for A had no stated derivation. Worked through, it comes to about 1%, so A, the Index and the dependent hypotheses were corrected with dated notices."
+  },
+  {
+   "version": "1.2",
+   "date": "2026-09-30",
+   "change": "Definitions harmonised: A, B and C all use a 30-day secrecy window; C has two paths (sanctioned but undisclosed, and rogue or stolen); D is one question with a covert reading (D) and an open reading (D-open), and D-open counts acknowledged government use even of a system whose AGI-level capability hasn't been disclosed.",
+   "why": "The windows were inconsistent (30 days for A, about 3 months implied for B), and C's definition didn't match how it was reasoned about."
+  },
+  {
+   "version": "1.2",
+   "date": "2026-09-30",
+   "change": "Ill-posed forecasts can be withdrawn unscored, with the reason shown; two were withdrawn and replaced with well-posed versions.",
+   "why": "Keeping a forecast that can't resolve fairly would make the scorecard look better or worse than it is."
+  },
+  {
+   "version": "2.0",
+   "date": "2026-10-05",
+   "definitions": "2.0",
+   "definitionText": "AGI: a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining.",
+   "factors": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "rule": "At the next reading, every number that needs an AGI-level system is re-derived (fixture text).",
+   "change": "Definitions v2.0 replace the v1.0 strict AGI bar (fixture text).",
+   "why": "Fixture text."
+  }
+ ]
+}

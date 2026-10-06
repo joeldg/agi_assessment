@@ -1,0 +1,24 @@
+{
+ "rule": "met requires every part passed",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "status"
+   ],
+   "value": "met"
+  },
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "statusBasis"
+   ],
+   "value": "Met: fixture."
+  }
+ ],
+ "expect": "is Met but not every part of its test is passed"
+}

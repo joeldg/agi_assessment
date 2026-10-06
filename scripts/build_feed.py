@@ -39,6 +39,10 @@ MAX_ITEMS = 30
 INK, MUTED, RULE, UP, DOWN, ACCENT = "#1C2733", "#5A6775", "#C9D0D7", "#A33A30", "#2D6A4F", "#B8700C"
 FONT = "font-family:Georgia,'Times New Roman',serif;"
 SANS = "font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;"
+# What each gauge measures, for the email's one-line gauge strip (the site's pages carry the full questions).
+GAUGE_GLOSS = {"gap": "Capability gap, unreleased over public models", "rd": "A lab's AI-led share of its AI R&D",
+               "oversight": "Disclosure lag, incident to public", "money": "Big Tech capex, all property and equipment",
+               "delegation": "Government delegation to AI"}
 
 
 def _q(v, places):
@@ -47,7 +51,7 @@ def _q(v, places):
 
 def fmt(v):
     """Display precision, rounded half-up: 2 decimals below 1, 1 decimal below 10, whole numbers above.
-    Values that round up to the next band roll over (0.996 -> '1', 9.96 -> '10'). assets/app.js mirrors this."""
+    Values that round up to the next band roll over (0.996 -> '1', 9.96 -> '10'). assets/charts.js fmtNum mirrors this."""
     if v is None:
         return "–"
     v = float(v)
@@ -335,9 +339,10 @@ def correction_text(c):
             f'{escape(str(c["now"]).strip().rstrip("."))}{source_link(c)}.')
 
 
-def corrections_box(corrections, title=None, cap=CORRECTIONS_SHOWN):
+def corrections_box(corrections, title=None, cap=CORRECTIONS_SHOWN, more_url=None):
     """A neutral box listing corrections ({date, page, was, now, url, source}); '' when there are none.
-    Shows at most `cap` items, then how many more there are, linked to the public log."""
+    Shows at most `cap` items, then how many more there are, linked to the public log (or to `more_url`,
+    the analysis page's #corrections on a format-2 issue)."""
     items, seen = [], set()
     for c in as_list(corrections):
         if not isinstance(c, dict) or not c.get("was") or not c.get("now"):
@@ -352,8 +357,12 @@ def corrections_box(corrections, title=None, cap=CORRECTIONS_SHOWN):
     more = len(items) - cap if cap and len(items) > cap else 0
     lis = "".join(f'<li style="margin:0 0 6px">{i}</li>' for i in (items[:cap] if more else items))
     if more:
-        lis += (f'<li style="margin:0 0 6px;list-style:none">{more} more {"correction" if more == 1 else "corrections"}: '
-                f'{link(CORRECTIONS_LOG, "see the corrections log")}.</li>')
+        if more_url:
+            label = f'{more} more {"correction" if more == 1 else "corrections"} →'
+            lis += f'<li style="margin:0 0 6px;list-style:none">{link(more_url, label)}</li>'
+        else:
+            lis += (f'<li style="margin:0 0 6px;list-style:none">{more} more {"correction" if more == 1 else "corrections"}: '
+                    f'{link(CORRECTIONS_LOG, "see the corrections log")}.</li>')
     head = title or ("Correction" if len(items) == 1 else "Corrections")
     return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:6px 0 14px"><tr>'
             f'<td bgcolor="#F8F9FA" style="background-color:#F8F9FA;border-left:4px solid {INK};padding:8px 12px">'
@@ -604,6 +613,8 @@ def issue_html(run, prev, later=None):
     shows them; the email that carries them is the next day's, through run["corrections"]).
     Order: dated masthead, corrections, alarm, index, needle, gauges, Escape watch, probabilities, summary, tripwires,
     what changed, timeline, roundup, signals, then the share card next to the report link and the footer."""
+    if run.get("format") == 2:
+        return issue_html_v2(run, prev, later)
     report_url = SITE + run["report"]
     t = datetime.strptime(run["date"], "%Y-%m-%d")
     out = [p(f'<span style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600">'
@@ -622,20 +633,238 @@ def issue_html(run, prev, later=None):
     return "".join(out)
 
 
+# ---- format-2 issue (spec 9.4): a pure function of the run and the previous published run (B1) ----
+# It reads the run's own snapshots (components, furthest, alarm, escape counts, dates), never the live data files,
+# so every past v2 item rebuilds byte-identically. The legacy path above is untouched.
+
+def _chip(rating):
+    """An evidence-rating chip with inline styles (email clients ignore stylesheets)."""
+    import build_report as br
+    base, qual = br.split_rating(rating)
+    if not base:
+        return ""
+    q = f' <span style="color:{MUTED};font-size:11px">({escape(qual)})</span>' if qual else ""
+    return (f' <span style="{SANS}font-size:11px;text-transform:uppercase;letter-spacing:.02em;border:1px solid {RULE};'
+            f'border-radius:3px;padding:0 4px;color:{MUTED};white-space:nowrap">{escape(base)}</span>{q}')
+
+
+def _small(text):
+    return f'<span style="color:{MUTED};font-size:13px">{text}</span>'
+
+
+def _kicker(text, margin="18px 0 4px"):
+    return (f'<div style="{SANS}font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};'
+            f'font-weight:600;margin:{margin}">{escape(text)}</div>')
+
+
+def _cell_text(text):
+    """A Change-today cell: arrows coloured, method change muted."""
+    if text.startswith("▲"):
+        return f'<span style="color:{UP};font-weight:600">{escape(text)}</span>'
+    if text.startswith("▼"):
+        return f'<span style="color:{DOWN};font-weight:600">{escape(text)}</span>'
+    return f'<span style="color:{MUTED}">{escape(text)}</span>'
+
+
+def issue_html_v2(run, prev, later=None):
+    """The daily email for a format-2 reading. Order: masthead, corrections (at most 5, then a link to the analysis),
+    method banner (boundary run only), alarm line, the answers line, the Index line, needle box, probability table,
+    signals, gauges, "Is AGI here, today?", top stories, dates to watch, bottom line, closing."""
+    import build_report as br
+    from sitekit import SIGNAL_STATUS, condition_name, method_boundary, run_defs, signal_view
+    d = run["date"]
+    report_url, an_url = SITE + run["report"], SITE + (run.get("analysis") or run["report"])
+    t = datetime.strptime(d, "%Y-%m-%d")
+    out = [p(f'<span style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600">'
+             f'Hidden AGI watch · {t.strftime("%a")} {pretty_date(d)}</span>', "margin-bottom:12px")]
+    if str(run.get("verdict") or "").strip():   # the day in one line (the short report's H1), before anything static
+        out.append(p(escape(str(run["verdict"]).strip()), f"{FONT}font-size:17px"))
+    out += [corrections_box(later, title="Corrected since this issue was published"),
+            corrections_box(br.newest_first([c for c in as_list(run.get("corrections")) if isinstance(c, dict)]),
+                            more_url=an_url + "#corrections")]
+    boundary = method_boundary(run, prev)
+    if run.get("methodChange") or boundary:
+        to = (run.get("methodChange") or {}).get("to") or run_defs(run)
+        out.append(p(f'<strong>Method change today:</strong> this is our first reading under definitions v{escape(to)}. Our numbers were '
+                     f're-derived; this is not news. {link(SITE + "changes.html#method", "What changed →")}',
+                     f"background:#F8F9FA;border-left:4px solid {INK};padding:8px 12px"))
+    al = run.get("alarm") or {}
+    if al.get("icon") and al.get("name"):
+        col = {"good": "#2E7D4F", "warn": "#9A6B00", "crit": "#B42318"}.get(al.get("status"), INK)
+        since = f'since {br.day(al["since"], False)} · ' if al.get("since") else ""
+        met = "; ".join(condition_name(m) for m in al.get("met") or [])
+        met = f"met: {met}" if met else "no condition met"
+        out.append(p(f'<span style="color:{col};font-weight:600"><span aria-hidden="true">{escape(al["icon"])}</span> '
+                     f'Fire alarm: Level {int(al["level"])}, {escape(al["name"])}.</span> '
+                     f'<span style="color:{MUTED}">{escape(since)}{escape(met)}. Set by published rules, not our odds. '
+                     f'{link(SITE + "alarm.html", "How the alarm works")}</span>'))
+    else:
+        out += _alarm_line(run)
+    head, rest = br.answer_text(run)
+    agi = run.get("agi") or {}
+    mc_agi = ""
+    if boundary and prev:
+        mc_agi = f' (method change, from {fmt((prev.get("agi") or {}).get("now"))}%)'
+    out.append(p(f'<strong>Is AGI here?</strong> {escape(head)} {escape(rest)} AGI anywhere, public or hidden: '
+                 f'<strong>{fmt(agi.get("now"))}%</strong> today{escape(mc_agi)}. '
+                 f'{link(SITE + "agi.html#definition", "What we mean by AGI →")}'))
+    f = run.get("furthest")
+    if isinstance(f, dict) and f.get("short"):
+        out.append(p(_small(f'Furthest behind: {escape(str(f["short"]).lower())}, {escape(f.get("display") or "")} of '
+                            f'{escape(f.get("targetDisplay") or "")}.'), "margin-top:-4px"))
+    # The parts (A + B-only + C/D) and the rounding note stay on the report's card 2 and the analysis #index; the
+    # email says how the Index sits against AGI anywhere, the question readers ask.
+    ix_delta = br.change_cell(run, prev, "index")
+    if boundary and prev and fmt(prev.get("index")) == fmt(run.get("index")):
+        ix_delta += ", unchanged after rounding"
+    b = br.b_only(run)
+    bridge = ""
+    if run.get("index") is not None and agi.get("now") is not None and float(run["index"]) > float(agi["now"]) \
+            and b is not None:
+        bridge = (f" Higher than AGI anywhere ({fmt(agi.get('now'))}%) because {br.fmtp(b)} points are hidden "
+                  "self-improvement (B), which needs no AGI.")
+    out.append(p(f'<strong>Hidden AGI Index: {fmt(run.get("index"))}%</strong> · {_cell_text(ix_delta)} '
+                 f'<span style="color:{MUTED}">· the chance at least one hidden scenario is true now.{escape(bridge)} '
+                 f'{link(SITE + "start-here.html#pieces", "How our numbers fit →")}</span>'))
+    nd = run.get("needle") or {}
+    kicker = "Quiet day · the day's story" if nd.get("quiet") else "What moved the needle"
+    src = br.source_name(nd)
+    out.append(f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:10px 0 16px"><tr>'
+               f'<td bgcolor="#F8F9FA" style="background-color:#F8F9FA;border-left:4px solid {ACCENT};padding:8px 12px">'
+               f'<div style="{SANS}font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600;padding:0">{escape(kicker)}</div>'
+               f'<div style="{FONT}font-size:18px;font-weight:600;color:{INK};margin:4px 0;padding:0">{escape(nd.get("subject") or nd.get("headline") or "")}</div>'
+               f'<div style="{SANS}font-size:14px;line-height:1.5;color:{INK};padding:0">{escape(nd.get("brief") or "")}'
+               f'{_chip(nd.get("rating"))} {link(abs_url(nd.get("url")) or "", src) if abs_url(nd.get("url")) else ""}</div>'
+               f'</td></tr></table>')
+    th = th_attr()
+    td = f'style="{SANS}font-size:14px;color:{INK};padding:6px 8px;border-bottom:1px solid {RULE};vertical-align:top"'
+    # The Change column appears only on a day a displayed number moved (a ▲/▼ cell); on a quiet day the table is
+    # four columns that fit a phone, and one line under it says so. On the method boundary that line names the
+    # from→to of every re-derived number (the short report keeps its full table: checks/method.py reads its cells).
+    cells = {key: br.change_cell(run, prev, key) for key, _ in br.ROWS}
+    moved = any(str(c).startswith(("▲", "▼")) for c in cells.values())
+    # A by-end-2030 or by-end-2035 number that moved on a day no today number did (M2): the four-column table has no
+    # Change column, so the line under it names those moves instead of saying nothing moved.
+    h_moved = [(k, h) for k, _ in br.ROWS for h in ("y2030", "y2035")
+               if str(br.change_cell(run, prev, k, h)).startswith(("▲", "▼"))]
+    rows = [f"<tr><th {th}>Hypothesis</th><th {th}>Today</th><th {th}>By end-2030</th><th {th}>By end-2035</th>"
+            + (f"<th {th}>Change today</th>" if moved else "") + "</tr>"]
+    for key, label in br.ROWS:
+        s = br.series(run, key)
+        rows.append(f"<tr><td {td}>{escape(label)}</td><td {td}><strong>{fmt(s.get('now'))}%</strong></td>"
+                    f"<td {td}>{fmt(s.get('y2030'))}%</td><td {td}>{fmt(s.get('y2035'))}%</td>"
+                    + (f"<td {td}>{_cell_text(cells[key])}</td>" if moved else "") + "</tr>")
+    out.append(data_table(rows))
+    step5 = link(an_url + "#s5", "analysis, Step 5 →")
+    if moved:
+        note = f"What changed and why: {step5}"
+    elif boundary and prev:
+        mv = "; ".join(f"{lab} {fmt(br.series(prev, k).get('now'))}→{fmt(br.series(run, k).get('now'))}%"
+                       for k, lab in (("agi", "AGI anywhere"), ("A", "A"), ("C", "C"), ("D", "D"), ("Dopen", "D-open"))
+                       if fmt(br.series(prev, k).get("now")) != fmt(br.series(run, k).get("now")))
+        note = (f"Method change (definitions v{escape(run_defs(run))}): {escape(mv) or 'no displayed number moved'}; "
+                f"B unchanged, it needs no AGI. {step5}")
+    elif prev is not None and h_moved:
+        short = {"agi": "AGI anywhere", "A": "A", "B": "B", "C": "C", "D": "D", "Dopen": "D-open"}
+        horizon = {"y2030": "by end-2030", "y2035": "by end-2035"}
+        hv = "; ".join(f"{short[k]} {horizon[h]} {fmt(br.series(prev, k).get(h))}→{fmt(br.series(run, k).get(h))}%"
+                       for k, h in h_moved)
+        note = f"No today number moved; by end-2030 / end-2035 changed: {escape(hv)}. {step5}"
+    elif prev is not None:
+        note = f"No number moved today. {step5}"
+    else:
+        note = f"First reading. {step5}"
+    out.append(p(_small(note), "margin-top:-6px"))
+    c = br.signal_counts(run)
+    by_id = {w.get("id"): w for w in as_list(run.get("tripwires")) if isinstance(w, dict)}
+    ch = [x for x in as_list(run.get("tripwireChanges")) if isinstance(x, dict)]
+    lead = "No signal changed today · " if (run.get("tripwireChanges") is not None and not ch) else ""
+    out.append(_kicker("Signals"))
+    out.append(p(f'{lead}{c["tripped"]} confirmed (count toward Watch) · {c["watching"]} open · {c["quiet"]} quiet. '
+                 f'{link(SITE + "alarm.html#signals", "All signals →")}', "margin:4px 0 6px"))
+    if ch:
+        items = []
+        for x in ch[:3]:
+            # the display cap of sitekit.signal_view, from the condition letter the run's tripwire names (B1: the
+            # email is a pure function of the run): amber "Confirmed · counts toward Watch" unless X/Y-linked
+            trig = (by_id.get(x.get("id")) or {}).get("trigger")
+            icon, tok, word = signal_view(x.get("to"), trig) if str(x.get("to")) in SIGNAL_STATUS else (
+                "", "", str(x.get("to")))
+            col = {"good": "#2E7D4F", "warn": "#9A6B00", "crit": "#B42318"}.get(tok, INK)
+            name = (by_id.get(x.get("id")) or {}).get("signal") or x.get("id")
+            items.append(f'<span style="color:{col};font-weight:600"><span aria-hidden="true">{icon}</span> {escape(word)}</span>'
+                         f' · <strong>{escape(str(name))}</strong> (was {escape(br.signal_word(x.get("from")).lower())}). '
+                         f'<span style="color:{MUTED}">{escape(str(x.get("why") or ""))}</span>')
+        out.append(ul(items))
+    tt, total, w, ch_text, _ = br.escape_line_parts(run)
+    es = run.get("escape") if isinstance(run.get("escape"), dict) else {}
+    n_new = sum(1 for x in as_list(es.get("newEvidence")) if isinstance(x, str))
+    ne = "" if es.get("newEvidence") is None else (f"; new evidence on {n_new} of {total} indicators" if n_new
+                                                   else "; no new evidence")
+    out.append(p(f'Escape watch: {tt} of {total} confirmed · {w} open · {escape(ch_text)}{escape(ne)}. '
+                 f'{link(SITE + "escape.html", "Escape watch →")}', "font-size:14px"))
+    gl = []
+    for k in br.gauge_keys(run):
+        g = (run.get("gauges") or {}).get(k) or {}
+        fl = ", a floor" if k == br.FLOOR_GAUGE else ""
+        gl.append(f"{escape(GAUGE_GLOSS.get(k) or br.gauge_label(k))} <strong>{escape(br.gauge_display(k, g))}</strong>{fl}")
+    if gl:
+        out.append(_kicker("Gauges", "12px 0 4px"))
+        out.append(p(" · ".join(gl) + ".", "font-size:14px;margin:4px 0 6px"))
+        for k in br.moved_gauges(run, prev):
+            g, pg = run["gauges"][k] or {}, ((prev or {}).get("gauges") or {}).get(k) or {}
+            b = str(g.get("brief") or "").strip()
+            out.append(p(_small(f'{escape(br.gauge_label(k))}: {escape(br.gauge_display(k, pg))} → '
+                                f'{escape(br.gauge_display(k, g))}' + (f". {escape(b)}" if b else "")), "margin:0 0 6px"))
+    out.append(_kicker("AGI parts", "12px 0 4px"))
+    out.append(p(f'{escape(run.get("timelineShort") or "")} {link(an_url + "#timeline", "More →")}',
+                 "font-size:14px;margin:4px 0 6px"))
+    nurl = abs_url(nd.get("url")) or ""   # the needle box already tells this story
+    tops = [it for it in br.top_items(run) if not (nurl and abs_url(it.get("url")) == nurl)][:br.TOP_SHOWN]
+    if tops:
+        out.append(h2("Top stories"))
+        out.append(ul((f'<strong style="color:{MUTED}">{escape(br.item_date(it))}</strong> ' if it.get("date") else "")
+                      + escape(br.item_short(it)) + _chip(it.get("rating")) + source_link(it) for it in tops))
+        n = br.all_items(run)
+        out.append(p(link(an_url + "#roundup", f'All {n} {"story" if n == 1 else "stories"}, with sources →')))
+    dates = [x for x in as_list(run.get("dates")) if isinstance(x, dict) and x.get("date")]
+    out.append(h2("Dates to watch"))
+    if dates:
+        out.append(ul(f'<strong>{escape(br.day(x["date"], False))}</strong> · {escape(str(x.get("short") or ""))}'
+                      for x in dates))
+    out.append(p(link(an_url + "#s6", "What would change our mind →")))
+    out.append(h2("Bottom line"))
+    out.append(p(escape(run.get("bottomLine") or ""), f"{FONT}font-size:17px"))
+    if (ROOT / "cards" / f"{d}.png").exists():
+        alt = escape(f'Hidden AGI Index {fmt(run.get("index"))}% on {pretty_date(d)}', quote=True)
+        out.append(f'<a href="{report_url}"><img src="{SITE}cards/{d}.png" width="580" height="305" alt="{alt}" '
+                   f'style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:8px;margin:22px 0 8px"></a>')
+    today = link(report_url, "Today's report")
+    out.append(p(f'{today} · {link(an_url, "Full analysis")} (evidence, reasoning and every source) · '
+                 f'{link(SITE, "Dashboard")}', "margin-top:14px"))
+    out.append(p(f'Forwarded this? {link(SUBSCRIBE, "Subscribe to Hidden AGI watch")}. It\'s free.'))
+    out.append(p(_small(f'A daily reading of four hidden-AI scenarios. Probabilities are subjective and sourced in the '
+                        f'{link(an_url, "full analysis")}.'), "margin:18px 0 4px"))
+    out.append(email_footer("daily"))
+    return "".join(out)
+
+
 def cdata(s):
     return "<![CDATA[" + s.replace("]]>", "]]]]><![CDATA[>") + "]]>"
 
 
 STANDING_PAGES = ("start-here.html", "about.html", "scorecard.html", "disclosure-lag.html", "agi-claims.html",
-                  "calendar.html", "steelman.html", "trends.html", "money.html", "alarm.html", "style.html")
+                  "calendar.html", "steelman.html", "trends.html", "money.html", "alarm.html", "style.html",
+                  "escape.html", "agi.html", "hidden.html", "changes.html", "archive.html")
 
 
 def write_sitemap(runs):
     """List only pages that exist on disk, so a partial commit or a missing report never feeds 404s to Search Console."""
     dates = {}
     for run in runs:
-        if run.get("report") and (ROOT / run["report"]).exists():
-            dates[run["report"]] = max(dates.get(run["report"], ""), run["date"])
+        for path in (run.get("report"), run.get("analysis")):
+            if path and (ROOT / path).exists():
+                dates[path] = max(dates.get(path, ""), run["date"])
     latest = max((r["date"] for r in runs), default="")
     weekly_index = ROOT / "data/weekly/index.json"
     wraps = json.loads(weekly_index.read_text())["wrapups"] if weekly_index.exists() else []
@@ -694,14 +923,16 @@ def main():
     for i in feed_items(runs):
         run = runs[i]
         prev = prev_published(runs, i)
-        later = [c for c in log if c.get("page") == run["report"]]
+        later = [c for c in log if c.get("page") == run["report"]
+                 or (run.get("format") == 2 and run.get("analysis") and c.get("page") == run["analysis"])]
         published = datetime.strptime(run["date"], "%Y-%m-%d").replace(hour=13, tzinfo=timezone.utc)
         idx = run.get("index")
         title = (f"Hidden AGI Index {fmt(idx)}% · " if idx is not None else "Hidden AGI watch · ") + needle_hook(run)
         url = SITE + run["report"]
         guid = FEED_GUID_BASE + run["report"]
         # Entity-escape twice: RSS description is HTML carried as text, so "R&D" must reach the reader as "R&amp;D".
-        desc = escape(escape(run.get("summary", ""), quote=False), quote=False)
+        text = (run.get("verdict") or run.get("summary", "")) if run.get("format") == 2 else run.get("summary", "")
+        desc = escape(escape(text, quote=False), quote=False)
         items.append((published, f"""    <item>
       <title>{escape(title)}</title>
       <link>{escape(url)}</link>
@@ -731,5 +962,25 @@ def main():
     print(f"feed.xml: {len(items)} item(s)")
 
 
+def preview(date, runs_path=None):
+    """Print the email (issue_html) for the reading dated `date`; writes nothing (rehearsal)."""
+    runs = json.loads(Path(runs_path).read_text() if runs_path else (ROOT / "data/runs.json").read_text())
+    idx = [i for i, r in enumerate(runs) if r.get("report") and r.get("date") == date]
+    if not idx:
+        sys.exit(f"build_feed --preview: no reading with a report dated {date}")
+    i = idx[-1]
+    sys.stdout.write(issue_html(runs[i], prev_published(runs, i), []) + "\n")
+
+
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description="Build feed.xml and sitemap.xml, or preview one issue's email.")
+    ap.add_argument("--preview", metavar="DATE", help="print the email for DATE's reading to stdout; write nothing")
+    ap.add_argument("--runs", help="with --preview: read the runs from PATH (a fixture) instead of data/runs.json")
+    a = ap.parse_args()
+    if a.preview:
+        preview(a.preview, a.runs)
+    elif a.runs:
+        ap.error("--runs only works with --preview")
+    else:
+        main()

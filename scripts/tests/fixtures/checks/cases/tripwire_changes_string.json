@@ -1,0 +1,16 @@
+{
+ "rule": "tripwireChanges are objects",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "tripwireChanges"
+   ],
+   "value": [
+    "W2 watching → tripped"
+   ]
+  }
+ ],
+ "expect": "tripwireChanges[0]: expected an object with id, from, to, why; got a string"
+}

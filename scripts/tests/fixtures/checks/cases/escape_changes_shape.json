@@ -1,0 +1,19 @@
+{
+ "rule": "escape.changes are {key, from, to, reason}",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "escape",
+    "changes"
+   ],
+   "value": [
+    {
+     "key": "compute"
+    }
+   ]
+  }
+ ],
+ "expect": "escape.changes[0]: expected an object with key, from, to, reason"
+}

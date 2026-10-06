@@ -1,0 +1,14 @@
+{
+ "rule": "components snapshot has the 8 ids",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "components",
+    "learning"
+   ]
+  }
+ ],
+ "expect": "components must be the snapshot of the 8 parts"
+}

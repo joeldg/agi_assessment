@@ -1,0 +1,15 @@
+{
+ "rule": "method.json changelog is append-only",
+ "ops": [
+  {
+   "file": "data/method.json",
+   "set": [
+    "changelog",
+    0,
+    "change"
+   ],
+   "value": "rewritten"
+  }
+ ],
+ "expect": "method.changelog[0]: change changed since HEAD"
+}

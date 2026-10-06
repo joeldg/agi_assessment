@@ -1,0 +1,16 @@
+{
+ "rule": "min <= value <= max",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "headline",
+    "value"
+   ],
+   "value": 120
+  }
+ ],
+ "expect": "headline.value=120 is outside min 0 – max 100"
+}

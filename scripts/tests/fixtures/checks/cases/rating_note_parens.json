@@ -1,0 +1,17 @@
+{
+ "rule": "ratingNote parentheses balanced",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "current",
+    0,
+    "ratingNote"
+   ],
+   "value": "A note (unbalanced."
+  }
+ ],
+ "expect": "ratingNote has unbalanced parentheses"
+}

@@ -1,0 +1,13 @@
+{
+ "rule": "hypotheses A-D and Dopen present",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "del": [
+    "hypotheses",
+    "Dopen"
+   ]
+  }
+ ],
+ "expect": "agi_components.hypotheses.Dopen must be {name, text}"
+}

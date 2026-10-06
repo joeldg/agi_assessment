@@ -1,0 +1,13 @@
+{
+ "rule": "required ids present once",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<section id=\"s3\">",
+    "<section id=\"s2\">"
+   ]
+  }
+ ],
+ "expect": "id \"s2\" appears 2 times"
+}

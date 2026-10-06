@@ -1,0 +1,14 @@
+{
+ "rule": "build_report render matches the files inside the daily's window",
+ "render": "differs",
+ "head_ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1
+   ]
+  }
+ ],
+ "expect": "differs from build_report's render",
+ "ops": []
+}

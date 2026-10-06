@@ -1,0 +1,13 @@
+{
+ "rule": "a moved number's cell says method change",
+ "ops": [
+  {
+   "file": "reports/2026-10-06.html",
+   "replace": [
+    "<td>A · Hidden AGI</td><td class=\"num\" data-label=\"Today\">0.5%</td><td class=\"num\" data-label=\"By end-2030\">19%</td><td class=\"num\" data-label=\"By end-2035\">31%</td><td class=\"muted\" data-label=\"Change today\">method change (definitions v2.0)</td>",
+    "<td>A · Hidden AGI</td><td class=\"num\" data-label=\"Today\">0.5%</td><td class=\"num\" data-label=\"By end-2030\">19%</td><td class=\"num\" data-label=\"By end-2035\">31%</td><td class=\"muted\" data-label=\"Change today\">▼ −0.5 pts</td>"
+   ]
+  }
+ ],
+ "expect": "the cell must say \"method change\""
+}

@@ -1,0 +1,16 @@
+{
+ "rule": "indexParts keys in A, B, CD",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "indexParts",
+    2,
+    "key"
+   ],
+   "value": "C"
+  }
+ ],
+ "expect": "expected {key: A|B|CD, v: number}"
+}

@@ -10,6 +10,9 @@ capex, Nvidia data-center revenue, lab revenue, prediction-market prices. This s
   - spending vs capability, for context only: capex and the best METR-measured frontier 50% time
     horizon released by each quarter end (a step series of measurements, not a fitted curve), both
     indexed to 100 at the first common quarter (one axis, no dual scales).
+
+money.json is rewritten only when something other than its "updated" date would change, so a run with no new
+figure leaves the tree clean.
 """
 import json
 from datetime import date
@@ -74,9 +77,17 @@ def main():
                    "calendar quarter when all four have reported. The capability line is the best METR-measured frontier "
                    "time horizon released by each quarter end; readings above 16 hours are beyond METR's reliable range, "
                    "and quarters after METR's latest measurement can miss newer models. Models take months to train on "
-                   "new capacity, so spending often leads releases. Our actual test for hidden compute is trigger X4."),
+                   "new capacity, so spending often leads releases. Our actual test for hidden compute is alarm condition X4."),
     }
-    OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+    try:
+        old = json.loads(OUT.read_text())
+    except (OSError, ValueError):
+        old = None
+    if isinstance(old, dict) and {k: v for k, v in old.items() if k != "updated"} == \
+            {k: v for k, v in out.items() if k != "updated"}:
+        print("money.json: no figure changed; left as it is (only the date would have changed)")
+    else:
+        OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     if ttm:
         print(f"TTM capex {ttm['asOf']}: ${ttm['usd_b']}B ({ttm['yoyPct']:+}% y/y); {len(total)} complete quarters")
     else:

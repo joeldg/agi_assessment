@@ -1,0 +1,17 @@
+{
+ "rule": "milestone dates not after today",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "milestones",
+    2,
+    "date"
+   ],
+   "value": "2027-01-01"
+  }
+ ],
+ "expect": "is outside 2019-01-01 to today"
+}

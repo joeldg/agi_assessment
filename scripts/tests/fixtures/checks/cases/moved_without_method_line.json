@@ -1,0 +1,14 @@
+{
+ "rule": "a Method change line names every moved number",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "changes",
+    2
+   ]
+  }
+ ],
+ "expect": "C moved from the 2026-10-05 reading but no changes line"
+}

@@ -1,0 +1,14 @@
+{
+ "rule": "a crash in render() is one ERROR line",
+ "render": "crash",
+ "head_ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1
+   ]
+  }
+ ],
+ "expect": "build_report: RuntimeError: fixture crash",
+ "ops": []
+}

@@ -1,0 +1,13 @@
+{
+ "rule": "runs after a definitions entry carry defs and format 2",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "format"
+   ]
+  }
+ ],
+ "expect": "needs defs and format 2"
+}

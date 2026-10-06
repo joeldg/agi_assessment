@@ -1,0 +1,65 @@
+{
+ "rule": "at most 5 corrections in the box",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "corrections"
+   ],
+   "value": [
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    }
+   ]
+  },
+  {
+   "file": "reports/2026-10-06.html",
+   "replace": [
+    "<p class=\"callout rp-method\">",
+    "<aside class=\"callout rp-corr\"><ul class=\"plain\"><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li></ul></aside>\n<p class=\"callout rp-method\">"
+   ]
+  },
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<!-- analysis:end -->",
+    "<!-- analysis:end -->\n<section id=\"corrections\"><h2>Corrections in this reading</h2><ul class=\"plain\"><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li></ul></section>"
+   ]
+  }
+ ],
+ "expect": "the correction box lists 6 corrections; it shows at most 5"
+}

@@ -1,0 +1,13 @@
+{
+ "rule": "analysis page has exactly 2 subscribe boxes",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<!-- analysis:end -->\n</div>\n<div class=\"subscribe\">",
+    "<!-- analysis:end -->\n</div>\n<div class=\"x\">"
+   ]
+  }
+ ],
+ "expect": "1 subscribe boxes; every report page needs exactly two"
+}

@@ -1,0 +1,15 @@
+{
+ "rule": "order 1-8",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    2,
+    "order"
+   ],
+   "value": 9
+  }
+ ],
+ "expect": "(reliability).order=9 must be 3"
+}

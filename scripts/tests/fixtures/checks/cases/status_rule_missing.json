@@ -1,0 +1,12 @@
+{
+ "rule": "statusRule present",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "del": [
+    "statusRule"
+   ]
+  }
+ ],
+ "expect": "agi_components.statusRule is missing"
+}

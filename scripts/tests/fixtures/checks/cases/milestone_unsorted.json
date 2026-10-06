@@ -1,0 +1,17 @@
+{
+ "rule": "milestone dates ISO, sorted, 2019-01-01 to today",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "milestones",
+    1,
+    "date"
+   ],
+   "value": "2019-02-01"
+  }
+ ],
+ "expect": "is earlier than the milestone before it"
+}

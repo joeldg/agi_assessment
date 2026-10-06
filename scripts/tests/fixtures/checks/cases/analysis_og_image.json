@@ -1,0 +1,13 @@
+{
+ "rule": "analysis og:image is the day's card",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "cards/2026-10-06.png",
+    "cards/latest.png"
+   ]
+  }
+ ],
+ "expect": "og:image=\"https://hiddenagi.com/cards/latest.png\" should point at cards/2026-10-06.png"
+}

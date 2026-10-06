@@ -1,0 +1,13 @@
+{
+ "rule": "the analysis body is what build_report writes (no stripped tag)",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<p>Body text for s2.</p>",
+    "<p>Body text for <marquee>s2</marquee>.</p>"
+   ]
+  }
+ ],
+ "expect": "the body between the markers isn't what build_report writes"
+}

@@ -1,0 +1,15 @@
+{
+ "rule": "methodChange from/to",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "methodChange",
+    "from"
+   ],
+   "value": "2.0"
+  }
+ ],
+ "expect": "should say from \"1.0\" to \"2.0\""
+}

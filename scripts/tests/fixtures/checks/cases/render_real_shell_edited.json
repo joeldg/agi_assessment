@@ -1,0 +1,13 @@
+{
+ "rule": "the analysis shell is what build_report writes",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "How we rate evidence →",
+    "How we rate →"
+   ]
+  }
+ ],
+ "expect": "the shell around the body differs from build_report's render"
+}

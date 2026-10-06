@@ -1,0 +1,15 @@
+{
+ "rule": "scale is exactly far/partial/close/met with pips 1-4",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "statusScale",
+    3,
+    "pips"
+   ],
+   "value": 5
+  }
+ ],
+ "expect": "statusScale[3].pips=5 must be 4"
+}

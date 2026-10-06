@@ -1,0 +1,13 @@
+{
+ "rule": "required ids in order",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<section id=\"timeline\"><h2>timeline</h2><p>Body text for timeline.</p></section>\n<section id=\"roundup\"><h2>roundup</h2><p>Body text for roundup.</p></section>\n",
+    "<section id=\"roundup\"><h2>roundup</h2><p>Body text for roundup.</p></section>\n<section id=\"timeline\"><h2>timeline</h2><p>Body text for timeline.</p></section>\n"
+   ]
+  }
+ ],
+ "expect": "the sections are out of order"
+}

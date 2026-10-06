@@ -1,0 +1,17 @@
+{
+ "rule": "NEEDS_AGI names the definitions in force",
+ "call": "check_probs",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "probs",
+    "C",
+    "now"
+   ],
+   "value": 1.0
+  }
+ ],
+ "expect": "needs an AGI-level system (definitions in force: v2.0)"
+}

@@ -1,0 +1,13 @@
+{
+ "rule": "short report ids s5 s6 timeline roundup tripwires gauges",
+ "ops": [
+  {
+   "file": "reports/2026-10-06.html",
+   "replace": [
+    "<section id=\"s6\">",
+    "<section id=\"dates\">"
+   ]
+  }
+ ],
+ "expect": "missing the ids #s6"
+}

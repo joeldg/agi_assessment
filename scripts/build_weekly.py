@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build a Friday weekly wrap-up from data/weekly/<date>.json plus the daily runs.
 
-    python3 scripts/build_weekly.py 2026-10-02
-    python3 scripts/build_weekly.py 2026-10-02 --allow-stale        # build even if that day's daily isn't published
-    python3 scripts/build_weekly.py 2026-10-02 --refresh-snapshot   # recompute the frozen chart data (rarely right)
+    python3 scripts/build_weekly.py 2026-10-09
+    python3 scripts/build_weekly.py 2026-10-09 --allow-stale        # build even if that day's daily isn't published
+    python3 scripts/build_weekly.py 2026-10-09 --refresh-snapshot   # recompute the frozen chart data (rarely right)
 
 The routine writes the editorial JSON (headline, summary, moves, section notes). This script
 computes the key numbers from data/runs.json, stores them back in the JSON, renders
@@ -11,12 +11,21 @@ weekly/<date>.html, updates data/weekly/index.json, and exposes weekly_email_htm
 
 Key numbers compare published readings only (runs with a report, not marked "comparable": false),
 one per date. With no reading 7 or more days back, the comparison is with the first published
-reading and is labelled "since <date>", never "this week".
+reading and is labelled "since <date>", never "this week". They run in chain order: AGI parts,
+AGI anywhere, the Hidden AGI Index, the fire alarm, then the hypotheses, gauges and signals.
+
+Method changes: when the definitions in force changed inside the week (sitekit.method_boundary between
+the reading a week ago and today's), AGI anywhere, A, C, D, D-open and the Index print "method change
+(definitions v2.0)" instead of a ▲▼ delta, and any move on news on the other days of the week is shown
+next to it, never hidden behind the label. B keeps its real delta: it doesn't depend on the AGI bar.
 
 The chart data is frozen: snapshot() stores what each section showed as of the wrap-up date in the
 JSON under "snapshot", computed once. The page draws only from that snapshot, so an archived
 wrap-up never changes after publication. The standing pages are the live views. Escape watch's
-statuses are frozen the same way, and its tile counts come from that snapshot.
+statuses and the eight AGI parts (status, short name and glance) are frozen the same way.
+
+Wrap-ups from before redesign v2 (their snapshot has no labelSet 2; today only 2026-10-02) are frozen
+pages: this script refuses to rebuild them, and weekly_email_html() keeps their original email.
 
 The plan-usage line ("This week's readings used X% of a Claude Max 20x plan's weekly allowance")
 stays hidden until data/usage.json holds a full completed week of daily readings (see usage_week).
@@ -29,17 +38,23 @@ from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_feed import (CORRECTIONS_SHOWN, FONT, INK, MUTED, RULE, SANS, STATUS, abs_url, alarm_level_on,  # noqa: E402
+from build_feed import (DOWN, FONT, INK, MUTED, RULE, SANS, UP, abs_url, alarm_level_on,  # noqa: E402
                         as_list, changed, claim_date, corrections_box, data_table, delta_amount, delta_cell,
                         email_footer, escape_counts_text, escape_summary, fmt, gauge_delta, h2, link, nice_date, outlet,
                         p, prob, source_link, th_attr, ul)
-from sitekit import SITE, SUBSCRIBE, page  # noqa: E402
+from sitekit import (HYP_LABELS, METHOD_CHANGE, SIGNAL_STATUS, SITE, SUBSCRIBE, method_boundary, page,  # noqa: E402
+                     pending_defs, run_defs)
 
 ROOT = Path(__file__).resolve().parent.parent
 KEYS = ["A", "B", "C", "D", "Dopen"]
-LABELS = {"A": "A: AGI undisclosed", "B": "B: Secret RSI", "C": "C: Covert AGI online",
-          "D": "D: Covert govt influence", "Dopen": "D-open: Open govt influence"}
-SECTIONS = [("scorecard", "Forecast scorecard", "scorecard.html"),
+# Numbers that need an AGI-level system, so a change of definitions moves them (B doesn't).
+DEFS_BOUND = ("agi", "index", "A", "C", "D", "Dopen")
+# The labels wrap-ups used before redesign v2; kept only for the frozen wrap-ups' email.
+LABELS_V1 = {"A": "A: AGI undisclosed", "B": "B: Secret RSI", "C": "C: Covert AGI online",
+             "D": "D: Covert govt influence", "Dopen": "D-open: Open govt influence"}
+LABEL_SET = 2  # snapshot marker: wrap-ups built with the v2 labels and layout
+SECTIONS = [("agi", "AGI parts", "agi.html"),
+            ("scorecard", "Forecast scorecard", "scorecard.html"),
             ("lag", "Disclosure lag", "disclosure-lag.html"),
             ("claims", "AGI claims ledger", "agi-claims.html"),
             ("calendar", "Coming up", "calendar.html"),
@@ -47,9 +62,16 @@ SECTIONS = [("scorecard", "Forecast scorecard", "scorecard.html"),
             ("trends", "Trend watch", "trends.html"),
             ("money", "Follow the money", "money.html"),
             ("escape", "Escape watch", "escape.html")]
+DEK_WORDS = 60          # the summary under the headline (the dek): WARN above this
+TITLES_SHOWN = 10       # correction titles listed before "and N more"
 # The owner-approved wording for the plan-usage line. It appears only once data/usage.json holds a full week.
 USAGE_LINE = "This week's readings used {pct}% of a Claude Max 20x plan's weekly allowance"
 USAGE_MIN_READINGS = 7
+
+
+def label(k):
+    """'A · Hidden AGI', 'D-open · Open government influence'."""
+    return f'{"D-open" if k == "Dopen" else k} · {HYP_LABELS[k]}'
 
 
 def pretty(d):
@@ -175,6 +197,34 @@ def usage_text(k):
     return USAGE_LINE.format(pct=fmt(u["percent"])) + "." if u and u.get("percent") is not None else ""
 
 
+def value_of(run, key):
+    """A run's 'today' figure for a key-number row: agi (AGI anywhere), index, or a hypothesis."""
+    if key == "agi":
+        return ((run or {}).get("agi") or {}).get("now")
+    if key == "index":
+        return (run or {}).get("index")
+    return prob(run, key, "now")
+
+
+def news_moves(seq, keys):
+    """For readings `seq` (oldest first, from the week-ago reading to today's), the move on news in each key:
+    the sum of the day-to-day changes, leaving out every step that crosses a method boundary (that step is the
+    change of definitions, reported as a method change). Only keys with a displayed move are returned."""
+    out = {}
+    for key in keys:
+        tot, seen = 0.0, False
+        for prev, cur in zip(seq, seq[1:]):
+            a, b = value_of(prev, key), value_of(cur, key)
+            if method_boundary(cur, prev) or a is None or b is None:
+                continue
+            tot += float(b) - float(a)
+            seen = True
+        tot = round(tot, 6)
+        if seen and changed(tot, 0):
+            out[key] = tot
+    return out
+
+
 def key_numbers(date, allow_stale=False):
     runs = published_runs(date)
     if not runs:
@@ -192,8 +242,17 @@ def key_numbers(date, allow_stale=False):
     week = [r for r in runs if r["date"] > cutoff]
     corrections = week_corrections(week)
     lv = alarm_level_on(now["date"], now)
+    boundary = not first and method_boundary(now, ago)
+    seq = [r for r in runs if ago["date"] <= r["date"] <= now["date"]]
+    crossed = next((cur["date"] for prev, cur in zip(seq, seq[1:]) if method_boundary(cur, prev)), None)
+    agi_now, agi_ago = now.get("agi") or {}, ({} if first else ago.get("agi") or {})
     return {
         "asOf": now["date"], "weekAgoDate": ago["date"], "sinceFirst": not older, "firstReading": first, "stale": stale,
+        "defs": run_defs(now), "defsWeekAgo": None if first else run_defs(ago),
+        "methodBoundary": boundary, "methodChangeDate": crossed if boundary else None,
+        "news": news_moves(seq, DEFS_BOUND) if boundary else {},
+        "agi": {h: agi_now.get(h) for h in ("now", "y2030", "y2035")},
+        "agiWeekAgo": None if first else agi_ago.get("now"),
         "index": now.get("index"), "indexWeekAgo": None if first else ago.get("index"),
         "now": {k: prob(now, k, "now") for k in KEYS},
         "weekAgo": {k: None if first else prob(ago, k, "now") for k in KEYS},
@@ -211,19 +270,65 @@ def span_label(k):
     return "since " + day_mon(k["weekAgoDate"]) if k.get("sinceFirst") and not k.get("firstReading") else "this week"
 
 
-def wk_delta(cur, prev, span="this week"):
+def _move(amount):
+    """'▲ +0.5 pts' for a signed move."""
+    amt = delta_amount(amount, 0)
+    return f'{"▲ +" if float(amount) > 0 else "▼ −"}{amt} {"pt" if amt == "1" else "pts"}'
+
+
+def wk_delta(cur, prev, span="this week", key=None, k=None):
+    """The change text for a key number. On a method boundary inside the week, a number that needs an
+    AGI-level system shows the method-change label (with any move on news on the other days first)."""
     if cur is None:
         return "–"
+    if k and k.get("methodBoundary") and key in DEFS_BOUND:
+        news = (k.get("news") or {}).get(key)
+        return f"{_move(news)} news {span}; {METHOD_CHANGE}" if news is not None else METHOD_CHANGE
     if prev is None:
         return "first reading"
     if not changed(cur, prev):
         return f"no change {span}"
-    amt = delta_amount(cur, prev)
-    return f'{"▲ +" if float(cur) > float(prev) else "▼ −"}{amt} {"pt" if amt == "1" else "pts"} {span}'
+    return f"{_move(float(cur) - float(prev))} {span}"
 
 
 def gauge_change(g, prev_v, span="this week"):
     return gauge_delta((g or {}).get("value"), prev_v, " " + span)
+
+
+def status_counts(agi):
+    """{met, close, partial, far} from the frozen AGI parts."""
+    c = {"met": 0, "close": 0, "partial": 0, "far": 0}
+    for x in (agi or {}).get("components") or []:
+        if x.get("status") in c:
+            c[x["status"]] += 1
+    return c
+
+
+def agi_snapshot(date, load):
+    """The eight AGI parts as of `date` (status, names, glance, why), frozen like the charts, plus what the strip
+    needs to draw them (the status scale) and the definitions the AGI page stated. None when unavailable."""
+    if not (ROOT / "data/agi_components.json").exists():
+        print("warning: snapshot: data/agi_components.json is missing; the AGI parts are left out.", file=sys.stderr)
+        return None
+    comp = load("data/agi_components.json", "AGI parts")
+    if not isinstance(comp, dict):
+        return None
+    if str(comp.get("lastReviewed") or "") > date:
+        print(f"warning: snapshot: data/agi_components.json was reviewed {comp.get('lastReviewed')}, after {date}; "
+              "the AGI parts are left out rather than showing later statuses.", file=sys.stderr)
+        return None
+    parts = [{x: c.get(x) for x in ("id", "name", "short", "status", "glance", "basisShort")}
+             for c in as_list(comp.get("components")) if isinstance(c, dict) and c.get("id")]
+    if not parts:
+        return None
+    out = {"definitionsVersion": comp.get("definitionsVersion"), "adopted": comp.get("adopted"),
+           "lastReviewed": comp.get("lastReviewed"),
+           "statusScale": [{x: s.get(x) for x in ("key", "word", "pips", "meaning")} for s in as_list(comp.get("statusScale"))
+                           if isinstance(s, dict)],
+           "components": parts}
+    if comp.get("publicAgi"):
+        out["publicAgi"] = comp["publicAgi"]
+    return out
 
 
 def snapshot(date):
@@ -237,14 +342,21 @@ def snapshot(date):
             print(f"warning: snapshot: can't read {path} ({e}); the {what} chart will show as unavailable.", file=sys.stderr)
             return None
 
-    snap = {"date": date, "taken": datetime.now().strftime("%Y-%m-%d")}
+    snap = {"date": date, "taken": datetime.now().strftime("%Y-%m-%d"), "labelSet": LABEL_SET}
     runs = load("data/runs.json", "trend") or []
     by_date = {}
     for r in runs:
         if r["date"] <= date:
             by_date[r["date"]] = r  # one point per day: the last entry of the day
-    snap["trend"] = [dict({"date": d, "index": by_date[d].get("index")}, **{k: prob(by_date[d], k, "now") for k in "ABCD"})
+    snap["trend"] = [dict({"date": d, "index": by_date[d].get("index"), "agi": (by_date[d].get("agi") or {}).get("now"),
+                           "defs": run_defs(by_date[d])}, **{k: prob(by_date[d], k, "now") for k in "ABCD"})
                      for d in sorted(by_date)]
+    # a dashed hairline where the definitions changed; lineChart doesn't join a series across it
+    snap["breaks"] = [{"x": cur["date"], "label": f'Definitions v{cur["defs"]}'}
+                      for prev, cur in zip(snap["trend"], snap["trend"][1:]) if cur["defs"] != prev["defs"]]
+    agi = agi_snapshot(date, load)
+    if agi is not None:
+        snap["agi"] = agi
     fc = load("data/forecasts.json", "scorecard")
     if fc is not None:
         keep = ("id", "question", "p", "market", "made", "deadline", "resolution")
@@ -289,73 +401,161 @@ def snapshot(date):
     return snap
 
 
-def tile(label, value, sub=""):
-    return (f'<div class="tile"><div class="label">{escape(label)}</div><div class="value">{value}</div>'
+# ---- the wrap-up page --------------------------------------------------------------------------------------------
+
+def tile(label_text, value, sub=""):
+    return (f'<div class="tile"><div class="label">{escape(label_text)}</div><div class="value">{value}</div>'
             f'<div class="delta muted">{sub}</div></div>')
 
 
-def corrections_html(k):
-    """The week's corrections on the wrap-up page. A correction's "date" is when it was made; the claim's
-    own date comes from its page path (reports/YYYY-MM-DD.html). Long lists fold after CORRECTIONS_SHOWN."""
-    items = []
-    for c in k.get("corrections") or []:
-        if not c.get("was") or not c.get("now"):
-            continue
-        said = claim_date(c)
-        when = f'On {escape(nice_date(said))} we said' if said else "We said"
-        fixed = f' (corrected {escape(nice_date(c["date"]))})' if c.get("date") else ""
-        u = abs_url(c.get("url"))
-        src = (f' (<a href="{escape(u, quote=True)}" target="_blank" rel="noopener">{escape(c.get("source") or outlet(u))}</a>)'
-               if u else "")
-        items.append(f'<li>{when} {escape(str(c["was"]).strip().rstrip("."))}. That was wrong{fixed}: '
-                     f'{escape(str(c["now"]).strip().rstrip("."))}{src}.</li>')
-    if not items:
+def pending_chip(k, agi):
+    """The chip next to AGI anywhere and A–D while today's numbers use a different bar from the one agi.html
+    states (sitekit.pending_defs, from the frozen parts; never the build clock)."""
+    if not agi or not pending_defs({"defs": k.get("defs")}, agi):
         return ""
-    shown, rest = items[:CORRECTIONS_SHOWN], items[CORRECTIONS_SHOWN:]
-    more = (f'<details><summary>{len(rest)} more {"correction" if len(rest) == 1 else "corrections"}</summary>'
-            f'<ul class="plain">{"".join(rest)}</ul></details>') if rest else ""
+    if agi.get("adopted"):
+        return (' <span class="chip" title="Set under the v1.0 bar; the next reading re-derives it under definitions v2.0 '
+                'and labels the change a method change, not news.">v1.0 bar until the next reading</span>')
+    return (' <span class="chip" title="These numbers use the v1.0 bar. Definitions v2.0 are proposed; when they take '
+            'effect, the next reading re-derives the numbers and labels the change a method change, not news.">'
+            'v1.0 bar; definitions v2.0 proposed</span>')
+
+
+def _scale(agi):
+    return {s.get("key"): s for s in (agi or {}).get("statusScale") or []}
+
+
+def answer_text(agi):
+    """'Not in public: 0 of 8 parts met (2 partial, 6 far).' and its two other states, as HTML."""
+    try:
+        from pages import common  # the shared server-side pieces (WP-C2), when present
+        return common.answer_line(agi)
+    except Exception:  # noqa: BLE001 - fall back to the same wording, built here
+        pass
+    c, n, sc = status_counts(agi), len(agi["components"]), _scale(agi)
+    if agi.get("publicAgi"):
+        return f'<strong>Yes, in public:</strong> {escape(str(agi["publicAgi"].get("system", "")))} meets all {n} parts.'
+    if c["met"] == n:
+        return f'<strong>Possibly, in public:</strong> all {n} parts are met, but not yet by one system.'
+    rest = ", ".join(f'{c[s]} {str((sc.get(s) or {}).get("word") or s).lower()}' for s in ("close", "partial", "far") if c[s])
+    return f'<strong>Not in public:</strong> {c["met"]} of {n} parts met' + (f" ({rest})." if rest else ".")
+
+
+def strip_html(agi):
+    """The eight parts as a strip of tiles (ink pips plus the word), each linking to its part on agi.html."""
+    href = lambda c: f'../agi.html#{c["id"]}'  # noqa: E731
+    try:
+        from pages import common  # one implementation when it exists (WP-C2)
+        return common.strip(agi, href=href)
+    except Exception:  # noqa: BLE001 - same markup and classes, built here
+        pass
+    sc = _scale(agi)
+    cells = []
+    for c in agi["components"]:
+        s = sc.get(c.get("status")) or {"word": str(c.get("status") or "?").title(), "pips": 0}
+        n = int(s.get("pips") or 0)
+        pips = "".join(f'<span class="pip{" on" if i < n else ""}"></span>' for i in range(4))
+        cells.append(f'<li><a class="ag-cell" href="{escape(href(c), quote=True)}">'
+                     f'<span class="ag-name">{escape(str(c.get("short") or c.get("name") or c["id"]))}</span>'
+                     f'<span class="am-status"><span class="am-pips" aria-hidden="true">{pips}</span>'
+                     f'<span class="ag-word" aria-hidden="true">{escape(str(s.get("word")))}</span>'
+                     f'<span class="sr-only">, status {escape(str(s.get("word")))}, step {n} of 4</span></span>'
+                     f'<span class="sr-only">. {escape(str(c.get("glance") or ""))}</span></a></li>')
+    return f'<ul class="ag-strip">{"".join(cells)}</ul>'
+
+
+def agi_section_html(agi):
+    if not agi:
+        return '<p class="muted small">The AGI parts were not recorded in this wrap-up\'s snapshot.</p>'
+    return f'<p>{answer_text(agi)}</p>{strip_html(agi)}'
+
+
+def correction_title(c):
+    t = str(c.get("item") or "").strip()
+    if not t:
+        words = str(c.get("now") or c.get("was") or "").split()
+        t = " ".join(words[:12]) + ("…" if len(words) > 12 else "")
+    return t.rstrip(".")
+
+
+def corrections_html(k):
+    """The week's corrections on the wrap-up page: how many, and their titles, linking the one corrections log."""
+    cs = [c for c in k.get("corrections") or [] if c.get("was") and c.get("now")]
+    if not cs:
+        return ""
+    items = []
+    for c in cs[:TITLES_SHOWN]:
+        said = claim_date(c)
+        when = f' <span class="muted small">(we said it {escape(nice_date(said))})</span>' if said else ""
+        items.append(f'<li><a href="../changes.html#corrections">{escape(correction_title(c))}</a>{when}</li>')
+    more = len(cs) - TITLES_SHOWN
+    if more > 0:
+        items.append(f'<li class="muted">and {more} more</li>')
+    n = len(cs)
     return (f'\n  <section aria-label="Corrections"><div class="callout" style="border-left-color:var(--ink)">'
-            f'<strong>{"Correction" if len(items) == 1 else "Corrections"} this week</strong><ul class="plain">{"".join(shown)}</ul>{more}'
-            f'<p class="small muted">Every correction is logged on the <a href="../about.html#corrections">About page</a>.</p></div></section>')
+            f'<strong>{n} {"correction" if n == 1 else "corrections"} this week</strong><ul class="plain">{"".join(items)}</ul>'
+            f'<p class="small muted">What we said and what is right, for each one: '
+            f'<a href="../changes.html#corrections">the corrections log →</a></p></div></section>')
+
+
+def signal_counts_text(c, sep=", "):
+    """'2 confirmed, 6 open, 3 quiet' from {tripped, watching, quiet} counts."""
+    return sep.join(f'{c.get(s, 0)} {SIGNAL_STATUS[s][2].lower()}' for s in ("tripped", "watching", "quiet"))
 
 
 def escape_list_html(esc):
     """Escape watch on the wrap-up page: the counts, the overall line and each indicator that isn't quiet with
-    its status (status colour, always with the icon and the label), from the frozen snapshot."""
+    its status (status colour, always with the icon and the word), from the frozen snapshot."""
     if not esc:
         return '<p class="muted small">Escape watch was not recorded in this wrap-up\'s snapshot.</p>'
     rows = "".join(
-        f'<li><span style="color:var(--{ {"tripped": "crit", "watching": "warn", "quiet": "good"}[i["status"]] });font-weight:600">'
-        f'<span aria-hidden="true">{STATUS[i["status"]][0]}</span> {STATUS[i["status"]][2]}</span> · {escape(i["name"])}</li>'
+        f'<li><span style="color:var(--{SIGNAL_STATUS[i["status"]][1]});font-weight:600">'
+        f'<span aria-hidden="true">{SIGNAL_STATUS[i["status"]][0]}</span> {SIGNAL_STATUS[i["status"]][2]}</span>'
+        f' · {escape(i["name"])}</li>'
         for i in esc["live"])
     quiet = esc["counts"]["quiet"]
     more = f'<li class="muted">{quiet} {"indicator" if quiet == 1 else "indicators"} quiet.</li>' if quiet else ""
-    return (f'<p><strong>{esc["total"]} indicators: {escape_counts_text(esc)}.</strong> {escape(esc.get("overall") or "")}</p>'
-            f'<ul class="plain">{rows}{more}</ul>')
+    return (f'<p><strong>{esc["total"]} indicators: {signal_counts_text(esc["counts"])}.</strong> '
+            f'{escape(esc.get("overall") or "")}</p><ul class="plain">{rows}{more}</ul>')
 
 
 def page_body(w):
     k = w["keyNumbers"]
     span = span_label(k)
+    agi = (w.get("snapshot") or {}).get("agi")
+    chip = pending_chip(k, agi)
     tiles = []
+    parts = k.get("agiParts")
+    if parts and agi:
+        n = len(agi["components"])
+        rest = "".join(f' · {parts[s]} {s}' for s in ("close", "partial", "far") if parts.get(s))
+        tiles.append(tile("AGI parts", f'{parts["met"]} of {n}', f'met{rest} · <a href="../agi.html">the parts</a>'))
+    a = k.get("agi") or {}
+    if a.get("now") is not None:
+        later = f' · {fmt(a["y2030"])}% by end-2030' if a.get("y2030") is not None else ""
+        tiles.append(tile("AGI anywhere", f'{fmt(a["now"])}%',
+                          escape(wk_delta(a["now"], k.get("agiWeekAgo"), span, "agi", k)) + later + chip))
+    tiles.append(tile("Hidden AGI Index", f'{fmt(k["index"])}%',
+                      escape(wk_delta(k["index"], k["indexWeekAgo"], span, "index", k))))
     lv = k.get("alarm")
     if lv:
-        tiles.append(tile("Fire alarm", f'<span aria-hidden="true">{lv["icon"]}</span> {escape(lv["name"])}',
-                          f'Level {lv["level"]} of 3 · <a href="../alarm.html">criteria</a>'))
-    tiles += [tile("Hidden AGI Index", f'{fmt(k["index"])}%', wk_delta(k["index"], k["indexWeekAgo"], span))]
-    tiles += [tile(LABELS[h], f'{fmt(k["now"][h])}%', wk_delta(k["now"][h], k["weekAgo"][h], span)) for h in KEYS]
+        cls = f' class="ico-{lv["status"]}"' if lv.get("status") in ("good", "warn", "crit") else ""
+        tiles.append(tile("Fire alarm", f'<span aria-hidden="true"{cls}>{lv["icon"]}</span> Level {lv["level"]} · {escape(lv["name"])}',
+                          'Set by published rules, not our odds · <a href="../alarm.html">the rules</a>'))
+    tiles += [tile(label(h), f'{fmt(k["now"][h])}%', escape(wk_delta(k["now"][h], k["weekAgo"][h], span, h, k))) for h in KEYS]
     gdefs = {d["key"]: d for d in json.loads((ROOT / "data/gauges.json").read_text())["gauges"]}
     for gk, g in (k.get("gauges") or {}).items():
         if not g or gk not in gdefs:
             continue
         tiles.append(tile(gdefs[gk]["label"], escape(g.get("display") or fmt(g.get("value"))),
                           gauge_change(g, (k.get("gaugesWeekAgo") or {}).get(gk), span)))
-    tiles.append(tile("Tripwires", f'{k["tripwires"]["tripped"]} tripped',
-                      f'{k["tripwires"]["watching"]} watching · {k["tripwires"]["quiet"]} quiet'))
+    tw = k["tripwires"]
+    tiles.append(tile("Tripwire signals", f'{tw["tripped"]} confirmed',
+                      f'{tw["watching"]} open · {tw["quiet"]} quiet · <a href="../alarm.html#signals">all signals</a>'))
     esc = k.get("escape")
     if esc:
-        tiles.append(tile("Escape watch", f'{esc["counts"]["tripped"]} tripped',
-                          f'{esc["counts"]["watching"]} watching · {esc["counts"]["quiet"]} quiet'))
+        tiles.append(tile("Escape watch", f'{esc["counts"]["tripped"]} of {esc["total"]} confirmed',
+                          f'{esc["counts"]["watching"]} open · {esc["counts"]["quiet"]} quiet'))
 
     def move_link(m):
         u = abs_url(m.get("url"))
@@ -369,21 +569,28 @@ def page_body(w):
     notes = w.get("sections", {})
     sec_html = ""
     for key, title, href in SECTIONS:
-        chart = {"scorecard": '<div id="fc"></div>', "lag": '<div class="chart-wrap"><div id="lag"></div></div>',
+        chart = {"agi": agi_section_html(agi), "scorecard": '<div id="fc"></div>',
+                 "lag": '<div class="chart-wrap"><div id="lag"></div></div>',
                  "claims": '<div class="chart-wrap"><div id="claims"></div></div>',
                  "calendar": '<ul class="timeline-list" id="cal"></ul>', "steelman": "",
                  "trends": '<div class="chart-wrap"><div id="metr"></div></div>',
                  "money": '<div class="chart-wrap"><div id="money"></div></div>',
                  "escape": escape_list_html(k.get("escape"))}[key]
-        sec_html += (f'\n  <section id="{key}"><h2>{title}</h2><p>{escape(notes.get(key, ""))}</p>{chart}'
+        note = f'<p>{escape(notes[key])}</p>' if notes.get(key) else ""
+        sec_html += (f'\n  <section id="{key}"><h2>{title}</h2>{note}{chart}'
                      f'<p class="small"><a href="../{href}">Full section (live) →</a></p></section>')
     usage = f'\n  <p class="muted small">{escape(usage_text(k))}</p>' if usage_text(k) else ""
     if k.get("firstReading"):
-        caption = f'Probability each is true now, as of {pretty(k["asOf"])}. This is our first full reading, so changes appear from the next wrap-up.'
+        caption = f'Probabilities are for today, as of {pretty(k["asOf"])}. This is our first full reading, so changes appear from the next wrap-up.'
     elif k.get("sinceFirst"):
-        caption = f'Probability each is true now, comparing {pretty(k["asOf"])} with {pretty(k["weekAgoDate"])}, our first full reading.'
+        caption = f'Probabilities are for today, comparing {pretty(k["asOf"])} with {pretty(k["weekAgoDate"])}, our first full reading.'
     else:
-        caption = f'Probability each is true now, comparing {pretty(k["asOf"])} with {pretty(k["weekAgoDate"])}.'
+        caption = f'Probabilities are for today, comparing {pretty(k["asOf"])} with {pretty(k["weekAgoDate"])}.'
+    if k.get("methodBoundary"):
+        when = f' from the reading of {pretty(k["methodChangeDate"])}' if k.get("methodChangeDate") else " this week"
+        caption += (f' Our readings use definitions v2.0{when}: AGI anywhere, A, C, D, D-open and the Index were re-derived '
+                    f'under the new definition, so their change reads "{METHOD_CHANGE}", not news; '
+                    f'B doesn\'t depend on the definition. <a href="../changes.html#method">What changed</a>.')
     return f"""
   <header class="prose">
     <p class="kicker muted small">Weekly wrap-up · week to {pretty(w["date"])}</p>
@@ -391,10 +598,10 @@ def page_body(w):
     <p class="lede">{escape(w.get("summary", ""))}</p>
   </header>{corrections_html(k)}
   <section aria-label="Key numbers"><div class="tiles">{"".join(tiles)}</div>
-  <p class="muted small">{caption} {k["dailyRuns"]} daily reading{"s" if k["dailyRuns"] != 1 else ""} this week. <a href="../start-here.html">How to read these</a>.</p></section>
+  <p class="muted small">{caption} {k["dailyRuns"]} daily reading{"s" if k["dailyRuns"] != 1 else ""} this week. <a href="../start-here.html#names">How to read these</a>.</p></section>
   <section><h2>This week's moves</h2><ul class="plain">{moves or "<li>A quiet week: nothing moved.</li>"}</ul></section>
   <section><div class="chart-head"><h2>The readings over time</h2></div><div class="chart-wrap"><div id="trend"></div></div></section>{sec_html}
-  <p class="muted small">The charts on this page are frozen as of {pretty(w["date"])}, so this wrap-up reads the same later. The linked sections show the live data.</p>{usage}
+  <p class="muted small">The charts and the AGI parts on this page are frozen as of {pretty(w["date"])}, so this wrap-up reads the same later. The linked sections show the live data.</p>{usage}
 """
 
 
@@ -408,6 +615,7 @@ const h = K.util.h;
 const live = K.live || ((host, draw) => draw());
 const safeHref = (K.util && K.util.safeHref) || K.safeHref || (u => /^https?:\\/\\//i.test(String(u ?? "").trim()) ? String(u).trim() : null);
 const nm = id => String(id).replace(/_inspect$/,"").replace(/_/g," ").replace(/\\b(gpt|o\\d)\\b/gi,s=>s.toUpperCase()).replace(/\\bclaude\\b/i,"Claude").replace(/\\bgemini\\b/i,"Gemini");
+const sname = k => (S.labelSet === 2 && K.SERIES[k].name) ? K.SERIES[k].name : K.SERIES[k].label;
 const note = (el, text, cls="muted small") => { el.replaceChildren(h("p",{class:cls},text)); };
 const chart = (id, draw) => {
   const el = document.getElementById(id); if(!el) return;
@@ -417,9 +625,9 @@ const chart = (id, draw) => {
 };
 const has = a => Array.isArray(a) && a.length > 0;
 chart("trend", el => { if(!has(S.trend)) throw new Error("no readings in snapshot");
-  K.lineChart(el, {title:"Probability true now", series:[
+  K.lineChart(el, {title:"Probability true today", breaks: Array.isArray(S.breaks) ? S.breaks : [], series:[
     {label:"Hidden AGI Index", short:"Index", color:"--ink", values:S.trend.map(r=>({x:r.date, y:r.index}))},
-    ...["A","B","C","D"].map(k=>({label:K.SERIES[k].label, short:k, color:K.SERIES[k].color, values:S.trend.map(r=>({x:r.date, y:r[k]}))}))]}); });
+    ...["A","B","C","D"].map(k=>({label:sname(k), short:k, color:K.SERIES[k].color, values:S.trend.map(r=>({x:r.date, y:r[k]}))}))]}); });
 chart("fc", el => { if(!Array.isArray(S.forecasts)) throw new Error("no forecasts in snapshot");
   const open = S.forecasts.filter(f => f.outcome !== "void");
   if(!open.length) return note(el, "No open forecasts as of this week.", "empty");
@@ -448,7 +656,132 @@ chart("cal", el => { if(!Array.isArray(S.calendar)) throw new Error("no calendar
 </script>"""
 
 
+# ---- the email ---------------------------------------------------------------------------------------------------
+
+def is_v2(w):
+    return (w.get("snapshot") or {}).get("labelSet") == LABEL_SET
+
+
 def weekly_email_html(w):
+    """The wrap-up email. Wrap-ups from before redesign v2 keep their original email, byte for byte."""
+    return weekly_email_html_v2(w) if is_v2(w) else weekly_email_html_v1(w)
+
+
+def email_delta(cur, prev, key, k):
+    """A change cell for the email's key-number table: the method-change label on a boundary week (with any
+    move on news first), else the usual arrow cell."""
+    if cur is not None and k.get("methodBoundary") and key in DEFS_BOUND:
+        news = (k.get("news") or {}).get(key)
+        lab = f'<span style="color:{MUTED}">{escape(METHOD_CHANGE)}</span>'
+        if news is None:
+            return lab
+        color = UP if news > 0 else DOWN
+        return f'<span style="color:{color};font-weight:600">{escape(_move(news))} news</span>; {lab}'
+    return delta_cell(cur, prev)
+
+
+def email_corrections(k):
+    cs = [c for c in k.get("corrections") or [] if c.get("was") and c.get("now")]
+    if not cs:
+        return ""
+    n = len(cs)
+    items = [escape(correction_title(c)) for c in cs[:TITLES_SHOWN]]
+    if n > TITLES_SHOWN:
+        items.append(f"and {n - TITLES_SHOWN} more")
+    lis = "".join(f'<li style="margin:0 0 4px">{i}</li>' for i in items)
+    return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:6px 0 14px"><tr>'
+            f'<td bgcolor="#F8F9FA" style="background-color:#F8F9FA;border-left:4px solid {INK};padding:8px 12px">'
+            f'<div style="{SANS}font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:{MUTED};font-weight:600;padding:0">'
+            f'{n} {"correction" if n == 1 else "corrections"} this week</div>'
+            f'<ul style="{SANS}font-size:14px;line-height:1.5;color:{INK};padding-left:18px;margin:6px 0 4px">{lis}</ul>'
+            f'<div style="{SANS}font-size:14px;color:{INK}">{link(SITE + "changes.html#corrections", "What we said and what is right, for each one")}</div>'
+            f'</td></tr></table>')
+
+
+def weekly_email_html_v2(w):
+    k = w["keyNumbers"]
+    span = span_label(k)
+    url = f'{SITE}weekly/{w["date"]}.html'
+    lv = k.get("alarm")
+    agi = (w.get("snapshot") or {}).get("agi")
+    out = [p(f'<span style="color:{MUTED}">Weekly wrap-up · week to {pretty(w["date"])} · {link(url, "Read it on the web, with graphs")}</span>')]
+    out.append(email_corrections(k))
+    if (ROOT / f'cards/weekly-{w["date"]}.png').exists():
+        alt = f'Week to {pretty(w["date"])}: Hidden AGI Index {fmt(k["index"])}%' + (
+            f', fire alarm Level {lv["level"]} ({lv["name"]})' if lv else "")
+        out.append(f'<a href="{url}"><img src="{SITE}cards/weekly-{w["date"]}.png" width="580" height="305" alt="{escape(alt, quote=True)}" '
+                   f'style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:8px;margin:8px 0 14px"></a>')
+    if lv:
+        out.append(p(f'<strong><span aria-hidden="true">{lv["icon"]}</span> Fire alarm: Level {lv["level"]} · {escape(lv["name"])}.</strong> '
+                     f'<span style="color:{MUTED}">{escape(lv.get("meaning", ""))} {link(SITE + "alarm.html", "The rules")}</span>'))
+    out.append(f'<h1 style="{FONT}font-size:24px;color:{INK};margin:6px 0 8px">{escape(w["headline"])}</h1>')
+    out.append(p(escape(w.get("summary", ""))))
+    if k.get("methodBoundary"):
+        when = f' on {pretty(k["methodChangeDate"])}' if k.get("methodChangeDate") else " this week"
+        out.append(p(f'<strong>Method change{escape(when)}:</strong> our first reading under definitions v2.0, so AGI anywhere, A, C, D, '
+                     f'D-open and the Index were re-derived under the new definition. Those changes are not news. '
+                     f'{link(SITE + "changes.html#method", "What changed")}'))
+    th = th_attr()
+    td = f'style="{SANS}font-size:14px;color:{INK};padding:6px 8px;border-bottom:1px solid {RULE}"'
+    dash = f'<span style="color:{MUTED}">–</span>'
+    rows = [f"<tr><th {th}>Key number</th><th {th}>Today</th><th {th}>{span[0].upper() + span[1:]}</th><th {th}>By end-2030</th></tr>"]
+    parts = k.get("agiParts")
+    if parts and agi:
+        n = len(agi["components"])
+        rest = ", ".join(f'{parts[s]} {s}' for s in ("close", "partial", "far") if parts.get(s))
+        rows.append(f'<tr><td {td}>{link(SITE + "agi.html", "AGI parts")}</td><td {td}><strong>{parts["met"]} of {n} met</strong></td>'
+                    f'<td {td}><span style="color:{MUTED}">{escape(rest)}</span></td><td {td}>{dash}</td></tr>')
+    a = k.get("agi") or {}
+    if a.get("now") is not None:
+        rows.append(f'<tr><td {td}>AGI anywhere, public or hidden</td><td {td}><strong>{fmt(a["now"])}%</strong></td>'
+                    f'<td {td}>{email_delta(a["now"], k.get("agiWeekAgo"), "agi", k)}</td>'
+                    f'<td {td}>{fmt(a["y2030"]) + "%" if a.get("y2030") is not None else dash}</td></tr>')
+    rows.append(f'<tr><td {td}><strong>Hidden AGI Index</strong></td><td {td}><strong>{fmt(k["index"])}%</strong></td>'
+                f'<td {td}>{email_delta(k["index"], k["indexWeekAgo"], "index", k)}</td><td {td}>{dash}</td></tr>')
+    rows += [f'<tr><td {td}>{escape(label(h))}</td><td {td}><strong>{fmt(k["now"][h])}%</strong></td>'
+             f'<td {td}>{email_delta(k["now"][h], k["weekAgo"][h], h, k)}</td><td {td}>{fmt(k["y2030"][h])}%</td></tr>' for h in KEYS]
+    out.append(data_table(rows))
+    if agi and pending_defs({"defs": k.get("defs")}, agi):
+        txt = ("Set under the v1.0 bar; the next reading re-derives these numbers under definitions v2.0."
+               if agi.get("adopted") else "These numbers use the v1.0 bar; definitions v2.0 are proposed.")
+        out.append(p(f'<span style="color:{MUTED};font-size:13px">{escape(txt)}</span>'))
+    if k.get("firstReading"):
+        out.append(p(f'<span style="color:{MUTED};font-size:13px">This is our first full reading, so changes appear from the next wrap-up.</span>'))
+    elif k.get("sinceFirst"):
+        out.append(p(f'<span style="color:{MUTED};font-size:13px">Changes are since {pretty(k["weekAgoDate"])}, our first full reading.</span>'))
+    gdefs = {d["key"]: d for d in json.loads((ROOT / "data/gauges.json").read_text())["gauges"]}
+    gl = [f'<strong>{escape(gdefs[gk]["label"])}:</strong> {escape(g.get("display") or fmt(g.get("value")))} '
+          f'({gauge_change(g, (k.get("gaugesWeekAgo") or {}).get(gk), span)})'
+          for gk, g in (k.get("gauges") or {}).items() if g and gk in gdefs]
+    if gl:
+        out.append(p("<strong>Hiding-conditions gauges.</strong> " + " · ".join(gl)))
+    tw = k["tripwires"]
+    out.append(p(f'<strong>Tripwire signals:</strong> {signal_counts_text(tw)}. '
+                 f'{link(SITE + "alarm.html#signals", "See them all")}.'))
+    esc = k.get("escape")
+    if esc:
+        out.append(p(f'<strong>Escape watch:</strong> {esc["counts"]["tripped"]} of {esc["total"]} confirmed, '
+                     f'{esc["counts"]["watching"]} open, {esc["counts"]["quiet"]} quiet. '
+                     f'{link(SITE + "escape.html", "See the indicators")}.'))
+    if w.get("moves"):
+        out.append(h2("This week's moves"))
+        out.append(ul(f'<strong>{escape(m.get("date", ""))}</strong> <strong>{escape(m.get("hyp", ""))}</strong> {escape(m["text"])}'
+                      + source_link(m) for m in w["moves"]))
+    for key, title, href in SECTIONS:
+        note = w.get("sections", {}).get(key)
+        if note:
+            out.append(h2(title))
+            out.append(p(escape(note) + " " + link(SITE + href, "Full section")))
+    out.append(p(f'{link(url, "See the full wrap-up with graphs")} · {link(SITE, "Today’s reading")}', "margin-top:22px"))
+    if usage_text(k):
+        out.append(p(f'<span style="color:{MUTED};font-size:13px">{escape(usage_text(k))}</span>'))
+    out.append(p(f'Forwarded this? {link(SUBSCRIBE, "Subscribe to Hidden AGI watch")}. It\'s free.'))
+    out.append(email_footer("weekly"))
+    return "".join(out)
+
+
+def weekly_email_html_v1(w):
+    """The email of a wrap-up built before redesign v2, unchanged (old labels and links)."""
     k = w["keyNumbers"]
     span = span_label(k)
     url = f'{SITE}weekly/{w["date"]}.html'
@@ -470,7 +803,7 @@ def weekly_email_html(w):
     rows = [f"<tr><th {th}>Key number</th><th {th}>Now</th><th {th}>{span[0].upper() + span[1:]}</th><th {th}>By 2030</th></tr>",
             f'<tr><td {td}><strong>Hidden AGI Index</strong></td><td {td}><strong>{fmt(k["index"])}%</strong></td>'
             f'<td {td}>{delta_cell(k["index"], k["indexWeekAgo"])}</td><td {td}><span style="color:{MUTED}">–</span></td></tr>']
-    rows += [f'<tr><td {td}>{escape(LABELS[h])}</td><td {td}><strong>{fmt(k["now"][h])}%</strong></td>'
+    rows += [f'<tr><td {td}>{escape(LABELS_V1[h])}</td><td {td}><strong>{fmt(k["now"][h])}%</strong></td>'
              f'<td {td}>{delta_cell(k["now"][h], k["weekAgo"][h])}</td><td {td}>{fmt(k["y2030"][h])}%</td></tr>' for h in KEYS]
     out.append(data_table(rows))
     if k.get("firstReading"):
@@ -495,6 +828,8 @@ def weekly_email_html(w):
         out.append(ul(f'<strong>{escape(m.get("date", ""))}</strong> <strong>{escape(m.get("hyp", ""))}</strong> {escape(m["text"])}'
                       + source_link(m) for m in w["moves"]))
     for key, title, href in SECTIONS:
+        if key == "agi":  # added in redesign v2; a frozen wrap-up has no such note
+            continue
         note = w.get("sections", {}).get(key)
         if note:
             out.append(h2(title))
@@ -507,10 +842,18 @@ def weekly_email_html(w):
     return "".join(out)
 
 
+# ---- build ---------------------------------------------------------------------------------------------------------
+
 def build(date, allow_stale=False, refresh_snapshot=False):
     src = ROOT / f"data/weekly/{date}.json"
     w = json.loads(src.read_text())
+    if "snapshot" in w and not is_v2(w) and not refresh_snapshot:
+        sys.exit(f"build_weekly: weekly/{date}.html is a frozen wrap-up from before redesign v2; "
+                 "past wrap-ups are not rebuilt.")
     w["date"] = date
+    words = len(str(w.get("summary") or "").split())
+    if words > DEK_WORDS:
+        print(f"warning: the summary (the dek under the headline) is {words} words; keep it to {DEK_WORDS}.", file=sys.stderr)
     w["keyNumbers"] = key_numbers(date, allow_stale)
     if refresh_snapshot or "snapshot" not in w:
         if "snapshot" in w:
@@ -519,6 +862,8 @@ def build(date, allow_stale=False, refresh_snapshot=False):
     esc = escape_summary(w["snapshot"].get("escape"))  # from the frozen snapshot, so the tile never drifts
     if esc:
         w["keyNumbers"]["escape"] = esc
+    if w["snapshot"].get("agi"):  # from the frozen parts, so the tile never drifts either
+        w["keyNumbers"]["agiParts"] = status_counts(w["snapshot"]["agi"])
     usage = usage_week(date)
     if usage:
         w["keyNumbers"]["usage"] = usage
@@ -527,7 +872,7 @@ def build(date, allow_stale=False, refresh_snapshot=False):
     render_card.weekly(date)
     card = f"{SITE}cards/weekly-{date}.png" if (ROOT / f"cards/weekly-{date}.png").exists() else None
     html = page(path=f"weekly/{date}.html", title=f"{w['headline']} · Weekly wrap-up · Hidden AGI watch",
-                description=w.get("summary", "")[:200], body=page_body(w), active="weekly/",
+                description=w.get("summary", "")[:200], body=page_body(w),
                 og_image=card, og_type="article", scripts=page_script(w))
     (ROOT / "weekly").mkdir(exist_ok=True)
     (ROOT / f"weekly/{date}.html").write_text(html)

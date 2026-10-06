@@ -1,0 +1,15 @@
+{
+ "rule": "no physical/embodied/robot part",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    5,
+    "name"
+   ],
+   "value": "Robot autonomy"
+  }
+ ],
+ "expect": "physical and embodied work is out of scope"
+}

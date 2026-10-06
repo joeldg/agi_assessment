@@ -1,0 +1,17 @@
+{
+ "rule": "projection.trend resolves in trends.json",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    4,
+    "projection",
+    "trend",
+    "path"
+   ],
+   "value": "metr.p50.crossings"
+  }
+ ],
+ "expect": "projection.trend"
+}

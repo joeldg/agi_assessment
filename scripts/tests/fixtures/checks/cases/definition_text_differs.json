@@ -1,0 +1,15 @@
+{
+ "rule": "definitionText equals agi_components.definition.text",
+ "ops": [
+  {
+   "file": "data/method.json",
+   "set": [
+    "changelog",
+    -1,
+    "definitionText"
+   ],
+   "value": "AGI: other."
+  }
+ ],
+ "expect": "definitionText differs from agi_components.definition.text"
+}

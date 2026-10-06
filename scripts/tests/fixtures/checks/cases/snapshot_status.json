@@ -1,0 +1,16 @@
+{
+ "rule": "snapshot statuses on the scale",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "components",
+    "breadth",
+    "status"
+   ],
+   "value": "watching"
+  }
+ ],
+ "expect": "components.breadth="
+}

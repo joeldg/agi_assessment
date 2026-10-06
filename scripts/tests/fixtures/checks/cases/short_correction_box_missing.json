@@ -1,0 +1,21 @@
+{
+ "rule": "a run with corrections has the correction box",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "corrections"
+   ],
+   "value": [
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    }
+   ]
+  }
+ ],
+ "expect": "carries 1 correction(s) but the page has no correction box"
+}

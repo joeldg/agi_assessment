@@ -1,0 +1,14 @@
+{
+ "rule": "the real render: today's run edited after rendering",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "verdict"
+   ],
+   "value": "Method change today: re-derived under definitions v2.0."
+  }
+ ],
+ "expect": "reports/2026-10-06.html differs from build_report's render, line 7, column "
+}

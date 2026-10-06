@@ -1,0 +1,19 @@
+{
+ "rule": "the last history row per part equals its status",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "append": [
+    "history"
+   ],
+   "value": {
+    "date": "2026-10-06",
+    "id": "breadth",
+    "from": "far",
+    "to": "partial",
+    "why": "fixture"
+   }
+  }
+ ],
+ "expect": "the last row for breadth says \"partial\" but the status is \"far\""
+}

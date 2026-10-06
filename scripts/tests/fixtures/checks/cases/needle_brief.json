@@ -1,0 +1,14 @@
+{
+ "rule": "needle.brief present",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "needle",
+    "brief"
+   ]
+  }
+ ],
+ "expect": "needle.brief is required on a format-2 run"
+}

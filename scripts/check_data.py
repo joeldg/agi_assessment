@@ -2,6 +2,7 @@
 """Validate the data and the latest report before anything is published. Read-only.
 
     python3 scripts/check_data.py [--allow-correction "reason"] [--warn-only]
+    python3 scripts/check_data.py --pages      # visible-word budgets of the built pages; warnings only, exit 0
 
 Prints one line per problem, each with a path such as runs[2].tripwires[0].status="Tripped",
 and exits 1 if any ERROR remains. Warnings never fail the check.
@@ -22,7 +23,10 @@ What it checks:
       its share card, and evidence tags;
   (7) immutability against git HEAD: past runs, made forecasts, alarm criteria, append-only
       logs, past reports;
-  (8) no launch/ path staged or tracked, and no key-like strings in files git would commit.
+  (8) no launch/ path staged or tracked, and no key-like strings in files git would commit;
+  (9) redesign v2 (scripts/checks/): data/agi_components.json, the definitions in force and the method-change
+      run, data/method.json, the newest format-2 run with its short report, analysis page and build_report
+      render. Each rule is a no-op until its input exists.
 """
 import argparse
 import json
@@ -39,6 +43,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from alarm_check import (  # noqa: E402  (shared arithmetic, one implementation)
     exit_rule, id_key, incident_lags, iter_triggers, median, met_flags, parse_date, rule_level, w4_params,
 )
+import checks  # noqa: E402  (redesign v2 rules)
+from checks import components as ck_components, method as ck_method, pages as ck_pages  # noqa: E402
+from checks import reports_v2 as ck_reports  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://hiddenagi.com/"
@@ -202,8 +209,8 @@ def check_probs(f, p, r, newest):
         for k in NEEDS_AGI:
             for h in HORIZONS:
                 if h in v[k] and h in v["agi"] and v[k][h] > v["agi"][h] + EPS:
-                    f.err("%s.probs.%s.%s=%s is above agi.%s=%s; %s needs a strict-AGI system" % (
-                        p, k, h, v[k][h], h, v["agi"][h], k))
+                    f.err("%s.probs.%s.%s=%s is above agi.%s=%s; %s needs an AGI-level system (definitions in "
+                          "force: v%s)" % (p, k, h, v[k][h], h, v["agi"][h], k, r.get("defs") or "1.0"))
     nows = [v[k].get("now") for k in "ABCD"]
     idx = r.get("index", MISSING)
     if idx is MISSING or idx is None:
@@ -603,7 +610,7 @@ def check_data_urls(f, data, runs, newest):
         def strict(w, rel=rel):
             if rel == "data/alarm.json":
                 return ".groups[" in w
-            if rel in ("data/forecasts.json", "data/gauges.json"):
+            if rel in ("data/forecasts.json", "data/gauges.json", "data/agi_components.json"):
                 return True
             if rel == "data/runs.json":
                 m = re.match(r"runs(\[\d+\])\.(gauges|needle|tripwires)\b", w)
@@ -869,7 +876,7 @@ def check_immutability(f, git, data, runs, newest):
     # past reports
     note = re.compile(r"\b(?:Update[ds]?|Corrections?)\b")
     for rel in git.lines("ls-tree", "--name-only", git.base, "reports/"):
-        m = re.search(r"(\d{4}-\d{2}-\d{2})\.html$", rel)
+        m = re.search(r"(\d{4}-\d{2}-\d{2})(?:-analysis)?\.html$", rel)
         if not m or not newest or m.group(1) >= newest:
             continue
         w, h = _read(rel), git.show(rel)
@@ -923,6 +930,29 @@ def check_git(f, git):
             f.err("%s:%d looks like %s; never commit keys (value not shown)" % (rel, line, hits[line]))
 
 
+# ---------- (9) redesign v2: scripts/checks/ ----------
+
+def v2_context(f, data, git, today):
+    return checks.Ctx(f=f, root=ROOT_DIR, data=data, git=git, today=today,
+                      check_url=check_url, append_only=append_only, js=js, scan_page=scan_page)
+
+
+def check_v2(ctx, runs, latest):
+    ck_method.check(ctx, runs, latest)
+    ck_components.check(ctx, runs)
+    ck_reports.check(ctx, runs, latest)
+
+
+def pages_only(f, data, git, today):
+    """--pages: the visible-word budgets of the built pages. Never an error; always exit 0."""
+    for line in ck_pages.check(v2_context(f, data, git, today), data.get("data/runs.json")):
+        print(line)
+    for m in f.errors + f.warnings:
+        print("WARN   " + m)
+    print("check_data --pages: %d warning(s)" % len(f.errors + f.warnings))
+    return 0
+
+
 # ---------- main ----------
 
 ROOT_DIR = ROOT
@@ -937,6 +967,8 @@ def main(argv=None):
     ap.add_argument("--root", default=str(ROOT), help="repository root (default: this script's repo)")
     ap.add_argument("--base", default="HEAD", help="git revision the immutability checks compare against")
     ap.add_argument("--today", help="treat this date (YYYY-MM-DD) as today")
+    ap.add_argument("--pages", action="store_true",
+                    help="print the visible-word budgets of the built pages (spec 2.2); warnings only, exit 0")
     args = ap.parse_args(argv)
     ROOT_DIR = Path(args.root).resolve()
     today = parse_date(args.today) if args.today else date.today()
@@ -947,6 +979,8 @@ def main(argv=None):
 
     f = Findings()
     data = load_all(ROOT_DIR, f)
+    if args.pages:
+        return pages_only(f, data, Git(ROOT_DIR, args.base), today)
     runs = data.get("data/runs.json")
     newest, latest, latest_run = check_runs(f, runs, data, today) if runs is not None else (None, None, None)
     check_alarm(f, data.get("data/alarm.json"), latest_run, data.get("data/incidents.json"))
@@ -957,6 +991,7 @@ def main(argv=None):
     check_page_links(f, ROOT_DIR)
     if latest is not None:
         check_report(f, latest, latest_run)
+    check_v2(v2_context(f, data, git, today), runs, latest)
     if git.ok:
         check_immutability(f, git, data, runs, newest)
         check_git(f, git)

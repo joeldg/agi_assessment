@@ -1,0 +1,13 @@
+{
+ "rule": "methodChange on the boundary run",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "methodChange"
+   ]
+  }
+ ],
+ "expect": "needs methodChange"
+}

@@ -1,0 +1,13 @@
+{
+ "rule": "definitionsVersion and adopted agree with method.json",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "adopted"
+   ],
+   "value": null
+  }
+ ],
+ "expect": "adopted=null but data/method.json adopted definitions 2.0 on \"2026-10-05\""
+}

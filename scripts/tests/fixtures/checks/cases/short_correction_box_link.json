@@ -1,0 +1,58 @@
+{
+ "rule": "more than 5 corrections: the box links the rest",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "corrections"
+   ],
+   "value": [
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    },
+    {
+     "date": "2026-10-06",
+     "page": "reports/2026-10-05.html",
+     "was": "x",
+     "now": "y"
+    }
+   ]
+  },
+  {
+   "file": "reports/2026-10-06.html",
+   "replace": [
+    "<p class=\"callout rp-method\">",
+    "<aside class=\"callout rp-corr\"><ul class=\"plain\"><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li><li>Correction.</li></ul></aside>\n<p class=\"callout rp-method\">"
+   ]
+  }
+ ],
+ "expect": "shows 5 of the run's 6 corrections but doesn't link the rest"
+}

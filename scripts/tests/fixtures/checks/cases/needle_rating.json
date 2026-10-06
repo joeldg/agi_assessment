@@ -1,0 +1,15 @@
+{
+ "rule": "needle.rating in the six-word set",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "needle",
+    "rating"
+   ],
+   "value": "fact"
+  }
+ ],
+ "expect": "needle.rating=\"fact\" must be one of"
+}

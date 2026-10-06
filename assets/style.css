@@ -3,6 +3,7 @@
   --up:#A33A30; --down:#2D6A4F;
   --sA:#B8700C; --sB:#00897B; --sC:#9150B8; --sD:#C8413A; --sE:#3569D4;
   --accent:#B8700C; --grid:#E1E6EA; --axis:#C9D0D7;
+  --prog:#747B83; /* distance-meter fill (redesign v2): ink-grey, 3.4:1 on --grid */
   --good:#2E7D4F; --warn:#9A6B00; --crit:#B42318;
   /* text-on-background variants (AA 4.5:1); series colors stay for marks only */
   --link:#2F62C8; --sA-text:#8A5608; --warn-text:#855C00; --crit-bg:#B42318;
@@ -16,6 +17,7 @@
     --up:#E07A6F; --down:#6FBF95;
     --sA:#C4861A; --sB:#139A8C; --sC:#A36ED0; --sD:#DC564A; --sE:#4F82DC;
     --accent:#D9A441; --grid:#26313C; --axis:#34414E;
+    --prog:#9399A0; /* 4.6:1 on --grid (dark) */
     --good:#4FB27A; --warn:#D4A72C; --crit:#F0645A;
     --link:#6B96E6; --sA-text:var(--sA); --warn-text:var(--warn); --crit-bg:#B42318;
   }
@@ -25,6 +27,7 @@
   --up:#E07A6F; --down:#6FBF95;
   --sA:#C4861A; --sB:#139A8C; --sC:#A36ED0; --sD:#DC564A; --sE:#4F82DC;
   --accent:#D9A441; --grid:#26313C; --axis:#34414E;
+  --prog:#9399A0; /* 4.6:1 on --grid (dark) */
   --good:#4FB27A; --warn:#D4A72C; --crit:#F0645A;
   --link:#6B96E6; --sA-text:var(--sA); --warn-text:var(--warn); --crit-bg:#B42318;
 }
@@ -328,3 +331,321 @@ ul.esc-grid{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template
   .esc-name{flex:1 1 55%;margin:0}
   .esc-why,.esc-trig,.esc-more{flex-basis:100%}
 }
+
+/* ===== Redesign v2 (definitions v2.0) ===== */
+/* NEW classes only (plus the --prog token, defined in the three token blocks above). Nothing existing is renamed or
+   restyled, so frozen reports (nav.site, .alarm*, .hero, .needle, .gauge*, .tw*, .tag.*, nav.top, .subscribe) render
+   as before. Source: .claude/work/redesign/final_prototype.css, minus its proto-* rules (FINAL_SPEC.md 6.10). */
+
+/* --- site nav v2: six hubs plus the Escape watch pill; short labels on phones; no JS ---------------------------- */
+nav.site2{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;font-size:14px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--rule)}
+nav.site2 a{color:var(--muted);text-decoration:none}
+nav.site2 a[aria-current="page"],nav.site2 a[aria-current="true"],nav.site2 a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+nav.site2 .brand{font-family:var(--serif);font-weight:600;color:var(--ink)}
+nav.site2 .nav-links{display:flex;flex-wrap:wrap;gap:4px 16px}
+nav.site2 .s{display:none}
+nav.site2 a.nav-key{margin-left:auto;color:var(--ink);font-weight:600;border:1px solid var(--ink);border-radius:999px;padding:0 9px}
+nav.site2 a.nav-key:hover{text-decoration:underline}
+@media (max-width:640px){
+  nav.site2{gap:6px 12px;padding-bottom:10px;margin-bottom:12px}
+  nav.site2 .brand{flex:1 1 auto}
+  nav.site2 .nav-links{order:3;flex-basis:100%;gap:4px 14px}
+  nav.site2 .l{display:none}
+  nav.site2 .s{display:inline}
+}
+@media (max-width:359px){nav.site2 .nav-links{gap:4px 10px}}   /* 320 px: the six short labels keep one row (WP-F request) */
+.crumb{font-size:13px;color:var(--muted);margin:-6px 0 12px}
+.crumb a{color:var(--muted)}
+
+/* --- homepage: three answer cards ------------------------------------------------------------------------------- */
+.hq-head h1{font-size:clamp(26px,5vw,36px)}
+.hq-head .lede{margin:4px 0 0}
+.hq{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin-top:12px}
+.hq.hq-sep{border:1px dashed var(--muted)}
+h2.hq-q,.hq-q{font-family:var(--sans);font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0;display:flex;flex-wrap:wrap;gap:2px 12px;justify-content:space-between}
+.hq-seplabel{letter-spacing:0;text-transform:none;font-weight:500}
+.hq-seplabel .s,.hq-show-m{display:none}
+.hq-a{font-family:var(--serif);font-size:20px;line-height:1.3;margin:2px 0 8px}
+.hq-a strong{font-weight:600}
+.hq-line{margin:6px 0 0;font-size:15px}
+.hq-more{margin:8px 0 0;font-size:14px;display:flex;flex-wrap:wrap;gap:4px 16px}
+.hq .big{font-family:var(--sans);font-weight:600;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.hq-alarm{font-weight:600}
+.hq-alarm .ico{font-size:18px;margin-right:5px}
+/* the alarm glyph takes its level's status colour by class (from alarm.json levels[].status); the words stay ink */
+.ico-good{color:var(--good)} .ico-warn{color:var(--warn)} .ico-crit{color:var(--crit)}
+.hq-def{margin:8px 0 0;font-family:var(--serif);font-size:15px;line-height:1.4}
+.hq-def a{font-family:var(--sans);font-size:13px;margin-left:4px;white-space:nowrap}
+.hq-any{margin-top:0}
+.rp-method{margin:10px 0}
+.hq-below{margin-top:28px}
+.hq-h2{font-size:19px;margin:0 0 8px;display:flex;gap:10px;align-items:baseline}
+.hq-tops li{margin-bottom:6px}
+.hq-cal li{grid-template-columns:64px 1fr;padding:6px 0}
+@media (max-width:640px){
+  .hq{padding:10px 12px;margin-top:8px}
+  .hq-a{font-size:18px;margin-bottom:6px}
+  .hq .big{font-size:26px}
+  .hq-hide-m{display:none}
+  .hq-show-m{display:inline}
+  .hq-seplabel .l{display:none}
+  .hq-seplabel .s{display:inline}
+  .hq-line{font-size:14.5px}
+  .hq-head .lede{font-size:15px}
+  .hq-more{margin-top:6px}
+}
+
+/* --- the Index decomposition bar (hypothesis colours: its parts ARE hypotheses) ---------------------------------- */
+.ix-wrap{margin-top:6px}
+.ix-bar{display:block;width:100%;height:16px;overflow:visible}
+.ix-seg-A{fill:var(--sA)} .ix-seg-B{fill:var(--sB)}
+.ix-seg-CD{fill:var(--muted)}                      /* C or D outside A: neutral ink-grey, it mixes two hypotheses */
+.ix-legacy{fill:var(--muted)}                      /* a run without indexParts: one neutral segment for the total */
+.ix-hatch-bg{fill:var(--surface)} .ix-hatch{stroke:var(--ink);stroke-width:2}   /* rounding up to the published Index */
+.ix-round{stroke:var(--ink);stroke-width:1}
+.ix-end{fill:var(--ink)}
+.ix-rest{fill:var(--grid)}
+.ix-scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink);line-height:1.2;margin-top:1px;font-variant-numeric:tabular-nums}
+.swatch.ix-sw-A{background:var(--sA)} .swatch.ix-sw-B{background:var(--sB)} .swatch.ix-sw-CD,.swatch.ix-sw-legacy{background:var(--muted)}
+.swatch.ix-sw-round{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,var(--surface) 2px 5px);border:1px solid var(--ink)}
+.ix-key{display:flex;flex-wrap:wrap;gap:2px 14px;margin-top:4px}
+.ix-key .s{display:none}
+@media (max-width:640px){.ix-key .l{display:none}.ix-key .s{display:inline}}
+
+/* --- AGI part status: ink pips plus a word (never alarm colours, glyphs or hypothesis colours) ------------------- */
+.am-status{white-space:nowrap}
+.am-pips{display:inline-flex;gap:2px;vertical-align:middle}
+.pip{width:9px;height:9px;border-radius:2px;border:1.5px solid var(--muted);display:inline-block}
+.pip.on{background:var(--ink);border-color:var(--ink)}
+.am-word{font-size:13px;font-weight:600;margin-left:6px}
+.lg-w{font-size:12px;margin-left:4px}
+
+/* --- homepage strip (agiStrip; server-rendered) ------------------------------------------------------------------ */
+ul.ag-strip{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.ag-cell{display:flex;flex-direction:column;gap:3px;padding:7px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--ink);text-decoration:none;min-width:0;height:100%}
+.ag-cell:hover{border-color:var(--ink)}
+.ag-name{font-size:13px;font-weight:600;line-height:1.2;overflow-wrap:anywhere}
+.ag-word{font-size:12px;color:var(--muted);margin-left:5px;font-weight:500}
+.ag-legend{display:none;flex-wrap:wrap;gap:2px 10px;font-size:12px;color:var(--muted);margin:4px 0 0}
+@media (max-width:760px){
+  /* phones: two columns; each tile keeps its word (pips plus the word, always) */
+  ul.ag-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+  .ag-cell{gap:1px;padding:3px 7px}
+  .ag-cell .ag-name{font-size:12.5px}
+}
+
+/* --- agi.html: definition box and the tracker (agiMap) ----------------------------------------------------------- */
+.am-answer{margin:6px 0 0}
+.am-def{border-left:4px solid var(--ink);background:var(--surface);border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0}
+.am-def p{margin:0}
+.am-def .def{font-family:var(--serif);font-size:19px;line-height:1.4}
+.am-def .small{margin-top:6px}
+.am-h2{margin-top:22px}
+.am-intro{margin:0}
+.am-top{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;margin-top:8px}
+.am-sum{font-family:var(--serif);font-size:19px;margin:0}
+.am-legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--ink)}
+.am-legend .am-word{font-weight:400;margin-left:4px}
+.am-tools{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-top:10px;font-size:13px}
+.am-tool{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.am-seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.am-seg button{background:var(--surface);color:var(--ink);border:0;padding:4px 10px;font-size:13px}
+.am-seg button+button{border-left:1px solid var(--rule)}
+.am-seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.am-glyphs{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--muted)}
+.am-glyphs svg{vertical-align:-2px}
+.am{margin-top:10px}
+.am-grid,.am-btn.am-grid{display:grid;grid-template-columns:minmax(180px,230px) minmax(150px,1fr) minmax(200px,1.35fr);column-gap:18px}
+.am-axisrow{align-items:end;border-bottom:1px solid var(--rule);padding-bottom:2px}
+.am-axisrow .h{font-size:12px;color:var(--muted);font-weight:600}
+ul.am-rows{list-style:none;margin:0;padding:0}
+.am-row{border-bottom:1px solid var(--rule)}
+.am-h{margin:0;font:inherit;line-height:inherit}
+.am-btn{all:unset;box-sizing:border-box;width:100%;cursor:pointer;padding:9px 0;align-items:center}
+.am-btn > span,.am-c1 > span,.am-prog > span,.am-lane{display:block}
+.am-btn .am-name{display:flex}
+.am-basis{display:inline;font-size:12px;color:var(--muted)}
+.am-fs{margin:6px 0 2px;border-top:1px dashed var(--rule);padding-top:6px}
+.am-fs p{margin:0 0 3px}
+.am-basis-p{margin-bottom:6px}
+.tag-q{font-size:11px;color:var(--muted);margin-right:4px}
+.am-btn:focus-visible{outline:2px solid var(--sE);outline-offset:2px;border-radius:4px}
+.am-btn:hover .am-name{text-decoration:underline;text-underline-offset:3px}
+.am-name{font-weight:600;font-size:15px;display:flex;align-items:center;gap:6px}
+.am-chev{font-size:11px;color:var(--muted);transition:transform .15s}
+.am-row.open .am-chev{transform:rotate(90deg)}
+.am-glance{font-size:13px;color:var(--muted);line-height:1.4;margin-top:2px}
+.pg-txt{font-size:13px;line-height:1.35}
+.pg-txt b{font-size:15px;font-variant-numeric:tabular-nums}
+.pg{position:relative;height:10px;border-radius:5px;background:var(--grid);margin:5px 0 2px}
+.pg-fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--prog);min-width:3px}
+.pg-bar{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--ink)}
+.pg-close{position:absolute;top:-3px;bottom:-3px;width:0;border-left:2px dotted var(--ink);margin-left:-1px}
+.pg-partial{position:absolute;top:2px;bottom:2px;width:0;border-left:1.5px dashed var(--muted);margin-left:-1px}
+.pg-mark{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--ink);background:var(--surface)}
+.pg-seg{position:absolute;top:0;bottom:0;width:1px;background:var(--surface)}
+.pg-sub{font-size:12px;color:var(--muted);line-height:1.35;display:flex;flex-wrap:wrap;gap:0 10px}
+.pg-ticks{position:relative;height:28px;font-size:11px;color:var(--muted)}
+.pg-ticks span.low{top:13px}
+.pg-ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.pg-ticks span.end{transform:translateX(-100%)}
+.pg-ticks span.start{transform:none}
+.am-log{margin:8px 0 4px;max-width:420px}
+.am-log p{margin:0 0 2px}
+.am-lane svg,.am-axis svg{display:block;width:100%;overflow:visible}
+.tl-grid{stroke:var(--grid);stroke-width:1}
+.tl-base{stroke:var(--axis);stroke-width:1}
+.tl-future{fill:var(--grid);opacity:.45}
+.tl-now{stroke:var(--ink);stroke-width:1.5}
+.tl-yr{fill:var(--muted);font-size:11px;font-family:var(--sans)}
+.tl-nowlabel{fill:var(--ink);font-size:11px;font-weight:600;font-family:var(--sans)}
+.tl-plabel{fill:var(--ink);font-size:10px;font-weight:600;font-family:var(--sans)}
+.tl-dot{fill:var(--ink);stroke:var(--surface);stroke-width:2}
+.tl-int{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.tl-yard{fill:var(--muted);stroke:var(--surface);stroke-width:1.5}
+.tl-proj{stroke:var(--muted);stroke-width:1.75;stroke-dasharray:5 4;fill:none}
+.tl-band{fill:var(--ink);opacity:.12}
+.tl-pmark{fill:var(--surface);stroke:var(--ink);stroke-width:1.75}
+.tl-up{fill:none;stroke:var(--ink);stroke-width:1.5}
+.tl-more{fill:var(--muted);font-size:11px;font-family:var(--sans)}
+/* Timeline view: the same rows, lanes full width, meters hidden */
+.am.tl-mode .am-grid,.am.tl-mode .am-btn.am-grid{grid-template-columns:minmax(150px,210px) 1fr}
+.am.tl-mode .am-prog,.am.tl-mode .am-glance,.am.tl-mode .am-axisrow .hp{display:none}
+.am-panel{padding:4px 0 16px}
+.am-panel[hidden]{display:none}
+.am-panel .q{font-family:var(--serif);font-size:17px;margin:4px 0 8px}
+.fit-bin{font-size:12px;color:var(--muted);border-top:1px dashed var(--rule);margin-top:3px;padding-top:2px}
+.em-mock{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;background:var(--surface);max-width:640px}
+.em-mast{border-bottom:1px solid var(--rule);padding-bottom:6px;margin-top:0}
+ul.am-hyp{list-style:none;padding:0}
+ul.am-hyp li{border-bottom:1px solid var(--rule);padding:6px 0;margin:0}
+.am-panel h4{margin:12px 0 4px}
+.am-panel details{padding:8px 0}
+.am-panel details .body{font-size:14px}
+.am-kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:10px 28px;font-size:14px}
+.am-kv p{margin:0 0 6px}
+ul.am-parts{list-style:none;padding:0;margin:4px 0 0}
+ul.am-parts li{margin-bottom:4px;padding-left:1.3em;text-indent:-1.3em}
+.am-parts .mk{display:inline-block;width:1.3em;text-indent:0;font-weight:600}
+.am-panel table{font-size:13px}
+.am-panel .timeline-list li{grid-template-columns:96px 1fr;font-size:14px}
+.am-foot{margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.am-close{background:none;border:1px solid var(--rule);border-radius:6px;padding:3px 10px;font-size:13px;color:var(--ink)}
+.am-static{margin-top:18px}
+.am-static li,.am-panel li{overflow-wrap:anywhere}
+/* table cells only break a word longer than its column: `anywhere` shrank each column to about one character, so
+   dates and words split mid-string (review round 2, VR2-01) */
+.am-panel td,.am-static td{overflow-wrap:break-word}
+.am-static h3{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.tag.ours{color:var(--muted);border-style:dashed}
+.tag.agg{color:var(--muted)}
+.am-fw td:first-child{font-weight:600}
+@media (max-width:760px){
+  .am-grid,.am-btn.am-grid,.am.tl-mode .am-grid,.am.tl-mode .am-btn.am-grid{grid-template-columns:1fr}
+  .am-axisrow{display:none}
+  .am-btn{display:block}
+  .am-prog{margin-top:6px}
+  .am-lane{margin-top:4px}
+}
+@media (min-width:761px){.am-btn.am-grid{display:grid}}
+@media (prefers-reduced-motion: reduce){.am-chev{transition:none}}
+
+/* tables that become labelled cards on phones (outside definitions, naming key) */
+@media (max-width:640px){
+  table.am-fw,table.am-fw tbody,table.am-fw tr,table.am-fw td,
+  table.am-names,table.am-names tbody,table.am-names tr,table.am-names td{display:block;width:auto}
+  table.am-fw tr:first-child,table.am-names tr:first-child{display:none}
+  table.am-fw tr,table.am-names tr{padding:10px 0;border-bottom:1px solid var(--rule)}
+  table.am-fw td,table.am-names td{border:0;padding:2px 0}
+  table.am-fw td[data-label]::before,table.am-names td[data-label]::before{content:attr(data-label);display:block;font-size:12px;font-weight:600;color:var(--muted)}
+}
+.am-names td:first-child{font-weight:600}
+
+/* --- how our numbers fit together (start-here.html#pieces; server-rendered HTML, no JS) -------------------------- */
+.fit-lanes{display:grid;gap:14px;margin-top:12px}
+.fit-lane{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.fit-lane.sep{border:1px dashed var(--muted)}
+.fit-q{font-family:var(--serif);font-weight:600;font-size:17px;margin:0 0 10px}
+.fit-q span{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+ol.fit-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+@media (min-width:700px){ol.fit-flow{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}}
+.fit-box{position:relative;background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:9px 11px;font-size:13px;line-height:1.4;display:flex;flex-direction:column;gap:2px}
+.fit-box + .fit-box::before{content:"↓";position:absolute;left:50%;top:-19px;transform:translateX(-50%);color:var(--muted);font-size:15px}
+@media (min-width:700px){.fit-box + .fit-box::before{content:"→";left:-20px;top:50%;transform:translateY(-50%)}}
+.fit-box b{font-size:14px}
+.fit-box .v{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.fit-box .top{color:var(--muted);font-size:12px}
+.fit-box.em{border:2px solid var(--ink)}
+.fit-hy{display:flex;gap:6px;align-items:baseline}
+.fit-hy i{display:inline-block;width:9px;height:9px;border-radius:50%;flex:none}
+.fit-note{font-size:13px;color:var(--muted);margin:8px 0 0;max-width:80ch}
+
+/* --- the short daily report (build_report.py) -------------------------------------------------------------------- */
+.rp-head{margin-bottom:6px}
+.rp-h1{font-size:clamp(22px,4vw,28px);line-height:1.25;margin-top:2px}
+.rp-h2{font-size:19px;margin:0 0 8px;padding-top:10px;border-top:2px solid var(--ink)}
+.rp-cards{margin-top:4px}
+
+/* --- review round 1 (2026-10-05): additive rules; no existing selector changes ---------------------------------- */
+/* V7: the meter's legend under each tracker row keeps its spacing (.am-prog > span was display:block) */
+.am-prog > .pg-sub{display:flex;flex-wrap:wrap;gap:0 10px}   /* each label is its own flex item, so labels never run together */
+/* V6: on tablets and small laptops the part tiles go four across, and names wrap between words */
+@media (min-width:761px) and (max-width:1000px){ul.ag-strip{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.ag-name{overflow-wrap:normal;hyphens:auto}
+.ag-cell .am-status{white-space:normal}
+/* V3: the short report's probability table becomes labelled rows on phones (no sideways scroll) */
+@media (max-width:640px){
+  table.rp-prob,table.rp-prob tbody,table.rp-prob tr,table.rp-prob td{display:block;width:auto}
+  table.rp-prob tr:first-child{display:none}
+  table.rp-prob tr{padding:8px 0;border-bottom:1px solid var(--rule)}
+  table.rp-prob td{border:0;padding:1px 0;text-align:left}
+  table.rp-prob td:first-child{font-weight:600}
+  table.rp-prob td[data-label]{display:flex;gap:8px}
+  table.rp-prob td[data-label]::before{content:attr(data-label);flex:0 0 110px;font-size:12px;font-weight:600;color:var(--muted)}
+}
+/* V8: archive.html rows read as labelled cards on phones */
+@media (max-width:640px){
+  table.archive,table.archive tbody,table.archive tr,table.archive td{display:block;width:auto}
+  table.archive tr:first-child{display:none}
+  table.archive tr{padding:8px 0;border-bottom:1px solid var(--rule)}
+  table.archive td{border:0;padding:1px 0;text-align:left}
+  table.archive td[data-label]::before{content:attr(data-label) ": ";font-size:12px;font-weight:600;color:var(--muted)}
+}
+table.archive td[data-label="Date"],table.archive td[data-label="Fire alarm"]{white-space:nowrap}
+/* V4: the new pages' in-page nav wraps on phones instead of scrolling under a fade (frozen reports keep theirs) */
+@media (max-width:640px){
+  nav.top.rp-top{flex-wrap:wrap;overflow-x:visible;white-space:normal;-webkit-mask-image:none;mask-image:none}
+}
+/* V12: 320 px keeps the six short labels on one row; tablets use the short labels so the pill stays on row 1 */
+@media (max-width:359px){nav.site2 .nav-links{gap:4px 8px}nav.site2 .s{font-size:13px}}
+@media (min-width:641px) and (max-width:900px){nav.site2 .l{display:none}nav.site2 .s{display:inline}}
+/* V13: the Index key's rounding swatch is a hatched square, like the bar's segment, not a ring */
+.swatch.ix-sw-round{border-radius:2px;background:repeating-linear-gradient(45deg,var(--ink) 0 1.5px,var(--surface) 1.5px 3.5px)}
+/* V15: Windows High Contrast keeps the filled pips and the meter fills visible */
+@media (forced-colors: active){
+  .pip.on{forced-color-adjust:none;background:CanvasText;border-color:CanvasText}
+  .pg-fill{forced-color-adjust:none;background:CanvasText}
+}
+/* the pending chip is a link to agi.html#v1 (V16); Escape watch's heading chips use the sans face (V20) */
+a.pend-chip{text-decoration:none}
+a.pend-chip:hover{color:var(--ink);border-color:var(--ink)}
+.chip.esc-chip{font-family:var(--sans)}
+/* V20: skip link, visible on keyboard focus */
+.skip-link.sr-only:focus{position:fixed;left:8px;top:8px;width:auto;height:auto;margin:0;overflow:visible;clip:auto;
+  z-index:1000;background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:6px;padding:6px 10px}
+#content:focus{outline:none}
+/* V3: a wide table in the analysis body scrolls inside itself on phones (the shell wraps the body in .rp-body) */
+@media (max-width:640px){.rp-body table{display:block;overflow-x:auto;max-width:100%}}
+/* V18: on a narrow log strip the workday label drops to the second row, clear of work-week */
+@media (max-width:420px){.pg-ticks span.low-n{top:13px}}
+/* --- review round 2 (2026-10-06): additive rules --------------------------------------------------------------- */
+/* VR2-01: each part's "Latest measurements" table (drill-down and no-JS view) reads as labelled cards on phones */
+@media (max-width:640px){
+  table.am-meas,table.am-meas tbody,table.am-meas tr,table.am-meas td{display:block;width:auto}
+  table.am-meas tr:first-child{display:none}
+  table.am-meas tr{padding:8px 0;border-bottom:1px solid var(--rule)}
+  table.am-meas td{border:0;padding:1px 0}
+  table.am-meas td:first-child{font-weight:600}
+  table.am-meas td[data-label]::before{content:attr(data-label) ": ";font-size:12px;font-weight:600;color:var(--muted)}
+}
+table.am-meas .am-day{white-space:nowrap}   /* "Apr 23, 2026" never wraps inside the As-of column */

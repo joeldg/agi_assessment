@@ -6,7 +6,7 @@ This file keeps the sign-up copy on record, so a change to the site's wording or
 
 **Nothing in the repo updates Kit.** Copy is pasted into Kit by hand.
 
-**Status (2026-09-30):** the "Proposed changes" landing-page line and the confirmation-email copy below are LIVE in Kit (pasted, saved, published and verified on the public page). The "Live in Kit" block below is the previous version, kept for the record.
+**Status (2026-09-30):** the "Proposed changes" landing-page line and the confirmation-email copy below are LIVE in Kit (pasted, saved, published and verified on the public page). The "Live in Kit" block below is the previous version, kept for the record. Not yet in Kit: the confirmation email's line "What we mean by AGI, and how close each of its eight parts is" (added 2026-10-05 with definitions v2.0); the owner pastes it in after agi.html is live.
 
 ## Landing page
 
@@ -46,6 +46,8 @@ Live in Kit since 2026-09-30 (replacing the 2026-09-29 version). The site and em
 > The numbers are judgments, not facts, and we try to keep them honest. Every claim is sourced, and the full daily report rates each piece of evidence as fact, report, opinion or speculation. We score our own forecasts in public, and when nothing moves, we say so.
 >
 > New here? [Start here](https://hiddenagi.com/start-here.html) for the method in five minutes, or see [today's reading](https://hiddenagi.com/).
+>
+> What we mean by AGI, and how close each of its eight parts is: [agi.html](https://hiddenagi.com/agi.html)
 >
 > One ask: hit reply and tell us your own number. What's the chance, in your view, that AGI already exists somewhere and hasn't been announced? We read every reply, and we won't use your name unless you say we can.
 >

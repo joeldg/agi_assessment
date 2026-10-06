@@ -1,0 +1,13 @@
+{
+ "rule": "analysis markers present",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<!-- analysis:end -->\n",
+    ""
+   ]
+  }
+ ],
+ "expect": "needs one <!-- analysis:begin --> and one <!-- analysis:end --> marker"
+}

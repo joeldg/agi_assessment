@@ -4,7 +4,7 @@ Copyright (c) 2026 joeldg. Hidden AGI watch: <https://hiddenagi.com/>
 
 This repository holds two kinds of material under two licenses.
 
-- **Code** (the scripts in `scripts/`, `assets/app.js`, `assets/charts.js`, `assets/style.css` and the page templates) is under the MIT License in [`LICENSE`](LICENSE).
+- **Code** (the scripts in `scripts/`, `assets/charts.js`, `assets/style.css` and the page templates) is under the MIT License in [`LICENSE`](LICENSE).
 - **The site's own text and data** are under the [Creative Commons Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), subject to the exceptions below.
 
 ## What CC BY 4.0 covers

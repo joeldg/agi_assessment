@@ -1,0 +1,15 @@
+{
+ "rule": "status on the scale",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "status"
+   ],
+   "value": "watching"
+  }
+ ],
+ "expect": "status=\"watching\" is not on the scale"
+}

@@ -1,0 +1,17 @@
+{
+ "rule": "every top item has a rating",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "roundup",
+    0,
+    "items",
+    1,
+    "rating"
+   ]
+  }
+ ],
+ "expect": "a top item needs a rating from the six-word set"
+}

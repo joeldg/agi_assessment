@@ -1,0 +1,24 @@
+{
+ "rule": "partial requires a passed part or a Partial mark",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "status"
+   ],
+   "value": "partial"
+  },
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "statusBasis"
+   ],
+   "value": "Partial: fixture."
+  }
+ ],
+ "expect": "is Partial with no passed part and no Partial mark reached"
+}

@@ -1,0 +1,84 @@
+{
+ "date": "2026-10-09",
+ "keyNumbers": {
+  "asOf": "2026-10-06",
+  "weekAgoDate": "2026-10-05",
+  "firstReading": false,
+  "methodBoundary": true,
+  "methodChangeDate": "2026-10-06"
+ },
+ "snapshot": {
+  "date": "2026-10-09",
+  "labelSet": 2,
+  "agi": {
+   "definitionsVersion": "2.0",
+   "adopted": "2026-10-05",
+   "components": [
+    {
+     "id": "breadth",
+     "name": "Breadth of work",
+     "short": "Breadth",
+     "status": "far",
+     "glance": "On real freelance projects the best system delivers 20.8%, against 80%; results by occupation for the other half are unpublished.",
+     "basisShort": "RLI 20.8%; Partial at 40%"
+    },
+    {
+     "id": "quality",
+     "name": "Professional quality",
+     "short": "Quality",
+     "status": "far",
+     "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 20.8%, against 50%.",
+     "basisShort": "overall figure only; RLI 20.8%"
+    },
+    {
+     "id": "reliability",
+     "name": "Reliability",
+     "short": "Reliability",
+     "status": "far",
+     "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+     "basisShort": "pass^4 35.1%; Partial at 50%"
+    },
+    {
+     "id": "reasoning",
+     "name": "Reasoning",
+     "short": "Reasoning",
+     "status": "partial",
+     "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+     "basisShort": "expert exams passed"
+    },
+    {
+     "id": "horizon",
+     "name": "Planning and long projects",
+     "short": "Long projects",
+     "status": "far",
+     "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+     "basisShort": "3.1 h; Partial at 8 h"
+    },
+    {
+     "id": "autonomy",
+     "name": "Autonomy without scaffolding",
+     "short": "Autonomy",
+     "status": "far",
+     "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+     "basisShort": "44.3% strict; Partial at 50%"
+    },
+    {
+     "id": "learning",
+     "name": "Learning on the job",
+     "short": "Learning",
+     "status": "far",
+     "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+     "basisShort": "25.4%; Partial at 30%"
+    },
+    {
+     "id": "generalization",
+     "name": "Generalization to the new",
+     "short": "Generalization",
+     "status": "partial",
+     "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+     "basisShort": "62.7% once public for months"
+    }
+   ]
+  }
+ }
+}

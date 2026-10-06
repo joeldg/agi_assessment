@@ -1,0 +1,16 @@
+{
+ "rule": "M fields change only with a method entry",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "headline",
+    "target"
+   ],
+   "value": 70
+  }
+ ],
+ "expect": "components.breadth (headline) changed since HEAD"
+}

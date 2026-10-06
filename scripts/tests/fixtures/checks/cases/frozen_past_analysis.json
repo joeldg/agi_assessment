@@ -1,0 +1,17 @@
+{
+ "rule": "past analysis pages are frozen",
+ "call": "immutability",
+ "head_ops": [
+  {
+   "file": "reports/2026-10-05-analysis.html",
+   "write": "<p>as published</p>\n"
+  }
+ ],
+ "ops": [
+  {
+   "file": "reports/2026-10-05-analysis.html",
+   "write": "<p>edited</p>\n"
+  }
+ ],
+ "expect": "reports/2026-10-05-analysis.html changed since HEAD"
+}

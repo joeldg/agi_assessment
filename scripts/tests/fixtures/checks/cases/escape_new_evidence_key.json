@@ -1,0 +1,17 @@
+{
+ "rule": "escape.newEvidence lists indicator keys",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "escape",
+    "newEvidence"
+   ],
+   "value": [
+    "CARBONATO"
+   ]
+  }
+ ],
+ "expect": "are not Escape watch indicator keys"
+}

@@ -46,12 +46,15 @@ function dataLink(u, text, root=""){
   return h("a", isAbsolute(href) ? {href, target:"_blank", rel:"noopener"} : {href}, text);
 }
 
+/* label: the original display name. It never changes, because frozen pages (weekly/2026-10-02.html) draw
+   their legends from it live. name: the redesign v2 display name (sitekit.HYP_LABELS with the same letter
+   prefix), which new pages use in its place. */
 export const SERIES = {
-  A:{label:"A: AGI undisclosed", color:"--sA"},
-  B:{label:"B: Secret RSI", color:"--sB"},
-  C:{label:"C: Covert AGI online", color:"--sC"},
-  D:{label:"D: Covert govt influence", color:"--sD"},
-  Dopen:{label:"D-open: Open govt influence", color:"--sE"}
+  A:{label:"A: AGI undisclosed", name:"A: Hidden AGI", color:"--sA"},
+  B:{label:"B: Secret RSI", name:"B: Hidden self-improvement", color:"--sB"},
+  C:{label:"C: Covert AGI online", name:"C: Covert AGI actor", color:"--sC"},
+  D:{label:"D: Covert govt influence", name:"D: Covert government influence", color:"--sD"},
+  Dopen:{label:"D-open: Open govt influence", name:"D-open: Open government influence", color:"--sE"}
 };
 export const SERIES_ORDER = ["A","B","C","D","Dopen"];
 
@@ -176,8 +179,28 @@ export function sparkline(values, {color="--accent", zeroBased=false, width=120,
   return s;
 }
 
-/* ---- line chart: several series over dates, one y axis (percent unless yFormat says otherwise) ---- */
-export function lineChart(host, {series, height=280, yMax, title, endLabels=true, yFormat=fmtPct, log=false, percent}){
+/* lineChart breaks: a dashed muted hairline at each break, labelled at the top (inward near the right edge) */
+function breakLines(s, box, brks, x, {T, bottom, right}){
+  const muted = css("--muted"), bw = textWidth(box, brks.map(b => b.label), "row-label");
+  brks.forEach((b,i) => {
+    const px = x(b.x);
+    s.append(svg("line",{x1:px,x2:px,y1:T,y2:bottom,stroke:muted,"stroke-width":1,"stroke-dasharray":"4 3"}));
+    if(!b.label) return;
+    const flip = px + 4 + bw[i] > right;
+    const tx = svg("text",{x:flip ? px-4 : px+4, y:T+10, "text-anchor":flip ? "end" : "start", class:"row-label"}); tx.textContent = b.label; s.append(tx);
+  });
+}
+/* Consecutive points on the same side of every break, so no line joins across one. */
+function splitRuns(vals, pts, seg){
+  const runs = []; let k0 = null;
+  vals.forEach((v,i) => { const k = seg(String(v.x)); if(!runs.length || k !== k0){ runs.push([]); k0 = k; } runs[runs.length-1].push(pts[i]); });
+  return runs;
+}
+/* ---- line chart: several series over dates, one y axis (percent unless yFormat says otherwise) ----
+   breaks: [{x:"YYYY-MM-DD", label}] marks a method change: a dashed vertical hairline at x, labelled,
+   and no series is joined across it (points before x and points from x on are drawn as separate lines).
+   With no breaks the chart is drawn exactly as before. */
+export function lineChart(host, {series, height=280, yMax, title, endLabels=true, yFormat=fmtPct, log=false, percent, breaks=[]}){
   host.replaceChildren();
   const box = h("div",{class:"chart"}); host.append(box);
   const W = Math.max(box.clientWidth || host.clientWidth || 600, 300), H = height;
@@ -202,7 +225,12 @@ export function lineChart(host, {series, height=280, yMax, title, endLabels=true
   const R = groups.length ? Math.min(118, Math.ceil(16 + Math.max(...textWidth(box, groups.map(gp=>gp.text), "end-label")))) : 16;
   const t0 = parseDate(dates[0]).getTime(), t1 = parseDate(dates[dates.length-1]).getTime();
   const x = d => dates.length < 2 || t1===t0 ? L + (W-L-R)/2 : L + (parseDate(d).getTime()-t0)/(t1-t0)*(W-L-R);
-  const s = svg("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":title||"Line chart"});
+  const brks = (Array.isArray(breaks) ? breaks : []).filter(b => b && validDate(b.x)).map(b => ({x:String(b.x), label:String(b.label ?? "")})).sort((a,b) => a.x.localeCompare(b.x));
+  const seg = d => brks.filter(b => d >= b.x).length;               // which side of each break a date falls on
+  const shownBrks = brks.filter(b => { const t = parseDate(b.x).getTime(); return t >= t0 && t <= t1 && dates.length > 1; });
+  const brkAt = d => shownBrks.filter(b => d >= b.x && !dates.some(e => e >= b.x && e < d));   // the breaks a date is the first reading on or after
+  const aria = (title||"Line chart") + shownBrks.map(b => `; dashed line on ${fullDate(b.x)}: ${b.label}`).join("");
+  const s = svg("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":aria});
   const g = svg("g",{class:"axis"}); s.append(g);
   ticks.forEach((v,i)=>{ g.append(svg("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),class:i?"grid":"base"})); const tx=svg("text",{x:L-8,y:y(v)+4,"text-anchor":"end"}); tx.textContent=yFormat(v); g.append(tx); });
   // x ticks by measured spacing; the latest date always keeps its label. Spans of more than
@@ -215,14 +243,16 @@ export function lineChart(host, {series, height=280, yMax, title, endLabels=true
   const lastD = dates[dates.length-1];
   if(shown[shown.length-1] !== lastD){ const prev = shown[shown.length-1]; if(shown.length > 1 && (x(lastD) - x(prev) < MIN_GAP || tickFmt(lastD) === tickFmt(prev))) shown.pop(); shown.push(lastD); }
   shown.forEach(d => { const tx=svg("text",{x:x(d),y:H-8,"text-anchor":x(d)+halfW > W ? "end" : x(d)-halfW < 0 ? "start" : "middle"}); tx.textContent=tickFmt(d); g.append(tx); });
+  if(shownBrks.length) breakLines(s, box, shownBrks, x, {T, bottom:H-B, right:W-R});
   const surface = css("--surface");
   // dense series (points under 14px apart) keep only the latest dot; the tooltip gives every day
   const dense = dates.length > 1 && (W-L-R)/(dates.length-1) < 14;
   const dots = new Map();
   series.forEach(se => {
     const col = css(se.color) || se.color;
-    const pts = se.values.filter(v => v.y!=null && !isNaN(v.y) && validDate(v.x)).map(v => [x(v.x), y(v.y)]);
-    if(pts.length > 1) s.append(svg("polyline",{points:pts.map(p=>p[0]+","+p[1]).join(" "),fill:"none",stroke:col,"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"}));
+    const vals = se.values.filter(v => v.y!=null && !isNaN(v.y) && validDate(v.x));
+    const pts = vals.map(v => [x(v.x), y(v.y)]);
+    splitRuns(vals, pts, seg).forEach(run => { if(run.length > 1) s.append(svg("polyline",{points:run.map(p=>p[0]+","+p[1]).join(" "),fill:"none",stroke:col,"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"})); });
     (dense ? pts.slice(-1) : pts).forEach(p => { const k = p[0].toFixed(1)+","+p[1].toFixed(1); if(!dots.has(k)) dots.set(k, {x:p[0], y:p[1], cols:[]}); dots.get(k).cols.push(col); });
   });
   dots.forEach(d => dot(s, d.x, d.y, d.cols, surface));
@@ -236,12 +266,13 @@ export function lineChart(host, {series, height=280, yMax, title, endLabels=true
     const r = s.getBoundingClientRect(), k = W / (r.width || W);
     const d = nearest((ev.clientX - r.left) * k); cross.setAttribute("x1",x(d)); cross.setAttribute("x2",x(d)); cross.setAttribute("visibility","visible");
     const rows = series.map(se => { const v = se.values.filter(p=>p.x===d).pop(); return {label:se.label, value:v&&v.y!=null?yFormat(v.y):"–", color:css(se.color)||se.color}; });
+    brkAt(d).forEach(b => { if(b.label) rows.push({label:b.label}); });
     showTip(r.left + x(d)/k, ev.clientY, rows, fullDate(d), clear);
   });
   hit.addEventListener("mouseleave", hideTip);
   box.append(s);
   if(series.length > 1) host.append(legend(series.map(se=>({label:se.label, color:se.color, line:true}))));
-  host.append(tableView(title||"Data", ["Date", ...series.map(se=>se.label)], dates.map(d => [fullDate(d), ...series.map(se => { const v=se.values.filter(p=>p.x===d).pop(); return v&&v.y!=null?yFormat(v.y):"–"; })])));
+  host.append(tableView(title||"Data", ["Date", ...series.map(se=>se.label)], dates.map(d => [fullDate(d) + brkAt(d).filter(b => b.label).map(b => ` (${b.label})`).join(""), ...series.map(se => { const v=se.values.filter(p=>p.x===d).pop(); return v&&v.y!=null?yFormat(v.y):"–"; })])));
 }
 
 /* ---- the Hidden AGI Index dial: an eye whose iris is 100 ticks, n lit ---- */
@@ -266,11 +297,13 @@ export function dial(host, value, {size=220, label="Hidden AGI Index"}={}){
   host.append(s);
 }
 
-/* ---- status board (tripwires): icon + label + text, never color alone ---- */
+/* ---- status board (tripwires): icon + label + text, never color alone ----
+   Display words: Quiet / Open / Confirmed (redesign v2). The data keys (quiet, watching, tripped) never change.
+   ◔ marks Open, so ◐ only ever means the alarm's Watch level. */
 export const STATUS = {
   quiet:{label:"Quiet", icon:"○", color:"--good"},
-  watching:{label:"Watching", icon:"◐", color:"--warn"},
-  tripped:{label:"Tripped", icon:"●", color:"--crit"}
+  watching:{label:"Open", icon:"◔", color:"--warn"},
+  tripped:{label:"Confirmed", icon:"●", color:"--crit"}
 };
 // A status we don't recognise fails closed: it is flagged and sorted first, never shown as Quiet.
 const UNKNOWN_STATUS = {label:"Unknown status", icon:"?", color:"--crit"};
@@ -288,16 +321,17 @@ export function triggerLevel(alarm, id){
   const n = LEVEL_BY_LETTER[id[0].toUpperCase()]; return n == null ? null : n;
 }
 const levelName = (alarm, n) => (Array.isArray(alarm?.levels) ? alarm.levels : []).find(l => l && l.level === n)?.name || LEVEL_NAMES[n] || `Level ${n}`;
-/* A status for display. A status colour never outranks the alarm trigger it feeds: a tripped signal
-   is red only when it feeds a Warning- or Alarm-level trigger (X, Y). One that feeds a Watch-level
-   trigger (W), or no trigger, shows amber as "Observed". Unknown statuses fail closed (red, flagged). */
+/* A status for display. A status colour never outranks the alarm condition it feeds: a confirmed signal
+   is red only when it feeds a Warning- or Alarm-level condition (X, Y). One that feeds a Watch-level
+   condition (W), or none, shows amber with a capped label (key "observed", kept for the CSS and the sort
+   order). Unknown statuses fail closed (red, flagged). */
 export function statusView(status, trigger, alarm=null){
   const k = String(status ?? "").trim().toLowerCase();
   if(!has(STATUS,k)) return {key:"unknown", known:false, ...UNKNOWN_STATUS, label:`Unknown status: "${status ?? ""}"`};
   if(k === "tripped"){
     const lv = triggerLevel(alarm, trigger);
     if(lv == null || lv < 2) return {key:"observed", known:true, icon:STATUS.tripped.icon, color:"--warn", capped:true,
-      label: lv === 1 ? `Observed · feeds ${levelName(alarm, 1)}` : "Observed · no alarm trigger"};
+      label: lv === 1 ? `Confirmed · counts toward ${levelName(alarm, 1)}` : "Confirmed · no alarm condition"};
   }
   return {key:k, known:true, ...STATUS[k]};
 }
@@ -316,7 +350,7 @@ export function tripwireBoard(host, wires, {root="", alarm=null}={}){
     const sig = h("div",{class:"tw-signal"}); const hy=h("span",{class:"tw-hyp"}); const sw=h("span",{class:"swatch"}); sw.style.background=cssVar(has(SERIES,w.hyp)?SERIES[w.hyp].color:"--muted"); hy.append(sw, document.createTextNode(w.hyp==="Dopen"?"D-open":(w.hyp||"?"))); sig.append(hy, document.createTextNode(" " + (w.signal||"")));
     if(w.trigger){
       const id = String(w.trigger).trim();
-      sig.append(" ", h("a",{class:"chip tw-trigger", href:root+"alarm.html#"+encodeURIComponent(id)}, `Alarm trigger ${id}` + (alarm && triggerMet(alarm, id) ? " · met" : "")));
+      sig.append(" ", h("a",{class:"chip tw-trigger", href:root+"alarm.html#"+encodeURIComponent(id)}, `Alarm condition ${id}` + (alarm && triggerMet(alarm, id) ? " · met" : "")));
     }
     body.append(sig);
     const note = h("div",{class:"tw-note muted"}, w.note || ""); const a = dataLink(w.url, "source", root); if(a){ note.append(" ", a); } body.append(note);
@@ -351,8 +385,9 @@ export function escapeBoard(host, data, {root="", alarm=null, compact=true, page
   const view = i => statusView(i.status, Array.isArray(i.alarmTriggers) ? i.alarmTriggers[0] : null, alarm);
   const order = {unknown:0, tripped:1, observed:2, watching:3, quiet:4};
   const rows = inds.map((ind, n) => ({ind, st:view(ind), n})).sort((a,b) => (order[a.st.key] ?? 0) - (order[b.st.key] ?? 0) || a.n - b.n);
-  const count = {}; rows.forEach(r => { count[r.st.key] = (count[r.st.key]||0) + 1; });
-  const parts = [["tripped","tripped"],["observed","observed"],["watching","watching"],["quiet","quiet"],["unknown","with an unrecognized status (data error)"]]
+  // display words Confirmed / Open / Quiet; a capped confirmed signal ("observed") counts as confirmed here
+  const count = {}; rows.forEach(r => { const k = r.st.key === "observed" ? "tripped" : r.st.key; count[k] = (count[k]||0) + 1; });
+  const parts = [["tripped","confirmed"],["watching","open"],["quiet","quiet"],["unknown","with an unrecognized status (data error)"]]
     .filter(([k]) => count[k] || k==="tripped" || k==="watching" || k==="quiet").map(([k,w]) => `${count[k]||0} ${w}`);
   const top = rows[0].st;
   const head = h("div",{class:"esc-overall"});
@@ -373,7 +408,7 @@ export function escapeBoard(host, data, {root="", alarm=null, compact=true, page
     if(!compact){
       const trig = (Array.isArray(ind.alarmTriggers) ? ind.alarmTriggers : []).map(t => String(t).trim()).filter(Boolean);
       if(trig.length){
-        const p = h("p",{class:"esc-trig small muted"},"Feeds alarm trigger" + (trig.length > 1 ? "s " : " "));
+        const p = h("p",{class:"esc-trig small muted"},"Feeds alarm condition" + (trig.length > 1 ? "s " : " "));
         trig.forEach((id,n) => { if(n) p.append(" "); p.append(h("a",{class:"chip tw-trigger", href:root+"alarm.html#"+encodeURIComponent(id)}, id + (alarm && triggerMet(alarm, id) ? " · met" : ""))); });
         li.append(p);
       }
@@ -465,7 +500,9 @@ export function lagChart(host, incidents, {title="Days from incident to public d
 /* ---- probability meters for forecasts; market odds as a hollow marker ----
    Each row shows when it was made, its deadline, the resolution rule and any dated corrections,
    with the reasoning and source behind "Why this number". */
-export function forecastBars(host, forecasts){
+/* compact (opt-in; the scorecard uses it, the frozen weekly page does not): the resolution rule and corrections move
+   into the "Why this number" details, so the list stays short (V11). */
+export function forecastBars(host, forecasts, {compact=false}={}){
   host.replaceChildren();
   const list = h("div",{class:"fc-list"});
   (forecasts||[]).forEach(f => {
@@ -473,19 +510,21 @@ export function forecastBars(host, forecasts){
     const q = h("div",{class:"fc-q"}); q.append(h("div",{},f.question));
     const out = f.outcome===true ? " · Resolved YES" : f.outcome===false ? " · Resolved NO" : (f.outcome==="void" || f.void===true) ? " · Withdrawn" : "";
     q.append(h("div",{class:"muted small"}, (validDate(f.made) ? `Made ${fullDate(f.made)} · ` : "") + `Due ${fullDate(f.deadline)}` + out));
-    if(f.resolution) q.append(h("div",{class:"muted small fc-res"}, `Resolves YES if: ${f.resolution}`));
+    const extra = [];   // compact: these go into "Why this number"
+    if(f.resolution){ const r = h("div",{class:"muted small fc-res"}, `Resolves YES if: ${f.resolution}`); if(compact) extra.push(r); else q.append(r); }
     (Array.isArray(f.corrections) ? f.corrections : []).forEach(c => {
       const text = typeof c === "string" ? c : (c?.text || ""); if(!text) return;
       const line = h("div",{class:"muted small fc-corr"}, (validDate(c?.date) ? `Corrected ${fullDate(c.date)}: ` : "Corrected: ") + text);
       const a = dataLink(c?.url, "source"); if(a) line.append(" ", a);
-      q.append(line);
+      if(compact) extra.push(line); else q.append(line);
     });
+    if(compact && extra.some(x => x.classList.contains("fc-corr"))) q.append(h("div",{class:"muted small"}, "Corrected since it was made: see below."));
     /* The reasoning behind a scored probability stays visible: a corrected forecast shows its
        reasoning as made (original_context, or context when it was never rewritten), then any update. */
     const corrected = Array.isArray(f.corrections) && f.corrections.length > 0;
     const asMade = f.original_context || (corrected ? f.context : "");
-    if(f.context || f.url || asMade){
-      const why = h("details",{class:"fc-why small"}); why.append(h("summary",{},"Why this number"));
+    if(f.context || f.url || asMade || extra.length){
+      const why = h("details",{class:"fc-why small"}); why.append(h("summary",{}, compact ? "Why this number, and how it resolves" : "Why this number"));
       const para = (label, text, url) => {
         const p = h("p",{}); if(label) p.append(h("strong",{},label + " "));
         p.append(text || ""); const a = dataLink(url, "source"); if(a) p.append(text ? " " : "", a);
@@ -498,6 +537,7 @@ export function forecastBars(host, forecasts){
       } else {
         why.append(para(corrected ? madeLbl : "", f.context, f.url));
       }
+      extra.forEach(x => why.append(x));
       q.append(why);
     }
     const mkt = f.market!=null && !isNaN(f.market);
@@ -725,16 +765,19 @@ export function gaugeRow(host, defs, runs, {root=""}={}){
     const tile = h("div",{class:"gauge"});
     const top = h("div",{class:"g-top"}); top.append(h("span",{class:"g-label"},d.label), h("span",{class:"tag g-kind"},d.kind)); tile.append(top);
     tile.append(h("div",{class:"g-q muted small"}, d.question));
-    tile.append(h("div",{class:"g-value"}, g.display));
+    // "Level" is the fire alarm's word only: delegation is read in rungs (display only; data unchanged)
+    tile.append(h("div",{class:"g-value"}, d.key === "delegation" ? String(g.display ?? "").replace(/\bLevel\s+(\d)\s+of\s+(\d)\b/i, "rung $1 of $2") : g.display));
     let delta = "first reading";
     if(p && p.value!=null && g.value!=null){ delta = fmtNum(g.value)===fmtNum(p.value) ? "no change" : (Number(g.value)>Number(p.value)?"▲ up ":"▼ down ") + fmtNum(Math.round(Math.abs(g.value-p.value)*1e6)/1e6); }
     const rg = Array.isArray(g.range) ? `${fmtNum(g.range[0])}–${fmtNum(g.range[1])}` : g.range;
     tile.append(h("div",{class:"g-delta muted small"}, (rg && !String(g.display||"").includes(rg) ? `range ${rg} · ` : "") + delta));
     tile.append(sparkline(withG.map(r=>r.gauges[d.key]?.value), {color:"--accent", cls:"g-spark"}));
-    const note = h("div",{class:"g-note small"}, (g.note||"") + " ");
+    const parts = String(g.note || "").split(/(?<=[.!?])\s+(?=[A-Z0-9"“(])/);
+    const note = h("div",{class:"g-note small"}, parts[0] + " ");
     const a = dataLink(g.url, "evidence", root); if(a) note.append(a);
     tile.append(note);
-    tile.append(h("div",{class:"g-feeds muted small"}, "Feeds hypothesis " + d.feeds));
+    if(parts.length > 1){ const more = h("details",{class:"g-more small"}); more.append(h("summary",{},"More"), h("p",{}, parts.slice(1).join(" "))); tile.append(more); }
+    tile.append(h("div",{class:"g-feeds muted small"}, d.key === "gap" ? "In A's formula" : "Context for our odds"));
     const how = h("details",{class:"g-how small"}); how.append(h("summary",{},"How it's measured"), h("p",{}, d.how || ""));
     if(Array.isArray(d.scale) && d.scale.length){
       const ol = h("ol",{class:"g-scale"}), cur = Math.round(Number(g.value));
@@ -793,6 +836,320 @@ export async function alarmBanner(root=""){
     const b = h("div",{class:"alarm-banner",role:"alert"});
     b.append(h("strong",{},`${lv.icon} Fire alarm: Level ${lv.level}, ${lv.name}. `), document.createTextNode((alarm.current.note||"")+" "), h("a",{href:root+"alarm.html"},"Details"));
     document.body.prepend(b);
+  }catch(e){}
+}
+
+/* ---- AGI parts tracker (agi.html; FINAL_SPEC.md section 6) ----
+   agiMap(host, data, {today, trends, root}): data = data/agi_components.json, trends = data/trends.json (projection
+   dates are read from it, never copied), today = {date} of the newest published run (the "Now" line; never the
+   browser clock). It replaces the server-rendered fallback inside host; if anything throws, the fallback is put
+   back with a muted note. Status is ink pips plus a word, never a status or hypothesis colour; meters are linear on
+   the measure's own scale; projections are ink and drawn only where a published trend supports them. */
+const AM_RT = {"verified fact":"fact", "credible report":"report", "expert opinion":"opinion", "forecast aggregate":"agg", "our inference":"ours", "speculation":"spec"};
+const AM_PS = {pass:["✓","Passed"], aggregate:["≈","Overall figure only"], no:["–","Not yet"], unmeasured:["?","Not measured"]};
+const AM_MARK_LABEL = {workWeek:"work-week (40 h)", workMonth:"work-month (167 h)"};
+const AM_MARK_SHORT = {workWeek:"wk", workMonth:"mo"};
+const AM_RANGES = {all:["2019-01-01","2031-01-01"], recent:["2024-01-01","2031-01-01"]};
+const AM_MY = {month:"short", year:"numeric"};
+// element builder with children: attrs with null/false are skipped, {text} sets textContent
+const el = (tag, attrs={}, ...kids) => { const e = document.createElement(tag); for(const [k,v] of Object.entries(attrs)){ if(v == null || v === false) continue; if(k === "text") e.textContent = v; else e.setAttribute(k, v === true ? "" : v); } kids.flat().forEach(k => { if(k != null && k !== "") e.append(k); }); return e; };
+const amTime = d => { const s = String(d ?? ""); return /^\d{4}-\d{2}-\d{2}$/.test(s) ? parseDate(s).getTime() : Date.parse(s); };
+const amOk = d => d != null && d !== "" && !isNaN(amTime(d));
+const amDate = (d, o={day:"numeric", month:"short", year:"numeric"}) => fmtDate(d, o);
+// a measurement's "as of" text: every ISO date in it reads like the rest of the site ("May 8, 2026"), the rest stays;
+// in the table cell the leading date is kept on one line
+const amAsOf = s => String(s ?? "").replace(/\b\d{4}-\d{2}-\d{2}\b/g, d => amDate(d));
+const amAsOfCell = s => { const t = amAsOf(s), m = String(s ?? "").match(/^\d{4}-\d{2}-\d{2}\b/); if(!m) return t || "–"; const d = amDate(m[0]); return [el("span",{class:"am-day", text:d}), t.slice(d.length)]; };
+const getPath = (o, path) => String(path || "").split(".").filter(Boolean).reduce((a,k) => a != null && typeof a === "object" ? a[k] : undefined, o);
+
+export function agiMap(host, data, {today, trends, root=""}={}){
+  if(!host) return null;
+  const fallback = [...host.childNodes];
+  const fail = err => {
+    console.error("agiMap failed:", err);
+    host.replaceChildren(...fallback);
+    if(!host.querySelector(".am-fail")) host.prepend(el("p",{class:"muted am-fail", text:"The interactive view could not be drawn; the plain version is below."}));
+    return null;
+  };
+  try{ return agiMapDraw(host, data, {today, trends, root}); }
+  catch(err){ return fail(err); }
+}
+
+function agiMapDraw(host, D, {today, trends, root=""}){
+  if(!D || !Array.isArray(D.components) || !D.components.length || !Array.isArray(D.statusScale)) throw new Error("agiMap: no components");
+  const nowDate = typeof today === "string" ? today : today?.date;
+  if(!validDate(nowDate)) throw new Error("agiMap: today.date is required");
+  const SC = Object.fromEntries(D.statusScale.map(x => [x.key, x]));
+  const RM = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const link = (u, txt="source") => dataLink(u, txt, root) || "";
+  const tag = (r, note, qual) => r ? [el("span",{class:"tag " + (AM_RT[r] || ""), title:note || null, text:r}), qual ? el("span",{class:"tag-q", text:`(${qual})`}) : ""] : "";
+  const rtag = x => x ? tag(x.rating, x.ratingNote, x.ratingQual) : "";
+  const pips = (st, wcls="am-word") => { const sc = SC[st] || {word:String(st ?? "?"), pips:0}; return el("span",{class:"am-status"},
+    el("span",{class:"am-pips","aria-hidden":"true"}, [0,1,2,3].map(i => el("span",{class:"pip" + (i < sc.pips ? " on" : "")}))),
+    el("span",{class:wcls,"aria-hidden":"true", text:sc.word}), el("span",{class:"sr-only", text:`, status ${sc.word}, step ${sc.pips} of 4`})); };
+  const word = st => (SC[st] || {word:String(st ?? "?")}).word;
+  const hookTip = (node, title, body, rating) => {
+    node.addEventListener("pointermove", ev => showTip(ev.clientX, ev.clientY, [{label:body}, ...(rating ? [{label:rating}] : [])], title));
+    node.addEventListener("pointerleave", hideTip);
+  };
+
+  /* state */
+  const q = new URLSearchParams(location.search);
+  let range = innerWidth < 560 ? "recent" : "all", view = q.get("view") === "timeline" ? "timeline" : "parts", openId = null;
+  const xScale = w => { const [a,b] = AM_RANGES[range].map(amTime); return d => (amTime(d) - a)/(b - a)*w; };
+  const counts = () => { const c = {met:0, close:0, partial:0, far:0}; D.components.forEach(x => { if(has(c, x.status)) c[x.status]++; }); return c; };
+  /* a refit can leave a crossing null (a bound that never crosses before 2045): such a mark draws nothing and reads "beyond 2030" */
+  const crossings = c => { const tr = c.projection?.trend; if(!tr || !trends) return null; return getPath(trends, tr.path || "metr.p80.crossings") || trends.crossings || null; };
+  const trendMarks = c => { const tr = c.projection?.trend, cr = crossings(c); if(!tr || !cr || !Array.isArray(tr.marks)) return [];
+    return tr.marks.filter(k => cr[k]).map(k => ({key:k, label:AM_MARK_LABEL[k] || k, short:AM_MARK_SHORT[k] || k, mid:cr[k].mid, fast:cr[k].fast, slow:cr[k].slow})); };
+  const markText = m => amOk(m.mid) ? amDate(m.mid, AM_MY) + (amOk(m.fast) && amOk(m.slow) ? ` (95% band ${amDate(m.fast, AM_MY)} to ${amDate(m.slow, AM_MY)})` : " (band beyond 2030)") : "beyond 2030";
+  const doublings = H => H.growth && H.value > 0 ? Math.log2(H.target / H.value) : null;
+  const partsLine = c => { const ps = c.parts || [], met = ps.filter(p => p.state === "pass").length, agg = ps.filter(p => p.state === "aggregate").length;
+    return `${met} of ${ps.length} parts of the test met` + (agg ? ` (${agg} on the overall figure only, which doesn't count)` : ""); };
+  const arr = v => Array.isArray(v) ? v : [];
+
+  /* distance meter: linear on the measure's own scale, with the bar, the test's Partial and Close marks and secondary rings.
+     Everything sits inside the row <button>, so only phrasing content (spans styled display:block). */
+  function progress(c){
+    const H = c.headline, lo = H.min || 0, hi = H.max;
+    const pos = v => Math.max(0, Math.min(100, (v - lo)/(hi - lo)*100));
+    const db = doublings(H);
+    const box = el("span",{class:"am-prog"});
+    const txt = el("span",{class:"pg-txt"}, el("b",{text:H.display}), ` · bar ${H.targetDisplay}` + (db ? ` · ${db.toFixed(1)} doublings short` : ""));
+    const pg = el("span",{class:"pg","aria-hidden":"true"}, el("span",{class:"pg-fill", style:`width:${pos(H.value).toFixed(2)}%`}));
+    if(H.scale === "count") for(let i = 1; i < H.max; i++) pg.append(el("span",{class:"pg-seg", style:`left:${(i/H.max*100).toFixed(2)}%`}));
+    if(H.partialAt != null) pg.append(el("span",{class:"pg-partial", style:`left:${pos(H.partialAt).toFixed(2)}%`}));
+    if(H.closeAt != null) pg.append(el("span",{class:"pg-close", style:`left:${pos(H.closeAt).toFixed(2)}%`}));
+    pg.append(el("span",{class:"pg-bar", style:`left:${pos(H.target).toFixed(2)}%`}));
+    arr(H.markers).forEach(m => pg.append(el("span",{class:"pg-mark", style:`left:${pos(m.value).toFixed(2)}%`})));
+    const sub = el("span",{class:"pg-sub"}, el("span",{text:partsLine(c)}));
+    const glyph = g => el("span",{"aria-hidden":"true", text:g + " "});
+    arr(H.markers).forEach(m => sub.append(el("span",{}, glyph("○"), String(m.label || "").split(" (")[0] + (m.counts === "partial" ? " (counts toward Partial)" : ""))));
+    if(H.partialAt != null) sub.append(el("span",{}, glyph("╎"), "partial at " + H.partialDisplay));
+    if(H.closeAt != null) sub.append(el("span",{}, glyph("┆"), "close at " + H.closeDisplay));
+    box.append(txt, pg, sub);
+    return box;
+  }
+  /* growth measures get a labelled log axis in the drill-down only, so the row never shows a misleading "% of the way" */
+  function logStrip(c){
+    const H = c.headline, tk = arr(H.logTicks); if(tk.length < 2 || !(H.value > 0)) return "";
+    const lo = Math.log(tk[0][0]), hi = Math.log(tk[tk.length-1][0]);
+    const pos = v => Math.max(0, Math.min(100, (Math.log(v) - lo)/(hi - lo)*100));
+    const tr = el("div",{class:"pg","aria-hidden":"true"}, el("div",{class:"pg-fill", style:`width:${pos(H.value).toFixed(1)}%`}),
+      H.closeAt != null ? el("div",{class:"pg-close", style:`left:${pos(H.closeAt).toFixed(1)}%`}) : "",
+      el("div",{class:"pg-bar", style:`left:${pos(H.target).toFixed(1)}%`}));
+    /* the last two ticks (work-week, work-month) sit two doublings apart, so the last label drops to a second row */
+    const ticks = el("div",{class:"pg-ticks","aria-hidden":"true"}, tk.map(([v,l],i) => el("span",{class:(pos(v) > 97 ? "end" : (pos(v) < 3 ? "start" : "")) + (i === tk.length-1 && tk.length > 2 ? " low" : "") + (i === tk.length-3 && tk.length > 3 && pos(tk[i+1][0]) - pos(v) < 20 ? " low-n" : ""), style:`left:${pos(v).toFixed(1)}%`, text:l})));
+    return el("div",{class:"am-log"}, el("p",{class:"small", text:`On a log scale, where each step is a doubling: ${H.display} now, about ${doublings(H).toFixed(1)} doublings short of ${H.targetDisplay}.`}), tr, ticks);
+  }
+
+  /* timeline lane: 2019 (or 2024) to 2030, Now line, milestones, trend projection, coming-up marks */
+  function slotPlace(items, x, ys){
+    const rows = ys.map(() => []);
+    return items.map(it => { const px = x(it.date); let r = rows.findIndex(row => row.every(q => Math.abs(q - px) > 10)); if(r < 0) r = 0; rows[r].push(px); return {it, px, py:ys[r]}; });
+  }
+  function lane(c, w, {tall=false, years=false}={}){
+    const LH = tall ? 46 : 34, H = LH + (years ? 13 : 0), mid = LH/2;
+    const x = xScale(w), g = svg("svg",{viewBox:`0 0 ${w} ${H}`, height:H, "aria-hidden":"true", focusable:"false"});
+    const [A, B] = AM_RANGES[range], y0 = +A.slice(0,4), y1 = +B.slice(0,4), nx = x(nowDate);
+    g.append(svg("rect",{x:nx, y:0, width:Math.max(0, w - nx), height:LH, class:"tl-future"}));
+    for(let y = y0; y <= y1; y++){
+      const gx = x(`${y}-01-01`); g.append(svg("line",{x1:gx, x2:gx, y1:0, y2:LH, class:"tl-grid"}));
+      if(years && y < y1 && (range === "recent" || (y - y0) % 2 === 0)){ const tx = svg("text",{x:gx+2, y:H-2, class:"tl-yr"}); tx.textContent = range === "recent" ? "'" + String(y).slice(2) : String(y); g.append(tx); }
+    }
+    g.append(svg("line",{x1:0, x2:w, y1:LH, y2:LH, class:"tl-base"}));
+    const ys = tall ? [mid, mid-12, mid+12] : [mid, mid-9, mid+9];
+    const inLane = d => amOk(d) && x(d) >= 0 && x(d) <= w;
+    const drawn = trendMarks(c).filter(mk => inLane(mk.mid));
+    if(drawn.length){
+      const last = drawn[drawn.length-1], tr = c.projection.trend;
+      if(amOk(last.fast) && amOk(last.slow)){ const bx = Math.max(0, x(last.fast)), bw = Math.min(w, x(last.slow)) - bx; if(bw > 0) g.append(svg("rect",{x:bx, y:mid-7, width:Math.max(2, bw), height:14, rx:2, class:"tl-band"})); }
+      g.append(svg("line",{x1:nx, x2:x(last.mid), y1:mid, y2:mid, class:"tl-proj"}));
+      drawn.forEach(mk => {
+        const px = x(mk.mid), d = svg("path",{d:`M${px} ${mid-6} L${px+6} ${mid} L${px} ${mid+6} L${px-6} ${mid} Z`, class:"tl-pmark"});
+        hookTip(d, `On trend: ${mk.label}`, `${markText(mk)}. A measured trend extended, not a forecast; METR's current suite can't yet measure that far.` + (tr.note ? " " + tr.note : ""), "our inference · our METR 80% horizon fit (Trend watch)");
+        g.append(d);
+        if(drawn.length > 1){ const lb = svg("text",{x:px, y:mid-9, class:"tl-plabel", "text-anchor":"middle"}); lb.textContent = mk.short; g.append(lb); }
+      });
+    }
+    const ups = arr(c.upcoming).filter(u => amOk(u.date) && x(u.date) >= 0 && x(u.date) <= w);
+    slotPlace(ups, x, [ys[2]+1, ys[1]-1]).forEach(({it:u, px, py:yb}) => { const p = svg("path",{d:`M${px-5} ${yb+4} L${px+5} ${yb+4} L${px} ${yb-5} Z`, class:"tl-up"}); hookTip(p, "Coming up: " + (u.approx || amDate(u.date)), u.text); g.append(p); });
+    const ms = arr(c.milestones).filter(m => amOk(m.date));
+    const inRange = ms.filter(m => { const px = x(m.date); return px >= -2 && px <= w + 2; });
+    const earlier = ms.filter(m => x(m.date) < -2).length;
+    if(earlier > 0){ const tx = svg("text",{x:2, y:10, class:"tl-more"}); tx.textContent = "‹" + earlier; hookTip(tx, `${earlier} earlier milestone${earlier > 1 ? "s" : ""}`, `Before ${A.slice(0,4)}. Choose "Since 2019", or open the part for the full list.`); g.append(tx); }
+    slotPlace(inRange, x, ys).forEach(({it, px, py}) => {
+      const mk = it.kind === "yardstick" ? svg("rect",{x:px-4, y:py-4, width:8, height:8, class:"tl-yard"}) : svg("circle",{cx:px, cy:py, r:4.5, class:it.kind === "internal" ? "tl-int" : "tl-dot"});
+      hookTip(mk, amDate(it.date) + (it.kind === "internal" ? " · unreleased model" : it.kind === "yardstick" ? " · new test" : ""), it.text, it.rating);
+      g.append(mk);
+    });
+    g.append(svg("line",{x1:nx, x2:nx, y1:0, y2:LH, class:"tl-now"}));
+    return g;
+  }
+  function axis(w){
+    const x = xScale(w), g = svg("svg",{viewBox:`0 0 ${w} 22`, height:22, "aria-hidden":"true"});
+    const [A, B] = AM_RANGES[range], y0 = +A.slice(0,4), y1 = +B.slice(0,4), step = (w/(y1 - y0)) < 34 ? 2 : 1;
+    for(let y = y0; y < y1; y++){ if((y - y0) % step) continue; const tx = svg("text",{x:x(`${y}-01-01`)+2, y:20, class:"tl-yr"}); tx.textContent = y; g.append(tx); }
+    const nx = x(nowDate), lb = svg("text",{x:nx, y:9, class:"tl-nowlabel", "text-anchor":"middle"}); lb.textContent = "Now"; g.append(lb);
+    g.append(svg("line",{x1:nx, x2:nx, y1:11, y2:22, class:"tl-now"}));
+    return g;
+  }
+
+  /* drill-down panel: why this status, the parts of the test, the bar and the headline first; then seven closed details */
+  function panel(c){
+    const H = c.headline;
+    const p = el("div",{class:"am-panel", id:"am-panel-" + c.id, role:"region", "aria-label":c.name + ": details", hidden:true});
+    const parts = el("ul",{class:"am-parts"}, arr(c.parts).map(pt => { const ps = AM_PS[pt.state] || ["?", String(pt.state ?? "")]; return el("li",{}, el("span",{class:"mk","aria-hidden":"true", text:ps[0]}), el("strong",{text:ps[1] + ": "}), pt.name, el("span",{class:"muted", text:` (${pt.value})`})); }));
+    const left = el("div",{}, el("p",{class:"am-basis-p"}, el("strong",{text:c.statusBasis})), el("p",{}, el("strong",{text:"Where it stands. "}), c.statusNote), el("p",{}, el("strong",{text:partsLine(c) + "."})), parts);
+    /* one line each for the hardest part, who is working on it and what to watch next; the full lists stay collapsed */
+    const who = arr(c.who), ch = arr(c.challenges), watch = arr(c.watching), nxt = arr(c.upcoming)[0];
+    const hard = ch.length ? String(ch[0].text || "").split(". ")[0].replace(/\.$/, "") + "." : "";
+    const fs = el("div",{class:"am-fs small"},
+      el("p",{}, el("strong",{text:"Hardest: "}), hard),
+      el("p",{}, el("strong",{text:"Who: "}), who.slice(0,3).map(x => x.name).join(", ") + (who.length > 3 ? ` and ${who.length - 3} more` : "") + "."),
+      el("p",{}, el("strong",{text:"Next to watch: "}), (() => { const sg = watch[0] ? String(watch[0].signal || "") : "", when = nxt ? (nxt.approx || amDate(nxt.date)) : ""; return sg + (when && !sg.includes(when) ? ` (${when})` : "") + "."; })()));
+    const right = el("div",{},
+      el("p",{}, el("strong",{text:"Bar. "}), c.bar),
+      el("p",{class:"small"}, el("strong",{text:"Headline measure: "}), `${H.label}: ${H.display} (${H.system}, ${amAsOf(H.asOf)}) `, rtag(H), " ", link(H.url)),
+      H.growth ? logStrip(c) : "",
+      c.also ? el("p",{class:"small"}, el("strong",{text:"Also: "}), c.also.text, " ", rtag(c.also), " ", link(c.also.url)) : "",
+      c.sharedWith ? el("p",{class:"small muted", text:c.sharedWith}) : "",
+      el("p",{class:"small muted"}, c.v1Test ? "Part of the v1.0 remote-work test, kept in v2.0. " : "Added in v2.0: the v1.0 test did not require it. ", el("a",{href:"#v1", text:"How v2.0 relates to v1.0"})));
+    const det = (title, body) => el("details",{}, el("summary",{text:title}), el("div",{class:"body"}, body));
+    const cur = arr(c.current);
+    const curT = el("table",{class:"am-meas"}, el("tr",{}, ["Measure","Result","System","As of","Source"].map(x => el("th",{scope:"col", text:x}))),
+      cur.map(x => el("tr",{}, el("td",{text:x.metric}), el("td",{"data-label":"Result", text:x.value}), el("td",{"data-label":"System", text:x.system || "–"}), el("td",{"data-label":"As of"}, amAsOfCell(x.asOf)), el("td",{"data-label":"Source"}, rtag(x), " ", link(x.url), x.ratingNote ? el("span",{class:"small muted", text:" " + x.ratingNote}) : ""))));
+    const msl = arr(c.milestones);
+    const ms = el("ul",{class:"timeline-list"}, msl.map(m => el("li",{}, el("span",{class:"when", text:amDate(m.date)}), el("span",{}, m.text, " ", m.kind === "internal" ? el("span",{class:"chip", text:"unreleased model"}) : "", m.kind === "yardstick" ? el("span",{class:"chip", text:"new test"}) : "", " ", rtag(m), " ", link(m.url)))));
+    const proj = c.projection, marks = trendMarks(c), ahead = [];
+    if(marks.length) ahead.push(el("p",{}, el("strong",{text:"On trend. "}), marks.map(m => `${m.label}: ${markText(m)}`).join("; ") + ". ", tag("our inference"), " ", link("trends.html", "Trend watch")));
+    if(proj?.text) ahead.push(el("p",{}, el("strong",{text:"Ahead. "}), proj.text, " ", rtag(proj), " ", link(proj.url)));
+    arr(c.upcoming).forEach(u => ahead.push(el("p",{}, el("strong",{text:"Coming up, " + (u.approx || amDate(u.date)) + ". "}), u.text, " ", link(u.url))));
+    const t = c.test || {};
+    p.append(
+      el("p",{class:"q", text:c.question}),
+      el("div",{class:"am-kv"}, left, right),
+      fs,
+      det("The full test", [el("p",{}, el("strong",{text:"Measure. "}), t.measure), el("p",{}, el("strong",{text:"Marks. "}), t.threshold), t.detail ? el("p",{class:"small muted"}, el("strong",{text:"Details. "}), t.detail) : "", t.why ? el("p",{}, el("strong",{text:"Why this test. "}), t.why) : "", el("p",{class:"muted"}, el("strong",{text:"Definition clause. "}), c.clause || "")]),
+      det(`Latest measurements (${cur.length})`, [el("p",{text:c.statusDetail}), el("div",{class:"table-wrap"}, curT)]),
+      det(`Timeline (${msl.length} milestones) and what lies ahead`, [ms, ...ahead]),
+      det(`Hard parts (${ch.length})`, el("ul",{class:"plain"}, ch.map(x => el("li",{}, x.text, " ", rtag(x), " ", link(x.url))))),
+      det(`Who is working on it (${who.length})`, el("ul",{class:"plain"}, who.map(x => el("li",{}, el("strong",{text:x.name}), ": ", x.what, " ", link(x.url))))),
+      det(`What we watch (${watch.length})`, el("ul",{class:"plain"}, watch.map(x => el("li",{}, el("strong",{text:x.signal}), ". ", x.threshold || "", x.why ? el("span",{class:"muted", text:" Why: " + x.why}) : "", el("span",{class:"muted", text:" Source: " + (x.sourceName || "") + " "}), link(x.url))))),
+      c.hiddenAngle ? det("Could it be hidden?", el("p",{text:c.hiddenAngle})) : "",
+      el("p",{class:"small muted am-foot"}, `${word(c.status)} since ${amDate(c.since)} · reviewed ${amDate(c.lastReviewed)}.`, el("a",{href:"#" + c.id, text:"Link to this part"}), el("button",{class:"am-close", type:"button", "data-close":c.id, text:"Close"})));
+    return p;
+  }
+
+  /* "Show as table": everything the picture shows, as text */
+  function tables(){
+    const mk = (caption, head, rows) => el("table",{}, el("caption",{class:"sr-only", text:caption}), el("tr",{}, head.map(x => el("th",{scope:"col", text:x}))), rows.map(r => el("tr",{}, r.map(x => el("td",{text:x})))));
+    const status = mk("The eight parts of AGI: status, best public result, bar and on-trend dates", ["Part","Status","Best public result","Bar","On-trend date"],
+      D.components.map(c => [c.name, word(c.status), `${c.headline.display} (${c.headline.label}; ${c.headline.system}, ${amAsOf(c.headline.asOf)})`, c.bar,
+        trendMarks(c).map(m => `${m.label}: ${markText(m)}`).join("; ") || "No published trend"]));
+    const all = D.components.flatMap(c => arr(c.milestones).map(m => [m.date, c.short, m.kind === "internal" ? "unreleased model" : m.kind === "yardstick" ? "new test" : "public result", m.text, m.rating || ""])).sort((a,b) => String(a[0]).localeCompare(String(b[0])));
+    const ms = mk("Every milestone, by date", ["Date","Part","Kind","What happened","Rating"], all.map(r => [amDate(r[0]), r[1], r[2], r[3], r[4]]));
+    return el("details",{class:"table-view"}, el("summary",{text:"Show as table"}), el("div",{class:"table-wrap"}, status), el("div",{class:"table-wrap", style:"margin-top:12px"}, ms));
+  }
+
+  /* the widget */
+  function render(){
+    const c = counts();
+    const seg = (key, label, opts, cur) => el("span",{class:"am-seg", role:"group", "aria-label":label}, opts.map(([k,l]) => el("button",{type:"button", "aria-pressed":String(cur === k), ["data-" + key]:k, text:l})));
+    const glyph = (inner) => { const g = svg("svg",{width:12, height:12, viewBox:"0 0 12 12", "aria-hidden":"true"}); g.append(inner); return g; };
+    const top = el("div",{class:"am-top"},
+      el("p",{class:"am-sum", text:`${c.met} of ${D.components.length} met · ${c.close} close · ${c.partial} partial · ${c.far} far`}),
+      el("div",{class:"am-legend", role:"list", "aria-label":"Status scale"}, [...D.statusScale].reverse().map(sc => el("span",{role:"listitem", title:sc.meaning}, pips(sc.key)))));
+    const tools = el("div",{class:"am-tools"},
+      el("span",{class:"am-tool"}, el("span",{class:"muted", text:"View"}), seg("view", "View", [["parts","Parts"],["timeline","Timeline"]], view)),
+      el("span",{class:"am-tool"}, el("span",{class:"muted", text:"From"}), seg("range", "Timeline range", [["all","Since 2019"],["recent","2024 on"]], range)),
+      el("span",{class:"am-glyphs"},
+        el("span",{}, glyph(svg("circle",{cx:6, cy:6, r:4.5, class:"tl-dot"})), " public result"),
+        el("span",{}, glyph(svg("circle",{cx:6, cy:6, r:4, class:"tl-int"})), " unreleased model"),
+        el("span",{}, glyph(svg("rect",{x:2, y:2, width:8, height:8, class:"tl-yard"})), " new test"),
+        el("span",{}, glyph(svg("path",{d:"M6 1 L11 6 L6 11 L1 6 Z", class:"tl-pmark"})), " on-trend date"),
+        el("span",{}, glyph(svg("path",{d:"M1 10 L11 10 L6 2 Z", class:"tl-up"})), " coming up")));
+    const axisRow = el("div",{class:"am-grid am-axisrow"}, el("div",{class:"h", text:"Part · status"}), el("div",{class:"h hp", text:"Best public result vs the bar"}), el("div",{class:"am-axis"}));
+    const ul = el("ul",{class:"am-rows"});
+    D.components.forEach(cm => {
+      const li = el("li",{class:"am-row" + (openId === cm.id ? " open" : ""), id:cm.id, "data-id":cm.id});
+      const pr = progress(cm); pr.id = `am-p-${cm.id}`;
+      /* APG accordion: each row's button sits in an h3; the button holds only spans (styled display:block) */
+      const btn = el("button",{class:"am-btn am-grid", type:"button", "aria-expanded":String(openId === cm.id), "aria-controls":"am-panel-" + cm.id, "aria-labelledby":`am-n-${cm.id} am-s-${cm.id}`, "aria-describedby":`am-g-${cm.id} am-p-${cm.id}`, "data-id":cm.id},
+        el("span",{class:"am-c1"}, el("span",{class:"am-name", id:`am-n-${cm.id}`}, el("span",{class:"am-chev","aria-hidden":"true", text:"▶"}), cm.name), el("span",{class:"am-st", id:`am-s-${cm.id}`}, pips(cm.status), el("span",{class:"am-basis", id:`am-b-${cm.id}`, text:" · " + (cm.basisShort || "")})), el("span",{class:"am-glance", id:`am-g-${cm.id}`, text:cm.glance})),
+        pr, el("span",{class:"am-lane", "data-lane":cm.id}));
+      const pn = panel(cm); if(openId === cm.id) pn.hidden = false;
+      li.append(el("h3",{class:"am-h"}, btn), pn); ul.append(li);
+    });
+    host.replaceChildren(top, tools, el("div",{class:"am" + (view === "timeline" ? " tl-mode" : "")}, axisRow, ul), tables());
+    drawLanes();
+  }
+  function drawLanes(){
+    const rows = host.querySelector(".am-rows"); if(!rows || !host.isConnected) return;
+    const narrow = rows.clientWidth < 729, tall = view === "timeline";
+    host.querySelectorAll("[data-lane]").forEach(e => { const w = Math.max(120, Math.floor(e.clientWidth)); e.replaceChildren(lane(D.components.find(x => x.id === e.dataset.lane), w, {tall, years:narrow})); });
+    const ax = host.querySelector(".am-axis"); if(ax){ const w = Math.max(120, Math.floor(ax.clientWidth)); ax.replaceChildren(narrow ? "" : axis(w)); }
+  }
+  const byId = id => D.components.some(c => c.id === id);
+  const rowEl = id => [...host.querySelectorAll(".am-row")].find(li => li.dataset.id === id);
+  const btnEl = id => rowEl(id)?.querySelector(".am-btn");
+  function setOpen(id, {scroll=true}={}){
+    openId = openId === id ? null : id;
+    host.querySelectorAll(".am-row").forEach(li => { const on = li.dataset.id === openId; li.classList.toggle("open", on); li.querySelector(".am-btn").setAttribute("aria-expanded", String(on)); li.querySelector(".am-panel").hidden = !on; });
+    if(openId){ history.replaceState(null, "", location.pathname + location.search + "#" + openId); if(scroll) rowEl(openId)?.scrollIntoView({block:"nearest", behavior:RM ? "auto" : "smooth"}); }
+    else history.replaceState(null, "", location.pathname + location.search);
+  }
+  function openFromHash(){
+    let id = ""; try{ id = decodeURIComponent(location.hash.slice(1)); }catch(e){ return; }
+    if(byId(id) && openId !== id){ setOpen(id, {scroll:false}); rowEl(id)?.scrollIntoView({block:"start", behavior:"auto"}); }
+  }
+  function wire(){
+    host.addEventListener("click", ev => {
+      const v = ev.target.closest("[data-view]"); if(v){ view = v.dataset.view; host.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.view === view))); host.querySelector(".am").classList.toggle("tl-mode", view === "timeline"); drawLanes(); return; }
+      const r = ev.target.closest("[data-range]"); if(r){ range = r.dataset.range; host.querySelectorAll("[data-range]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.range === range))); drawLanes(); return; }
+      const cl = ev.target.closest("[data-close]"); if(cl){ const id = cl.dataset.close; setOpen(id); btnEl(id)?.focus(); return; }
+      const b = ev.target.closest(".am-btn"); if(b) setOpen(b.dataset.id);
+    });
+    host.addEventListener("keydown", ev => {
+      if(ev.key === "Escape" && openId){ const id = openId; setOpen(id, {scroll:false}); btnEl(id)?.focus(); ev.preventDefault(); return; }
+      const b = ev.target.closest(".am-btn"); if(!b) return;
+      const all = [...host.querySelectorAll(".am-btn")], i = all.indexOf(b), go = j => { all[(j + all.length) % all.length].focus(); ev.preventDefault(); };
+      if(ev.key === "ArrowDown") go(i+1); else if(ev.key === "ArrowUp") go(i-1); else if(ev.key === "Home") go(0); else if(ev.key === "End") go(all.length-1);
+    });
+    /* in-page links that name a part (a[data-open="<id>"]) open it without a page jump; plain #<id> links go through hashchange */
+    document.addEventListener("click", ev => { const a = ev.target.closest?.("a[data-open]"); if(!a || !byId(a.dataset.open)) return; ev.preventDefault(); const id = a.dataset.open; if(openId !== id) setOpen(id, {scroll:false}); rowEl(id)?.scrollIntoView({block:"start", behavior:RM ? "auto" : "smooth"}); });
+    addEventListener("hashchange", openFromHash);
+    let lastW = innerWidth, tmr; addEventListener("resize", () => { if(innerWidth === lastW) return; lastW = innerWidth; clearTimeout(tmr); tmr = setTimeout(() => { try{ drawLanes(); }catch(e){ console.error("agiMap redraw failed:", e); } }, 150); });
+  }
+
+  render(); wire(); openFromHash();
+  const o = q.get("open"); if(o && byId(o) && openId !== o) setOpen(o, {scroll:q.get("scroll") !== "0"});
+  if(document.fonts?.ready) document.fonts.ready.then(() => { try{ drawLanes(); }catch(e){} });
+  host.dataset.ready = "1";
+  return {open: id => { if(byId(id) && openId !== id) setOpen(id); }, redraw: drawLanes};
+}
+
+/* ---- open the <details> a URL fragment points at ----
+   alarm.html#W3, #rules, #proof and the like are <details>, or sit inside one. Chrome opens them on a fragment
+   navigation; Safari and Firefox don't. Every frozen report imports this module for alarmBanner, so this runs
+   after DOMContentLoaded, never throws, and looks the id up with getElementById, never a selector built from
+   the hash (#2026 or #a:b would make querySelector throw). */
+function openHashTarget(){
+  try{
+    if(!location.hash || location.hash.length < 2) return;
+    let id; try{ id = decodeURIComponent(location.hash.slice(1)); }catch(e){ id = location.hash.slice(1); }
+    const target = document.getElementById(id); if(!target) return;
+    let opened = false;
+    for(let e = target; e; e = e.parentElement) if(e.tagName === "DETAILS" && !e.open){ e.open = true; opened = true; }
+    if(opened) target.scrollIntoView({block:"start"});
+  }catch(e){ /* never break the page */ }
+}
+if(typeof document !== "undefined" && typeof addEventListener === "function"){
+  try{
+    let ran = false; const once = () => { if(ran) return; ran = true; openHashTarget(); };
+    if(document.readyState === "complete") once();
+    else { document.addEventListener("DOMContentLoaded", once, {once:true}); addEventListener("load", once, {once:true}); }
+    addEventListener("hashchange", openHashTarget);
   }catch(e){}
 }
 

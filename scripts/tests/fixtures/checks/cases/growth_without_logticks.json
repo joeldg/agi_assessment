@@ -1,0 +1,15 @@
+{
+ "rule": "growth requires logTicks",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "del": [
+    "components",
+    4,
+    "headline",
+    "logTicks"
+   ]
+  }
+ ],
+ "expect": "headline.growth needs logTicks"
+}

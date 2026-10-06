@@ -1,0 +1,33 @@
+{
+ "rule": "a status change vs HEAD needs a new history row",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    4,
+    "status"
+   ],
+   "value": "partial"
+  },
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    4,
+    "statusBasis"
+   ],
+   "value": "Partial: x."
+  },
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "history",
+    4,
+    "to"
+   ],
+   "value": "partial"
+  }
+ ],
+ "expect": "horizon changed \"far\" → \"partial\" since HEAD without a new history row"
+}

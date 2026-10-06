@@ -1,0 +1,16 @@
+{
+ "rule": "threshold states Partial, Close and Met",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    1,
+    "test",
+    "threshold"
+   ],
+   "value": "Met: 50%."
+  }
+ ],
+ "expect": "test.threshold must state every mark"
+}

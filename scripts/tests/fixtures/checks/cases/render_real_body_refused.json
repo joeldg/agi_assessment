@@ -1,0 +1,13 @@
+{
+ "rule": "the real render refuses a script smuggled into the analysis body",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "<p>Body text for s2.</p>",
+    "<p>Body text for s2.</p><script>x()</script>"
+   ]
+  }
+ ],
+ "expect": "build_report: ReportError: analysis body line"
+}

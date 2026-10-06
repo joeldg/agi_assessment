@@ -1,0 +1,13 @@
+{
+ "rule": "analysis page has its own canonical",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "replace": [
+    "rel=\"canonical\" href=\"https://hiddenagi.com/reports/2026-10-06-analysis.html\"",
+    "rel=\"canonical\" href=\"https://hiddenagi.com/reports/2026-10-06.html\""
+   ]
+  }
+ ],
+ "expect": "canonical=\"https://hiddenagi.com/reports/2026-10-06.html\" should point at reports/2026-10-06-analysis.html"
+}

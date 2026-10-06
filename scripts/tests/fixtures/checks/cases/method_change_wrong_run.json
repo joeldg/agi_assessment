@@ -1,0 +1,18 @@
+{
+ "rule": "methodChange only on the boundary run",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    0,
+    "methodChange"
+   ],
+   "value": {
+    "from": "1.0",
+    "to": "2.0",
+    "note": "x"
+   }
+  }
+ ],
+ "expect": "only the first reading after a definitions entry carries it"
+}

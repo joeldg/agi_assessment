@@ -1,0 +1,16 @@
+{
+ "rule": "scale linear or count",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "headline",
+    "scale"
+   ],
+   "value": "log"
+  }
+ ],
+ "expect": "headline.scale=\"log\" must be linear or count"
+}

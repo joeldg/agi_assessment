@@ -22,12 +22,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_feed import SITE, alarm_level_on, changed, delta_amount, escape_for_run, fmt, prev_published, prob  # noqa: E402
+from sitekit import HYP_LABELS, method_boundary  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DARK = {"bg": "#141A21", "surface": "#1B232C", "ink": "#E3E8ED", "muted": "#98A5B3", "axis": "#34414E",
         "accent": "#D9A441", "A": "#C4861A", "B": "#139A8C", "C": "#A36ED0", "D": "#DC564A", "Dopen": "#4F82DC"}
 LABELS = {"A": "AGI undisclosed", "B": "Secret RSI", "C": "Covert AGI online", "D": "Covert govt influence"}
+LABELS_V2 = {k: HYP_LABELS[k] for k in LABELS}  # format-2 readings and wrap-ups built with labelSet 2
+METHOD_CELL = "method change"  # the card's narrow column; the note line says "definitions v2.0"
 SITE_LABEL = SITE.split("://", 1)[-1].rstrip("/")
 CHROME_TIMEOUT = 120  # seconds
 
@@ -55,10 +58,11 @@ def dial_svg(value, S=420):
             f'<text x="{c}" y="{c+S*.035:.1f}" text-anchor="middle" fill="{DARK["ink"]}" font-family="Public Sans" font-weight="600" font-size="{S*.1:.0f}">{pct(value)}</text></svg>')
 
 
-def card_html(kicker, date_label, index, rows, footer, context="", note=""):
+def card_html(kicker, date_label, index, rows, footer, context="", note="", labels=None):
+    labels = labels or LABELS
     items = "".join(
         f'<div class="row"><span class="dot" style="background:{DARK[k]}"></span><span class="k">{k}</span>'
-        f'<span class="lab">{escape(LABELS[k])}</span><span class="v">{escape(v)}</span>'
+        f'<span class="lab">{escape(labels[k])}</span><span class="v">{escape(v)}</span>'
         f'<span class="d">{escape(d)}</span></div>' for k, v, d in rows)
     return f"""<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -117,6 +121,14 @@ def escape_note(s):
     return f'Escape watch: {c["watching"]} watching · {c["tripped"]} tripped' + (f' · {c["quiet"]} quiet' if c["quiet"] else "")
 
 
+def escape_note_v2(s):
+    """'Escape watch: 0 of 8 confirmed · 8 open' (signal words of redesign v2), or '' without Escape watch data."""
+    if not s:
+        return ""
+    c = s["counts"]
+    return f'Escape watch: {c["tripped"]} of {s["total"]} confirmed · {c["watching"]} open'
+
+
 def delta(cur, prev):
     if cur is None:
         return "–"
@@ -127,6 +139,31 @@ def delta(cur, prev):
     return ("▲ +" if float(cur) > float(prev) else "▼ −") + delta_amount(cur, prev)
 
 
+def v2_card_parts(run, prev):
+    """(rows, footer, note) for a format-2 reading: v2 labels, "method change" instead of deltas for A, C and D on
+    the boundary run (B keeps its delta), the AGI-parts line from the run's components snapshot and Escape watch
+    from the run's own counts."""
+    boundary = method_boundary(run, prev)
+    rows = []
+    for k in LABELS:
+        cur = prob(run, k, "now")
+        d = METHOD_CELL if boundary and k != "B" else delta(cur, prob(prev, k, "now") if prev else None)
+        rows.append((k, pct(cur), d))
+    n = run.get("needle") or {}
+    sub = str(n.get("subject") or n.get("headline") or "").strip().rstrip(".")
+    foot = (("Quiet day: " + sub if sub and not sub.lower().startswith("quiet") else sub or "Quiet day: nothing moved.")
+            if n.get("quiet") else f"Moved the needle: {sub}")[:92]
+    snap = run.get("components") or {}
+    met = sum(1 for c in snap.values() if isinstance(c, dict) and c.get("status") == "met")
+    bits = [f"AGI parts: {met} of 8 met"] if snap else []
+    es = run.get("escape") if isinstance(run.get("escape"), dict) else {}
+    if all(isinstance(es.get(k), (int, float)) for k in ("tripped", "watching", "quiet")):
+        bits.append(f'Escape watch: {es["tripped"]} of {es["tripped"] + es["watching"] + es["quiet"]} confirmed')
+    if boundary:
+        bits.append("Method change: definitions v2.0, numbers re-derived, not news")
+    return rows, foot, " · ".join(bits)
+
+
 def daily(date=None):
     runs = json.loads((ROOT / "data/runs.json").read_text())
     reports = [i for i, r in enumerate(runs) if r.get("report")]
@@ -135,6 +172,19 @@ def daily(date=None):
         sys.exit(f"render_card: no run with a report for {date or 'any date'} in data/runs.json; nothing rendered.")
     i = idx[-1]
     run, prev = runs[i], prev_published(runs, i)
+    if run.get("format") == 2:
+        rows, foot, note = v2_card_parts(run, prev)
+        label = datetime.strptime(run["date"], "%Y-%m-%d").strftime("%-d %B %Y")
+        out = ROOT / "cards" / f"{run['date']}.png"
+        out.parent.mkdir(exist_ok=True)
+        lvl, meaning = alarm_label(run) or (None, "")
+        shoot(card_html("Daily reading" + (f" · Fire alarm {lvl}" if lvl else " · Hidden AGI watch"), label,
+                        run.get("index"), rows, foot, meaning, note, LABELS_V2), out)
+        if i == reports[-1]:
+            shutil.copyfile(out, ROOT / "cards/latest.png")
+        else:
+            print("note: not the newest report, so cards/latest.png was left unchanged")
+        return out
     rows = [(k, pct(prob(run, k, "now")), delta(prob(run, k, "now"), prob(prev, k, "now") if prev else None)) for k in LABELS]
     n = run.get("needle") or {}
     foot = ("Quiet day: nothing moved." if n.get("quiet") else f"Moved the needle: {n.get('headline','')}")[:92]
@@ -156,12 +206,25 @@ def weekly(date):
     k = w["keyNumbers"]
     since_first = k.get("sinceFirst") and k.get("weekAgo") and k.get("weekAgoDate") != k.get("asOf")
 
+    boundary = weekly_boundary(k)
+
     def change(h):
         cur, prev = k["now"].get(h), (k.get("weekAgo") or {}).get(h)
+        if boundary and h != "B" and cur is not None and prev is not None:
+            return METHOD_CELL  # a definitions change inside the week is a method change, never a move (M8)
         d = delta(cur, prev)
         return d + " wk" if cur is not None and prev is not None and not since_first else d
 
     rows = [(h, pct(k["now"].get(h)), change(h)) for h in LABELS]
+    v2 = (w.get("snapshot") or {}).get("labelSet") == 2
+    labels = LABELS_V2 if v2 else LABELS
+    note = escape_note_v2(k.get("escape")) if v2 else escape_note(k.get("escape"))
+    if boundary:
+        news = k.get("news") if isinstance(k.get("news"), dict) else {}
+        moved = [f'{"D-open" if h == "Dopen" else h} {"▲ +" if v > 0 else "▼ −"}{fmt(abs(v))}'
+                 for h, v in news.items() if h in ("A", "C", "D") and isinstance(v, (int, float)) and v]
+        note = ("Method change this week: definitions v2.0, numbers re-derived, not news"
+                + (f" · news moves: {', '.join(moved)}" if moved else "") + (f" · {note}" if note else ""))
     label = "Week to " + datetime.strptime(date, "%Y-%m-%d").strftime("%-d %B %Y")
     kicker = ("Weekly wrap-up · change since " + datetime.strptime(k["weekAgoDate"], "%Y-%m-%d").strftime("%-d %b")
               if since_first else "Hidden AGI watch · weekly wrap-up")
@@ -169,8 +232,18 @@ def weekly(date):
     meaning = f'{lv["name"]}: {lv.get("meaning", "")}'.rstrip(": ") if lv else ""
     out = ROOT / "cards" / f"weekly-{date}.png"
     out.parent.mkdir(exist_ok=True)
-    shoot(card_html(kicker, label, k.get("index"), rows, w.get("headline", "")[:92], meaning, escape_note(k.get("escape"))), out)
+    shoot(card_html(kicker, label, k.get("index"), rows, w.get("headline", "")[:92], meaning, note, labels), out)
     return out
+
+
+def weekly_boundary(k):
+    """True when the definitions changed inside the week: the wrap-up's own flag, else method_boundary of the two
+    readings' definitions (missing = "1.0"). Never on a first reading or a wrap-up without a week-ago reading."""
+    if k.get("firstReading") or not k.get("weekAgo"):
+        return False
+    if isinstance(k.get("methodBoundary"), bool):
+        return k["methodBoundary"]
+    return method_boundary({"defs": k.get("defs")}, {"defs": k.get("defsWeekAgo")})
 
 
 if __name__ == "__main__":

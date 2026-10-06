@@ -1,0 +1,10 @@
+{
+ "rule": "agi_components.json required once a definitions entry exists",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "remove": true
+  }
+ ],
+ "expect": "data/agi_components.json is missing"
+}

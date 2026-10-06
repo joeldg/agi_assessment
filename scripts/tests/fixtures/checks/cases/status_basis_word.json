@@ -1,0 +1,15 @@
+{
+ "rule": "statusBasis starts with its status word",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "statusBasis"
+   ],
+   "value": "Partial: wrong word."
+  }
+ ],
+ "expect": "statusBasis must start with \"Far:\""
+}

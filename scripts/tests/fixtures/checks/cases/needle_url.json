@@ -1,0 +1,14 @@
+{
+ "rule": "needle.url present",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "needle",
+    "url"
+   ]
+  }
+ ],
+ "expect": "needle.url is required on a format-2 run"
+}

@@ -1,0 +1,14 @@
+{
+ "rule": "analysis is reports/<date>-analysis.html",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "analysis"
+   ],
+   "value": "reports/analysis.html"
+  }
+ ],
+ "expect": "analysis=\"reports/analysis.html\" should be reports/2026-10-06-analysis.html"
+}

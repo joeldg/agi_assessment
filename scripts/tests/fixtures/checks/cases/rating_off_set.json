@@ -1,0 +1,17 @@
+{
+ "rule": "ratings in the six-word set",
+ "ops": [
+  {
+   "file": "data/agi_components.json",
+   "set": [
+    "components",
+    0,
+    "current",
+    0,
+    "rating"
+   ],
+   "value": "rumour"
+  }
+ ],
+ "expect": "rating=\"rumour\" is not one of"
+}

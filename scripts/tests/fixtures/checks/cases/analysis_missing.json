@@ -1,0 +1,10 @@
+{
+ "rule": "the analysis page exists",
+ "ops": [
+  {
+   "file": "reports/2026-10-06-analysis.html",
+   "remove": true
+  }
+ ],
+ "expect": "does not exist; run scripts/build_report.py"
+}

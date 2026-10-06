@@ -1,0 +1,17 @@
+{
+ "rule": "the real render refuses bad input: one ERROR line naming the field",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "escape",
+    "changes"
+   ],
+   "value": [
+    "compute up"
+   ]
+  }
+ ],
+ "expect": "build_report: ReportError: escape.changes[0]: expected an object with key, from, to, reason; got a string"
+}

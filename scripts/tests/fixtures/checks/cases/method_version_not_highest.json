@@ -1,0 +1,13 @@
+{
+ "rule": "method.version is the highest entry version",
+ "ops": [
+  {
+   "file": "data/method.json",
+   "set": [
+    "version"
+   ],
+   "value": "1.2"
+  }
+ ],
+ "expect": "method.version=\"1.2\" but the highest changelog version is 2.0"
+}

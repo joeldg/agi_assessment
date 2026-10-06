@@ -1,0 +1,21 @@
+{
+ "rule": "at least one top item",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "set": [
+    -1,
+    "roundup",
+    0,
+    "items"
+   ],
+   "value": [
+    {
+     "text": "x",
+     "url": "https://e.org"
+    }
+   ]
+  }
+ ],
+ "expect": "roundup has no top: true item"
+}

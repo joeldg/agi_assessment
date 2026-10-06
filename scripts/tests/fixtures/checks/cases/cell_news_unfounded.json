@@ -1,0 +1,13 @@
+{
+ "rule": "a cell crediting news needs a news line",
+ "ops": [
+  {
+   "file": "reports/2026-10-06.html",
+   "replace": [
+    "<td>D · Covert government influence</td><td class=\"num\" data-label=\"Today\">0.1%</td><td class=\"num\" data-label=\"By end-2030\">3%</td><td class=\"num\" data-label=\"By end-2035\">7%</td><td class=\"muted\" data-label=\"Change today\">method change (definitions v2.0)</td>",
+    "<td>D · Covert government influence</td><td class=\"num\" data-label=\"Today\">0.1%</td><td class=\"num\" data-label=\"By end-2030\">3%</td><td class=\"num\" data-label=\"By end-2035\">7%</td><td class=\"muted\" data-label=\"Change today\">▲ +0.1 pts news; then method change (definitions v2.0)</td>"
+   ]
+  }
+ ],
+ "expect": "the cell credits news but no changes line"
+}

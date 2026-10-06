@@ -1,0 +1,14 @@
+{
+ "rule": "a number also moved on news shows news; then method change",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "append": [
+    -1,
+    "changes"
+   ],
+   "value": "C goes from 0.5% to 1% on the leaked memo before the method change."
+  }
+ ],
+ "expect": "the cell must read \"… news; then method change\""
+}

@@ -1,0 +1,13 @@
+{
+ "rule": "verdict, timelineShort, bottomLine present",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "verdict"
+   ]
+  }
+ ],
+ "expect": "verdict is required on a format-2 run"
+}

@@ -1,0 +1,15 @@
+{
+ "rule": "the wrap-up's frozen AGI parts are the 8 parts",
+ "ops": [
+  {
+   "file": "data/weekly/2026-10-09.json",
+   "del": [
+    "snapshot",
+    "agi",
+    "components",
+    7
+   ]
+  }
+ ],
+ "expect": "snapshot.agi.components must be the 8 parts in order"
+}

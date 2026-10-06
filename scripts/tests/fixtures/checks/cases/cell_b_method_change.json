@@ -1,0 +1,13 @@
+{
+ "rule": "B's cell never says method change",
+ "ops": [
+  {
+   "file": "reports/2026-10-06.html",
+   "replace": [
+    "<td>B · Hidden self-improvement</td><td class=\"num\" data-label=\"Today\">2%</td><td class=\"num\" data-label=\"By end-2030\">22%</td><td class=\"num\" data-label=\"By end-2035\">33%</td><td class=\"muted\" data-label=\"Change today\">no change</td>",
+    "<td>B · Hidden self-improvement</td><td class=\"num\" data-label=\"Today\">2%</td><td class=\"num\" data-label=\"By end-2030\">22%</td><td class=\"num\" data-label=\"By end-2035\">33%</td><td class=\"muted\" data-label=\"Change today\">method change (definitions v2.0)</td>"
+   ]
+  }
+ ],
+ "expect": "B needs no AGI-level system"
+}

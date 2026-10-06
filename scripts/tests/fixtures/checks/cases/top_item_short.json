@@ -1,0 +1,17 @@
+{
+ "rule": "every top item has short",
+ "ops": [
+  {
+   "file": "data/runs.json",
+   "del": [
+    -1,
+    "roundup",
+    0,
+    "items",
+    0,
+    "short"
+   ]
+  }
+ ],
+ "expect": "is a top item without a short"
+}

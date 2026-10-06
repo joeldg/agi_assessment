@@ -60,7 +60,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_feed import (FONT, INK, MUTED, alarm_level_on, email_footer, fmt, issue_html, link,  # noqa: E402
                         p as para, pretty_date, prev_published, source_link, ul)
-from sitekit import SITE, SUBSCRIBE  # noqa: E402
+from sitekit import SITE, SUBSCRIBE, method_boundary  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "data/kit_broadcasts.json"
@@ -838,16 +838,56 @@ def push_weekly(args):
     dispatch(key, fields, meta, args, why, extra=[f"Alarm: {hold or 'no level change on the wrap-up day or the day before'}"])
 
 
-def daily_subject(run):
-    """'Index 4% · <needle subject>': plain words, no hypothesis letters, no trailing period."""
+def daily_subject(run, prev=None):
+    """Format 2: the needle's subject first (the part that changes each day), ' · quiet day' on a quiet day (owning
+    quiet days stays in the subject itself), and ' · Index a→b%' only when the displayed Index moved since `prev`;
+    never on a method boundary, where a re-derived Index that rounds differently is a method change, not a move
+    (the same rule as every other surface: the subject is never the definition change).
+    Legacy readings keep 'Index 4% · <hook>'. Plain words, no hypothesis letters, no trailing period."""
     n = run.get("needle") or {}
     sub = str(n.get("subject") or "").strip().rstrip(" .")
-    if n.get("quiet"):
-        hook = sub if sub.lower().startswith("quiet day") else "Quiet day: " + (sub or "nothing moved the odds")
-    else:
-        hook = sub or preview(str(n.get("headline") or "").strip(), 50).rstrip(" .") or "Today's reading"
     idx = run.get("index")
-    return f"Index {fmt(idx)}% · {hook}" if idx is not None else f"Hidden AGI watch · {hook}"
+    if run.get("format") != 2:
+        if n.get("quiet"):
+            hook = sub if sub.lower().startswith("quiet day") else "Quiet day: " + (sub or "nothing moved the odds")
+        else:
+            hook = sub or preview(str(n.get("headline") or "").strip(), 50).rstrip(" .") or "Today's reading"
+        return f"Index {fmt(idx)}% · {hook}" if idx is not None else f"Hidden AGI watch · {hook}"
+    hook = sub or preview(str(n.get("headline") or "").strip(), 50).rstrip(" .") or "Today's reading"
+    if n.get("quiet") and "quiet day" not in hook.lower():
+        hook += " · quiet day"
+    old = (prev or {}).get("index")
+    if idx is not None and old is not None and fmt(idx) != fmt(old) and not method_boundary(run, prev):
+        hook += f" · Index {fmt(old)}→{fmt(idx)}%"
+    return hook
+
+
+def daily_preview(run):
+    """The inbox preview line. Format 2: the verdict, then the Index and the alarm state (so the state the subject
+    no longer carries still shows beside it); legacy readings keep the needle's detail or the summary."""
+    n = run.get("needle") or {}
+    if run.get("format") != 2:
+        return preview(n.get("detail") or run.get("summary") or "")
+    al = run.get("alarm") if isinstance(run.get("alarm"), dict) else {}
+    state = f"Index {fmt(run.get('index'))}%" if run.get("index") is not None else ""
+    if al.get("level") is not None:
+        state += (" · " if state else "") + f"fire alarm Level {int(al['level'])}" + (f", {al['name']}" if al.get("name") else "")
+    text = str(run.get("verdict") or n.get("headline") or "").strip()
+    return preview(f"{text} {state}.".strip() if state else text)
+
+
+def daily_lists(run, date):
+    """(live URLs to poll, files that must be committed and pushed) before a daily issue is scheduled. A format-2
+    reading's email deep-links its analysis page (Full analysis, #timeline, #roundup, #s5, #s6), so that page is on
+    both lists: an email never points at an uncommitted or undeployed page."""
+    live, files = [SITE + run["report"]], [run["report"], "data/runs.json"]
+    if run.get("analysis"):
+        live.append(SITE + run["analysis"])
+        files.append(run["analysis"])
+    if (ROOT / f"cards/{date}.png").exists():  # issue_html embeds the card only when it exists
+        live.append(f"{SITE}cards/{date}.png")
+        files.append(f"cards/{date}.png")
+    return live, files
 
 
 def push_daily(args):
@@ -876,17 +916,14 @@ def push_daily(args):
         print(hold)
     needle = run.get("needle") or {}
     fields = {
-        "subject": daily_subject(run),
-        "preview_text": preview(needle.get("detail") or run.get("summary") or ""),
+        "subject": daily_subject(run, prev),
+        "preview_text": daily_preview(run),
         "description": f"Daily issue for {date}",
         "content": issue_html(run, prev),
         "public": PUBLIC,
         "send_at": send_at,  # None keeps it as a draft
     }
-    live, files = [SITE + run["report"]], [run["report"], "data/runs.json"]
-    if (ROOT / f"cards/{date}.png").exists():  # issue_html embeds the card only when it exists
-        live.append(f"{SITE}cards/{date}.png")
-        files.append(f"cards/{date}.png")
+    live, files = daily_lists(run, date)
     meta = {"report": SITE + run["report"], "live": live, "files": files}
     dispatch(key, fields, meta, args, why,
              extra=[f"Compared with: {prev['date'] + ' reading' if prev else 'nothing (first reading)'}",
