@@ -39,17 +39,17 @@
    "kind": "measured",
    "feeds": "A",
    "higherIs": "more resources in play",
-   "how": "Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta over the last four reported quarters, from SEC filings. Mostly data centers, but includes non-AI spending such as Amazon logistics. Spending alone cannot reveal hidden capability; the money red flag is trigger X4 (a run or cluster 2x the largest known with no matching release)."
+   "how": "Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta over the last four reported quarters, from SEC filings. Mostly data centers, but includes non-AI spending such as Amazon logistics. Spending alone cannot reveal hidden capability; the money red flag is condition X4 (an operating cluster or training run at least 2x Epoch AI's trend for the largest, with nothing publicly attributed to it and no model from it released or externally evaluated within 12 months)."
   },
   {
    "key": "delegation",
    "label": "Delegation to AI",
    "question": "How much consequential government decision-making runs through AI?",
-   "unit": "level (1–5)",
+   "unit": "rung (1–5)",
    "kind": "assessed",
    "feeds": "D",
    "higherIs": "more delegated",
-   "how": "The highest level with credible evidence of routine use by a major government.",
+   "how": "The highest rung with credible evidence of routine use by a major government.",
    "scale": [
     "1: AI for admin and drafting",
     "2: AI analysis that informs human decisions",

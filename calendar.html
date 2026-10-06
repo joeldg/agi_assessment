@@ -28,29 +28,22 @@
 <link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
 </head>
 <body>
+<a class="skip-link sr-only" href="#content">Skip to content</a>
 <main>
-  <nav class="site" aria-label="Site">
+  <nav class="site2" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
+    <span class="nav-links"><a href="./"><span class="l">Today</span><span class="s">Today</span></a><a href="./agi.html"><span class="l">Is AGI here?</span><span class="s">AGI</span></a><a href="./hidden.html"><span class="l">Could it be hidden?</span><span class="s">Hidden</span></a><a href="./alarm.html"><span class="l">Fire alarm</span><span class="s">Alarm</span></a><a href="./scorecard.html" aria-current="true"><span class="l">Track record</span><span class="s">Record</span></a><a href="./start-here.html"><span class="l">How it works</span><span class="s">Method</span></a></span>
     <a class="nav-key" href="./escape.html">Escape watch</a>
-    <a href="./start-here.html">Start here</a>
-    <a href="./alarm.html">Fire alarm</a>
-    <a href="./weekly/">Weekly</a>
-    <a href="./scorecard.html">Scorecard</a>
-    <a href="./trends.html">Trends</a>
-    <a href="./money.html">Money</a>
-    <a href="./disclosure-lag.html">Disclosure lag</a>
-    <a href="./agi-claims.html">AGI claims</a>
-    <a href="./calendar.html" aria-current="page">Calendar</a>
-    <a href="./steelman.html">Steelman</a>
-    <a href="./about.html">About</a>
   </nav>
-
+  <p class="crumb"><a href="./scorecard.html">Track record</a> › Coming up</p>
+<div id="content" tabindex="-1"></div>
   <header class="prose">
     <h1>Coming up</h1>
     <p class="lede">Dated events that could move the numbers. "Target" means a company or government goal, not a fixed date. Updated in each weekly wrap-up.</p>
-    <p class="muted">The letter on each event is the hypothesis it bears on: A–D, or D-open for open government use (definitions on <a href="start-here.html">Start here</a>).</p>
+    <p class="glance"><strong>Next: Oct 14: Anthropic&#x27;s reported pre-IPO investor day at its San Francisco headquarters · Oct 31: Deadline for two of our forecasts: OpenAI says it has resumed training its frontier models; Anthropic shares begin trading on Nasdaq · Nov 3: US midterms</strong></p>
+    <p class="muted small">The letter on each event is the scenario it bears on: A–D, or D-open for open government use (<a href="hidden.html#hypotheses">the scenarios</a>).</p>
   </header>
-  <section><h2>Dated</h2><ul class="timeline-list" id="dated"></ul></section>
+  <section><h2>Dated</h2><noscript><p class="muted small">The calendar is drawn with JavaScript. Without it, every event is in <a href="data/calendar.json">data/calendar.json</a>.</p></noscript><ul class="timeline-list" id="dated"></ul></section>
   <section><h2>No date yet, but watching</h2><ul class="timeline-list" id="undated"></ul></section>
 
 <div class="subscribe">
@@ -59,8 +52,8 @@
 </div>
 
   <footer>
-    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
-    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./about.html#corrections">Corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
+    <p>Researched, written and published each day by a custom AI agent. The owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective; every factual claim links to its source, and the claims in our readings carry an evidence rating (see Method). Not advice.</p>
+    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./changes.html">Changes and corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
@@ -72,6 +65,7 @@ const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate
 const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
 const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
 const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
+const byId = id => { const el = document.getElementById(id); if(!el) console.error("Missing #" + id + " on this page; that part was skipped."); return el; };
 
 const d = await j("data/calendar.json"), h = K.util.h, today = new Date().toISOString().slice(0,10);
 const hyp = k => { const s = h("span",{class:"tw-hyp"}), sw = h("span",{class:"swatch"}); sw.style.background = K.util.cssVar(Object.prototype.hasOwnProperty.call(K.SERIES, k) ? K.SERIES[k].color : "--muted"); s.append(sw, document.createTextNode(k==="Dopen" ? "D-open" : (k || "?"))); return s; };
@@ -83,8 +77,8 @@ const row = (when, e, past) => {
   const a = link(e.url, "source"); if(a){ const s = h("div",{class:"small"}); s.append(a); b.append(s); }
   li.append(b); return li;
 };
-const dated = document.getElementById("dated"); [...(d.events||[])].filter(e=>e&&e.date).sort((a,b)=>String(a.date).localeCompare(String(b.date))).forEach(e=>dated.append(row(fd(e.date), e, String(e.date) < today)));
-const und = document.getElementById("undated"); (d.undated||[]).filter(Boolean).forEach(e=>und.append(row("TBD", e, false)));
+const dated = byId("dated"); if(dated) [...(d.events||[])].filter(e=>e&&e.date).sort((a,b)=>String(a.date).localeCompare(String(b.date))).forEach(e=>dated.append(row(fd(e.date), e, String(e.date) < today)));
+const und = byId("undated"); if(und) (d.undated||[]).filter(Boolean).forEach(e=>und.append(row("TBD", e, false)));
 
 </script>
 </body>

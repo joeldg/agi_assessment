@@ -1,5 +1,5 @@
 {
- "note": "Outside forecasts of when AGI arrives, plotted against our strict-AGI curve. None uses our exact definition. Each entry's bar says how it compares: announcement (measures an announcement, not whether a system exists), narrower (an easier milestone, so an early bound), stricter (a harder milestone, so a late bound), different (a different test) or own-definition (the forecaster's own, unstated bar); gap says how in one line. A median is plotted as a 50% point at that date. Market prices come from the market's public API, dated in Pacific time.",
+ "note": "Outside forecasts of when AGI arrives, plotted against our AGI-anywhere curve (definitions v2.0). None uses our exact definition. Each entry's bar says how it compares with definitions v2.0: announcement (measures an announcement, not whether a system exists), narrower (an easier milestone, so an early bound), stricter (a harder milestone, so a late bound), different (a different test) or own-definition (the forecaster's own, unstated bar); gap says how in one line. barV1 and gapV1 keep the comparison with the v1.0 strict bar. A median is plotted as a 50% point at that date. Market prices come from the market's public API, dated in Pacific time.",
  "forecasts": [
   {
    "who": "Kalshi market",
@@ -9,9 +9,11 @@
    "asOf": "2026-10-02",
    "definition": "Any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-era/AGI-like remarks. Not our strict bar. Spiked briefly after GPT-6 Astra (closes of 65% on Sept 4 and 62% on Sept 7, intraday high 84%); 24–34% since Sept 17.",
    "bar": "announcement",
-   "gap": "Measures an announcement, not the existence of a strict-bar system.",
+   "gap": "Measures an announcement, not whether a system meeting our definition exists.",
    "rating": "market price (Kalshi API last trade 30, bid/ask 30/31, read 13:14 PT Oct 2, 2026; thin market, under 20k contracts traded)",
-   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "barV1": "announcement",
+   "gapV1": "Measures an announcement, not the existence of a strict-bar system."
   },
   {
    "who": "Daniel Kokotajlo (AI Futures)",
@@ -21,9 +23,11 @@
    "asOf": "2026-08-16",
    "definition": "Automated coder: narrower than our bar (coding only), so an early bound",
    "bar": "narrower",
-   "gap": "Coding only, so it should arrive before our bar.",
+   "gap": "Coding only, so it should arrive before a system meets our definition.",
    "rating": "expert opinion",
-   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+   "barV1": "narrower",
+   "gapV1": "Coding only, so it should arrive before our bar."
   },
   {
    "who": "Kalshi market",
@@ -33,9 +37,11 @@
    "asOf": "2026-10-02",
    "definition": "Same rules as the Apr 2027 rung: any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level or near-AGI remarks. Not our strict bar.",
    "bar": "announcement",
-   "gap": "Measures an announcement, not the existence of a strict-bar system.",
+   "gap": "Measures an announcement, not whether a system meeting our definition exists.",
    "rating": "market price (Kalshi API last trade 61, bid/ask 62/63, read 13:14 PT Oct 2, 2026; thin market, under 20k contracts traded; the last trade sits below the bid)",
-   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
+   "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+   "barV1": "announcement",
+   "gapV1": "Measures an announcement, not the existence of a strict-bar system."
   },
   {
    "who": "Shane Legg (Google DeepMind)",
@@ -44,10 +50,12 @@
    "p": 50,
    "asOf": "2025-12-11",
    "definition": "On LinkedIn on Dec 11, 2025, the day his interview with Hannah Fry aired on Google DeepMind: The Podcast, he put a 50% chance on AGI by 2028, a prediction he says he has held for well over a decade. In the interview he calls this level minimal AGI, an artificial agent that can handle the cognitive tasks most people typically do, with full AGI (the entire range of human cognition) three to six years later (via The Decoder). The year is plotted at mid-year.",
-   "bar": "different",
-   "gap": "Typical-human level across all cognitive tasks, against our skilled-professional level on 80% of remote work; neither is clearly easier.",
+   "bar": "narrower",
+   "gap": "The cognitive tasks a typical person does, an easier bar than our definition's full scope at a skilled professional's level, so an early bound. His full AGI, three to six years later, is closer to ours.",
    "rating": "expert opinion (lab leader; 50% by 2028 from his own LinkedIn post; the minimal-AGI definition via The Decoder, not checked against the audio)",
-   "url": "https://www.linkedin.com/posts/shanelegg_agi-activity-7404935040796721152-rFPt"
+   "url": "https://www.linkedin.com/posts/shanelegg_agi-activity-7404935040796721152-rFPt",
+   "barV1": "different",
+   "gapV1": "Typical-human level across all cognitive tasks, against our skilled-professional level on 80% of remote work; neither is clearly easier."
   },
   {
    "who": "Daniel Kokotajlo (AI Futures)",
@@ -57,9 +65,11 @@
    "asOf": "2026-08-16",
    "definition": "Top-expert-dominating AI: as good as top experts at virtually all cognitive tasks; stricter than our bar, so a late bound",
    "bar": "stricter",
-   "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar.",
+   "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after a system meets our definition.",
    "rating": "expert opinion",
-   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+   "barV1": "stricter",
+   "gapV1": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar."
   },
   {
    "who": "Daniel Kokotajlo (AI Futures)",
@@ -69,9 +79,11 @@
    "asOf": "2026-09-30",
    "definition": "Said in Senate testimony on Sept 30, 2026 (hearing \"Rogue AI: Securing the Homeland Against AI Agent Attacks\"): companies are starting to train AIs \"to do the whole research process, not just the coding\", and \"I personally would guess about 50% chance by end of 2028\" that they succeed. A personal guess, not an AI Futures model output.",
    "bar": "narrower",
-   "gap": "AI research only (the whole process, not just coding), so it should come before our bar; it is closer to our hypothesis B milestone than to strict AGI.",
+   "gap": "AI research only (the whole process, not just coding), so it should come before a system meets our definition; it is closer to our hypothesis B (hidden self-improvement) than to AGI.",
    "rating": "expert opinion (Senate testimony)",
-   "url": "https://blog.aifutures.org/p/senate-testimony-sept-2026"
+   "url": "https://blog.aifutures.org/p/senate-testimony-sept-2026",
+   "barV1": "narrower",
+   "gapV1": "AI research only (the whole process, not just coding), so it should come before our bar; it is closer to our hypothesis B milestone than to strict AGI."
   },
   {
    "who": "Demis Hassabis",
@@ -83,7 +95,9 @@
    "bar": "own-definition",
    "gap": "His own definition and a two-year point estimate, not a probability.",
    "rating": "expert opinion (lab leader)",
-   "url": "https://sherwood.news/tech/google-deepminds-hassabis-agi-is-3-to-4-years-away/"
+   "url": "https://sherwood.news/tech/google-deepminds-hassabis-agi-is-3-to-4-years-away/",
+   "barV1": "own-definition",
+   "gapV1": "His own definition and a two-year point estimate, not a probability."
   },
   {
    "who": "Eli Lifland (AI Futures)",
@@ -93,9 +107,11 @@
    "asOf": "2026-08-16",
    "definition": "Automated coder: narrower than our bar (coding only), so an early bound",
    "bar": "narrower",
-   "gap": "Coding only, so it should arrive before our bar.",
+   "gap": "Coding only, so it should arrive before a system meets our definition.",
    "rating": "expert opinion",
-   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+   "barV1": "narrower",
+   "gapV1": "Coding only, so it should arrive before our bar."
   },
   {
    "who": "Eli Lifland (AI Futures)",
@@ -105,9 +121,11 @@
    "asOf": "2026-08-16",
    "definition": "Top-expert-dominating AI: as good as top experts at virtually all cognitive tasks; stricter than our bar, so a late bound",
    "bar": "stricter",
-   "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar.",
+   "gap": "Top-expert level on virtually all cognitive tasks, so it should arrive after a system meets our definition.",
    "rating": "expert opinion",
-   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+   "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+   "barV1": "stricter",
+   "gapV1": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar."
   },
   {
    "who": "Metaculus community",
@@ -117,9 +135,11 @@
    "asOf": "2026-09-30",
    "definition": "Metaculus general-AI question: requires a public announcement plus robotics and an adversarial Turing test; stricter on robotics, can't resolve on a hidden system.",
    "bar": "different",
-   "gap": "Adds robotics and needs a public announcement, so it can never count a hidden system.",
+   "gap": "Adds robotics and an adversarial Turing test and needs a public announcement, so it can never count a hidden system; it has no learning-on-the-job, multi-week or reliability test.",
    "rating": "forecast aggregate (Metaculus community prediction, read on metaculus.com; about 1.9k forecasters; middle half 2 Apr 2028 to Apr 2037)",
-   "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
+   "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
+   "barV1": "different",
+   "gapV1": "Adds robotics and needs a public announcement, so it can never count a hidden system."
   },
   {
    "who": "AI safety leaders survey (Summit on Existential Security)",
@@ -129,9 +149,12 @@
    "asOf": "2026-03-25",
    "definition": "59 attendees of the 2026 Summit on Existential Security, from the x-risk and AI safety communities, who agreed to share their answers; surveyed Feb 2026, published on the EA Forum Mar 25, 2026. AGI means an AI system or systems that can fully automate more than 90% of roles in the 2025 economy. Median 50% year 2033 and median 25% year 2030 (48 answered); the median year is plotted at mid-year.",
    "bar": "stricter",
-   "gap": "More than 90% of all roles, physical ones included, so it should come after our bar, which counts remote professional work.",
+   "gap": "More than 90% of all roles, physical ones included, so it should come after a system meets our definition, which leaves physical work out.",
    "rating": "survey (expert opinion aggregate; summit attendees from the safety community, not a representative sample)",
-   "url": "https://forum.effectivealtruism.org/posts/LxuKuQd69Qx5FKhNZ/survey-of-ai-safety-leaders-on-x-risk-agi-timelines-and"
+   "url": "https://forum.effectivealtruism.org/posts/LxuKuQd69Qx5FKhNZ/survey-of-ai-safety-leaders-on-x-risk-agi-timelines-and",
+   "barV1": "stricter",
+   "gapV1": "More than 90% of all roles, physical ones included, so it should come after our bar, which counts remote professional work."
   }
- ]
+ ],
+ "noteV1": "Outside forecasts of when AGI arrives, plotted against our strict-AGI curve. None uses our exact definition. Each entry's bar says how it compares: announcement (measures an announcement, not whether a system exists), narrower (an easier milestone, so an early bound), stricter (a harder milestone, so a late bound), different (a different test) or own-definition (the forecaster's own, unstated bar); gap says how in one line. A median is plotted as a 50% point at that date. Market prices come from the market's public API, dated in Pacific time."
 }

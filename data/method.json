@@ -1,6 +1,6 @@
 {
  "note": "Changes to the method: definitions, gauges, the Hidden AGI Index formula and thresholds. Each change bumps the version and says why. Corrections to facts are logged separately in data/corrections.json.",
- "version": "1.2",
+ "version": "2.0",
  "changelog": [
   {
    "version": "1.0",
@@ -37,6 +37,20 @@
    "date": "2026-09-30",
    "change": "Ill-posed forecasts can be withdrawn unscored, with the reason shown; two were withdrawn and replaced with well-posed versions.",
    "why": "Keeping a forecast that can't resolve fairly would make the scorecard look better or worse than it is."
+  },
+  {
+   "version": "2.0",
+   "date": "2026-10-06",
+   "definitions": "2.0",
+   "definitionText": "AGI: a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining.",
+   "factors": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "rule": "At the next reading, every number that needs an AGI-level system is re-derived through its published derivation with the factor applied to the chance of meeting the rest of the definition: AGI anywhere and A from their unrounded v1.0 inputs (today: lab term 1.4 and state term 0.1 times k; A also times the unchanged 0.6 kept-quiet factor); by end-2030 and end-2035 each v1.0 value times k; C, D and D-open keep their published shares of AGI; B is unchanged; the Index is re-derived from its parts; everything is rounded once to our grid (half up). Evidence moves that day are reported separately.",
+   "change": "Definitions v2.0 replace the v1.0 strict AGI bar wherever we use it: the 'AGI anywhere' forecast, hypotheses A, C, D and D-open, and alarm condition Y1. Our working definition: AGI is a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining. Physical and embodied work is out of scope. The v1.0 remote-work test (reliably, 80% or better, doing at least 80% of economically valuable remote professional tasks at the level of a median skilled professional, including multi-week projects, with no task-specific human scaffolding) stays as one of its tests, and we track the definition in eight parts with published tests on agi.html: breadth, quality, reliability, reasoning, planning and long projects, autonomy, learning on the job and generalization. v2.0 keeps every v1.0 requirement and adds learning on the job, generalization to new kinds of problem and open-ended reasoning, so we re-derived every number that needs an AGI-level system as its v1.0 value times our probability that a system meeting the remote-work test by that date also meets the rest of the definition: about 0.57 today, 0.77 by end-2030 and 0.89 by end-2035; of the parts v2.0 adds, generalization to new tasks holds the factor down most today, and learning on the job later. Today / by end-2030 / by end-2035, AGI anywhere (public or hidden) goes from 1.5% / 45% / 65% to 0.9% / 35% / 58%; A from 1% / 25% / 35% to 0.5% / 19% / 31%; C from 0.5% / 10% / 15% to 0.3% / 7.5% / 13%; D from 0.25% / 4% / 8% to 0.1% / 3% / 7%; and D-open from 0.3% / 30% / 50% to 0.2% / 23% / 45%. B doesn't depend on the AGI bar and stays at 2% / 22% / 33%, and the Hidden AGI Index stays at 2.5% (about 2.3 before rounding, down from about 2.5), most of it B. The other inputs are unchanged: the chance that an unreleased lab system meets the remote-work test, the chance it has been kept quiet for 30 days, the state-program term, and the shares of C, D and D-open. These moves come from the change of definition, not from news. Readings and forecasts published under v1.0 keep their meaning and resolve under v1.0. Y1 is restated on the new bar in its own alarm-criteria changelog entry (Y2, which uses Y1's bar, follows), and no other threshold changes.",
+   "why": "Readers couldn't see how our numbers identify AGI, and the v1.0 bar named only a remote-work test. v2.0 says what we mean by AGI, adds the abilities most outside definitions treat as central (learning on the job and handling new kinds of problem), and splits the definition into parts we can measure and show."
   }
  ]
 }

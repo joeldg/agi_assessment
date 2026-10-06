@@ -28,49 +28,35 @@
 <link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
 </head>
 <body>
+<a class="skip-link sr-only" href="#content">Skip to content</a>
 <main>
-  <nav class="site" aria-label="Site">
+  <nav class="site2" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
+    <span class="nav-links"><a href="./"><span class="l">Today</span><span class="s">Today</span></a><a href="./agi.html" aria-current="true"><span class="l">Is AGI here?</span><span class="s">AGI</span></a><a href="./hidden.html"><span class="l">Could it be hidden?</span><span class="s">Hidden</span></a><a href="./alarm.html"><span class="l">Fire alarm</span><span class="s">Alarm</span></a><a href="./scorecard.html"><span class="l">Track record</span><span class="s">Record</span></a><a href="./start-here.html"><span class="l">How it works</span><span class="s">Method</span></a></span>
     <a class="nav-key" href="./escape.html">Escape watch</a>
-    <a href="./start-here.html">Start here</a>
-    <a href="./alarm.html">Fire alarm</a>
-    <a href="./weekly/">Weekly</a>
-    <a href="./scorecard.html">Scorecard</a>
-    <a href="./trends.html" aria-current="page">Trends</a>
-    <a href="./money.html">Money</a>
-    <a href="./disclosure-lag.html">Disclosure lag</a>
-    <a href="./agi-claims.html">AGI claims</a>
-    <a href="./calendar.html">Calendar</a>
-    <a href="./steelman.html">Steelman</a>
-    <a href="./about.html">About</a>
   </nav>
-
+  <p class="crumb"><a href="./agi.html">Is AGI here?</a> › Trend watch</p>
+<div id="content" tabindex="-1"></div>
   <header class="prose">
     <h1>Trend watch</h1>
-    <p class="lede">Our probabilities are judgments. These are measurements. Here we extend real trends forward to see when they would cross the thresholds that matter for the hypotheses, if they hold. A projection is not a prediction: trends bend and break, and the bands show how quickly the uncertainty grows.</p>
+    <p class="lede">Our probabilities are judgments. These are measurements, extended forward to show when they would cross thresholds that matter, if the trends hold. A projection is not a prediction: trends bend and break.</p>
+    <p class="glance"><strong>80% time horizon about 3.1 h measured (trend line about 4.8 h); a work-month around Jul 2028 (Jan 2028 – May 2029) if the trend holds. Remote Labor Index (RLI) 20.8%.</strong></p>
   </header>
   <div class="tiles" id="tiles"></div>
   <section>
     <h2>How long a task AI can finish on its own</h2>
-    <p class="muted">METR's time horizon: the length of task, measured in skilled-human time, that frontier models complete with 50% or 80% success, on software, ML and cyber tasks. Log scale, so a straight line means steady doubling. Dots are measured frontier models. The dashed line and bands are the projection.</p>
+    <p class="muted">METR's time horizon: the length of task, in skilled-human time, that frontier models complete with 50% or 80% success on software, ML and cyber tasks. Log scale, so a straight line means steady doubling. Dots are measured models; the dashed line and bands are the projection, and the lighter band is where a single new model should land if the trend holds.</p>
     <div class="chart-wrap"><div id="metr"></div><div class="legend" id="metr-legend"></div></div>
     <div class="table-wrap"><table id="cross"></table></div>
-    <p class="muted small" id="sens"></p>
-    <p class="muted small" id="metr-method"></p>
+    <details id="fit"><summary><span style="display:inline">Fit method and sensitivity</span></summary><div class="body"><p class="muted small" id="sens"></p><p class="muted small" id="metr-method"></p></div></details>
   </section>
   <section class="prose">
-    <h2>What this means for our numbers</h2>
-    <p>The 80% horizon reaching a month of work is a necessary condition for our strict AGI bar, not the bar itself: it measures reliability on software, ML and cyber tasks only, and METR says measurements above 16 hours are unreliable, so the crossing date is an extrapolation no current test can check. If the trend holds, that crossing lands around <span id="agi-cross">–</span>. The breadth half of the bar, whether AI can do most kinds of real remote work, is tracked <a href="#rli-h">below</a>. We put strict AGI at <span id="agi2030">–</span> by the end of 2030, more cautious than the straight line, for three reasons:</p>
-    <ul class="plain">
-      <li>Benchmark tasks are cleaner than real work.</li>
-      <li>METR's suite can't measure horizons above about 16 hours, and the work-month threshold is ten times longer.</li>
-      <li>Trends like this can bend with compute, energy, data or safety pauses. OpenAI paused RL training for two weeks (Fortune dates it to late July 2026; OpenAI announced it in mid-August) and paused training again on Sept 25, 2026 (<a href="https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/" target="_blank" rel="noopener">Fortune</a>).</li>
-    </ul>
-    <p>The lighter band on the chart is where a single new frontier model should land if the trend holds. If new models keep landing above that prediction band, our 2030 number should rise. If they land below it, it should fall.</p>
+    <h2 id="meaning">What this means for AGI</h2>
+    <p>The time horizon is one test of one part of AGI, and METR's suite can't yet measure a work-month. How it feeds our numbers: <a href="agi.html#horizon">Long projects</a> · <a href="agi.html#reliability">Reliability</a> · <a href="agi.html#breadth">Breadth</a> · <a href="agi.html#numbers">From the parts to our number</a>.</p>
   </section>
   <section id="rli-sec" hidden>
     <h2 id="rli-h">How much real remote work AI can already do</h2>
-    <p class="muted">The Remote Labor Index (RLI) is the closest public measure of the breadth half of our bar: the share of real freelance projects an AI delivers at a quality a client would accept, judged by people. Our bar asks for at least 80% of remote professional tasks; the RLI isn't that exact test. Measured points only, with no projection. <span id="rli-note"></span></p>
+    <p class="muted">The Remote Labor Index (RLI): the share of real freelance projects an AI delivers at a quality a client would accept, judged by people. It is the headline measure of <a href="agi.html#breadth">Breadth</a>. Measured points only, with no projection. <span id="rli-note"></span></p>
     <div class="chart-wrap"><div id="rli"></div></div>
     <ul class="plain small" id="rli-points"></ul>
   </section>
@@ -81,7 +67,7 @@
   </section>
   <section class="prose"><h2>Other trends we watch</h2>
     <ul class="plain">
-      <li><strong>Frontier training compute</strong> grows about 5x a year, doubling every ~5 months (<a href="https://epoch.ai/trends">Epoch AI</a>). A large run with no matching public release would be a tripwire for A.</li>
+      <li><strong>Frontier training compute</strong> grows about 5x a year, doubling every ~5 months (<a href="https://epoch.ai/trends">Epoch AI</a>). A run or cluster at least 2x Epoch AI's trend for the largest, with nothing publicly attributed to it and no model from it released or externally evaluated within 12 months, is alarm condition <a href="alarm.html#X4">X4</a>.</li>
       <li><strong>Disclosure lag</strong>: see <a href="disclosure-lag.html">how long incidents stay hidden</a>. There are too few incidents yet for a trend line.</li>
     </ul>
   </section>
@@ -92,8 +78,8 @@
 </div>
 
   <footer>
-    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
-    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./about.html#corrections">Corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
+    <p>Researched, written and published each day by a custom AI agent. The owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective; every factual claim links to its source, and the claims in our readings carry an evidence rating (see Method). Not advice.</p>
+    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./changes.html">Changes and corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
@@ -105,27 +91,28 @@ const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate
 const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
 const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
 const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
+const byId = id => { const el = document.getElementById(id); if(!el) console.error("Missing #" + id + " on this page; that part was skipped."); return el; };
 
 const [t, runs] = await Promise.all([j("data/trends.json"), j("data/runs.json").catch(err => { console.error(err); return []; })]);
 const M = t.metr, h = K.util.h;
-// our strict-AGI forecast, from the latest published reading, as on the dashboard
+// AGI anywhere by end-2030, from the latest published reading (one tile; the reasoning is on agi.html#numbers)
 const all = Array.isArray(runs) ? runs.filter(r => r && typeof r === "object") : [];
 const pub = all.filter(r => r.report && r.comparable !== false);
 const lastRun = pub.length ? pub[pub.length-1] : all[all.length-1];
 const y30 = lastRun?.agi?.y2030;
 const agi2030 = y30 != null && y30 !== "" && !isNaN(y30) ? K.util.fmtPct(y30) : "–";
-document.getElementById("agi2030").textContent = agi2030;
 const mo = d => d ? K.util.fmtDate(d,{month:"short",year:"numeric"}) : "–";
 const r0 = x => x==null || x==="" || isNaN(x) ? "–" : String(Math.round(x));
 const fr = (M.models||[]).filter(m=>m && m.sota && m.date>="2023-01-01").sort((a,b)=>String(a.date).localeCompare(String(b.date)));
 const hasPred = p => Array.isArray(p) && p.length > 0 && p.every(x => x.predLo!=null && x.predHi!=null);
-const metr = document.getElementById("metr"), lg = document.getElementById("metr-legend");
-K.live(metr, () => {
+const metr = byId("metr"), lg = byId("metr-legend");
+if(metr) K.live(metr, () => {
   K.trendChart(metr, {title:"METR time horizon", color:"--accent",
     history: fr.map(m=>({date:m.date, v:m.p50, lo:m.p50lo, hi:m.p50hi, name:modelName(m.id)+" · 50%", excluded:m.excluded===true, inFit:m.excluded!==true})),
     projection: M.p50.projection,
     secondary: {label:"80% horizon", rate:"80%", color:"--ink", history: fr.filter(m=>m.p80).map(m=>({date:m.date, v:m.p80, name:modelName(m.id)+" · 80%", excluded:m.excluded80===true, inFit:m.excluded80!==true})), projection: M.p80.projection},
     thresholds: [{v:M.thresholds.workWeek, label:"1 work-week (40 hours)"},{v:M.thresholds.workMonth, label:"1 work-month (167 hours)"}]});
+  if(!lg) return;
   lg.replaceChildren();
   const item = (mark, text) => { const it = h("span",{class:"lg-item"}); it.append(mark, document.createTextNode(text)); lg.append(it); };
   [["--accent","50% success (measured)"],["--ink","80% success (measured)"]].forEach(([c,l]) => { const sw = h("span",{class:"swatch"}); sw.style.background = K.util.cssVar(c); item(sw, l); });
@@ -133,23 +120,26 @@ K.live(metr, () => {
   if(hasPred(M.p50.projection)){ const b = h("span",{class:"lg-band"}); b.style.opacity = ".07"; item(b, "Lighter band: where a single new frontier model should land (95%)"); }
   if(fr.some(m => m.excluded || m.excluded80 || m.p50 > 960)){ const f = h("span",{class:"swatch"}); f.style.background = K.util.cssVar("--accent"); f.style.opacity = ".4"; item(f, "Faded: above 16 hours, beyond METR's reliable range; not used in the fit"); }
 });
-const tb = document.getElementById("cross");
-const hr = h("tr"); ["If the trend holds…","Central","Range (95% band of the trend line)"].forEach(c=>hr.append(h("th",{scope:"col"},c))); tb.append(hr);
-[["50% horizon reaches a work-week","p50","workWeek"],["50% horizon reaches a work-month","p50","workMonth"],["80% horizon reaches a work-week","p80","workWeek"],["80% horizon reaches a work-month (necessary for our strict bar; software tasks only)","p80","workMonth"]].forEach(([l,m,k]) => { const c = M[m]?.crossings?.[k]; if(!c) return; const tr = h("tr"); tr.append(h("td",{},l), h("td",{class:"num"},mo(c.mid)), h("td",{class:"num"},mo(c.fast)+" – "+mo(c.slow))); tb.append(tr); });
+const tb = byId("cross");
+if(tb){
+  const hr = h("tr"); ["If the trend holds…","Central","Range (95% band of the trend line)"].forEach(c=>hr.append(h("th",{scope:"col"},c))); tb.append(hr);
+  [["50% horizon reaches a work-week","p50","workWeek"],["50% horizon reaches a work-month","p50","workMonth"],["80% horizon reaches a work-week","p80","workWeek"],["80% horizon reaches a work-month (one test of Long projects; software tasks only)","p80","workMonth"]].forEach(([l,m,k]) => { const c = M[m]?.crossings?.[k]; if(!c) return; const tr = h("tr"); tr.append(h("td",{},l), h("td",{class:"num"},mo(c.mid)), h("td",{class:"num"},mo(c.fast)+" – "+mo(c.slow))); tb.append(tr); });
+}
 const WM = M.p80?.crossings?.workMonth || {};
-document.getElementById("agi-cross").textContent = mo(WM.mid) + " (range " + mo(WM.fast) + " – " + mo(WM.slow) + ")";
 const sens = [];
 ["p80","p50"].forEach(m => { const X = M[m], a = X?.anchor, c = X?.crossingsFromMeasured; if(a && a.measured && c?.workMonth) sens.push(`Starting the ${m==="p80"?"80%":"50%"} projection from the measured value of ${modelName(a.model)} (${K.fmtDur(a.measured)}) instead of the fitted line (${K.fmtDur(a.value)}) moves the work-month crossing from ${mo(X.crossings?.workMonth?.mid)} to ${mo(c.workMonth)}.`); });
 { const a = M.p50?.anchor; if(a && a.measured && a.measuredInRange === false) sens.push(`The measured 50% horizon of ${modelName(a.model)} (${K.fmtDur(a.measured)}) is above METR's 16-hour reliable range, so no 50% scenario starts from it.`); }
-document.getElementById("sens").textContent = sens.length ? "Sensitivity: " + sens.join(" ") : "";
+{ const s = byId("sens"); if(s) s.textContent = sens.length ? "Sensitivity: " + sens.join(" ") : ""; }
 const pubCI = M.metrDoublingDays?.from_2023_on, rng = a => Array.isArray(a) && a[0]!=null && a[1]!=null ? ` (95% range ${r0(a[0])}–${r0(a[1])})` : "";
-document.getElementById("metr-method").textContent = (M.method || "") + ` Our fit gives a 50%-horizon doubling time of ${r0(M.p50.doublingDays)} days${rng(M.p50.doublingDaysRange)}; METR's own fit since 2023 gives ${r0(pubCI?.point_estimate)} days` + (pubCI?.ci_low!=null && pubCI?.ci_high!=null ? ` (CI ${r0(pubCI.ci_low)}–${r0(pubCI.ci_high)})` : "") + `. The 80% horizon doubles every ${r0(M.p80.doublingDays)} days${rng(M.p80.doublingDaysRange)}. Data refreshed ${t.updated} from METR.`;
+{ const mm = byId("metr-method"); if(mm) mm.textContent = (M.method || "") + ` Our fit gives a 50%-horizon doubling time of ${r0(M.p50.doublingDays)} days${rng(M.p50.doublingDaysRange)}; METR's own fit since 2023 gives ${r0(pubCI?.point_estimate)} days` + (pubCI?.ci_low!=null && pubCI?.ci_high!=null ? ` (CI ${r0(pubCI.ci_low)}–${r0(pubCI.ci_high)})` : "") + `. The 80% horizon doubles every ${r0(M.p80.doublingDays)} days${rng(M.p80.doublingDaysRange)}. Data refreshed ${t.updated} from METR.`; }
 const last = fr[fr.length-1];
-const tiles = document.getElementById("tiles");
-tiles.append(tile("Doubling time (50%)", r0(M.p50.doublingDays) + " days", pubCI?.point_estimate ? `METR's own fit: ${r0(pubCI.point_estimate)} days` : ""));
-if(last) tiles.append(tile("Latest frontier, 50%", K.fmtDur(last.p50), modelName(last.id) + (last.p50 > 960 ? ", above METR's 16-hour reliable range" : "")));
-tiles.append(tile("80% horizon hits a work-month (projected)", mo(WM.mid), `range ${mo(WM.fast)} – ${mo(WM.slow)}`));
-tiles.append(tile("Our strict AGI by 2030", agi2030, "our forecast, from the latest daily reading"));
+const tiles = byId("tiles");
+if(tiles){
+  tiles.append(tile("Doubling time (50%)", r0(M.p50.doublingDays) + " days", pubCI?.point_estimate ? `METR's own fit: ${r0(pubCI.point_estimate)} days` : ""));
+  if(last) tiles.append(tile("Latest frontier, 50%", K.fmtDur(last.p50), modelName(last.id) + (last.p50 > 960 ? ", above METR's 16-hour reliable range" : "")));
+  tiles.append(tile("80% horizon hits a work-month (projected)", mo(WM.mid), `range ${mo(WM.fast)} – ${mo(WM.slow)}`));
+  tiles.append(tile("AGI anywhere by end-2030", agi2030, "our forecast, from the latest daily reading"));
+}
 // a horizontal reference line on a lineChart drawn with yMax 100: placed from its own gridlines
 const refLine = (host, v, label) => { try{
   const s = host.querySelector("svg"), ls = [...(s?.querySelectorAll("g.axis line") || [])]; if(!ls.length) return;
@@ -159,20 +149,21 @@ const refLine = (host, v, label) => { try{
   const tx = K.util.svg("text",{x:x1+6, y:y-5, class:"row-label"}); tx.textContent = label; s.append(tx);
 }catch(err){ console.error(err); } };
 const RL = t.manual?.rli;
-if(RL && Array.isArray(RL.points) && RL.points.length){
-  document.getElementById("rli-sec").hidden = false;
-  document.getElementById("rli-note").textContent = RL.note || "";
-  const el = document.getElementById("rli"), pts = RL.points.filter(p => p && p.date && p.v!=null);
-  K.live(el, () => { K.lineChart(el, {title: RL.label || "Remote Labor Index", yMax:100, endLabels:true, series:[{label: RL.label || "Remote Labor Index", short:"RLI", color:"--accent", values: pts.map(p=>({x:p.date, y:p.v}))}]}); refLine(el, 80, "80%: the breadth our bar asks for"); });
-  const ul = document.getElementById("rli-points");
-  pts.forEach(p => { const li = h("li"); li.append(h("strong",{}, fd(p.date)), " · " + (p.label || K.util.fmtPct(p.v)) + " "); const a = link(p.url, "source"); if(a) li.append(a); ul.append(li); });
+const rliSec = byId("rli-sec"), rliEl = byId("rli");
+if(RL && Array.isArray(RL.points) && RL.points.length && rliSec && rliEl){
+  rliSec.hidden = false;
+  { const n = byId("rli-note"); if(n) n.textContent = RL.note || ""; }
+  const pts = RL.points.filter(p => p && p.date && p.v!=null);
+  K.live(rliEl, () => { K.lineChart(rliEl, {title: RL.label || "Remote Labor Index", yMax:100, endLabels:true, series:[{label: RL.label || "Remote Labor Index", short:"RLI", color:"--accent", values: pts.map(p=>({x:p.date, y:p.v}))}]}); refLine(rliEl, 80, "80%: what the remote-work test asks for"); });
+  const ul = byId("rli-points");
+  if(ul) pts.forEach(p => { const li = h("li"); li.append(h("strong",{}, fd(p.date)), " · " + (p.label || K.util.fmtPct(p.v)) + " "); const a = link(p.url, "source"); if(a) li.append(a); ul.append(li); });
 }
 const R = t.manual?.rdShare;
 if(R){
-  const note = document.getElementById("rd-note"); note.textContent = (R.label || "") + ". " + (R.note || "") + " ";
-  const src = link(R.points?.[R.points.length-1]?.url, "source"); if(src) note.append(src);
-  const rd = document.getElementById("rd");
-  K.live(rd, () => K.lineChart(rd, {title:R.label, yMax:100, endLabels:true, series:[{label:R.label, short:"AI-led", color:"--accent", values:(R.points||[]).map(p=>({x:p.date,y:p.v}))}]}));
+  const note = byId("rd-note");
+  if(note){ note.textContent = (R.label || "") + ". " + (R.note || "") + " "; const src = link(R.points?.[R.points.length-1]?.url, "source"); if(src) note.append(src); }
+  const rd = byId("rd");
+  if(rd) K.live(rd, () => K.lineChart(rd, {title:R.label, yMax:100, endLabels:true, series:[{label:R.label, short:"AI-led", color:"--accent", values:(R.points||[]).map(p=>({x:p.date,y:p.v}))}]}));
 }
 
 </script>

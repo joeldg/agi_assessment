@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Follow the money · Hidden AGI watch</title>
-<meta name="description" content="Big Tech capital spending, Nvidia data-center revenue, AI lab revenue and prediction markets, each with its source, and the compute test for hidden AI.">
+<meta name="description" content="Big Tech capital spending, Nvidia data-center revenue, AI lab revenue and prediction markets, each with its source, and the compute test for hidden AI (condition X4).">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hidden AGI watch">
 <meta property="og:title" content="Follow the money · Hidden AGI watch">
-<meta property="og:description" content="Big Tech capital spending, Nvidia data-center revenue, AI lab revenue and prediction markets, each with its source, and the compute test for hidden AI.">
+<meta property="og:description" content="Big Tech capital spending, Nvidia data-center revenue, AI lab revenue and prediction markets, each with its source, and the compute test for hidden AI (condition X4).">
 <meta property="og:url" content="https://hiddenagi.com/money.html">
 <meta property="og:image" content="https://hiddenagi.com/cards/latest.png">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 <meta property="og:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Follow the money · Hidden AGI watch">
-<meta name="twitter:description" content="Big Tech capital spending, Nvidia data-center revenue, AI lab revenue and prediction markets, each with its source, and the compute test for hidden AI.">
+<meta name="twitter:description" content="Big Tech capital spending, Nvidia data-center revenue, AI lab revenue and prediction markets, each with its source, and the compute test for hidden AI (condition X4).">
 <meta name="twitter:image" content="https://hiddenagi.com/cards/latest.png">
 <meta name="twitter:image:alt" content="Share card for the latest daily reading: the Hidden AGI Index, the A–D probabilities and the fire-alarm level">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,39 +28,32 @@
 <link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
 </head>
 <body>
+<a class="skip-link sr-only" href="#content">Skip to content</a>
 <main>
-  <nav class="site" aria-label="Site">
+  <nav class="site2" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
+    <span class="nav-links"><a href="./"><span class="l">Today</span><span class="s">Today</span></a><a href="./agi.html"><span class="l">Is AGI here?</span><span class="s">AGI</span></a><a href="./hidden.html" aria-current="true"><span class="l">Could it be hidden?</span><span class="s">Hidden</span></a><a href="./alarm.html"><span class="l">Fire alarm</span><span class="s">Alarm</span></a><a href="./scorecard.html"><span class="l">Track record</span><span class="s">Record</span></a><a href="./start-here.html"><span class="l">How it works</span><span class="s">Method</span></a></span>
     <a class="nav-key" href="./escape.html">Escape watch</a>
-    <a href="./start-here.html">Start here</a>
-    <a href="./alarm.html">Fire alarm</a>
-    <a href="./weekly/">Weekly</a>
-    <a href="./scorecard.html">Scorecard</a>
-    <a href="./trends.html">Trends</a>
-    <a href="./money.html" aria-current="page">Money</a>
-    <a href="./disclosure-lag.html">Disclosure lag</a>
-    <a href="./agi-claims.html">AGI claims</a>
-    <a href="./calendar.html">Calendar</a>
-    <a href="./steelman.html">Steelman</a>
-    <a href="./about.html">About</a>
   </nav>
-
+  <p class="crumb"><a href="./hidden.html">Could it be hidden?</a> › Follow the money</p>
+<div id="content" tabindex="-1"></div>
   <header class="prose">
     <h1>Follow the money</h1>
-    <p class="lede">Code can be hidden. Money is much harder to hide. If a lab were sitting on something far beyond its public models, spending, revenue and markets might show it before any announcement. Every figure links to its source: company filings for capital spending and Nvidia's revenue, company statements or press reports for lab revenue, and live prices for prediction markets.</p>
+    <p class="lede">Code can be hidden; money is harder to hide. Spending, revenue and markets might show a lab sitting on something far beyond its public models before any announcement. In an AI investment boom, a spending spike means "bubble" far more often than "hidden AGI".</p>
+    <p class="glance"><strong>Big Tech capex $511B / yr · context only (<a href="alarm.html#X4">X4</a> is the test)</strong></p>
   </header>
   <div class="tiles" id="tiles"></div>
-  <section><h2>Big Tech capital spending, per quarter</h2><p class="muted">All property and equipment: mostly data centers and chips, also Amazon logistics. Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta, from their SEC filings.</p><div class="chart-wrap"><div id="capex"></div></div><div id="capex-by"></div></section>
-  <section><h2>Spending and capability, side by side (context only)</h2><p class="muted">Both lines are indexed to 100 at the first quarter, on one log scale. The capability line is the best METR-measured frontier time horizon released by each quarter's end. The two lines measure different things; capability tends to rise faster, so the gap is not a test for hidden spending. The check that matters is trigger <a href="alarm.html#X4">X4</a>: a run or cluster 2x the largest known with no matching release.</p><div class="chart-wrap"><div id="index"></div></div><p class="muted small" id="index-flags"></p><p class="muted small" id="method"></p></section>
-  <section><h2>Nvidia data-center revenue</h2><p class="muted">What the chip supplier sells to everyone building AI, per quarter.</p><div class="chart-wrap"><div id="nvda"></div></div></section>
-  <section><h2>AI lab revenue</h2><p class="muted">If labs kept their best models for their own use, revenue from selling access would flatten while their own ventures grew. This is the exclusive-use tripwire.</p><div class="table-wrap"><table id="labs"></table></div></section>
-  <section><h2>Prediction markets</h2><div class="table-wrap"><table id="markets"></table></div></section>
-  <section class="prose"><h2>What would be a red flag</h2><ul class="plain">
-    <li><strong>Spending with no matching release:</strong> a training run or cluster at least twice the largest known, with no public model within 6 months (<a href="alarm.html#X4">trigger X4</a>).</li>
-    <li><strong>Revenue mix shifting:</strong> revenue from selling access flattening while labs' own research, trading or products grow (<a href="alarm.html#W6">W6</a> and the exclusive-use tripwire).</li>
+  <section><h2>Big Tech capital spending, per quarter</h2><p class="muted">Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta, from their SEC filings.</p><details open><summary>Hide the details</summary><div class="body"><p class="muted small">All property and equipment: mostly data centers and chips, also Amazon logistics.</p><div class="chart-wrap"><div id="capex"></div></div><div id="capex-by"></div></div></details></section>
+  <section><h2>Spending and capability, side by side (context only)</h2><p class="muted">Both lines indexed to 100 at the first quarter; the gap between them is not a test.</p><details><summary>Show the details</summary><div class="body"><p class="muted small">One log scale. The capability line is the best METR-measured frontier time horizon released by each quarter's end. The two lines measure different things, and capability tends to rise faster. The check that matters is condition <a href="alarm.html#X4">X4</a>: an operating cluster or training run at least 2x Epoch AI's trend for the largest, with nothing publicly attributed to it and no model from it released or externally evaluated within 12 months.</p><div class="chart-wrap"><div id="index"></div></div><p class="muted small" id="index-flags"></p><p class="muted small" id="method"></p></div></details></section>
+  <section><h2>Nvidia data-center revenue</h2><p class="muted">What the chip supplier sells to everyone building AI, per quarter.</p><details><summary>Show the details</summary><div class="body"><div class="chart-wrap"><div id="nvda"></div></div></div></details></section>
+  <section><h2>AI lab revenue</h2><p class="muted">If labs kept their best models for their own use, revenue from selling access would flatten.</p><details><summary>Show the details</summary><div class="body"><p class="muted small">This is the exclusive-use signal; see <a href="alarm.html#W6">W6</a>.</p><div class="table-wrap"><table id="labs"></table></div></div></details></section>
+  <section><h2>Prediction markets</h2><p class="muted">What traders price on AGI questions, for comparison with our odds.</p><details id="prediction-markets"><summary>Show the details</summary><div class="body"><div class="table-wrap"><table id="markets"></table></div></div></details></section>
+  <section><h2>What would be a red flag</h2><p class="muted">Compute with no matching release, which is alarm condition X4.</p><details><summary>Show the details</summary><div class="body"><ul class="plain">
+    <li><strong>Compute with no matching release:</strong> an operating cluster or training run at least 2x Epoch AI's trend for the largest, with nothing publicly attributed to it and no model from it released or externally evaluated within 12 months (<a href="alarm.html#X4">condition X4</a>). Planned or announced capacity doesn't count.</li>
+    <li><strong>Revenue mix shifting:</strong> revenue from selling access flattening while labs' own research, trading or products grow (<a href="alarm.html#W6">W6</a> and the exclusive-use signal).</li>
     <li><strong>Insiders:</strong> heavy insider buying, or departures that give up equity with warnings attached.</li>
     <li><strong>Markets:</strong> a sharp repricing of AGI prediction markets with no public news behind it.</li>
-  </ul><p class="muted">Caution: in an AI investment boom, a spending spike means "bubble" far more often than "hidden AGI". Money signals feed the gauges and triggers. They never set the alarm level on their own.</p></section>
+  </ul><p class="muted">Money is context for our odds. On its own it sets no alarm condition; only X4, unexplained compute, can.</p></div></details></section>
 
 <div class="subscribe">
   <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
@@ -68,8 +61,8 @@
 </div>
 
   <footer>
-    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
-    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./about.html#corrections">Corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
+    <p>Researched, written and published each day by a custom AI agent. The owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective; every factual claim links to its source, and the claims in our readings carry an evidence rating (see Method). Not advice.</p>
+    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./changes.html">Changes and corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
@@ -81,37 +74,46 @@ const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate
 const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
 const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
 const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
+const byId = id => { const el = document.getElementById(id); if(!el) console.error("Missing #" + id + " on this page; that part was skipped."); return el; };
 
 const M = await j("data/money.json"), h = K.util.h, $ = usd;
 const capex = (Array.isArray(M.capexTotal) ? M.capexTotal : []).filter(Boolean);
 const nv = (M.nvdaDatacenter||[]).filter(r => r && r.usd_b!=null);
 const lastNv = nv[nv.length-1], lastQ = capex[capex.length-1], LM = M.latestMeasured;
-const tiles = document.getElementById("tiles");
-tiles.append(tile("Big-4 capex, last 12 months", M.ttm ? $(M.ttm.usd_b) : "–", M.ttm ? `four quarters to ${M.ttm.asOf}` : ""));
-tiles.append(tile("Growth vs a year earlier", M.ttm && M.ttm.yoyPct!=null ? (M.ttm.yoyPct>0?"+":"") + Number(M.ttm.yoyPct).toFixed(0) + "%" : "–"));
-tiles.append(tile("Nvidia data-center, latest quarter", lastNv ? $(lastNv.usd_b) : "–", lastNv ? lastNv.q : ""));
-if(LM && LM.p50) tiles.append(tile("Latest METR-measured frontier", K.fmtDur(LM.p50), `50% horizon: ${modelName(LM.model)}, released ${fd(LM.date)}` + (LM.aboveSuiteRange ? "; above METR's reliable 16-hour range" : "")));
-else tiles.append(tile("Latest quarter, all four", lastQ ? $(lastQ.usd_b) : "–", lastQ ? lastQ.q : ""));
-const cx = document.getElementById("capex");
-K.live(cx, () => K.lineChart(cx, {title:"Big-4 capital spending per quarter", yFormat:$, series:[{label:"Microsoft + Alphabet + Amazon + Meta", short:"Total", color:"--accent", values:capex.map(t=>({x:t.end, y:t.usd_b}))}]}));
+const tiles = byId("tiles");
+if(tiles){
+  tiles.append(tile("Big-4 capex, last 12 months", M.ttm ? $(M.ttm.usd_b) : "–", M.ttm ? `four quarters to ${M.ttm.asOf}` : ""));
+  tiles.append(tile("Growth vs a year earlier", M.ttm && M.ttm.yoyPct!=null ? (M.ttm.yoyPct>0?"+":"") + Number(M.ttm.yoyPct).toFixed(0) + "%" : "–"));
+  tiles.append(tile("Nvidia data-center, latest quarter", lastNv ? $(lastNv.usd_b) : "–", lastNv ? lastNv.q : ""));
+  if(LM && LM.p50) tiles.append(tile("Latest METR-measured frontier", K.fmtDur(LM.p50), `50% horizon: ${modelName(LM.model)}, released ${fd(LM.date)}` + (LM.aboveSuiteRange ? "; above METR's reliable 16-hour range" : "")));
+  else tiles.append(tile("Latest quarter, all four", lastQ ? $(lastQ.usd_b) : "–", lastQ ? lastQ.q : ""));
+}
+const cx = byId("capex");
+if(cx) K.live(cx, () => K.lineChart(cx, {title:"Big-4 capital spending per quarter", yFormat:$, series:[{label:"Microsoft + Alphabet + Amazon + Meta", short:"Total", color:"--accent", values:capex.map(t=>({x:t.end, y:t.usd_b}))}]}));
 const CO = [["MSFT","Microsoft"],["GOOGL","Alphabet"],["AMZN","Amazon"],["META","Meta"]];
-if(capex.length) document.getElementById("capex-by").append(K.util.tableView("Capital spending by company, per quarter", ["Quarter", ...CO.map(c=>c[1]), "Total"], capex.map(t=>[t.q, ...CO.map(([k])=>t.by && t.by[k]!=null ? $(t.by[k]) : "–"), $(t.usd_b)]), "Show each company as a table"));
+{ const by = byId("capex-by"); if(by && capex.length) by.append(K.util.tableView("Capital spending by company, per quarter", ["Quarter", ...CO.map(c=>c[1]), "Total"], capex.map(t=>[t.q, ...CO.map(([k])=>t.by && t.by[k]!=null ? $(t.by[k]) : "–"), $(t.usd_b)]), "Show each company as a table")); }
 const S = (Array.isArray(M.spendVsCapability) ? M.spendVsCapability : []).filter(Boolean);
-const ix = document.getElementById("index");
-K.live(ix, () => K.lineChart(ix, {title:"Spending and capability, indexed (context only)", log:true, yFormat:v=>v >= 1000 ? Math.round(v/1000) + "k" : String(Math.round(v)), series:[
+const ix = byId("index");
+if(ix) K.live(ix, () => K.lineChart(ix, {title:"Spending and capability, indexed (context only)", log:true, yFormat:v=>v >= 1000 ? Math.round(v/1000) + "k" : String(Math.round(v)), series:[
   {label:"Big-4 capex (index)", short:"Capex", color:"--accent", values:S.map(t=>({x:t.end, y:t.spend}))},
   {label:"METR-measured frontier horizon (index)", short:"Horizon", color:"--ink", values:S.map(t=>({x:t.end, y:t.capability}))}]}));
 const above = S.filter(t=>t.aboveSuiteRange).map(t=>t.q), stale = S.filter(t=>t.stale).map(t=>t.q), flags = [];
 if(above.length) flags.push(`Capability value above METR's reliable 16-hour range: ${above.join(", ")}.`);
 if(stale.length) flags.push(`After METR's latest measured release, so newer models may be missing: ${stale.join(", ")}.`);
-document.getElementById("index-flags").textContent = flags.join(" ");
-document.getElementById("method").textContent = (M.method || "") + (M.capexDefinition ? " Line item: " + M.capexDefinition : "") + (M.updated ? " Updated " + M.updated + "." : "");
-const nd = document.getElementById("nvda");
-K.live(nd, () => K.lineChart(nd, {title:"Nvidia data-center revenue", yFormat:$, series:[{label:"Nvidia data-center revenue", short:"Nvidia", color:"--accent", values:nv.map(r=>({x:r.end, y:r.usd_b}))}]}));
-const LT = document.getElementById("labs"); { const tr=h("tr"); ["Date","Company","Figure","Measure","Source"].forEach(c=>tr.append(h("th",{scope:"col"},c))); LT.append(tr); }
-[...(M.labRevenue||[])].filter(Boolean).sort((a,b)=>String(b.date).localeCompare(String(a.date))).forEach(r => { const tr = h("tr"), src = h("td"); src.append(link(r.url, "source") || document.createTextNode("–")); tr.append(h("td",{class:"num"}, fd(r.date,{month:"short",year:"numeric"})), h("td",{}, r.company||"–"), h("td",{class:"num"}, $(r.usd_b)), h("td",{}, (r.metric||"") + (r.note ? ". " + r.note : "")), src); LT.append(tr); });
-const MT = document.getElementById("markets"); { const tr=h("tr"); ["Market","Venue","Price","As of"].forEach(c=>tr.append(h("th",{scope:"col"},c))); MT.append(tr); }
-(M.predictionMarkets||[]).filter(Boolean).forEach(r => { const tr = h("tr"), a = h("td"); a.append(link(r.url, r.market) || document.createTextNode(r.market||"–")); if(r.note) a.append(h("div",{class:"muted small"}, r.note)); tr.append(a, h("td",{}, r.venue||"–"), h("td",{class:"num"}, r.price_pct!=null ? r.price_pct + "%" : "–"), h("td",{class:"num"}, fd(r.date,{day:"numeric",month:"short"}))); MT.append(tr); });
+{ const f = byId("index-flags"); if(f) f.textContent = flags.join(" "); }
+{ const m = byId("method"); if(m) m.textContent = (M.method || "") + (M.capexDefinition ? " Line item: " + M.capexDefinition : "") + (M.updated ? " Updated " + M.updated + "." : ""); }
+const nd = byId("nvda");
+if(nd) K.live(nd, () => K.lineChart(nd, {title:"Nvidia data-center revenue", yFormat:$, series:[{label:"Nvidia data-center revenue", short:"Nvidia", color:"--accent", values:nv.map(r=>({x:r.end, y:r.usd_b}))}]}));
+const LT = byId("labs");
+if(LT){
+  { const tr=h("tr"); ["Date","Company","Figure","Measure","Source"].forEach(c=>tr.append(h("th",{scope:"col"},c))); LT.append(tr); }
+  [...(M.labRevenue||[])].filter(Boolean).sort((a,b)=>String(b.date).localeCompare(String(a.date))).forEach(r => { const tr = h("tr"), src = h("td"); src.append(link(r.url, "source") || document.createTextNode("–")); tr.append(h("td",{class:"num"}, fd(r.date,{month:"short",year:"numeric"})), h("td",{}, r.company||"–"), h("td",{class:"num"}, $(r.usd_b)), h("td",{}, (r.metric||"") + (r.note ? ". " + r.note : "")), src); LT.append(tr); });
+}
+const MT = byId("markets");
+if(MT){
+  { const tr=h("tr"); ["Market","Venue","Price","As of"].forEach(c=>tr.append(h("th",{scope:"col"},c))); MT.append(tr); }
+  (M.predictionMarkets||[]).filter(Boolean).forEach(r => { const tr = h("tr"), a = h("td"); a.append(link(r.url, r.market) || document.createTextNode(r.market||"–")); if(r.note) a.append(h("div",{class:"muted small"}, r.note)); tr.append(a, h("td",{}, r.venue||"–"), h("td",{class:"num"}, r.price_pct!=null ? r.price_pct + "%" : "–"), h("td",{class:"num"}, fd(r.date,{day:"numeric",month:"short"}))); MT.append(tr); });
+}
 
 </script>
 </body>

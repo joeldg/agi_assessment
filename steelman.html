@@ -28,27 +28,21 @@
 <link rel="icon" type="image/png" href="./assets/brand/avatar-64.png">
 </head>
 <body>
+<a class="skip-link sr-only" href="#content">Skip to content</a>
 <main>
-  <nav class="site" aria-label="Site">
+  <nav class="site2" aria-label="Site">
     <a class="brand" href="./">Hidden AGI watch</a>
+    <span class="nav-links"><a href="./"><span class="l">Today</span><span class="s">Today</span></a><a href="./agi.html"><span class="l">Is AGI here?</span><span class="s">AGI</span></a><a href="./hidden.html"><span class="l">Could it be hidden?</span><span class="s">Hidden</span></a><a href="./alarm.html"><span class="l">Fire alarm</span><span class="s">Alarm</span></a><a href="./scorecard.html" aria-current="true"><span class="l">Track record</span><span class="s">Record</span></a><a href="./start-here.html"><span class="l">How it works</span><span class="s">Method</span></a></span>
     <a class="nav-key" href="./escape.html">Escape watch</a>
-    <a href="./start-here.html">Start here</a>
-    <a href="./alarm.html">Fire alarm</a>
-    <a href="./weekly/">Weekly</a>
-    <a href="./scorecard.html">Scorecard</a>
-    <a href="./trends.html">Trends</a>
-    <a href="./money.html">Money</a>
-    <a href="./disclosure-lag.html">Disclosure lag</a>
-    <a href="./agi-claims.html">AGI claims</a>
-    <a href="./calendar.html">Calendar</a>
-    <a href="./steelman.html" aria-current="page">Steelman</a>
-    <a href="./about.html">About</a>
   </nav>
-
+  <p class="crumb"><a href="./scorecard.html">Track record</a> › Weekly steelman</p>
+<div id="content" tabindex="-1"></div>
   <header class="prose">
     <h1>Weekly steelman</h1>
     <p class="lede">Each week, the strongest honest case for the side our numbers currently disfavour. It's here to keep us calibrated, not to persuade.</p>
+    <div class="callout" id="thesis"><p class="small muted" style="margin:0">2 Oct 2026 · Weekly edition</p><p style="margin:4px 0 0"><strong>The case that it has already happened.</strong> Our numbers put A (undisclosed AGI) at 1% and B (secret RSI) at 2%. Here is the strongest case that they should be much higher.</p></div>
   </header>
+<noscript><p class="muted small">The essay is drawn with JavaScript. Without it, every steelman entry is in <a href="data/steelman.json">data/steelman.json</a>.</p></noscript>
   <article class="prose" id="latest"></article>
   <section><h2>Archive</h2><div id="archive"></div></section>
 
@@ -58,8 +52,8 @@
 </div>
 
   <footer>
-    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
-    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./about.html#corrections">Corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
+    <p>Researched, written and published each day by a custom AI agent. The owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective; every factual claim links to its source, and the claims in our readings carry an evidence rating (see Method). Not advice.</p>
+    <p><a href="./about.html">About</a> · <a href="./start-here.html#method">Method</a> · <a href="./changes.html">Changes and corrections</a> · <a href="./style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="./feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "./assets/charts.js"; alarmBanner("./");</script>
@@ -71,14 +65,19 @@ const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate
 const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
 const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
 const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
+const byId = id => { const el = document.getElementById(id); if(!el) console.error("Missing #" + id + " on this page; that part was skipped."); return el; };
 
 const d = await j("data/steelman.json"), h = K.util.h;
 const e = [...(d.entries||[])].filter(x=>x&&x.date).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
 const side = x => String(x.side||""), lower = s => s.charAt(0).toLowerCase() + s.slice(1);
-const render = (x, host) => {
-  host.append(h("p",{class:"kicker muted small"}, fd(x.date,{day:"numeric",month:"long",year:"numeric"}) + (x.edition ? " · " + x.edition : "")));
-  host.append(h("h2",{},"The case that " + lower(side(x))));
-  if(x.against) host.append(h("p",{class:"muted"},x.against));
+// the latest edition's heading and thesis are in the box above (server-rendered); archived editions sit
+// under the Archive h2, so their own heading is an h3
+const render = (x, host, {latest=false}={}) => {
+  if(!latest){
+    host.append(h("p",{class:"kicker muted small"}, fd(x.date,{day:"numeric",month:"long",year:"numeric"}) + (x.edition ? " · " + x.edition : "")));
+    host.append(h("h3",{},"The case that " + lower(side(x))));
+    if(x.against) host.append(h("p",{class:"muted"},x.against));
+  }
   (x.paragraphs||[]).forEach(p=>host.append(h("p",{},p)));
   // dated corrections to an edition, shown with it (the edition's text carries the fix)
   (Array.isArray(x.corrections) ? x.corrections : []).filter(c => c && c.text).forEach(c => {
@@ -86,12 +85,15 @@ const render = (x, host) => {
     const a = link(c.url, "source"); if(a) p.append(a); host.append(p);
   });
   if(x.wouldConvince){ const c = h("div",{class:"callout"}); c.append(h("strong",{},"What would convince us: "), document.createTextNode(x.wouldConvince)); host.append(c); }
-  if(x.sources?.length){ host.append(h("h3",{},"Sources")); const ul = h("ul",{class:"plain"}); x.sources.forEach(s=>{ if(!s) return; const li = h("li"); li.append(link(s.url, s.title || s.url) || document.createTextNode(s.title || "")); ul.append(li); }); host.append(ul); }
+  if(x.sources?.length){ host.append(h(latest ? "h2" : "h4",{},"Sources")); const ul = h("ul",{class:"plain"}); x.sources.forEach(s=>{ if(!s) return; const li = h("li"); li.append(link(s.url, s.title || s.url) || document.createTextNode(s.title || "")); ul.append(li); }); host.append(ul); }
 };
-if(e.length) render(e[0], document.getElementById("latest")); else document.getElementById("latest").append(h("p",{class:"empty"},"The first steelman arrives with the first weekly wrap-up."));
-const a = document.getElementById("archive");
-if(e.length < 2) a.append(h("p",{class:"muted"},"Earlier editions will appear here."));
-else e.slice(1).forEach(x=>{ const det = h("details"); det.append(h("summary",{}, fd(x.date) + ": the case that " + side(x).toLowerCase())); const b = h("div",{class:"body prose"}); render(x,b); det.append(b); a.append(det); });
+const latest = byId("latest");
+if(latest){ if(e.length) render(e[0], latest, {latest:true}); else latest.append(h("p",{class:"empty"},"The first steelman arrives with the first weekly wrap-up.")); }
+const a = byId("archive");
+if(a){
+  if(e.length < 2) a.append(h("p",{class:"muted"},"Earlier editions will appear here."));
+  else e.slice(1).forEach(x=>{ const det = h("details"); det.append(h("summary",{}, fd(x.date) + ": the case that " + side(x).toLowerCase())); const b = h("div",{class:"body prose"}); render(x,b); det.append(b); a.append(det); });
+}
 
 </script>
 </body>

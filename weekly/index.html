@@ -28,28 +28,20 @@
 <link rel="icon" type="image/png" href="../assets/brand/avatar-64.png">
 </head>
 <body>
+<a class="skip-link sr-only" href="#content">Skip to content</a>
 <main>
-  <nav class="site" aria-label="Site">
+  <nav class="site2" aria-label="Site">
     <a class="brand" href="../">Hidden AGI watch</a>
+    <span class="nav-links"><a href="../" aria-current="true"><span class="l">Today</span><span class="s">Today</span></a><a href="../agi.html"><span class="l">Is AGI here?</span><span class="s">AGI</span></a><a href="../hidden.html"><span class="l">Could it be hidden?</span><span class="s">Hidden</span></a><a href="../alarm.html"><span class="l">Fire alarm</span><span class="s">Alarm</span></a><a href="../scorecard.html"><span class="l">Track record</span><span class="s">Record</span></a><a href="../start-here.html"><span class="l">How it works</span><span class="s">Method</span></a></span>
     <a class="nav-key" href="../escape.html">Escape watch</a>
-    <a href="../start-here.html">Start here</a>
-    <a href="../alarm.html">Fire alarm</a>
-    <a href="../weekly/" aria-current="page">Weekly</a>
-    <a href="../scorecard.html">Scorecard</a>
-    <a href="../trends.html">Trends</a>
-    <a href="../money.html">Money</a>
-    <a href="../disclosure-lag.html">Disclosure lag</a>
-    <a href="../agi-claims.html">AGI claims</a>
-    <a href="../calendar.html">Calendar</a>
-    <a href="../steelman.html">Steelman</a>
-    <a href="../about.html">About</a>
   </nav>
-
+  <p class="crumb"><a href="../">Today</a> › Weekly wrap-ups</p>
+<div id="content" tabindex="-1"></div>
   <header class="prose">
     <h1>Weekly wrap-up</h1>
     <p class="lede">Every Friday at 3pm Pacific: the week's key numbers at the top, then what moved and why, then the deeper sections with graphs. It's also sent by email.</p>
   </header>
-  <section><div id="list"></div></section>
+  <section><noscript><p class="muted small">This list is drawn with JavaScript. Without it, the wrap-ups are listed in <a href="../data/weekly/index.json">data/weekly/index.json</a>, and every daily reading is in the <a href="../archive.html">archive</a>.</p></noscript><div id="list"></div></section>
 
 <div class="subscribe">
   <div><strong>Get Hidden AGI watch by email.</strong> <span class="muted">The latest reading, what changed, and the news that matters. Free.</span></div>
@@ -57,8 +49,8 @@
 </div>
 
   <footer>
-    <p>Researched, written and published automatically each day by a custom AI agent built for this project. The site's owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective estimates with wide uncertainty; every factual claim links to its source, and secondhand sources are marked. Not investment, policy or security advice.</p>
-    <p><a href="../about.html">About</a> · <a href="../start-here.html#method">Method</a> · <a href="../about.html#corrections">Corrections</a> · <a href="../style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="../feed.xml">RSS</a></p>
+    <p>Researched, written and published each day by a custom AI agent. The owner sets the definitions and alarm thresholds and approves every alarm alert. Probabilities are subjective; every factual claim links to its source, and the claims in our readings carry an evidence rating (see Method). Not advice.</p>
+    <p><a href="../about.html">About</a> · <a href="../start-here.html#method">Method</a> · <a href="../changes.html">Changes and corrections</a> · <a href="../style.html">Chart style guide</a> · <a href="https://github.com/joeldg/agi_assessment">Source on GitHub</a> · <a href="../feed.xml">RSS</a></p>
   </footer>
 </main>
 <script type="module">import {alarmBanner} from "../assets/charts.js"; alarmBanner("../");</script>
@@ -70,11 +62,12 @@ const fd = (d, o={day:"numeric",month:"short",year:"numeric"}) => K.util.fmtDate
 const tile = (label, value, sub) => { const t = K.util.h("div",{class:"tile"}); t.append(K.util.h("div",{class:"label"},label), K.util.h("div",{class:"value"},String(value))); if(sub) t.append(K.util.h("div",{class:"delta muted"},sub)); return t; };
 const modelName = id => String(id||"").replace(/_inspect$/,"").replace(/_early$/," (early)").replace(/_/g," ").replace(/\b(gpt|o\d)\b/gi,s=>s.toUpperCase()).replace(/\bclaude\b/i,"Claude").replace(/\bgemini\b/i,"Gemini").replace(/\b(mythos|opus|sonnet|haiku|preview|pro|flash)\b/gi,s=>s.charAt(0).toUpperCase()+s.slice(1));
 const usd = v => v != null && v !== "" && Number(v) === 0 ? "$0" : K.fmtUSDb(v);   // money axes start at $0, not $0.0B
+const byId = id => { const el = document.getElementById(id); if(!el) console.error("Missing #" + id + " on this page; that part was skipped."); return el; };
 
-const d = await j("../data/weekly/index.json"), h = K.util.h, list = document.getElementById("list");
+const d = await j("../data/weekly/index.json"), h = K.util.h, list = byId("list");
 const ws = (d.wrapups||[]).filter(w => w && /^\d{4}-\d{2}-\d{2}$/.test(String(w.date)));
-if(!ws.length){ list.append(h("p",{class:"empty"},"The first weekly wrap-up is published Friday, October 2, 2026, at 3pm Pacific.")); }
-else { const c = h("div",{class:"cards"}); [...ws].sort((a,b)=>b.date.localeCompare(a.date)).forEach(w=>{ const a = h("a",{class:"card",href:w.date+".html"}); a.append(h("strong",{}, fd(w.date,{day:"numeric",month:"long",year:"numeric"})), h("span",{},w.headline||"")); c.append(a); }); list.append(c); }
+if(list && !ws.length){ list.append(h("p",{class:"empty"},"The first weekly wrap-up is published Friday, October 2, 2026, at 3pm Pacific.")); }
+else if(list){ const c = h("div",{class:"cards"}); [...ws].sort((a,b)=>b.date.localeCompare(a.date)).forEach(w=>{ const a = h("a",{class:"card",href:w.date+".html"}); a.append(h("strong",{}, fd(w.date,{day:"numeric",month:"long",year:"numeric"})), h("span",{},w.headline||"")); c.append(a); }); list.append(c); }
 
 </script>
 </body>
