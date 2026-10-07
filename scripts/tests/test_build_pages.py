@@ -158,3 +158,69 @@ class ArchiveAndTracker(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class JobsPage(unittest.TestCase):
+    """jobs.html, "Jobs watch" (the Jobs plugin's spec, 8.3)."""
+
+    def setUp(self):
+        import shutil
+        import tempfile
+        self.tmp = Path(tempfile.mkdtemp(prefix="jobs-page-"))
+        src = Path(__file__).resolve().parent / "fixtures" / "checks" / "base" / "data" / "jobs"
+        shutil.copytree(src, self.tmp / "data" / "jobs")
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def render(self, root=None):
+        from pages import jobs
+        return jobs.render(root or self.tmp)
+
+    def test_jobs_page_is_registered(self):
+        import pages
+        self.assertEqual(pages.MODULES.get("jobs.html"), "jobs")
+
+    def test_jobs_page_skipped_without_data(self):
+        import tempfile
+        self.assertIsNone(self.render(Path(tempfile.mkdtemp())))
+
+    def test_jobs_page_has_every_claim_anchor(self):
+        html = self.render()
+        for i in range(13):
+            self.assertIn(f'id="J{i}"', html)
+
+    def test_jobs_crumb_is_today(self):
+        crumb = sitekit.crumb_for("jobs.html")
+        self.assertIn("Today", crumb)
+        self.assertIn("Jobs watch", crumb)
+
+    def test_jobs_intro_says_it_never_feeds_the_index(self):
+        self.assertIn("never feeds the Hidden AGI Index", self.render())
+
+    def test_archive_links_wrapups(self):
+        self.assertIn('href="weekly/2026-10-16.html"', self.render())
+
+    def test_status_board_uses_current_statuses(self):
+        html = self.render()
+        self.assertIn("st-emerging", html)          # J3 in the fixture claims
+        self.assertIn("Established under review", html)   # J4's pending proposal
+
+    def test_text_is_escaped(self):
+        import json
+        p = self.tmp / "data" / "jobs" / "claims.json"
+        doc = json.loads(p.read_text(encoding="utf-8"))
+        doc["claims"][0]["wording"] = "<b>bold</b> & co"
+        p.write_text(json.dumps(doc), encoding="utf-8")
+        html = self.render()
+        self.assertIn("&lt;b&gt;bold&lt;/b&gt; &amp; co", html)
+
+    def test_names_row_appears_only_with_jobs_claims(self):
+        import json
+        claims = json.loads((self.tmp / "data" / "jobs" / "claims.json").read_text(encoding="utf-8"))
+        row = common.jobs_names_row(claims)
+        self.assertEqual(row[0], '<a href="jobs.html">Jobs claims</a>')
+        self.assertIn("Contradicted", row[1])
+        self.assertIn("1 emerging", row[2])
+        self.assertIsNone(common.jobs_names_row(None))

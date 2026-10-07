@@ -8,6 +8,7 @@
     hidden.py    hidden.html    "Could it be hidden?": the Index, A-D, our odds, readings over time, gauges
     changes.py   changes.html   "Changes and corrections": method log, alarm criteria log, corrections
     archive.py   archive.html   "Every reading": one row per reading
+    jobs.py      jobs.html      "Jobs watch": the Jobs plugin's tracker (only when data/jobs/ exists)
 
 Each page module exports PAGE = dict(title, description, body, scripts_code, head_extra). `body` (and, where
 it depends on data, `description`) is a callable that reads the live data files when build_pages.py builds the
@@ -22,6 +23,7 @@ MODULES = {
     "hidden.html": "hidden",
     "changes.html": "changes",
     "archive.html": "archive",
+    "jobs.html": "jobs",
 }
 
 

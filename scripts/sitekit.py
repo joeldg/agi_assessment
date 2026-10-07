@@ -24,7 +24,7 @@ LATEST_CARD_ALT = ("Share card for the latest daily reading: the Hidden AGI Inde
                    "the A–D probabilities and the fire-alarm level")
 
 NAV = [  # (hub path, long label, short label, children: paths or path prefixes that light this hub)
-    ("index.html",       "Today",               "Today",  ("archive.html", "reports/", "weekly/")),
+    ("index.html",       "Today",               "Today",  ("archive.html", "reports/", "weekly/", "jobs.html")),
     ("agi.html",         "Is AGI here?",        "AGI",    ("trends.html", "agi-claims.html")),
     ("hidden.html",      "Could it be hidden?", "Hidden", ("disclosure-lag.html", "money.html")),
     ("alarm.html",       "Fire alarm",          "Alarm",  ("escape.html",)),
@@ -36,6 +36,7 @@ NAV_KEY = ("escape.html", "Escape watch")   # the owner's one emphasised entry, 
 # The short title a child page shows in its breadcrumb ("Fire alarm › Escape watch"). Reports and wrap-ups
 # are matched by pattern in crumb_for(); every other child is listed here.
 CRUMB_TITLES = {
+    "jobs.html": "Jobs watch",
     "archive.html": "Archive",
     "weekly/index.html": "Weekly wrap-ups",
     "trends.html": "Trend watch",

@@ -205,7 +205,7 @@ def pieces_section():
     <h2 id="pieces-h">How our numbers fit together</h2>
     {C.fit_diagram(data, run, alarm, esc, root="", trends=trends, external=ext)}
     <h3 id="names">What each number means</h3>
-    {C.names_table(data, run, alarm, escape=esc, trends=trends)}
+    {C.names_table(data, run, alarm, escape=esc, trends=trends, jobs=load_json("data/jobs/claims.json"))}
   </section>"""
 
 
@@ -1762,6 +1762,8 @@ def build():
     for path, p in PAGES.items():
         root = "../" * path.count("/") or "./"
         body = p["body"]() if callable(p["body"]) else p["body"]
+        if body is None:  # a page with no data yet (jobs.html before the first Jobs import) is not built
+            continue
         desc = p["description"]() if callable(p["description"]) else p["description"]
         scripts = module(root, p["scripts_code"]) if p.get("scripts_code") else p.get("scripts", "")
         rendered.append((path, page(path=path, title=p["title"], description=desc, body=body,

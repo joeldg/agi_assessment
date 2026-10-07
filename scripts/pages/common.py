@@ -925,7 +925,22 @@ def fit_diagram(data, run, alarm, escape, *, root="", trends=None, external=None
     <p class="fit-note">{outside_rail(data, external, trends)}</p>"""
 
 
-def names_table(data, run, alarm, *, escape=None, trends=None):
+def jobs_names_row(claims):
+    """The naming key's Jobs row (the Jobs plugin's spec, 8.3), or None without data/jobs/claims.json."""
+    if not isinstance(claims, dict) or not claims.get("claims"):
+        return None
+    order = ["established", "supported", "emerging", "no-clear-sign", "contradicted"]
+    words = {"established": "established", "supported": "supported", "emerging": "emerging",
+             "no-clear-sign": "no clear sign", "contradicted": "contradicted"}
+    n = {}
+    for c in claims["claims"]:
+        n[c.get("status")] = n.get(c.get("status"), 0) + 1
+    today = ", ".join(f"{n[k]} {words[k]}" for k in order if n.get(k))
+    return ('<a href="jobs.html">Jobs claims</a>', "Contradicted / No clear sign / Emerging / Supported / Established",
+            today, "never: a separate tracker that feeds none of the numbers above")
+
+
+def names_table(data, run, alarm, *, escape=None, trends=None, jobs=None):
     """'What each number means' (7.3): number · unit · today · reaches the top when. Phones render labelled cards."""
     run = as_dict(run)
     agi, pr = as_dict(run.get("agi")), as_dict(run.get("probs"))
@@ -957,6 +972,8 @@ def names_table(data, run, alarm, *, escape=None, trends=None):
         ("Fire alarm", "Level 0–3", f"Level {e(al['level'])} · {e(al['name'])}", "Level 3: proof beyond reasonable doubt"),
         ("Trend dates", "a date", f"work-month ~{wm}" if wm else "–", "never: a measured line extended, not a forecast"),
     ]
+    if jobs_names_row(jobs):
+        rows.append(jobs_names_row(jobs))
     body = "".join(f'<tr><td>{n}</td><td data-label="Unit">{u}</td><td data-label="Today">{t}</td>'
                    f'<td data-label="Reaches the top when">{w}</td></tr>' for n, u, t, w in rows)
     return (f'<div class="table-wrap"><table class="am-names"><caption class="sr-only">What each number means</caption>'
