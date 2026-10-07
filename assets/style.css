@@ -649,3 +649,19 @@ a.pend-chip:hover{color:var(--ink);border-color:var(--ink)}
   table.am-meas td[data-label]::before{content:attr(data-label) ": ";font-size:12px;font-weight:600;color:var(--muted)}
 }
 table.am-meas .am-day{white-space:nowrap}   /* "Apr 23, 2026" never wraps inside the As-of column */
+
+/* Jobs plugin: the wrap-up's last section and jobs.html (additive; plugin spec 8.2, 8.3) */
+.jobs{border-top:2px solid var(--ink);margin-top:36px;padding-top:18px}
+.jobs h3{font-size:22px;margin:6px 0 4px}
+.jobs h4{font-family:var(--sans);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px}
+.jobs-strip{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 18px}
+.jobs-strip li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--rule);padding:5px 0;font-size:15px}
+.jobs-strip .cl{color:var(--ink);min-width:0}
+.jobs-strip .st{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.st-contradicted{color:var(--up)}
+.st-no-clear-sign{color:var(--muted)}
+.st-emerging{color:#B8700C}
+.st-supported{color:var(--link)}
+.st-established{color:var(--down)}
+.jobs-items{padding-left:18px}
+.jobs-items li{margin:8px 0}

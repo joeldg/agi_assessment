@@ -1,0 +1,62 @@
+{
+ "note": "The five gauges measure what the evidence actually tracks. They move weekly and feed the hypothesis probabilities. Each is tagged measured (a number published in filings or by a lab or evaluator), estimated (our own calculation or judgment anchored on published data) or assessed (a position on a defined scale).",
+ "gauges": [
+  {
+   "key": "gap",
+   "label": "Capability gap",
+   "question": "How far ahead of public models are labs' unreleased ones?",
+   "unit": "months",
+   "kind": "estimated",
+   "feeds": "A, B",
+   "higherIs": "more room to hide",
+   "how": "Our estimate of the lead of the best unreleased model over the best public one. It is anchored on METR's measurement of internal versus public time horizons (about 2 months in Feb–Mar 2026) and adjusted for announced-but-unreleased and withheld models. Evaluation-based measures assume models aren't strategically underperforming. OpenAI's GPT-6 Astra system card found that the model, when told to, can sandbag evaluations without its monitor noticing, so the gap may be understated."
+  },
+  {
+   "key": "rd",
+   "label": "AI doing AI research",
+   "question": "How much frontier AI research is AI already leading?",
+   "unit": "% AI-led",
+   "kind": "measured",
+   "feeds": "B",
+   "higherIs": "closer to self-improvement",
+   "how": "The latest lab-published share of AI R&D led by AI (currently Anthropic's self-reported prototype index, levels assigned by a Claude judge, not externally audited), with METR's preliminary speed-up estimate alongside. Fully autonomous research is reported separately."
+  },
+  {
+   "key": "oversight",
+   "label": "Oversight gap",
+   "question": "How long do AI agent incidents stay hidden before the public hears?",
+   "unit": "days (median)",
+   "kind": "estimated",
+   "feeds": "A, C",
+   "higherIs": "less visibility",
+   "how": "Median days from when an agent incident happened to when the public learned of it, computed by us from the incidents on our disclosure-lag list (approximate dates use midpoints; the range shows the ends of those windows), plus the share made public by someone other than the lab. Incidents never disclosed can't be counted, so this is a floor."
+  },
+  {
+   "key": "money",
+   "label": "Money trail",
+   "question": "How much is Big Tech spending on AI-era infrastructure?",
+   "unit": "$ capex (all property and equipment), last 12 months",
+   "kind": "measured",
+   "feeds": "A",
+   "higherIs": "more resources in play",
+   "how": "Combined cash capital expenditure of Microsoft, Alphabet, Amazon and Meta over the last four reported quarters, from SEC filings. Mostly data centers, but includes non-AI spending such as Amazon logistics. Spending alone cannot reveal hidden capability; the money red flag is condition X4 (an operating cluster or training run at least 2x Epoch AI's trend for the largest, with nothing publicly attributed to it and no model from it released or externally evaluated within 12 months)."
+  },
+  {
+   "key": "delegation",
+   "label": "Delegation to AI",
+   "question": "How much consequential government decision-making runs through AI?",
+   "unit": "rung (1–5)",
+   "kind": "assessed",
+   "feeds": "D",
+   "higherIs": "more delegated",
+   "how": "The highest rung with credible evidence of routine use by a major government.",
+   "scale": [
+    "1: AI for admin and drafting",
+    "2: AI analysis that informs human decisions",
+    "3: AI generates options that humans approve at scale",
+    "4: AI decides, and humans can veto",
+    "5: AI decides without human review"
+   ]
+  }
+ ]
+}

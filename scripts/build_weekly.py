@@ -67,6 +67,16 @@ TITLES_SHOWN = 10       # correction titles listed before "and N more"
 # The owner-approved wording for the plan-usage line. It appears only once data/usage.json holds a full week.
 USAGE_LINE = "This week's readings used {pct}% of a Claude Max 20x plan's weekly allowance"
 USAGE_MIN_READINGS = 7
+_UNSET = object()  # page_body/weekly_email_html_v2 load the Jobs section from disk unless told otherwise
+
+
+def load_jobs(date):
+    """The week's Jobs section data, {"edition", "claims"}, from data/jobs/ (written by import_jobs.py), or None when
+    the wrap-up has no Jobs edition: then the page and email are exactly as they were before Jobs existed."""
+    ed, cl = ROOT / f"data/jobs/{date}.json", ROOT / "data/jobs/claims.json"
+    if not ed.exists() or not cl.exists():
+        return None
+    return {"edition": json.loads(ed.read_text(encoding="utf-8")), "claims": json.loads(cl.read_text(encoding="utf-8"))}
 
 
 def label(k):
@@ -519,7 +529,9 @@ def escape_list_html(esc):
             f'{escape(esc.get("overall") or "")}</p><ul class="plain">{rows}{more}</ul>')
 
 
-def page_body(w):
+def page_body(w, jobs=_UNSET):
+    if jobs is _UNSET:
+        jobs = load_jobs(w["date"])
     k = w["keyNumbers"]
     span = span_label(k)
     agi = (w.get("snapshot") or {}).get("agi")
@@ -579,6 +591,9 @@ def page_body(w):
         note = f'<p>{escape(notes[key])}</p>' if notes.get(key) else ""
         sec_html += (f'\n  <section id="{key}"><h2>{title}</h2>{note}{chart}'
                      f'<p class="small"><a href="../{href}">Full section (live) →</a></p></section>')
+    if jobs:  # the Jobs plugin's section, last (plugin spec 8.2)
+        import jobs_render
+        sec_html += "\n  " + jobs_render.section_html(jobs["edition"], jobs["claims"])
     usage = f'\n  <p class="muted small">{escape(usage_text(k))}</p>' if usage_text(k) else ""
     if k.get("firstReading"):
         caption = f'Probabilities are for today, as of {pretty(k["asOf"])}. This is our first full reading, so changes appear from the next wrap-up.'
@@ -698,7 +713,9 @@ def email_corrections(k):
             f'</td></tr></table>')
 
 
-def weekly_email_html_v2(w):
+def weekly_email_html_v2(w, jobs=_UNSET):
+    if jobs is _UNSET:
+        jobs = load_jobs(w["date"])
     k = w["keyNumbers"]
     span = span_label(k)
     url = f'{SITE}weekly/{w["date"]}.html'
@@ -772,6 +789,9 @@ def weekly_email_html_v2(w):
         if note:
             out.append(h2(title))
             out.append(p(escape(note) + " " + link(SITE + href, "Full section")))
+    if jobs:  # the Jobs plugin's block, after the sections and before the closing links (plugin spec 8.2)
+        import jobs_render
+        out.append(jobs_render.email_html(jobs["edition"], jobs["claims"]))
     out.append(p(f'{link(url, "See the full wrap-up with graphs")} · {link(SITE, "Today’s reading")}', "margin-top:22px"))
     if usage_text(k):
         out.append(p(f'<span style="color:{MUTED};font-size:13px">{escape(usage_text(k))}</span>'))
