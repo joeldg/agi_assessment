@@ -1,0 +1,13 @@
+{
+ "rule": "jobs edition edited",
+ "ops": [
+  {
+   "file": "data/jobs/2026-10-16.json",
+   "set": [
+    "headline"
+   ],
+   "value": "Changed"
+  }
+ ],
+ "expect": "data/jobs/2026-10-16.json changed since HEAD; published Jobs editions are frozen"
+}

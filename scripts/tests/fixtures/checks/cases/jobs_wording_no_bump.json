@@ -1,0 +1,15 @@
+{
+ "rule": "jobs wording no bump",
+ "ops": [
+  {
+   "file": "data/jobs/claims.json",
+   "set": [
+    "claims",
+    1,
+    "wording"
+   ],
+   "value": "x"
+  }
+ ],
+ "expect": "without a version bump and changelog entry"
+}

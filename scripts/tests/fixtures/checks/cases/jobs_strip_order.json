@@ -1,0 +1,13 @@
+{
+ "rule": "jobs strip order",
+ "ops": [
+  {
+   "file": "data/jobs/2026-10-16.json",
+   "del": [
+    "strip",
+    12
+   ]
+  }
+ ],
+ "expect": "strip must list J0 to J12 in order"
+}

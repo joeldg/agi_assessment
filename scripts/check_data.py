@@ -44,7 +44,7 @@ from alarm_check import (  # noqa: E402  (shared arithmetic, one implementation)
     exit_rule, id_key, incident_lags, iter_triggers, median, met_flags, parse_date, rule_level, w4_params,
 )
 import checks  # noqa: E402  (redesign v2 rules)
-from checks import components as ck_components, method as ck_method, pages as ck_pages  # noqa: E402
+from checks import components as ck_components, jobs as ck_jobs, method as ck_method, pages as ck_pages  # noqa: E402
 from checks import reports_v2 as ck_reports  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -137,9 +137,10 @@ class Git:
 # ---------- (1) syntax ----------
 
 def load_all(root, f):
-    """{relative path: parsed JSON or None} for data/*.json and data/weekly/*.json."""
+    """{relative path: parsed JSON or None} for data/*.json, data/weekly/*.json and data/jobs/*.json."""
     data = {}
-    paths = sorted((root / "data").glob("*.json")) + sorted((root / "data/weekly").glob("*.json"))
+    paths = (sorted((root / "data").glob("*.json")) + sorted((root / "data/weekly").glob("*.json"))
+             + sorted((root / "data/jobs").glob("*.json")))
     for path in paths:
         rel = path.relative_to(root).as_posix()
         dups, consts = [], []
@@ -941,6 +942,7 @@ def check_v2(ctx, runs, latest):
     ck_method.check(ctx, runs, latest)
     ck_components.check(ctx, runs)
     ck_reports.check(ctx, runs, latest)
+    ck_jobs.check(ctx)
 
 
 def pages_only(f, data, git, today):

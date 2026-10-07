@@ -9,6 +9,7 @@ no `defs`/`format` on a run, no data/agi_components.json.
     method.py      definitions in force, methodChange, the boundary run's cells, method.json (8.3, 9.4, 11)
     reports_v2.py  the newest format-2 run, its short report and analysis page, build_report --check (8.2, 9, 11)
     pages.py       visible-word budgets of the built pages (2.2); WARN only, run with --pages
+    jobs.py        the Jobs plugin's imported data in data/jobs/ (plugin spec 4, 8.4)
 """
 import re
 import sys

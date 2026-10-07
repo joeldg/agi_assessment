@@ -1,0 +1,20 @@
+{
+ "rule": "jobs edition window",
+ "ops": [
+  {
+   "file": "data/jobs/2026-10-16.json",
+   "set": [
+    "date"
+   ],
+   "value": "2026-10-01"
+  },
+  {
+   "file": "data/jobs/2026-10-16.json",
+   "set": [
+    "edition"
+   ],
+   "value": "2026-10-01"
+  }
+ ],
+ "expect": "must be dated 0 to 6 days before"
+}

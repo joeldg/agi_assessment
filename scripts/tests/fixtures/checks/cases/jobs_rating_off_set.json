@@ -1,0 +1,15 @@
+{
+ "rule": "jobs rating off set",
+ "ops": [
+  {
+   "file": "data/jobs/2026-10-16.json",
+   "set": [
+    "evidence",
+    0,
+    "rating"
+   ],
+   "value": "fact"
+  }
+ ],
+ "expect": "rating must be one of the six ratings"
+}

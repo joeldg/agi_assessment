@@ -30,7 +30,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 import check_data  # noqa: E402
 import checks  # noqa: E402
-from checks import components, method, pages, reports_v2  # noqa: E402
+from checks import components, jobs, method, pages, reports_v2  # noqa: E402
 
 FIX = HERE / "fixtures" / "checks"
 BASE = FIX / "base"
@@ -149,6 +149,7 @@ def run_checks(tree, call="modules", render=None, today=TODAY):
         method.check(ctx, runs, latest)
         components.check(ctx, runs)
         reports_v2.check(ctx, runs, latest, render=fake_render(render, tree.work) if render else None)
+        jobs.check(ctx)
     return f.errors + f.frozen, f.warnings
 
 

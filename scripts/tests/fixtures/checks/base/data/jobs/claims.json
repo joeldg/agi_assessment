@@ -1,0 +1,637 @@
+{
+ "schema": 1,
+ "version": "1.0",
+ "changelog": [
+  {
+   "version": "1.0",
+   "date": "2026-10-06",
+   "note": "First version."
+  }
+ ],
+ "scale": [
+  {
+   "id": "contradicted",
+   "label": "Contradicted",
+   "order": 0
+  },
+  {
+   "id": "no-clear-sign",
+   "label": "No clear sign",
+   "order": 1
+  },
+  {
+   "id": "emerging",
+   "label": "Emerging",
+   "order": 2
+  },
+  {
+   "id": "supported",
+   "label": "Supported",
+   "order": 3
+  },
+  {
+   "id": "established",
+   "label": "Established",
+   "order": 4
+  }
+ ],
+ "defaultMarks": {
+  "contradicted": "…",
+  "no-clear-sign": "…",
+  "emerging": "…",
+  "supported": "…",
+  "established": "…"
+ },
+ "lists": {},
+ "claims": [
+  {
+   "id": "J0",
+   "label": "Claim J0",
+   "wording": "Wording of J0.",
+   "why": "Why J0.",
+   "lens": "null",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J0-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J1",
+   "label": "Claim J1",
+   "wording": "Wording of J1.",
+   "why": "Why J1.",
+   "lens": "capital",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J1-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J2",
+   "label": "Claim J2",
+   "wording": "Wording of J2.",
+   "why": "Why J2.",
+   "lens": "work",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J2-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J3",
+   "label": "Claim J3",
+   "wording": "Wording of J3.",
+   "why": "Why J3.",
+   "lens": "work",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J3-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "emerging",
+   "since": "2026-10-15",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    },
+    {
+     "date": "2026-10-15",
+     "from": "no-clear-sign",
+     "to": "emerging",
+     "why": "Payroll research shows the gap.",
+     "evidence": [
+      "2026-10-15#e1"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J4",
+   "label": "Claim J4",
+   "wording": "Wording of J4.",
+   "why": "Why J4.",
+   "lens": "buyers",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J4-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "supported",
+   "since": "2026-10-08",
+   "pending": {
+    "to": "established",
+    "since": "2026-10-15",
+    "why": "Two quarters of official data.",
+    "evidence": [
+     "2026-10-15#e2"
+    ]
+   },
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "supported",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J5",
+   "label": "Claim J5",
+   "wording": "Wording of J5.",
+   "why": "Why J5.",
+   "lens": "prices",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J5-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J6",
+   "label": "Claim J6",
+   "wording": "Wording of J6.",
+   "why": "Why J6.",
+   "lens": "work",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J6-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J7",
+   "label": "Claim J7",
+   "wording": "Wording of J7.",
+   "why": "Why J7.",
+   "lens": "policy",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J7-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J8",
+   "label": "Claim J8",
+   "wording": "Wording of J8.",
+   "why": "Why J8.",
+   "lens": "capital",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J8-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J9",
+   "label": "Claim J9",
+   "wording": "Wording of J9.",
+   "why": "Why J9.",
+   "lens": "capital",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J9-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J10",
+   "label": "Claim J10",
+   "wording": "Wording of J10.",
+   "why": "Why J10.",
+   "lens": "prices",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J10-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J11",
+   "label": "Claim J11",
+   "wording": "Wording of J11.",
+   "why": "Why J11.",
+   "lens": "buyers",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J11-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J12",
+   "label": "Claim J12",
+   "wording": "Wording of J12.",
+   "why": "Why J12.",
+   "lens": "policy",
+   "marks": {
+    "contradicted": "Against in two sources.",
+    "emerging": "One primary indicator.",
+    "supported": "Two kinds agree.",
+    "established": "Two quarters, official."
+   },
+   "indicators": [
+    {
+     "id": "J12-a",
+     "name": "An indicator",
+     "source": "A publisher",
+     "url": "https://example.org/a",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the business cycle"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-08",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-08",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "Baseline.",
+     "evidence": [
+      "2026-10-08#e2"
+     ],
+     "by": "run"
+    }
+   ]
+  }
+ ]
+}

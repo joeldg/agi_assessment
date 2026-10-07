@@ -1,0 +1,15 @@
+{
+ "rule": "jobs status off scale",
+ "ops": [
+  {
+   "file": "data/jobs/claims.json",
+   "set": [
+    "claims",
+    0,
+    "status"
+   ],
+   "value": "likely"
+  }
+ ],
+ "expect": "status must be one of"
+}

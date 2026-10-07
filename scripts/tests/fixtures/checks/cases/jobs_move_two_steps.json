@@ -1,0 +1,15 @@
+{
+ "rule": "jobs move two steps",
+ "ops": [
+  {
+   "file": "data/jobs/2026-10-16.json",
+   "set": [
+    "moves",
+    0,
+    "from"
+   ],
+   "value": "contradicted"
+  }
+ ],
+ "expect": "move of 2 steps needs by: owner"
+}

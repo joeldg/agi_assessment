@@ -1,0 +1,17 @@
+{
+ "rule": "jobs history edited",
+ "ops": [
+  {
+   "file": "data/jobs/claims.json",
+   "set": [
+    "claims",
+    3,
+    "history",
+    0,
+    "why"
+   ],
+   "value": "x"
+  }
+ ],
+ "expect": "history is append-only"
+}
