@@ -839,6 +839,19 @@ export async function alarmBanner(root=""){
   }catch(e){}
 }
 
+/* ---- share row: reveal the copy-link button (hidden without JavaScript) ---- */
+export function shareCopy(){
+  if(!navigator.clipboard) return;
+  document.querySelectorAll(".share-copy").forEach(b => {
+    b.hidden = false;
+    b.addEventListener("click", async () => {
+      try{ await navigator.clipboard.writeText(b.dataset.url); b.textContent = "Copied"; }
+      catch(e){ b.textContent = "Copy failed"; }
+      setTimeout(() => { b.textContent = "Copy link"; }, 2000);
+    });
+  });
+}
+
 /* ---- AGI parts tracker (agi.html; FINAL_SPEC.md section 6) ----
    agiMap(host, data, {today, trends, root}): data = data/agi_components.json, trends = data/trends.json (projection
    dates are read from it, never copied), today = {date} of the newest published run (the "Now" line; never the

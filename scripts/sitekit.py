@@ -14,7 +14,7 @@ import re
 from datetime import datetime
 from decimal import ROUND_HALF_UP, Decimal
 from html import escape
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 
 SITE = "https://hiddenagi.com/"
 SUBSCRIBE = "https://hidden-agi.kit.com/f2b4d2f30e"
@@ -312,6 +312,33 @@ def subscribe_box():
             f'  <a class="btn" href="{SUBSCRIBE}" target="_blank" rel="noopener">Subscribe</a>\n</div>\n')
 
 
+# Share links: plain intent URLs, no third-party scripts or trackers. {u} is the page URL, {t} the share text and
+# {tu} the text followed by the URL (for networks that take one text field), all URL-encoded.
+SHARE_NETS = (
+    ("X", "https://x.com/intent/post?text={t}&url={u}"),
+    ("LinkedIn", "https://www.linkedin.com/sharing/share-offsite/?url={u}"),
+    ("Facebook", "https://www.facebook.com/sharer/sharer.php?u={u}"),
+    ("Bluesky", "https://bsky.app/intent/compose?text={tu}"),
+    ("Threads", "https://www.threads.net/intent/post?text={tu}"),
+    ("Reddit", "https://www.reddit.com/submit?url={u}&title={t}"),
+    ("Hacker News", "https://news.ycombinator.com/submitlink?u={u}&t={t}"),
+)
+
+
+def share_bar(url, text):
+    """The share row: one link per network, an email link, and a copy-link button that charts.js reveals
+    (shareCopy); without JavaScript the button stays hidden and the links still work."""
+    q = lambda s: quote(s, safe="")
+    u, t, tu = q(url), q(text), q(f"{text} {url}")
+    links = "".join(f'<a href="{escape(tpl.format(u=u, t=t, tu=tu), quote=True)}" target="_blank" '
+                    f'rel="noopener">{name}</a>' for name, tpl in SHARE_NETS)
+    mail = escape(f"mailto:?subject={t}&body={tu}", quote=True)
+    return (f'<div class="share" aria-label="Share this page"><span class="muted">Share</span>{links}'
+            f'<a href="{mail}">Email</a>'
+            f'<button type="button" class="share-copy" data-url="{escape(url, quote=True)}" hidden>Copy link</button>'
+            f'</div>\n')
+
+
 def footer(root, note="", date=None):
     """The site footer. note is optional page-specific HTML shown above the standard lines; date (YYYY-MM-DD)
     gives the dated variant the daily report pages carry."""
@@ -329,7 +356,8 @@ def footer(root, note="", date=None):
 
 
 def page(*, path, title, description, body, active="", og_image=None, og_w=1200, og_h=630, og_type="website",
-         og_image_alt=None, main_class="", footer_note="", scripts="", head_extra="", nav_top="", subscribe=True):
+         og_image_alt=None, main_class="", footer_note="", scripts="", head_extra="", nav_top="", subscribe=True,
+         share=True, share_text=None):
     """One generated page.
 
     path: the published path relative to the site root, e.g. 'scorecard.html', 'weekly/2026-10-09.html' or
@@ -341,7 +369,8 @@ def page(*, path, title, description, body, active="", og_image=None, og_w=1200,
     head_extra: raw HTML placed at the end of <head> (the homepage's site-verification meta and JSON-LD).
     nav_top: the in-page nav under the breadcrumb: a whole <nav ...> element, or just its links, which are
       wrapped in <nav class="top" aria-label="On this page">.
-    subscribe: False leaves out the subscribe box page() appends before the footer."""
+    subscribe: False leaves out the subscribe box page() appends before the footer.
+    share: False leaves out the share row above it; share_text is the text shared with the URL (default: title)."""
     root = _root(path)
     url = SITE + path.replace("index.html", "")
     img = og_image or SITE + "cards/latest.png"
@@ -393,9 +422,9 @@ def page(*, path, title, description, body, active="", og_image=None, og_w=1200,
 <a class="skip-link sr-only" href="#content">Skip to content</a>
 {main_open}
 {nav_html(path, active)}{crumb}{top}<div id="content" tabindex="-1"></div>{body}
-{subscribe_box() if subscribe else ""}
+{share_bar(url, share_text or title) if share else ""}{subscribe_box() if subscribe else ""}
 {footer(root, footer_note, m.group(1) if m else None)}</main>
-<script type="module">import {{alarmBanner}} from "{root}assets/charts.js"; alarmBanner("{root}");</script>
+<script type="module">import {{alarmBanner, shareCopy}} from "{root}assets/charts.js"; alarmBanner("{root}"); shareCopy();</script>
 {scripts}
 </body>
 </html>

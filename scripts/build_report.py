@@ -943,7 +943,8 @@ def short_html(run, prev, path, warns=None):
            f'<a href="#timeline">AGI</a><a href="#roundup">Top stories</a><a href="#s6">Dates</a>')
     return page(path=path, title=f"Hidden AGI watch · {short_day(d)}",
                 description=f"Daily reading for {long_day(d)}: {run['verdict']}", body=body, og_type="article",
-                og_image=f"{SITE}cards/{d}.png", og_image_alt=card_alt(run, lvl), main_class="report", nav_top=top)
+                og_image=f"{SITE}cards/{d}.png", og_image_alt=card_alt(run, lvl), main_class="report", nav_top=top,
+                share_text=f"Hidden AGI watch, {short_day(d)}: {run['verdict']}")
 
 
 def card_alt(run, lvl):
@@ -989,7 +990,7 @@ def _prose_words(html, extra=()):
         from checks import visible_words
     except Exception:  # pragma: no cover
         return None
-    return visible_words(html, ("nav", "footer", "table", ".subscribe", ".sr-only") + tuple(extra))
+    return visible_words(html, ("nav", "footer", "table", ".subscribe", ".share", ".sr-only") + tuple(extra))
 
 
 _HREF = re.compile(r'href="([^"]*)"')

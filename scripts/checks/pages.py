@@ -12,7 +12,7 @@ collapsed widget (about 430 words); the static view has its own, larger budget.
 """
 from . import visible_words, words
 
-SKIP = ("nav", "footer", ".subscribe", ".sr-only")
+SKIP = ("nav", "footer", ".subscribe", ".share", ".sr-only")
 # (page, budget, extra regions left out)
 BUDGETS = [
     ("index.html", 500, ()),

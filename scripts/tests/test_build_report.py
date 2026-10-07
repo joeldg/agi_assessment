@@ -35,7 +35,7 @@ from checks import ANALYSIS_IDS, SHORT_IDS, outline, visible_words  # noqa: E402
 
 FIX = HERE / "fixtures"
 BODY = (FIX / "analysis_body.html").read_text()
-PROSE_SKIP = ("nav", "footer", "table", ".subscribe", ".sr-only")
+PROSE_SKIP = ("nav", "footer", "table", ".subscribe", ".share", ".sr-only")
 LIVE = ("agi_components.json", "alarm.json", "escape.json", "calendar.json")
 
 

@@ -25,7 +25,7 @@ CORRECTIONS_SHOWN = 5
 PROSE_WARN, PROSE_MAX = 700, 1000
 FIELD_BUDGETS = [("verdict", 30), ("needle.brief", 100), ("timelineShort", 40), ("bottomLine", 60)]
 HEDGES = ["reportedly", "leaked", "draft", "according to", "likely"]
-PROSE_SKIP = ("nav", "footer", "table", ".subscribe", ".sr-only")
+PROSE_SKIP = ("nav", "footer", "table", ".subscribe", ".share", ".sr-only")
 # Retired display words (spec 3.1, NAMES) that the agent-written analysis body must not carry on a format-2 reading.
 OLD_WORDS = re.compile(r"\bWatching\b|\bTripped\b|\bTripwires\b|Observed · feeds|Feeds hypothesis|\bLevel \d of 5\b|"
                        r"\bstrict AGI\b|\bsecret RSI\b", re.I)
