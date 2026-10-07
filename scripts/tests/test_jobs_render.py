@@ -125,5 +125,85 @@ class Rendered(unittest.TestCase):
         self.assertIsNone(build_weekly.load_jobs("2026-10-02"))
 
 
+class Sentences(unittest.TestCase):
+    # The 2026-10-06 review's Important 3: real items from the 2026-10-06 edition that a split on ". " garbled.
+    def test_first_sentence_keeps_abbreviations(self):
+        cases = {
+            "The share of U.S. workers using AI rose to 40%. The rest did not.": "The share of U.S. workers using AI rose to 40%.",
+            "Challenger, Gray & Christmas counted 120,136 announced U.S. job cuts citing AI. That is 21%.":
+                "Challenger, Gray & Christmas counted 120,136 announced U.S. job cuts citing AI.",
+            "In Mobley v. Workday, the court certified a collective action. It is procedural.":
+                "In Mobley v. Workday, the court certified a collective action.",
+            "In X.AI LLC v. Musk the judge ruled for the defendant. Next.": "In X.AI LLC v. Musk the judge ruled for the defendant.",
+            "St. Louis Fed researchers found a 0.47 correlation. Correlation is not causation.":
+                "St. Louis Fed researchers found a 0.47 correlation.",
+            "J. Smith of the Fed said so. More.": "J. Smith of the Fed said so.",
+            "No full stop at all": "No full stop at all.",
+        }
+        for text, want in cases.items():
+            with self.subTest(text):
+                self.assertEqual(jobs_render.first_sentence(text), want)
+
+    def test_a_very_long_first_sentence_is_cut_at_a_word(self):
+        got = jobs_render.first_sentence(" ".join(["word"] * 80) + ".")
+        self.assertTrue(got.endswith("…"))
+        self.assertLessEqual(len(got.split()), jobs_render.SENTENCE_WORDS + 1)
+
+
+class EmailSafety(unittest.TestCase):
+    def test_email_text_is_escaped(self):
+        j = jobs()
+        j["edition"]["evidence"][0]["text"] = "<script>alert(1)</script> & co. Second."
+        j["edition"]["evidence"][0]["top"] = True
+        j["edition"]["moves"][0]["why"] = "<b>bold</b> reason."
+        em = jobs_render.email_html(j["edition"], j["claims"])
+        self.assertNotIn("<script>alert", em)
+        self.assertNotIn("<b>bold</b>", em)
+        self.assertIn("&lt;script&gt;", em)
+
+
+class ConfirmedSince(unittest.TestCase):
+    # The review's Minor 3, re-graded: the owner confirmed J4 after the edition was frozen; readers must not be told
+    # it is still under review when the imported claims say it is Established.
+    def confirmed(self):
+        j = jobs()
+        j4 = j["claims"]["claims"][4]
+        j4["history"].append({"date": "2026-10-16", "from": "supported", "to": "established", "why": "Owner agreed.",
+                              "evidence": [], "by": "owner"})
+        j4["status"], j4["pending"] = "established", None
+        return j
+
+    def test_page_says_confirmed_not_under_review(self):
+        j = self.confirmed()
+        html = jobs_render.section_html(j["edition"], j["claims"])
+        self.assertNotIn("Established under review", html)
+        self.assertIn("Established, since confirmed by the owner", html)
+
+    def test_email_says_confirmed(self):
+        j = self.confirmed()
+        em = jobs_render.email_html(j["edition"], j["claims"])
+        self.assertNotIn("under review", em)
+        self.assertIn("since confirmed by the owner", em)
+
+    def test_baseline_email_status_line_agrees(self):
+        j = self.confirmed()
+        j["edition"]["baseline"] = True
+        j["edition"]["moves"] = []
+        em = jobs_render.email_html(j["edition"], j["claims"])
+        self.assertNotIn("(Established proposed)", em)
+        self.assertIn("since confirmed by the owner", em)
+        self.assertEqual(em.count("since confirmed by the owner"), 1)
+
+    def test_rejected_since_says_so(self):
+        j = jobs()
+        j4 = j["claims"]["claims"][4]
+        j4["history"].append({"date": "2026-10-16", "from": "supported", "to": "supported", "why": "Rejected.",
+                              "evidence": [], "by": "owner", "note": "rejected: established"})
+        j4["pending"] = None
+        html = jobs_render.section_html(j["edition"], j["claims"])
+        self.assertNotIn("under review", html)
+        self.assertIn("since rejected by the owner", html)
+
+
 if __name__ == "__main__":
     unittest.main()

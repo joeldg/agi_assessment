@@ -40,8 +40,8 @@ def _claim(c):
     for i in c.get("indicators") or []:
         conf = "; ".join(e(x) for x in i.get("confounders") or [])
         comp = f' Compared with: {e(i["comparison"])}.' if i.get("comparison") else ""
-        inds.append(f'<li><a href="{e(i.get("url", ""))}" target="_blank" rel="noopener">{e(i.get("name", ""))}</a>. '
-                    f'{e(i.get("source", ""))} · {e(i.get("cadence", ""))} · {e(i.get("dataKind", ""))} data. '
+        name = C.link(i.get("url", ""), i.get("name", "")) or e(i.get("name", ""))   # http(s) only, never a script URL
+        inds.append(f'<li>{name}. {e(i.get("source", ""))} · {e(i.get("cadence", ""))} · {e(i.get("dataKind", ""))} data. '
                     f'<span class="small muted">Confounders: {conf}.{comp}</span></li>')
     hist = "".join(f'<li><span class="rdate">{e(h.get("date", ""))}</span> '
                    f'{J.STATUS_LABEL.get(h.get("from"), "start") if h.get("from") else "Start"} → {J.STATUS_LABEL.get(h.get("to"), "")}'

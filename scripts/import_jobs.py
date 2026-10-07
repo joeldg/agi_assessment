@@ -23,7 +23,7 @@ from pathlib import Path
 sys.dont_write_bytecode = True
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
-from checks.jobs import edition_urls, validate_claims, validate_edition  # noqa: E402
+from checks.jobs import validate_claims, validate_edition  # noqa: E402
 
 ROOT = SCRIPTS.parent
 WINDOW_DAYS = 6
@@ -60,11 +60,31 @@ def _dump(doc):
     return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
 
 
-def _url_problems(doc, rel):
-    import check_data  # the newsletter's own URL rules and denylist
+def _strict_loads(text):
+    """json.loads that refuses duplicate keys and NaN/Infinity, which check_data refuses too."""
+    def pairs(items):
+        seen = {}
+        for k, v in items:
+            if k in seen:
+                raise ValueError(f"duplicate key {k!r}")
+            seen[k] = v
+        return seen
+
+    def const(name):
+        raise ValueError(f"{name} is not valid JSON")
+    return json.loads(text, object_pairs_hook=pairs, parse_constant=const)
+
+
+def _data_problems(doc, text, label):
+    """The rules check_data.py applies to every data file, run before anything is written, so a file the import
+    accepts can never stop the Friday push later (the 2026-10-06 review's Important 2): every URL-like field strict
+    (the denylist is an error), no script or data: strings anywhere, nothing that looks like a key."""
+    import check_data
     f = check_data.Findings()
-    for where, url in edition_urls(doc):
-        check_data.check_url(f, f"{rel} {where}", url, True)
+    check_data.walk_urls(f, doc, label, lambda where: True)
+    for name, pat in check_data.KEY_PATTERNS:
+        if pat.search(text or ""):
+            f.err(f"{label} looks like it holds {name}")
     return f.errors
 
 
@@ -81,12 +101,15 @@ def import_edition(root, plugin, friday):
     sha = (_git(plugin, "rev-parse", "--short", "HEAD") or "").strip()
     rel = f"data/jobs/{friday}.json"
     try:
-        doc, claims = json.loads(text), json.loads(claims_text)
-    except (TypeError, ValueError) as e:
-        return 2, f"Jobs: refused ({e})"
-    doc["edition"] = doc.get("date")
-    doc["source"] = f"post_agi_work@{sha}"
-    problems = validate_edition(doc, rel) + [f"claims.json: {m}" for m in validate_claims(claims)] + _url_problems(doc, rel)
+        doc, claims = _strict_loads(text), _strict_loads(claims_text)
+        if not isinstance(doc, dict):
+            raise ValueError("the edition is not a JSON object")
+        doc["edition"] = doc.get("date")
+        doc["source"] = f"post_agi_work@{sha}"
+        problems = (validate_edition(doc, rel) + [f"claims.json: {m}" for m in validate_claims(claims)]
+                    + _data_problems(doc, text, rel) + _data_problems(claims, claims_text, "data/jobs/claims.json"))
+    except Exception as e:  # noqa: BLE001 - any surprise is a refusal (exit 2, nothing written), never a traceback
+        return 2, f"Jobs: refused ({type(e).__name__}: {e})"
     if problems:
         return 2, "Jobs: refused (" + "; ".join(problems[:5]) + (f"; and {len(problems) - 5} more" if len(problems) > 5 else "") + ")"
     (root / "data/jobs").mkdir(parents=True, exist_ok=True)

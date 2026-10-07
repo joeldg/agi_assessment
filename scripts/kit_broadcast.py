@@ -800,6 +800,19 @@ def weekly_alarm_change(date):
     return None
 
 
+def weekly_live_files(date, root=None):
+    """(URLs that must be live, files that must be committed and pushed) before a wrap-up is sent. When the wrap-up
+    carries the Jobs section, its email links jobs.html, so that page and the Jobs data join the lists (the 2026-10-06
+    review of the Jobs integration, Minor 1, re-graded)."""
+    root = Path(root or ROOT)
+    live = [f"{SITE}weekly/{date}.html"]
+    files = [f"weekly/{date}.html", f"data/weekly/{date}.json"]
+    if (root / f"data/jobs/{date}.json").exists():
+        live.append(f"{SITE}jobs.html")
+        files += ["jobs.html", f"data/jobs/{date}.json", "data/jobs/claims.json"]
+    return live, files
+
+
 def push_weekly(args):
     from build_weekly import day_mon, weekly_email_html
     date = check_date(args.weekly, "--weekly")
@@ -829,8 +842,7 @@ def push_weekly(args):
         "public": PUBLIC,
         "send_at": send_at,
     }
-    live = [f"{SITE}weekly/{date}.html"]
-    files = [f"weekly/{date}.html", f"data/weekly/{date}.json"]
+    live, files = weekly_live_files(date)
     if (ROOT / f"cards/weekly-{date}.png").exists():  # the email embeds the card only when it exists
         live.append(f"{SITE}cards/weekly-{date}.png")
         files.append(f"cards/weekly-{date}.png")

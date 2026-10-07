@@ -216,6 +216,14 @@ class JobsPage(unittest.TestCase):
         html = self.render()
         self.assertIn("&lt;b&gt;bold&lt;/b&gt; &amp; co", html)
 
+    def test_indicator_link_is_never_a_script_url(self):
+        import json
+        p = self.tmp / "data" / "jobs" / "claims.json"
+        doc = json.loads(p.read_text(encoding="utf-8"))
+        doc["claims"][1]["indicators"][0]["url"] = "javascript:alert(1)"
+        p.write_text(json.dumps(doc), encoding="utf-8")
+        self.assertNotIn("javascript:", self.render())
+
     def test_names_row_appears_only_with_jobs_claims(self):
         import json
         claims = json.loads((self.tmp / "data" / "jobs" / "claims.json").read_text(encoding="utf-8"))

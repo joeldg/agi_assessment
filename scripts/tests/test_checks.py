@@ -155,6 +155,19 @@ def run_checks(tree, call="modules", render=None, today=TODAY):
 
 # ---------- tests ----------
 
+class JobsFrozen(unittest.TestCase):
+    # The 2026-10-06 review's Important 4: a domain added to the denylist after an edition was published must not
+    # fail every daily check from then on; a published edition is held only to the frozen comparison.
+    def test_published_edition_is_not_rejudged(self):
+        op = {"file": "data/jobs/2026-10-16.json", "set": ["evidence", 0, "url"], "value": "https://aiweekly.co/x"}
+        t = Tree({"head_ops": [op], "ops": [op]})
+        try:
+            errs, _ = run_checks(t)
+        finally:
+            t.close()
+        self.assertEqual([e for e in errs if "data/jobs" in e], [])
+
+
 class BaseTree(unittest.TestCase):
     def test_base_has_no_errors(self):
         for call in ("modules", "check_probs", "immutability", "urls"):
