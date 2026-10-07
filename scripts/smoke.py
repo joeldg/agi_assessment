@@ -188,6 +188,8 @@ def newest_run(root):
 def default_pages(root):
     """(pages, notes): the standing pages, the latest wrap-up, the latest report and its analysis page if any."""
     pages, notes = list(STANDING), []
+    if (root / "jobs.html").exists():  # the Jobs plugin's page, built once the first edition is imported
+        pages.append("jobs.html")
     weekly = sorted(p.name for p in (root / "weekly").glob("*.html") if DATED.match(p.stem))
     if weekly:
         pages.append("weekly/" + weekly[-1])
@@ -448,6 +450,7 @@ REQUIRED_ANCHORS = {
     "hidden.html": "index hypotheses odds over-time gauges",
     "changes.html": "method criteria corrections",
     "disclosure-lag.html": "floor",
+    "jobs.html": "about board claims editions J0 J1 J2 J3 J4 J5 J6 J7 J8 J9 J10 J11 J12",
 }
 
 # Links in frozen files that never resolved, so they are not a path we retired. Listed by (file, exact href); each is

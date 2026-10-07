@@ -855,7 +855,7 @@ def cdata(s):
 
 STANDING_PAGES = ("start-here.html", "about.html", "scorecard.html", "disclosure-lag.html", "agi-claims.html",
                   "calendar.html", "steelman.html", "trends.html", "money.html", "alarm.html", "style.html",
-                  "escape.html", "agi.html", "hidden.html", "changes.html", "archive.html")
+                  "escape.html", "agi.html", "hidden.html", "changes.html", "archive.html", "jobs.html")
 
 
 def write_sitemap(runs):
