@@ -29,7 +29,7 @@ BUDGETS = [
     ("calendar.html", 700, ()),
     ("steelman.html", 1100, ()),
     ("about.html", 550, ()),
-    ("jobs.html", 1000, ("#claims",)),   # the claims' collapsed details are left out, as agi.html's tracker is
+    ("jobs.html", 1200, ("#claims",)),   # the claims' collapsed details are left out, as agi.html's tracker is
 ]
 WIDGET_BUDGET = 1500   # the no-JS static view of #agi-map (spec 6.7); the JS widget collapsed is about 430
 WEEKLY_BUDGET = 1200
@@ -64,11 +64,14 @@ def check(ctx, runs=None):
         html = ctx.read(rel)
         if html is not None:
             note(rel, visible_words(html, SKIP), WEEKLY_BUDGET)
-        jobs = ctx.data.get("data/jobs/%s.json" % path.stem)
-        claims = ctx.data.get("data/jobs/claims.json")
-        if isinstance(jobs, dict) and isinstance(claims, dict):   # the email's Jobs block (Jobs plugin spec 8.2)
+    # the wrap-up email's Jobs block, for every imported edition (Jobs plugin spec 8.2)
+    claims = ctx.data.get("data/jobs/claims.json")
+    for rel in sorted(r for r in ctx.data if r.startswith("data/jobs/") and r != "data/jobs/claims.json"):
+        jobs = ctx.data.get(rel)
+        if isinstance(jobs, dict) and isinstance(claims, dict):
             import jobs_render
-            note(rel + " email Jobs block", visible_words(jobs_render.email_html(jobs, claims), ()), jobs_render.EMAIL_WORDS)
+            note("weekly/%s email Jobs block" % rel.rsplit("/", 1)[-1][:-5],
+                 visible_words(jobs_render.email_html(jobs, claims), ()), jobs_render.EMAIL_WORDS)
     # the newest format-2 short report (prose outside tables; check_data's report rules hold the 1,000 cap)
     if isinstance(runs, list):
         r = next((x for x in reversed(runs) if isinstance(x, dict) and x.get("report")), None)

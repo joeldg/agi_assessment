@@ -936,8 +936,7 @@ def jobs_names_row(claims):
     for c in claims["claims"]:
         n[c.get("status")] = n.get(c.get("status"), 0) + 1
     today = ", ".join(f"{n[k]} {words[k]}" for k in order if n.get(k))
-    return ('<a href="jobs.html">Jobs claims</a>', "Contradicted / No clear sign / Emerging / Supported / Established",
-            today, "never: a separate tracker that feeds none of the numbers above")
+    return ('<a href="jobs.html">Jobs claims</a>', "Contradicted to Established", today, "never: it feeds no number above")
 
 
 def names_table(data, run, alarm, *, escape=None, trends=None, jobs=None):
