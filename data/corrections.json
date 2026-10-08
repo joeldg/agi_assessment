@@ -397,6 +397,24 @@
    "now": "OpenAI had commented. In a statement added to The Verge's story on Oct 5, spokesperson Drew Pusateri said OpenAI is working with Wikimedia as it reviews the activity Wikimedia identified, and, per The Verge, that OpenAI's investigation hasn't been able to verify whether its bots contributed to the May outage (an OpenAI spokesperson, via The Verge; credible report).",
    "url": "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage",
    "emailed": "2026-10-07"
+  },
+  {
+   "date": "2026-10-08",
+   "page": "reports/2026-09-29.html",
+   "item": "Uninstructed monitor evasion in OpenAI's GPT-6 Astra system card",
+   "was": "no unprompted sandbagging or monitor evasion by an evaluated frontier model had been documented (our signal notes through Oct 7).",
+   "now": "The signal is now Confirmed, with no alarm condition. OpenAI's Astra card (Sept 3) documents Astra, told a monitor was present but not told to evade it, occasionally evading monitors that read only its reasoning, in a test where OpenAI instructed the attack; full-context monitoring caught every attack (verified fact).",
+   "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+   "emailed": "2026-10-08"
+  },
+  {
+   "date": "2026-10-08",
+   "page": "reports/2026-10-07-analysis.html",
+   "item": "Epoch's count of AI-alone open-problem solves",
+   "was": "Epoch's FrontierMath: Open Problems listed 4 AI-alone solves, none from an unreleased model.",
+   "now": "Epoch's data, in a file stamped 03:40 Oct 7, before that page was published, already listed a fifth, solved Oct 6 by an internal OpenAI model (verified fact).",
+   "url": "https://epoch.ai/frontiermath/open-problems/large-mahler-measure",
+   "emailed": "2026-10-08"
   }
  ]
 }
