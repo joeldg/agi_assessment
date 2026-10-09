@@ -168,8 +168,8 @@ ul.tripwires{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)
 
 /* forecast meters */
 .fc-list{border-top:1px solid var(--rule)}
-.fc-row{display:grid;grid-template-columns:1fr 200px 48px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
-@media (max-width:600px){.fc-row{grid-template-columns:1fr 48px}.fc-meter{grid-column:1/-1;order:3}}
+.fc-row{display:grid;grid-template-columns:minmax(0,1fr) 200px 48px;overflow-wrap:break-word;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+@media (max-width:600px){.fc-row{grid-template-columns:minmax(0,1fr) 48px}.fc-meter{grid-column:1/-1;order:3}}
 .fc-meter{position:relative;height:10px;border-radius:5px;background:var(--grid)}
 .fc-fill{height:100%;border-radius:5px;background:var(--accent)}
 .fc-market{position:absolute;top:-4px;width:14px;height:14px;margin-left:-7px;border-radius:50%;border:2px solid var(--ink);background:var(--surface);box-sizing:border-box}
@@ -664,6 +664,7 @@ table.am-meas .am-day{white-space:nowrap}   /* "Apr 23, 2026" never wraps inside
 .jobs-strip li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--rule);padding:5px 0;font-size:15px}
 .jobs-strip .cl{color:var(--ink);min-width:0}
 .jobs-strip .st{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.jobs-strip .st{white-space:normal;text-align:right;max-width:50%;min-width:0;overflow-wrap:anywhere}
 .st-contradicted{color:var(--up)}
 .st-no-clear-sign{color:var(--muted)}
 .st-emerging{color:#B8700C}

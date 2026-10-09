@@ -2,7 +2,7 @@
  "note": "Definitions v2.0: the AGI definition, its eight parts, each part's test and our reading of the best public evidence. The owner sets the definition, the status scale and the tests (a change is a method change in data/method.json); the weekly components lens refreshes measurements, milestones and statuses. Built from the adversarially verified research packets of 2026-10-05.",
  "definitionsVersion": "2.0",
  "adopted": "2026-10-06",
- "lastReviewed": "2026-10-05",
+ "lastReviewed": "2026-10-09",
  "definition": {
   "text": "AGI: a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining.",
   "excludes": "Physical and embodied work (robotics, manual skills) is out of scope: we judge the mind, not the body. The main cognitive frameworks (Hendrycks et al., DeepMind's Levels of AGI, ARC) leave it out too, and v1.0 already counted remote work only, so leaving it out makes the bar no looser.",
@@ -45,13 +45,13 @@
    "question": "Can one AI system do at least four-fifths of the paid work people do at a computer (design, analysis, writing, law, finance, media, engineering), rather than a few kinds of task?",
    "clause": "v2.0: 'across any intellectual domain, without task-specific retraining' (physical work is out of scope in v2.0); v1.0 remote-work test kept in v2.0: 'does at least 80% of economically valuable remote professional tasks'.",
    "status": "far",
-   "statusBasis": "Far: RLI 20.8% is below the 40% Partial mark, and GDPval results by occupation are unpublished.",
-   "basisShort": "RLI 20.8%; Partial at 40%",
+   "statusBasis": "Far: RLI 21.25% is below the 40% Partial mark, and GDPval results by occupation are unpublished.",
+   "basisShort": "RLI 21.25%; Partial at 40%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
-   "glance": "On real freelance projects the best system delivers 20.8%, against 80%; results by occupation for the other half are unpublished.",
-   "statusNote": "GPT-6 Astra delivers 20.8% of real freelance projects at client-acceptable quality on the Remote Labor Index (Claude Fable 5.1: 17.9%), against our 80%. On one-shot, well-specified GDPval tasks, lab-reported overall scores have been above 80% since March 2026, but no results by occupation are published. The gap between the two measures is the main finding.",
-   "statusDetail": "On whole real projects the best public system does about a quarter of what the bar needs: GPT-6 Astra's RLI automation rate is 20.83% (Claude Fable 5.1: 17.92%), against 80%. On one-shot, well-specified GDPval tasks, lab-reported overall scores have been above 80% since March 2026 (GPT-5.4 83.0%, GPT-5.5 84.9%; OpenAI's figures), but no per-occupation results are published for current models. The gap between the two measures is the main finding.",
+   "lastReviewed": "2026-10-09",
+   "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
+   "statusNote": "Claude Opus 5.5 delivers 21.25% of real freelance projects at client-acceptable quality on the Remote Labor Index (GPT-6 Astra: 20.83%), against our 80%. On one-shot, well-specified GDPval tasks, lab-reported overall scores have been above 80% since March 2026, but no results by occupation are published. The gap between the two measures is the main finding.",
+   "statusDetail": "On whole real projects the best public system does about a quarter of what the bar needs: Claude Opus 5.5's RLI automation rate is 21.25% (GPT-6 Astra: 20.83%; Claude Fable 5.1: 17.92%), against 80%. On one-shot, well-specified GDPval tasks, lab-reported overall scores have been above 80% since March 2026 (GPT-5.4 83.0%, GPT-5.5 84.9%; OpenAI's figures), but no per-occupation results are published for current models. The gap between the two measures is the main finding.",
    "bar": "80% of real remote projects (Remote Labor Index), and 80% wins or ties in at least 36 of GDPval's 44 occupations.",
    "test": {
     "measure": "Primary: the Remote Labor Index (RLI; Scale AI and CAIS) automation rate: the share of 240 real paid freelance projects (23 of Upwork's 64 work categories; median 11.5 hours of human work, mean 28.9) where human evaluators judge the AI's deliverable at least as good as the professional's, so that a reasonable client would accept it. Cross-check: OpenAI's GDPval 'wins or ties' rate against professionals' own deliverables (44 occupations; tasks average about 7 hours of expert work), broken down by occupation as in the GDPval paper. Context only, not tests: LLM-judged reruns of GDPval (Artificial Analysis, Mercor), which don't compare against the professionals; the Anthropic Economic Index, which measures use; and O*NET exposure studies, which measure potential exposure.",
@@ -63,7 +63,7 @@
     {
      "name": "Remote Labor Index at 80% or more",
      "state": "no",
-     "value": "20.8% (GPT-6 Astra)"
+     "value": "21.25% (Claude Opus 5.5)"
     },
     {
      "name": "GDPval wins or ties 80%+ in at least 36 of 44 occupations",
@@ -73,16 +73,16 @@
    ],
    "headline": {
     "label": "Remote Labor Index: real freelance projects delivered at client-acceptable quality",
-    "value": 20.83,
-    "display": "20.8%",
+    "value": 21.25,
+    "display": "21.25%",
     "target": 80,
     "targetDisplay": "80%",
     "unit": "%",
     "scale": "linear",
     "min": 0,
     "max": 100,
-    "system": "GPT-6 Astra",
-    "asOf": "2026-09-17",
+    "system": "Claude Opus 5.5",
+    "asOf": "2026-10-07",
     "url": "https://labs.scale.com/leaderboard/rli",
     "rating": "verified fact",
     "partialAt": 40,
@@ -99,17 +99,17 @@
    "current": [
     {
      "metric": "Remote Labor Index automation rate (best public system)",
-     "value": "20.83%",
-     "system": "GPT-6 Astra",
-     "asOf": "2026-09-17 (entry date from the leaderboard's page data; we first recorded it Sep 29; re-read Oct 5)",
+     "value": "21.25%",
+     "system": "Claude Opus 5.5",
+     "asOf": "2026-10-07 (entry date from the leaderboard's page data; read Oct 9)",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact"
     },
     {
-     "metric": "Remote Labor Index automation rate (best Anthropic system)",
-     "value": "17.92%",
-     "system": "Claude Fable 5.1",
-     "asOf": "2026-10-05 (leaderboard re-opened)",
+     "metric": "Remote Labor Index automation rate (best OpenAI system, second overall)",
+     "value": "20.83%",
+     "system": "GPT-6 Astra",
+     "asOf": "2026-09-17 (entry date from the leaderboard's page data; re-read Oct 9)",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact"
     },
@@ -131,9 +131,9 @@
     },
     {
      "metric": "GDPval-AA v2.1 (Artificial Analysis rerun of the 220 public GDPval tasks; a panel of three LLM judges compares models with each other; Elo anchored to DeepSeek V4.1 Flash (max) at 1600; no human baseline)",
-     "value": "1866 Elo (±26), first of 282 entries; Claude Sonnet 5.5 (Max) 1839; GPT-6 Astra (Max) 40th at 1542",
+     "value": "1866 Elo (±26), first of 288 entries; Claude Sonnet 5.5 (Max) 1838; GPT-6 Astra (Max) 37th at 1574",
      "system": "Claude Opus 5.5 (Max, Default Fallback)",
-     "asOf": "2026-10-05",
+     "asOf": "2026-10-09",
      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
      "rating": "verified fact"
     },
@@ -211,11 +211,18 @@
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact",
      "kind": "result"
+    },
+    {
+     "date": "2026-10-07",
+     "text": "Claude Opus 5.5 leads the RLI at 21.25%, 0.42 points above GPT-6 Astra (entry date from the leaderboard's page data; no confidence interval is published).",
+     "url": "https://labs.scale.com/leaderboard/rli",
+     "rating": "verified fact",
+     "kind": "result"
     }
    ],
    "projection": {
-    "text": "No published forecast or fitted trend gives a date for 80% breadth. The Remote Labor Index (RLI) record (2.5% in Oct 2025; 15.8% in Jul 2026, on a stronger agent setup; 20.83% in Sept 2026) is short, has no confidence intervals and rose partly on scaffolding, so, as on our trends page, we give no date. CAIS found that RLI success doesn't fall as projects take humans longer, so METR's time-horizon trend can't date this part either.",
-    "basis": "RLI record points in data/trends.json (manual.rli: 2.5% on 2025-10-30, 15.8% on 2026-07-01, 20.83% with a leaderboard entry date of 2026-09-17). CAIS's July 1, 2026 post describes the stronger setup (industry scaffolds with computer use, up to 24 hours, $50 to $150 per project, a worker-critic loop) and its finding that pass rates don't fall with human completion time (https://safe.ai/blog/significant-increase-in-digital-labor-automation). We fit no trend to three points with a change of setup between them.",
+    "text": "No published forecast or fitted trend gives a date for 80% breadth. The Remote Labor Index (RLI) record (2.5% in Oct 2025; 15.8% in Jul 2026, on a stronger agent setup; 20.83% in Sept 2026; 21.25% in Oct 2026) is short, has no confidence intervals and rose partly on scaffolding, so, as on our trends page, we give no date. CAIS found that RLI success doesn't fall as projects take humans longer, so METR's time-horizon trend can't date this part either.",
+    "basis": "RLI record points in data/trends.json (manual.rli: 2.5% on 2025-10-30, 15.8% on 2026-07-01, 20.83% with a leaderboard entry date of 2026-09-17, 21.25% on 2026-10-07). CAIS's July 1, 2026 post describes the stronger setup (industry scaffolds with computer use, up to 24 hours, $50 to $150 per project, a worker-critic loop) and its finding that pass rates don't fall with human completion time (https://safe.ai/blog/significant-increase-in-digital-labor-automation). We fit no trend to four points with a change of setup between them.",
     "rating": "our inference",
     "url": "https://hiddenagi.com/trends.html"
    },
@@ -239,9 +246,10 @@
      "ratingNote": "OpenAI's GDPval post states these limits and the plan for more interactive versions; that none has been published is our own search as of Oct 5, 2026."
     },
     {
-     "text": "LLM judges overrate newer models, and the most often updated GDPval reruns use them. CAIS calibrated an automated judge on earlier models and found it overestimated GPT-5.5's RLI rate about 2.9 times (17.9% against 6.25% from human evaluators) and Claude Opus 4.8's about 2.3 times (18.8% against 8.33%), although it ranked the models correctly. Artificial Analysis's GDPval-AA and Mercor's GDPval leaderboards are LLM-judged and don't compare with the professionals' deliverables. The rankings also disagree: GPT-6 Astra leads the RLI but is 40th on GDPval-AA.",
+     "text": "LLM judges overrate newer models, and the most often updated GDPval reruns use them. CAIS calibrated an automated judge on earlier models and found it overestimated GPT-5.5's RLI rate about 2.9 times (17.9% against 6.25% from human evaluators) and Claude Opus 4.8's about 2.3 times (18.8% against 8.33%), although it ranked the models correctly. Artificial Analysis's GDPval-AA and Mercor's GDPval leaderboards are LLM-judged and don't compare with the professionals' deliverables. The rankings only partly agree: Claude Opus 5.5 leads both the RLI and GDPval-AA, but GPT-6 Astra, second on the RLI, is 37th on GDPval-AA.",
      "url": "https://safe.ai/blog/significant-increase-in-digital-labor-automation",
-     "rating": "verified fact"
+     "rating": "verified fact",
+     "ratingNote": "The calibration test is CAIS's (July 1 post). The judging methods are from the Artificial Analysis and Mercor pages, and the rankings from the Scale AI and Artificial Analysis leaderboards, read Oct 9."
     },
     {
      "text": "New tasks score lower than the public ones. Mercor's GDPval Extended adds 132 tasks it wrote to the 213 public GDPval tasks: Claude Opus 5.5 (Max) scores 88.3% on the public tasks and 75.8% on the extended benchmark, and GPT-6 Astra (Max) 86.7% and 64.1%. These are LLM-judged mean rubric scores, not wins or ties against professionals.",
@@ -269,7 +277,7 @@
     },
     {
      "name": "Artificial Analysis",
-     "what": "Independently reruns the 220 public GDPval tasks as GDPval-AA v2.1 in its open-source Stirrup agent harness (code execution, web search and fetch, image viewing). A panel of three frontier LLM judges compares models' deliverables in pairs, and Elo is anchored to DeepSeek V4.1 Flash (max) at 1600. The leaderboard lists 282 model entries.",
+     "what": "Independently reruns the 220 public GDPval tasks as GDPval-AA v2.1 in its open-source Stirrup agent harness (code execution, web search and fetch, image viewing). A panel of three frontier LLM judges compares models' deliverables in pairs, and Elo is anchored to DeepSeek V4.1 Flash (max) at 1600. The leaderboard lists 288 model entries (Oct 9).",
      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
      "rating": "verified fact"
     },
@@ -304,9 +312,9 @@
      "sourceDetail": "https://openai.com/index/gdpval/ (and lab launch posts and model cards)"
     },
     {
-     "signal": "RLI entries for Claude Opus 5.5 and Claude Sonnet 5.5 (first and second on GDPval-AA) and Gemini 4 Argon (21st, 1627); none has an RLI score yet",
-     "threshold": "We'd treat a GDPval-AA leader scoring under 25% on the RLI as confirming the gap between single deliverables and whole projects. A score of 40% or more would narrow it.",
-     "why": "It tells us whether LLM-judged Elo gains carry over to whole projects a client would accept. So far the rankings disagree: GPT-6 Astra leads the RLI but is 40th on GDPval-AA.",
+     "signal": "RLI entries for Claude Sonnet 5.5 (second on GDPval-AA) and Gemini 4 Argon (21st, 1624); neither has an RLI score yet",
+     "threshold": "Cross-check only: a GDPval-AA top-five model scoring under 25% on the RLI would further confirm the gap between single deliverables and whole projects; a score at the test's Partial mark (40%) or above would narrow it.",
+     "why": "Claude Opus 5.5, first on GDPval-AA, scored 21.25% on the RLI (entry dated Oct 7), under that 25% line, so we read the gap as confirmed for now. These entries show whether LLM-judged Elo gains carry over to whole projects a client would accept.",
      "sourceName": "Scale AI leaderboard",
      "url": "https://labs.scale.com/leaderboard/rli",
      "sourceDetail": "https://labs.scale.com/leaderboard/rli and https://artificialanalysis.ai/evaluations/gdpval-aa"
@@ -338,13 +346,13 @@
    "question": "When the system hands in a piece of work (a memo, a spreadsheet model, a legal draft, a design), experienced people in that job judge it at least as good as what a typical skilled professional would have delivered.",
    "clause": "v1.0 test: \"at the level of a median skilled professional\"; v2.0 definition: \"the full scope of human cognitive autonomy ... across any intellectual domain\" (the quality half of that scope; how many domains is the breadth component, how often is the reliability component).",
    "status": "far",
-   "statusBasis": "Far: the well-specified half is cleared on the overall figure only (84.9%), which does not count until results by occupation are published; RLI 20.8% is below the 25% Partial mark.",
-   "basisShort": "overall figure only; RLI 20.8%",
+   "statusBasis": "Far: the well-specified half is cleared on the overall figure only (84.9%), which does not count until results by occupation are published; RLI 21.25% is below the 25% Partial mark.",
+   "basisShort": "overall figure only; RLI 21.25%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
-   "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 20.8%, against 50%.",
-   "statusNote": "The well-specified half is cleared in aggregate only: GPT-5.5 wins or ties industry professionals in 84.9% of GDPval comparisons (OpenAI, April 2026), against our 50%, with no results by occupation. The real-project half is not: the best Remote Labor Index rate is 20.8% (GPT-6 Astra) against 50%, and the best all-pass score on Harvey's legal benchmark is 17.8%.",
-   "statusDetail": "In aggregate the well-specified half is cleared: GPT-5.5 wins or ties industry professionals in 84.9% of GDPval comparisons (OpenAI, Apr 23, 2026) against our 50% bar, though no per-occupation breakdown has been published since the original paper, so the 80%-of-occupations condition is unverified. The real-project half is not: the best Remote Labor Index rate is 20.8% (GPT-6 Astra, posted Sept 17) against 50%, and the best all-pass score on Harvey's legal benchmark is 17.8% (Claude Opus 5).",
+   "lastReviewed": "2026-10-09",
+   "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
+   "statusNote": "The well-specified half is cleared in aggregate only: GPT-5.5 wins or ties industry professionals in 84.9% of GDPval comparisons (OpenAI, April 2026), against our 50%, with no results by occupation. The real-project half is not: the best Remote Labor Index rate is 21.25% (Claude Opus 5.5) against 50%, and the best all-pass score on Harvey's legal benchmark is 19.5%.",
+   "statusDetail": "In aggregate the well-specified half is cleared: GPT-5.5 wins or ties industry professionals in 84.9% of GDPval comparisons (OpenAI, Apr 23, 2026) against our 50% bar, though no per-occupation breakdown has been published since the original paper, so the 80%-of-occupations condition is unverified. The real-project half is not: the best Remote Labor Index rate is 21.25% (Claude Opus 5.5, posted Oct 7) against 50%, and the best all-pass score on Harvey's legal benchmark is 19.5% (Grok 4.7, ±4.5).",
    "bar": "Parity with professionals: wins or ties 50%+ on expert-graded tasks in 80% of occupations, and 50%+ of real projects judged as good.",
    "test": {
     "measure": "Human grading of the system's deliverable against a professional's deliverable for the same task. Two parts: (1) well-specified tasks: blind head-to-head grading by experts from the same occupation, as the rate of wins or ties against professionals (GDPval or a successor), reported per occupation; (2) real end-to-end projects: the share of real commissioned projects where human evaluators, taking a reasonable client's view, judge the system's deliverable at least as good as the professional's (Remote Labor Index automation rate). All-pass legal rubrics (Harvey LAB, applied by an LLM judge to attorney-written criteria) are a domain check only.",
@@ -361,21 +369,21 @@
     {
      "name": "Remote Labor Index at 50% or more (real projects)",
      "state": "no",
-     "value": "20.8% (GPT-6 Astra)"
+     "value": "21.25% (Claude Opus 5.5)"
     }
    ],
    "headline": {
     "label": "Remote Labor Index: real projects judged at least as good as the professional's",
-    "value": 20.83,
-    "display": "20.8%",
+    "value": 21.25,
+    "display": "21.25%",
     "target": 50,
     "targetDisplay": "50%",
     "unit": "%",
     "scale": "linear",
     "min": 0,
     "max": 100,
-    "system": "GPT-6 Astra",
-    "asOf": "2026-09-17",
+    "system": "Claude Opus 5.5",
+    "asOf": "2026-10-07",
     "url": "https://labs.scale.com/leaderboard/rli",
     "rating": "verified fact",
     "partialAt": 25,
@@ -402,31 +410,31 @@
     },
     {
      "metric": "Remote Labor Index automation rate: share of 240 real freelance projects where human evaluators judge the AI's deliverable at least as good as the professional's, that is, acceptable to a reasonable client",
-     "value": "20.83%",
-     "system": "GPT-6 Astra (Fable 5.1 17.92%, Fable 5 15.80%; GPT-5.5 in Codex 6.25%)",
-     "asOf": "2026-09-17",
+     "value": "21.25%",
+     "system": "Claude Opus 5.5 (GPT-6 Astra 20.83%, Fable 5.1 17.92%, Fable 5 15.80%; GPT-5.5 in Codex 6.25%)",
+     "asOf": "2026-10-07",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact",
-     "ratingNote": "Evaluator leaderboard, re-read Oct 5. The GPT-6 Astra and Claude Fable 5.1 entries were created on Sept 17 according to the page data. Three evaluators per project; no confidence intervals are published."
+     "ratingNote": "Evaluator leaderboard, read Oct 9. The Claude Opus 5.5 entry was created on Oct 7 according to the page data (GPT-6 Astra and Fable 5.1 on Sept 17). Three evaluators per project; no confidence intervals are published."
     },
     {
      "metric": "Harvey LAB, attorney-built legal tasks scored all-pass (a task counts only if every rubric criterion passes), Pass@1 as run by Mercor",
-     "value": "17.8% (±1.5)",
-     "system": "Claude Opus 5 (Max); Fable 5.1 17.4% (±4.2); GPT-6 Astra 6.1%; GPT-5.5 4.1%",
-     "asOf": "2026-10-05",
+     "value": "19.5% (±4.5)",
+     "system": "Grok 4.7 (xHigh); Muse Spark 1.2 (xHigh) 19.4% (±4.6); Claude Opus 5 (Max) 17.8% (±1.5); Claude Fable 5.1 (Max) 17.4% (±4.2); Claude Opus 5.5 (Max) 10.8%; GPT-6 Astra (Max) 9.2%; GPT-5.5 4.1%",
+     "asOf": "2026-10-09",
      "url": "https://www.mercor.com/apex/partner-benchmarks/harvey-lab-leaderboard/",
      "rating": "verified fact",
-     "ratingNote": "Evaluator leaderboard, read Oct 5. An LLM judge (Gemini 3 Flash Preview, per Mercor's methodology page) checks each attorney-written criterion, so this is not human grading. Newer models were run on about an eighth as many samples as Opus 5, hence wider error bars. No lawyer baseline is published.",
-     "ratingQual": "LLM-judged"
+     "ratingNote": "Evaluator leaderboard, read Oct 9; it gives no entry dates. An LLM judge (Gemini 3 Flash Preview, per Mercor's methodology page) checks each attorney-written criterion, so this is not human grading. Grok 4.7 and Muse Spark 1.2 were run on about 630 to 640 samples against Opus 5's 5,236, hence wider error bars; that their lead over Opus 5 is within those bars is our inference. No lawyer baseline is published.",
+     "ratingQual": "LLM-judged; part our inference"
     },
     {
      "metric": "GDPval-AA v2.1, Artificial Analysis's model-judged version of GDPval (Elo from blind pairwise comparisons by a panel of three LLM judges)",
      "value": "1866 Elo (±26)",
-     "system": "Claude Opus 5.5 (Max); Claude Sonnet 5.5 (Max) 1839, Claude Fable 5.1 (Max) 1758, GPT-6 Astra (Max) 1542",
-     "asOf": "2026-10-05",
+     "system": "Claude Opus 5.5 (Max); Claude Sonnet 5.5 (Max) 1838, Claude Fable 5.1 (Max) 1756, GPT-6 Astra (Max) 1574",
+     "asOf": "2026-10-09",
      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
      "rating": "verified fact",
-     "ratingNote": "Evaluator leaderboard, read Oct 5; Anthropic's Opus 5.5 page (Sept 22) gives 1846. The judges are LLMs (GPT-5.6 Sol, Gemini 3.8 Flash and Claude Opus 5). Since September (v2.1) the scale is pinned to DeepSeek V4.1 Flash at 1600, so it has no human reference and can't say whether a model reaches professional level.",
+     "ratingNote": "Evaluator leaderboard, values read Oct 9 (the judge panel as read Oct 5); Anthropic's Opus 5.5 page (Sept 22) gives 1846. The judges are LLMs (GPT-5.6 Sol, Gemini 3.8 Flash and Claude Opus 5). Since September (v2.1) the scale is pinned to DeepSeek V4.1 Flash at 1600, so it has no human reference and can't say whether a model reaches professional level.",
      "ratingQual": "LLM-judged"
     }
    ],
@@ -492,11 +500,20 @@
      "kind": "result",
      "ratingNote": "Mercor's own study, not peer-reviewed, with 12 participants.",
      "ratingQual": "not peer-reviewed"
+    },
+    {
+     "date": "2026-10-08",
+     "text": "Epoch's first Automation Report: six public models on 11 of its work tasks, graded by one person. Fable 5.1 and GPT-6 Astra lead but can't yet automate Epoch's work; one design task was dropped after Fable 5.1 produced Epoch-quality work.",
+     "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+     "rating": "verified fact",
+     "kind": "result",
+     "ratingQual": "single grader, one run",
+     "ratingNote": "Epoch's own study (Kelly Hong and Greg Burnham), not peer-reviewed: one run per model and task, one human grader; Epoch calls the scores noisy and its qualitative findings more informative."
     }
    ],
    "projection": {
-    "text": "We have no date to give. In aggregate the well-specified half was crossed in December 2025 (GPT-5.2 Thinking, 70.9%). For real projects we found no published forecast of when the Remote Labor Index reaches 50%. Its best rate rose from 2.5% (Oct 2025) to 20.8% (Sept 17, 2026), but it has no confidence intervals and the July jump came with stronger scaffolding and bigger budgets, so we fit no trend, as on our trends page.",
-    "basis": "OpenAI called GDPval progress a 'clear linear trend' (Sept 25, 2025); that trend has since passed 50%. RLI best-so-far points by leaderboard entry date: 2.5% (Oct 27, 2025), 3.75% (Jan 9), 4.17% (Mar 5), 15.8% (Jul 1), 20.83% (Sept 17). CAIS ran the July results with industry scaffolds, a worker-critic loop and larger budgets. data/trends.json (manual.rli) deliberately draws no projection.",
+    "text": "We have no date to give. In aggregate the well-specified half was crossed in December 2025 (GPT-5.2 Thinking, 70.9%). For real projects we found no published forecast of when the Remote Labor Index reaches 50%. Its best rate rose from 2.5% (Oct 2025) to 21.25% (Oct 7, 2026), but it has no confidence intervals and the July jump came with stronger scaffolding and bigger budgets, so we fit no trend, as on our trends page.",
+    "basis": "OpenAI called GDPval progress a 'clear linear trend' (Sept 25, 2025); that trend has since passed 50%. RLI best-so-far points by leaderboard entry date: 2.5% (Oct 27, 2025), 3.75% (Jan 9), 4.17% (Mar 5), 15.8% (Jul 1), 20.83% (Sept 17), 21.25% (Oct 7). CAIS ran the July results with industry scaffolds, a worker-critic loop and larger budgets. data/trends.json (manual.rli) deliberately draws no projection.",
     "rating": "our inference",
     "url": "https://safe.ai/blog/significant-increase-in-digital-labor-automation"
    },
@@ -510,7 +527,7 @@
      "ratingQual": "part our inference"
     },
     {
-     "text": "Professional work is judged by its worst error. Harvey's LAB passes a legal task only if every rubric criterion passes, as a partner would check, and no model passes more than 18%. On GDPval, models lost mostly on instruction-following and formatting, all sometimes made up data or miscalculated, and experts rated about 3% of GPT-5's losing deliverables catastrophic.",
+     "text": "Professional work is judged by its worst error. Harvey's LAB passes a legal task only if every rubric criterion passes, as a partner would check, and no model passes more than 20%. On GDPval, models lost mostly on instruction-following and formatting, all sometimes made up data or miscalculated, and experts rated about 3% of GPT-5's losing deliverables catastrophic.",
      "url": "https://arxiv.org/abs/2510.04374",
      "rating": "verified fact",
      "ratingNote": "Sources: the GDPval paper and Harvey's LAB leaderboard. Treating the all-pass standard as how a partner would check is Harvey's framing (expert opinion).",
@@ -572,6 +589,12 @@
      "what": "Runs the 220 public GDPval tasks on new models with a rotating panel of three LLM judges and publishes Elo ratings. It is the most current and widest comparison, but no human grades it, and since September its scale has no human reference.",
      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
      "rating": "verified fact"
+    },
+    {
+     "name": "Epoch AI (Epoch Automation Reports)",
+     "what": "Launched Oct 8, 2026: 11 tasks from Epoch's own work in five categories (graphic design, data insights, data explorers, data-center research, research design), attempted without further intervention in each model's own harness and graded by one person against Epoch's staff standards. Epoch plans to add results as new models are released.",
+     "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+     "rating": "verified fact"
     }
    ],
    "watching": [
@@ -601,7 +624,7 @@
     {
      "signal": "Blinded human-baseline studies on less structured work (client clarification, revision after feedback)",
      "threshold": "A cross-check: we'd log a step when a peer-reviewed or evaluator study rates AI deliverables at or above median experienced professionals on tasks with ambiguity and iteration.",
-     "why": "The accountant study shows parity on structured tasks; the open question is the rest of the job.",
+     "why": "The accountant study shows parity on structured tasks. Epoch's first Automation Report (Oct 8) found the leading public models below its staff's standard on the open-ended parts of its own work, with one grader per task. The open question is the rest of the job.",
      "sourceName": "mercor.com/blog, arXiv, NBER working papers",
      "url": null
     },
@@ -627,10 +650,10 @@
    "statusBasis": "Far: pass^4 35.1% is below the 50% Partial mark, and the 80% horizon (about 3.1 h) is short of a workday.",
    "basisShort": "pass^4 35.1%; Partial at 50%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
+   "lastReviewed": "2026-10-09",
    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
    "statusNote": "On tau3-Banking the best model does 35.1% of tasks right on all four tries (Qwen 3.8 Max; 55% on one try), against 80%. METR's best published 80% time horizon is about 3.1 hours (Claude Mythos Preview, early snapshot), about 54 times short of the 167-hour work-month the test also needs.",
-   "statusDetail": "The best published 80% horizon is about 3.1 hours (186 min, 95% CI 97-399; Claude Mythos Preview early snapshot, METR), about 54 times short of the 167-hour bar, and our trend fit reads about 4.8 hours today. On tau3-Banking the best model does 35% of tasks right on all four tries (Qwen 3.8 Max; 55% on one try, 54% on at least three of four by our calculation), and in Artificial Analysis's runs Claude Fable 5.1 and GPT-6 Astra get 47% and 40-43% right on a single try.",
+   "statusDetail": "The best published 80% horizon is about 3.1 hours (186 min, 95% CI 97-399; Claude Mythos Preview early snapshot, METR), about 54 times short of the 167-hour bar, and our trend line reads about 4.8 hours at its Oct 4 point. On tau3-Banking the best model does 35% of tasks right on all four tries (Qwen 3.8 Max; 55% on one try, 54% on at least three of four by our calculation), and in Artificial Analysis's runs Claude Fable 5.1 and GPT-6 Astra get 47% and 40-43% right on a single try.",
    "bar": "Tasks right on all four tries (pass^4) 80% on tau-bench's hardest domain and the tau2 average, and an 80% time horizon of a 167-hour work-month.",
    "test": {
     "measure": "Primary: METR's 80% time horizon, the length of task (in skilled-human working time) that the system completes successfully four times in five, with a general harness. Check: repeat-run consistency on a current agent benchmark, read as pass^k (the share of tasks done right on every one of k independent tries; tau-bench reports k up to 4), alongside wrong-answer rates (how often a model answers wrongly instead of saying it doesn't know).",
@@ -680,7 +703,7 @@
      "metric": "METR 80% time horizon (50% horizon in brackets)",
      "value": "about 3.1 h (186 min, 95% CI 97-399 min) [50%: about 17.4 h, above the 16 h METR says its suite can measure reliably]; the 50% horizon is 5.6 times the 80% horizon",
      "system": "Claude Mythos Preview, early snapshot (METR Time Horizon 1.1)",
-     "asOf": "2026-04-07 (model release; METR published it May 8, 2026). Still the newest published 80% figure as of 2026-10-05: METR's June 26 summary for GPT-5.6 Sol gave no 80% figure and called its 50% estimates not robust, and its Sept 22 summary for Claude Opus 5.5 gave no time horizon",
+     "asOf": "2026-04-07 (model release; METR published it May 8, 2026). Still the newest published 80% figure as of 2026-10-09: METR's time-horizon page now says it 'is no longer actively updated', its June 26 summary for GPT-5.6 Sol gave no 80% figure and called its 50% estimates not robust, and its Sept 22 summary for Claude Opus 5.5 gave no time horizon",
      "url": "https://metr.org/time-horizons/",
      "rating": "verified fact"
     },
@@ -842,7 +865,7 @@
    "who": [
     {
      "name": "METR",
-     "what": "Publishes 50% and 80% task-completion time horizons for public frontier models, pre-deployment evaluation summaries, and the Frontier Risk Report's estimate of labs' internal frontier.",
+     "what": "Published 50% and 80% task-completion time horizons for public frontier models (the page 'is no longer actively updated'; newest entry May 8), and publishes pre-deployment evaluation summaries and the Frontier Risk Report's estimate of labs' internal frontier.",
      "url": "https://metr.org/time-horizons/",
      "rating": "verified fact"
     },
@@ -884,7 +907,7 @@
      "why": "It is the one measure that ties success rate to task length. Our fitted trend would reach a work week around Nov 2027 (range May 2027-Jun 2028); a crossing well before that would be off-trend.",
      "sourceName": "METR",
      "url": "https://metr.org/time-horizons/",
-     "sourceDetail": "https://metr.org/time-horizons/ and https://metr.org/assets/benchmark_results_1_1.yaml; newer models may appear first in METR's evaluation summaries at https://metr.org/blog/"
+     "sourceDetail": "https://metr.org/time-horizons/ and https://metr.org/assets/benchmark_results_1_1.yaml (METR says the page 'is no longer actively updated'; newest entry May 8); newer models may appear first in METR's evaluation summaries at https://metr.org/blog/, or in Time Horizon 2.0, which METR expects to be running on models 'over the next 6 to 18 months' (https://jobs.lever.co/metr/93baec4d-1e47-40f7-9990-6d7fef12da00)"
     },
     {
      "signal": "The gap between METR's 50% and 80% horizons for the newest frontier model",
@@ -933,10 +956,10 @@
    "statusBasis": "Partial: the expert-exam half (part 1) is passed; AI-alone research solves are 4 of the 10 we ask for.",
    "basisShort": "expert exams passed",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
+   "lastReviewed": "2026-10-09",
    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
    "statusNote": "Part 1 is met: GPQA Diamond 96% (GPT-6 Astra), FrontierMath Tier 4 100% (GPT-6.1 Sol), Humanity's Last Exam 54.8% in Scale's run, which lists no tools (we infer none were used). Part 2 is not: public models hold 4 of the 10 AI-alone Open Problems solves we ask for, none above 'solid result', and few credited results outside mathematics.",
-   "statusDetail": "Part 1 is met: the best public scores are 96% on GPQA Diamond (GPT-6 Astra), 100% on FrontierMath Tier 4 (GPT-6.1 Sol) and 54.8% on Humanity's Last Exam without tools (GPT-6 Astra). Part 2, the binding half, is not: public models hold 4 of the 10 AI-alone solves we ask for on Epoch's Open Problems (none above 'solid result'; two were existing human constructions the model found) and 2 of Epoch's 68 open Erdős problems, and credited new results outside mathematics are few (our reading).",
+   "statusDetail": "Part 1 is met: the best public scores are 96% on GPQA Diamond (GPT-6 Astra), 100% on FrontierMath Tier 4 (GPT-6.1 Sol) and 54.8% on Humanity's Last Exam without tools (GPT-6 Astra). Part 2, the binding half, is not: public models hold 4 of the 10 AI-alone solves we ask for on Epoch's Open Problems (none above 'solid result'; two were existing human constructions the model found) and at most 2 of Epoch's 68 open Erdős problems per model (GPT-6 Astra, Claude Opus 5.5, Claude Sonnet 5.5), and credited new results outside mathematics are few (our reading).",
    "bar": "Expert-exam scores (met), plus 10 AI-alone solves of open math problems, one a major advance, and 3 credited results in two other fields.",
    "test": {
     "measure": "Two parts. (1) Closed-answer reasoning: the best public model on fixed-answer tests that span many fields: GPQA Diamond (198 graduate-level biology, chemistry and physics questions), Humanity's Last Exam without tools (2,500 expert-written questions across mathematics, the humanities and the sciences), FrontierMath Tier 4 (research-level mathematics). (2) Open-ended research reasoning: new results that a public model produces under a general harness, without task-specific human direction, and that independent experts accept. In mathematics we count AI-alone solves on Epoch AI's FrontierMath: Open Problems (problems that resisted serious attempts by professional mathematicians), using Epoch's 'Solved (AI)' label. Outside mathematics we count new results whose human co-authors credit the model with the core idea, in refereed or author-posted papers.",
@@ -990,7 +1013,7 @@
      "metric": "Humanity's Last Exam, 2,500 public expert-written questions (Scale's leaderboard; Scale runs each model, no tools listed)",
      "value": "54.8% with RMS calibration error 39 (GPT-6 Astra); Claude Fable 5.1 46.5%, calibration error 20",
      "system": "GPT-6 Astra (OpenAI, released Sept 3, 2026)",
-     "asOf": "2026-09-17 (last leaderboard update; read Oct 5)",
+     "asOf": "2026-10-08 (last leaderboard update; read Oct 9)",
      "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
      "rating": "verified fact",
      "ratingQual": "part our inference",
@@ -1006,19 +1029,21 @@
     },
     {
      "metric": "Epoch FrontierMath: Open Problems, 49 research problems that had resisted professional mathematicians, each with an automatic verifier",
-     "value": "4 solved by AI alone (3 rated 'moderately interesting', 1 'solid result'); 5 solved by humans directing AI (including the only 'breakthrough' and 'major advance' solved); 40 unsolved. In two of the four AI-alone solves the model found an existing human construction: a curve already in a public database, and superpermutations people had posted the day before",
+     "value": "4 of 49 solved by public models alone (3 rated 'moderately interesting', 1 'solid result'); 5 solved by humans directing AI (including the only 'breakthrough' and 'major advance' solved). In two of the four public-model solves the model found an existing human construction: a curve already in a public database, and superpermutations people had posted the day before",
      "system": "Public models: Claude Fable 5 (June 9), GPT-5.6 Sol (two, July 27 and 30), GPT-6 Astra (pre-release evaluation); at most 2 by any one model",
-     "asOf": "2026-09-16 (latest changelog entry; read Oct 5)",
+     "asOf": "2026-09-16 (last change to these counts; re-read Oct 9)",
      "url": "https://epoch.ai/frontiermath/open-problems",
      "rating": "verified fact"
     },
     {
      "metric": "Epoch FrontierMath: Erdős, 68 significant Erdős problems open as of August 2026; one attempt per model, $300 and 72 hours, Lean-checked proof or disproof",
-     "value": "2 of 68 (3%) by GPT-6 Astra before release (disproved problem 74, proved problem 126); GPT-5.6 Sol, GPT-5.5, Claude Fable 5 and Claude Fable 5.1 solved none",
-     "system": "GPT-6 Astra (pre-release version)",
-     "asOf": "2026-09-01",
-     "url": "https://epoch.ai/latest/announcing-frontiermath-erdos",
-     "rating": "verified fact"
+     "value": "2 of 68 (3%) each for GPT-6 Astra (before release; disproved problem 74, proved problem 126), Claude Opus 5.5 and Claude Sonnet 5.5; GPT-5.6 Sol, GPT-5.5, Claude Fable 5 and Claude Fable 5.1 solved none",
+     "system": "GPT-6 Astra (pre-release version), Claude Opus 5.5, Claude Sonnet 5.5",
+     "asOf": "2026-10-08 (Epoch's run of Claude Sonnet 5.5; data read Oct 9)",
+     "url": "https://epoch.ai/benchmarks/frontiermath-erdos",
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "Scores and run dates (Claude Opus 5.5 Sept 24, Claude Sonnet 5.5 Oct 8) are from Epoch's benchmark data (https://epoch.ai/data/benchmark_data.zip, frontiermath_erdos.csv, read Oct 9); 2 of 68 is our calculation from its mean scores. Problems 74 and 126 are from Epoch's announcement (https://epoch.ai/latest/announcing-frontiermath-erdos). Epoch's data don't say which problems the Claude models solved. Epoch's evaluation code set a 36-hour working limit on Oct 2 (https://github.com/epoch-research/LeanOpenProblems/commit/00ddabd52a877d6b8dadc3cac4d8b2ee), so the Claude Sonnet 5.5 run may not have had the same budget as the earlier ones (our reading)."
     }
    ],
    "milestones": [
@@ -1101,6 +1126,15 @@
      "url": "https://epoch.ai/models/gpt-6-1-sol",
      "rating": "verified fact",
      "kind": "result"
+    },
+    {
+     "date": "2026-10-06",
+     "text": "OpenAI releases 722 manuscripts in 372 families from an unreleased internal model, mostly by one fixed procedure at about three hours of ChatGPT Pro compute per result; Epoch counts one as an AI-alone Open Problems solve.",
+     "url": "https://github.com/openai/math",
+     "rating": "verified fact",
+     "kind": "internal",
+     "ratingNote": "The release and its figures are from OpenAI's repository README (initial commit, Oct 6); Epoch's credit is on its problem page (https://epoch.ai/frontiermath/open-problems/large-mahler-measure). We found no outside review cited in the repository (our reading).",
+     "ratingQual": "part our inference"
     }
    ],
    "projection": {
@@ -1146,6 +1180,19 @@
      "rating": "verified fact",
      "ratingNote": "Verified fact, except the clause marked \"our reading\" or \"our calculation\", which is our inference from the cited source.",
      "ratingQual": "part our inference"
+    },
+    {
+     "text": "Lab claims outrun review: a day after its Oct 6 release from one unreleased model, OpenAI withdrew three manuscripts over a sign error and revised 14 others; Lean proofs now cover about 42% of the top-line results (300 of 719). It cites no outside review (our reading).",
+     "url": "https://github.com/openai/math/blob/main/history.md",
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "Verified fact, except the clause marked \"our reading\", which is our inference from the cited source."
+    },
+    {
+     "text": "A Lean check need not certify the written proof: in an unreviewed preprint (Oct 6), three researchers argue that the Lean proof OpenAI published for its Navier–Stokes blow-up result does not correspond to the written proof, and that faithful AI translation into Lean is, informally, harder than the halting problem.",
+     "url": "https://arxiv.org/abs/2610.08144",
+     "rating": "expert opinion",
+     "ratingNote": "Alexander Bastounis, Fabian Circelli and Anders C. Hansen, 'Navier-Stokes lost in translation' (arXiv 2610.08144, Oct 6, 2026), not peer reviewed."
     }
    ],
    "who": [
@@ -1157,22 +1204,23 @@
     },
     {
      "name": "Center for AI Safety and Scale AI",
-     "what": "Built Humanity's Last Exam; Scale runs its leaderboard (last updated Sept 17, 2026), tracking accuracy and calibration, and CAIS keeps HLE-Rolling, a continually updated fork.",
+     "what": "Built Humanity's Last Exam; Scale runs its leaderboard (last updated Oct 8, 2026), tracking accuracy and calibration, and CAIS keeps HLE-Rolling, a continually updated fork.",
      "url": "https://labs.scale.com/leaderboard/humanitys_last_exam",
      "rating": "verified fact"
     },
     {
      "name": "OpenAI",
-     "what": "GPT-6.1 Sol (100%) and GPT-6 Astra (98%) top FrontierMath Tier 4, and GPT-6 Astra is the only one of five models Epoch tested to solve any of its 68 open Erdős problems (2). Unreleased internal models produced the Erdős unit-distance disproof (May 20) and, with researchers steering about 10,000 agents, the Navier–Stokes blow-up proof (Sept 8).",
+     "what": "GPT-6.1 Sol (100%) and GPT-6 Astra (98%) top FrontierMath Tier 4, and GPT-6 Astra solved 2 of Epoch's 68 open Erdős problems before release. Unreleased internal models produced the Erdős unit-distance disproof (May 20), the Navier–Stokes blow-up proof with researchers steering about 10,000 agents (Sept 8) and 722 manuscripts released Oct 6, one of which Epoch counts as an AI-alone Open Problems solve.",
      "url": "https://openai.com/index/navier-stokes-solution/",
-     "rating": "verified fact"
+     "rating": "verified fact",
+     "ratingNote": "FrontierMath and Erdős results are Epoch's (https://epoch.ai/benchmarks/frontiermath-tier-4-v2, https://epoch.ai/benchmarks/frontiermath-erdos); the Oct 6 release is OpenAI's repository (https://github.com/openai/math) and Epoch's credit is on https://epoch.ai/frontiermath/open-problems/large-mahler-measure; the Navier–Stokes account is OpenAI's post (this link)."
     },
     {
      "name": "Anthropic",
-     "what": "An unreleased Claude raised the proven share of Riemann zeta zeros on the critical line to 67.2% (Aug 10); an internal model comparable to Claude Fable 5.1 formalized Fermat's Last Theorem (Sept 4); its mathematician Levent Alpöge found the Jacobian counterexample with Claude Fable 5 (July 19); its formal-math repository holds Claude-written Lean proofs such as critical percolation (unrefereed).",
+     "what": "An unreleased Claude raised the proven share of Riemann zeta zeros on the critical line to 67.2% (Aug 10); an internal model comparable to Claude Fable 5.1 formalized Fermat's Last Theorem (Sept 4); its mathematician Levent Alpöge found the Jacobian counterexample with Claude Fable 5 (July 19); in Epoch's runs the public Claude Opus 5.5 and Claude Sonnet 5.5 each solved 2 of 68 open Erdős problems (runs started Sept 24 and Oct 8); its formal-math repository holds Claude-written Lean proofs such as critical percolation (unrefereed).",
      "url": "https://www.anthropic.com/research/riemann-zeta",
      "rating": "verified fact",
-     "ratingNote": "The Riemann-zeta and Fermat results are from Anthropic's own posts (this link and https://www.anthropic.com/research/formalizing-fermats-last-theorem). That Alpöge found the Jacobian counterexample with Claude Fable 5 is his announcement, as reported by The Conversation (https://sciencedaily.com/releases/2026/08/260804034634.htm) and John D. Cook's blog; Anthropic's post credits Claude without naming the model."
+     "ratingNote": "The Riemann-zeta and Fermat results are from Anthropic's own posts (this link and https://www.anthropic.com/research/formalizing-fermats-last-theorem). That Alpöge found the Jacobian counterexample with Claude Fable 5 is his announcement, as reported by The Conversation (https://sciencedaily.com/releases/2026/08/260804034634.htm) and John D. Cook's blog; Anthropic's post credits Claude without naming the model. The Erdős results are from Epoch's FrontierMath: Erdős data (https://epoch.ai/benchmarks/frontiermath-erdos)."
     },
     {
      "name": "Google DeepMind",
@@ -1190,7 +1238,7 @@
    "watching": [
     {
      "signal": "AI-alone solves on Epoch's FrontierMath: Open Problems",
-     "threshold": "We'd mark the mathematics half met when AI alone has solved 10 or more, at least one rated 'major advance' or 'breakthrough', by a public model (now 4 across public models, at most 2 by one model, the best rated 'solid result'; two of the four were existing human constructions).",
+     "threshold": "We'd mark the mathematics half met when AI alone has solved 10 or more, at least one rated 'major advance' or 'breakthrough', by a public model (now 4 across public models, at most 2 by one model, the best rated 'solid result'; two of the four were existing human constructions; a fifth AI-alone solve, Oct 6, is by an unreleased OpenAI model and doesn't count).",
      "why": "It is the cleanest public count of new, checkable research results without human steering, though Epoch's labels rest on how authors describe the AI's part.",
      "sourceName": "Epoch AI",
      "url": "https://epoch.ai/frontiermath/open-problems",
@@ -1198,17 +1246,17 @@
     },
     {
      "signal": "Solves on Epoch's FrontierMath: Erdős under its fixed budget",
-     "threshold": "We'd note each new solve by a public model and mark a step at 7 of 68, about 10% (now 2, both by GPT-6 Astra).",
+     "threshold": "We'd note each new solve by a public model and mark a step at 7 of 68, about 10% (now 2 each for GPT-6 Astra, Claude Opus 5.5 and Claude Sonnet 5.5).",
      "why": "Every model gets the same one attempt, $300 and 72 hours with a Lean check, so it measures AI-alone research reasoning without the selection effects of lab announcements.",
      "sourceName": "Epoch AI",
      "url": "https://epoch.ai/benchmarks/frontiermath-erdos",
      "sourceDetail": "https://epoch.ai/benchmarks/frontiermath-erdos"
     },
     {
-     "signal": "Independent review of the Navier–Stokes, critical-percolation and Riemann-zeros proofs",
+     "signal": "Independent review of the Navier–Stokes, critical-percolation and Riemann-zeros proofs, and of OpenAI's Oct 6 math release",
      "threshold": "We'd count one as an accepted research result when a refereed journal accepts it, or a named mathematician independent of the lab publicly confirms the formal statement says what is claimed.",
-     "why": "Lean checks the proof, not whether the theorem stated is the intended one.",
-     "sourceName": "Journals, the Clay Mathematics Institute, arXiv, Gil Kalai's blog, Anthropic's formal-math repository",
+     "why": "Lean checks the proof, not whether the theorem stated is the intended one; on Oct 6 three researchers argued in an unreviewed preprint that OpenAI's Navier–Stokes Lean proof does not correspond to its written proof.",
+     "sourceName": "Journals, the Clay Mathematics Institute, arXiv, Gil Kalai's blog, Anthropic's formal-math repository, OpenAI's math repository",
      "url": null
     },
     {
@@ -1234,7 +1282,7 @@
      "url": null
     }
    ],
-   "hiddenAngle": "Reasoning is the component most likely to show if a hidden system has it, because its products are checkable and valuable: a solved open problem, a Lean proof, an unusual run of papers. So far labs have claimed such results openly, often from unreleased models: OpenAI's Erdős unit-distance disproof (May 20) and Navier–Stokes proof (Sept 8), and Anthropic's Riemann-zeros bound (Aug 10). That shows internal reasoning runs ahead of public models (relevant to A), but because the results were disclosed they are not evidence of secrecy; Epoch notes that the most impressive AI math results have come from inside AI companies with little transparency about how they were obtained. Attribution is already loose: Epoch marks the Sept 17 proof that ζ(5) is irrational 'human + AI' with an 'unknown AI system', though the preprint does not acknowledge particularly substantial AI use. So one unattributed solution would not point to a hidden system; a run of strong solutions to listed problems (Epoch's lists, erdosproblems.com) or Lean submissions with no stated author or model would matter for C. It would not show if the owner keeps results private: a government program (A) or a system advising decision-makers (D) leaves no published trace, and Epoch says only OpenAI has bought its Open Problems verifiers, so private checking is possible. Mathematical reasoning says little directly about B; AI R&D share is the better gauge there (our inference)."
+   "hiddenAngle": "Reasoning is the component most likely to show if a hidden system has it, because its products are checkable and valuable: a solved open problem, a Lean proof, an unusual run of papers. So far labs have claimed such results openly, often from unreleased models: OpenAI's Erdős unit-distance disproof (May 20), Navier–Stokes proof (Sept 8) and Oct 6 release of 722 manuscripts from one unreleased model (Epoch counts one as an AI-alone solve), and Anthropic's Riemann-zeros bound (Aug 10). That shows internal reasoning runs ahead of public models (relevant to A), but because the results were disclosed they are not evidence of secrecy; Epoch notes that the most impressive AI math results have come from inside AI companies with little transparency about how they were obtained. Attribution is already loose: Epoch marks the Sept 17 proof that ζ(5) is irrational 'human + AI' with an 'unknown AI system', though the preprint does not acknowledge particularly substantial AI use. So one unattributed solution would not point to a hidden system; a run of strong solutions to listed problems (Epoch's lists, erdosproblems.com) or Lean submissions with no stated author or model would matter for C. It would not show if the owner keeps results private: a government program (A) or a system advising decision-makers (D) leaves no published trace, and Epoch says only OpenAI has bought its Open Problems verifiers, so private checking is possible. Mathematical reasoning says little directly about B; AI R&D share is the better gauge there (our inference)."
   },
   {
    "id": "horizon",
@@ -1248,10 +1296,10 @@
    "statusBasis": "Far: the best measured 80% horizon, about 3.1 h, is short of the 8-hour Partial mark.",
    "basisShort": "3.1 h; Partial at 8 h",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
+   "lastReviewed": "2026-10-09",
    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
-   "statusNote": "METR's best published 80% time horizon is about 3.1 hours (Claude Mythos Preview, early snapshot; 95% CI 1.6–6.6 h), about 54 times short of a 167-hour work-month; our trend fit reads about 4.8 hours today. On precisely specified software, models already finish weeks-scale work, but nobody has shown that on open-ended work.",
-   "statusDetail": "METR's best published 80% horizon is about 3.1 hours (Claude Mythos Preview, early snapshot of a limited-release model; 95% CI 1.6–6.6 h). That is about 54 times short of a 167-hour work-month and nearly four doublings short of the 40-hour 'close' mark. METR has published no 80% horizon for GPT-6 Astra, Claude Fable 5.1, Claude Opus 5.5 or Gemini 4 Argon, and our trend fit reads about 4.8 hours today. On precisely specified software, models already finish weeks-scale work most of the time: Claude Opus 5.5 fully solves 77.4% of MirrorCode's medium and large rebuilds, and an internal Anthropic model ran 11 days on a Lean proof. Nobody has shown that on open-ended work: on real freelance projects averaging about 29 hours, the best system delivers 20.8% at client-acceptable quality.",
+   "statusNote": "METR's best published 80% time horizon is about 3.1 hours (Claude Mythos Preview, early snapshot; 95% CI 1.6–6.6 h), about 54 times short of a 167-hour work-month; our trend line reads about 4.8 hours at its Oct 4 point. On precisely specified software, models already finish weeks-scale work, but nobody has shown that on open-ended work.",
+   "statusDetail": "METR's best published 80% horizon is about 3.1 hours (Claude Mythos Preview, early snapshot of a limited-release model; 95% CI 1.6–6.6 h). That is about 54 times short of a 167-hour work-month and nearly four doublings short of the 40-hour 'close' mark. METR has published no 80% horizon for GPT-6 Astra, Claude Fable 5.1, Claude Opus 5.5 or Gemini 4 Argon, and our trend line reads about 4.8 hours at its Oct 4 point. On precisely specified software, models already finish weeks-scale work most of the time: Claude Opus 5.5 fully solves 77.4% of MirrorCode's medium and large rebuilds, and an internal Anthropic model ran 11 days on a Lean proof. Nobody has shown that on open-ended work: on real freelance projects averaging about 29 hours, the best system, Claude Opus 5.5, delivers 21.25% at client-acceptable quality.",
    "bar": "An 80% time horizon of a work-month (167 h) on a suite able to measure it, plus a documented multi-week project. Close at a work-week (40 h).",
    "test": {
     "measure": "METR-style 80% time horizon: the length of task, in skilled-human working hours, that the best public system completes with 80% success in a general agent harness, read from METR's published measurements (work-week = 40 h, work-month = 167 h, as on Trend watch; our trend fit there is context and projection, not a measurement). It must be measured on a task suite that can resolve horizons that long. For 'met' it must also be backed by at least one independently documented multi-week project outside formally checkable domains, delivered at professional quality with no task-specific scaffolding.",
@@ -1354,9 +1402,9 @@
     },
     {
      "metric": "Remote Labor Index: share of real freelance projects (mean 28.9, median 11.5 human-hours) delivered at client-acceptable quality",
-     "value": "20.83% (next: Claude Fable 5.1 17.92%); no confidence interval published",
-     "system": "GPT-6 Astra",
-     "asOf": "2026-09-17 (entry date from the leaderboard's page data; re-read Oct 5)",
+     "value": "21.25% (next: GPT-6 Astra 20.83%, Claude Fable 5.1 17.92%); no confidence interval published",
+     "system": "Claude Opus 5.5",
+     "asOf": "2026-10-07 (entry date from the leaderboard's page data; read Oct 9)",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact"
     },
@@ -1508,12 +1556,18 @@
      "text": "Judgement over long projects. METR found that Claude Opus 5.5 'still has qualitative weaknesses that an expert human is unlikely to exhibit when solving hard, long-horizon tasks'. Anthropic reports more cases of the model 'dismissing its own doubts or abandoning its own stated plan', and of checking a plan against requirements it wrote itself.",
      "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
      "rating": "verified fact"
+    },
+    {
+     "text": "The successor yardstick isn't ready. METR says 'Time Horizon is close to saturation' and that it is building Time Horizon 2.0, 'which we expect to be running on models over the next 6 to 18 months' (job posting listed since April 27, 2026, read Oct 9).",
+     "url": "https://jobs.lever.co/metr/93baec4d-1e47-40f7-9990-6d7fef12da00",
+     "rating": "verified fact",
+     "ratingNote": "METR's own statement of its plans, in a job posting; the timing is METR's expectation."
     }
    ],
    "who": [
     {
      "name": "METR",
-     "what": "Publishes the time-horizon series (Time Horizon 1.1: software, machine-learning and cybersecurity tasks) and runs pre-deployment long-horizon and AI R&D evaluations, including GPT-5.6 Sol (June 26) and Claude Opus 5.5 (Sept 22, 2026).",
+     "what": "Published the time-horizon series (Time Horizon 1.1: software, machine-learning and cybersecurity tasks), whose page 'is no longer actively updated' (newest entry May 8), and runs pre-deployment long-horizon and AI R&D evaluations, including GPT-5.6 Sol (June 26) and Claude Opus 5.5 (Sept 22, 2026).",
      "url": "https://metr.org/time-horizons/",
      "rating": "verified fact"
     },
@@ -1567,7 +1621,7 @@
      "why": "This is the direct measure in our test. Today's 3.1 hours is nearly four doublings short of a work-week.",
      "sourceName": "METR",
      "url": "https://metr.org/time-horizons/",
-     "sourceDetail": "https://metr.org/time-horizons/ (our calendar has the 'METR horizon for GPT-6 Astra by Nov 30' forecast deadline; METR plans another review of labs' internal models in late 2026)"
+     "sourceDetail": "https://metr.org/time-horizons/ (METR says the page 'is no longer actively updated'; its newest entry is Claude Mythos Preview, added May 8), so a newer horizon may appear first in METR's evaluation summaries at https://metr.org/blog/ or in Time Horizon 2.0, which METR expects to be running on models 'over the next 6 to 18 months' (https://jobs.lever.co/metr/93baec4d-1e47-40f7-9990-6d7fef12da00). Our calendar has the 'METR horizon for GPT-6 Astra by Nov 30' forecast deadline; METR plans another review of labs' internal models in late 2026."
     },
     {
      "signal": "MirrorCode leaderboard top score (medium and large programs)",
@@ -1587,7 +1641,7 @@
     },
     {
      "signal": "Remote Labor Index automation rate",
-     "threshold": "50% or more of projects delivered at client-acceptable quality (today 20.83%, GPT-6 Astra).",
+     "threshold": "50% or more of projects delivered at client-acceptable quality (today 21.25%, Claude Opus 5.5).",
      "why": "Real client projects averaging about 29 human-hours, judged by people, test the professional-quality side that auto-scored suites miss.",
      "sourceName": "Scale AI leaderboard",
      "url": "https://labs.scale.com/leaderboard/rli",
@@ -1615,7 +1669,7 @@
    "statusBasis": "Far: OSWorld 2.x strict 44.3% is below the 50% Partial mark; neither part is passed.",
    "basisShort": "44.3% strict; Partial at 50%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
+   "lastReviewed": "2026-10-09",
    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
    "statusNote": "Hands-off success clears 80% only on short tasks: 86% on OSWorld-Verified's few-minute desktop tasks (Claude Fable 5). On OSWorld 2.x's 1.6-hour workflows the best official strict score is 44.3% (Claude Opus 5), and only 23% of OpenAI's 16–32 hour research tasks succeeded with no human intervention (January to July).",
    "statusDetail": "Hands-off success clears our 80% bar only on short tasks: a general model scores 86% on OSWorld-Verified's few-minute desktop tasks (Claude Fable 5), and OpenAI's agents finished 86% of its under-15-minute research tasks with no human intervention. On longer work it falls well short: the best official strict score on OSWorld 2.x's 1.6-hour workflows is 44.3% (Claude Opus 5; Anthropic self-reports 48.7% for Claude Opus 5.5 on its own harness), and only 43% of OpenAI's 4-8 hour tasks (53% in July) and 23% of its 16-32 hour tasks succeeded with no intervention.",
@@ -1667,7 +1721,7 @@
     {
      "metric": "OSWorld 2.x strict (binary) completion, official leaderboard, Foundation E2E GUI track, 500 steps",
      "value": "44.33% strict (77.67% partial). The same model scored 31.43% strict on the August task release, so task-set changes alone move scores by double digits.",
-     "system": "Claude Opus 5, max reasoning, v2.1 task set (best official E2E entry; Claude Opus 5.5, Claude Fable 5.1 and GPT-6 Astra have no official entry)",
+     "system": "Claude Opus 5, max reasoning, v2.1 task set (best official E2E entry; Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5, Claude Fable 5.1 and GPT-6 Astra have no official entry)",
      "asOf": "2026-10-05",
      "url": "https://osworld-v2.xlang.ai/",
      "rating": "verified fact"
@@ -1714,8 +1768,8 @@
     },
     {
      "metric": "METR 80% time horizon (task length finished 80% of the time on METR's software suite, general scaffold picked per model, no task-specific prompting)",
-     "value": "About 186 minutes, about 3 hours (95% CI about 97-399 minutes)",
-     "system": "Claude Mythos Preview (early), released 2026-04-07, ReAct scaffold; METR's latest published measurement (page last updated 2026-05-08)",
+     "value": "About 186 minutes, about 3.1 h measured (95% CI about 97-399 minutes)",
+     "system": "Claude Mythos Preview (early snapshot), released 2026-04-07, ReAct scaffold; METR's latest published measurement, added to its page 2026-05-08",
      "asOf": "2026-05-08",
      "url": "https://metr.org/time-horizons/",
      "rating": "verified fact"
@@ -1801,7 +1855,22 @@
     "ratingQual": "part our inference",
     "ratingNote": "METR's May 2026 expectation is expert opinion. Why we give no date of our own is our inference from OpenAI's and OSWorld's published figures."
    },
-   "upcoming": [],
+   "upcoming": [
+    {
+     "date": "2026-11-30",
+     "text": "Our forecast deadline: METR publishes a time-horizon estimate for GPT-6 Astra (we said 50%); a new 80% horizon is context for this part, not a mark.",
+     "url": "scorecard.html",
+     "rating": "our inference"
+    },
+    {
+     "date": "2028-03-31",
+     "approx": "by March 2028",
+     "text": "OpenAI's stated target: an automated AI researcher by March 2028, working under human supervision (it says it reached an 'automated research intern' in September 2026).",
+     "url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+     "rating": "verified fact",
+     "ratingNote": "That OpenAI states this target is verified (Sept 6 post); the target is OpenAI's plan, not a result."
+    }
+   ],
    "challenges": [
     {
      "text": "Finishing, not just progressing: the best general entry on the official OSWorld 2.x board earns 77.7% partial credit but fully completes only 44.3% of workflows. In the benchmark paper, the four models broken down by task length completed none of the tasks that take a skilled human more than about 2.7 hours; agents lost track of constraints, missed information that arrived mid-task, guessed instead of asking and skipped verification.",
@@ -1827,6 +1896,19 @@
      "text": "Safety pulls against hands-off operation: unattended agents have gone out of scope on real systems (the July Hugging Face intrusion, run start to finish by an autonomous agent system, is one of 15 incidents on our list), and labs now put automated checkpoints between agents and the world: OpenAI ships auto-review and a confirmation policy in Codex and ChatGPT Work, and Anthropic says every action of the agents on its main internal platform passes an online monitor. Our inference is that deployed autonomy will lag tested autonomy.",
      "url": "https://huggingface.co/blog/security-incident-july-2026",
      "rating": "our inference"
+    },
+    {
+     "text": "Gains on specialised business software are partly bought by training on that software: OpenAI trained GPT-6 Astra with reinforcement learning on synthetic tasks in Ironclad's hosted contracting product, and on 11 such tasks of about 30-40 minutes it reached a mean rubric score of 55.0% (GPT-5.6 Sol 41.6%), a share of criteria met, not full completion. OpenAI's post adds that this underscores why human oversight still matters.",
+     "url": "https://openai.com/index/advancing-computer-use-with-ironclad/",
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "The training method and scores are OpenAI's own claims (Oct 6). Reading them as gains bought with task-specific training, against our test's no-task-specific-scaffolding clause, is our inference."
+    },
+    {
+     "text": "Hands-off work on a real employer's tasks still falls short. Epoch gave six public models 11 of its own work tasks in their stock harnesses (GPT-6 Astra in Codex, Claude Fable 5.1 in Claude Code) with no further intervention: the best were reliable on well-defined parts, computer use included, but fell short on open-ended judgment, and Epoch finds AI 'cannot yet replace workers, at least not at Epoch'.",
+     "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+     "rating": "verified fact",
+     "ratingNote": "Epoch's own evaluation (Oct 8): one run per task and a single human grader; Epoch says its scores are noisy and its findings mainly qualitative."
     }
    ],
    "who": [
@@ -1922,7 +2004,7 @@
    "statusBasis": "Far: CL-Bench 25.4% is below the 30% Partial mark; the other two parts have no public test.",
    "basisShort": "25.4%; Partial at 30%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
+   "lastReviewed": "2026-10-09",
    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
    "statusNote": "The best public system captures 25.4% of the available gain from experience on CL-Bench (Claude Sonnet 4.6, June 2026), about half our provisional 50%; none of the September 2026 models has been scored. Learning from documents after the training cutoff, and keeping what was learned, have no public measurement.",
    "statusDetail": "On learning that carries across tasks, the best public system captures 25.4% of the available gain on CL-Bench (plain in-context learning with Claude Sonnet 4.6, June 2026), about half our provisional 50% bar; none of the September 2026 models has been scored, and parts 2 and 3 (post-cutoff document learning, retention) have no public measurement. Learning within one session is stronger: GPT-6 Astra scores 62.7% on ARC-AGI-3 with ARC Prize's Standard harness and 99.9% with its Provider Adapter harness, while the strongest lab result we found on MTOB (Gemini 1.5 Pro, 2024) reached the human learner's level in only one translation direction.",
@@ -1986,9 +2068,9 @@
     },
     {
      "metric": "CL-Bench public leaderboard coverage",
-     "value": "12 systems; top average gain 0.241, shared by plain in-context learning and Claude Code, both with Sonnet 4.6 (the leaderboard's figures differ from the paper's). The newest models listed are GPT-5.4 and Claude Opus 4.7; none of the September 2026 releases (GPT-6 Astra, Claude Opus 5.5, Fable 5.1, Gemini 4 Argon) is listed.",
+     "value": "12 systems; top average gain 0.241, shared by plain in-context learning and Claude Code, both with Sonnet 4.6 (the leaderboard's figures differ from the paper's). The newest models listed are GPT-5.4 and Claude Opus 4.7; none of the September and October 2026 releases (GPT-6 Astra, Claude Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, Gemini 4 Argon) is listed.",
      "system": "Plain in-context learning + Claude Sonnet 4.6 (ranked first by reward)",
-     "asOf": "2026-10-05",
+     "asOf": "2026-10-09",
      "url": "https://snorkel.ai/leaderboard/continual-learning-bench/",
      "rating": "verified fact"
     },
@@ -2016,6 +2098,14 @@
      "system": "Claude (Anthropic)",
      "asOf": "2025-10-23",
      "url": "https://claude.com/blog/memory",
+     "rating": "verified fact"
+    },
+    {
+     "metric": "EBR-bench (Epoch AI): learning from experience by playing Earthborne Rangers, a board game whose playthrough takes a human 2-4 hours, 10 playthroughs per run, scored out of 21 objectives; default setting, with the exploit card banned",
+     "value": "Best run 20 of 21 objectives, roughly a 50% jump in average performance over the strongest earlier models. Epoch says it still seems slightly weaker than the top human players and shows no sign of learning to better minimize fatigue over time.",
+     "system": "GPT-6 Astra",
+     "asOf": "2026-10-07",
+     "url": "https://epoch.ai/publications/ebr-bench-update",
      "rating": "verified fact"
     }
    ],
@@ -2070,9 +2160,23 @@
      "kind": "yardstick"
     },
     {
+     "date": "2026-07-01",
+     "text": "Epoch AI launches EBR-bench: models replay a 2–4 hour board game 10 or 30 times, told to take notes; Epoch sees 'very little evidence' of learning from play, and newer models' gains come from higher initial scores.",
+     "url": "https://epoch.ai/publications/earthborne-rangers-benchmark",
+     "rating": "verified fact",
+     "kind": "yardstick"
+    },
+    {
      "date": "2026-09-03",
      "text": "GPT-6 Astra scores 62.7% on ARC-AGI-3 with ARC Prize's Standard harness, up from 0.51% for the best frontier model in March, and 99.9% with its Provider Adapter harness.",
      "url": "https://arcprize.org/blog/astra",
+     "rating": "verified fact",
+     "kind": "result"
+    },
+    {
+     "date": "2026-10-07",
+     "text": "With EBR-bench's exploit card banned, GPT-6 Astra reaches 20 of 21 objectives at best, roughly a 50% jump in average over the strongest earlier models; Epoch says it shows no sign of learning to minimize fatigue over time.",
+     "url": "https://epoch.ai/publications/ebr-bench-update",
      "rating": "verified fact",
      "kind": "result"
     }
@@ -2111,6 +2215,18 @@
      "text": "There is a measurement gap. No benchmark we found has a human learning-pace baseline (Snorkel says it is working on one for some CL-Bench tasks), and the newest models (Opus 5.5, Fable 5.1, Astra, Argon) are not on CL-Bench, so 'professional pace' cannot be checked yet.",
      "url": "https://snorkel.ai/leaderboard/continual-learning-bench/",
      "rating": "our inference"
+    },
+    {
+     "text": "Picking up a workplace's unwritten standards is still weak. Given as much reference material as a new hire would get, GPT-6 Astra and Claude Fable 5.1 'consistently missed implicit conventions that humans would pick up', such as Epoch's visual style and what its audience cares about.",
+     "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+     "rating": "verified fact",
+     "ratingNote": "Epoch's own evaluation (Oct 8): 11 tasks, one run per task, a single human grader; the finding is qualitative, as Epoch says."
+    },
+    {
+     "text": "Gains from experience vary and carry over only partly. In an unreviewed preprint, researchers at Meta Superintelligence Labs, UC Berkeley, Princeton and the University of Washington measure 'agent plasticity', how efficiently agents turn experience into reusable artifacts and gains, and find frontier models' improvement trajectories differ sharply, while gains often transfer only partially out of distribution.",
+     "url": "https://arxiv.org/abs/2610.08902",
+     "rating": "expert opinion",
+     "ratingNote": "Singh, Bakhtin, Shao and colleagues (arXiv 2610.08902, Oct 6, 2026), not peer reviewed."
     }
    ],
    "who": [
@@ -2154,6 +2270,12 @@
      "name": "Shopify",
      "what": "Retrains a smaller model behind its Sidekick assistant every day on hard cases from production traffic (a full fine-tune, then reinforcement learning). This is operator retraining, which our definition does not count as learning on the job.",
      "url": "https://shopify.engineering/sidekicks-continual-learning-loop",
+     "rating": "verified fact"
+    },
+    {
+     "name": "Epoch AI",
+     "what": "Runs EBR-bench, which tests whether models get better at a complex board game (Earthborne Rangers) with repeated play; after GPT-6 Astra's jump it expects the benchmark to be fully saturated within a few months and plans more complex games.",
+     "url": "https://epoch.ai/publications/ebr-bench-update",
      "rating": "verified fact"
     }
    ],
@@ -2211,7 +2333,7 @@
    "statusBasis": "Partial: 62.7% on ARC-AGI-3 once the games had been public for 5 months; at first contact the best was 1.5%.",
    "basisShort": "62.7% once public for months",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-05",
+   "lastReviewed": "2026-10-09",
    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
    "statusNote": "Within three months of ARC-AGI-3's launch the best public score was 1.5%, against our 80%. Once the format was known, GPT-6 Astra reached 62.7% with the Standard harness (99.9% with the Provider Adapter) at about 27 to 37 times the paid human cost per game, and its lead did not carry over to WitnessBench's held-out games.",
    "statusDetail": "Partial by our rule: public models now solve new games once the format is known (GPT-6 Astra 62.7% on ARC-AGI-3's hidden set with the Standard harness and 99.9% with the Provider Adapter, at about 27 to 37 times the paid human cost per game, our calculation), but both parts of our test fail: the best score within three months of ARC-AGI-3's launch was 1.5%, and on WitnessBench's 17 held-out games the best of 18 models got through about 5 of 20 levels per game, with Astra's two-to-one ARC-AGI-3 lead over Claude Opus 5 not carrying over. Transfer to new professional fields is unmeasured.",
@@ -2392,6 +2514,14 @@
      "url": "https://arxiv.org/abs/2609.32208",
      "rating": "verified fact",
      "kind": "yardstick"
+    },
+    {
+     "date": "2026-10-08",
+     "text": "An unreviewed preprint (Memento 3) reports that Claude Opus 5, run in Claude Code with a self-revised rulebook compiled into code, clears every level of all 25 public ARC-AGI-3 games using 44% of the human action count.",
+     "url": "https://arxiv.org/abs/2610.11794",
+     "rating": "expert opinion",
+     "kind": "result",
+     "ratingNote": "Zhao, Yu, He, Fang, Tutunov, Bou-Ammar, Luo and Wang (arXiv 2610.11794, Oct 8, 2026), not peer reviewed; the model is named in the paper body, not the abstract. Public games with the authors' own game-specific harness, so it doesn't count toward our test (our reading)."
     }
    ],
    "projection": {
@@ -2401,6 +2531,18 @@
     "url": "https://x.com/fchollet/status/2022086661170254203"
    },
    "upcoming": [
+    {
+     "date": "2026-11-02",
+     "text": "ARC Prize 2026 submissions due (papers due Nov 8).",
+     "url": "https://arcprize.org/competitions/2026",
+     "rating": "verified fact"
+    },
+    {
+     "date": "2026-12-04",
+     "text": "ARC Prize 2026 results announced, including the ARC-AGI-3 competition track.",
+     "url": "https://arcprize.org/competitions/2026",
+     "rating": "verified fact"
+    },
     {
      "date": "2027-03-01",
      "approx": "early 2027",
@@ -2539,7 +2681,7 @@
    "best": "GPT-5: 57% (long-term memory storage 0 of 10). No 2026 model scored.",
    "url": "https://arxiv.org/abs/2510.18212",
    "rating": "verified fact",
-   "ratingNote": "The scores are from the paper. That no 2026 model has been scored is our search, Oct 5.",
+   "ratingNote": "The scores are from the paper. That no 2026 model has been scored is our search, Oct 9.",
    "ratingQual": "part our inference"
   },
   {
@@ -2551,7 +2693,7 @@
    "best": "No cognitive profile published for any model.",
    "url": "https://arxiv.org/abs/2311.02462",
    "rating": "verified fact",
-   "ratingNote": "The definition is from the paper. That no cognitive profile has been published for any model is our search, Oct 5.",
+   "ratingNote": "The definition is from the paper. That no cognitive profile has been published for any model is our search, Oct 9.",
    "ratingQual": "part our inference"
   },
   {
@@ -2570,7 +2712,7 @@
    "definition": "Highly autonomous systems that outperform humans at most economically valuable work.",
    "physical": "Not excluded",
    "vsOurs": "Higher bar ('outperform'), includes physical work, no learning clause. We read it through RLI, against 50% for this bar (our inference).",
-   "best": "RLI 20.83% (GPT-6 Astra).",
+   "best": "RLI 21.25% (Claude Opus 5.5).",
    "url": "https://openai.com/charter/",
    "rating": "verified fact",
    "bestUrl": "https://labs.scale.com/leaderboard/rli",
@@ -2583,7 +2725,7 @@
    "definition": "One system passes an adversarial Turing test, assembles a model car with robotics, and scores 90% on MMLU and APPS.",
    "physical": "Required (robotics)",
    "vsOurs": "Stricter: needs robotics. A late bound for us.",
-   "best": "Community median 21 Jan 2031 (read Oct 5).",
+   "best": "Community median 19 Dec 2030 (read Oct 9).",
    "url": "https://www.metaculus.com/questions/5121/",
    "rating": "forecast aggregate"
   },
@@ -2593,15 +2735,15 @@
    "definition": "Turing-test, Winogrande, SAT-math and Montezuma's Revenge criteria, publicly described.",
    "physical": "Excluded",
    "vsOurs": "Much looser: a few fixed tests, no work or learning-on-the-job requirement.",
-   "best": "Community median 1 Sep 2027 (read Oct 5).",
+   "best": "Community median 29 Aug 2027 (read Oct 9).",
    "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
    "rating": "forecast aggregate"
   }
  ],
  "frameworksSource": {
-  "lastReviewed": "2026-10-05",
+  "lastReviewed": "2026-10-09",
   "statusNote": "On ARC Prize's test, GPT-6 Astra scores 62.7% on ARC-AGI-3 with the Standard harness we count and 99.9% with the Provider Adapter harness. ARC Prize treats ARC-AGI-3 as a test a future AGI should pass, not as proof of AGI, and says it is not claiming AGI. No 2026 model has been scored against the Hendrycks or DeepMind bars, and we know of none that meets the OpenAI charter's (our inference). The two Metaculus rows are forecasts.",
-  "packetNote": "None of the four bars is cleared and none is within 10 points under its own scoring; we keep 'partial' because one current score is past half-way. ARC-AGI-3: GPT-6 Astra scores 62.7% with the Standard harness, where 100% means beating every game as efficiently as humans (99.9% with the Provider Adapter harness, which would clear this bar; ARC Prize says it is not claiming AGI). RLI: 20.83% for GPT-6 Astra, against 50%. Hendrycks: the only published scores are GPT-4's 27% and GPT-5's 57% (2025), with long-term memory storage at 0%. DeepMind: no cognitive profile has been published. We found no Hendrycks score or DeepMind profile for any 2026 model."
+  "packetNote": "None of the four bars is cleared and none is within 10 points under its own scoring; we keep 'partial' because one current score is past half-way. ARC-AGI-3: GPT-6 Astra scores 62.7% with the Standard harness, where 100% means beating every game as efficiently as humans (99.9% with the Provider Adapter harness, which would clear this bar; ARC Prize says it is not claiming AGI). RLI: 21.25% for Claude Opus 5.5, against 50%. Hendrycks: the only published scores are GPT-4's 27% and GPT-5's 57% (2025), with long-term memory storage at 0%. DeepMind: no cognitive profile has been published. We found no Hendrycks score or DeepMind profile for any 2026 model."
  },
  "statusRule": "Each part's test publishes its Partial, Close and Met marks (test.threshold). A part's status is the highest mark the best public evidence reaches. A part passed on the overall figure only does not count as passed. Unreleased-model results never set a status.",
  "hypotheses": {

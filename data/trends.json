@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02",
+ "updated": "2026-10-09",
  "metr": {
   "source": "https://metr.org/time-horizons/",
   "dataUrl": "https://metr.org/assets/benchmark_results_1_1.yaml",
@@ -1289,10 +1289,10 @@
    }
   },
   "x2": {
-   "date": "2026-10-02",
+   "date": "2026-10-09",
    "metric": "p50",
-   "trendNow": 1509.7,
-   "fourX": 6039.0,
+   "trendNow": 1567.7,
+   "fourX": 6270.9,
    "suiteLimit": 960,
    "observable": false
   },
@@ -1343,11 +1343,17 @@
      "url": "https://safe.ai/blog/significant-increase-in-digital-labor-automation"
     },
     {
-     "date": "2026-09-29",
+     "date": "2026-09-17",
      "v": 20.83,
      "model": "GPT 6 Astra",
-     "asOf": true,
-     "label": "20.8% (GPT 6 Astra; leaderboard as of 2026-09-29, entry date not shown)",
+     "label": "20.83% (GPT-6 Astra; entry dated Sept 17 in the leaderboard's page data)",
+     "url": "https://labs.scale.com/leaderboard/rli"
+    },
+    {
+     "date": "2026-10-07",
+     "v": 21.25,
+     "model": "Claude Opus 5.5",
+     "label": "21.25% (Claude Opus 5.5; entry dated Oct 7 in the leaderboard's page data)",
      "url": "https://labs.scale.com/leaderboard/rli"
     }
    ]

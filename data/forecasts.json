@@ -11,7 +11,14 @@
    "context": "Kavukcuoglu said Sept 23–24 that Google wants it out \"as soon as possible\".",
    "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-10-09",
+     "text": "Clarification of the resolution rule (the rule itself is unchanged): Google announced Gemini 4 Argon on Sept 30 and is rolling it out first \"to a set of trusted cyber defenders through our Fairwind Program\". As our Oct 2 wrap-up said, we count that limited access as neither a public nor a paid preview, so it doesn't resolve this forecast; availability to paid API customers or Google AI Ultra subscribers, which Google says comes next, would. Google's Gemini API changelog through Oct 8 lists no Gemini 4 model.",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+    }
+   ]
   },
   {
    "id": "openai-resume-by-oct31",
@@ -48,9 +55,9 @@
    "original_context": "The prospectus went public Sept 28, targeting mid-October.",
    "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
    "original_url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
-   "market": 1.35,
-   "marketAsOf": "2026-10-02",
-   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 1.2/1.5, last 1.2)",
+   "market": 0.6,
+   "marketAsOf": "2026-10-09",
+   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 0.5/0.7; the API's last trade, 1.2, is stale)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null,
@@ -101,7 +108,7 @@
    "p": 55,
    "deadline": "2026-12-31",
    "resolution": "An official release to outside users.",
-   "context": "xAI's Jan 6, 2026 funding announcement said Grok 5 was \"currently in training\"; we found no later official statement and no release date.",
+   "context": "xAI's Jan 6, 2026 funding announcement said Grok 5 was \"currently in training\". On SpaceX's first earnings call as a public company, in early August 2026, Elon Musk said Grok 5 \"should be end of year\" (credible report; via Not a Tesla App). No release date has been announced, and we found no release as of Oct 9.",
    "original_context": "Reportedly still training on Colossus 2.",
    "url": "https://x.ai/news/series-e",
    "outcome": null,
@@ -111,6 +118,11 @@
      "date": "2026-09-30",
      "text": "The context cited an aggregator blog that doesn't meet our sourcing standard. It now cites xAI's own Jan 6, 2026 statement that Grok 5 was in training; we found nothing official since. The question, probability and resolution rule are unchanged.",
      "url": "https://x.ai/news/series-e"
+    },
+    {
+     "date": "2026-10-09",
+     "text": "Our Sept 30 context said we had found no official statement on Grok 5 after xAI's Jan 6 announcement. We missed one: on SpaceX's first quarterly earnings call as a public company, in early August 2026, Elon Musk said Grok 5 \"should be end of year\" (credible report; via Not a Tesla App, Aug 5). The question, probability and resolution rule are unchanged; we found no Grok 5 release as of Oct 9.",
+     "url": "https://notateslaapp.com/news/4543/highlights-from-spacexs-first-ever-earnings-call-starship-starlink-grok-and-more"
     }
    ]
   },
@@ -125,9 +137,9 @@
    "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
    "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "market": 30,
-   "marketAsOf": "2026-10-02",
-   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:14 PT (bid/ask 30/31; thin, about 17.9k contracts traded in total)",
+   "market": 25,
+   "marketAsOf": "2026-10-09",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:14 PT (bid/ask 25/26; borderline thin, about 20.2k contracts traded in total)",
    "marketUrl": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "outcome": null,
    "resolved": null,
@@ -224,6 +236,49 @@
    "resolution": "Yes if, by Nov 15, 2026, a registration statement for an Anthropic initial public offering (Form S-1 or equivalent, including a publicly released draft registration statement) appears on SEC EDGAR under Anthropic's name. Leaked or reported drafts, and press reports of a filing, don't count unless the filing is on EDGAR.",
    "context": "Anthropic said on June 1 that it had confidentially submitted a draft S-1, and Reuters reported on Sept 28 from a draft prospectus it had seen. Bloomberg reported on Oct 1 (via Stocktwits), citing unnamed sources, an Oct 14 investor event, marketing possibly from the week of Nov 9 and a debut before Thanksgiving, with specifics subject to change. SEC procedure requires a confidential filer to file publicly at least 15 days before its roadshow. An EDGAR full-text search showed no Anthropic registration statement as of Oct 2.",
    "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-reportedly-sends-investors-ipo-234834463.html",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "big4-q3-capex-600b-ttm",
+   "made": "2026-10-09",
+   "question": "Microsoft, Alphabet, Amazon and Meta report combined July–September 2026 capex of $186.57B or more, lifting our money gauge to $600B a year",
+   "p": 55,
+   "deadline": "2026-11-15",
+   "resolution": "Yes if the four companies' cash capital expenditure for the calendar quarter ending Sept 30, 2026, summed as data/money_sources.json defines it (XBRL PaymentsToAcquirePropertyPlantAndEquipment, for Amazon PaymentsToAcquireProductiveAssets; year-to-date figures differenced to the quarter; finance leases excluded) from 10-Q filings on SEC EDGAR by Nov 15, 2026, is $186.57B or more, which puts the trailing-12-month total for Oct 2025–Sept 2026 at $600B or more. No if the sum is lower or if any of the four filings isn't on EDGAR by Nov 15, 2026. Later amendments don't change the outcome.",
+   "context": "Our money gauge (the four companies' trailing-12-month capex) is $510.8B a year after the April–June quarter, when they spent $165.05B together, up from $129.75B in January–March. July guidance points higher for the second half: Meta expects 2026 capex of $130–145B including finance-lease principal (its Q2 release), Alphabet raised its 2026 range to $195–205B (via Bloomberg) and Amazon's CEO put 2026 capex at about $220B (via Fortune). Split the way 2025's second halves were (about 46–47% in the third quarter), those imply roughly $146–158B from the three in July–September on our basis, and Microsoft's recent trend adds about $36–40B (our inference), so the bar sits a little below the middle of our range. Quarters are lumpy, and spending pushed into the fourth quarter would leave the gauge short.",
+   "url": "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q2/Meta-06-30-2026-Exhibit-99-1-FINAL.pdf",
+   "tests": [
+    "money"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "rli-25pct-by-jan31",
+   "made": "2026-10-09",
+   "question": "An AI system scores 25% or more on Scale AI's Remote Labor Index by Jan 31, 2027",
+   "p": 35,
+   "deadline": "2027-01-31",
+   "resolution": "Yes if, by Jan 31, 2027, Scale AI's Remote Labor Index (RLI) leaderboard (labs.scale.com/leaderboard/rli), or a Scale AI or CAIS publication about the RLI, lists any AI system with an automation rate of 25.00% or more on the RLI as it stood on Oct 9, 2026 (or on a revision Scale says is comparable). A lab's own claimed RLI score counts only once Scale AI or CAIS lists it. No otherwise.",
+   "context": "Claude Opus 5.5 leads the leaderboard at 21.25% (Oct 9), ahead of GPT-6 Astra at 20.83% and Claude Fable 5.1 at 17.92%; the best score was 15.8% (Fable 5) in July and 2.5% at launch in Oct 2025. A Yes most likely needs a new frontier release that Scale scores before the deadline: OpenAI's frontier training is paused, Gemini 4 Argon is limited to vetted cyber defenders so far, and Grok 5 is unreleased. The RLI is the primary test of our breadth part (definitions v2.0), which is marked Partial from 40% on the RLI; Met needs 80%.",
+   "url": "https://labs.scale.com/leaderboard/rli",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "openai-agi-announce-by-dec31",
+   "made": "2026-10-09",
+   "question": "OpenAI announces it has achieved AGI by Dec 31, 2026",
+   "p": 8,
+   "deadline": "2026-12-31",
+   "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), OpenAI, or an official representative speaking for it (such as its CEO in an official post, statement or interview), explicitly states that OpenAI has created or achieved artificial general intelligence (AGI). Saying it is close to AGI, has 'AGI-level' or 'near-AGI' systems, or knows how to build AGI doesn't count. It resolves on the announcement, not on whether the system meets our definitions or on any later check by the independent expert panel in OpenAI's agreement with Microsoft. No otherwise. Polymarket's matching market resolves on the same kind of announcement.",
+   "context": "OpenAI credits an unreleased internal model with its Navier–Stokes result and with the mathematics manuscripts it published on Oct 6, but its frontier training has been paused since Sept 25, and California's Attorney General served it an investigative subpoena on Sept 30 in an inquiry into cybersecurity incidents and risks involving the company and its models. Microsoft says that under their October 2025 agreement an OpenAI AGI declaration \"will now be verified by an independent expert panel\". We think a formal claim in the next 12 weeks is unlikely while the pause lasts. Markets price more (forecast aggregate, Oct 9): Polymarket's matching market is at a 15.5% midpoint, Kalshi's similar OpenAI contract is thin (bid/ask 8.1/12.9), and Kalshi's any-company contract for the same date last traded at 9%. We sit near Kalshi and below Polymarket.",
+   "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
+   "market": 15.5,
+   "marketAsOf": "2026-10-09",
+   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:14 PT (bid/ask 15/16; about $313k traded)",
+   "marketUrl": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
    "outcome": null,
    "resolved": null
   }

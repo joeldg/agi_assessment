@@ -1,0 +1,2453 @@
+{
+ "schema": 1,
+ "version": "1.0",
+ "changelog": [
+  {
+   "version": "1.0",
+   "date": "2026-10-06",
+   "note": "First version: J0-J12 with marks from the design spec (5.5), indicators confirmed against their sources, and the pinned lists. The J1 labor-priced stock basket is not in v1: no keyless, permitted daily price source was available."
+  }
+ ],
+ "scale": [
+  {
+   "id": "contradicted",
+   "label": "Contradicted",
+   "order": 0
+  },
+  {
+   "id": "no-clear-sign",
+   "label": "No clear sign",
+   "order": 1
+  },
+  {
+   "id": "emerging",
+   "label": "Emerging",
+   "order": 2
+  },
+  {
+   "id": "supported",
+   "label": "Supported",
+   "order": 3
+  },
+  {
+   "id": "established",
+   "label": "Established",
+   "order": 4
+  }
+ ],
+ "defaultMarks": {
+  "contradicted": "The main indicators move against the claim in at least two independent sources, sustained across two releases.",
+  "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+  "emerging": "One primary indicator moves the claim's way beyond its pre-2022 range or its comparison group, with the confounders examined and found insufficient.",
+  "supported": "Two independent indicators of different kinds agree (for example an official series and company disclosures), sustained across two releases.",
+  "established": "Supported for two quarters, visible in official statistics and not only private data, with no live alternative explanation."
+ },
+ "lists": {
+  "seatVendors": {
+   "version": "1.0",
+   "pinned": "2026-10-06",
+   "members": [
+    {
+     "name": "Salesforce",
+     "ticker": "CRM",
+     "ir": "https://investor.salesforce.com/"
+    },
+    {
+     "name": "ServiceNow",
+     "ticker": "NOW",
+     "ir": "https://investor.servicenow.com/"
+    },
+    {
+     "name": "Workday",
+     "ticker": "WDAY",
+     "ir": "https://investor.workday.com/"
+    },
+    {
+     "name": "Adobe",
+     "ticker": "ADBE",
+     "ir": "https://www.adobe.com/investor-relations.html"
+    },
+    {
+     "name": "Atlassian",
+     "ticker": "TEAM",
+     "ir": "https://investors.atlassian.com/"
+    },
+    {
+     "name": "HubSpot",
+     "ticker": "HUBS",
+     "ir": "https://ir.hubspot.com/"
+    },
+    {
+     "name": "Zoom Communications",
+     "ticker": "ZM",
+     "ir": "https://investors.zoom.us/"
+    },
+    {
+     "name": "monday.com",
+     "ticker": "MNDY",
+     "ir": "https://ir.monday.com/"
+    }
+   ]
+  },
+  "offshoreServices": {
+   "version": "1.0",
+   "pinned": "2026-10-06",
+   "members": [
+    {
+     "name": "Tata Consultancy Services",
+     "ticker": "NSE:TCS",
+     "ir": "https://www.tcs.com/investor-relations"
+    },
+    {
+     "name": "Infosys",
+     "ticker": "INFY",
+     "ir": "https://www.infosys.com/investors.html"
+    },
+    {
+     "name": "Wipro",
+     "ticker": "WIT",
+     "ir": "https://www.wipro.com/investors/"
+    },
+    {
+     "name": "HCLTech",
+     "ticker": "NSE:HCLTECH",
+     "ir": "https://www.hcltech.com/investor-relations"
+    },
+    {
+     "name": "Tech Mahindra",
+     "ticker": "NSE:TECHM",
+     "ir": "https://www.techmahindra.com/investors/"
+    },
+    {
+     "name": "Concentrix",
+     "ticker": "CNXC",
+     "ir": "https://ir.concentrix.com/"
+    },
+    {
+     "name": "Teleperformance (TP)",
+     "ticker": "EPA:TEP",
+     "ir": "https://www.tp.com/en-us/investors/investors-homepage/"
+    },
+    {
+     "name": "IT and Business Process Association of the Philippines (IBPAP)",
+     "ticker": null,
+     "ir": "https://www.ibpap.org/"
+    }
+   ]
+  },
+  "revenuePerEmployee": {
+   "version": "1.0",
+   "pinned": "2026-10-06",
+   "rule": "the seatVendors, the offshoreServices firms, Alphabet, Amazon, Apple, Meta, Microsoft, and the ten largest US bank holding companies by total assets (Federal Reserve release of 2026-06-30 data: National Information Center, Large Holding Companies)",
+   "members": [
+    {
+     "name": "Salesforce",
+     "ticker": "CRM",
+     "ir": "https://investor.salesforce.com/"
+    },
+    {
+     "name": "ServiceNow",
+     "ticker": "NOW",
+     "ir": "https://investor.servicenow.com/"
+    },
+    {
+     "name": "Workday",
+     "ticker": "WDAY",
+     "ir": "https://investor.workday.com/"
+    },
+    {
+     "name": "Adobe",
+     "ticker": "ADBE",
+     "ir": "https://www.adobe.com/investor-relations.html"
+    },
+    {
+     "name": "Atlassian",
+     "ticker": "TEAM",
+     "ir": "https://investors.atlassian.com/"
+    },
+    {
+     "name": "HubSpot",
+     "ticker": "HUBS",
+     "ir": "https://ir.hubspot.com/"
+    },
+    {
+     "name": "Zoom Communications",
+     "ticker": "ZM",
+     "ir": "https://investors.zoom.us/"
+    },
+    {
+     "name": "monday.com",
+     "ticker": "MNDY",
+     "ir": "https://ir.monday.com/"
+    },
+    {
+     "name": "Tata Consultancy Services",
+     "ticker": "NSE:TCS",
+     "ir": "https://www.tcs.com/investor-relations"
+    },
+    {
+     "name": "Infosys",
+     "ticker": "INFY",
+     "ir": "https://www.infosys.com/investors.html"
+    },
+    {
+     "name": "Wipro",
+     "ticker": "WIT",
+     "ir": "https://www.wipro.com/investors/"
+    },
+    {
+     "name": "HCLTech",
+     "ticker": "NSE:HCLTECH",
+     "ir": "https://www.hcltech.com/investor-relations"
+    },
+    {
+     "name": "Tech Mahindra",
+     "ticker": "NSE:TECHM",
+     "ir": "https://www.techmahindra.com/investors/"
+    },
+    {
+     "name": "Concentrix",
+     "ticker": "CNXC",
+     "ir": "https://ir.concentrix.com/"
+    },
+    {
+     "name": "Teleperformance (TP)",
+     "ticker": "EPA:TEP",
+     "ir": "https://www.tp.com/en-us/investors/investors-homepage/"
+    },
+    {
+     "name": "Alphabet",
+     "ticker": "GOOGL",
+     "ir": "https://abc.xyz/investor/"
+    },
+    {
+     "name": "Amazon",
+     "ticker": "AMZN",
+     "ir": "https://ir.aboutamazon.com/"
+    },
+    {
+     "name": "Apple",
+     "ticker": "AAPL",
+     "ir": "https://investor.apple.com/"
+    },
+    {
+     "name": "Meta Platforms",
+     "ticker": "META",
+     "ir": "https://investor.atmeta.com/"
+    },
+    {
+     "name": "Microsoft",
+     "ticker": "MSFT",
+     "ir": "https://www.microsoft.com/en-us/investor"
+    },
+    {
+     "name": "JPMorgan Chase & Co.",
+     "ticker": "JPM",
+     "ir": "https://www.jpmorganchase.com/ir"
+    },
+    {
+     "name": "Bank of America Corporation",
+     "ticker": "BAC",
+     "ir": "https://investor.bankofamerica.com/"
+    },
+    {
+     "name": "Citigroup Inc.",
+     "ticker": "C",
+     "ir": "https://www.citigroup.com/global/investors"
+    },
+    {
+     "name": "Wells Fargo & Company",
+     "ticker": "WFC",
+     "ir": "https://www.wellsfargo.com/about/investor-relations/"
+    },
+    {
+     "name": "The Goldman Sachs Group, Inc.",
+     "ticker": "GS",
+     "ir": "https://www.goldmansachs.com/investor-relations"
+    },
+    {
+     "name": "Morgan Stanley",
+     "ticker": "MS",
+     "ir": "https://www.morganstanley.com/about-us-ir"
+    },
+    {
+     "name": "U.S. Bancorp",
+     "ticker": "USB",
+     "ir": "https://ir.usbank.com/"
+    },
+    {
+     "name": "Capital One Financial Corporation",
+     "ticker": "COF",
+     "ir": "https://investor.capitalone.com/"
+    },
+    {
+     "name": "The PNC Financial Services Group, Inc.",
+     "ticker": "PNC",
+     "ir": "https://investor.pnc.com/"
+    },
+    {
+     "name": "Truist Financial Corporation",
+     "ticker": "TFC",
+     "ir": "https://ir.truist.com/"
+    }
+   ]
+  }
+ },
+ "claims": [
+  {
+   "id": "J0",
+   "label": "The null: so far, a normal technology transition",
+   "wording": "So far, AI's effect on work stays within the range of past technology transitions: aggregate employment, wages and the pace of occupational change look like earlier waves, and gaps between AI-exposed and less-exposed work are small or explained by other causes.",
+   "why": "the tracker's control. Without it, the tracker would only find what it looks for. Every edition reports the week's strongest evidence for it.",
+   "lens": "null",
+   "marks": {
+    "contradicted": "AI-exposed work diverges from less-exposed work beyond past-wave ranges in two independent official-data sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary source with at least twelve months of post-2022 data finds no differential effect beyond past waves.",
+    "supported": "two sources of different kinds agree, across two releases.",
+    "established": "Supported for two quarters in official data."
+   },
+   "indicators": [
+    {
+     "id": "J0-yale",
+     "name": "Pace of occupational change against past tech waves",
+     "source": "The Budget Lab at Yale, Tracking the Impact of AI on the Labor Market (occupational churn, AI metrics, exposed vs unexposed workers; built on CPS microdata)",
+     "url": "https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market",
+     "cadence": "roughly monthly, after each CPS release",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "survey noise",
+      "the pandemic's distortions",
+      "falling CPS response rates"
+     ],
+     "comparison": "the 1984-89 computer and 1996-2002 internet waves, with 2016-19 as a control period",
+     "alsoBears": [
+      "J5"
+     ]
+    },
+    {
+     "id": "J0-epop",
+     "name": "Prime-age (25-54) employment-population ratio",
+     "source": "U.S. Bureau of Labor Statistics, Current Population Survey (seasonally adjusted)",
+     "url": "https://www.bls.gov/cps/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:LNS12300060"
+     ],
+     "confounders": [
+      "the business cycle",
+      "falling CPS response rates"
+     ],
+     "comparison": "its range in past expansions (2000-04 peak 81.9, 2020-01 peak 80.6)",
+     "alsoBears": []
+    },
+    {
+     "id": "J0-exposure",
+     "name": "Unemployment in AI-exposed against less-exposed occupations",
+     "source": "CPS-based Federal Reserve research: St. Louis Fed, On the Economy, 'Is AI Contributing to Rising Unemployment? Evidence from Occupational Variation' (Ozkan and Sullivan, 2025-08-26); Richmond Fed Economic Briefs 26-26 and 26-27 on job-finding rates by AI exposure (Borovickova and Macaluso, Aug 2026, https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-26); the overall unemployment rate from BLS as the backdrop",
+     "url": "https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation",
+     "cadence": "irregular",
+     "dataKind": "official",
+     "series": [
+      "fred:UNRATE"
+     ],
+     "confounders": [
+      "exposure measures differ between studies",
+      "the rate cycle",
+      "correlation, not causation"
+     ],
+     "comparison": "less AI-exposed occupations",
+     "alsoBears": [
+      "J2",
+      "J5"
+     ]
+    },
+    {
+     "id": "J0-prod",
+     "name": "Labor productivity growth, nonfarm business (output per hour)",
+     "source": "U.S. Bureau of Labor Statistics, Productivity and Costs (nonfarm business sector)",
+     "url": "https://www.bls.gov/productivity/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": [
+      "fred:PRS85006092",
+      "fred:OPHNFB"
+     ],
+     "confounders": [
+      "the business cycle",
+      "revisions",
+      "AI capex itself lifting measured output"
+     ],
+     "comparison": "the pre-2022 trend (OPHNFB 1.5%/yr 2007Q4-2019Q4) and the 1995-2004 IT-era pickup (3.1%/yr 1995Q4-2004Q4); a break far above trend cuts against the null",
+     "alsoBears": [
+      "J2",
+      "J9"
+     ]
+    },
+    {
+     "id": "J0-wgt",
+     "name": "Wage growth by occupation and industry",
+     "source": "Federal Reserve Bank of Atlanta, Wage Growth Tracker (median 12-month hourly wage growth of the same individuals, CPS microdata)",
+     "url": "https://www.atlantafed.org/research-and-data/data/wage-growth-tracker",
+     "cadence": "monthly, usually by the second Friday",
+     "dataKind": "official",
+     "series": [
+      "fred:FRBATLWGT3MMAUMHWGO",
+      "fred:FRBATLWGT12MMUMHGO",
+      "fred:FRBATLWGT12MMUMHWGOSCPM",
+      "fred:FRBATLWGT12MMUMHWGOSCS",
+      "fred:FRBATLWGT12MMUMHWGIFBS",
+      "fred:FRBATLWGT12MMUMHWGILH"
+     ],
+     "confounders": [
+      "inflation and the business cycle",
+      "falling CPS response rates",
+      "broad occupation and industry groups"
+     ],
+     "comparison": "Professional and management, and Finance and business services, against Service, and Leisure and hospitality",
+     "alsoBears": [
+      "J5",
+      "J9"
+     ]
+    }
+   ],
+   "status": "emerging",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "emerging",
+     "why": "The Budget Lab at Yale, using CPS data through August 2026, finds the occupational mix not yet changing in ways that clearly align with AI and no clear AI footprint in its synthetic difference-in-differences analysis, which meets J0's Emerging mark: \"one primary source with at least twelve months of post-2022 data finds no differential effect beyond past waves.\" Official aggregates agree: prime-age employment was 80.7% in September 2026, above its January 2020 level; unemployment, 4.2%, is inside its 2015-2019 range; Atlanta Fed wage-growth gaps sit inside their 2015-2019 ranges; and productivity growth since late 2022 lies between the pre-2022 trend and the IT-era pickup. Supported (\"two sources of different kinds agree, across two releases.\") is not met: these sources all rest on the CPS, and J0's own exposure indicator points the other way. St. Louis Fed economists find a 0.47 correlation between AI exposure and rising unemployment across occupations in 2022-2025, and Richmond Fed economists find that job-finding has fallen most for unemployed workers from highly exposed occupations since 2023, a component they call unprecedented outside the spread of personal computers. Contradicted is not met because Richmond places the gap within that precedent. J3 also starts at Emerging; the two fit because the young-worker gap falls on a small group (Dallas Fed economists estimate at most 0.1 point on the unemployment rate), though that estimate does not cover the Richmond job-finding gap or the 12.1% fall in Information payrolls since November 2022.",
+     "evidence": [
+      "2026-10-06#e101",
+      "2026-10-06#e112",
+      "2026-10-06#e114",
+      "2026-10-06#e113",
+      "2026-10-06#e102",
+      "2026-10-06#e107",
+      "2026-10-06#e103",
+      "2026-10-06#e104",
+      "2026-10-06#e105",
+      "2026-10-06#e108",
+      "2026-10-06#e109",
+      "2026-10-06#e110",
+      "2026-10-06#e115",
+      "2026-10-06#e111"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J1",
+   "label": "Capital is already pricing in labor substitution",
+   "wording": "Investors are already rewarding companies for replacing labor with AI and marking down businesses whose value rests on selling human labor, before the effects show in employment data.",
+   "why": "the core of the section. Markets are forward-looking; their positioning is the earliest evidence of what they expect AI to do to work.",
+   "lens": "capital",
+   "marks": {
+    "contradicted": "the basket re-rates against the comparison and AI-linked headcount cuts draw negative reactions, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary indicator, either the basket derating against the comparison beyond what its earnings changes explain, or positive market reactions to AI-linked headcount cuts at several named firms within a quarter.",
+    "supported": "two kinds agree across two releases.",
+    "established": "Supported for two quarters, with capital allocation (venture share, capex) moving the same way."
+   },
+   "indicators": [
+    {
+     "id": "J1-sector-indexes",
+     "name": "Labor-priced industries' share prices against the broad market: Nasdaq US Benchmark Computer Services, Professional Business Support Services, and Business Training and Employment Agencies indexes, each against the Nasdaq US Benchmark Index",
+     "source": "Nasdaq Global Indexes, Nasdaq US Benchmark industry indexes, via FRED (Federal Reserve Bank of St. Louis)",
+     "url": "https://fred.stlouisfed.org/series/NASDAQNQUSB50205020",
+     "cadence": "daily",
+     "dataKind": "official",
+     "series": [
+      "fred:NASDAQNQUSB10101010",
+      "fred:NASDAQNQUSB50205020",
+      "fred:NASDAQNQUSB50205025",
+      "fred:NASDAQNQUSB"
+     ],
+     "confounders": [
+      "interest rates and sector rotation",
+      "earnings changes unrelated to AI",
+      "index membership changes"
+     ],
+     "comparison": "the Nasdaq US Benchmark Index (fred:NASDAQNQUSB) and each index's own pre-2022 range against it",
+     "alsoBears": []
+    },
+    {
+     "id": "J1-ai-calls",
+     "name": "S&P 500 earnings calls citing \"AI\" (count and share of calls)",
+     "source": "FactSet Insight, Earnings Insight (John Butters): quarterly count of S&P 500 earnings calls citing \"AI\"",
+     "url": "https://insight.factset.com/more-than-65-of-sp-500-earnings-calls-for-q2-cited-ai",
+     "cadence": "quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "hype",
+      "mentions are not actions",
+      "counts the term \"AI\" only, not headcount language"
+     ],
+     "comparison": "FactSet's 5-year and 10-year averages of calls citing AI",
+     "alsoBears": []
+    },
+    {
+     "id": "J1-vc-us",
+     "name": "AI's share of US venture deal value",
+     "source": "PitchBook-NVCA Venture Monitor (quarterly report)",
+     "url": "https://nvca.org/research/pitchbook-nvca-venture-monitor/",
+     "cadence": "quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the funding cycle",
+      "a few megarounds (OpenAI, Anthropic) dominate the share",
+      "AI tagging differs by data provider"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J1-vc-global",
+     "name": "AI's share of global venture funding",
+     "source": "Crunchbase News quarterly global funding reports (Crunchbase data)",
+     "url": "https://news.crunchbase.com/sections/quarterly-and-annual-reports/",
+     "cadence": "quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the funding cycle",
+      "a few megarounds (OpenAI, Anthropic) dominate the share",
+      "AI tagging differs by data provider"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J1-tips",
+     "name": "Long-run real interest rate: 10-year TIPS yield (strong-form test only, not required for any mark)",
+     "source": "Federal Reserve Board, H.15 Selected Interest Rates (10-year inflation-indexed Treasury constant maturity), via FRED",
+     "url": "https://www.federalreserve.gov/releases/h15/",
+     "cadence": "daily",
+     "dataKind": "official",
+     "series": [
+      "fred:DFII10"
+     ],
+     "confounders": [
+      "monetary policy",
+      "deficits",
+      "the inflation risk premium"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J1 starts at No clear sign: its Emerging mark (\"one primary indicator, either the basket derating against the comparison beyond what its earnings changes explain, or positive market reactions to AI-linked headcount cuts at several named firms within a quarter.\") is not met. Since 2021 the three Nasdaq indexes for labor-priced industries have fallen far behind the broad market and sit below their 2015-2021 ranges against it, and capital flows heavily to AI: 86% of US venture deal value in the first half of 2026, and hyperscaler capex up about 80%. The Emerging tests are still not met. These price-only indexes cannot separate a derating from earnings changes, and 2026 is mixed: the employment-agency and computer-services indexes have roughly kept pace with the market this year. On market reactions to AI-linked cuts we have one clear positive case, Block, whose shares rose more than 20% after hours, against Goldman Sachs research that found share prices fell about 2% on average after layoff announcements.",
+     "evidence": [
+      "2026-10-06#e1",
+      "2026-10-06#e2",
+      "2026-10-06#e3",
+      "2026-10-06#e4",
+      "2026-10-06#e5",
+      "2026-10-06#e6",
+      "2026-10-06#e7",
+      "2026-10-06#e8",
+      "2026-10-06#e9"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J2",
+   "label": "Firms cut hiring for AI before AI can do the whole job",
+   "wording": "Companies are freezing or shrinking headcount and naming AI as the reason, while AI still can't do the whole job; output per worker rises.",
+   "why": "this is how capital's expectation (J1) becomes a labor-market fact.",
+   "lens": "work",
+   "marks": {
+    "contradicted": "firms that cited AI reverse or rehire and exposed-industry hiring keeps pace with the comparison, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary indicator, either repeated named statements from large firms tying cuts to AI with headcount data confirming the cuts, or the exposed industries' JOLTS hires rate falling below the comparison group beyond its pre-2022 range.",
+    "supported": "firm evidence (statements with headcount or seat data) and an official series (JOLTS comparison or offshore headcount) agree across two releases.",
+    "established": "Supported for two quarters, visible in official industry data against the comparison, with revenue per employee rising at the pinned firms and AI-washing examined and ruled out."
+   },
+   "indicators": [
+    {
+     "id": "J2-statements",
+     "name": "Named company statements tying hiring freezes or cuts to AI",
+     "source": "Company statements: CEO memos, earnings calls and SEC filings (EDGAR full-text search for filings)",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "event-driven",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "AI-washing: AI named as cover for cuts made for cost or over-hiring reasons"
+     ],
+     "comparison": null,
+     "alsoBears": [
+      "J1",
+      "J11"
+     ]
+    },
+    {
+     "id": "J2-challenger",
+     "name": "Job cuts attributed to AI (Challenger, Gray & Christmas monthly job-cut report)",
+     "source": "Challenger, Gray & Christmas, The Challenger Report",
+     "url": "https://www.challengergray.com/blog/category/job-cuts-report/",
+     "cadence": "monthly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the reason is self-reported by employers",
+      "announced cuts, not completed layoffs"
+     ],
+     "comparison": "all announced job cuts (AI's share of the total)",
+     "alsoBears": []
+    },
+    {
+     "id": "J2-warn",
+     "name": "WARN layoff notices (state labor departments)",
+     "source": "State WARN notices: New York State DOL WARN Dashboard (asks whether 'technological innovation or automation' caused the layoff); California EDD WARN reports",
+     "url": "https://dol.ny.gov/warn-dashboard",
+     "cadence": "continuous",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "notices rarely give a reason (New York's automation question is the exception)",
+      "WARN thresholds miss small and remote cuts"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J2-rpe",
+     "name": "Revenue per employee at the pinned revenuePerEmployee firms",
+     "source": "SEC filings (10-K, 10-Q, 20-F; XBRL company facts where available); for non-SEC filers (TCS, HCLTech, Tech Mahindra, Teleperformance) their own annual reports",
+     "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+     "cadence": "quarterly or annual",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "price increases",
+      "acquisitions and divestitures",
+      "outsourcing and contractors outside headcount"
+     ],
+     "comparison": "each firm's own pre-2022 trend",
+     "alsoBears": []
+    },
+    {
+     "id": "J2-seats",
+     "name": "Seat and retention disclosures at the pinned seatVendors, paired with hyperscalers' disclosed token volumes",
+     "source": "Company filings and earnings releases of the seatVendors (paid seats, net revenue retention, renewal and attrition, comments on customer headcount) and of Alphabet, Microsoft and Amazon (token or inference volumes)",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "vendors moving from per-seat to per-agent and per-outcome pricing",
+      "downturn spending cuts and trimming of unused seats",
+      "vendor consolidation"
+     ],
+     "comparison": null,
+     "alsoBears": [
+      "J8"
+     ]
+    },
+    {
+     "id": "J2-offshore",
+     "name": "Quarterly headcount at the pinned offshoreServices firms",
+     "source": "Company results and annual reports: TCS, Infosys, Wipro, HCLTech, Tech Mahindra (quarterly); Concentrix and Teleperformance (annual reports)",
+     "url": "https://www.tcs.com/investor-relations",
+     "cadence": "quarterly (Indian IT firms); annual (Concentrix, Teleperformance)",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "demand in client industries",
+      "pricing pressure",
+      "visa and trade policy"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J2-ibpap",
+     "name": "Philippine IT-BPM industry headcount",
+     "source": "IT and Business Process Association of the Philippines (IBPAP), annual industry figures",
+     "url": "https://www.ibpap.org/news-room",
+     "cadence": "annual",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "an industry body's own estimates and targets",
+      "demand in client industries",
+      "trade and outsourcing policy"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J2-jolts",
+     "name": "JOLTS hires rate and quits rate, tracked separately, for Information and Professional and business services against less-exposed industries",
+     "source": "U.S. Bureau of Labor Statistics, Job Openings and Labor Turnover Survey (via FRED; Information via BLS)",
+     "url": "https://www.bls.gov/jlt/",
+     "cadence": "monthly (read as 3-month averages)",
+     "dataKind": "official",
+     "series": [
+      "bls:JTS510000000000000HIR",
+      "bls:JTS510000000000000QUR",
+      "fred:JTS540099HIR",
+      "fred:JTS540099QUR",
+      "fred:JTS2300HIR",
+      "fred:JTS2300QUR",
+      "fred:JTS6200HIR",
+      "fred:JTS6200QUR",
+      "fred:JTS7000HIR",
+      "fred:JTS7000QUR"
+     ],
+     "confounders": [
+      "the rate cycle (handled by the comparison)",
+      "sample noise",
+      "revisions"
+     ],
+     "comparison": "Construction, Health care and social assistance, Leisure and hospitality (same seasonally adjusted JOLTS rates)",
+     "alsoBears": []
+    },
+    {
+     "id": "J2-freelance",
+     "name": "Freelance platforms: Upwork and Fiverr filings and academic studies on platform data",
+     "source": "Upwork and Fiverr quarterly results and SEC filings (active clients or buyers, spend per client, category mix); academic studies using platform data",
+     "url": "https://investors.upwork.com/",
+     "cadence": "quarterly (filings); irregular (studies)",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "post-pandemic normalization",
+      "both platforms remaking themselves as AI companies"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J2 starts at No clear sign: its Emerging mark (\"one primary indicator, either repeated named statements from large firms tying cuts to AI with headcount data confirming the cuts, or the exposed industries' JOLTS hires rate falling below the comparison group beyond its pre-2022 range.\") is not met. Firms are naming AI. Block cut its workforce by more than 40%, saying a smaller team using AI tools can do more, and its quarterly report records the cut. Amazon tied its October 2025 round to AI, and Challenger counted 120,136 announced US cuts attributed to AI in January-September 2026. The Emerging mark is not met: Block is the only large firm whose AI-linked cut is confirmed by headcount data, Amazon framed its January round as removing bureaucracy, and the Information hires rate reached the bottom edge of its 2017-2019 range against the comparison industries only in August, after running ahead of them from January to June. AI-washing and the unwinding of 2021-22 over-hiring remain live explanations, and the Yale, New York Fed, OECD and Census studies find no broad AI footprint in hiring.",
+     "evidence": [
+      "2026-10-06#e24",
+      "2026-10-06#e3",
+      "2026-10-06#e25",
+      "2026-10-06#e21",
+      "2026-10-06#e117",
+      "2026-10-06#e22",
+      "2026-10-06#e23",
+      "2026-10-06#e30",
+      "2026-10-06#e26",
+      "2026-10-06#e27",
+      "2026-10-06#e28",
+      "2026-10-06#e29",
+      "2026-10-06#e80",
+      "2026-10-06#e101",
+      "2026-10-06#e102",
+      "2026-10-06#e104",
+      "2026-10-06#e118"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J3",
+   "label": "Entry-level knowledge work goes first",
+   "wording": "The first jobs AI displaces are entry-level knowledge-work jobs: young workers in AI-exposed occupations lose ground to their peers in less-exposed work, and firms shrink graduate intake.",
+   "why": "entry-level work is the most automatable part of most knowledge jobs, and cutting juniors is also a bet: a firm that stops hiring juniors is betting it won't need as many seniors in about ten years.",
+   "lens": "work",
+   "marks": {
+    "contradicted": "young workers in exposed jobs keep pace with the comparison group in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary dataset shows young workers in exposed jobs falling relative to the comparison group, beyond the pre-2022 range.",
+    "supported": "two independent datasets (payroll research and postings, or the New York Fed series) show it across two releases.",
+    "established": "Supported for two quarters, visible in BLS data, with the comparison group ruling out the rate cycle."
+   },
+   "indicators": [
+    {
+     "id": "J3-adp",
+     "name": "Employment of 22-25-year-olds in AI-exposed against less-exposed occupations (ADP payroll research)",
+     "source": "Stanford Digital Economy Lab, Brynjolfsson, Chandar and Chen, 'Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence' (ADP payroll data)",
+     "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/",
+     "cadence": "irregular (paper revisions)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the rate cycle",
+      "the unwinding of 2021-22 tech over-hiring"
+     ],
+     "comparison": "workers aged 22-25 in less-exposed occupations, and older workers in the same occupations",
+     "alsoBears": []
+    },
+    {
+     "id": "J3-nyfed",
+     "name": "Recent-graduate unemployment against all workers",
+     "source": "Federal Reserve Bank of New York, The Labor Market for Recent College Graduates (Census CPS data)",
+     "url": "https://www.newyorkfed.org/research/college-labor-market",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the rate cycle",
+      "the unwinding of 2021-22 tech over-hiring"
+     ],
+     "comparison": "all workers aged 22-65 and all young workers",
+     "alsoBears": []
+    },
+    {
+     "id": "J3-postings",
+     "name": "Junior postings and postings in exposed against less-exposed occupational sectors (Indeed)",
+     "source": "Indeed Hiring Lab, Job Postings Index by occupational sector (open data on GitHub); junior and entry-level postings from Hiring Lab reports",
+     "url": "https://github.com/hiring-lab/job_postings_tracker",
+     "cadence": "daily data refreshed weekly; irregular reports",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "postings are not hires",
+      "job-board coverage changes",
+      "the index starts 2020-02-01, so the pre-2022 baseline is short"
+     ],
+     "comparison": "less-exposed sectors in the same data (e.g. Nursing, Construction, Personal Care & Home Health, Food Preparation & Service)",
+     "alsoBears": []
+    },
+    {
+     "id": "J3-intake",
+     "name": "Graduate intake at the Big Four and large law firms",
+     "source": "Firm announcements (Deloitte, EY, KPMG, PwC); NALP research on law-firm recruiting and new-graduate employment",
+     "url": "https://www.nalp.org/research",
+     "cadence": "annual",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "demand for audit and legal work",
+      "offshoring"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J3-majors",
+     "name": "College majors: computer science and other fields against the pre-2022 trend",
+     "source": "National Student Clearinghouse Research Center, Final Fall Enrollment Trends and Final Spring Enrollment Trends (major-field data appendix)",
+     "url": "https://nscresearchcenter.org/final-fall-enrollment-trends/",
+     "cadence": "twice a year (fall report in January, spring report mid-year)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "counter-cyclical moves into school in a weak job market",
+      "new majors (data science, AI) absorbing computer science"
+     ],
+     "comparison": "each field's pre-2022 trend",
+     "alsoBears": [
+      "J5",
+      "J10"
+     ]
+    },
+    {
+     "id": "J3-taulbee",
+     "name": "Computing degree production and enrollment (CRA Taulbee Survey)",
+     "source": "Computing Research Association, CRA Taulbee Survey",
+     "url": "https://cra.org/resources/taulbee-survey/",
+     "cadence": "annual (published each May)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "covers only PhD-granting departments",
+      "counter-cyclical enrollment"
+     ],
+     "comparison": "pre-2022 trend",
+     "alsoBears": [
+      "J5",
+      "J10"
+     ]
+    },
+    {
+     "id": "J3-lsac",
+     "name": "Law school applicant volume (LSAC)",
+     "source": "Law School Admission Council, Current Volume Summaries",
+     "url": "https://www.lsac.org/data-research/data/current-volume-summaries-region-raceethnicity-gender-identity-lsat-score",
+     "cadence": "daily during the admission cycle (read weekly)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "counter-cyclical moves into law school in a weak job market",
+      "LSAT and admission-cycle changes"
+     ],
+     "comparison": "same point in earlier cycles, against the pre-2022 trend",
+     "alsoBears": [
+      "J5",
+      "J10"
+     ]
+    },
+    {
+     "id": "J3-bar",
+     "name": "Bar exam takers (NCBE)",
+     "source": "National Conference of Bar Examiners, The Bar Examiner statistics (MBE, MPRE and annual bar admission statistics)",
+     "url": "https://thebarexaminer.ncbex.org/statistics/",
+     "cadence": "twice a year (February and July exams); annual statistics each spring",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the NextGen bar exam transition",
+      "counter-cyclical law school enrollment"
+     ],
+     "comparison": "pre-2022 trend",
+     "alsoBears": [
+      "J5",
+      "J10"
+     ]
+    },
+    {
+     "id": "J3-nclex",
+     "name": "NCLEX nursing licensure exam volumes (NCSBN)",
+     "source": "National Council of State Boards of Nursing, NCLEX pass rates dashboard (volume and pass rates by candidate type)",
+     "url": "https://www.ncsbn.org/exams/exam-statistics-and-publications/nclex-pass-rates.page",
+     "cadence": "annual dashboards, updated during the year",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the 2023 Next Generation NCLEX change",
+      "nursing school capacity limits",
+      "internationally educated candidates"
+     ],
+     "comparison": "pre-2022 trend",
+     "alsoBears": [
+      "J5",
+      "J10"
+     ]
+    },
+    {
+     "id": "J3-cpa",
+     "name": "Accounting graduates and CPA Exam candidates (AICPA, NASBA)",
+     "source": "AICPA Trends Report (accounting graduates, new-graduate hiring, CPA Exam candidates); NASBA candidate data",
+     "url": "https://www.aicpa-cima.com/professional-insights/download/2025-trends-report",
+     "cadence": "annual",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "the CPA 150-hour rule and its new alternative pathways",
+      "the 2024 CPA Exam redesign"
+     ],
+     "comparison": "pre-2022 trend",
+     "alsoBears": [
+      "J5",
+      "J10"
+     ]
+    }
+   ],
+   "status": "emerging",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "emerging",
+     "why": "J3 meets its Emerging mark (\"one primary dataset shows young workers in exposed jobs falling relative to the comparison group, beyond the pre-2022 range.\"); its Supported mark (\"two independent datasets (payroll research and postings, or the New York Fed series) show it across two releases.\") is not met. In ADP payroll data, Stanford researchers find that employment of 22-25-year-olds in highly AI-exposed occupations was about 19% below the path of their peers in less-exposed occupations as of June 2026, up from 15% a year earlier, with no such gap for experienced workers. They report that the gap holds when tech firms are excluded and exposure to interest rates and remote work is controlled, which covers the claim's named confounders. Supported is not met. Dallas Fed work on Census CPS data points the same way but ends in September 2025, and the New York Fed's recent-graduate unemployment gap sits only at or slightly above its pre-2022 high. Against the claim, New York Fed postings research finds that the decline in exposed occupations began before ChatGPT and is not concentrated in entry-level jobs, a Warwick paper attributes most of the fall in junior hiring to work-from-home exposure, and the Stanford authors say their estimates weaken with education controls and are descriptive, not causal.",
+     "evidence": [
+      "2026-10-06#e32",
+      "2026-10-06#e109",
+      "2026-10-06#e33",
+      "2026-10-06#e110",
+      "2026-10-06#e31",
+      "2026-10-06#e35",
+      "2026-10-06#e36",
+      "2026-10-06#e37",
+      "2026-10-06#e102",
+      "2026-10-06#e105",
+      "2026-10-06#e106",
+      "2026-10-06#e119",
+      "2026-10-06#e27",
+      "2026-10-06#e40",
+      "2026-10-06#e34"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J4",
+   "label": "Value moves to the physical bottlenecks",
+   "wording": "As cognition gets cheap, the scarce physical inputs (electric power, grid capacity, chips, land with power and water, and materials such as copper) capture a growing share of the value, and their owners gain pricing power.",
+   "why": "if cognitive labor stops being the bottleneck, the next bottlenecks are physical, and capital is already moving there.",
+   "lens": "buyers",
+   "marks": {
+    "contradicted": "bottleneck prices and lead times ease as supply catches up and margins compress, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary indicator, for example capacity or retail power prices in data-center regions rising faster than in comparison regions, attributed by the grid operator or regulator to data-center load.",
+    "supported": "prices or auctions and lead times or margins agree across two releases.",
+    "established": "Supported for two quarters in official data, with bottleneck owners' margins rising beyond inflation."
+   },
+   "indicators": [
+    {
+     "id": "J4-deals",
+     "name": "Data-center power deals: purchase agreements, nuclear restarts and new plants tied to AI load",
+     "source": "Power producers' and hyperscalers' 8-K and other SEC filings (EDGAR full-text search), plus the companies' own announcements",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "deals announced but not built",
+      "electrification and reshoring load unrelated to AI",
+      "contracts re-labelled from earlier plans"
+     ],
+     "comparison": null,
+     "alsoBears": [
+      "J8"
+     ]
+    },
+    {
+     "id": "J4-pjm",
+     "name": "PJM capacity auction clearing prices (Base Residual Auction)",
+     "source": "PJM Interconnection, Capacity Market (RPM): Base Residual Auction reports and results",
+     "url": "https://www.pjm.com/markets-and-operations/rpm",
+     "cadence": "annual (one Base Residual Auction per delivery year), plus planning parameters before each",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "generator retirements",
+      "auction rule changes and the price cap and floor",
+      "natural gas prices"
+     ],
+     "comparison": "PJM's pre-2022 auctions, and capacity prices in regions without data-center clusters",
+     "alsoBears": [
+      "J12"
+     ]
+    },
+    {
+     "id": "J4-tariffs",
+     "name": "Large-load tariffs for data centers approved or proposed by state utility commissions",
+     "source": "State utility commission dockets, indexed by DELTa (Database of Emerging Large-Load Tariffs), Smart Electric Power Alliance and NC Clean Energy Technology Center",
+     "url": "https://sepapower.org/large-load-tariffs-database/",
+     "cadence": "event-driven; DELTa updated quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "tariffs written to shield households rather than to price scarcity",
+      "proposed tariffs that are never approved"
+     ],
+     "comparison": null,
+     "alsoBears": [
+      "J12"
+     ]
+    },
+    {
+     "id": "J4-queue",
+     "name": "Interconnection queue volume and time from request to commercial operation",
+     "source": "Lawrence Berkeley National Laboratory, Queued Up: Characteristics of Power Plants Seeking Transmission Interconnection (with GridTracker; data from all seven ISOs/RTOs and 50 non-ISO utilities)",
+     "url": "https://emp.lbl.gov/queues",
+     "cadence": "annual",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "speculative requests that inflate queues",
+      "FERC Order 2023 queue reforms",
+      "solar and storage policy changes"
+     ],
+     "comparison": "earlier editions of the same report (pre-2022 queue durations)",
+     "alsoBears": []
+    },
+    {
+     "id": "J4-turbines",
+     "name": "Gas turbine backlog and slot reservations against annual output",
+     "source": "GE Vernova quarterly results, 10-Q and earnings releases (Gas Power equipment backlog and slot reservation agreements, GW)",
+     "url": "https://www.gevernova.com/investors",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "reservations that are not firm orders",
+      "gas demand for reasons other than data centers",
+      "one maker's share shifting"
+     ],
+     "comparison": "the maker's stated annual production capacity (backlog in years of output)",
+     "alsoBears": []
+    },
+    {
+     "id": "J4-xfmr-lead",
+     "name": "Transformer lead times and supply shortfall",
+     "source": "Wood Mackenzie supply-chain research on US power and distribution transformers",
+     "url": "https://www.woodmac.com/press-releases/us-executive-order-banning-chinese-bulk-power-equipment-set-to-worsen-critical-transformer-shortage/",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "tariffs and import restrictions on equipment",
+      "replacement of ageing transformers",
+      "copper and electrical-steel input costs"
+     ],
+     "comparison": "2021 lead times (about 50 weeks for power transformers, per Wood Mackenzie)",
+     "alsoBears": []
+    },
+    {
+     "id": "J4-xfmr-ppi",
+     "name": "Producer prices of power and distribution transformers (a price proxy for lead times, not a lead-time measure)",
+     "source": "BLS Producer Price Index by Commodity: Power and Distribution Transformers, Except Parts, via FRED",
+     "url": "https://fred.stlouisfed.org/series/WPU117409",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:WPU117409",
+      "fred:PPIACO"
+     ],
+     "confounders": [
+      "copper and electrical-steel prices",
+      "tariffs on imported equipment",
+      "general producer inflation"
+     ],
+     "comparison": "PPI all commodities (fred:PPIACO)",
+     "alsoBears": []
+    },
+    {
+     "id": "J4-elec-state",
+     "name": "Retail electricity prices by state: data-center states against the US average",
+     "source": "U.S. Energy Information Administration, Electric Power Monthly, Table 5.6.A (average price to ultimate customers by sector, by state)",
+     "url": "https://www.eia.gov/electricity/monthly/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "natural gas prices",
+      "weather",
+      "transmission and wildfire costs unrelated to data centers"
+     ],
+     "comparison": "states without data-center clusters, and the US average",
+     "alsoBears": [
+      "J12"
+     ]
+    },
+    {
+     "id": "J4-elec-cpi",
+     "name": "US city average retail price of electricity per kWh against overall inflation",
+     "source": "BLS average price data (CPI program), via FRED",
+     "url": "https://fred.stlouisfed.org/series/APU000072610",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:APU000072610",
+      "fred:CPIAUCSL"
+     ],
+     "confounders": [
+      "natural gas prices",
+      "weather",
+      "general inflation"
+     ],
+     "comparison": "CPI all items (fred:CPIAUCSL)",
+     "alsoBears": [
+      "J12"
+     ]
+    },
+    {
+     "id": "J4-copper",
+     "name": "Global price of copper",
+     "source": "IMF Primary Commodity Prices, via FRED",
+     "url": "https://www.imf.org/en/Research/commodity-prices",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:PCOPPUSDM",
+      "fred:PALLFNFINDEXM"
+     ],
+     "confounders": [
+      "tariffs on metals",
+      "China's construction cycle",
+      "electrification unrelated to AI (vehicles, grids)"
+     ],
+     "comparison": "IMF all-commodities price index (fred:PALLFNFINDEXM)",
+     "alsoBears": []
+    },
+    {
+     "id": "J4-foundry",
+     "name": "Chip foundry gross margin",
+     "source": "TSMC quarterly results (earnings release and management report)",
+     "url": "https://investor.tsmc.com/english/quarterly-results",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "capacity utilization swings",
+      "currency moves",
+      "overseas fab cost dilution"
+     ],
+     "comparison": "TSMC's own pre-2022 gross margins",
+     "alsoBears": [
+      "J9"
+     ]
+    },
+    {
+     "id": "J4-dc-rents",
+     "name": "Data-center vacancy and rents in primary North American markets",
+     "source": "CBRE, North America Data Center Trends",
+     "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h1-2026",
+     "cadence": "semiannual",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "construction delays from power and permitting",
+      "broker survey coverage"
+     ],
+     "comparison": "pre-2022 vacancy and rents in the same markets",
+     "alsoBears": [
+      "J8"
+     ]
+    },
+    {
+     "id": "J4-roe",
+     "name": "Utilities' authorized return on equity in rate cases",
+     "source": "S&P Global Market Intelligence, Regulatory Research Associates (RRA) rate case summaries",
+     "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/09/average-gas-roe-edges-down-as-electric-holds-firm-in-h1-2026",
+     "cadence": "semiannual",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "interest rates",
+      "rider cases mixed with general rate cases",
+      "state regulatory climate"
+     ],
+     "comparison": "the 10-year Treasury yield (fred:DGS10)",
+     "alsoBears": []
+    }
+   ],
+   "status": "established",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "supported",
+     "why": "J4 meets its Supported mark (\"prices or auctions and lead times or margins agree across two releases.\"). PJM's 2028/29 capacity auction cleared at its $325 per MW-day cap, after $333.44 for 2027/28 and $329.17 for 2026/27, against $76.53-164.77 in the 2018/19-2021/22 auctions. PJM's independent market monitor attributes 38.2% of the latest capacity charges to data-center load, and residential power prices in five PJM states rose 11-14% over the year to July against 4.9% nationally. Lead times and margins agree across releases: GE Vernova's gas-turbine backlog and reservations rose from 100 to 116 GW, about 5.8 years of output; transformer lead times passed 160 weeks; TSMC's gross margin reached 67.7% against 52.7% in late 2021; and data-center vacancy in primary markets hit a record low of 1.4%. Its Established mark, \"Supported for two quarters in official data, with bottleneck owners' margins rising beyond inflation.\", also appears met: PJM's December 2025 and July 2026 auctions both cleared at their caps, GE Vernova's filings show its gas-turbine backlog and Power margin rising through the first half of 2026, and TSMC's gross margin rose from 52.7% to 67.7%. We propose Established for the owner to confirm. Against it: over the past year the national electricity price rose slightly less than the CPI, the transformer producer price index matched all commodities, MISO's capacity prices fell, and auction rule changes, tariffs and gas prices remain live explanations; the lead-time evidence before the second quarter of 2026 is private (Wood Mackenzie).",
+     "evidence": [
+      "2026-10-06#e61",
+      "2026-10-06#e63",
+      "2026-10-06#e65",
+      "2026-10-06#e66",
+      "2026-10-06#e69",
+      "2026-10-06#e70",
+      "2026-10-06#e68",
+      "2026-10-06#e71",
+      "2026-10-06#e72",
+      "2026-10-06#e73",
+      "2026-10-06#e46",
+      "2026-10-06#e62",
+      "2026-10-06#e64",
+      "2026-10-06#e67",
+      "2026-10-06#e120"
+     ],
+     "by": "run"
+    },
+    {
+     "date": "2026-10-06",
+     "from": "supported",
+     "to": "established",
+     "why": "Its Established mark, \"Supported for two quarters in official data, with bottleneck owners' margins rising beyond inflation.\", also appears met: PJM's December 2025 and July 2026 auctions both cleared at their caps, GE Vernova's filings show its gas-turbine backlog and Power margin rising through the first half of 2026, and TSMC's gross margin rose from 52.7% to 67.7%. We propose Established for the owner to confirm. Against it: over the past year the national electricity price rose slightly less than the CPI, the transformer producer price index matched all commodities, MISO's capacity prices fell, and auction rule changes, tariffs and gas prices remain live explanations; the lead-time evidence before the second quarter of 2026 is private (Wood Mackenzie).",
+     "evidence": [
+      "2026-10-06#e61",
+      "2026-10-06#e65",
+      "2026-10-06#e69"
+     ],
+     "by": "owner"
+    }
+   ]
+  },
+  {
+   "id": "J5",
+   "label": "The human moats hold, for now",
+   "wording": "Work protected by dexterity in messy physical settings, by legal accountability (a human who signs and can be held liable) or by the value of human presence keeps its jobs and pay while AI-exposed work weakens.",
+   "why": "these are the jobs that are supposed to be left. \"For now\" is the point: the tracker watches the clocks that would end each moat.",
+   "lens": "prices",
+   "marks": {
+    "contradicted": "scaled robot deployments in trades or driving, or removal of human-signature requirements, with protected occupations' employment or pay falling against the comparison, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one official series shows protected work's pay or employment beating the AI-exposed comparison beyond the pre-2022 range.",
+    "supported": "pay or employment and the robot clock agree (protected work holding while deployments stay at pilot scale) across two releases.",
+    "established": "Supported for two quarters in official data, with no scaled substitution in the robot clock."
+   },
+   "indicators": [
+    {
+     "id": "J5-tradespay",
+     "name": "Pay in the trades against all private-sector workers; plus specialty trade contractors (BLS)",
+     "source": "U.S. Bureau of Labor Statistics, Current Employment Statistics: average hourly earnings, construction and total private (via FRED)",
+     "url": "https://www.bls.gov/ces/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:CES2000000003",
+      "fred:CES0500000003",
+      "fred:CES2000000008",
+      "fred:AHETPI",
+      "bls:CES2023800003"
+     ],
+     "confounders": [
+      "the construction cycle",
+      "immigration policy"
+     ],
+     "comparison": "total private average hourly earnings (all employees from 2006; the production and nonsupervisory pair, from 1947 and 1964, gives the longer pre-2022 range)",
+     "alsoBears": []
+    },
+    {
+     "id": "J5-apprentices",
+     "name": "Registered apprenticeships",
+     "source": "U.S. Department of Labor, Apprenticeship.gov data (Registered Apprenticeship Partners Information Database System)",
+     "url": "https://www.apprenticeship.gov/data-and-statistics/apprentices-by-state-dashboard",
+     "cadence": "annual (fiscal-year totals; dashboard refreshed monthly)",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "federal and state funding pushes to expand apprenticeship",
+      "the construction cycle"
+     ],
+     "comparison": "the pre-2022 trend",
+     "alsoBears": [
+      "J10"
+     ]
+    },
+    {
+     "id": "J5-robots",
+     "name": "Industrial robot installations",
+     "source": "International Federation of Robotics, World Robotics",
+     "url": "https://ifr.org/worldrobotics/",
+     "cadence": "annual (September), with interim press releases",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "auto and electronics investment cycles",
+      "China's industrial policy",
+      "counts factory robots, not trades or care work"
+     ],
+     "comparison": "the pre-2022 installation trend",
+     "alsoBears": []
+    },
+    {
+     "id": "J5-humanoids",
+     "name": "Humanoid robot deployments: paid production units against pilots",
+     "source": "Humanoid makers' own statements (Figure AI news; Agility Robotics press)",
+     "url": "https://www.figure.ai/news",
+     "cadence": "event-driven to quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "pilots and shipments announced as deployments",
+      "funding-round publicity"
+     ],
+     "comparison": "pilot units against paid production units",
+     "alsoBears": []
+    },
+    {
+     "id": "J5-robotaxi",
+     "name": "Robotaxi scale: paid rides per week and cities served",
+     "source": "Waymo's own statements (company blog and announcements)",
+     "url": "https://waymo.com/blog/",
+     "cadence": "event-driven to quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "city-by-city regulatory approvals",
+      "paid rides and all rides counted differently across firms"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J5-licensed",
+     "name": "Rules that keep or remove a licensed human's responsibility",
+     "source": "State legislatures (via NCSL's Artificial Intelligence Legislation Database), plus regulators' rules and court rulings",
+     "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "laws passed but delayed or unenforced",
+      "rules that clarify rather than change who is responsible",
+      "federal pre-emption of state AI laws"
+     ],
+     "comparison": null,
+     "alsoBears": [
+      "J12"
+     ]
+    },
+    {
+     "id": "J5-care",
+     "name": "Care work: employment in home health care and child care; plus average hourly earnings in home health care and child care services (BLS)",
+     "source": "U.S. Bureau of Labor Statistics, Current Employment Statistics (via FRED)",
+     "url": "https://www.bls.gov/ces/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:CES6562160001",
+      "fred:CES6562440001",
+      "bls:CES6562160003",
+      "bls:CES6562440003"
+     ],
+     "confounders": [
+      "an ageing population raises care demand regardless of AI",
+      "Medicaid and child-care funding changes"
+     ],
+     "comparison": "total nonfarm and the AI-exposed industries (information; professional and business services), from J10-jobs",
+     "alsoBears": [
+      "J10"
+     ]
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J5's Emerging mark asks that \"one official series shows protected work's pay or employment beating the AI-exposed comparison beyond the pre-2022 range.\" Home health employment rose 4.4% in the year to September 2026 while information employment fell 4.2%, and health care and social assistance's share of payrolls is 0.78 points above its 2015-2019 trend while professional and business services is 0.47 points below. We do not count this as beyond the pre-2022 range: our series start in 2015, a window with no ordinary recession; the trend band is the fit's in-sample residual, not a pre-2022 range; and total payrolls grew only 0.3% over the year, so the business cycle can account for much of the gap, alongside an ageing population. Child care employment fell 0.7%, and a level break in April 2025 distorts the home health series. Pay does not show the moat: home health and child-care pay rose 2.4% and 2.5% against 3.1% for all private employees, the home health pay ratio is inside its 2017-2021 range, trades pay is compared with all private workers rather than the exposed industries, and the Atlanta Fed occupation and industry wage gaps sit inside their 2015-2019 ranges. Supported is not met either: Waymo's 500,000-plus paid rides a week are beyond pilot scale.",
+     "evidence": [
+      "2026-10-06#e43",
+      "2026-10-06#e57",
+      "2026-10-06#e41",
+      "2026-10-06#e42",
+      "2026-10-06#e44",
+      "2026-10-06#e114",
+      "2026-10-06#e45",
+      "2026-10-06#e47",
+      "2026-10-06#e48",
+      "2026-10-06#e49",
+      "2026-10-06#e50",
+      "2026-10-06#e51",
+      "2026-10-06#e52",
+      "2026-10-06#e53",
+      "2026-10-06#e95",
+      "2026-10-06#e99",
+      "2026-10-06#e54",
+      "2026-10-06#e46"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J6",
+   "label": "New AI-era jobs are real but small",
+   "wording": "AI creates new kinds of paid work (expert data work for model training, evaluation and red-teaming, AI operations, fleet and robot operations, provenance and verification), but the numbers stay small next to the work lost in J2 and J3: at least an order of magnitude below the losses measured under J2 and J3 over the same period.",
+   "why": "\"new jobs will appear\" is the standard answer to automation; this claim tests whether they appear at a scale that matters.",
+   "lens": "work",
+   "marks": {
+    "contradicted": "new AI-era roles reach the same order of magnitude as the losses, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one source shows new AI-era roles growing at that small scale.",
+    "supported": "two sources of different kinds across two releases.",
+    "established": "Supported for two quarters, with the roles visible in official data."
+   },
+   "indicators": [
+    {
+     "id": "J6-indeedai",
+     "name": "Share of job postings mentioning AI and generative AI (Indeed)",
+     "source": "Indeed Hiring Lab, AI Tracker (open data on GitHub)",
+     "url": "https://github.com/hiring-lab/ai-tracker",
+     "cadence": "monthly (daily data)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "AI skills asked of existing roles are not new jobs",
+      "postings are not hires",
+      "keyword lists change"
+     ],
+     "comparison": "all Indeed postings",
+     "alsoBears": []
+    },
+    {
+     "id": "J6-linkedin",
+     "name": "AI roles and hiring on LinkedIn",
+     "source": "LinkedIn Economic Graph, AI Labour Market Update and AI at Work research",
+     "url": "https://economicgraph.linkedin.com/research/ai-skills-resources",
+     "cadence": "quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "LinkedIn members skew to white-collar workers",
+      "relabelled titles counted as new roles"
+     ],
+     "comparison": "job losses measured under J2 and J3 over the same period",
+     "alsoBears": []
+    },
+    {
+     "id": "J6-datawork",
+     "name": "Expert data work: contractor counts and pay at firms that hire professionals to train and evaluate models",
+     "source": "Company statements (e.g. Mercor; Scale AI's Outlier) and credible reports",
+     "url": "https://www.mercor.com/",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "labs' spending cycles",
+      "these firms promoting themselves"
+     ],
+     "comparison": "job losses measured under J2 and J3 over the same period",
+     "alsoBears": []
+    },
+    {
+     "id": "J6-oews",
+     "name": "New AI-era occupations visible in official data",
+     "source": "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics; Standard Occupational Classification 2028 revision",
+     "url": "https://www.bls.gov/oes/",
+     "cadence": "annual",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "new roles hide in existing SOC codes until the 2028 SOC revision",
+      "about a year's lag (May 2025 data released 2026-05-15)"
+     ],
+     "comparison": "job losses measured under J2 and J3 over the same period",
+     "alsoBears": []
+    },
+    {
+     "id": "J6-netroles",
+     "name": "Estimates of roles created against roles lost",
+     "source": "World Economic Forum, The Future of Jobs Report (survey of over 1,000 employers)",
+     "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+     "cadence": "irregular (about every two years)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "employer expectations, not measured outcomes",
+      "global scope, not the US"
+     ],
+     "comparison": "roles displaced in the same estimate",
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J6 starts at No clear sign. Its Emerging mark, \"one source shows new AI-era roles growing at that small scale.\", is not met: Upwork's figure is freelance spending on AI-related projects, not roles, and Indeed's AI share counts AI skills in existing postings; neither counts new AI-era roles. New AI-era work is real. Mercor says it pays more than $4 million a day to contractors who train and evaluate models, which we estimate at roughly 4,600-6,800 full-time equivalents. Upwork's AI-related work grew more than 22% while its total volume fell 4%, and 6.7% of Indeed postings mention AI. Still, no source measures new AI-era roles in jobs over time on the same basis as the losses: Mercor's figure is a single snapshot, AI mentions in postings are mostly skills asked of existing roles, and LinkedIn's count of 1.3 million AI-related opportunities worldwide in 2023-2025 points to a larger scale, though it is global and much of it is data annotation, often short contract work.",
+     "evidence": [
+      "2026-10-06#e38",
+      "2026-10-06#e28",
+      "2026-10-06#e39",
+      "2026-10-06#e40"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J7",
+   "label": "Policy starts separating income from work",
+   "wording": "Governments begin to pay income that isn't tied to work, citing AI: guaranteed income, AI dividends or public stakes in AI capital, and automation or compute taxes that fund transfers.",
+   "why": "if labor stops being the main way income is distributed, policy has to replace it; the first moves show which way societies choose.",
+   "lens": "policy",
+   "marks": {
+    "contradicted": "such measures are rejected or repealed and governments answer AI with work-linked support instead (for example expanded work requirements), in two jurisdictions across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one enacted measure, or a proposal advancing in a national legislature, explicitly justified by AI's effect on work.",
+    "supported": "measures of two different kinds, or in two jurisdictions, across two quarters.",
+    "established": "an enacted national program in a G20 country that pays income not tied to work and is justified by AI."
+   },
+   "indicators": [
+    {
+     "id": "J7-gi",
+     "name": "Guaranteed-income pilots and programs, especially any justified by automation or AI",
+     "source": "Economic Security Project and the Guaranteed Income Community of Practice, US guaranteed-income pilot list (gicp.info); Stanford Basic Income Lab's global map as background (last announced update January 2023); government program sites",
+     "url": "https://gicp.info/pilots/",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "pilots motivated by poverty rather than AI",
+      "pilots ending when philanthropic funding runs out",
+      "tracker updated irregularly"
+     ],
+     "comparison": "the pre-2022 wave of poverty-motivated pilots",
+     "alsoBears": []
+    },
+    {
+     "id": "J7-swf",
+     "name": "Bills and official proposals for AI dividends, sovereign wealth funds or public equity in AI firms, by stage: proposed, advanced, enacted",
+     "source": "US Congress bill records via GovTrack.us, which mirrors congress.gov bill status; state legislatures and other parliaments through their own sites",
+     "url": "https://www.govtrack.us/congress/bills/browse?text=AI+sovereign+wealth+fund&congress=119",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "public stakes motivated by industrial policy",
+      "bills introduced with no path to passage"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J7-tax",
+     "name": "Automation, robot, token or compute taxes proposed or enacted",
+     "source": "US Congress bill records via GovTrack.us; state bills through the NCSL AI Legislation Database and legislatures' own sites",
+     "url": "https://www.govtrack.us/congress/bills/browse?text=AI+tax&congress=119",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "taxes on AI firms raised for revenue or energy reasons, not transfers",
+      "bills introduced with no path to passage"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J7-ui",
+     "name": "AI-justified transition payments or extended unemployment insurance",
+     "source": "US Congress bill records via GovTrack.us; state labor departments' and other governments' announcements",
+     "url": "https://www.govtrack.us/congress/bills/browse?text=AI+workers+displaced&congress=119",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "recession-triggered UI extensions unrelated to AI",
+      "retraining-only programs that pay no income"
+     ],
+     "comparison": "recession-era UI extensions (2008-09, 2020)",
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J7 starts at No clear sign: its Emerging mark (\"one enacted measure, or a proposal advancing in a national legislature, explicitly justified by AI's effect on work.\") is not met. Proposals that tie income or public stakes to AI exist, but none has advanced. Sanders's AI sovereign wealth fund bill, Casar's AI tax for a jobs program, and Warner's and Schatz's worker-transition bills were all referred to committee with no further action, and South Korea's presidential office called its policy chief's AI-dividend proposal a personal opinion, and a UK minister's suggestion of a basic income has not led to any measure we found. The one enacted federal response, the Labor Department's $50 million Rapid Reskill grants citing AI, rests on training and work rather than income, and the only unconditional AI payment we found is a small, privately funded pilot. Contradicted is not met because no income measure has been rejected or repealed, and only one jurisdiction has answered with work-linked support.",
+     "evidence": [
+      "2026-10-06#e81",
+      "2026-10-06#e82",
+      "2026-10-06#e83",
+      "2026-10-06#e84",
+      "2026-10-06#e85",
+      "2026-10-06#e86"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J8",
+   "label": "The capital bet runs ahead of the revenue",
+   "wording": "AI investment is running well ahead of the revenue it earns, and it is financed in ways (circular deals, debt, off-balance-sheet vehicles, long depreciation lives) that would turn a disappointment into a financial shock and slow the transition.",
+   "why": "J1 asks whether capital is positioning; J8 asks whether capital is right. An unwind would hit jobs from the other side.",
+   "lens": "capital",
+   "marks": {
+    "contradicted": "AI revenue grows faster than AI capex for two quarters across two sources, and financing shifts to operating cash flow.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary indicator, for example the disclosed AI-revenue-to-capex ratio falling, or a material circular or off-balance-sheet financing disclosed in filings.",
+    "supported": "a widening revenue gap and growing financing structures (or widening spreads) agree across two quarters.",
+    "established": "Supported for two quarters in filings, plus a market signal (widening spreads on AI-linked debt, or depreciation lives shortened under audit pressure)."
+   },
+   "indicators": [
+    {
+     "id": "J8-capex",
+     "name": "AI capex: hyperscaler and neocloud capital expenditure (cash purchases of property and equipment)",
+     "source": "SEC EDGAR XBRL company facts from 10-Q/10-K filings (Microsoft, Alphabet, Amazon, Meta; also Oracle and CoreWeave); the same pull as the newsletter's money data",
+     "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "infrastructure revenue lags capex by design",
+      "capex includes non-AI spending",
+      "finance leases excluded"
+     ],
+     "comparison": "disclosed AI revenue (J8-ai-revenue)",
+     "alsoBears": [
+      "J1"
+     ]
+    },
+    {
+     "id": "J8-ai-revenue",
+     "name": "Disclosed AI revenue and compute spending at frontier AI labs (plus hyperscalers' stated AI revenue from earnings releases)",
+     "source": "Epoch AI, Data on AI companies (revenue, compute spend, funding and staff, compiled from company statements and reports)",
+     "url": "https://epoch.ai/data/ai-companies",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "definitions of \"AI revenue\" vary by company",
+      "disclosures are selective",
+      "run-rates are unaudited statements"
+     ],
+     "comparison": "AI capex (J8-capex)",
+     "alsoBears": []
+    },
+    {
+     "id": "J8-circular",
+     "name": "Circular financing: chipmakers or clouds investing in customers that buy from them; equity-for-compute deals",
+     "source": "SEC EDGAR full-text search (8-K, 10-Q, 10-K)",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "disclosures are selective",
+      "deals with private labs are only partly in filings",
+      "supply deals that are not demand support"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J8-dc-debt",
+     "name": "Data-center debt: bond and convertible issuance, private credit, special-purpose vehicles",
+     "source": "SEC EDGAR full-text search (8-K, prospectuses, 10-Q/10-K debt, lease and variable-interest-entity notes)",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "off-balance-sheet vehicles are only partly disclosed",
+      "debt can be ordinary financing for strong borrowers"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J8-credit-spreads",
+     "name": "Corporate bond spreads, investment grade and high yield (market backdrop; not AI-specific)",
+     "source": "ICE BofA US Corporate and US High Yield option-adjusted spreads (ICE Data Indices), via FRED",
+     "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+     "cadence": "daily",
+     "dataKind": "private",
+     "series": [
+      "fred:BAMLC0A0CM",
+      "fred:BAMLH0A0HYM2"
+     ],
+     "confounders": [
+      "the general credit cycle",
+      "monetary policy",
+      "FRED keeps only three years, so no pre-2022 range"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J8-useful-lives",
+     "name": "Useful-life assumptions for servers and GPUs in hyperscalers' annual reports",
+     "source": "Hyperscalers' 10-K filings (accounting-policy notes), via SEC EDGAR full-text search",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "annual",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "real gains in hardware life",
+      "workload mix (training against inference)"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J8-seat-revenue",
+     "name": "Seat-revenue erosion at the pinned seatVendors against their agent and consumption revenue",
+     "source": "The vendors' earnings releases (8-K Exhibit 99.1) and 10-Q/10-K filings, via SEC EDGAR full-text search",
+     "url": "https://www.sec.gov/edgar/search/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "vendors moving off per-seat pricing on purpose",
+      "AI metrics redefined between quarters",
+      "downturn spending cuts"
+     ],
+     "comparison": "the same vendors' agent and consumption revenue",
+     "alsoBears": [
+      "J2"
+     ]
+    }
+   ],
+   "status": "emerging",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "emerging",
+     "why": "J8 meets its Emerging mark (\"one primary indicator, for example the disclosed AI-revenue-to-capex ratio falling, or a material circular or off-balance-sheet financing disclosed in filings.\"); its Supported mark (\"a widening revenue gap and growing financing structures (or widening spreads) agree across two quarters.\") is not met. Filings disclose material circular and off-balance-sheet financing. Akamai issued Anthropic a warrant on its own stock alongside an $11.6 billion compute commitment. Meta's 10-Q describes moving its El Paso data-center assets to a third party, and a joint venture in which Meta reportedly holds 20% sold $12.3 billion of notes for the campus. Alphabet, Amazon and Meta spent more on property and equipment than their operating cash flow in the first half of 2026 while issuing $148.1 billion of debt, and Oracle's free cash flow is negative while it sells stock. Supported is not met: by our estimate the two leading labs' revenue run-rates rose from about 8% to about 26% of the four largest hyperscalers' trailing capex, so the gap is narrowing in ratio terms, and corporate bond spreads sit inside their 2026 range. Microsoft funds its build from operating cash flow and still buys back stock.",
+     "evidence": [
+      "2026-10-06#e13",
+      "2026-10-06#e12",
+      "2026-10-06#e9",
+      "2026-10-06#e11",
+      "2026-10-06#e14",
+      "2026-10-06#e10",
+      "2026-10-06#e15",
+      "2026-10-06#e16",
+      "2026-10-06#e73"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J9",
+   "label": "The gains go to owners, not wage earners",
+   "wording": "The income AI creates flows mainly to owners of capital and a small group of top earners rather than to wages, so labor's share of income falls and spending comes to depend more on asset owners.",
+   "why": "this is the end state of the thesis (demand depending on people without wages) in a form measurable now. The end state itself is framing on `jobs.html`, not a tracked claim.",
+   "lens": "capital",
+   "marks": {
+    "contradicted": "labor share rises, or falling prices pass the gains to users broadly, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one official series moves the claim's way beyond its pre-2022 trend.",
+    "supported": "labor share (or compensation share) and a wealth or spending concentration measure agree across two releases.",
+    "established": "Supported for two quarters in official data, not offset by consumer-capture evidence."
+   },
+   "indicators": [
+    {
+     "id": "J9-labor-share",
+     "name": "Nonfarm business labor share",
+     "source": "U.S. Bureau of Labor Statistics, Productivity and Costs (labor share for all workers), via FRED",
+     "url": "https://www.bls.gov/productivity/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": [
+      "fred:PRS85006173"
+     ],
+     "confounders": [
+      "the business cycle",
+      "self-employment measurement",
+      "a long decline that predates AI"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J9-comp-share",
+     "name": "Compensation of employees as a share of gross domestic income",
+     "source": "U.S. Bureau of Economic Analysis, NIPA (compensation of employees, paid; gross domestic income), via FRED",
+     "url": "https://www.bea.gov/data/income-saving/gross-domestic-income",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": [
+      "fred:COE",
+      "fred:GDI"
+     ],
+     "confounders": [
+      "the business cycle",
+      "a long decline that predates AI"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J9-profit-share",
+     "name": "Corporate profits after tax as a share of GDP",
+     "source": "U.S. Bureau of Economic Analysis, Corporate Profits (after tax, with IVA and CCAdj) and GDP, via FRED",
+     "url": "https://www.bea.gov/data/income-saving/corporate-profits",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": [
+      "fred:CPATAX",
+      "fred:GDP"
+     ],
+     "confounders": [
+      "the business cycle",
+      "foreign earnings of US firms",
+      "tax-law changes"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J9-wealth-share",
+     "name": "Top 10% and top 1% shares of household net worth and of corporate equities and mutual fund shares",
+     "source": "Federal Reserve Board, Distributional Financial Accounts, via FRED",
+     "url": "https://www.federalreserve.gov/releases/z1/dataviz/dfa/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": [
+      "fred:WFRBST01134",
+      "fred:WFRBSN09161",
+      "fred:WFRBST01122",
+      "fred:WFRBSN09149",
+      "fred:WFRBSB50215"
+     ],
+     "confounders": [
+      "equity-price swings move top shares mechanically",
+      "model-based, revised with each Survey of Consumer Finances",
+      "a rise that predates AI"
+     ],
+     "comparison": "the bottom 50%'s share of net worth (fred:WFRBSB50215)",
+     "alsoBears": []
+    },
+    {
+     "id": "J9-spending-share",
+     "name": "Top income decile's share of aggregate consumer spending",
+     "source": "BLS Consumer Expenditure Survey, calendar-year aggregate expenditure shares by deciles of income before taxes",
+     "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share.htm",
+     "cadence": "annual",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "the survey under-covers high-income households",
+      "income deciles, not wealth"
+     ],
+     "comparison": "the lower nine income deciles",
+     "alsoBears": []
+    },
+    {
+     "id": "J9-concentration",
+     "name": "Market concentration: the ten largest companies' share of S&P 500 market value (a proxy for the share of US market value)",
+     "source": "State Street SPDR S&P 500 ETF Trust (SPY) daily holdings file (S&P 500 index weights)",
+     "url": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy",
+     "cadence": "daily",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "a few firms' price swings",
+      "S&P 500 only, not all US-listed value",
+      "share classes need merging (Alphabet A and C)"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J9-ai-prices",
+     "name": "Evidence against: falling price per unit of AI capability",
+     "source": "Epoch AI, LLM inference price trends (data insight)",
+     "url": "https://epoch.ai/data-insights/llm-inference-price-trends",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "prices subsidized below cost",
+      "benchmark contamination",
+      "API prices may not reach end users"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J9-open-gap",
+     "name": "Evidence against: open-weight models matching closed ones",
+     "source": "Epoch AI, open against closed models on the Epoch Capabilities Index (data insight)",
+     "url": "https://epoch.ai/data-insights/open-closed-eci-gap",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "benchmark choice (private benchmarks show a longer lag)",
+      "open weights are not free to run"
+     ],
+     "comparison": "frontier closed models",
+     "alsoBears": []
+    }
+   ],
+   "status": "emerging",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "emerging",
+     "why": "The BLS nonfarm labor share (PRS85006173) fell for a fifth straight quarter to 93.4 in the second quarter of 2026, below its 2015-2021 range of 98.9-104.2, which meets J9's Emerging mark: \"one official series moves the claim's way beyond its pre-2022 trend.\" The 2022 step down came before generative AI spread, but the share then held at about 96-98 until early 2025, and three of the five falls came before the 2026 oil shock; we have not examined tariffs or immigration. Compensation fell to 49.9% of gross domestic income and after-tax profits rose to 11.9% of GDP, but these are the same kind of national-accounts measure. Supported is not met: only the top 1%'s share of net worth (32.5%, above its 29.0-30.9% range) has left its pre-2022 range, and it moves with equity prices; the top 1%'s share of equities and the top 10% and bottom 50% shares of net worth sit inside their ranges. Epoch AI's evidence of falling prices per unit of capability and open models about four months behind the frontier counts against Established.",
+     "evidence": [
+      "2026-10-06#e17",
+      "2026-10-06#e18",
+      "2026-10-06#e116",
+      "2026-10-06#e19",
+      "2026-10-06#e69",
+      "2026-10-06#e20"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J10",
+   "label": "Spending and jobs shift to what AI can't make cheap",
+   "wording": "Prices of services AI can do fall relative to services that need people (healthcare, education, childcare, housing and the trades), and those human-heavy sectors take a growing share of spending and jobs (Baumol's cost disease).",
+   "why": "this is the main way most economic models say jobs move, and the economic (not only technical) reason the J5 moats exist.",
+   "lens": "prices",
+   "marks": {
+    "contradicted": "exposed services prices don't fall against the trend and human-heavy sectors' job shares stall, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one official series breaks from its pre-2022 trend the claim's way.",
+    "supported": "the price gap and job shares both move the claim's way across two releases.",
+    "established": "Supported for two quarters, with consumption shares moving too."
+   },
+   "indicators": [
+    {
+     "id": "J10-cpi",
+     "name": "CPI, AI-exposed services against human-intensive services",
+     "source": "U.S. Bureau of Labor Statistics, Consumer Price Index for All Urban Consumers, seasonally adjusted (via FRED)",
+     "url": "https://www.bls.gov/cpi/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:CUSR0000SEGD",
+      "fred:CUSR0000SAM2",
+      "fred:CUSR0000SEEB",
+      "fred:CUSR0000SEHA"
+     ],
+     "confounders": [
+      "Baumol's effect predates AI, so the test is a change in the gap against its pre-2022 trend",
+      "the only exposed-side item on FRED (miscellaneous personal services) mixes legal, financial and tax-preparation fees with laundry and funeral services",
+      "rent follows the housing cycle"
+     ],
+     "comparison": "miscellaneous personal services (exposed side) against medical care services; tuition, other school fees and childcare; and rent of primary residence, as a gap against its pre-2022 trend",
+     "alsoBears": [
+      "J5"
+     ]
+    },
+    {
+     "id": "J10-cpi-items",
+     "name": "CPI for the exact items the spec names: tax return preparation and other accounting fees, and computer software and accessories (AI-exposed), against day care and preschool, and college tuition and fees (human-intensive)",
+     "source": "U.S. Bureau of Labor Statistics, Consumer Price Index (CPI-U, U.S. city average, not seasonally adjusted), BLS public API",
+     "url": "https://www.bls.gov/cpi/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "bls:CUUR0000SS68023",
+      "bls:CUUR0000SEEE02",
+      "bls:CUUR0000SEEB03",
+      "bls:CUUR0000SEEB01"
+     ],
+     "confounders": [
+      "Baumol's effect predates AI, so the test is a change in the gap against its pre-2022 trend",
+      "quality adjustment in software prices",
+      "tuition set by public funding cycles"
+     ],
+     "comparison": "each item's pre-2022 trend; the J10-cpi parent items",
+     "alsoBears": []
+    },
+    {
+     "id": "J10-jobs",
+     "name": "Employment shares: health care and social assistance, education and construction against information and professional and business services",
+     "source": "U.S. Bureau of Labor Statistics, Current Employment Statistics (via FRED)",
+     "url": "https://www.bls.gov/ces/",
+     "cadence": "monthly",
+     "dataKind": "official",
+     "series": [
+      "fred:CES6562000001",
+      "fred:CES6561000001",
+      "fred:CES9092161101",
+      "fred:CES9093161101",
+      "fred:USCONS",
+      "fred:USINFO",
+      "fred:USPBS",
+      "fred:PAYEMS"
+     ],
+     "confounders": [
+      "ageing raises care employment regardless",
+      "the rate cycle moves construction",
+      "public education follows state and local budgets"
+     ],
+     "comparison": "information and professional and business services, each as a share of total nonfarm (PAYEMS) against its pre-2022 trend",
+     "alsoBears": [
+      "J5"
+     ]
+    },
+    {
+     "id": "J10-pce",
+     "name": "Personal consumption shares by category",
+     "source": "U.S. Bureau of Economic Analysis, NIPA Table 2.3.5 (quarterly) and Table 2.4.5 (annual education services), via FRED",
+     "url": "https://www.bea.gov/data/consumer-spending/main",
+     "cadence": "quarterly (education services annual; BEA's monthly detail is not on FRED)",
+     "dataKind": "official",
+     "series": [
+      "fred:PCEC",
+      "fred:PCESV",
+      "fred:DHLCRC1Q027SBEA",
+      "fred:DHUTRC1Q027SBEA",
+      "fred:DIFSRC1Q027SBEA",
+      "fred:DTEDRC1A027NBEA"
+     ],
+     "confounders": [
+      "nominal shares rise with relative prices (Baumol) without any shift in quantities",
+      "health spending is largely paid by insurers and government",
+      "housing includes owners' imputed rent"
+     ],
+     "comparison": "financial services and insurance (the nearest AI-exposed category on FRED), each share against its pre-2022 trend",
+     "alsoBears": []
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J10 starts at No clear sign. Its Emerging mark, \"one official series breaks from its pre-2022 trend the claim's way.\", is not clearly met. Health care and social assistance's share of payrolls is 0.78 points above its 2015-2019 trend, but the plus-or-minus 0.05-point band is the fit's in-sample residual, not a pre-2022 range, and a fit through 2021 puts it 0.58 points above; health's share of consumer spending is only 0.03 points above its 2015-2019 high, and nominal shares rise with relative prices. The price half moves against the claim: in August 2026 the CPI for miscellaneous personal services rose 4.4% against 2.5% for medical care services, software and accessories prices rose 25.4%, and US law firms' worked rates climbed 7.1%. An ageing population raises care employment whatever AI does, and with AI-exposed service prices rising rather than falling we cannot rule that confounder out. Contradicted is not met because care's share of jobs keeps rising.",
+     "evidence": [
+      "2026-10-06#e57",
+      "2026-10-06#e58",
+      "2026-10-06#e59",
+      "2026-10-06#e43",
+      "2026-10-06#e55",
+      "2026-10-06#e56",
+      "2026-10-06#e60"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J11",
+   "label": "The customer becomes an agent",
+   "wording": "Searching, buying and paying increasingly go through AI agents, and businesses rebuild marketing, media, retail and payments for machine customers.",
+   "why": "businesses are positioning for AI buyers as well as AI workers; that changes which jobs exist in marketing, media and retail.",
+   "lens": "buyers",
+   "marks": {
+    "contradicted": "agent rails see little use and referral traffic stabilizes, in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary indicator, a disclosed volume through agent rails or a measured fall in publisher referrals attributable to AI answers.",
+    "supported": "adoption (volumes) and a business response (restructuring, referral losses) agree across two releases.",
+    "established": "Supported for two quarters, with large platforms disclosing a material agent-mediated share of transactions or traffic."
+   },
+   "indicators": [
+    {
+     "id": "J11-visa",
+     "name": "Visa agent payment rails (Visa Intelligent Commerce) launched and used",
+     "source": "Visa press releases on Visa Intelligent Commerce, and Visa's quarterly results for any disclosed agent volumes",
+     "url": "https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22276.html",
+     "cadence": "event-driven (launches); quarterly (results)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "launches without use",
+      "pilots counted as adoption"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J11-mc",
+     "name": "Mastercard agent payment rails (Agent Pay, Agentic Tokens) launched and used",
+     "source": "Mastercard press releases on Agent Pay, and Mastercard's quarterly results for any disclosed agent volumes",
+     "url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/april/mastercard-unveils-agent-pay-pioneering-agentic-payments-technology-to-power-commerce-in-the-age-of-ai.html",
+     "cadence": "event-driven (launches); quarterly (results)",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "launches without use",
+      "cards enabled counted as adoption"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J11-acp",
+     "name": "Agentic Commerce Protocol and checkout inside AI agents (Stripe and OpenAI)",
+     "source": "Stripe newsroom: Instant Checkout in ChatGPT and the Agentic Commerce Protocol",
+     "url": "https://stripe.com/newsroom/news/stripe-openai-instant-checkout",
+     "cadence": "event-driven",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "launches without use",
+      "merchant counts reported in place of transaction volumes"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J11-pew",
+     "name": "Click-through on search results when an AI summary appears",
+     "source": "Pew Research Center, 'Google users are less likely to click on links when an AI summary appears in the results'",
+     "url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "panel browsing data covers one month",
+      "query mix differs between pages with and without summaries"
+     ],
+     "comparison": "Google searches without an AI summary",
+     "alsoBears": []
+    },
+    {
+     "id": "J11-crawl",
+     "name": "AI platforms' crawl-to-referral ratio (pages crawled per visit sent back to sites)",
+     "source": "Cloudflare Radar, AI Insights",
+     "url": "https://radar.cloudflare.com/ai-insights",
+     "cadence": "daily",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "Cloudflare's customer mix",
+      "bot classification changes",
+      "sites blocking crawlers"
+     ],
+     "comparison": "traditional search crawlers (Googlebot, Bingbot) on the same page",
+     "alsoBears": []
+    },
+    {
+     "id": "J11-search-rev",
+     "name": "Search advertising revenue as AI answers spread",
+     "source": "Alphabet quarterly earnings releases and 10-Q (Google Search & other revenue)",
+     "url": "https://abc.xyz/investor/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "ad market cycle",
+      "pricing changes per click",
+      "search algorithm changes unrelated to AI answers"
+     ],
+     "comparison": "Search & other growth before AI Overviews launched (May 2024)",
+     "alsoBears": [
+      "J8"
+     ]
+    },
+    {
+     "id": "J11-agencies",
+     "name": "Ad agency holding companies restructuring around AI",
+     "source": "Omnicom quarterly results and 10-Q",
+     "url": "https://investor.omc.com/",
+     "cadence": "quarterly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "merger synergies (Omnicom-Interpublic)",
+      "client spending cycle"
+     ],
+     "comparison": "pre-2023 headcount",
+     "alsoBears": [
+      "J2"
+     ]
+    },
+    {
+     "id": "J11-retail-ai",
+     "name": "AI-referred traffic and conversion at US retail sites",
+     "source": "Adobe Digital Insights (Adobe Analytics, over 1 trillion visits to US retail sites)",
+     "url": "https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable",
+     "cadence": "quarterly reports, irregular updates",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "growth from a tiny base",
+      "Adobe sells AI-visibility tools",
+      "referral attribution methods"
+     ],
+     "comparison": "non-AI traffic (paid search, email) in the same data",
+     "alsoBears": []
+    },
+    {
+     "id": "J11-cuts",
+     "name": "Media and marketing job cuts tied to AI",
+     "source": "Challenger, Gray & Christmas monthly job cuts report (cuts by stated reason, incl. artificial intelligence, and by industry, incl. Media and News)",
+     "url": "https://www.challengergray.com/blog/category/job-cuts-report/",
+     "cadence": "monthly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "announced cuts are not realized layoffs",
+      "employers' stated reasons",
+      "advertising cycle"
+     ],
+     "comparison": "Media and News cuts before 2023, and cuts for other stated reasons",
+     "alsoBears": [
+      "J2"
+     ]
+    }
+   ],
+   "status": "no-clear-sign",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "no-clear-sign",
+     "why": "J11 starts at No clear sign: its Emerging mark (\"one primary indicator, a disclosed volume through agent rails or a measured fall in publisher referrals attributable to AI answers.\") is not met. Google search referrals to Chartbeat's publishers fell 40.2% in the year to July 2026, but the data do not isolate AI answers as the cause. No payment network or AI company has disclosed transaction volumes through agent rails, and OpenAI scaled back in-chat checkout in March. On the business side, Alphabet's Search revenue grew 17%, announced Media job cuts fell 63% from 2025, and Omnicom ties its headcount reduction to its merger, not to agents. Contradicted is not met either, because referral traffic is still falling rather than stabilizing.",
+     "evidence": [
+      "2026-10-06#e74",
+      "2026-10-06#e75",
+      "2026-10-06#e76",
+      "2026-10-06#e77",
+      "2026-10-06#e78",
+      "2026-10-06#e79",
+      "2026-10-06#e80"
+     ],
+     "by": "run"
+    }
+   ]
+  },
+  {
+   "id": "J12",
+   "label": "Backlash becomes a brake",
+   "wording": "Resistance from workers, communities, courts, insurers and voters measurably slows the use of AI at work, through contracts, local denials, liability, insurance terms and law.",
+   "why": "the pace of the transition may be set less by capability than by what institutions allow. Insurance and liability are often a faster, harder brake than legislation.",
+   "lens": "policy",
+   "marks": {
+    "contradicted": "the brake releases (affirmative coverage widely available, laws repealed or pre-empted, contested projects approved), in two sources across two releases.",
+    "no-clear-sign": "The indicators are flat or mixed, stay inside their pre-2022 range, or a named confounder fully explains them. This is the default when no other mark is met.",
+    "emerging": "one primary indicator, for example an AI exclusion filed in several states, or several data-center denials within a quarter attributed to opposition.",
+    "supported": "two kinds (insurance or liability, and local or labor action) agree across two releases.",
+    "established": "Supported for two quarters, with a measurable slowdown (deployments delayed or cancelled, firms citing liability or insurance as a reason not to deploy)."
+   },
+   "indicators": [
+    {
+     "id": "J12-labor",
+     "name": "Union contracts with AI clauses; strikes over automation",
+     "source": "BLS Major Work Stoppages (1,000 or more workers): monthly listing and annual release; union and employer announcements for contract terms",
+     "url": "https://www.bls.gov/wsp/",
+     "cadence": "monthly listing, annual release; contracts event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "stoppages over pay and benefits with AI as a side issue",
+      "AI clauses that govern use rather than limit it"
+     ],
+     "comparison": "all major stoppages in the same year (30 began in 2025)",
+     "alsoBears": []
+    },
+    {
+     "id": "J12-dc",
+     "name": "Data-center projects delayed, denied or under moratorium; large-load tariffs that shield households; power bills as a political issue",
+     "source": "Data Center Watch (10a Labs) quarterly reports and briefings on local opposition; local government records and state utility commission dockets to confirm each case",
+     "url": "https://www.datacenterwatch.org/",
+     "cadence": "quarterly",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "projects delayed for financing or power availability",
+      "opposition over water, noise or land use that predates AI"
+     ],
+     "comparison": "the tracker's own 2023-Q1 2025 baseline",
+     "alsoBears": []
+    },
+    {
+     "id": "J12-laws",
+     "name": "Laws restricting AI in hiring, firing and management, and mandated human roles (human-in-the-loop requirements); federal pre-emption of state AI laws counts against",
+     "source": "NCSL Artificial Intelligence Legislation Database (topics: Effect on Labor/Employment, Private Sector Use), all states, 2025 to date; federal pre-emption bills via GovTrack.us",
+     "url": "https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database",
+     "cadence": "event-driven; database updated monthly",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "laws passed but delayed or unenforced",
+      "disclosure-only rules that do not slow use"
+     ],
+     "comparison": null,
+     "alsoBears": []
+    },
+    {
+     "id": "J12-insure",
+     "name": "AI exclusions in errors-and-omissions and general liability policies, AI surcharges in cyber underwriting; insurers writing affirmative AI coverage as evidence against",
+     "source": "State rate and form filings through NAIC SERFF Filing Access; Verisk ISO's optional generative-AI general liability endorsements (multistate filing of 2025-07-17); insurers' own statements",
+     "url": "https://content.naic.org/industry/serff",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "exclusions that clarify cover rather than remove it",
+      "optional forms filed but rarely attached"
+     ],
+     "comparison": "affirmative AI coverage offered over the same period",
+     "alsoBears": []
+    },
+    {
+     "id": "J12-courts",
+     "name": "Court rulings on liability for AI agents and AI decisions",
+     "source": "Federal court dockets via CourtListener (Free Law Project); lead case Mobley v. Workday, Inc., 3:23-cv-00770 (N.D. Cal.), an employment-discrimination suit against an AI hiring-screening vendor",
+     "url": "https://www.courtlistener.com/docket/66831340/mobley-v-workday-inc/",
+     "cadence": "event-driven",
+     "dataKind": "official",
+     "series": null,
+     "confounders": [
+      "procedural rulings that settle nothing on liability",
+      "settlements without findings"
+     ],
+     "comparison": null,
+     "alsoBears": [
+      "J5"
+     ]
+    },
+    {
+     "id": "J12-pew",
+     "name": "Public opinion on AI and jobs: Pew Research Center",
+     "source": "Pew Research Center, American Trends Panel and global surveys, collected on its AI topic page",
+     "url": "https://www.pewresearch.org/topic/internet-technology/emerging-technology/artificial-intelligence/",
+     "cadence": "irregular",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "partisan swings tied to who holds power",
+      "question wording changes between waves"
+     ],
+     "comparison": "earlier waves of the same question (2024 against 2026)",
+     "alsoBears": []
+    },
+    {
+     "id": "J12-gallup",
+     "name": "Public opinion on AI and jobs: Gallup",
+     "source": "Gallup Work and Education survey (annual, August fieldwork) and other Gallup AI polling, collected on its AI topic page",
+     "url": "https://news.gallup.com/topic/artificial-intelligence.aspx",
+     "cadence": "annual (August fieldwork), plus irregular releases",
+     "dataKind": "private",
+     "series": null,
+     "confounders": [
+      "general job insecurity in a weak labor market",
+      "media attention to AI"
+     ],
+     "comparison": "the 2017 first reading (13%) and other job worries in the same survey",
+     "alsoBears": []
+    }
+   ],
+   "status": "emerging",
+   "since": "2026-10-06",
+   "pending": null,
+   "history": [
+    {
+     "date": "2026-10-06",
+     "from": null,
+     "to": "emerging",
+     "why": "J12 meets its Emerging mark: \"one primary indicator, for example an AI exclusion filed in several states, or several data-center denials within a quarter attributed to opposition.\" Local opposition is slowing AI infrastructure. Data Center Watch counted at least 75 US projects worth about $130 billion blocked or delayed by local opposition in January-March 2026 and 45 worth nearly $68 billion in April-June, and New York, Oklahoma City and Pima County adopted moratoriums or pauses. Insurers have filed standard generative-AI liability exclusions that regulators are approving; the only count we found, 2,369 exclusion records in force across 49 states by mid-2026, does not show what share of policies carry them, specialist carriers now offer affirmative AI cover, and the court rulings so far are procedural. Supported (\"two kinds (insurance or liability, and local or labor action) agree across two releases.\") is not met because the brake evidence is mixed: Maine's statewide moratorium was vetoed, contested projects were approved in South Carolina and Georgia, Colorado's AI Act was paused and narrowed under a federally backed challenge, and Hyundai's strike won only a promise of consultation on AI.",
+     "evidence": [
+      "2026-10-06#e87",
+      "2026-10-06#e88",
+      "2026-10-06#e89",
+      "2026-10-06#e91",
+      "2026-10-06#e97",
+      "2026-10-06#e98",
+      "2026-10-06#e99",
+      "2026-10-06#e90",
+      "2026-10-06#e96",
+      "2026-10-06#e92",
+      "2026-10-06#e93",
+      "2026-10-06#e94",
+      "2026-10-06#e95",
+      "2026-10-06#e53",
+      "2026-10-06#e100",
+      "2026-10-06#e61",
+      "2026-10-06#e72",
+      "2026-10-06#e118"
+     ],
+     "by": "run"
+    }
+   ]
+  }
+ ]
+}

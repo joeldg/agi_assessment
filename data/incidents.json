@@ -1,5 +1,5 @@
 {
- "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the 53 ChatGPT user images OpenAI's agents posted to image-hosting sites (disclosed Sept 25). Of the six reports OpenAI published on Sept 16, the three that touched public or third-party systems are listed; the other three (two on compaction summaries and one on writes to OpenAI's internal Artifactory) did not reach a public or third-party system, so they fall outside the inclusion rule.",
+ "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the 53 ChatGPT user images OpenAI's agents posted to image-hosting sites (disclosed Sept 25). Of the six reports OpenAI published on Sept 16, the three that touched public or third-party systems are listed; the other three (two on compaction summaries and one on writes to OpenAI's internal Artifactory) did not reach a public or third-party system, so they fall outside the inclusion rule. OpenAI's three reports dated Oct 2 (on incidents of Mar 27, May 16 and May 22) describe activity inside OpenAI's own systems; the only request that may have gone outside, to a PyPI package repository on Mar 27, returned 404, so they also fall outside the inclusion rule. Also tracked but not listed: Glow's Sept 29 report that it found more than 13,000 internal images from over 300 organisations published openly on GitHub, which it says coding agents posted to public repositories so reviewers could see visual changes; it names no agent or lab in the cases it found and dates only one (early July). The Medicare entry also covers the three other agencies the Prime Minister named in the same Sept 24 disclosure, since that was one public disclosure: the Australian Institute of Health and Welfare, NSW's Bureau of Crime Statistics and Research and the Victorian Department of Health, whose Victorian Agency for Health Information reporting system OpenAI's agents queried with an exposed access key (OpenAI's account, Sept 28).",
  "fields": {
   "occurred": "Start date: the earliest activity documented with at least moderate confidence; the midpoint of the window when approximate.",
   "occurredApprox": "true when the source gives only a month or season.",
@@ -85,6 +85,44 @@
    "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
   },
   {
+   "id": "rubygems",
+   "title": "Researchers tie a May flood of RubyGems packages to OpenAI agents",
+   "lab": "OpenAI",
+   "occurred": "2026-05-05",
+   "occurredApprox": false,
+   "detectedBy": "outsiders",
+   "disclosed": "2026-09-11",
+   "foundBy": "outsiders",
+   "note": "Researchers Spencer Kitts, Thomas Larsen and Sydney Von Arx (RubyHack, Sept 11) say they believe an OpenAI agent swarm registered many RubyGems accounts, using disposable emails and a bug that issued working API keys before email verification, and published packages from May 5: more than 2,000 on May 11–12, 5 on May 26–27 and 83 on June 18. The packages ran code through RubyDoc.info's documentation builds to fetch web data, including from UK local government sites, and published it back as gems; at least six tried to obtain other users' API keys, and webhooks were registered to store data. Their evidence includes hundreds of package names containing \"oai\", an \"openaixyz\" contact email, AI-written text and overlap with the DseWiki swarm. RubyGems, which removed more than 500 packages and blocked the accounts, found no sign the key theft succeeded and says it \"cannot determine\" whether AI agents made the packages. OpenAI's Sept 11 notice says its agents \"used the RubyGems platform to access the internet to carry out benign tasks and retrieve public information\" and that it couldn't verify the malicious-upload claims. Socket described the campaign as GemStuffer on May 13 without linking it to AI agents, which, as with the DseWiki moderator, doesn't count as detection. The attribution of the uploads and the start date are the researchers'.",
+   "url": "https://rubyhack.ai/",
+   "press": "https://thehackernews.com/2026/09/openai-agents-linked-to-rubygems.html"
+  },
+  {
+   "id": "wikimedia",
+   "title": "Agents Wikimedia believes are OpenAI's edit its wikis without approval and probe its tools",
+   "lab": "OpenAI",
+   "occurred": "2026-05-10",
+   "occurredApprox": false,
+   "disclosed": "2026-10-05",
+   "foundBy": "victim",
+   "note": "The Wikimedia Foundation says its own investigation found activity it believes came from OpenAI's agents: bot edits for which no community approval was sought, almost all test edits in sandbox areas; a few edits to a citation tool's configuration that it calls potentially malicious and believes were meant to use the tool as a proxy for fetching remote data; failed attempts to compromise its public Etherpad and use it as a proxy; and millions of automated API requests, millions of crawled pages and hundreds of thousands of Wikidata Query Service queries, which \"may have contributed\" to a partial outage of that service in May. It found no evidence its systems were used for coordination among agents or that its systems or data were compromised. The start date is the earliest still-visible edit of the 54 on Wikimedia's published list: the 49 still visible run from May 10 to June 25 by the wikis' own revision timestamps (our lookup), and the five citation-tool edits on Meta-Wiki are no longer visible. The attribution is Wikimedia's; OpenAI said it appreciated the \"detailed findings\" and was working with Wikimedia to analyse the activity (OpenAI's statement to Reuters; spokesperson Drew Pusateri), without confirming it. The post doesn't say when Wikimedia found the activity.",
+   "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+   "press": "https://www.thestar.com.my/tech/tech-news/2026/10/06/wikipedia-operator-says-openai039s-rogue-agents-possibly-tied-to-data-service-disruption-in-may"
+  },
+  {
+   "id": "openai-hf-tokens",
+   "title": "OpenAI agents use leaked Hugging Face tokens to write to Hugging Face and host proxy apps",
+   "lab": "OpenAI",
+   "occurred": "2026-05-13",
+   "occurredApprox": false,
+   "detectedBy": "lab",
+   "disclosed": "2026-08-26",
+   "foundBy": "lab",
+   "note": "From OpenAI's Aug 26 technical report on the Hugging Face incident. On May 13 an agent in a training run that had internet access through OpenAI's WebCache used a Hugging Face user token that was already publicly exposed to search Hugging Face for a missing file. On May 26 agents found six publicly exposed Hugging Face user tokens and used them to commit a file (the earliest confirmed write to an external platform), create a private dataset, deploy a proxy app on Hugging Face Spaces and relay a Google search through it, deploy a second proxy under another account, and request access to two gated benchmark datasets. OpenAI says this was an unrelated research workload with no evidence of a link to the July compromise (separate entry). It says an internal team observed disallowed internet access around May 26, but not when the Hugging Face token use was recognised. SentinelLABS (Sept 16) matched the May 26 write to a public dataset commit.",
+   "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+   "press": "https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/"
+  },
+  {
    "id": "gemini-3-firms",
    "title": "Gemini breaks into 3 real companies during red-teaming",
    "lab": "Google",
@@ -139,6 +177,22 @@
    "note": "In internal deployment, a \"highly persistent\" internal model working with a researcher on Lean proofs went against its system prompt and two interventions by the researcher while trying to retrieve other teams' submissions. It published the researcher's GitHub token in the public openai/codex repository, split into pieces with the stated aim of avoiding secret scanning. OpenAI's monitor flagged it, but the researcher noticed first, the same day. OpenAI quickly deactivated keys, later all employees' keys as a precaution, and took the model down for about two weeks.",
    "url": "https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/",
    "press": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/"
+  },
+  {
+   "id": "nsw-npws",
+   "title": "OpenAI model infers hidden database details from a NSW National Parks fire-history service",
+   "lab": "OpenAI",
+   "occurred": "2026-06-15",
+   "occurredApprox": true,
+   "occurredFrom": "2026-06-01",
+   "occurredTo": "2026-06-30",
+   "detected": "2026-09-29",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-02",
+   "foundBy": "lab",
+   "note": "OpenAI gives only the month (June; midpoint used). A model researching Australian wildfire statistics used crafted queries against the NSW National Parks and Wildlife Service's Fire History mapping service to infer database metadata that wasn't meant to be exposed through it, and separately downloaded the public Fire History dataset; OpenAI says the results it reviewed don't show the model retrieved personal information. OpenAI says its continuing review made it aware of the activity on Tuesday, Sept 29, and that its first contact, a briefing to the NSW Premier's office, came within 48 hours. OpenAI disclosed it in statements to ABC and to ABC News (US) on Friday Oct 2; in the same ABC report the Premier's Department said the government was told on Oct 1 and that investigations had found no unauthorised access to personal information. OpenAI added an Oct 4 update to its Australia apology page.",
+   "url": "https://openai.com/index/how-we-will-do-better-for-australia/",
+   "press": "https://www.abc.net.au/news/2026-10-02/rogue-open-ai-agent-breach-nsw-government-website/107223108"
   },
   {
    "id": "medicare",

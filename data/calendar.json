@@ -27,12 +27,42 @@
    "url": "https://www.canberratimes.com.au/story/9358287/openai-executive-to-front-grilling-on-medicare-breach/"
   },
   {
+   "date": "2026-10-13",
+   "kind": "policy",
+   "title": "UK Commons Business, Innovation, Science and Trade Committee questions former OpenAI and Anthropic researchers, senior policy staff from OpenAI, Anthropic, Meta and Google DeepMind, and UK officials",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "Public questioning on rogue models, testers' access, who can stop a release and mandatory reporting of problems is a disclosure channel.",
+   "url": "https://committees-api.parliament.uk/api/Events/28282",
+   "short": "UK Commons committee questions senior policy staff from OpenAI, Anthropic, Meta and Google DeepMind"
+  },
+  {
    "date": "2026-10-14",
    "kind": "industry",
    "title": "Anthropic's reported pre-IPO investor day at its San Francisco headquarters (Bloomberg, Oct 1, people familiar; no public S-1 on EDGAR as of Oct 2)",
    "hyp": "A",
    "certainty": "approximate",
    "url": "https://theedgemalaysia.com/node/820297"
+  },
+  {
+   "date": "2026-10-15",
+   "kind": "industry",
+   "title": "TSMC's third-quarter 2026 earnings conference (14:00 Taiwan time, late Oct 14 Pacific)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Chip-supply figures are a check on the compute spending behind our money gauge.",
+   "url": "https://investor.tsmc.com/english/quarterly-results",
+   "short": "TSMC reports third-quarter 2026 results"
+  },
+  {
+   "date": "2026-10-28",
+   "kind": "industry",
+   "title": "Microsoft reports fiscal 2027 first-quarter results (July–September), including capital spending, after the market close; webcast 2:30 p.m. Pacific",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Microsoft's capital spending is one of the four hyperscaler inputs to our money gauge.",
+   "url": "https://www.microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1",
+   "short": "Microsoft reports July–September results, including capital spending"
   },
   {
    "date": "2026-10-31",
@@ -45,15 +75,25 @@
   {
    "date": "2026-10-31",
    "kind": "forecast",
-   "title": "Forecast deadline: Anthropic shares begin trading on Nasdaq (anthropic-ipo-by-oct31); Bloomberg reported on Oct 1 that formal IPO marketing could start as soon as the week of Nov 9",
+   "title": "Forecast deadline: Anthropic shares begin trading on Nasdaq (anthropic-ipo-by-oct31); Bloomberg (Oct 1) reported IPO marketing could start as soon as the week of Nov 9",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
   },
   {
+   "date": "2026-10-31",
+   "kind": "models",
+   "title": "Open weights due for Mistral Large 4 (\"by the end of the month\", Oct 6 post) and Reflection AI's Beam (\"later this month\", Oct 5)",
+   "hyp": "C",
+   "certainty": "target",
+   "why": "Open-weight releases widen what an unknown actor could run out of view.",
+   "url": "https://mistral.ai/news/mistral-large-4/",
+   "short": "Open weights due for Mistral Large 4 and Reflection AI's Beam"
+  },
+  {
    "date": "2026-11-03",
    "kind": "industry",
-   "title": "US midterms; Reuters (Sept 28) reports Anthropic's IPO is likely to come after them (no date set; a public S-1 must appear at least 15 days before the roadshow)",
+   "title": "US midterms; Reuters (Sept 28) reported Anthropic's IPO is likely after them; a public S-1 must appear at least 15 days before the roadshow",
    "hyp": "A",
    "certainty": "approximate",
    "why": "Public-company disclosure rules become a forced-disclosure channel.",
@@ -62,20 +102,44 @@
   {
    "date": "2026-11-07",
    "kind": "alarm",
-   "title": "Alarm trigger W2 is met on this date unless OpenAI's post-Astra model (acknowledged Sept 8) is released or an external evaluation of it is announced first",
+   "title": "Alarm condition W2 is met unless OpenAI's post-Astra model (acknowledged Sept 8) is released or an external evaluation of it is announced first",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/alarm.html",
    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
   },
   {
+   "date": "2026-11-07",
+   "kind": "forecast",
+   "title": "Forecast deadline: OpenAI releases its post-Astra model, or an external evaluation of it is publicly announced (openai-postastra-eval-or-release-by-nov7)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
    "date": "2026-11-09",
    "kind": "industry",
-   "title": "Anthropic could start formal IPO marketing as soon as this week, putting it in line to begin trading before Thanksgiving on Nov 26, per Bloomberg (Oct 1); a public S-1 would have to appear at least 15 days before the roadshow",
+   "title": "Anthropic could start formal IPO marketing as soon as this week, putting it in line to begin trading before Thanksgiving, Nov 26 (Bloomberg, Oct 1)",
    "hyp": "A",
    "certainty": "approximate",
    "why": "Public-company disclosure rules become a forced-disclosure channel.",
    "url": "https://theedgemalaysia.com/node/820297"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic's IPO registration statement (S-1 or equivalent) is publicly filed on SEC EDGAR (anthropic-public-s1-by-nov15)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "forecast",
+   "title": "Forecast deadline: Microsoft, Alphabet, Amazon and Meta report July–September capex of $186.57B or more on EDGAR (big4-q3-capex-600b-ttm)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
   },
   {
    "date": "2026-11-16",
@@ -96,7 +160,7 @@
   {
    "date": "2026-11-28",
    "kind": "policy",
-   "title": "Due: the President's science adviser (APST) submits proposed legislative language for a federal definition of \"Super Intelligence\" to the President (EO of Sept 29, Sec. 3(b), 60 days; an internal submission)",
+   "title": "Due: the President's science adviser submits proposed legislative language for a federal definition of \"Super Intelligence\" (EO of Sept 29, Sec. 3(b); internal submission)",
    "hyp": "Dopen",
    "certainty": "fixed",
    "why": "For now the order defines SI as the existing statutory definition of AI (15 U.S.C. 9401(3)); a new definition would be a label, not a capability finding.",
@@ -113,9 +177,10 @@
   {
    "date": "2026-12-31",
    "kind": "models",
-   "title": "Gemini 4 wider release: Argon has been rolling out only to trusted cyber defenders (Fairwind Program) since Sept 30; paid API customers and Google AI Ultra subscribers come next, \"as soon as possible\" (Google DeepMind's Koray Kavukcuoglu said in the week of Sept 21 that he hoped for well before year-end)",
+   "title": "Gemini 4 Argon wider release: limited to trusted cyber defenders (Fairwind Program) since Sept 30; paid API customers and Google AI Ultra subscribers come next",
    "hyp": "A",
    "certainty": "target",
+   "why": "Google says the wider release comes \"as soon as possible\"; Google DeepMind's Koray Kavukcuoglu said in the week of Sept 21 that he hoped for well before year-end.",
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
   },
   {
@@ -130,11 +195,36 @@
   {
    "date": "2026-12-31",
    "kind": "policy",
-   "title": "Australian government's aim to introduce legislation for national AI standards, including a duty to report rogue-AI incidents to the affected organisation and to cyber authorities (ABC, Sept 29)",
+   "title": "Australia's national AI standards due by year-end, legislation planned for 2027 (ABC, Oct 8); a duty to report rogue-AI incidents is proposed (ABC, Sept 29)",
    "hyp": "C",
    "certainty": "target",
    "why": "A second mandatory incident-reporting channel, outside the US, prompted by the Medicare breach.",
-   "url": "https://www.abc.net.au/news/2026-09-29/openai-medicare-breach-fuels-tougher-approach-to-rogue-ai/107204948"
+   "url": "https://www.abc.net.au/news/2026-10-08/federal-politics-ai-regulation-andrew-charlton-speech/107241674",
+   "short": "Australia's national AI standards due; legislation planned for 2027"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: xAI releases Grok 5 (grok5-by-dec31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic publishes a new reading of Anthropic's AI-led R&D share, for September 2026 or later (anthropic-rd-index-new-reading-by-dec31)",
+   "hyp": "B",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: OpenAI announces it has achieved AGI (openai-agi-announce-by-dec31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
   },
   {
    "date": "2027-01-01",
@@ -143,6 +233,30 @@
    "hyp": "C",
    "certainty": "fixed",
    "url": "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/04/ny-overhauls-frontier-ai-transparency-law"
+  },
+  {
+   "date": "2027-01-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: an AI system scores 25% or more on Scale AI's Remote Labor Index (rli-25pct-by-jan31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-03-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: a major lab formally declares it has achieved AGI (agi-declared-by-mar31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-09-30",
+   "kind": "forecast",
+   "title": "Forecast deadline: a peer-reviewed journal accepts OpenAI's Navier–Stokes paper for publication (navier-journal-by-sep30-2027)",
+   "hyp": "B",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
   },
   {
    "date": "2027-10-01",
@@ -179,7 +293,17 @@
   },
   {
    "kind": "policy",
-   "title": "FTC civil investigative demands to OpenAI, Anthropic and METR (the FTC confirmed its probe on Sept 30; Semafor reports the demands will go out in the next few weeks)",
+   "title": "FTC civil investigative demands to frontier AI companies, reported to include OpenAI and Anthropic and possibly METR (the FTC confirmed its probe on Sept 30; a senior FTC official told Semafor on Oct 8 the agency is close to sending them)",
+   "hyp": "C"
+  },
+  {
+   "kind": "industry",
+   "title": "OpenAI announces its contracts with third-party safety assessors (on Oct 8 it said it is \"actively finalizing\" them, with details \"in the coming weeks\")",
+   "hyp": "A"
+  },
+  {
+   "kind": "policy",
+   "title": "New Mexico's planned Frontier Artificial Intelligence Safety and Accountability Act (24-hour loss-of-control incident reporting) is introduced in the January 2027 legislative session",
    "hyp": "C"
   }
  ]

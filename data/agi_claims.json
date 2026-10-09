@@ -9,6 +9,25 @@
  },
  "claims": [
   {
+   "date": "2026-02-02",
+   "who": "Eddy Keming Chen, Mikhail Belkin, Leon Bergen and David Danks",
+   "role": "UC San Diego faculty in philosophy, AI and data science, and linguistics",
+   "quote": "insofar as individual humans possess general intelligence, current LLMs do too",
+   "venue": "Nature Comment, \"Does AI already have human-level intelligence? The evidence is clear\" (quote: Chen, via UC San Diego Today)",
+   "model": "(general)",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "partial",
+    "v2": "no"
+   },
+   "narrowDef": "General intelligence judged by the standard we apply to individual humans; UC San Diego's summary: \"by reasonable standards, current large language models (LLMs) already constitute AGI\".",
+   "interest": "Academic authors; Bergen is also on the technical staff of Goodfire AI, an AI company (Nature's author note).",
+   "url": "https://www.nature.com/articles/d41586-026-00285-6",
+   "press": "https://today.ucsd.edu/story/is-artificial-general-intelligence-here"
+  },
+  {
    "date": "2026-03-23",
    "who": "Jensen Huang",
    "role": "Nvidia CEO",
@@ -44,6 +63,43 @@
    "narrowDef": "Current models perform at \"roughly high-human level in command of language and general knowledge\" and work \"thousands of times faster\"; he adds that \"some major deficiencies remain but they're falling fast\".",
    "interest": "No commercial stake we found.",
    "url": "https://x.com/mgubrud/status/2036262415634153624"
+  },
+  {
+   "date": "2026-04-08",
+   "who": "Matei Zaharia",
+   "role": "Databricks co-founder and CTO",
+   "quote": "AGI is here already. It's just not in a form that we appreciate",
+   "venue": "Interview with TechCrunch (published Apr 8), on winning the 2026 ACM Prize in Computing",
+   "model": "(general)",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "unclear",
+    "v2": "no"
+   },
+   "narrowDef": "None stated; he added: \"We should stop trying to apply human standards to these AI models.\"",
+   "interest": "Databricks sells a data and AI platform that companies use to build with these models.",
+   "url": "https://techcrunch.com/2026/04/08/databricks-matei-zaharia-wins-acm-computing-prize-agi/"
+  },
+  {
+   "date": "2026-06-16",
+   "who": "Ali Ghodsi",
+   "role": "Databricks co-founder and CEO",
+   "quote": "We believe that AGI is already here",
+   "venue": "Keynote, Databricks Data + AI Summit, San Francisco (via SiliconANGLE)",
+   "model": "(general)",
+   "meets": {
+    "strict": "no",
+    "levels": "partial",
+    "charter": "no",
+    "narrow": "unclear",
+    "v2": "no"
+   },
+   "narrowDef": "None stated in the reports we read; he added \"AI does not have an intelligence problem right now. It's plenty smart.\"",
+   "interest": "Databricks sells a data and AI platform that companies use to build with these models.",
+   "url": "https://siliconangle.com/2026/06/16/agi-moment-databricks-new-releases-zero-support-deployment-ai-agents/",
+   "press": "https://itdaily.com/blogs/innovation/databricks-ceo-agi-is-already-here/"
   },
   {
    "date": "2026-08-26",
