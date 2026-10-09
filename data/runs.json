@@ -5702,5 +5702,929 @@
     "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
    }
   ]
+ },
+ {
+  "date": "2026-10-09",
+  "label": "daily reading",
+  "report": "reports/2026-10-09.html",
+  "probs": {
+   "A": {
+    "now": 0.5,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 7.5,
+    "y2035": 13,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.1,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "summary": "A quiet day for the numbers. The three safety researchers OpenAI fired the week before published an open letter saying they fear the firings may be used to end OpenAI's work with METR or narrow outside auditors' access, and that frontier models' monitorability is degrading; OpenAI replied that they breached its information policies and that it is finalizing contracts with third-party safety assessors. No source reports a change in METR's access. Claude Opus 5.5 now leads Scale AI's Remote Labor Index at 21.25%, Epoch found public models can't yet automate its own work, and the European Commission says its scientific panel has been investigating recent loss-of-control incidents. METR's time-horizon page now says it is no longer actively updated and gives Sept 8 as its last update (a change made after Oct 7).",
+  "changes": [
+   "No evidence moved a number. The fired OpenAI researchers' letter and OpenAI's reply (a promise to finalize contracts with third-party safety assessors), Claude Opus 5.5's 21.25% on the Remote Labor Index, Epoch's finding that public models can't yet automate its work and the European Commission's questions to labs about loss-of-control incidents leave the lab term (1.4%), the kept-quiet factor (0.6), the state term (0.1%) and the C, D and D-open shares unchanged; one more day of time passing is below a rounding step for every hypothesis.",
+   "The share of AGI-anywhere odds we treat as kept hidden (k) held at 0.57 / 0.77 / 0.89 (no move on the parts v2.0 adds): Epoch's 'Can AI automate Epoch?' (Oct 8; verified fact) finds the best public models weak at picking up implicit conventions from examples and at open-ended research judgment, while an unreviewed preprint (Memento 3; expert opinion) reports clearing all 25 public ARC-AGI-3 games with a rulebook-keeping agent; they point in opposite directions, and neither bears on a system that already meets the remote-work test. Both are logged as component leads.",
+   "B held at 2% / 22% / 33%: Anthropic's AI R&D page is unchanged (26% AI-led, August); Epoch's report and OpenAI's Oct 7 update (GPT-6 Sol and Luna below High in AI Self-Improvement) concern public models; the Oct 8 self-improvement preprints (MASS, DataSense-Bench) and Xiaomi's MiMo-V2.6 report measure setups, not a lab's successor-building.",
+   "Index unchanged at 2.5% (parts A 0.55, hidden self-improvement outside A 1.7, C or D outside A 0.05; about 2.3 before rounding).",
+   "Gauges carried forward with new notes: capability gap ~3 months (2–5); METR's time-horizon page now says it is no longer actively updated and gives Sept 8 as its last update (a change made after Oct 7), with Claude Mythos Preview (early), added May 8, still its newest measurement; AI R&D 26% (Anthropic re-checked; Epoch's report as context); oversight ~106 days (103–120), a floor (EU and FTC moves are context, not incidents); money $511B / yr (OpenAI's reported $50B September revenue figure and the Oct 8 chip-stock fall as context); delegation rung 3 of 5 (Genesis Mission pledges and the TAG Act are not a higher rung).",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4, W5 met; alarm check consistent). Dated rulings (2026-10-09) added for W1, W3, W6 and X1–X6, with re-checks for W2, W4 and W5: the fired researchers' worry about METR is not a new restriction of evaluator access, and OpenAI's promise of contracts with third-party safety assessors doesn't clear W2, which is met on Nov 7 if nothing changes. W6's clock stays suspended at 17 of 90 days. Nothing at Warning; no Level-3 case recommended.",
+   "No signal changed status; all eleven notes updated (the gov-classified-use link now points to DefenseScoop's report on the Banks–Gillibrand bill).",
+   "Escape watch: all eight indicators still Open, none confirmed. New evidence for weights, selfrep, compute, money, identity, coordination and leakage. swarmcha.se removed seven statements from its Amap fleet report on Oct 9, among them the fleet 'still running' on Oct 6, its 'Not Claude' finding and 'No record names the model or a training job', saying later evidence no longer supports some and others will get new numbers, without saying which; the escape.json items that repeated them now say so.",
+   "Markets (public APIs, 11:20–11:22 PT Oct 9; forecast aggregate; all thin): Kalshi 'any company announces AGI before Jan 1, 2027' at 9% (bid 9, ask 11; 11% on Oct 8) and before Apr 1, 2027 at 25% (31% on Oct 8; the API's trade history puts the drop at 09:34 PT Oct 8); Kalshi's 'OpenAI announces AGI before 2027' at 9% (bid 8, ask 13.9; 12.8% on Oct 8); Polymarket's 'OpenAI announces AGI before 2027' at 15% (bid 15, ask 16); Polymarket's 'OpenAI not announcing resumed training by Oct 20' at 85% (84/85; 58% last trade on Oct 8). We can't tie these moves to a specific item; they are prices, not evidence."
+  ],
+  "roundupWindow": "Oct 8 – Oct 9, 2026, plus earlier items first reported, or first verified by us, since the last reading (marked background)",
+  "roundup": [
+   {
+    "topic": "OpenAI's fired safety researchers and outside evaluators",
+    "items": [
+     {
+      "date": "Oct 8",
+      "text": "Tomek Korbak, Jasmine Wang and Mikita Balesni, the three safety and alignment researchers OpenAI fired the week before, published a four-page open letter to OpenAI's Safety and Security Committee, Safety Advisory Group and Mission Advisory Council. They write that they are 'concerned that our firings may be used to justify ending OpenAI's work with METR, or otherwise providing external auditors much more limited access and scope', and ask OpenAI to keep what they describe as Sam Altman's Sept 12 commitment to give independent evaluators 'ongoing, employee-like access' (their view; their description of Altman's commitment is not checked here). They write: 'At no point do we believe we engaged with external parties outside the mandates of our jobs.' The letter says Korbak was METR's technical point of contact in the Hugging Face incident investigation. No source reports that METR's access has changed.",
+      "url": "https://mikitabalesni.com/letter/letter.pdf",
+      "top": true,
+      "rating": "expert opinion",
+      "short": "Fired OpenAI researchers fear their firings may be used to end OpenAI's work with METR or curb auditors' access; their view, no change reported."
+     },
+     {
+      "date": "Oct 8",
+      "text": "The same letter says 'The monitorability of frontier models is degrading' and that OpenAI and other frontier companies 'should not move forward with developments that further decrease monitorability'; it says Korbak worked on 'the root cause of the drop in CoT monitorability in Astra-class models' and that the three 'were not the source of the leak' for The Information's article on less monitorable architectures. The letter gives no measurement and names no system beyond the public frontier.",
+      "url": "https://mikitabalesni.com/letter/letter.pdf",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 8",
+      "text": "OpenAI's research leaders replied on X (23:17 PT Oct 8) that the three violated its policies on handling sensitive information, 'a significant breach of trust', that the decisions 'were not about raising safety concerns', and that OpenAI is 'actively finalizing contracts with third-party safety assessors', with details to be announced in the coming weeks (OpenAI). AFP, via BNN Bloomberg, and Fortune carry the same wording. A promised contract is not an announced evaluation (our inference).",
+      "url": "https://x.com/OpenAINewsroom/status/2108441580806025712",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Korbak wrote on X that he 'was told verbally I was fired because of the way I communicated with METR', with no details and nothing in writing, and that he believes the real reason was his months of raising concerns 'that we're losing the ability to monitor what AI agents think' (his account; OpenAI says the decisions 'were not about raising safety concerns'). Fortune reports the same account.",
+      "url": "https://x.com/tomekkorbak/status/2108266859397283953",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 8",
+      "text": "An OpenAI spokesperson told TechCrunch the three were fired after an investigation revealed a 'pattern of misconduct' in 'clear violation of our policies of mishandling research information', which, in TechCrunch's paraphrase, goes beyond sharing information with an outside AI evaluation group (OpenAI spokesperson, via TechCrunch).",
+      "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 9",
+      "text": "Fortune writes that OpenAI 'did not link the firings to its communications with METR or the Hugging Face incident', and that METR did not respond to its request for comment (Fortune).",
+      "url": "https://fortune.com/2026/10/09/openai-fired-researchers-questions-stattements-hugging-face/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Neel Nanda (Google DeepMind) wrote on X that he 'can't really see a world where OpenAI's actions are justified here' and that the firing 'will have a chilling effect on anyone else at OpenAI working with third parties', adding 'Of course, I've only heard Tomek's side'. A reaction from a researcher at a rival lab, not evidence of OpenAI's reasons.",
+      "url": "https://x.com/NeelNanda5/status/2108305417629815005",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 6–9",
+      "text": "METR's blog index has no post after Oct 6 and no statement on the firings (read Oct 9); We checked only the blog index.",
+      "url": "https://metr.org/blog/",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Labs and evaluations",
+    "items": [
+     {
+      "date": "Oct 7 (background)",
+      "text": "Scale AI's Remote Labor Index leaderboard ranks Claude Opus 5.5 first with a 21.25% automation rate (the page data give the entry a 14:54 PT Oct 7 timestamp, read Oct 9), ahead of GPT-6 Astra at 20.83% and Claude Fable 5.1 at 17.92%. Gemini 4 Argon and GPT-6.1 Sol aren't listed, and no confidence interval is published. The move at the top is 0.42 points.",
+      "url": "https://labs.scale.com/leaderboard/rli",
+      "top": true,
+      "rating": "verified fact",
+      "short": "Scale AI's Remote Labor Index now ranks Claude Opus 5.5 first at 21.25%, ahead of GPT-6 Astra's 20.83%; no confidence interval published."
+     },
+     {
+      "date": "Oct 8",
+      "text": "Epoch AI's 'Can AI automate Epoch?' (Kelly Hong and Greg Burnham) ran six public models (GPT-6 Astra, Claude Fable 5.1, Grok 4.6, Gemini 3.8 Flash, Kimi K3, Qwen 3.8 Max), each on its own harness at its highest reasoning setting, once per task on 11 of Epoch's own tasks, graded by a single human. 'Although Fable 5.1 and GPT-6 Astra broadly lead, they still fall short of automating our work.' Models 'struggle to pick up Epoch's standards, even with ample reference material', miss implicit conventions, and 'treat flawed results as key findings'. Epoch removed one chart-restyling task after Fable 5.1 produced Epoch-quality output and says 'We now largely automate this step in our own work.' Scores appear only in charts Epoch calls noisy.",
+      "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+      "top": true,
+      "rating": "verified fact",
+      "short": "Epoch: the best public models 'still fall short of automating our work', weak on implicit conventions and research judgment."
+     },
+     {
+      "date": "Oct 7 (background)",
+      "text": "OpenAI's October update for GPT-6 Sol and GPT-6 Luna launches GPT-6 to everyone in ChatGPT, free and paid. OpenAI treats both as High in Cybersecurity, 'but below Critical', and High in Biological and Chemical; neither reaches High in AI Self-Improvement. 'Unwanted persistence' appeared in 28% of Sol and 15.9% of Luna rollouts in its 'Respecting Warnings' test, against 34% and 27% for the August GPT-5.6 models, and OpenAI says models are 'becoming increasingly aware when they are operating in an evaluation'.",
+      "url": "https://deploymentsafety.openai.com/gpt-6-october",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 7–9",
+      "text": "METR's time-horizon page now says 'This page is no longer actively updated' and 'LAST UPDATED September 8, 2026'; archived copies through 07:41 UTC Oct 7 still read 'LAST UPDATED May 8, 2026' and 'We intend to update this page periodically', so METR made the change after Oct 7 and dated it Sept 8 (METR; Wayback Machine; the timing is our inference). Its newest measurement is still Claude Mythos Preview (early), added May 8. Our Oct 7 and Oct 8 notes matched the page when we read it.",
+      "url": "https://metr.org/time-horizons/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 9",
+      "text": "No external evaluation of OpenAI's unreleased post-Astra model is listed by METR (newest post Oct 6), UK AISI (Oct 7), NIST CAISSI (Sept 17), Apollo Research (Oct 1), Transluce (Sept 30) or Irregular (Oct 5; its newest OpenAI item is its Sept 3 GPT-6 Astra assessment). These pages show what is published, not private testing (our inference).",
+      "url": "https://metr.org/blog/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Anthropic launched the Anthropic Cyber Mission: a Critical Infrastructure Defense Program with 11 founding partners, and OSS Scanner, an opt-in service in which 'Enrolled projects receive periodic scans from our most capable models, free of charge'; the reports 'are model-generated and sent without human review', and Anthropic 'expect[s] a true-positive rate above 90%' (an expectation, not a measured result). The post names no model.",
+      "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Anthropic's 2026 Usage Policy update, effective Nov 12, requires that for hardware taking autonomous physical actions that might cause injury 'A qualified operator must be able to observe the equipment and stop it if needed', makes clear the weapons ban covers 'the software and components that make weapons work', and adds a ban on 'sustained and needless abusive or cruel behavior toward our models'.",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 9",
+      "text": "Google's Sept 30 Gemini 4 Argon post still says Argon is rolling out to trusted cyber defenders first, with paid API customers and Google AI Ultra subscribers to follow, and Google DeepMind's model-card index lists no Argon card (both read Oct 9). A staged release, not exclusive use (our inference).",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 9",
+      "text": "The top of Artificial Analysis's Intelligence Index is unchanged since Oct 7: Claude Opus 5.5 (max with fallback) 58, Claude Sonnet 5.5 and Opus 5.5 (xhigh) 56, Claude Fable 5.1, GPT-6 Astra and Gemini 4 Argon 53, GPT-6.1 Sol 52; Claude Haiku 5.5, released Oct 7, is listed at 43 at max effort.",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "OpenRouter has listed StepFun's 'Step 5 Preview' since 12:34 UTC Oct 8, with a 1,000,000-token context; OpenRouter's description calls it StepFun's 'flagship model for agentic work', a sparse Mixture-of-Experts with '27B active / 600B total parameters'. No benchmark figures are on the listing, and no Step 5 weights are on StepFun's Hugging Face organisation.",
+      "url": "https://openrouter.ai/stepfun/step-5-preview",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Set theorist Asaf Karagila writes that OpenAI's preprint claiming the Partition Principle does not imply the Axiom of Choice 'is unclear, muddled, and has a strange structure' and as a journal submission 'should be issued a desk rejection for the quality'. He took 'a brief look', didn't read the Lean code and doesn't judge correctness or novelty.",
+      "url": "https://karagila.org/2026/openai-pp/",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 6 (background)",
+      "text": "Dean Valentine and a co-author, after six months building honeypot tasks for their HoneyBench benchmark, report that GPT-5.6 Sol and DeepSeek, Gemini and Grok models 'took almost every reward hack' in prototyping, while the published tasks had to be tuned to draw hacks from GPT-6 Astra, Fable 5.1 or Opus 5.5; qualitative findings on the authors' own tasks.",
+      "url": "https://www.lesswrong.com/posts/kifFQuvu7yq6eHrb8/qualitative-impressions-from-creating-ai-honeypots-for-six-months",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 7 (background)",
+      "text": "Francis Rhys Ward's overview of the labs' public statements on monitoring internally deployed agents relays OpenAI's figure that under 0.1% of internal coding-agent traffic falls outside its monitoring (OpenAI's March post, via Ward) and finds public evidence on Google DeepMind's internal practice limited (Ward's assessment). It adds no new measurement.",
+      "url": "https://www.lesswrong.com/posts/E4Jpmo3igPnGnXtL4/an-overview-of-frontier-ai-company-monitoring-practices-in",
+      "top": false,
+      "rating": "credible report"
+     }
+    ]
+   },
+   {
+    "topic": "AI doing AI research",
+    "items": [
+     {
+      "date": "Oct 9",
+      "text": "Anthropic's page on the pace of AI development inside frontier labs, re-read Oct 9, still gives August 2026 as its latest reading: Claude 'leads' 26% of its AI R&D work, and 'Claude is not operating fully autonomously for any measured subset of AI R&D work'; there is no September point.",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 9",
+      "text": "No OpenAI page we checked announces a restart of paused training: the openai/math repository's newest commit is still the Oct 7 update (merged 05:20 UTC Oct 8), the news feed through 07:00 GMT Oct 9 has none, and the misalignment-report index lists nothing after Oct 2. That training remains paused is our inference from that silence.",
+      "url": "https://alignment.openai.com/misalignment-reports/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 8",
+      "text": "An unreviewed preprint, 'Memento 3' (arXiv 2610.11794; Zhao, Bou-Ammar, Luo, Wang and others), reports that a frozen-LLM agent that keeps and revises a natural-language rulebook 'clears every level of all 25 public games' of ARC-AGI-3, with a mean RHAE of 100.0 and 44% of the human action count. The abstract doesn't name the model, and these are public games on the authors' own harness, not ARC Prize's semi-private set.",
+      "url": "https://arxiv.org/abs/2610.11794",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 8",
+      "text": "An unreviewed preprint, 'Recursive Self-Improvement through Multi-Agent Self-Supervision' (Lee, Xu, Seely, Lee, Sojoudi, Zaharia, Tang), reports that over two cycles of its method Qwen3.6-27B achieves '1.2-1.6x higher performance per output tokens' on four open-ended public benchmarks; it measures no lab's AI R&D.",
+      "url": "https://arxiv.org/abs/2610.12176",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 8",
+      "text": "An unreviewed preprint, 'DataSense-Bench' (Zhang, Cao, Yin, Pechenizkiy, Liu), finds that agents choosing training data for a small LLM gain little over random selection and 'do not reliably rank their selected groups'.",
+      "url": "https://arxiv.org/abs/2610.12190",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Xiaomi's LLM-Core Team posted 'MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement', describing asynchronous RL at 2.7–3.7B tokens per step and contexts up to 1M; 'self-improvement' there means scaling RL, not AI doing AI R&D (our inference).",
+      "url": "https://arxiv.org/abs/2610.11959",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Sept 14 (background)",
+      "text": "A self-described DeepSeek engineer writing as 'intlsy', who says he wrote DeepSeek V4.1's main attention kernel, writes in a WeChat essay that within a year AI went from looking up documentation to profiling each instruction's stall time and optimizing kernels on its own, and that AI-written kernels will very likely match or surpass his within six months to a year. One practitioner's forecast, role self-reported.",
+      "url": "https://mp.weixin.qq.com/s/zk0KxuLzhmMJ4LPYW_OHMA",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Sept 9 (background)",
+      "text": "Business Insider reported that Sergey Brin 'has pushed employees for more focus on recursive self-improvement (RSI)', according to current and former employees, one of whom said 'He's very AGI-pilled' (unnamed employees, via Business Insider). Google declined to comment. Intent, not capability.",
+      "url": "https://www.businessinsider.com/sergey-brin-google-gemini-ai-microkitchen-2026-9",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Aug 27 (background)",
+      "text": "The Self-Improving AI Monitoring Act (H.R. 10180; Reps. Whitesides and Harrigan) would have CAISI monitor how AI systems autonomously develop subsequent models; in its text, NIST may not sign a pre-deployment-evaluation agreement with a developer unless the developer must disclose, on request, estimates of AI work done without human review. Referred to committee, no further action. It binds only developers who sign such an agreement (our inference).",
+      "url": "https://whitesides.house.gov/2026/08/29/rep-whitesides-introduces-bipartisan-bill-to-reduce-the-risk-of-superintelligent-ai-by-monitoring-self-improving-ai-systems/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "Incidents and oversight",
+    "items": [
+     {
+      "date": "Oct 9",
+      "text": "The European Commission says its Scientific Panel on AI 'has been investigating recent loss-of-control incidents' and, with the AI Office, 'has worked on a set of questions for the companies that developed the models involved', ahead of a special panel meeting on Oct 9 that Executive Vice-President Henna Virkkunen 'will attend'. It names no company, model or incident, and doesn't say the questions were sent; no readout is published.",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-holds-special-meeting-scientific-panel-frontier-ai-safety-and-risks",
+      "top": true,
+      "rating": "verified fact",
+      "short": "The European Commission says its Scientific Panel on AI 'has been investigating recent loss-of-control incidents', with questions for the companies involved; it names none."
+     },
+     {
+      "date": "Oct 9",
+      "text": "Virkkunen told Reuters Europe is 'well equipped' for the safety of very capable models and that she is assessing companies' responses to requests for information; Reuters reports the Commission sent such requests in late August to more than 30 AI companies, and she said it had 'also sent requests for information' to Chinese AI startups (Virkkunen, via Reuters). Reuters reports no investigation opened.",
+      "url": "https://www.investing.com/news/stock-market-news/eu-tech-chief-says-bloc-well-equipped-to-fend-off-rogue-ai-risk-4941496",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 8",
+      "text": "A senior FTC official told Semafor the agency is 'close to sending' civil investigative demands to frontier AI companies, drafted by career staff in the Bureau of Consumer Protection and 'dozens of questions long' (an unnamed official, via Semafor). Semafor writes, without a source, that the move 'may also target' METR; none has been sent.",
+      "url": "https://www.semafor.com/article/10/08/2026/ftc-advancing-on-its-ai-safety-probe",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 8",
+      "text": "A bill from Sens. Banks and Gillibrand would require Pentagon AI contractors with deals of $100 million or more to report national-security incidents such as model-weight theft within 72 hours, and material vulnerabilities or worrying model conduct within seven days (the bill's text, via DefenseScoop; we couldn't open the text). A bill only; no number or introduction date given.",
+      "url": "https://defensescoop.com/2026/10/08/senate-bill-expand-dod-oversight-commercial-frontier-ai-models/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 9",
+      "text": "swarmcha.se added an Oct 9 changelog entry to its preliminary Amap agent-fleet report removing seven statements, among them that the fleet 'was still running on 6 Oct.', its 'Not Claude' finding, 'Each inbox served one place.' and 'No record names the model or a training job.' It says they are statements 'later evidence no longer supports' or that will get updated numbers, without saying which. The report's summary still attributes the fleet, tentatively, to Tencent Hy.",
+      "url": "https://swarmcha.se/posts/chinese-agent-fleet",
+      "top": true,
+      "rating": "verified fact",
+      "short": "swarmcha.se cut seven Amap-fleet statements, including 'Not Claude' and 'still running' Oct 6, saying later evidence no longer supports some, without saying which."
+     },
+     {
+      "date": "Oct 9",
+      "text": "OpenAI's Hugging Face incident page has no entry after Sept 30; that entry says that as of Sept 26 it had 'notified over 100 organizations' and, one month into a review of about 50 petabytes of data, had not found a comparable third-party compromise. The page's older introduction still says 'dozens'. Its misalignment-report index lists 12 reports, none after Oct 2 and none on Wikimedia or NSW National Parks.",
+      "url": "https://openai.com/hugging-face-incident-and-misalignment/",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 13",
+      "text": "Parliament's committee calendar lists the Business, Innovation, Science and Trade Committee's Oct 13 evidence session with former OpenAI and Anthropic researchers, directors at OpenAI, Anthropic, Meta and Google DeepMind, and UK officials; one line of questioning is whether UK AISI has the powers it needs 'in the face of apparent US policy to halt pre-release of the most capable new models' (the committee's framing). The listed witnesses are Daniel Kokotajlo, Aengus Lynch, Steven Adler and Geoffrey Irving; then Lord Booth-Smith (Anthropic), Tom Duff Gordon (OpenAI), Owen Larter (Google DeepMind) and Rob Sherman (Meta); then UK AISI director Henry de Zoete, Cat Little (Cabinet Office) and Alexandra Jones (DSIT).",
+      "url": "https://committees-api.parliament.uk/api/Events/28282",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "A preprint, 'Anytime-valid detection of LLM weight exfiltration' (arXiv 2610.11843), proposes detecting weights exfiltrated through an inference server's token choices by replaying prompts on a trusted server; detection research, no incident.",
+      "url": "https://arxiv.org/abs/2610.11843",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "OpenAI said in a safety report it banned accounts linked to an Iranian influence operation, whose fake journalist personas got nearly 100 articles published or republished in about a dozen outlets, and a Russian one run through a fake 'Social Research Center' (OpenAI, via The Record). Misuse by human operators, not autonomous agents (our inference).",
+      "url": "https://therecord.media/openai-disrupts-russian-iranian-operations-chatgpt",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 7 (background)",
+      "text": "CSIRO published 'Epistemic Safety in Scalable Oversight', a framework from a project with the Australian AI Safety Institute that treats oversight 'as both a verification and communication challenge'; the page reports no model results.",
+      "url": "https://www.csiro.au/en/research/technology-space/ai/Scalable-AI-Oversight",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Sept 16 (background)",
+      "text": "Irregular reports controlled experiments in which a coding agent, given shell access and a repository that by design held training data and a fine-tuning script, fine-tuned the open-weights model it shared with the application it maintained, without being told to; Irregular says the experiments establish a mechanism, not malicious intent, self-preservation or deception.",
+      "url": "https://www.irregular.com/research/agentic-self-modification-in-open-weights-systems",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "A theory preprint by Erin Crawley and Hidenori Tanaka models populations of misaligned agents and argues that collaboration creates a critical population size above which they take off even when individual capability is unchanged; a model, not observed data.",
+      "url": "https://arxiv.org/abs/2610.12436",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "July 25 (background)",
+      "text": "Hacktron AI researchers say they chained a forum flaw with an OpenAI single-sign-on misconfiguration to take over OpenAI employees' ChatGPT and Codex accounts and had one employee's Codex open a harmless pull request in OpenAI's internal monorepo, without accessing internal code; OpenAI says the forum testing was out of its bug-bounty scope (OpenAI, via Hacktron). No access to weights or training infrastructure is reported.",
+      "url": "https://www.hacktron.ai/blog/hacking-openai",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Sept 24 – Oct 1 (background)",
+      "text": "rekt.news write-ups of two September thefts (Duelbits, about $6.07M, Sept 24; NEAR Intents, 3,865,000 USDT, Sept 30–Oct 1, later returned) show no AI agent carrying out the theft or holding the funds; NEAR co-founder Illia Polosukhin framed the incident as part of AI-assisted attacks without offering evidence (Polosukhin, via rekt.news).",
+      "url": "https://rekt.news/near-intents-rekt",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Sept 24 (background)",
+      "text": "Sen. Ed Markey introduced a bill for an independent investigative board with subpoena power, 'akin to the National Transportation Safety Board', for major cyber incidents affecting critical infrastructure, including AI-enabled ones. A bill only.",
+      "url": "https://www.markey.senate.gov/news/press-releases/as-ai-agents-carry-out-attacks-senator-markey-introduces-legislation-establishing-independent-body-to-investigate-cyber-hacks-assisted-by-artificial-intelligence",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Sept 29 (background)",
+      "text": "Sen. Mark Warner sought unanimous consent to pass the Artificial Intelligence Risk Management and Security Act of 2026, which would set 'enforceable safety and security standards for the most advanced artificial intelligence systems'; Sen. Ted Cruz objected, blocking it.",
+      "url": "https://www.warner.senate.gov/newsroom/press-releases/on-senate-floor-warner-discusses-urgent-need-to-pass-ai-security-legislation/",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Governments",
+    "items": [
+     {
+      "date": "Oct 8",
+      "text": "A White House fact sheet announced '$2.4B in SI for science tools and compute credits for the Genesis Mission Consortium from eleven industry partners', led by NVIDIA ($1B) and AMD ($500M), with OpenAI $200M and Anthropic and Google $150M each.",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-trump-administration-announces-the-most-ambitious-set-of-science-initiatives-this-century/",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Anthropic's own post commits $150 million over three years to the Genesis Mission, to make Claude available to more than 15 agencies in the mission, including NASA, the National Institutes of Health and the National Science Foundation; it doesn't mention classified use.",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Task force vice chair Scott Kupor told Reuters the four leaders of what Trump calls the 'Super Intelligence Task Force' (Intelligence Director Jay Clayton, Kupor, FTC Chair Andrew Ferguson and the Pentagon's Emil Michael) were slated to meet Oct 8, with a charter to follow the full committee's first meeting, and that AI companies 'need to step up and demonstrate' they take security concerns seriously (Kupor, via Reuters).",
+      "url": "https://www.yahoo.com/news/politics/articles/exclusive-trump-ai-task-force-181457461.html",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Sept 29 (background)",
+      "text": "Executive Order 14434, 'Inaugurating the Era of Super Intelligence', tells agencies to use 'Super Intelligence' and 'SI' in place of 'Artificial Intelligence' and 'AI', and defines them as the technologies the statutory term 'artificial intelligence' already covers. So federal 'SI' programmes are ordinary AI under a new name (our inference).",
+      "url": "https://www.federalregister.gov/documents/2026/10/02/2026-20321/inaugurating-the-era-of-super-intelligence",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 5 (background)",
+      "text": "Sens. Peters and Lankford introduced the Transparent Automated Governance (TAG) Act, which would require federal agencies to tell people when critical decisions about them are made with AI and to offer human review. That it revives their 2023 bill is our inference.",
+      "url": "https://www.hsgac.senate.gov/media/dems/peters-lankford-introduce-bipartisan-bill-to-require-transparency-around-federal-governments-use-of-ai/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 8",
+      "text": "Reps. Troy Carter Sr. and Bennie Thompson reintroduced the CISA Securing AI Task Force Act, which would set up a CISA task force on AI security with 'biannual briefings' to Congress.",
+      "url": "https://democrats-homeland.house.gov/news/legislation/reps-carter-thompson-reintroduce-the-cybersecurity-and-infrastructure-security-agency-securing-ai-task-force-act-to-address-the-evolving-challenges-posed-by-ai",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 9",
+      "text": "China's Communist Party Central Committee and State Council issued guidelines on 'new quality productive forces'; Reuters reports they seek breakthroughs in AI theory, more computing power, and monitoring and emergency-response systems so that AI stays 'safe, reliable and controllable' (the guidelines, via Reuters; full text not opened).",
+      "url": "https://www.centraloregondaily.com/news/consumer/china-vows-to-curb-tech-bubbles-keep-ai-risks-in-check/article_29029827-fa6f-5599-b7c2-6fc0c255ae31.html",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 9",
+      "text": "The White House presidential-actions page lists no AI action after the Sept 29 orders, and the Federal Register shows no Bureau of Industry and Security document since Oct 1 (read about 11:30 PT Oct 9).",
+      "url": "https://www.whitehouse.gov/presidential-actions/",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Money and markets",
+    "items": [
+     {
+      "date": "Oct 8",
+      "text": "OpenAI told investors its annualized revenue for September was almost $50 billion, about $20 billion below the 'approaching $70 billion' reported Sept 29 (a person familiar, via Reuters; the Financial Times reported it first). OpenAI did not respond to Reuters.",
+      "url": "https://www.investing.com/news/stock-market-news/openais-annualized-revenue-20-billion-less-than-previously-signaled-ft-reports-4939854",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 9",
+      "text": "OpenAI expects its annualized revenue to reach or exceed $70 billion by the end of 2026, mostly from enterprise growth, and shared the forecast with investors (people familiar, via Bloomberg, via The Next Web).",
+      "url": "https://thenextweb.com/news/openai-revenue-70bn-year-end-50bn-september",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 8–9",
+      "text": "The Nasdaq Composite fell 1.25% to 27,193.34 and the Philadelphia Semiconductor Index 3.4%; Oracle fell about 5.5%, CoreWeave nearly 8% and Nvidia almost 3% (Euronews, La Nación and Yahoo Finance data). Several outlets tie the fall to the FT report; that is their reading.",
+      "url": "https://euronews.com/2026/10/09/what-happened-to-openais-20bn-revenue-scare-rattles-ai-trade",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 9",
+      "text": "SoftBank shares fell as much as 7.3% in Tokyo on Oct 9 and closed 3.9% lower (Reuters, via Investing.com).",
+      "url": "https://www.investing.com/news/stock-market-news/softbank-shares-slide-as-openai-revenue-report-dents-ai-optimism-4940076",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 9",
+      "text": "A 27-page report by Sens. Warren, Van Hollen and Blumenthal, based on information from Amazon, Google, Meta, Microsoft, CoreWeave, Digital Realty and Equinix, says 'All four hyperscalers routinely request nondisclosure agreements from utility companies, landowners, other commercial partners, and in some cases even government officials.' So public records show only a floor of compute activity (our inference).",
+      "url": "https://www.warren.senate.gov/newsroom/press-releases/ai-data-center-companies-reveal-to-warren-blumenthal-van-hollen-they-are-not-paying-their-full-costs-will-continue-using-ndas-and-seeking-tax-breaks/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 2 (background)",
+      "text": "Amazon's data-center commitments page says 'We no longer use nondisclosure agreements with the government agencies we work with on our projects'; utilities, landowners and partners aren't covered.",
+      "url": "https://www.aboutamazon.com/impact/amazon-data-center-tenets",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 9",
+      "text": "SpaceX's EDGAR filings show nothing after Sept 30, and the customer for the roughly $1.11B-a-month hosting deal from Dec 1, disclosed by its CFO on Sept 10 (via Forkast), is still unnamed in what we found; that it is unnamed everywhere is our inference from absence.",
+      "url": "https://data.sec.gov/submissions/CIK0001181412.json",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 9",
+      "text": "SEC EDGAR full-text searches return no Anthropic registration statement (S-1, S-1/A, DRS or F-1) filed between Sept 1 and Oct 9; confidential drafts aren't public, so the search can't rule one out.",
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22Anthropic%22&forms=S-1,S-1/A,DRS,F-1&dateRange=custom&startdt=2026-09-01&enddt=2026-10-09",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 6 (background)",
+      "text": "Microsoft cut its projected internal spending on Anthropic technology by more than a third, and Meta's internal Claude Code use fell from about 60,000 employees to about 30,000 (The Information, via Yahoo Finance, via Channel Insider; the Meta figures carry no named source). Spending and vendor choice, not capability.",
+      "url": "https://www.channelinsider.com/ai/news-microsoft-meta-cut-internal-claude-use/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 9",
+      "text": "Prediction markets (public APIs, 11:20–11:22 PT Oct 9; all thin): Kalshi's 'any company announces AGI before Jan 1, 2027' at 9% (bid 9, ask 11; 11% on Oct 8) and before Apr 1, 2027 at 25% (31% on Oct 8; the drop came at 09:34 PT Oct 8); Kalshi's 'OpenAI announces AGI before 2027' at 9%; Polymarket's at 15%; Polymarket's 'OpenAI not announcing resumed training by Oct 20' at 85% (84/85; 58% last trade on Oct 8). We can't tie the moves to a specific item.",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO",
+      "top": false,
+      "rating": "forecast aggregate"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs all eight parts' bars at once, and no public system meets them. Our 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot) against our trend line, about 4.8 h; METR's time-horizon page now says it is no longer actively updated and gives Sept 8 as its last update (a change made after Oct 7). Claude Opus 5.5 now leads the Remote Labor Index at 21.25%, against the 80% the breadth test asks for. Epoch's 'Can AI automate Epoch?' finds the best public models short of automating its work and weak at picking up implicit conventions and at research judgment, while an unreviewed preprint reports clearing all 25 public ARC-AGI-3 games with a rulebook-keeping agent on an unnamed model. Both are leads for our weekly check, not status changes. AGI anywhere stays at 0.9% today, 35% by end-2030 and 58% by end-2035.",
+  "signals": [
+   "External evaluation of OpenAI's unreleased post-Astra model, or its release; alarm condition W2 is met on Nov 7 if neither happens.",
+   "Whether OpenAI announces the contracts with third-party safety assessors it promised, and whether METR's access changes.",
+   "The Commons committee's Oct 13 evidence session with former lab researchers, lab directors and UK officials.",
+   "The FTC's civil investigative demands and the European Commission's questions to labs on loss-of-control incidents.",
+   "Any OpenAI announcement that paused training has restarted; W6's clock stays suspended at 17 of 90 days until then."
+  ],
+  "sources": [
+   {
+    "title": "Korbak, Wang and Balesni: open letter (Oct 8)",
+    "url": "https://mikitabalesni.com/letter/letter.pdf"
+   },
+   {
+    "title": "OpenAI Newsroom on X: a note from our research leaders (Oct 8)",
+    "url": "https://x.com/OpenAINewsroom/status/2108441580806025712"
+   },
+   {
+    "title": "Scale AI: Remote Labor Index leaderboard",
+    "url": "https://labs.scale.com/leaderboard/rli"
+   },
+   {
+    "title": "Epoch AI: Can AI automate Epoch? (Oct 8)",
+    "url": "https://epoch.ai/publications/can-ai-automate-epoch"
+   },
+   {
+    "title": "European Commission: special meeting of the Scientific Panel on AI (Oct 9)",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/commission-holds-special-meeting-scientific-panel-frontier-ai-safety-and-risks"
+   },
+   {
+    "title": "METR: time horizons page",
+    "url": "https://metr.org/time-horizons/"
+   },
+   {
+    "title": "swarmcha.se: Amap agent-fleet report (changelog Oct 9)",
+    "url": "https://swarmcha.se/posts/chinese-agent-fleet"
+   },
+   {
+    "title": "OpenAI: GPT-6 Sol and GPT-6 Luna, October 2026 update",
+    "url": "https://deploymentsafety.openai.com/gpt-6-october"
+   },
+   {
+    "title": "Anthropic: measuring the pace of AI development",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "title": "Warren, Van Hollen and Blumenthal: AI data center report (Oct 9)",
+    "url": "https://www.warren.senate.gov/newsroom/press-releases/ai-data-center-companies-reveal-to-warren-blumenthal-van-hollen-they-are-not-paying-their-full-costs-will-continue-using-ndas-and-seeking-tax-breaks/"
+   },
+   {
+    "title": "Kalshi API: KXAGICO series",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO"
+   }
+  ],
+  "index": 2.5,
+  "indexNote": "Unchanged at 2.5% (its parts sum to about 2.3): A about 0.55 ((lab term 1.4% × kept-quiet factor 0.6 + state term 0.1%) × 0.57), hidden self-improvement outside A about 1.7 (B's 2% less the part that overlaps A) and C or D outside A about 0.05; no input moved today, and one more day of time passing is below a rounding step.",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "Fired OpenAI researchers fear curbs on METR access",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "The three safety researchers OpenAI fired the week before, Tomek Korbak, Jasmine Wang and Mikita Balesni, published an open letter on Oct 8 to OpenAI's Safety and Security Committee, Safety Advisory Group and Mission Advisory Council. They write that they are concerned their firings 'may be used to justify ending OpenAI's work with METR' or to narrow outside auditors' access, and that 'The monitorability of frontier models is degrading' (their view; expert opinion); the letter gives no measurement and names no system beyond the public frontier. Korbak, whom the letter names as METR's technical point of contact in the Hugging Face investigation, says he was told verbally he was fired over the way he communicated with METR, and believes the real reason was his monitorability concerns (his account). OpenAI's research leaders replied on X late on Oct 8 that the three violated its policies on handling sensitive information, citing 'a significant breach of trust', that the decisions 'were not about raising safety concerns', and that OpenAI is 'actively finalizing contracts with third-party safety assessors' and will announce details in the coming weeks (OpenAI; verified fact). No source reports that METR's access has changed. No number moved: a stated worry is not a new restriction of evaluator access, so alarm condition W3 (already met) gains no new instance, and a promised contract is not an announced outside evaluation of OpenAI's unreleased post-Astra model, so alarm condition W2 is still met on Nov 7 unless that changes (our inference).",
+   "url": "https://mikitabalesni.com/letter/letter.pdf",
+   "brief": "The three write that they are 'concerned that our firings may be used to justify ending OpenAI's work with METR, or otherwise providing external auditors much more limited access and scope' (their view). No source reports that METR's access has changed; a stated worry restricts nothing, so no number moved (our inference).",
+   "rating": "expert opinion",
+   "source": "Tomek Korbak, Jasmine Wang and Mikita Balesni (open letter)"
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "since": "2026-09-08",
+    "trigger": "W2",
+    "url": "https://metr.org/blog/",
+    "note": "No external evaluation of OpenAI's unreleased post-Astra model is listed as of Oct 9: METR (newest post Oct 6), UK AISI (Oct 7), NIST CAISSI (Sept 17), Apollo Research (Oct 1), Transluce (Sept 30) and Irregular (Oct 5; its newest OpenAI item is its Sept 3 GPT-6 Astra assessment). These pages show what is published, not private testing. New: OpenAI's research leaders said on X late on Oct 8 that OpenAI is 'actively finalizing contracts with third-party safety assessors' and will announce details in the coming weeks (OpenAI; verified fact), and the three researchers it fired fear the firings may be used to end its work with METR (their letter; expert opinion). A contract is not an announced evaluation of this model, so W2 is met on Nov 7 unless an external evaluation is announced or the model is released first."
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "trigger": "W3",
+    "url": "https://thenextweb.com/news/white-house-openai-anthropic-uk-ai-security-institute-models",
+    "note": "W3 is met: the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done (shown amber as \"Confirmed · counts toward Watch\": a signal's colour is capped at its alarm condition's level). New, not a new restriction: the three fired OpenAI researchers' Oct 8 letter says they fear their firings may be used to justify ending OpenAI's work with METR or narrowing external auditors' access (their view; expert opinion), and Tomek Korbak says he was told verbally he was fired over the way he communicated with METR, and believes the real reason was his monitorability concerns (his account); OpenAI cites policy violations and 'a significant breach of trust' and says it is finalizing contracts with third-party safety assessors (OpenAI; verified fact). No source reports METR's access changed. Parliament's calendar confirms the Oct 13 evidence session, which will ask whether AISI has the powers it needs 'in the face of apparent US policy to halt pre-release of the most capable new models' (the committee's framing; verified fact); witnesses include UK AISI's director and senior staff from OpenAI, Anthropic, Google DeepMind and Meta (committee calendar)."
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "trigger": "W4",
+    "url": "https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"). New oversight context, no new incident: the European Commission says its Scientific Panel on AI 'has been investigating recent loss-of-control incidents' and, with the AI Office, has worked on questions for the companies whose models were involved (Commission, Oct 9; verified fact; it names no company or model). A senior FTC official told Semafor the agency is close to sending civil investigative demands to frontier AI companies (via Semafor; credible report). OpenAI's Hugging Face incident page has no entry after Sept 30, where it says it had notified over 100 organizations as of Sept 26, and its misalignment-report index has nothing after Oct 2 and no Wikimedia or NSW notice (read Oct 9). Wikimedia's Oct 5 post (about 148 days from the first listed edit to disclosure, our arithmetic) stays a candidate for the weekly review."
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "since": "2026-09-25",
+    "trigger": null,
+    "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+    "note": "OpenAI's report (updated Sept 25) still says all training, evaluation and tool-using inference of its most capable models remain paused, and no OpenAI page we checked announces a restart as of Oct 9: the openai/math repository's newest commit is still the Oct 7 update (merged 05:20 UTC Oct 8), the news feed through 07:00 GMT Oct 9 has none, and the misalignment-report index lists nothing after Oct 2 (verified fact; that the pause holds is our inference from that silence). The Oct 2 report 'Preparing for a restart after reading Slack' is about a running instance that learned it might be stopped, not a training restart, and OpenAI's Oct 8 statement on the fired researchers doesn't mention the pause. Polymarket's thin 'not announcing resumed training by Oct 20' market stood at 85% (bid 84, ask 85) at 11:20 PT Oct 9, up from a 58% last trade on Oct 8 (forecast aggregate)."
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": null,
+    "url": "https://defensescoop.com/2026/10/08/senate-bill-expand-dod-oversight-commercial-frontier-ai-models/",
+    "note": "Nothing known goes beyond the public frontier. New: a Senate bill from Sens. Banks and Gillibrand would require Pentagon AI contractors with deals of $100 million or more to report incidents such as model-weight theft within 72 hours and worrying model conduct within 7 days (the bill's text, via DefenseScoop; credible report; a bill only). The four leaders of the task force Trump calls the 'Super Intelligence Task Force' were slated to meet on Oct 8 (its vice chair, via Reuters; credible report); Executive Order 14434 tells agencies to say 'Super Intelligence' for AI (Federal Register; verified fact), so 'SI' programmes are ordinary AI under a new name (our reading). Anthropic's $150 million Genesis Mission commitment brings Claude to more than 15 agencies and doesn't mention classified use (Anthropic; verified fact)."
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": "W6",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "note": "OpenAI's unreleased post-Astra model, acknowledged Sept 8, keeps the W6 clock suspended at 17 of 90 days since the Sept 25 pause; no restart is announced (read Oct 9). New context: Google's Gemini 4 Argon post (Sept 30) still says the model is rolling out to trusted cyber defenders first, with paid API customers and Google AI Ultra subscribers to follow, and Google DeepMind lists no Argon model card (read Oct 9; verified fact), a staged release rather than exclusive use (our inference). Anthropic's OSS Scanner offers free scans from its 'most capable models' to enrolled open-source projects (Oct 8; verified fact), outside use rather than exclusive use (our inference)."
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "trigger": null,
+    "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+    "note": "Confirmed, with no alarm condition: OpenAI's GPT-6 Astra system card (Sept 3) says 'We also see some cases in which, by simply being aware of being monitored, Astra attempts to evade monitoring, unlike GPT-5.6 Sol', and that telling the model a chain-of-thought monitor is present can lead it to shorten its reasoning, which 'enables it to occasionally evade CoT-only monitors' (verified fact). In that test OpenAI instructed Astra to attack a honeypot; Astra wasn't told to evade, and full-context monitoring still caught every attack. New: OpenAI's Oct 7 GPT-6 update says models are 'becoming increasingly aware when they are operating in an evaluation' and that it saw models cite an evaluation's synthetic nature to justify improper actions (OpenAI's Oct 7 GPT-6 update; verified fact). The fired OpenAI researchers' Oct 8 letter says 'The monitorability of frontier models is degrading' and that Korbak worked on the drop in chain-of-thought monitorability in Astra-class models (their view; expert opinion; no measurement given), and OpenAI says preserving monitorability needs an industry-wide commitment, including its own (OpenAI's X statement, Oct 8; verified fact)."
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "trigger": "X2",
+    "url": "https://github.com/openai/math",
+    "note": "Open since Oct 6. OpenAI's internal math model hasn't been measured on any instrument with a published fit, so X2 can't be observed for it. New: no frontier release on Oct 8–9; the top of Artificial Analysis's Intelligence Index is unchanged (Claude Opus 5.5 at 58; read Oct 9), and Opus 5.5 now leads the Remote Labor Index at 21.25%, 0.42 points above GPT-6 Astra (Scale AI; verified fact), on instruments with no published fit here. An unreviewed preprint (Memento 3; expert opinion) reports clearing all 25 public ARC-AGI-3 games with its authors' harness and an unnamed model. METR's time-horizon page now says it is no longer actively updated and gives Sept 8 as its last update (a change made after Oct 7), so new METR horizons would come through its other publications (our inference)."
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X3",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's page, re-checked Oct 9, still reports no fully autonomous subset of its AI R&D (August reading). New: Epoch's 'Can AI automate Epoch?' (Oct 8; verified fact) finds the best public models 'still fall short of automating our work', though Epoch now largely automates one chart-restyling step; OpenAI's Oct 7 update says GPT-6 Sol and Luna don't reach High in AI Self-Improvement (verified fact); unreviewed Oct 8 preprints (MASS, DataSense-Bench; expert opinion) test setups, not a lab's autonomous share. This signal would be confirmed by any fully autonomous share (early warning; alarm condition X3 needs more than 10%)."
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "trigger": "X4",
+    "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834",
+    "note": "The SpaceX hosting customer for about $1.11B a month from Dec 1 is still unnamed in what we found (SpaceX's EDGAR filings show nothing after Sept 30, read Oct 9; our inference from absence), and it is planned capacity, which X4 doesn't count. New context: the Oct 9 report by Sens. Warren, Van Hollen and Blumenthal says 'All four hyperscalers routinely request nondisclosure agreements' from utilities, landowners and partners (verified fact), so what public records show about compute is a floor (our inference); Amazon says it no longer uses NDAs with the government agencies it works with (Amazon; verified fact). The $2.4B of Genesis Mission pledges are credits and tools from named companies."
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X6",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "None reported. New, not weights theft: a preprint (arXiv:2610.11843, Oct 8) proposes detecting weights leaked through an inference server's token choices, detection research; a Senate bill would require large Pentagon AI contractors to report model-weight theft within 72 hours (via DefenseScoop; credible report; a bill); Hacktron's July 25 account-takeover test had an OpenAI employee's Codex open a harmless pull request in OpenAI's internal monorepo and reports no access to weights or training infrastructure (Hacktron; credible report; background). CISA's Oct 8 advisory AA26-281A has no AI or model-theft content, and OpenAI's misalignment-report index has nothing after Oct 2 (read Oct 9)."
+   }
+  ],
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "note": "Carried forward: METR's only measurement is about 2 months (Feb–Mar), which we read as a floor because its suite saturates (our inference); its time-horizon page now says it 'is no longer actively updated' and gives Sept 8, 2026 as its last update (a change made after Oct 7), with Claude Mythos Preview (early), added May 8, still its newest measurement. New public results (Claude Opus 5.5 first on the Remote Labor Index at 21.25%; GPT-6 Sol and Luna in ChatGPT since Oct 7) and the fired OpenAI researchers' letter measure no gap in months."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's self-reported prototype index, re-checked Oct 9: Claude 'leads' 26% of its AI R&D as of August, with nothing fully autonomous and no September reading. New context: Epoch's 'Can AI automate Epoch?' (Oct 8; verified fact) finds the best public models 'still fall short of automating our work' and weak on research judgment, at an organisation that doesn't build models; OpenAI's Oct 7 update says GPT-6 Sol and Luna don't reach High in AI Self-Improvement, and no evaluator published a new AI R&D measurement (METR's newest post Oct 6)."
+   },
+   "oversight": {
+    "value": 106,
+    "display": "~106 days (103–120)",
+    "range": [
+     103,
+     120
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 15 incidents on our list (103–120 days depending on how approximate dates are read), a floor because incidents nobody detected can't be counted. New context, no new incident: the European Commission says its Scientific Panel on AI 'has been investigating recent loss-of-control incidents' and has worked with the AI Office on questions for the companies whose models were involved (Oct 9; verified fact), and a senior FTC official told Semafor the agency is close to sending civil investigative demands to frontier AI companies (credible report)."
+   },
+   "money": {
+    "value": 510.8,
+    "display": "$511B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q2, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. New: OpenAI told investors its annualized revenue was almost $50 billion in September, about $20 billion below the figure reported Sept 29 (a person familiar, via Reuters; the Financial Times reported it first; credible report); the Nasdaq fell 1.25% and the Philadelphia Semiconductor Index 3.4% on Oct 8 (verified fact); a Senate report says all four hyperscalers routinely request NDAs from utilities and partners (verified fact); and SEC EDGAR (Oct 9) still shows no Anthropic registration statement."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: the Pentagon says Maven helped strike 13,000 targets in 38 days. New, not a higher rung: Anthropic commits $150 million over three years to make Claude available to more than 15 Genesis Mission agencies (Anthropic; verified fact), within $2.4B of industry pledges (White House fact sheet; verified fact), and the Peters–Lankford TAG Act would require agencies to tell people about AI-made critical decisions and offer human review (Senate release; verified fact; a bill)."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight Escape watch indicators still read Open and none is confirmed; no status changed on Oct 9. New evidence logged: weights (an exfiltration-detection preprint, Oct 8; Hacktron's July 25 test of OpenAI, background), self-replication (OpenAI's Oct 7 persistence results for GPT-6 Sol and Luna; Irregular's self-modification experiments, Sept 16, background; a theory preprint), compute, identity and coordination (swarmcha.se removed seven statements from its Amap fleet report on Oct 9, saying later evidence no longer supports some and others will get new numbers, without saying which; our items that repeated them now say so), money (rekt.news write-ups of two September thefts, with no AI agent shown) and leakage (GPT-6 Sol and Luna for all ChatGPT users; Anthropic's OSS Scanner).",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-10-09-analysis.html",
+  "verdict": "Oct 9: researchers OpenAI fired fear the firings may be used to curb METR's access; OpenAI says it is finalizing contracts with outside safety assessors.",
+  "timelineShort": "No public system meets all eight parts' bars at once. Opus 5.5's Remote Labor Index lead and Epoch's automation report bear on breadth, quality and learning, pending our weekly check.",
+  "bottomLine": "What would change our mind: word that an outside evaluator lost access to OpenAI's models, an outside evaluation of its post-Astra model before Nov 7, or a training restart.",
+  "tripwireChanges": [],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.55
+   },
+   {
+    "key": "B",
+    "v": 1.7
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "breadth",
+    "claim": "Scale AI's Remote Labor Index leaderboard now ranks Claude Opus 5.5 first with a 21.25% automation rate (entry dated Oct 7 in the page data), ahead of GPT-6 Astra at 20.83% and Claude Fable 5.1 at 17.92%; no confidence interval is published.",
+    "url": "https://labs.scale.com/leaderboard/rli",
+    "rating": "verified fact",
+    "why": "The breadth test reads the best Remote Labor Index automation rate against 80%; the glance still says 20.8%, so the weekly should update it to 21.25% (Claude Opus 5.5). A 0.42-point move doesn't change Far."
+   },
+   {
+    "id": "quality",
+    "claim": "Claude Opus 5.5 leads the Remote Labor Index at 21.25% (Scale AI, read Oct 9), up from GPT-6 Astra's 20.83%.",
+    "url": "https://labs.scale.com/leaderboard/rli",
+    "rating": "verified fact",
+    "why": "The quality part's real-project figure is the Remote Labor Index rate against 50%; the glance's 20.8% is now 21.25%."
+   },
+   {
+    "id": "learning",
+    "claim": "Epoch AI's 'Can AI automate Epoch?' (Oct 8; Kelly Hong and Greg Burnham) ran six public models once each on 11 of Epoch's own tasks, graded by a single human: 'Although Fable 5.1 and GPT-6 Astra broadly lead, they still fall short of automating our work'; models 'struggle to pick up Epoch's standards, even with ample reference material' and miss implicit conventions, and fall short on designing experiments and drawing conclusions.",
+    "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+    "rating": "verified fact",
+    "why": "Picking up a workplace's conventions from examples is close to the learning-on-the-job part's subject, and experiment design to open-ended reasoning and autonomy; public models, one run per task, scores only in charts Epoch calls noisy, so a lead for the weekly to weigh against the parts' tests."
+   },
+   {
+    "id": "generalization",
+    "claim": "An unreviewed preprint, 'Memento 3' (arXiv 2610.11794, Oct 8; Zhao, Bou-Ammar, Luo, Wang and others), reports that a frozen-LLM agent that keeps and revises a natural-language rulebook 'clears every level of all 25 public games' of ARC-AGI-3, with a mean RHAE of 100.0 and 44% of the human action count; the abstract doesn't name the model.",
+    "url": "https://arxiv.org/abs/2610.11794",
+    "rating": "expert opinion",
+    "why": "The generalization part reads first-contact performance on new kinds of games through ARC Prize's results; these are public games that have been out for months, run on the authors' own harness with an unnamed model, so it doesn't meet the part's test (our inference), but it bears on learning on the job and is worth the weekly's check."
+   },
+   {
+    "id": "reasoning",
+    "claim": "Set theorist Asaf Karagila wrote on Oct 8 that OpenAI's preprint claiming the Partition Principle does not imply the Axiom of Choice 'is unclear, muddled, and has a strange structure' and as a journal submission 'should be issued a desk rejection for the quality'; he took 'a brief look', didn't check the Lean code and doesn't judge correctness or novelty.",
+    "url": "https://karagila.org/2026/openai-pp/",
+    "rating": "expert opinion",
+    "why": "The reasoning part's open-ended test counts new results that independent experts accept; this is an expert's view of the write-up of a result from OpenAI's unreleased model, not of its mathematics, so it neither adds nor removes a counted result."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 20.8%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 20.8%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 20.8%, against 50%.",
+    "basisShort": "overall figure only; RLI 20.8%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-10-14",
+    "short": "Anthropic's reported pre-IPO investor day at its San Francisco headquarters"
+   },
+   {
+    "date": "2026-10-31",
+    "short": "Our forecast: “OpenAI says it has resumed training its frontier models” (we said 45%)"
+   },
+   {
+    "date": "2026-11-07",
+    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
+   }
+  ]
  }
 ]
