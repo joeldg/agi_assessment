@@ -431,6 +431,79 @@ class Worktree(unittest.TestCase):
         self.assertIn("PAGES  index.html", p.stdout)
 
 
+class DerivedAfterWeekly(unittest.TestCase):
+    """check_derived on a real git history: the weekly refreshes data/incidents.json after the day's run was
+    published. That mismatch is a warning whether or not the weekly is committed yet; a new or edited run errors."""
+
+    RUN = {"date": "2026-10-09", "report": "reports/2026-10-09.html", "gauges": {"oversight": {"value": 106}}}
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp(prefix="derived-"))
+        self.old_root = check_data.ROOT_DIR
+        check_data.ROOT_DIR = self.tmp
+        self.git("init", "-q")
+        self.write([self.RUN], [106])
+        self.commit("daily")
+
+    def tearDown(self):
+        check_data.ROOT_DIR = self.old_root
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def git(self, *args):
+        subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *args], cwd=str(self.tmp), check=True,
+                       capture_output=True)
+
+    def commit(self, msg):
+        self.git("add", "-A")
+        self.git("commit", "-q", "-m", msg)
+
+    def write(self, runs, lags):
+        (self.tmp / "data").mkdir(exist_ok=True)
+        (self.tmp / "data/runs.json").write_text(json.dumps(runs), encoding="utf-8")
+        inc = [{"id": "i%d" % i, "occurred": str(date.fromordinal(date(2026, 9, 1).toordinal() - lag)),
+                "disclosed": "2026-09-01"} for i, lag in enumerate(lags)]
+        (self.tmp / "data/incidents.json").write_text(json.dumps({"incidents": inc}), encoding="utf-8")
+
+    def derived(self, runs):
+        f = check_data.Findings()
+        data = check_data.load_all(self.tmp, f)
+        check_data.check_derived(f, len(runs) - 1, runs[-1], data, check_data.Git(self.tmp, "HEAD"))
+        return f
+
+    def test_weekly_uncommitted_warns(self):
+        self.write([self.RUN], [109])
+        f = self.derived([self.RUN])
+        self.assertEqual(f.errors, [])
+        self.assertTrue(any("changed after this run was published" in w for w in f.warnings), f.warnings)
+
+    def test_weekly_committed_warns(self):
+        self.write([self.RUN], [109])
+        self.commit("weekly")
+        f = self.derived([self.RUN])
+        self.assertEqual(f.errors, [])
+        self.assertTrue(any("changed after this run was published" in w for w in f.warnings), f.warnings)
+
+    def test_new_run_errors(self):
+        self.write([self.RUN], [109])
+        self.commit("weekly")
+        runs = [self.RUN, dict(self.RUN, date="2026-10-10", report="reports/2026-10-10.html")]
+        self.write(runs, [109])
+        self.assertTrue(any("median lag" in e for e in self.derived(runs).errors))
+
+    def test_edited_run_errors(self):
+        self.write([self.RUN], [109])
+        self.commit("weekly")
+        runs = [dict(self.RUN, gauges={"oversight": {"value": 107}})]
+        self.write(runs, [109])
+        self.assertTrue(any("median lag" in e for e in self.derived(runs).errors))
+
+    def test_unchanged_source_errors(self):
+        runs = [dict(self.RUN, gauges={"oversight": {"value": 50}})]
+        self.write(runs, [106])
+        self.commit("bad daily")
+        self.assertTrue(any("median lag" in e for e in self.derived(runs).errors))
+
+
 class StaleOrMissingWarnings(unittest.TestCase):
     def test_component_staleness_warns(self):
         t = Tree()
