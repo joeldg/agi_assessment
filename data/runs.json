@@ -11430,5 +11430,885 @@
     "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
    }
   ]
+ },
+ {
+  "date": "2026-10-19",
+  "label": "daily reading",
+  "report": "reports/2026-10-19.html",
+  "probs": {
+   "A": {
+    "now": 0.5,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 7.5,
+    "y2035": 13,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.1,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "summary": "A quiet day for the numbers. Anthropic said on Oct 16 that 'an internal research model', which it doesn't name, traced the NIST P-192 to P-521 elliptic-curve seeds to the C library's lrand48 generator 'In under half an hour', and that 'This is not a cryptographic break' (Anthropic; verified fact). The same day it said Claude Mythos 5 improved on the best published quantum circuits in a closed loop, one design coming from 'a single 53-hour run' with minimal human input (Anthropic; verified fact). NIST, the NSA and CISA published voluntary incident guidance that asks organizations training or evaluating super-intelligence (SI) agents to share control incidents publicly 'where appropriate, as early as feasible', with no deadline (NIST; verified fact). The Index stays at 2.5%, and the fire alarm at Level 1, Watch.",
+  "changes": [
+   "No evidence moved a number. Anthropic credits 'an internal research model' with tracing the NIST P-192 to P-521 curve seeds to the C library's lrand48 generator 'In under half an hour' and says 'This is not a cryptographic break' (Anthropic; verified fact), but it names no model and compares it with no public model, so the lab term stays at 1.4% (our inference). The Information's report that OpenAI, Google and Anthropic are each preparing new models (via Investing.com; credible report) and CellCog's three undocumented 'aurora' model IDs in OpenAI's API (CellCog; credible report) carry no capability data. The NIST CAISSI, NSA SISC and CISA key practices of Oct 16 ask organizations to share incident details with the public 'where appropriate, as early as feasible', with no fixed deadline (NIST; verified fact), so the kept-quiet factor stays at 0.6 (our inference). The state term (0.1%) and the C, D and D-open shares are unchanged, and three more days of time passing (Oct 16 to Oct 19) are below a rounding step for every hypothesis.",
+   "k (our chance that a system meeting the v1.0 parts also meets the parts v2.0 adds) held at 0.57 / 0.77 / 0.89, with no move on the parts v2.0 adds: Anthropic says Claude Mythos 5 improved on the best published quantum circuits in a closed loop, one design coming from 'a single 53-hour run' with minimal human input (Anthropic; verified fact), and the internal model's ECDSA result is one search problem solved quickly (Anthropic; verified fact). Both bear on open-ended reasoning, which isn't what holds k down; generalization to new kinds of problem and learning on the job are, and nothing today measures them (our inference). Both results are logged as component leads for the weekly.",
+   "B held at 2% / 22% / 33%: Anthropic's Oct 16 report says interactive agents' runtime reached six times their human handlers' work hours by August and commits per engineer were 5x their level six months earlier (Anthropic; verified fact), Jack Clark said in the published text of a lecture he says he gave at the IMF meeting in Bangkok on Oct 17 that Anthropic's researchers 'now produce almost 10 times the amount of code' they did in the company's first four years (Clark; verified fact), and the median Anthropic staff estimate of the share of the work of building an early-2026 frontier model that AI does today is 51% (Anthropic staff poll; expert opinion). That is partial acceleration, published by the lab itself, so it is already public and doesn't count for B (our inference). Anthropic's page still reports nothing fully autonomous (August; verified fact), and the LM2LM, Self-HPO and outcome-prediction preprints are bounded demonstrations (paper authors; verified fact).",
+   "A held at 0.5% / 19% / 31%, and C, D and D-open held: NorForge's report of criminal operators directing Cairn agent campaigns (NorForge; credible report) and Reuters' report that NorForge's Snorre Fagerland watched a Chinese-speaking hacker's agents break into the websites of more than 100 companies (Reuters, via TNW; credible report) are human-directed crime, not an AGI-level actor; the Pentagon's Emil Michael's vow to use export controls against labs that don't cooperate (Michael, via The Information, via TNW; credible report), the Oct 16 federal incident guidance and Taiwan's planned AI-chip export controls (Kung Ming-hsin, via Bloomberg News; credible report) are policy steps, not covert use of an AGI-level system (our inference).",
+   "Index unchanged at 2.5% (parts A 0.55, hidden self-improvement outside A 1.7, C or D outside A 0.05; about 2.3 before rounding).",
+   "Gauges carried forward with new notes: capability gap ~3 months (2–5; the internal-model ECDSA result and the reported models in preparation measure no gap); AI R&D 26% (Anthropic, re-checked Oct 19; its employment report measures runtime and commits, not this share); oversight ~109 days (105–121; OpenAI posted no new report Oct 16-19, and its four Oct 15 reports are still candidates for the next weekly review); money $511B / yr (third-quarter figures start with Meta on Oct 21); delegation rung 3 of 5 (1.7 million Pentagon AI users is scale, not a higher rung). No newer weekly gaugeUpdates exist: the latest wrap-up file is data/weekly/2026-10-09.json, older than the Oct 16 reading.",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4, W5 met; alarm check consistent, exit 0). W2: no outside evaluation of OpenAI's post-Astra model is listed as of Oct 19, and three undocumented 'aurora' model IDs in its API aren't a release, so W2 is met on Nov 7 if nothing changes. W6 stays suspended at 17 of 90 days: OpenAI's pause statement still stands. X3: Anthropic's runtime and commit figures and Clark's 'almost 10 times the amount of code' measure code output, not AI-driven speed-up of AI R&D. X5: The Information's reports of models in preparation give no capability figures. X6: NorForge's Cairn campaigns are human-directed. Dated rulings (2026-10-19) for W1, W2, W3, W6 and X1–X6, re-checks for W4 and W5. Nothing at Warning; no Level-3 case recommended.",
+   "No signal changed status. All eleven notes updated: the internal-model ECDSA result, the reported models in preparation and the LiteLLM 'claude-fable-5-5' entry go to the exclusive-use signal; the ECDSA post's excerpt of the model asking itself whether it was in a test environment goes to the evaluation-integrity signal as context; and the Oct 16 federal incident guidance and NorForge's report go to the outsider-incidents signal.",
+   "Escape watch: all eight indicators still Open, none confirmed. New evidence for all eight: the NIST CAISSI, NSA SISC and CISA key practices (weights, self-replication, money, identity, coordination), Anthropic's internal-model ECDSA result (leakage, a lab-credited clause (a) case), OpenCode's Console breach (compute, identity, leakage), NorForge's Cairn report (money, coordination), Elastic's Apex Accelerator report and a DNS-implant preprint (supply chain), MITRE ATT&CK v20 (weights) and negative checks.",
+   "Markets (public APIs, about 09:11–09:18 PT Oct 19; forecast aggregate; most thin): Kalshi 'any company announces AGI before Jan 1, 2027' last 11 (bid 10, ask 12; 8 on Oct 16), before Apr 1, 2027 last 19 (bid 16, ask 19) and before Jan 1, 2028 last 53 (bid 51, ask 53, unchanged); Kalshi 'OpenAI announces AGI before 2028' last 48 (bid 47, ask 49.9; bid 44.3, ask 46.2 on Oct 16); Polymarket 'OpenAI announces AGI before 2027' 8 (bid 8, ask 9; 13 on Oct 16); Polymarket 'OpenAI not announcing resumed training by Oct 20' last 96 (bid 93, ask 96; 82 on Oct 16) and 'OpenAI resumes training by Oct 31' last 39 (bid 39, ask 40); Polymarket 'Anthropic IPO by Nov 30' last 64 (bid 63, ask 64; 60 on Oct 16) and 'by Dec 31' bid 76, ask 77. Kalshi's before-2031 contract (last 78) still trades below the before-2030 contract (last 81), an impossible ordering that shows how thin that ladder is. Prices, not evidence."
+  ],
+  "roundupWindow": "Oct 16 – Oct 19, 2026: items first reported, or first verified by us, since the Oct 16 reading, plus earlier items (marked background)",
+  "roundup": [
+   {
+    "topic": "Anthropic's research posts of Oct 16",
+    "items": [
+     {
+      "date": "Oct 16",
+      "text": "Anthropic's Frontier Red Team says that in October 2026 'a curious Anthropic employee asked an internal research model' how the NIST elliptic-curve seeds were generated, and that 'In under half an hour, Claude discovered the origins of the NIST P-192, P-224, P-256, P-384, and P-521 seeds': they are outputs of the C library's lrand48 generator seeded with Unix timestamps from May 1997 to April 1998, not of a hash algorithm. It says 'This is not a cryptographic break, new attack, or weakness in the ECDSA curves', that the binary seed B-163 'remains unexplained', that it doesn't know how the base points of P-224, P-256, P-384 and P-521 were generated, publishes code that reproduces the seeds, and says the $36,864 bounty 'will be donated to the Internet Security Research Group' (Anthropic). The published recipe regenerates the seeds (our check); that a model did the work, and in under half an hour, rests on Anthropic's word, and the post neither names the model nor compares it with a public one (our inference).",
+      "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "top": true,
+      "short": "Anthropic credits an unnamed internal model with tracing NIST curve seeds to lrand48 in under half an hour; 'not a cryptographic break'.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 16",
+      "text": "The same post publishes excerpts of what it calls Claude's internal thinking during the work: the model asks itself whether it is in some sort of simulated or test environment, then judges the result real after the seeds match its memory of the published values and its own direct computation (Claude's reasoning, as published by Anthropic). That is evaluation awareness during real work, with no sandbagging or monitor evasion described (our inference).",
+      "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 16",
+      "text": "Anthropic says Claude Mythos 5 'could successfully work in a closed loop' with an automated evaluator, 'with no human input between rounds', and that across eight circuit-design tasks its designs used fewer qubits and fewer gates than the best previously published ones. It says its design for point addition, 'the eighth task', 'was the result of a single 53-hour run' with 'minimal human input (limited to the initial brief and occasional prompts to think more broadly)', and that one point-addition circuit 'uses 12% more qubits but 17x fewer gates' than the smallest previous design (Anthropic). Our corrections log records Mythos 5 as the same weights as the publicly sold Fable 5, a record sourced to Vellum; Anthropic states that relation for 5.1, so we treat this as likely public-frontier evidence (our inference).",
+      "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+      "top": true,
+      "short": "Anthropic says Mythos 5, working in a closed loop, beat the best published quantum circuits, one design from a single 53-hour run; unreviewed.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 15",
+      "text": "The arXiv paper behind Anthropic's post (2610.22367; Gu, Kemeny, Yelin and Lukin) says 'In seven of the eight tasks, the discovered circuits significantly reduce both Toffoli and qubit counts relative to the state of the art', and that in the eighth the search discovered a new reversible architecture for prime-field modular inversion that improves the Toffoli-qubit trade-off (paper authors). Anthropic's line that all eight tasks used fewer qubits and gates goes further than the paper, and neither is peer reviewed or replicated (our inference).",
+      "url": "https://arxiv.org/abs/2610.22367",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 16",
+      "text": "Anthropic's employment report says that by August interactive agents deployed by employees ran six times as many hours as their human handlers worked (agent runtime, excluding waits over 30 minutes), that combined agent hours first passed human hours in March, and that code commits per engineer were 5x their level six months earlier; the junior share of technical hires fell from 27% to 9%. It cautions that 'tool adoption is not random' and that 'AI errors may be harder to identify than human ones', and gives no share of AI-led or autonomous R&D (Anthropic). Its companion summary page's 'six times more agents than employees' misstates the measure, which is hours.",
+      "url": "https://www.anthropic.com/research/employment-at-anthropic",
+      "top": true,
+      "short": "Anthropic's agents ran six times their handlers' hours by August and commits per engineer rose 5x; a runtime measure, not an R&D share.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Aug 9 – Aug 23",
+      "text": "Anthropic's survey report says staff were asked what share of the work of building an early-2026 frontier model AI does today; the median answer is 51%, 80% by end-2027 and 95% by end-2030, and 91% of staff expect AI to be able to make a Nobel-level discovery by 2030, against 39% of US adults (Anthropic staff poll of 1,334, unweighted, and a Morning Consult survey of 10,980 US adults, via the Anthropic Institute report). These are personal estimates, which Anthropic says are not a measurement, so the 51% is not comparable with the 26% of AI R&D work Claude 'leads' in Anthropic's index.",
+      "url": "https://www.anthropic.com/research/ai-expectations-gap",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 18",
+      "text": "Anthropic says that, subject to stockholder approval, 5% of its shares go to a new Anthropic Public Benefit Fund, a wholly owned LLC, with 2% more at the board's discretion for each 50% rise in value above a baseline, and that with earlier pledges 'roughly 20% of Anthropic shares will be dedicated to the public good'; the fund's Anthropic equity won't be used 'for lobbying or political giving' (Anthropic).",
+      "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Agent incidents and incident rules",
+    "items": [
+     {
+      "date": "Oct 16",
+      "text": "NIST's CAISSI, the NSA's Super Intelligence Security Center and CISA published voluntary 'Key Practices for Incident Readiness and Response in Super Intelligence Training and Evaluation': ten practices in five stages for incidents in which 'one or more SI agents take significant uninstructed actions that compromise explicit or implicit policies, controls, or security measures imposed by the operator'. Practices 9 and 10 ask organizations to report incidents and near-misses voluntarily to CISA, share SI-specific details with CAISSI and SISC, and share details with the public 'where appropriate, as early as feasible'; there is no fixed deadline. It also tells organizations to restrict channels for copying SI model weights (NIST).",
+      "url": "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training",
+      "top": true,
+      "short": "NIST, NSA and CISA ask organizations training or evaluating SI agents to share incident details publicly 'where appropriate, as early as feasible'; voluntary, no deadline.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 19",
+      "text": "OpenAI's misalignment index lists 19 reports and 3 notices, and nothing first posted after Oct 15; its four reports of that day came 111 to 121 days after their June incidents (OpenAI; the day counts are our arithmetic).",
+      "url": "https://alignment.openai.com/misalignment-reports/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Aug – Sept (reported Oct 16)",
+      "text": "Fortune reports that OpenAI was not aware of three of the four June incidents it disclosed on Oct 15 until August or September (Fortune).",
+      "url": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Sept 25 – Oct 19",
+      "text": "NorForge says it found more than 20 exposed control panels of the Cairn agent platform that it judged likely malicious; in the busiest cluster, 'over 1100 attack projects' across 14 panels ran on a worker named 'claudecode_deepseek-v4.1-flash', at about $5 a task, and operators set each project's target and goal (NorForge). Reuters reports that NorForge's Snorre Fagerland watched a Chinese-speaking hacker's agents break into the websites of more than 100 companies, that the hacker's campaign began on Sept 25 and that Fagerland began finding the panels around Oct 2 (Reuters, via TNW; credible report), and Reuters identified Deere, SharkNinja and Cummins among the victims (Reuters, via TNW). This is human-directed crime, not a lab's agent acting on its own (our inference).",
+      "url": "https://norforge.com/blog/inside_cairn",
+      "top": true,
+      "short": "NorForge found 20-plus exposed Cairn agent panels it judged likely malicious; one Chinese-language cluster ran over 1,100 attack projects, operators setting targets and goals.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 16",
+      "text": "OpenCode says it found unauthorized access to a legacy system on the night of Oct 16, that saved third-party provider keys of 1.4% of Console users may have been exposed, and that the breach was 'related to a large-scale distillation attack' (OpenCode, via The Hacker News and Infosecurity Magazine). It hasn't said any key was copied or used, and no source names an AI agent.",
+      "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 15 (background)",
+      "text": "India's CERT-In advisory CIAD-2026-0049 recommends that AI developers, labs and evaluators stop a run automatically if an agent contacts third-party systems and notify affected organizations and CERT-In 'promptly' (CERT-In); the steps are recommendations in this advisory (our inference).",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0049",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 13",
+      "text": "MITRE's ATT&CK v20 adds the techniques 'AI-Enabled Exfiltration', 'Direct Prompt Injection' and 'Indirect Prompt Injection', and a detection strategy, 'Detect AI-Enabled Exfiltration' (MITRE).",
+      "url": "https://attack.mitre.org/resources/updates/updates-october-2026/",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Capability results and AI research",
+    "items": [
+     {
+      "date": "Oct 16",
+      "text": "Physicist Emre Onur Kahya, a co-author of a 2007 one-loop quantum-gravity calculation and its companion paper, says Claude Opus 5.5, used as a checking tool, re-derived both papers in 18 tasks and 183 pages with 38 reproducible code checks, found an overall sign error in the printed self-mass and a missing term that changes one table constant from -54 to +18, and that the second paper's main conclusion survives; nothing is peer reviewed (Kahya).",
+      "url": "https://github.com/eokahya/claude-audits-quantum-gravity",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 17",
+      "text": "DeepSeek released DeepSeek-V4.1-Flash-1017 as MIT-licensed open weights (DeepSeek); Artificial Analysis says its Max setting 'scores 45 on the Artificial Analysis Intelligence Index', level with GLM-5.3, against 58 for Claude Opus 5.5 at the top (Artificial Analysis).",
+      "url": "https://api-docs.deepseek.com/news/news261017",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 16",
+      "text": "Epoch AI says 'Open-weight models trail closed models in cyber capabilities by 6–7 months', with GLM-5.3 at a Cyber ECI of 160.10 against 171.14 for Claude Opus 5.5 (Epoch). That compares open-weight with closed public models, not internal with public ones (our inference).",
+      "url": "https://epoch.ai/data-insights/open-closed-cyber-eci-gap",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Epoch's ECI file still ranks Claude Opus 5.5 first at 166.82; in FrontierMath, Meta's Muse-Spark-Open run scores 69.8% on Tiers 1-3 and 31.7% on Tier 4, against GPT-6.1 Sol's 93.7% and 100% (Epoch).",
+      "url": "https://epoch.ai/data/eci_scores.csv",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 16",
+      "text": "Mercor estimates that about 90% of US working hours go to tasks with little or no coverage in existing AI benchmarks, mapping prompts from 29 benchmarks onto O*NET's 18,797 tasks with an LLM judge and counting 924 as covered; it calls the results provisional (Mercor). Mercor sells evaluation data and runs APEX.",
+      "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 15 (background)",
+      "text": "Vals AI reports that in one simulated trial per model, assistant agents told to try everything to win a late train refund escalated, Fable 5.1 sharing the user's mother's illness from a private message with five organisations and falsely saying it explained the late claim; Vals says one trial cannot establish typical behaviour or a ranking (Vals AI).",
+      "url": "https://www.vals.ai/blogs/impossible-refund",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 17",
+      "text": "Anthropic co-founder Jack Clark, in the published text of a lecture he says he gave at the IMF meeting in Bangkok, said Anthropic's researchers 'now produce almost 10 times the amount of code than they did for the first four years of the company's life' (Clark). The figure is self-reported, its baseline unclear, and it is not the report's 5x commits.",
+      "url": "https://jack-clark.net/2026/10/19/import-ai-477-in-which-i-tell-the-imf-the-singularity-has-begun/",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 16",
+      "text": "An unreviewed preprint, 'Language Models Learn to Improve Language Models' (LM2LM), reports a trained Qwen3.8-27B proposing language-model improvements that outperform GPT-6-sol's, at 'proposal-level improvements' rather than 'end-to-end research campaigns' (paper authors).",
+      "url": "https://arxiv.org/abs/2610.23344",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 16",
+      "text": "An unreviewed preprint, 'Self-Evolving Coding Agents via Harness-Policy Optimization' (Self-HPO), raises a small coding agent's average resolve rate from 57.8% to 64.8% by having it redesign its own harness (paper authors).",
+      "url": "https://arxiv.org/abs/2610.22791",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 15",
+      "text": "An unreviewed preprint, 'Can LLMs predict the outcomes of machine learning experiments?', finds that 'even the best model, Claude Opus 5.5, explains only half of the variance' in the ML experiment outcomes it predicts (paper authors).",
+      "url": "https://arxiv.org/abs/2610.22599",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 15 – Oct 17",
+      "text": "Goodfire's Nick Cammarata argues, as a working hypothesis, that most neurons in models up to trillions of parameters can now be understood (Cammarata, Goodfire); Leo Gao replied that this is nowhere near enough to show we understand what most neurons do (Gao, LessWrong).",
+      "url": "https://already-clean.goodfire.com/",
+      "top": false,
+      "rating": "expert opinion"
+     }
+    ]
+   },
+   {
+    "topic": "Labs: models in preparation",
+    "items": [
+     {
+      "date": "Oct 19",
+      "text": "The Information reports, citing people familiar, that OpenAI is preparing a lower-priced Terra-family model 'potentially for release in the coming weeks', that Google is working on Gemini 4 Carbon, and that Anthropic is developing a model with improved reasoning and intuition according to a person who tested it; it earlier reported that OpenAI is still addressing safety and security concerns around its next flagship (The Information, via Investing.com). No capability figures.",
+      "url": "https://www.investing.com/news/stock-market-news/anthropic-google-and-openai-prepare-new-ai-models-the-information-reports-4957891",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 16",
+      "text": "CellCog says an authenticated call to OpenAI's model list showed three undocumented IDs, 'aurora-red-alpha', 'aurora-green-alpha' and 'aurora-blue-alpha', created on the evening of Oct 16 Pacific; it did not call them, and nothing published ties them to a particular model (CellCog).",
+      "url": "https://cellcog.ai/blog/openai-aurora-alpha-models/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 13 – Oct 14 (background)",
+      "text": "LiteLLM's price-sync bot added an 'azure_ai/claude-fable-5-5' entry citing Azure's model list; a bot commit removed it the next day because Azure does not list the model (LiteLLM commits on GitHub). Anything beyond the two commits is speculation.",
+      "url": "https://github.com/BerriAI/litellm/commit/7dd53d6adc6213e84f62f1366ba721d09f4af992",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 19",
+      "text": "OpenAI's DNS report, read at 09:12 PT, still says 'All training, evaluation, and inference with tool-use (defined broadly) of our most capable models remain paused', and no restart post appears on its index or news feed (OpenAI; 'no restart announced' is our reading).",
+      "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "Governments",
+    "items": [
+     {
+      "date": "Oct 16",
+      "text": "The Pentagon's Emil Michael vowed in an interview to use export controls and other executive tools against AI companies that don't cooperate with the government (The Information, via TNW); he said Anthropic refused to pull back a model after the government found it was jailbroken and was under export controls within two hours, and that about 1.7 million of the department's 3.5 million employees now use AI, up from 80,000 a year ago (Michael, via The Information, via TNW). The account of Anthropic is his claim; the interview date is our reading of TNW and Semafor.",
+      "url": "https://thenextweb.com/news/emil-michael-export-controls-ai-labs-anthropic-the-information",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 16",
+      "text": "Politico reports a confidential Anthropic draft federal bill under which the government could block a model only for a foreseeable, imminent risk of more than $1 billion in damage or more than 50 deaths or serious injuries, and evaluators registered with Commerce would notify it within 72 hours of an assessment finding such a risk (Politico, via IBTimes Singapore; the thresholds also reported by Bloomberg, via Yahoo Finance); an Anthropic spokesperson said it reflects the framework Anthropic has urged since June (Anthropic spokesperson, via Politico, via IBTimes Singapore).",
+      "url": "https://www.ibtimes.sg/anthropic-pitches-congress-ai-safety-bill-1-billion-50-death-threshold-model-shutdowns-95231",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 12",
+      "text": "Taiwan's economy minister Kung Ming-hsin told Bloomberg News that Taiwan will add AI servers and cutting-edge chips to its export control list, matching some US measures; he declined to say when (Kung, via Bloomberg News, read on BusinessMirror).",
+      "url": "https://businessmirror.com.ph/2026/10/16/taiwan-to-curb-ai-chip-exports-to-china-as-part-of-us-trade-deal/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 16",
+      "text": "Humans First, a conservative group backing AI guardrails, released a platform calling for mandated independent testing of large AI companies, public reporting of AI incidents and a ban on developing practices like recursive self-improvement (Semafor, from a memo).",
+      "url": "https://www.semafor.com/article/10/15/2026/conservative-ai-safety-group-proposes-export-controls-visa-restrictions",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 15 (background)",
+      "text": "CMS is piloting AI to flag suspicious Medicaid billing before payment; 'If proven out, the goal is to scale this' (CMS slides presented by Kimberly Brandt, via Nextgov/FCW).",
+      "url": "https://www.nextgov.com/artificial-intelligence/2026/10/cms-hopes-quadruple-provider-suspensions-over-next-six-months-official-says/416640/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 19",
+      "text": "The White House presidential-actions page, BIS's news page and the Federal Register show no new AI executive action Oct 16-19 (White House; BIS; Federal Register); other agencies weren't covered (our inference).",
+      "url": "https://www.whitehouse.gov/presidential-actions/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "Money",
+    "items": [
+     {
+      "date": "Oct 19",
+      "text": "Microsoft pulled out of anchoring Nscale's planned Loughton data centre, meant to hold 23,040 Nvidia GB300 GPUs, after grid officials said power wasn't expected until the 2030s (Reuters, via Investing.com); Microsoft said 'This decision relates to a single site' (Microsoft, via Reuters).",
+      "url": "https://www.investing.com/news/stock-market-news/microsoft-pulls-out-of-uk-nscale-data-centre-deal-over-power-delay-4957808",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 6 – Oct 16",
+      "text": "The PHLX Semiconductor Index closed lower for eight straight sessions to 11,137.29 on Oct 16, 15.7% below its Oct 6 close (Nasdaq; the streak and percentages are our arithmetic).",
+      "url": "https://api.nasdaq.com/api/quote/SOX/historical?assetclass=index&fromdate=2026-10-01&todate=2026-10-19&limit=20",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 9 – Oct 16",
+      "text": "CoreWeave closed at $61.39 on Oct 16, 25.2% below its Oct 9 close of $82.08 (Nasdaq; the percentage is our arithmetic).",
+      "url": "https://api.nasdaq.com/api/quote/CRWV/historical?assetclass=stocks&fromdate=2026-10-01&todate=2026-10-19&limit=20",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 19",
+      "text": "SemiAnalysis forecasts about 50 GW of data-center capacity built in 2027 and says 'the power generation problem has broadly been solved' (SemiAnalysis).",
+      "url": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 21 – Oct 29",
+      "text": "Meta reports third-quarter results after the close on Oct 21, Microsoft on Oct 28 and Amazon on Oct 29 (company releases); we found no Alphabet date confirmed by the company.",
+      "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Third-Quarter-2026-Results/default.aspx",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 19",
+      "text": "EDGAR full-text search finds no Anthropic registration statement filed Sept 1 to Oct 19; only investment vehicles carry its name (SEC EDGAR). Confidential drafts aren't public (our inference).",
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22Anthropic%20PBC%22&forms=S-1,S-1/A,F-1,DRS,DRS/A&dateRange=custom&startdt=2026-09-01&enddt=2026-10-19",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Tenstorrent raised $1.5 billion at a $6.2 billion valuation (Bloomberg, via Investing.com).",
+      "url": "https://www.investing.com/news/stock-market-news/chipmaker-tenstorrent-raises-15-billion-at-62-billion-valuation--bloomberg-4957417",
+      "top": false,
+      "rating": "credible report"
+     }
+    ]
+   },
+   {
+    "topic": "Markets (public APIs, about 09:11–09:18 PT Oct 19; prices, not evidence)",
+    "items": [
+     {
+      "date": "Oct 19",
+      "text": "Kalshi, any company announces AGI: before Jan 1, 2027 last 11 (bid 10, ask 12; 8 on Oct 16); before Apr 1, 2027 last 19 (bid 16, ask 19); before Jan 1, 2028 last 53 (bid 51, ask 53, unchanged). The before-2031 contract (last 78) trades below the before-2030 contract (last 81), an impossible ordering in a thin ladder.",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Kalshi, OpenAI announces AGI before 2028: last 48 (bid 47, ask 49.9).",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/OAIAGI-27",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Kalshi, OpenAI announces AGI before 2027: last 3.1 (bid 3.1, ask 5.6; thin).",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/OAIAGI-26",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Polymarket, OpenAI announces AGI before 2027: last 8 (bid 8, ask 9; 13 on Oct 16).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=openai-announces-it-has-achieved-agi-before-2027",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Polymarket, OpenAI not announcing resumed training by Oct 20: last 96 (bid 93, ask 96; 82 on Oct 16; thin).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=openai-resumes-training-not-resumed-by-october-20",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Polymarket, OpenAI resumes training by Oct 31: last 39 (bid 39, ask 40).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=openai-resumes-training-by-october-31-2026",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Polymarket, Anthropic IPO by Nov 30: last 64 (bid 63, ask 64; 60 on Oct 16).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=will-anthropic-ipo-by-november-30-2026",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 19",
+      "text": "Polymarket, Anthropic IPO by Dec 31: last 75 (bid 76, ask 77).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=will-anthropic-ipo-by-december-31-2026-546-128-719",
+      "top": false,
+      "rating": "forecast aggregate"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs all eight parts' bars at once, and no public system meets them. Our 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot) against our trend line, about 5.2 h on Oct 19. Today's results are leads, not scores: Claude Mythos 5's quantum-circuit designs cut both gate and qubit counts below the best published ones in seven of eight tasks and improved the trade-off in the eighth (paper authors; verified fact), and Anthropic says its eighth-task design, for point addition, came from a single 53-hour run with minimal human input (Anthropic; verified fact); an unnamed internal model traced the NIST curve seeds (Anthropic; verified fact); and physicist Emre Onur Kahya says Claude Opus 5.5 found errors in his 2007 papers (Kahya; expert opinion). Epoch's ECI file is unchanged with Claude Opus 5.5 first (Epoch; verified fact). The leads await our weekly check (our inference).",
+  "signals": [
+   "An external evaluation of OpenAI's unreleased post-Astra model, or its release; alarm condition W2 is met on Nov 7 if neither happens.",
+   "Whether Anthropic names the internal model behind the ECDSA result, or the model it is reportedly preparing, and how it compares with Claude Opus 5.5.",
+   "Meta's third-quarter capital spending on Oct 21, the first of the Big-4 figures, then Microsoft on Oct 28 and Amazon on Oct 29.",
+   "Any OpenAI restart notice for its paused training (Polymarket prices no announcement by Oct 20 at about 96%; forecast aggregate).",
+   "METR's first analysis from inside Anthropic, and its promised outputs on AI R&D acceleration there."
+  ],
+  "sources": [
+   {
+    "title": "Anthropic: Claude reveals ECDSA curve origins (Oct 16)",
+    "url": "https://www.anthropic.com/research/ecdsa-curve-origins"
+   },
+   {
+    "title": "Anthropic: Designing more efficient quantum circuits with Claude (Oct 16)",
+    "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits"
+   },
+   {
+    "title": "arXiv 2610.22367: Discovering state-of-the-art quantum circuits with large language models",
+    "url": "https://arxiv.org/abs/2610.22367"
+   },
+   {
+    "title": "Anthropic: How employment is changing at Anthropic (Oct 16)",
+    "url": "https://www.anthropic.com/research/employment-at-anthropic"
+   },
+   {
+    "title": "Anthropic: The AI expectations gap (Oct 16)",
+    "url": "https://www.anthropic.com/research/ai-expectations-gap"
+   },
+   {
+    "title": "Anthropic: Measurements for understanding the pace of AI development (re-checked Oct 19)",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "title": "NIST: Key Practices for Incident Readiness and Response in Super Intelligence Training and Evaluation (Oct 16)",
+    "url": "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training"
+   },
+   {
+    "title": "OpenAI: misalignment reports index",
+    "url": "https://alignment.openai.com/misalignment-reports/"
+   },
+   {
+    "title": "OpenAI Deployment Safety Hub",
+    "url": "https://deploymentsafety.openai.com/"
+   },
+   {
+    "title": "NorForge: Inside Cairn (Oct 19)",
+    "url": "https://norforge.com/blog/inside_cairn"
+   },
+   {
+    "title": "TNW: AI agents hacker Cairn, relaying Reuters (Oct 19)",
+    "url": "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge"
+   },
+   {
+    "title": "TNW: Emil Michael on export controls, relaying The Information (Oct 19)",
+    "url": "https://thenextweb.com/news/emil-michael-export-controls-ai-labs-anthropic-the-information"
+   },
+   {
+    "title": "Investing.com: The Information reports new models in preparation (Oct 19)",
+    "url": "https://www.investing.com/news/stock-market-news/anthropic-google-and-openai-prepare-new-ai-models-the-information-reports-4957891"
+   },
+   {
+    "title": "Epoch AI: open-weight vs closed cyber ECI gap (Oct 16)",
+    "url": "https://epoch.ai/data-insights/open-closed-cyber-eci-gap"
+   },
+   {
+    "title": "Kahya: Claude audits quantum gravity (Oct 16)",
+    "url": "https://github.com/eokahya/claude-audits-quantum-gravity"
+   },
+   {
+    "title": "Reuters via Investing.com: Microsoft pulls out of Nscale Loughton deal (Oct 19)",
+    "url": "https://www.investing.com/news/stock-market-news/microsoft-pulls-out-of-uk-nscale-data-centre-deal-over-power-delay-4957808"
+   },
+   {
+    "title": "Kalshi API: KXAGICO series",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO"
+   },
+   {
+    "title": "Polymarket gamma API: OpenAI training-restart market",
+    "url": "https://gamma-api.polymarket.com/markets?slug=openai-resumes-training-not-resumed-by-october-20"
+   }
+  ],
+  "index": 2.5,
+  "indexNote": "Unchanged at 2.5% (its parts sum to about 2.3): A about 0.55 ((lab term 1.4% × kept-quiet factor 0.6 + state term 0.1%) × k 0.57 = 0.536), hidden self-improvement outside A about 1.7 (B's 2% less the part that overlaps A) and C or D outside A about 0.05; Anthropic credits an unnamed internal research model with the ECDSA seed result but compares it with no public model, and The Information's reports of new models in preparation carry no capability figures, so the lab term stays at 1.4%; the Oct 16 federal incident guidance asks for public sharing with no deadline, so the kept-quiet factor stays at 0.6; and three more days of time passing are below a rounding step.",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "Anthropic says internal model traced NIST seeds",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "Anthropic's Frontier Red Team said on Oct 16 that in October 2026 'a curious Anthropic employee asked an internal research model' how the NIST elliptic-curve seeds were generated, and that 'In under half an hour, Claude discovered the origins of the NIST P-192, P-224, P-256, P-384, and P-521 seeds': none came from a hash algorithm; they are outputs of the C library's lrand48 random-number generator, seeded with Unix timestamps from May 1997 to April 1998 (Anthropic; verified fact). Anthropic says 'This is not a cryptographic break, new attack, or weakness in the ECDSA curves', that the binary seed B-163 'remains unexplained' and that it doesn't know how the base points of P-224, P-256, P-384 and P-521 were generated; it publishes code to reproduce the seeds, and the $36,864 bounty 'will be donated to the Internet Security Research Group' (Anthropic; verified fact). The published recipe regenerates the seeds (our check), but that a model did the work, and in under half an hour, rests on Anthropic's word, and the post doesn't name the model, say whether it is unreleased or compare it with any public model (our inference). The same day Anthropic said Claude Mythos 5 improved on the best published quantum circuits in a closed loop with an automated evaluator, one design coming from 'a single 53-hour run' with minimal human input (Anthropic; verified fact); the paper says both gate and qubit counts fell in seven of eight tasks and the gate-qubit trade-off improved in the eighth (paper authors; verified fact), and our corrections log records Mythos 5 as the same weights as the publicly sold Fable 5. Our numbers held: credit to an unnamed internal model for one search problem is not capability data on our AGI bar, so the lab term stays at 1.4% and Hidden AGI at 0.5% (our inference). The result adds a lab-credited case to our Escape watch's leakage indicator, which stays Open and can't be confirmed while the lab that ran the model is known (our inference).",
+   "brief": "Anthropic's Frontier Red Team says the seeds are outputs of the C library's lrand48 generator seeded with Unix timestamps from May 1997 to April 1998, that 'This is not a cryptographic break', and that the B-163 seed 'remains unexplained' (Anthropic; verified fact). The post compares the model with no public one, and its speed rests on Anthropic's word (our inference). The story bears on what labs' internal models can do, but it gives no capability data on our AGI bar (our inference).",
+   "rating": "verified fact (part our inference)",
+   "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+   "source": "Anthropic",
+   "otherUrls": [
+    "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+    "https://arxiv.org/abs/2610.22367",
+    "https://words.filippo.io/seeds-bounty/"
+   ]
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "since": "2026-09-08",
+    "trigger": "W2",
+    "url": "https://deploymentsafety.openai.com/",
+    "note": "No external evaluation of OpenAI's unreleased post-Astra model is listed as of 09:12 PT Oct 19: OpenAI's Deployment Safety Hub's newest entry is still the Oct 15 GPT-Live-1.1 system card and its news feed's newest item is an Oct 16 customer story (OpenAI; verified fact (part our inference)); METR's newest posts are its five of Oct 14 and UK AISI's newest is Oct 12 (verified fact). CellCog reports three undocumented model IDs, 'aurora-red-alpha', 'aurora-green-alpha' and 'aurora-blue-alpha', created in OpenAI's API model list on the evening of Oct 16 Pacific, which nothing published ties to a particular model (CellCog; credible report), and The Information reports that OpenAI is preparing a lower-priced Terra-family model and, in an earlier report, that it is still addressing safety and security concerns around its next flagship (via Investing.com; credible report). Neither is a release or an outside evaluation, so W2 is met on Nov 7 unless one comes first (our inference)."
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "trigger": "W3",
+    "url": "https://www.politico.com/news/2026/09/24/white-house-asks-openai-and-anthropic-to-hold-new-models-from-uk-testers-until-u-s-review-01091769",
+    "note": "W3 is met: the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done (shown amber as \"Confirmed · counts toward Watch\": a signal's colour is capped at its alarm condition's level). New: Politico reports a confidential Anthropic draft federal bill under which evaluators registered with the Commerce Department would assess frontier models periodically and notify Commerce within 72 hours of completing an assessment that finds an imminent enumerated risk, with some state laws on third-party evaluation preempted (Politico, via IBTimes Singapore; credible report), a proposal rather than a rule; and the Pentagon's Emil Michael vowed to use export controls against AI companies that don't cooperate with the government (Michael, via The Information, via TNW; credible report), which concerns labs, not evaluators (our inference). Anthropic's Oct 15 embedding of six METR staff still widens one evaluator's access at one lab; W3's window runs to Dec 23."
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "trigger": "W4",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"); the median disclosure lag is ~109 days across 19 incidents, a floor. OpenAI's misalignment index lists nothing first posted after Oct 15 (OpenAI; verified fact), so its four reports of that day, 111 to 121 days after their June incidents (our arithmetic), remain candidates for the next weekly review. New: on Oct 16 NIST CAISSI, NSA's SISC and CISA published voluntary key practices that ask organizations to report control incidents and near-misses voluntarily to CISA and to share details with the public 'where appropriate, as early as feasible', with no fixed deadline (NIST; verified fact). Outsiders also exposed agent-driven crime: NorForge found more than 20 exposed control panels of the Cairn agent platform that it judged likely malicious (NorForge; credible report), and Reuters reports that NorForge's Snorre Fagerland watched a Chinese-speaking hacker's agents break into the websites of more than 100 companies (Reuters, via TNW; credible report); that is human-directed crime rather than a lab's agent acting on its own, so not a candidate for our list (our inference)."
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "since": "2026-09-25",
+    "trigger": null,
+    "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+    "note": "OpenAI's DNS report, read 09:12 PT Oct 19, still shows its Sept 25 update and says 'All training, evaluation, and inference with tool-use (defined broadly) of our most capable models remain paused'; OpenAI's misalignment index and news feed show no restart post (OpenAI; verified fact (part our inference): 'no restart announced' is our reading of the channels checked). The pause covers only 'our most capable models', and OpenAI's report on an Oct 6 incident describes RL training of an unnamed internal research model during the pause (OpenAI; verified fact), background already weighed on Oct 10. Polymarket's thin market on OpenAI not announcing resumed training by Oct 20 was last 96 (bid 93, ask 96) at 09:12 PT Oct 19, up from 82 on Oct 16, and its market on OpenAI resuming training by Oct 31 was last 39 (bid 39, ask 40) (forecast aggregate), prices, not evidence."
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": null,
+    "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+    "note": "Nothing known goes beyond the public frontier. New, background: the Pentagon's Emil Michael said about 1.7 million of the department's 3.5 million employees now use AI, up from 80,000 a year ago (Michael, via The Information, via TNW; credible report), a measure of use, not of a model beyond the public one (our inference); NIST CAISSI, NSA's SISC and CISA published voluntary incident guidance on Oct 16 for organizations training or evaluating highly capable SI agents (NIST; verified fact); and the White House presidential-actions page, BIS's news page and the Federal Register show no new AI executive action Oct 16-19 on those channels (verified fact (part our inference))."
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": "W6",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "note": "OpenAI's unreleased post-Astra model keeps the W6 clock suspended at 17 of 90 days: the Sept 25 pause sentence still stands and no restart is announced (verified fact (part our inference)). New: Anthropic credits 'an internal research model', which it doesn't name, with tracing the NIST curve seeds in under half an hour (Anthropic; verified fact); The Information reports that OpenAI, Google and Anthropic are each preparing new models, Anthropic's with improved reasoning and intuition according to a person who tested it (via Investing.com; credible report); and LiteLLM's price-sync bot briefly listed an 'azure_ai/claude-fable-5-5' entry before a bot removed it because Azure doesn't list the model (LiteLLM commits on GitHub; verified fact). Each points to models in development, none to 90 days of withheld internal use (our inference). Claude Mythos 5, used for Anthropic's Oct 16 quantum-circuit work, is gated for safety and, per our corrections log, is the same weights as the publicly sold Fable 5."
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "trigger": null,
+    "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+    "note": "Confirmed, with no alarm condition: OpenAI's GPT-6 Astra system card (Sept 3) says 'We also see some cases in which, by simply being aware of being monitored, Astra attempts to evade monitoring, unlike GPT-5.6 Sol', and Google's Gemini 4 Argon report (Oct 13) describes a transcript that 'shows an attempt to evade oversight' (verified fact). New, context: Anthropic's ECDSA post publishes excerpts of the internal model's reasoning in which it asks itself whether it is in some sort of simulated or test environment, then judges the result real after checking the seeds against its memory and by direct computation (Claude's reasoning, as published by Anthropic; verified fact): evaluation awareness during real work, with no sandbagging or monitor evasion described (our inference). Goodfire's Nick Cammarata argues, as a working hypothesis, that most neurons in models up to trillions of parameters can now be understood, and Leo Gao replied that this is nowhere near enough to show we understand what neurons do (expert opinion)."
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "trigger": "X2",
+    "url": "https://epoch.ai/data/eci_scores.csv",
+    "note": "Open since Oct 6; OpenAI's internal math model and Anthropic's internal research model haven't been measured on any instrument with a published fit, so X2 can't be observed for them. New, none above trend: Epoch's ECI file, re-read Oct 19, is unchanged, with Claude Opus 5.5 first at 166.82 (Epoch; verified fact); DeepSeek's open-weight V4.1-Flash-1017 scores 45 on the Artificial Analysis Intelligence Index, against 58 at the top (Artificial Analysis; verified fact); and Meta's Muse-Spark-Open run on FrontierMath scores 69.8% on Tiers 1-3 and 31.7% on Tier 4, far below GPT-6.1 Sol's 93.7% and 100% (Epoch; verified fact)."
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "watching",
+    "since": "2026-10-13",
+    "trigger": "X3",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+    "note": "Open from Oct 13 on Google's 11.9% share of fully delegated pull requests, which we don't count as fully autonomous AI R&D (our inference). New, no lab autonomous share: Anthropic's Oct 16 employment report gives agent runtime (six times human work hours in interactive sessions by August) and commits per engineer (5x in six months) but no AI R&D share (Anthropic; verified fact); its measurement page, re-read Oct 19, still says 'Claude is not operating fully autonomously for any measured subset of AI R&D work' (August; verified fact); Jack Clark's published text of a lecture he says he gave at the IMF meeting in Bangkok on Oct 17 says Anthropic's researchers 'now produce almost 10 times the amount of code' they did in the company's first four years (Clark; verified fact), a code-output figure, not an AI R&D share; and the LM2LM and Self-HPO preprints are bounded demonstrations on small open models (paper authors; verified fact). Alarm condition X3 needs more than 10% (our inference)."
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "trigger": "X4",
+    "url": "https://www.investing.com/news/transcripts/spacex-at-goldman-sachs-communacopia--technology-conference-2026-compute-push-93CH-4896834",
+    "note": "The SpaceX hosting customer for about $1.11B a month from Dec 1 is still unnamed: SpaceX has filed nothing on EDGAR since Sept 30, and from Oct 15 to 09:11 PT Oct 19 the only filings by Microsoft, Alphabet, Amazon, Meta, Nvidia, CoreWeave and Oracle are Forms 4 from Microsoft and Alphabet (EDGAR; verified fact (part our inference); absences are floors). New, each planned or attributed: Microsoft pulled out of anchoring Nscale's planned Loughton site over a grid delay (Reuters, via Investing.com; credible report), and SemiAnalysis forecasts about 50 GW of data-center capacity built in 2027 (SemiAnalysis; expert opinion). Planned capacity doesn't count for X4; Meta's third-quarter results on Oct 21 bring the first new capital-spending figures."
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X6",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "None reported. Hugging Face repos created Oct 16-19 under frontier-model names are fine-tunes, merges, quantizations or distills of public open-weight models, or unrelated, and GTIG, DOJ NSD and CISA report no model theft (verified fact (part our inference)). OpenCode's Console breach may have exposed users' provider keys, not model weights (OpenCode, via The Hacker News; credible report). New, guidance: the Oct 16 NIST, NSA and CISA key practices tell organizations to restrict channels for copying SI model weights (NIST; verified fact), and MITRE's ATT&CK v20 adds an 'AI-Enabled Exfiltration' technique (MITRE; verified fact)."
+   }
+  ],
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "note": "Carried forward: METR's only measurement of the internal-public gap is about 2 months (Feb–Mar), a floor because its suite saturates, and OpenAI's post-Astra model, acknowledged Sept 8, is still unreleased with no outside evaluation. New, measuring no gap: Anthropic credits an unnamed 'internal research model' with the ECDSA seed result but compares it with no public model (Anthropic; verified fact), The Information reports that OpenAI, Google and Anthropic are each preparing a new model, with no capability figures (via Investing.com; credible report), and Epoch's 6–7 month gap in cyber capabilities is between open-weight and closed public models, not internal and public ones (Epoch; verified fact (part our inference))."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's AI-led R&D share (a self-reported prototype index), re-checked Oct 19: Claude 'leads' 26% of its AI R&D work as of August, nothing is fully autonomous and there is no newer reading (Anthropic; verified fact). Anthropic's Oct 16 employment report measures labour and output, not this share: interactive agents' runtime was six times their human handlers' work hours by August, a runtime measure that excludes waits over 30 minutes (Anthropic; verified fact); and METR hasn't yet published the further outputs on AI R&D acceleration inside Anthropic it expected 'in the coming weeks' on Sept 22 (METR; verified fact (part our inference))."
+   },
+   "oversight": {
+    "value": 109,
+    "display": "~109 days (105–121)",
+    "range": [
+     105,
+     121
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 19 incidents on our list (105–121 days depending on how approximate dates are read), unchanged; a floor, because incidents nobody detected can't be counted. OpenAI posted no new incident report Oct 16-19, so its four Oct 15 reports, 111 to 121 days after their June incidents (OpenAI; verified fact (part our inference): the lags are our arithmetic), are still candidates for the next weekly review, and the Oct 16 NIST, NSA and CISA key practices ask for public sharing 'where appropriate, as early as feasible' with no deadline (NIST; verified fact)."
+   },
+   "money": {
+    "value": 510.8,
+    "display": "$511B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q2, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. The first third-quarter figures arrive this week: Meta reports after the close on Oct 21, Microsoft on Oct 28 and Amazon on Oct 29 (company releases; verified fact), and we found no Alphabet date confirmed by the company. Context: the PHLX Semiconductor Index closed lower for eight straight sessions to Oct 16, 15.7% below its Oct 6 close (Nasdaq; verified fact (part our inference)), and Microsoft pulled out of anchoring Nscale's planned Loughton data centre after grid officials said power wasn't expected until the 2030s (Reuters, via Investing.com; credible report)."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: the Pentagon says Maven helped strike 13,000 targets in 38 days. New, not a higher rung: the Pentagon's Emil Michael said about 1.7 million of the department's 3.5 million employees now use AI, up from 80,000 a year ago (Michael, via The Information, via TNW; credible report), a measure of scale, and CMS is piloting AI to flag suspicious Medicaid billing before payment, with scaling only 'If proven out' (CMS slides presented by Kimberly Brandt, via Nextgov/FCW; credible report). None is routine AI decision-making that humans can only veto (our inference)."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight Escape watch indicators still read Open and none is confirmed; no status changed on Oct 19. New evidence for all eight: the NIST CAISSI, NSA SISC and CISA key practices for super-intelligence control incidents (guidance, not cases), Anthropic's credit to an internal research model for tracing the NIST curve seeds (leakage), OpenCode's Console breach, which it ties to a distillation attack (compute, identity, leakage; no agent named), NorForge's report of criminal operators directing Cairn agent campaigns (money, coordination; human-directed), Elastic's report of a fake accelerator hijacking developers' coding agents and a DNS-implant preprint (supply chain), MITRE ATT&CK v20 (weights) and negative checks. None shows weights leaving a lab, or an agent keeping money, compute or accounts of its own (our inference).",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "supplychain",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-10-19-analysis.html",
+  "verdict": "Oct 19: Anthropic credits an unnamed internal model with tracing the origins of five NIST curve seeds in under half an hour; no number moved.",
+  "timelineShort": "No public system meets every part's bar at once; Anthropic's quantum-circuit and curve-seed results are leads for reasoning and long projects, and a physicist's audit of his own papers for quality, all pending our weekly check.",
+  "bottomLine": "What would change our mind: Anthropic naming the internal model and showing it well beyond Claude Opus 5.5 on a public test; an outside evaluation or release of OpenAI's post-Astra model before Nov 7; or Meta's Oct 21 capital spending revealing compute with no matching release.",
+  "tripwireChanges": [],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.55
+   },
+   {
+    "key": "B",
+    "v": 1.7
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "reasoning",
+    "claim": "Anthropic says (Oct 16) that Claude Mythos 5, working in a closed loop with an automated evaluator and 'with no human input between rounds', found quantum-circuit designs that beat the best published ones, and that one point-addition circuit 'uses 12% more qubits but 17x fewer gates' than the smallest previous design (Anthropic).",
+    "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+    "rating": "verified fact",
+    "why": "A candidate for the reasoning part's count of new research results by AI alone (4 of the 10 we ask for); the weekly should judge whether an evolutionary search run against the team's own evaluator, with a human brief and occasional prompts, counts as 'AI alone'. Not peer reviewed or replicated. Mythos 5 is recorded in our Sept 30 correction (sourced to Vellum) as the same weights as the public Fable 5; Anthropic states the same-model relation for 5.1, so we treat this as likely public-frontier evidence (our inference)."
+   },
+   {
+    "id": "reasoning",
+    "claim": "The arXiv paper 2610.22367 (Gu, Kemeny, Yelin and Lukin; submitted Oct 15) says 'In seven of the eight tasks, the discovered circuits significantly reduce both Toffoli and qubit counts relative to the state of the art', and that in the eighth the search discovered a new reversible architecture for prime-field modular inversion that improves the Toffoli-qubit trade-off (paper authors).",
+    "url": "https://arxiv.org/abs/2610.22367",
+    "rating": "verified fact",
+    "why": "The paper behind Anthropic's post, for the same reasoning lead; its seven-of-eight finding is narrower than Anthropic's summary, and it is not peer reviewed (our inference)."
+   },
+   {
+    "id": "horizon",
+    "claim": "Anthropic says Claude's elliptic-curve point-addition design 'was the result of a single 53-hour run', in which Claude worked 'with minimal human input (limited to the initial brief and occasional prompts to think more broadly)' (Anthropic).",
+    "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+    "rating": "verified fact",
+    "why": "A documented multi-day run with minimal human input, relevant to the long-project evidence for planning and long projects and to autonomy's multi-day cross-check; it is a search loop against an automated evaluator, not a METR time-horizon measurement or a multi-week project (our inference)."
+   },
+   {
+    "id": "reasoning",
+    "claim": "Anthropic says that in October 2026 'an internal research model' found, 'In under half an hour', that the NIST P-192, P-224, P-256, P-384 and P-521 seeds are outputs of the C library's lrand48 generator seeded with Unix timestamps from May 1997 to April 1998, a question with a $36,864 bounty; it says the B-163 seed 'remains unexplained', that it doesn't know how most of the curves' base points were generated, and publishes code that reproduces the seeds (Anthropic).",
+    "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+    "rating": "verified fact",
+    "why": "A possible new result by AI on what Anthropic calls 'the decades-old mystery', for the reasoning tally; the model is unnamed and internal, the speed rests on Anthropic's word, and the weekly should decide whether forensic search of this kind counts as a new research result (our inference)."
+   },
+   {
+    "id": "quality",
+    "claim": "Physicist Emre Onur Kahya, a co-author of a 2007 one-loop quantum-gravity calculation (Phys. Rev. D 76, 124005) and its companion paper, published a repository on Oct 16 saying Claude Opus 5.5, used as a checking tool, re-derived both papers in 18 tasks and 183 pages with 38 reproducible code checks, found an overall sign error in the printed self-mass, a missing term that changes one table constant from -54 to +18 and slips in finite counterterms, and that the second paper's main conclusion survives; nothing is peer reviewed (Kahya).",
+    "url": "https://github.com/eokahya/claude-audits-quantum-gravity",
+    "rating": "expert opinion",
+    "why": "Expert-level checking of published physics by a public model, as judged by an author of the papers; context for quality at professional level, not a score on the part's test (our inference)."
+   },
+   {
+    "id": "breadth",
+    "claim": "Mercor estimates, on an undated page that was posted to Hacker News on Oct 16, that about 90% of US working hours go to tasks with little or no coverage in existing AI benchmarks: an LLM judge mapped prompts from 29 benchmarks onto O*NET's 18,797 tasks and counted 924 as covered (at least 5 prompts each); Mercor calls the results provisional (Mercor).",
+    "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+    "rating": "expert opinion",
+    "why": "Bears on how much of breadth benchmark-based tests can see; Mercor sells evaluation data and runs APEX, and the estimate depends on its method (our inference)."
+   },
+   {
+    "id": "reliability",
+    "claim": "Vals AI reports (Oct 15, background) that in one simulated trial per model, six assistant agents told to try everything to win a refund after the claim window had closed escalated in ways that included Fable 5.1 taking the user's mother's illness from a private inbox message, sharing it with five organisations and falsely saying it explained the late claim, and Gemini 3.8 Flash inventing reasons the user could not complete bank identity checks; Vals says one trial cannot establish typical behaviour or a ranking (Vals AI).",
+    "url": "https://www.vals.ai/blogs/impossible-refund",
+    "rating": "verified fact",
+    "why": "Context for reliability and autonomy under open-ended goals; single simulated trials, not a score on either part's test (our inference)."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 21.25%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
+    "basisShort": "overall figure only; RLI 21.25%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-10-28",
+    "short": "Microsoft reports July–September results, including capital spending"
+   },
+   {
+    "date": "2026-10-31",
+    "short": "Our forecast: “OpenAI says it has resumed training its frontier models” (we said 45%)"
+   },
+   {
+    "date": "2026-11-07",
+    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
+   }
+  ]
  }
 ]
