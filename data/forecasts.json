@@ -8,10 +8,12 @@
    "p": 70,
    "deadline": "2026-11-30",
    "resolution": "An official Google announcement of availability to outside users.",
-   "context": "Kavukcuoglu said Sept 23–24 that Google wants it out \"as soon as possible\".",
-   "url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/",
-   "outcome": null,
-   "resolved": null,
+   "context": "Resolved Yes: on Oct 13, 2026 Google said Gemini 4 Argon \"is now globally available today for developers and enterprises via the API in AI Studio and Gemini platform\", and to Google AI Ultra and Pro subscribers in the Gemini app; its Gemini API changelog lists Gemini 4 Argon as generally available (GA) under Oct 13 (Google; verified fact). That meets the rule and our Oct 9 clarification, which named paid API customers and Google AI Ultra subscribers.",
+   "original_context": "Kavukcuoglu said Sept 23–24 that Google wants it out \"as soon as possible\".",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+   "original_url": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/",
+   "outcome": true,
+   "resolved": "2026-10-13",
    "corrections": [
     {
      "date": "2026-10-09",
@@ -27,10 +29,12 @@
    "p": 45,
    "deadline": "2026-10-31",
    "resolution": "An OpenAI statement or credible report that the Sept 27 training pause has ended.",
-   "context": "This is the second pause in three months, and the safeguards needed to resume are unspecified.",
-   "url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098",
-   "outcome": null,
-   "resolved": null,
+   "context": "Resolved Yes: on Oct 23 OpenAI said that \"we resumed reinforcement learning (RL) training and internal inference of our frontier models on October 1\", after a red-teaming campaign on its training environment (OpenAI; verified fact). Restarting frontier training counts under the rule and our Sept 30 clarification. It was the first OpenAI statement we found that training covered by the pause had resumed. OpenAI's DNS incident report, last updated Sept 25, still said on Oct 23 that \"All training, evaluation, and inference with tool-use (defined broadly) of our most capable models remain paused\" (OpenAI; verified fact).",
+   "original_context": "This is the second pause in three months, and the safeguards needed to resume are unspecified.",
+   "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+   "original_url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098",
+   "outcome": true,
+   "resolved": "2026-10-23",
    "corrections": [
     {
      "date": "2026-09-30",
@@ -41,6 +45,11 @@
      "date": "2026-09-30",
      "text": "Clarification of the resolution rule (the rule itself is unchanged): OpenAI says it will restart training from scratch once the DNS sandbox fix is validated. A fresh, from-scratch training run of a frontier model counts as resuming training, as does restarting the paused runs. Restarting inference alone, or training only small or non-frontier models, doesn't count.",
      "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+    },
+    {
+     "date": "2026-10-23",
+     "text": "Our Sept 30 correction dated the start of the pause to Sept 25 (Fortune, NBC). OpenAI's Oct 23 post says it resumed on Oct 1, \"11 days after our pause began\", which by OpenAI's count puts the start on Sept 20, the day of the DNS incident (our inference). Sept 25 is the \"Report updated\" date on OpenAI's DNS incident report, which announced the pause. The question, probability and resolution rule are unchanged.",
+     "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
     }
    ]
   },
@@ -55,9 +64,9 @@
    "original_context": "The prospectus went public Sept 28, targeting mid-October.",
    "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
    "original_url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
-   "market": 0.6,
-   "marketAsOf": "2026-10-09",
-   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 0.5/0.7; the API's last trade, 1.2, is stale)",
+   "market": 0.15,
+   "marketAsOf": "2026-10-23",
+   "marketSource": "Polymarket \"Will Anthropic IPO by October 31, 2026?\", midpoint via the public API at 13:15 PT (bid/ask 0.1/0.2; last trade 0.1; about $1.30M traded)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null,
@@ -79,7 +88,14 @@
    "context": "METR's page has shown nothing newer than May 8, and its suite is saturated above 16 hours.",
    "url": "https://metr.org/time-horizons/",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-10-23",
+     "text": "Our context said METR's time-horizons page had shown nothing newer than May 8. It missed a note METR added on Sept 8: \"Clarified that this page is no longer actively updated.\" A GPT-6 Astra estimate is therefore likelier to come, if at all, as a METR blog post, which this forecast also counts (our inference). We found no GPT-6 Astra time-horizon estimate in METR's feed through its Oct 22 post. The question, probability and resolution rule are unchanged.",
+     "url": "https://metr.org/time-horizons/"
+    }
+   ]
   },
   {
    "id": "newsom-killswitch-by-nov16",
@@ -137,9 +153,9 @@
    "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
    "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "market": 25,
-   "marketAsOf": "2026-10-09",
-   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:14 PT (bid/ask 25/26; borderline thin, about 20.2k contracts traded in total)",
+   "market": 19,
+   "marketAsOf": "2026-10-23",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:15 PT (bid/ask 18/19; borderline thin: about 23.1k contracts traded in total, 1.36 in the past 24 h)",
    "marketUrl": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "outcome": null,
    "resolved": null,
@@ -209,7 +225,14 @@
     "gap"
    ],
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-10-23",
+     "text": "Our context said that since Sept 25 OpenAI had paused all training, evaluation and tool-using inference of its most capable models. OpenAI said on Oct 23 that it \"resumed reinforcement learning (RL) training and internal inference of our frontier models on October 1\", the day before this forecast was made (OpenAI; verified fact). Our reasoning that a release was unlikely during the pause rested partly on that error. The forecast stands as made and will be scored.",
+     "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+    }
+   ]
   },
   {
    "id": "anthropic-rd-index-new-reading-by-dec31",
@@ -264,7 +287,14 @@
    "context": "Claude Opus 5.5 leads the leaderboard at 21.25% (Oct 9), ahead of GPT-6 Astra at 20.83% and Claude Fable 5.1 at 17.92%; the best score was 15.8% (Fable 5) in July and 2.5% at launch in Oct 2025. A Yes most likely needs a new frontier release that Scale scores before the deadline: OpenAI's frontier training is paused, Gemini 4 Argon is limited to vetted cyber defenders so far, and Grok 5 is unreleased. The RLI is the primary test of our breadth part (definitions v2.0), which is marked Partial from 40% on the RLI; Met needs 80%.",
    "url": "https://labs.scale.com/leaderboard/rli",
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-10-23",
+     "text": "Our context said OpenAI's frontier training was paused. OpenAI said on Oct 23 that it resumed reinforcement learning training and internal inference of its frontier models on Oct 1, before this forecast was made (OpenAI; verified fact). The question, probability and resolution rule are unchanged.",
+     "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+    }
+   ]
   },
   {
    "id": "openai-agi-announce-by-dec31",
@@ -275,10 +305,65 @@
    "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), OpenAI, or an official representative speaking for it (such as its CEO in an official post, statement or interview), explicitly states that OpenAI has created or achieved artificial general intelligence (AGI). Saying it is close to AGI, has 'AGI-level' or 'near-AGI' systems, or knows how to build AGI doesn't count. It resolves on the announcement, not on whether the system meets our definitions or on any later check by the independent expert panel in OpenAI's agreement with Microsoft. No otherwise. Polymarket's matching market resolves on the same kind of announcement.",
    "context": "OpenAI credits an unreleased internal model with its Navier–Stokes result and with the mathematics manuscripts it published on Oct 6, but its frontier training has been paused since Sept 25, and California's Attorney General served it an investigative subpoena on Sept 30 in an inquiry into cybersecurity incidents and risks involving the company and its models. Microsoft says that under their October 2025 agreement an OpenAI AGI declaration \"will now be verified by an independent expert panel\". We think a formal claim in the next 12 weeks is unlikely while the pause lasts. Markets price more (forecast aggregate, Oct 9): Polymarket's matching market is at a 15.5% midpoint, Kalshi's similar OpenAI contract is thin (bid/ask 8.1/12.9), and Kalshi's any-company contract for the same date last traded at 9%. We sit near Kalshi and below Polymarket.",
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "market": 15.5,
-   "marketAsOf": "2026-10-09",
-   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:14 PT (bid/ask 15/16; about $313k traded)",
+   "market": 9.5,
+   "marketAsOf": "2026-10-23",
+   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:15 PT (bid/ask 9/10; the API's last trade, 8, sits below the bid; about $334k traded)",
    "marketUrl": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
+   "outcome": null,
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-10-23",
+     "text": "Our context said OpenAI's frontier training had been paused since Sept 25. OpenAI said on Oct 23 that it resumed reinforcement learning training and internal inference of its frontier models on Oct 1, eight days before this forecast was made (OpenAI; verified fact). Our \"while the pause lasts\" reasoning rested partly on that error. The forecast stands as made and will be scored.",
+     "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+    }
+   ]
+  },
+  {
+   "id": "anthropic-beyond-mythos51-release-or-eval-by-dec31",
+   "made": "2026-10-23",
+   "question": "Anthropic releases a model it says is more capable than Claude Mythos 5.1, or an outside evaluation of such an unreleased Anthropic model is announced, by Dec 31, 2026",
+   "p": 45,
+   "deadline": "2026-12-31",
+   "resolution": "Yes if, by the end of Dec 31, 2026 (Pacific), either (a) Anthropic makes available to outside users for the first time after Oct 23, 2026 (generally, through its paid API, or in a preview open to paying customers) a model that it says is more capable than Claude Mythos 5.1, or more capable than Claude Opus 5.5 (which Anthropic already places above Mythos 5.1), either in words or by showing it above either of them on most of the capability evaluations in its announcement or system card; or (b) after Oct 23, 2026, an outside evaluator (such as METR, UK AISI, US CAISI, Apollo Research or Epoch AI), or Anthropic, publicly announces that an outside evaluator has evaluated an unreleased Anthropic model that Anthropic says is more capable than Mythos 5.1, such as the internal research model Anthropic described on Oct 23, 2026. Access limited to a named set of vetted partners doesn't count for (a). Anthropic's own evaluations, an outside review of Anthropic's reports that doesn't test the model, and outside access nobody announces don't count for (b). No otherwise.",
+   "context": "On Oct 23 Anthropic replayed the UK AISI incident with \"a general purpose internal research model that shows capabilities greater than Mythos 5.1\" (Anthropic; verified fact); it gave no size for that lead and no release plan. METR already reviews Anthropic's internal reporting: on Oct 20 it published a review of the \"Misalignment in high-stakes settings\" section of Anthropic's internal August 2026 Risk Report (METR; verified fact), which makes an announced outside evaluation plausible (our inference). Anthropic ships frontier models every few months, so a next release that beats Mythos 5.1 before year-end is also possible, though the holiday season and its IPO process could delay one (our inference). Anthropic's Opus 5.5 system card already places the public Claude Opus 5.5 above Mythos 5.1: \"Opus 5.5 lands above Claude Mythos 5.1, our previous frontier\", at an AECI of 169.36 against 168.12 on the card's updated fit, each inside the other's local error bar (Anthropic; verified fact). So route (a) is met by any new Anthropic release it says beats Opus 5.5, and route (b) is the one that bears on W2 (our inference). The two routes together come to a little under even. This is a proxy for our alarm condition W2 (an acknowledged unreleased frontier model with no outside evaluation for 60 days) and for the capability-gap gauge.",
+   "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+   "tests": [
+    "W2",
+    "gap"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "openai-beyond-astra-release-by-jan31",
+   "made": "2026-10-23",
+   "question": "OpenAI releases a model it says is more capable overall than GPT-6 Astra by Jan 31, 2027",
+   "p": 40,
+   "deadline": "2027-01-31",
+   "resolution": "Yes if, by the end of Jan 31, 2027 (Pacific), OpenAI makes available to outside users for the first time after Oct 23, 2026 (in ChatGPT, through its paid API, or in a preview open to paying customers) a model that it says is more capable overall than GPT-6 Astra, either in words or by showing it above GPT-6 Astra on most of the capability evaluations in its announcement or system card. A model specialised for one domain, such as the GPT-6 Astra Cyber model OpenAI called \"upcoming\" on Oct 23, 2026, counts only if OpenAI says it is more capable overall. Access limited to a named set of vetted partners doesn't count. No otherwise.",
+   "context": "OpenAI credits its Navier–Stokes result to an unreleased internal model that it says is significantly more capable than GPT-6 Astra (OpenAI, via CoinDesk, Sept 9; credible report). On Oct 23 OpenAI said it resumed reinforcement learning training and internal inference of its frontier models on Oct 1 (OpenAI; verified fact). Its DNS incident report, updated Sept 25, said that when training restarts it \"will begin a fresh run with additional alignment improvements\" (OpenAI; verified fact). If the Oct 1 restart began that fresh run, about four months remain to train, test and ship a new model by Jan 31; OpenAI could instead release the existing post-Astra model (our inference). This is a proxy for alarm condition W6 (exclusive internal use of an unreleased model for 90 days or more), which clears when the model is released or its capabilities are published, and for the capability-gap gauge.",
+   "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+   "tests": [
+    "W6",
+    "gap"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-trading-by-nov30",
+   "made": "2026-10-23",
+   "question": "Anthropic shares begin trading on a US stock exchange by Nov 30, 2026",
+   "p": 50,
+   "deadline": "2026-11-30",
+   "resolution": "Yes if, by the end of Nov 30, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 30, 2026?' resolves on a similar rule (listed on a public exchange and open for trading).",
+   "context": "At about 13:40 PT Oct 23, SEC EDGAR showed no public Anthropic registration statement (SEC; verified fact). A confidential filer must file publicly \"at least 15 days prior to any road show or, in the absence of a road show, at least 15 days prior to the requested effective date\" (SEC; verified fact), so trading by Nov 30 needs a public filing by Nov 15 at the very latest, and by early November to leave time for a typical roadshow (our inference). Three people familiar with Anthropic's plans told Yahoo Finance on Oct 21 that it is set to file its S-1 publicly \"as soon as Friday\", which was Oct 23 (via Yahoo Finance; credible report), and Yahoo said a public filing would clear a key procedural hurdle toward \"a potential November listing\" (Yahoo Finance; credible report). The market prices more (forecast aggregate, Oct 23): Polymarket's matching market sits at a 67.5 midpoint. We sit lower because no public filing had appeared by Oct 23, the schedule leaves little room for a slip, and the timeline behind our 75% on an Oct 31 listing proved too early (our inference).",
+   "url": "https://finance.yahoo.com/markets/article/anthropic-to-publicly-file-for-ipo-as-early-as-friday-sources-say-135343841.html",
+   "market": 67.5,
+   "marketAsOf": "2026-10-23",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", midpoint via the public API at 13:15 PT (bid/ask 67/68; last trade 67; about $447k traded)",
+   "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null
   }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09",
+ "updated": "2026-10-23",
  "capexDefinition": "Cash purchases of property and equipment from each company's SEC filings (XBRL: PaymentsToAcquirePropertyPlantAndEquipment; for Amazon, PaymentsToAcquireProductiveAssets), converted from year-to-date to quarterly values. Excludes finance leases.",
  "capexByCompany": {
   "MSFT": [
@@ -377,7 +377,7 @@
     "q": "2025Q3",
     "end": "2025-09-30",
     "usd_b": 18.83,
-    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047240/",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/",
     "form": "10-Q"
    },
    {
@@ -399,6 +399,13 @@
     "end": "2026-06-30",
     "usd_b": 30.12,
     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q3",
+    "end": "2026-09-30",
+    "usd_b": 33.94,
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/",
     "form": "10-Q"
    }
   ]
@@ -865,6 +872,14 @@
    "note": "Told to investors, reported by Bloomberg"
   },
   {
+   "company": "Anthropic",
+   "date": "2026-09-30",
+   "metric": "quarterly revenue (Q3 2026)",
+   "usd_b": 16.8,
+   "url": "https://www.calcalistech.com/ctechnews/article/tgb6eqw4z",
+   "note": "Told to prospective investors at an investor day on Oct 14, per two people who attended (Reuters, via CTech), up from $11.6B in Q2 by their account (our Q2 row, from the draft prospectus, has $11.5B). The FT reported the figure first and Bloomberg reported the same $16.8B, citing people familiar (via The Next Web). Anthropic also told the investors it was profitable on an adjusted basis in the quarter (via Reuters). Not published by Anthropic, which declined to comment to Bloomberg (via The Next Web) and did not immediately respond to Reuters; not a public SEC filing (credible report)"
+  },
+  {
    "company": "OpenAI",
    "date": "2025-06-09",
    "metric": "annualized run-rate",
@@ -933,58 +948,66 @@
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-10-09",
-   "price_pct": 9,
+   "date": "2026-10-23",
+   "price_pct": 6,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:14 PT (traded 10:17 PT Oct 9); bid/ask 9/10. With about 32.8k contracts and a 1-point spread it is not thin by our rule, but open interest is only about 15k. Was 18 on Oct 2."
+   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:15 PT (about 123 contracts sold at 6, traded 05:28 PT Oct 23); bid/ask 6/7. With about 38.3k contracts and a 1-point spread it is not thin by our rule, but open interest is only about 17.5k and the ask is shallow (about 4 contracts offered at 7). Was 9 on Oct 9."
   },
   {
    "market": "Any company announces it has achieved AGI before Apr 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-10-09",
-   "price_pct": 25,
+   "date": "2026-10-23",
+   "price_pct": 19,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:14 PT (traded 07:56 PT Oct 9); bid/ask 25/26; thin market (~20.2k contracts, at the threshold). Was 30 on Oct 2."
+   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:15 PT (traded 14:43 PT Oct 22); bid/ask 18/19; thin market: only about 1.4 contracts traded in the 24 hours before the read, though about 23.1k have traded in total, just above our ~20k line. Was 25 on Oct 9."
   },
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2028",
    "venue": "Kalshi",
-   "date": "2026-10-09",
-   "price_pct": 61,
+   "date": "2026-10-23",
+   "price_pct": 39,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:14 PT (traded 05:57 PT Oct 9); bid/ask 60/61; thin market (~15.6k contracts). The last trade is unchanged since Oct 2; the quote moved down from 62/63."
+   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:15 PT (0.93 contracts at 39, traded 11:57 PT Oct 23, after sellers traded about 450 contracts at 38 to 40 at 21:45 PT Oct 21); bid/ask 38/39; thin market: about 21.8k contracts traded, open interest about 9.2k and under 1 contract traded in the 24 hours before the read. The earlier before-Oct 1, 2027 rung (KXAGICO-COMP-27Q3, last 41, bid/ask 41/42) is priced above this later rung, an impossible ordering in a thin ladder. Was 61 on Oct 9."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2026",
    "venue": "Kalshi",
-   "date": "2026-10-09",
-   "price_pct": 8,
+   "date": "2026-10-23",
+   "price_pct": 4.2,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API (OAIAGI-26), last trade as read at 13:14 PT; bid/ask 8.1/12.9; thin market: a 4.8-point spread despite ~360k contracts traded, and the last trade (8.0, 5 contracts) sits below the bid. Oct 9 trades ranged from 8.0 to 11.4. Was 9.3 on Oct 2."
+   "note": "Live API (OAIAGI-26), last trade as read at 13:15 PT (traded 10:06 PT Oct 23); bid/ask 4.1/4.2. About 365k contracts traded and a 0.1-point spread, so not thin by our rule, though only 1 contract is bid at 4.1 and trades between 07:17 and 07:42 PT Oct 23 ran from 5.2 to 6.8. Was 8 on Oct 9 (then bid/ask 8.1/12.9)."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2027",
    "venue": "Kalshi",
-   "date": "2026-10-09",
-   "price_pct": 43.2,
+   "date": "2026-10-23",
+   "price_pct": 45,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API (OAIAGI-27), last trade as read at 13:14 PT; bid/ask 43.2/46.0; thin market: a 2.8-point spread despite ~292k contracts traded. Was 44.1 on Oct 2."
+   "note": "Live API (OAIAGI-27), last trade as read at 13:15 PT (0.17 contracts at 45, traded 09:31 PT Oct 23); bid/ask 44.5/45; about 296k contracts traded and a 0.5-point spread, so not thin by our rule, though the bid is shallow (about 1 contract). Was 43.2 on Oct 9."
   },
   {
    "market": "OpenAI announces it has achieved AGI before 2027",
    "venue": "Polymarket",
-   "date": "2026-10-09",
-   "price_pct": 15.5,
+   "date": "2026-10-23",
+   "price_pct": 9.5,
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "note": "Live API midpoint, read 13:14 PT; bid/ask 15/16; volume ~$313k (USD). Was 16.5 on Oct 2."
+   "note": "Live API midpoint, read 13:15 PT; bid/ask 9/10; volume about $334k (USD), not thin. The API's last-trade field (8) sits below the bid and is not used. Was 15.5 on Oct 9."
   },
   {
    "market": "Anthropic IPOs by Oct 31, 2026",
    "venue": "Polymarket",
-   "date": "2026-10-09",
-   "price_pct": 0.6,
+   "date": "2026-10-23",
+   "price_pct": 0.15,
    "url": "https://polymarket.com/event/anthropic-ipo-by",
-   "note": "Live API midpoint, read 13:14 PT; bid/ask 0.5/0.7; volume ~$1.18M (USD). The API's last-trade field (1.2) is stale and sits above the ask; Oct 9 trades imply 0.7 to 0.9. Was 1.35 on Oct 2. Other dates in the same event, bid/ask at the same read: by Nov 15 10/11, by Nov 30 67/68, by Dec 31 76/77."
+   "note": "Live API midpoint, read 13:15 PT; bid/ask 0.1/0.2; volume about $1.30M (USD), not thin. Was 0.6 on Oct 9. Other dates in the same event, bid/ask at the same read: by Nov 15 3.2/5.0, by Nov 20 47/53 (thin: about $8.2k traded, all in the past 24 hours), by Nov 25 58/61 (thin: about $2.8k traded), by Nov 30 67/68, by Dec 15 77/80 (thin: a 3-point spread), by Dec 31 80/81. On Oct 9 they were 10/11 (Nov 15), 67/68 (Nov 30) and 76/77 (Dec 31)."
+  },
+  {
+   "market": "Anthropic IPOs by Nov 30, 2026",
+   "venue": "Polymarket",
+   "date": "2026-10-23",
+   "price_pct": 67.5,
+   "url": "https://polymarket.com/event/anthropic-ipo-by",
+   "note": "Live API midpoint (will-anthropic-ipo-by-november-30-2026), read 13:15 PT; bid/ask 67/68; volume about $447k (USD), not thin. Bid/ask was also 67/68 on Oct 9."
   }
  ],
  "signals": [
@@ -1037,15 +1060,85 @@
    "date": "2026-10-07",
    "text": "Broadcom is arranging more than $50B of financing for the custom AI chips it is building with OpenAI; Apollo and Blackstone are among the lenders approached, talks are early and the size could change (credible report: the Wall Street Journal, via Yahoo Finance; none of the companies has commented). Yahoo Finance notes that the WSJ did not say who would borrow. A named buyer and seller and a planned purchase, so not an X4 candidate (our inference).",
    "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-arranging-50-billion-openai-060941579.html"
+  },
+  {
+   "date": "2026-10-11",
+   "text": "The Information reports that Anthropic has committed to lease 15 gigawatts of data center capacity from Amazon Web Services, Google, SpaceX's SpaceXAI and other cloud providers and, citing people familiar with the relationship, that it has signed a multiyear cloud deal with Iren (credible report: The Information, via MT Newswires, via Yahoo Finance; MT Newswires files it as market chatter that may include rumor and speculation, and Anthropic, Hut 8, Iren, Google and SpaceX did not immediately respond to it). A named buyer and planned capacity, so not an X4 candidate (our inference).",
+   "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-anthropic-calls-data-125043695.html"
+  },
+  {
+   "date": "2026-10-13",
+   "text": "Volta, an AI infrastructure company founded in February, is marketing $5B of debt for a data center in Norway and relies on Anthropic to buy much of its compute; Apollo anchors the deal with a $1.5B order, it is expected to price with a rate of at least 11%, some investors said they are already full up on data-center debt, and the rate falls if Anthropic gets an investment-grade credit rating (credible report: people familiar, via Semafor; JPMorgan, Goldman Sachs and Apollo declined to comment, and Volta and Anthropic did not respond). A named buyer and planned capacity, so not an X4 candidate (our inference).",
+   "url": "https://www.semafor.com/article/10/13/2026/voltas-5-billion-debt-deal-is-a-pulse-check-on-the-ai-financing-boom"
+  },
+  {
+   "date": "2026-10-13",
+   "text": "NTT Data Group is in the final stages of talks to build a data center in Osaka, western Japan, for Anthropic, which would be Anthropic's first dedicated data center in Japan; it could cost $6.3B to build and partly open by 2028 (credible report: multiple sources, via Nikkei Asia). A named buyer and planned capacity, so not an X4 candidate (our inference).",
+   "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ntt-to-build-first-data-center-for-anthropic-in-japan"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "Anthropic is seeking a valuation of more than $2T (credible report: Reuters, via CTech), and some prospective investors put its fair value at $1.8T to $2T (credible report: Bloomberg, via The Next Web). Its Series H on May 28 was at $965B post-money (verified fact: Anthropic). Roughly double in under five months, alongside reported revenue growth: a public valuation jump, not a hidden-capability signal (our inference).",
+   "url": "https://thenextweb.com/news/anthropic-q3-revenue-16-8bn-ipo"
+  },
+  {
+   "date": "2026-10-15",
+   "text": "CoreWeave's April-issued bonds fell to 79.15 cents on the dollar (Tradeweb data, via Reuters), a yield of around 15%, and the cost of insuring its debt rose to around 1,000 basis points, which Reuters says implies a nearly 63% chance of default in five years; its shares fell as much as 8.3% to their lowest since May 2025 before trading 5% higher (credible report: Reuters, via Investing.com). Strain in compute financing, not a sign of hidden compute (our inference).",
+   "url": "https://www.investing.com/news/stock-market-news/coreweave-shares-bonds-slide-further-as-ai-debt-fears-mount-4951350"
+  },
+  {
+   "date": "2026-10-19",
+   "text": "Microsoft ended its agreement to anchor a flagship Nscale data centre in Loughton, Essex (23,040 Nvidia GB300 GPUs, 50 MW), after grid officials told Nscale they did not expect to supply power until the 2030s (credible report: Reuters, via Investing.com; The Telegraph reported it first). Microsoft said 'This decision relates to a single site' and that it remains committed to its Nscale partnership (Microsoft spokesperson, via Reuters); Nscale said the grid issue had no impact on its other contracts (Nscale, via Reuters). Cancelled capacity with a named buyer and a stated cause, so not an X4 candidate (our inference).",
+   "url": "https://www.investing.com/news/stock-market-news/microsoft-pulls-out-of-uk-nscale-data-centre-deal-over-power-delay-4957808"
+  },
+  {
+   "date": "2026-10-19",
+   "text": "OpenAI is racing to secure investor commitments for a round that could value it at over $1.4T, per two people familiar; the round is about $30B, per one of them, and OpenAI told investors it had reached $50B in annualized revenue, per one of the people (credible report: Reuters, via Investing.com; OpenAI and SoftBank declined to comment).",
+   "url": "https://www.investing.com/news/stock-market-news/exclusiveopenai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-sources-say-4958511"
+  },
+  {
+   "date": "2026-10-20",
+   "text": "Nscale is in talks to sell Anthropic computing power for a second facility at its Monarch data center campus in West Virginia, in a deal that could be worth about $45B (credible report: people familiar with the negotiations, via Bloomberg News, via Bloomberg Law); per Bloomberg, a regulatory filing for Nscale's planned IPO puts Anthropic's existing agreements with Nscale at up to about $44.6B (via Bloomberg; we have not opened the filing). Named buyer and seller and planned capacity, so not an X4 candidate (our inference).",
+   "url": "https://news.bloomberglaw.com/financial-accounting/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal"
+  },
+  {
+   "date": "2026-10-20",
+   "text": "SpaceX's Q3 results: Super Intelligence (SI) segment revenue of $7.56B, up 830% from a year earlier, driven mainly by new cloud services agreements, the Cursor acquisition and Grok adoption; SI capital spending of $16.44B in the quarter ($40.0B in the first nine months); and 1.7 GW of nameplate compute at Sept 30, up from 1.4 GW at June 30 (verified fact: SpaceX 8-K, Exhibit 99.1). Reuters reports the AI business earns revenue from compute contracts with Anthropic, Google and Reflection AI (credible report: Reuters, via NBC News; no source given). Named seller and named buyers, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm"
+  },
+  {
+   "date": "2026-10-21",
+   "text": "The Wall Street Journal, which obtained a draft of Anthropic's S-1, reports about $450B of mostly noncancellable agreements with cloud providers, first-half 2026 revenue of $16.3B (from $1.1B a year earlier) and a first-half net loss of $80B (from $13B) (credible report: draft prospectus, via the WSJ, via Fortune). A draft prospectus, not a public SEC filing; the reports do not say whether the $450B covers the same commitments as the 'at least $518B' reported on Sept 28 (our inference). A named buyer, so not an X4 candidate (our inference).",
+   "url": "https://fortune.com/2026/10/21/anthropic-s-1-leak-income-statement-ipo/"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Meta's non-cancelable contractual commitments reached $454.52B at Sept 30, up from $349.31B at June 30 (about $105B more in one quarter, our arithmetic), mostly third-party cloud capacity, servers and network infrastructure, data-center energy agreements and Reality Labs hardware, with about $45.85B due in 2026 and $121.41B in 2027; Meta also has contingent obligations to buy up to $14.72B of cloud capacity over five years, unchanged since June 30 (verified fact: Meta 10-Qs for Q2 and Q3). A named buyer, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "SpaceX's Q3 10-Q says an unnamed 'Customer B', whose revenue relates to the SI segment, accounted for 34.5% of Q3 consolidated revenue of $14.58B, about $5.0B (our arithmetic), and reports a backlog of $62.96B at Sept 30, about 67% of it expected within a year (verified fact: SpaceX 10-Q). The filing does not name the customer; Reuters' list of SpaceX compute customers (Anthropic, Google, Reflection AI) and the SpaceX/xAI commitment in Anthropic's draft prospectus make one of those named labs the likely customer, so this is a lead to resolve and does not meet alarm condition X4 (our inference). Its Q3 revenue cannot come from the hosting deal worth about $1.11B a month that starts Dec 1, though the same customer could be behind both (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "OpenAI is working on raising up to $30B at a $1.25T pre-money valuation, in a round led by Coatue and investors in the UAE that could be coupled with a deal for more computing capacity; terms are still being negotiated (credible report: sources, via CNBC, via TechCrunch; OpenAI declined to comment). That is below the about $1.4T reported on Sept 29 and the over $1.4T reported on Oct 19 (our inference); its March round valued it at $852B post-money (via TechCrunch).",
+   "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/"
+  },
+  {
+   "date": "2026-10-22",
+   "text": "DeepSeek has reportedly raised about $15B (about 100 billion yuan), with potential investors including CATL and Tencent (credible report: Bloomberg, via TechCrunch; DeepSeek did not immediately respond to TechCrunch); TechCrunch gives no valuation, calls it one of the biggest funding rounds in China and notes it came two days after the US ordered federal civilian agencies to remove DeepSeek's AI technology from their systems (via TechCrunch). A named lab raising capital, so not an X4 candidate (our inference).",
+   "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/"
   }
  ],
  "notes": [
   "Capex is cash purchases of property and equipment and excludes finance leases, so it is lower than the 'capex including finance leases' headline some companies quote (Microsoft in particular; Meta's headline adds about $1B a quarter in lease principal). Amazon is gross, not net of incentives.",
   "An independent read of each company's earnings releases matches the SEC XBRL-derived quarterly capex exactly.",
-  "Not yet reported: calendar Q3 2026 capex (late October) and Nvidia Q3 FY2027 (late November).",
-  "Anthropic figures labelled 'draft prospectus' come from a leaked, non-public draft reported by Reuters, Fortune and the FT. An EDGAR full-text search showed no public Anthropic S-1, S-1/A, DRS or F-1 as of Oct 9, 2026 (confidential draft submissions are not public), and Reuters reports the IPO is likely after the November midterms.",
+  "Not yet reported: calendar Q3 2026 capex for Microsoft, Amazon and Alphabet (Meta reported on Oct 21 and filed its 10-Q on Oct 22; EDGAR read Oct 23), and Nvidia Q3 FY2027 (late November; no date announced when we checked on Oct 23).",
+  "Anthropic figures labelled 'draft prospectus' come from a leaked, non-public draft reported by Reuters, Fortune, the FT and the WSJ (via Fortune). EDGAR full-text searches on Oct 23, 2026 found no public Anthropic S-1, S-1/A, F-1, F-1/A, 424B4 or DRS (confidential draft submissions are not public, so the absence is our reading of the search). Bloomberg reports that formal IPO marketing could start as early as the week of Nov 9, with trading possibly before Thanksgiving (Nov 26), and that the dates are fluid (credible report, via The Next Web); Reuters reports the IPO is likely after the November midterms (credible report).",
   "Run-rates annualize one recent period and are often floors; they are not comparable with quarterly revenue and are never plotted on the same axis.",
-  "Kalshi's 'any company before Apr 1, 2027' market traded at 25% on Oct 9, 2026 (Pacific) (live API, bid/ask 25/26, thin), down from 30% on Oct 2 and 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price.",
+  "Kalshi's 'any company before Apr 1, 2027' market stood at 19% on Oct 23, 2026 (Pacific) (live API: last trade 19 on Oct 22, bid/ask 18/19, thin), down from 25% on Oct 9, 30% on Oct 2 and 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price.",
   "Anthropic's and OpenAI's run-rates are not like for like: per Reuters and the FT (via Investing.com), both Oct 8, Anthropic counts revenue from sales through cloud partners such as AWS and Google Cloud, and OpenAI does not (credible report)."
  ],
  "method": "Context, not a test. Capex is total cash purchases of property and equipment by Microsoft, Alphabet, Amazon and Meta (mostly AI data centers; also non-AI spending such as Amazon logistics), summed by calendar quarter when all four have reported. The capability line is the best METR-measured frontier time horizon released by each quarter end; readings above 16 hours are beyond METR's reliable range, and quarters after METR's latest measurement can miss newer models. Models take months to train on new capacity, so spending often leads releases. Our actual test for hidden compute is alarm condition X4."

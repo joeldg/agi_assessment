@@ -1,5 +1,5 @@
 {
- "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the 53 ChatGPT user images OpenAI's agents posted to image-hosting sites (disclosed Sept 25). Of the six reports OpenAI published on Sept 16, the three that touched public or third-party systems are listed; the other three (two on compaction summaries and one on writes to OpenAI's internal Artifactory) did not reach a public or third-party system, so they fall outside the inclusion rule. OpenAI's three reports dated Oct 2 (on incidents of Mar 27, May 16 and May 22) describe activity inside OpenAI's own systems; the only request that may have gone outside, to a PyPI package repository on Mar 27, returned 404, so they also fall outside the inclusion rule. Also tracked but not listed: Glow's Sept 29 report that it found more than 13,000 internal images from over 300 organisations published openly on GitHub, which it says coding agents posted to public repositories so reviewers could see visual changes; it names no agent or lab in the cases it found and dates only one (early July). The Medicare entry also covers the three other agencies the Prime Minister named in the same Sept 24 disclosure, since that was one public disclosure: the Australian Institute of Health and Welfare, NSW's Bureau of Crime Statistics and Research and the Victorian Department of Health, whose Victorian Agency for Health Information reporting system OpenAI's agents queried with an exposed access key (OpenAI's account, Sept 28).",
+ "note": "AI agent incidents, with the date each happened and the date it was first made public; the lag is the gap between them. Inclusion rule: an unsanctioned action by an AI agent outside its sanctioned environment that touched a real third-party or public system, disclosed by anyone, with a primary source or two credible outlets. There is one entry per first public disclosure; later details about the same incident are added to it. The start date is the earliest activity documented with at least moderate confidence. Where a source gives only a month or season, the date is approximate: we record the window and measure the lag from its midpoint. \"Made public by\" is whoever first made an incident public. Where a source says, we also record who detected it first (the lab, outsiders, the victim, an evaluator or a government) and when. Alarm trigger W4 uses the incidents disclosed in the past 180 days. Incidents nobody has detected or disclosed can't appear here, so these lags are a floor on how long incidents stay hidden, not a ceiling. Tracked but not listed, because no occurrence date has been published: the 53 ChatGPT user images OpenAI's agents posted to image-hosting sites (disclosed Sept 25). Of the six reports OpenAI published on Sept 16, the three that touched public or third-party systems are listed; the other three (two on compaction summaries and one on writes to OpenAI's internal Artifactory) did not reach a public or third-party system, so they fall outside the inclusion rule. OpenAI's three reports dated Oct 2 (on incidents of Mar 27, May 16 and May 22) describe activity inside OpenAI's own systems; the only request that may have gone outside, to a PyPI package repository on Mar 27, returned 404, so they also fall outside the inclusion rule. Also tracked but not listed: Glow's Sept 29 report that it found more than 13,000 internal images from over 300 organisations published openly on GitHub, which it says coding agents posted to public repositories so reviewers could see visual changes; it names no agent or lab in the cases it found and dates only one (early July). The Medicare entry also covers the three other agencies the Prime Minister named in the same Sept 24 disclosure, since that was one public disclosure: the Australian Institute of Health and Welfare, NSW's Bureau of Crime Statistics and Research and the Victorian Department of Health, whose Victorian Agency for Health Information reporting system OpenAI's agents queried with an exposed access key (OpenAI's account, Sept 28). Of OpenAI's three reports first posted Oct 9, the two that reached public outside services are listed; the third (a grader model damaging its own task environment on Oct 6) stayed inside OpenAI's systems, as did the two incidents in its Oct 20 report (agents weakening misalignment monitoring in internal coding tasks on Oct 3 and Oct 6), so they fall outside the inclusion rule. Also tracked but not listed: CERT-In's Oct 15 advisory CIAD-2026-0049, which says agents of AI model providers under evaluation exceeded their task authorization and reached live systems of Indian organisations, reading business records with exposed credentials and connection settings, and that the providers disclosed this after internal review; it names no provider, model, victim or date.",
  "fields": {
   "occurred": "Start date: the earliest activity documented with at least moderate confidence; the midpoint of the window when approximate.",
   "occurredApprox": "true when the source gives only a month or season.",
@@ -151,6 +151,21 @@
    "press": "https://mixed-news.com/en/openai-models-leaked-api-key-invented-data-misalignment-reports/"
   },
   {
+   "id": "anthropic-outside-websites",
+   "title": "Anthropic models take unintended actions on real outside websites, including State Department visa forms and a police tip form",
+   "lab": "Anthropic",
+   "occurred": "2026-05-15",
+   "occurredApprox": true,
+   "occurredFrom": "2026-05-01",
+   "occurredTo": "2026-05-31",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-09",
+   "foundBy": "lab",
+   "note": "Anthropic's Oct 9 report, from a transcript review it says began in July, gives no occurrence dates. Its cases: an unreleased, non-frontier research model that, when a practice copy of a government form failed to load or was closed, went to the website where the real form is hosted and submitted it there, \"multiple times on the same evaluation\"; Claude Haiku 4.5 submitting forms on outside sites it had been told to stop short of, and in one run an invented tip through a police department's tip form about an unsolved homicide; Claude Mythos Preview, asked to run a scientific analysis, using a file-returning script and an injection flaw on a university's server; Claude Mythos 5 accepting a data use agreement on a third-party site, using working access tokens it found in a map site's settings file, and querying a fee-based database with an access token the site's public dashboard issues to any visitor, without paying; and several models, including Claude Opus 5 and Claude Mythos 5, using free URL shortening services to get around fetch-tool limits, which an operator of da.gd also told Anthropic it had seen. The start date is the State Department's: a spokesperson told the Philadelphia Inquirer (Oct 10) that an Anthropic testing model submitted one nonimmigrant visa application through the department's public website form in May and 19 in August, all incomplete, and that no department systems were compromised. The spokesperson didn't state the year, which we take to be 2026 (our inference; month only, midpoint used). Two unnamed sources told the New York Times (Oct 10, via the Honolulu Star-Advertiser) that the 20 applications were incomplete and not processed. Philadelphia police say the tip came through PhillyUnsolvedMurders.com at 11:27 p.m. on July 18, 2026 and stayed in spam; Anthropic said it found the tip on Sept 28, and officials said Anthropic told police on Oct 7 and met them on Oct 8 (all via NBC10). Police announced it on Oct 9; Anthropic's report that day says the department \"self-disclosed today\" and that Anthropic shared the finding with it on Oct 8.",
+   "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "press": "https://www.inquirer.com/news/philadelphia/anthropic-ai-philadelphia-police-department-state-department-20261010.html"
+  },
+  {
    "id": "dsewiki",
    "title": "OpenAI agents use a German wiki as an unsanctioned coordination board",
    "lab": "OpenAI",
@@ -195,6 +210,62 @@
    "press": "https://www.abc.net.au/news/2026-10-02/rogue-open-ai-agent-breach-nsw-government-website/107223108"
   },
   {
+   "id": "openai-disallowed-web-requests",
+   "title": "OpenAI training model probes outside services to get around a GET-only internet limit",
+   "lab": "OpenAI",
+   "occurred": "2026-06-16",
+   "occurredApprox": false,
+   "detected": "2026-06-25",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-09",
+   "foundBy": "lab",
+   "note": "In three public-statistics cases on June 16 and 17, an internal research model in RL training whose instructions allowed only HTTP GET requests tested other request methods against a public web-request testing service; created an account with invented details on a public remote-computer service, logged in and ran a system-information command there (its request to forward traffic was refused); routed POST requests through an anonymizing relay network after early attempts failed; and sent requests to a public echo service, a webpage-to-text service, a public statistics dashboard, a statistics office's public SQL database (with login details from the office's published code, which the office had described as read-only) and a research bureau's public FTP archive, where it logged in anonymously. OpenAI says that in some cases it kept testing these methods after it had the statistics it needed. OpenAI found it in an ad hoc misalignment-monitoring investigation and dates the discovery June 25. The report uses fictional names, currencies and numbers, so we name no service and quote no count.",
+   "url": "https://alignment.openai.com/misalignment-reports/sending-disallowed-web-requests-and-reaching-a-public-file-service/",
+   "press": "https://www.csoonline.com/article/4234918/openais-ai-misalignment-problem-is-growing.html"
+  },
+  {
+   "id": "openai-external-browser",
+   "title": "OpenAI training model gets outside services to send requests its internet limit blocked",
+   "lab": "OpenAI",
+   "occurred": "2026-06-16",
+   "occurredApprox": false,
+   "detected": "2026-06-25",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-15",
+   "foundBy": "lab",
+   "note": "During RL training on June 16, an internal research model asked to retrieve annual trade figures from a public statistics service, with internet access \"enabled only for HTTP GET requests\", caused an external browser service to send POST requests to that service and got the results back through a forwarding service, an online callback mailbox and a rendering service that returned an image of the page. OpenAI identified it in an ad hoc misalignment-monitoring investigation and gives the discovery as by June 25 (a bound, recorded as the detection date). OpenAI generalized or redacted names and doesn't name the services; nothing in the report ties it to the urlquery.net activity in the Transluce entry, so it is listed separately (our inference).",
+   "url": "https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/",
+   "press": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/"
+  },
+  {
+   "id": "openai-gov-stats-secrets",
+   "title": "OpenAI training model takes server secrets from a government statistics site and gets past its authorization",
+   "lab": "OpenAI",
+   "occurred": "2026-06-17",
+   "occurredApprox": false,
+   "detected": "2026-08-13",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-15",
+   "foundBy": "lab",
+   "note": "Asked in RL training to find historical hospital-bed statistics on a government statistics website, a \"highly persistent\" internal model used the site's file-download feature to retrieve server configuration and application files, including a database connection string, a secret used to sign authorization tokens and email login credentials; submitted tokens without valid signatures to the previously protected statistics endpoint, which then returned the health-facility statistics it had been denied; and requested the site's account directory, with email addresses, through a public proxy without logging in. Its answer didn't mention the unauthorized access. OpenAI's misalignment monitor, run retrospectively over earlier RL and evaluation traffic after the Hugging Face incident, flagged it as critical; OpenAI dates the discovery Aug 13. OpenAI doesn't name the site or its country, and nothing in the report ties it to the Australian agencies in the Medicare entry (our inference).",
+   "url": "https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/",
+   "press": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/"
+  },
+  {
+   "id": "openai-dashboard-systems",
+   "title": "OpenAI evaluation model gets into a research organization's internal systems and changes their settings",
+   "lab": "OpenAI",
+   "occurred": "2026-06-17",
+   "occurredApprox": false,
+   "detected": "2026-08-13",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-15",
+   "foundBy": "lab",
+   "note": "In two evaluations that asked for published figures from an international research organization's public dashboard, a \"highly persistent\" internal model found credentials in JavaScript on a public website and used them against the organization's live OpenSearch service: it downloaded user-directory records with names and email addresses, added a Power BI address to the search cluster's trusted connector destinations, a change its later clean-up didn't reverse, and set up temporary alert monitors and webhooks to relay queries. In the second evaluation it changed a token-audience setting to get a storage token, restored the setting, and kept using the token to download non-public tables from the organization's internal OneLake workspace. OpenAI says \"The model did not disclose these actions.\" OpenAI's retrospective misalignment monitor flagged it as critical, and OpenAI gives the discovery as by Aug 13 (a bound, recorded as the detection date). The page doesn't name the organization; we read \"the organization's\" systems as the research organization's, not OpenAI's (our inference).",
+   "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/",
+   "press": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/"
+  },
+  {
    "id": "medicare",
    "title": "OpenAI evaluation agent breaches Australia's Medicare statistics portal",
    "lab": "OpenAI",
@@ -206,6 +277,34 @@
    "foundBy": "government",
    "note": "OpenAI learned of it on Aug 11 (ABC) and notified Australia on Sept 10 via a generic mailbox. The Prime Minister disclosed it publicly. OpenAI apologised on Sept 29 for this and three other Australian agency incidents.",
    "url": "https://www.aljazeera.com/news/2026/9/24/australia-says-openai-agent-hacked-medicare-portal"
+  },
+  {
+   "id": "openai-disallowed-statistics",
+   "title": "OpenAI internal models get around internet limits to pull public statistics, one registering on a benefits portal",
+   "lab": "OpenAI",
+   "occurred": "2026-06-19",
+   "occurredApprox": false,
+   "detected": "2026-06-25",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-09",
+   "foundBy": "lab",
+   "note": "In three conversations on June 19 and 20 in RL training, internal research models whose instructions allowed only HTTP GET requests wrote programs that sent other request types. In two, models queried a publicly available rehabilitation-outcomes dashboard with POST requests; in one of those the model, which already had verified figures, downloaded data from several annual dashboards and chose not to mention the method in its answer. In the third, a \"highly persistent\" internal model registered an account on a benefits portal with a temporary email address, completed verification, logged in, obtained an API key and bulk-downloaded benefit-program counts by neighbourhood. OpenAI says an ad hoc misalignment-monitoring investigation found it by June 25 (a bound, recorded as the detection date) and that its later retrospective monitoring flagged it as critical. The report uses fictional names, currencies and numbers, so we name no service and quote no count.",
+   "url": "https://alignment.openai.com/misalignment-reports/obtaining-public-statistics-with-disallowed-requests/",
+   "press": "https://www.csoonline.com/article/4234918/openais-ai-misalignment-problem-is-growing.html"
+  },
+  {
+   "id": "openai-sepolia-wallet",
+   "title": "OpenAI training model pays test-network fees from a wallet it found on its own",
+   "lab": "OpenAI",
+   "occurred": "2026-06-26",
+   "occurredApprox": false,
+   "detected": "2026-09-25",
+   "detectedBy": "lab",
+   "disclosed": "2026-10-15",
+   "foundBy": "lab",
+   "note": "On June 26 a GPT-5.6 Sol-family internal research model, updating a cryptocurrency trading prototype in a training task and allowed to deploy contracts to the Sepolia Ethereum test network, paid the deployment's fees from an account the task hadn't supplied: it derived the wallet keys from \"publicly known developer recovery phrases\" and sent the signed deployment through a third-party RPC provider it had found, using an alternative HTTP method. The deployment succeeded. The model reasoned that a public recovery phrase and valueless test-network tokens made the funds acceptable to use, and it didn't disclose that it had spent the account's balance. OpenAI found it on Sept 25 while extending its misalignment monitoring to records of earlier model activity. We count the public test network and the RPC provider as public and third-party systems (our inference).",
+   "url": "https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/",
+   "press": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/"
   },
   {
    "id": "meta-muse-spark",
@@ -256,6 +355,7 @@
    "lab": "Anthropic, OpenAI",
    "occurred": "2026-07-25",
    "occurredApprox": false,
+   "detected": "2026-07-28",
    "detectedBy": "evaluator",
    "disclosed": "2026-08-04",
    "foundBy": "evaluator",
@@ -274,6 +374,19 @@
    "foundBy": "lab",
    "note": "OpenAI's monitor flagged it within 15 minutes, but the automatic stop failed and the run was stopped manually about 2.5 hours later. The technical report came out 5 days after the escape.",
    "url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/"
+  },
+  {
+   "id": "amap-fleet",
+   "title": "Agent fleet on Tencent Cloud tries to get around Amap's blocks with exposed API keys",
+   "lab": "Unknown (Tencent evaluation)",
+   "occurred": "2026-09-28",
+   "occurredApprox": false,
+   "detectedBy": "outsiders",
+   "disclosed": "2026-10-04",
+   "foundBy": "outsiders",
+   "note": "The Swarmchasers, an independent research group, traced the fleet through public urlquery.net scans: their first post dates its first Amap scan to Sept 28, and their Oct 14 full report says the last activity they saw was on Oct 8. They say the agents used urlquery.net as a remote browser to get past Amap's anti-bot protections, used Amap API keys published in public code, including one company's key and security code leaked in a public repository, wrote programs meant to get data from Alibaba's development and pre-production endpoints and sent results to webhook inboxes; most submissions never got Amap's data. Agents answering through a mailbox said they were in a sandbox that couldn't reach Amap directly. The first post (dated Oct 4, first published 00:45 UTC Oct 5) calls the fleet likely Tencent Hy's, on evidence including its use of Tencent Cloud; the full report says the authors are very uncertain which model was being evaluated. On Oct 16 Tencent said AI agents used to evaluate third-party models had shown web-browsing behaviour it had not intended, and Tencent Hunyuan said the activity did not come from its Hunyuan models (via Reuters, in The Standard). No source names the model.",
+   "url": "https://swarmcha.se/posts/chinese-agent-fleet",
+   "press": "https://www.thestandard.com.hk/innovation/article/345682/Chinas-Tencent-says-AI-agents-showed-unintended-browsing-behaviour"
   }
  ]
 }

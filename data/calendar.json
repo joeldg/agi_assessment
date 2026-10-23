@@ -10,6 +10,16 @@
    "url": "https://www.nextgov.com/acquisition/2026/09/google-extends-gemini-onegov-deal-november/416320/"
   },
   {
+   "date": "2026-10-01",
+   "kind": "models",
+   "title": "OpenAI resumed frontier RL training and internal inference on Oct 1, \"11 days after our pause began\", and says frontier training now runs with no internet access (OpenAI, post of Oct 23)",
+   "hyp": "B",
+   "certainty": "fixed",
+   "why": "OpenAI's \"11 days\" puts the start of the pause at Sept 20, the day of the DNS incident; press reports at the time dated it Sept 25.",
+   "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+   "short": "OpenAI resumed frontier training and internal inference (disclosed Oct 23)"
+  },
+  {
    "date": "2026-10-05",
    "kind": "policy",
    "title": "New York City Council Committee of the Whole hearing: Anthropic, OpenAI, Google and Meta testify under oath on AI risks and the Council's proposed bills; SpaceXAI was subpoenaed on Sept 28 after it did not respond",
@@ -45,6 +55,16 @@
    "url": "https://theedgemalaysia.com/node/820297"
   },
   {
+   "date": "2026-10-14",
+   "kind": "policy",
+   "title": "The FTC sent civil investigative demands to Anthropic and OpenAI (an FTC spokesperson, via CBS News; CBS dates them Wednesday, Oct 14), seeking documents on safety incidents, privacy policies and safeguards (Axios, via CBS News)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "Compulsory process is a forced-disclosure channel for agent incidents.",
+   "url": "https://www.cbsnews.com/news/ftc-subpoenas-anthropic-openai-consumer-protection/",
+   "short": "FTC sends civil investigative demands to Anthropic and OpenAI"
+  },
+  {
    "date": "2026-10-15",
    "kind": "industry",
    "title": "TSMC's third-quarter 2026 earnings conference (14:00 Taiwan time, late Oct 14 Pacific)",
@@ -55,6 +75,16 @@
    "short": "TSMC reports third-quarter 2026 results"
   },
   {
+   "date": "2026-10-26",
+   "kind": "industry",
+   "title": "Anthropic plans to file its IPO documents publicly with the SEC on Oct 26 (a person familiar, via IFR); Reuters reported a registration-statement filing as early as the end of October (people familiar, via Reuters, read on Asia Business Daily)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "A public S-1 would be the first forced disclosure of Anthropic's figures and risk factors, and it would resolve our forecast anthropic-public-s1-by-nov15.",
+   "url": "https://www.ifre.com/equities/2499407/anthropic-pushes-ahead-with-mid-november-ipo",
+   "short": "Anthropic's reported public IPO filing with the SEC (a person familiar, via IFR)"
+  },
+  {
    "date": "2026-10-28",
    "kind": "industry",
    "title": "Microsoft reports fiscal 2027 first-quarter results (July–September), including capital spending, after the market close; webcast 2:30 p.m. Pacific",
@@ -63,6 +93,16 @@
    "why": "Microsoft's capital spending is one of the four hyperscaler inputs to our money gauge.",
    "url": "https://www.microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1",
    "short": "Microsoft reports July–September results, including capital spending"
+  },
+  {
+   "date": "2026-10-29",
+   "kind": "industry",
+   "title": "Amazon reports third-quarter 2026 results, including capital spending; conference call 2:00 p.m. Pacific",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Amazon's capital spending is one of the four hyperscaler inputs to our money gauge and to our forecast big4-q3-capex-600b-ttm.",
+   "url": "https://ir.aboutamazon.com/events/event-details/2026/Q3-2026-Amazoncom-Inc-Earnings-Conference-Call/default.aspx",
+   "short": "Amazon reports July–September results, including capital spending"
   },
   {
    "date": "2026-10-31",
@@ -119,11 +159,12 @@
   {
    "date": "2026-11-09",
    "kind": "industry",
-   "title": "Anthropic could start formal IPO marketing as soon as this week, putting it in line to begin trading before Thanksgiving, Nov 26 (Bloomberg, Oct 1)",
+   "title": "Anthropic's IPO roadshow is reported for the week of Nov 9: Bloomberg (Oct 1) said formal marketing could start as soon as that week, putting trading before Thanksgiving, Nov 26; Reuters (Oct 22, via Asia Business Daily) reported Nov 9 or that week, and IFR a Nov 9 launch with pricing the following week (people familiar in each)",
    "hyp": "A",
    "certainty": "approximate",
    "why": "Public-company disclosure rules become a forced-disclosure channel.",
-   "url": "https://theedgemalaysia.com/node/820297"
+   "url": "https://theedgemalaysia.com/node/820297",
+   "short": "Anthropic's reported IPO roadshow start; pricing reported for the following week"
   },
   {
    "date": "2026-11-15",
@@ -140,6 +181,15 @@
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "policy",
+   "title": "Comments due on China's proposal to add 40 technologies, 23 of them AI (large models, agents, computing clusters, information processing), to its Catalogue of Technologies Prohibited or Restricted from Export (MOFCOM and MOST Announcement No. 48 of 2026)",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_0a31a3c9ac404f7a9b0e917ce3412997.html",
+   "short": "Comments due on China's proposed export controls on 23 AI technologies"
   },
   {
    "date": "2026-11-16",
@@ -173,6 +223,25 @@
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-12-07",
+   "kind": "policy",
+   "title": "Comments due on Treasury's proposed Outbound Investment Security Program rule under the COINS Act, which renames AI systems \"super intelligence systems\" and would make developing any SI system a prohibited technology for US-person investment in covered foreign persons (Docket TREAS-DO-2026-0595; Federal Register publication Oct 26)",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "why": "Treasury drops compute thresholds, saying \"no single measure, benchmark, or threshold is currently sufficient to distinguish advanced models\".",
+   "url": "https://www.federalregister.gov/d/2026-21786",
+   "short": "Comments due on Treasury's proposed outbound-investment rule covering \"super intelligence systems\""
+  },
+  {
+   "date": "2026-12-13",
+   "kind": "alarm",
+   "title": "Alarm condition W6 is met unless OpenAI's post-Astra model is released or its capabilities are published first (90 days of internal use from Sept 8, skipping OpenAI's pause from Sept 25 to Oct 1; two other readings are flagged for the owner)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "url": "https://hiddenagi.com/alarm.html",
+   "short": "W6 is met unless OpenAI's post-Astra model is released or its capabilities published"
   },
   {
    "date": "2026-12-31",
@@ -277,11 +346,6 @@
  ],
  "undated": [
   {
-   "kind": "models",
-   "title": "OpenAI resumes training after the Sept 25 pause",
-   "hyp": "B"
-  },
-  {
    "kind": "research",
    "title": "OpenAI's Navier–Stokes proof: journal submission or independent verification",
    "hyp": "B"
@@ -293,7 +357,7 @@
   },
   {
    "kind": "policy",
-   "title": "FTC civil investigative demands to frontier AI companies, reported to include OpenAI and Anthropic and possibly METR (the FTC confirmed its probe on Sept 30; a senior FTC official told Semafor on Oct 8 the agency is close to sending them)",
+   "title": "FTC subpoenas to third-party organizations in its AI safety-incidents probe, which it \"will also issue … at a later date\" (a person familiar, via Axios, via CBS News); earlier reports named METR as a possible target",
    "hyp": "C"
   },
   {
@@ -305,6 +369,11 @@
    "kind": "policy",
    "title": "New Mexico's planned Frontier Artificial Intelligence Safety and Accountability Act (24-hour loss-of-control incident reporting) is introduced in the January 2027 legislative session",
    "hyp": "C"
+  },
+  {
+   "kind": "policy",
+   "title": "D.C. Circuit rules on Anthropic's petition for panel rehearing or rehearing en banc of its decision on the Pentagon's supply-chain-risk designation (Anthropic PBC v. U.S. Department of War, No. 26-1049)",
+   "hyp": "Dopen"
   }
  ]
 }
