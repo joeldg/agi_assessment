@@ -116,18 +116,29 @@ class Git:
             return None
         return p.stdout.decode("utf-8", "replace") if p.returncode == 0 else None
 
-    def show(self, rel):
-        """The file's text at the base commit, or None if the base lacks it."""
-        return self._run("show", "%s:%s" % (self.base, rel)) if self.ok else None
+    def show(self, rel, rev=None):
+        """The file's text at the base commit (or at rev), or None if that commit lacks it."""
+        return self._run("show", "%s:%s" % (rev or self.base, rel)) if self.ok else None
 
-    def show_json(self, rel):
-        text = self.show(rel)
+    def show_json(self, rel, rev=None):
+        text = self.show(rel, rev)
         if text is None:
             return None
         try:
             return json.loads(text)
         except ValueError:
             return None
+
+    def published(self, rel, entry, limit=60):
+        """The commit that published `entry` in the JSON list `rel`: the oldest of the unbroken line of commits
+        up to the base whose `rel` holds it unchanged. None if the base itself lacks it."""
+        key, found = canon(entry), None
+        for rev in self.lines("log", "-n", str(limit), "--format=%H", self.base, "--", rel) if self.ok else []:
+            doc = self.show_json(rel, rev)
+            if not isinstance(doc, list) or key not in {canon(x) for x in doc}:
+                break
+            found = rev
+        return found
 
     def lines(self, *args):
         out = self._run(*args)
@@ -488,15 +499,14 @@ def check_derived(f, latest, run, data, git):
     if not isinstance(run, dict) or not isinstance(run.get("gauges"), dict):
         return
     p = "runs[%d].gauges" % latest
-    run_unchanged = False
-    if git.ok:
-        head_runs = git.show_json("data/runs.json")
-        run_unchanged = isinstance(head_runs, list) and canon(run) in {canon(r) for r in head_runs}
+    published = git.published("data/runs.json", run) if git.ok else None
 
     def report(msg, source):
         # The weekly job refreshes incidents and money after the day's run was published: then the
-        # next daily run carries the new number, so a mismatch is only a warning.
-        if run_unchanged and git.show(source) != _read(source):
+        # next daily run carries the new number, so a mismatch is only a warning. Compare with the source
+        # as of the commit that published the run, not the base, which may already hold the weekly's commit.
+        # A run that is new or edited in the working tree has no such commit, so its mismatch is an error.
+        if published and git.show(source, published) != _read(source):
             f.warn(msg + " (%s changed after this run was published; the next run should use the new value)" % source)
         else:
             f.err(msg)
