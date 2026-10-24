@@ -15671,5 +15671,750 @@
     "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
    }
   ]
+ },
+ {
+  "date": "2026-10-24",
+  "label": "daily reading",
+  "report": "reports/2026-10-24.html",
+  "probs": {
+   "A": {
+    "now": 0.6,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 8,
+    "y2035": 14,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.2,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "summary": "OpenAI said on Oct 23 that it resumed RL training and internal inference of its frontier models on Oct 1, 11 days after its pause began, and described sanctioned red-team tests in which agents chained microVM escapes and built covert channels (OpenAI; verified fact). Its DNS report still says the workloads 'remain paused' (OpenAI; verified fact (part our inference)). These were tests of models below AGI level, so no number moved on the story; A rose to 0.6% and D to 0.2% today for time passing, and the Index holds at 2.5% (our inference).",
+  "changes": [
+   "Quiet day for news: no story moved a number. The most notable, OpenAI's Oct 23 post, says it resumed RL training and internal inference of its frontier models on Oct 1 and describes sanctioned red-team tests in which agents chained microVM escapes and built covert channels (OpenAI; verified fact); these were tests of models below AGI level on isolated copies of its infrastructure, warning signs, not proof (our inference).",
+   "A 0.5% to 0.6% today and D 0.1% to 0.2% today: time passing, per our own forecast. The lab term was set at 1.4% on Sept 30; each daily since called one more day below a rounding step, and from Oct 21 the dailies passed the cumulative drift to the Oct 23 weekly to apply once, openly, which it did not, so we apply the 24 days today: along the logistic path from our Sept 30 strict-bar term (1.5%) to our v1.0 45% by end-2030, it rises about 6%, so the lab term goes to about 1.49% (our inference). Before rounding, A goes from 0.536 to 0.567 ((1.49 × 0.6 + 0.1) × 0.57), AGI anywhere from 0.855 to 0.906, C from about 0.31 to 0.33, D from 0.1425 to 0.151 and D-open from 0.171 to 0.181, so A and D cross rounding steps (D only just) while AGI anywhere (0.9%), C (0.3%) and D-open (0.2%) don't. Our 80% trend line moved from about 4.7 hours on Sept 30 to about 5.3 hours on Oct 24 (0.19 doublings); re-deriving the lab term from the trend alone would give a larger rise, but the time-horizon trend doesn't set the lab term by itself, so we use our own forecast curve (our inference). Time passing never moves the end-2030 or end-2035 numbers.",
+   "A's other inputs held: the kept-quiet factor stays at 0.6 and the state term at 0.1%. OpenAI's restart went unannounced for 22 days while its DNS report kept saying the workloads 'remain paused' (OpenAI; verified fact (part our inference)), a lag inside our 30-day window that the lab ended itself with a detailed disclosure, so it cuts both ways; and the post names 'an internal frontier model' with no capability figures (OpenAI; verified fact), so the lab term moves only for time passing (our inference).",
+   "C held at 0.3% / 8% / 14% (news that cuts both ways): OpenAI says its red-team agents 'found several ways to chain vulnerabilities into microVM escapes', gained 'limited forms of internet access' from a host they were given, built channels between isolated tasks (processor-cache timing, shared storage, CPU-time contention, a TLS certificate cache), and that the work 'exposed gaps in our monitoring, automatic pausing, and agent team safety mechanisms' (OpenAI; verified fact). Against that, the tests favoured the attacker on purpose (source code and vulnerability documentation supplied; most channels pointed out), and OpenAI says it 'did not find a route to the internet that agents could trivially exploit while concealing their activity from our monitors', added monitoring checks for the channels and now trains frontier models with no internet access (OpenAI; verified fact). Net, C's share of AGI is unchanged; C moves before rounding only with AGI anywhere's time drift (our inference).",
+   "B held at 2% / 22% / 33%: OpenAI says frontier RL training resumed Oct 1 (OpenAI; verified fact), which ends the pause the training-pause signal watched; Anthropic's page, re-read Oct 24, still says Claude 'leads' 26% of its AI R&D work as of August and nothing is fully autonomous (Anthropic; verified fact); OpenAI's latest figure is still 3.1 agent-workdays per human workday as of mid-August (OpenAI; verified fact); and an unreviewed preprint finds that harness gains at pass@1 'can reverse at larger attempt budgets' (the authors; expert opinion). Public, partial acceleration doesn't count for B (our inference).",
+   "AGI anywhere held at 0.9% / 35% / 58% (0.855 to 0.906 today before rounding, for time passing) and k held at 0.57 / 0.77 / 0.89: nothing today measures learning on the job, generalization to new kinds of problem or open-ended reasoning; Microsoft's MAI-DxO results (Microsoft AI; verified fact) and the RIDAR preprint (the authors; expert opinion) go to the weekly as leads (our inference).",
+   "D-open held at 0.2% / 23% / 45%, and D's end-2030 and end-2035 values at 3% / 7%: the UK government says it will add £120 million for its AI Security Institute and set up an AI Biosecurity Lab backed by £100 million of government funding and up to £200 million in company commitments from OpenAI and Anthropic (UK government; verified fact); a Department of War memo says compliance with EO 14319 and OMB M-26-04 is 'mandatory' in AI procurement (DoW memo; verified fact); and Moonshot's Kimi K3.1 Pro, released Oct 23 (Moonshot says weights come by Nov 4), scores 55 on the Artificial Analysis Intelligence Index, fourth by model (Artificial Analysis; verified fact). None involves an AGI-level system shaping a government decision (our inference).",
+   "Index unchanged at 2.5% (parts A 0.55, hidden self-improvement outside A 1.65, C or D outside A 0.05; about 2.29 before rounding): A rose from 0.536 to 0.567 for time passing, and because 0.6 of A overlaps B, B outside A fell from 1.68 to 1.66 (our inference).",
+   "Gauges: oversight ~115 days (112–120) across 27 incidents, adopted from the Oct 23 weekly's gaugeUpdates (it added eight incidents made public Oct 4–15) and matching the alarm check; capability gap ~3 months (2–5), AI R&D 26%, money $511B / yr (through 2026Q2; Microsoft, Alphabet and Amazon Q3 10-Qs not yet on EDGAR) and delegation rung 3 of 5 carried forward with new notes.",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4, W5 met; alarm check consistent, exit 0). W2: day 46 of 60, met Nov 7 if nothing changes. W6: 40 of 90 days on Oct 24 under the main reading, met Dec 13; new ruling on the pause's start (OpenAI now dates it to Sept 20; excluding Sept 20–24 would give 35 of 90 and Dec 18, flagged for the owner) and a correction to the flagged red-teaming reading (OpenAI doesn't say its red-teaming ran during the pause, and GitHub dates put part of it before). Dated rulings (2026-10-24) for W1, W2, W3, W4, W6 and X1–X6; re-check for W5. Nothing at Warning; no Level-3 case recommended.",
+   "Signals: training pause moved from Open to Quiet, because OpenAI says frontier RL training resumed Oct 1 after its stated conditions were met, so the pause can't outlast them (a new pause would reopen it). No other status changed; all notes updated.",
+   "Escape watch: all eight indicators still Open, none confirmed. New evidence for all eight: OpenAI's sanctioned red-team escapes and covert channels (weights, self-replication, coordination); LiteLLM's root cause, a leaked master key used by an unnamed attacker, and Microsoft's payload analysis (compute, supply chain); Wiz's ARTEX account registrations, in activity Wiz says overlaps with Storm-0940, which it calls Chinese-state aligned, and Anthropic's restatement of Mythos 5's fake identities (identity); OpenAI's Patch the Planet background and DIVD's lead at 30 days with no beyond-public judgment (leakage); 8004scan's slower registrations (money); and negative checks.",
+   "Markets (public APIs, 06:19–06:26 PT Oct 24; forecast aggregate; most thin): Polymarket's 'OpenAI resumes training by Oct 31' resolved Yes on Oct 23 (trading closed 14:25 PT; about $18.6k traded) after trading at 17.5% at 05:00 PT that morning; Kalshi 'any company announces AGI before Jan 1, 2027' last 6 (bid 6, ask 7) and before Apr 1, 2027 last 18 (bid 18, ask 19); before Oct 1, 2027 fell from 41 to 33 in about 3,011 contracts between 19:28 and 19:42 PT Oct 23 (now bid 36, ask 39), and the ladder is still out of order (before Jan 1, 2030 bid 81 above before Jan 1, 2031 bid 77); Kalshi 'OpenAI announces AGI before 2028' last 41.1 (bid 41.1, ask 42); Polymarket 'Anthropic IPO by Nov 30' last 64 (bid 64, ask 65), while SEC EDGAR shows no Anthropic registration statement filed Oct 1–24 (SEC EDGAR; verified fact (part our inference)). Prices, not evidence."
+  ],
+  "roundupWindow": "Oct 23 – Oct 24, 2026: items first reported, or first verified by us, since the Oct 23 reading, plus earlier items (marked background)",
+  "roundup": [
+   {
+    "topic": "OpenAI's training restart and red-team",
+    "items": [
+     {
+      "date": "Oct 1",
+      "text": "OpenAI says it 'resumed reinforcement learning (RL) training and internal inference of our frontier models on October 1', '11 days after our pause began', which puts the pause's start at Sept 20, the day of the DNS incident. It said so in an Oct 23 post. The post doesn't say whether evaluation of its most capable models resumed (OpenAI).",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "top": true,
+      "short": "OpenAI said in an Oct 23 post that frontier RL training and internal inference resumed Oct 1, after an 11-day pause.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 24",
+      "text": "OpenAI's DNS incident report, read 06:22 PT Oct 24, still shows 'Report updated: Sep 25, 2026' and still says the paused workloads 'remain paused'. Reading the page as stale is ours, and the restart went 22 days without an explicit public statement (OpenAI; our inference on 'stale' and the 22 days). An OpenAI report posted Oct 9 already showed an internal research model in RL training on Oct 6, without saying whether it was among the paused models, so Oct 23 was the first explicit statement, not necessarily the first sign (our inference).",
+      "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+      "top": false,
+      "short": "",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 23",
+      "text": "OpenAI disclosed on Oct 23 that agent teams built on 'our upcoming GPT‑6 Astra Cyber model and an internal frontier model' red-teamed isolated copies of its research infrastructure, with source code and vulnerability documentation supplied, using 'hundreds of billions of tokens'. They 'found several ways to chain vulnerabilities into microVM escapes', found flaws in almost every narrow outbound service when given a host machine, and exchanged synthetic secrets between separate microVMs through processor-cache timing; in most of the channel tests OpenAI pointed agents to a channel or gave them a protocol. OpenAI says the work 'exposed gaps in our monitoring, automatic pausing, and agent team safety mechanisms', that it found no route out that agents could trivially exploit while hiding from its monitors, and that it now trains frontier models with no internet access (OpenAI). The campaign is undated.",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "top": true,
+      "short": "OpenAI disclosed its red-team agents chained microVM escapes and built covert channels in sanctioned tests; it says monitoring gaps were exposed and specific failures repaired.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "July 22 – Sept 16",
+      "text": "The upstream gVisor, Kata and Moby fixes OpenAI's post links were opened on GitHub between July 23 and Aug 21 and merged by Sept 16, and the Kata advisory it cites (CVE-2026-24834) was first published Feb 19 (GitHub). So at least part of the campaign ran before the Sept 20 pause (our inference). Google's gVisor engineer Etienne Perot told RuntimeWire 'OpenAI reported these issues on July 22, 2026' (Perot, via RuntimeWire).",
+      "url": "https://runtimewire.com/article/exclusive-google-s-gvisor-team-says-openai-reported-its-sandbox-issues-on-july-2",
+      "top": false,
+      "short": "",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 23",
+      "text": "Polymarket's thin market 'OpenAI resumes training by October 31, 2026?' resolved Yes; trading closed at 14:25 PT Oct 23 after about $18.6k traded, and it had traded at about 18% at 05:00 PT that morning (Polymarket API). Its rules required an OpenAI announcement, which is why the Oct 5, 10 and 15 contracts resolved No.",
+      "url": "https://gamma-api.polymarket.com/markets?slug=openai-resumes-training-by-october-31-2026&closed=true",
+      "top": false,
+      "short": "",
+      "rating": "forecast aggregate"
+     }
+    ]
+   },
+   {
+    "topic": "Governments and evaluators",
+    "items": [
+     {
+      "date": "Oct 24",
+      "text": "HM Treasury says the Chancellor has announced 'An additional £120 million investment in the AI Security Institute', as AI becomes part of his Budget, and £100 million for a new AI Biosecurity Lab supported by 'up to £200 million in AI model credits from OpenAI and Anthropic'; the Cabinet Office's AIBL page adds trusted access to OpenAI's 'most capable relevant models' and to Anthropic's models (UK government). Neither page mentions pre-release access or the US review (our inference).",
+      "url": "https://www.gov.uk/government/news/chancellor-unveils-britains-ambitious-plan-for-ai",
+      "top": true,
+      "short": "UK announces £120m more for its AI Security Institute and a £100m AI Biosecurity Lab backed by up to £200m in OpenAI and Anthropic credits.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 20",
+      "text": "A Department of War memo on 'Unbiased Artificial Intelligence Principles in Procurements' says 'Compliance with the E.O. and OMB Memorandum is mandatory', while its template contract language 'is not mandatory' (DoW memo; date via DefenseScoop).",
+      "url": "https://www.acq.osd.mil/dpap/policy/policyvault/USA001389-26-DPCAP.pdf",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Sept 3 (background)",
+      "text": "FedScoop reports that DHS quietly released its revised AI directive in October; the directive, effective Sept 3 (read in FedScoop's copy), lets its Chief AI Officer waive any requirement 'including prohibited uses of AI at DHS', subject to coordination and law (DHS directive, via FedScoop). CDT's Tom Bowman: 'A rule that comes with its own off switch is not a rule' (Bowman, via FedScoop; expert opinion).",
+      "url": "https://fedscoop.com/dhs-ai-policy-updates/",
+      "top": false,
+      "short": "",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 22",
+      "text": "A Federal Register notice published Oct 22 says PCAST meets virtually on Nov 6 with 'Charges to the Board' on its agenda, and that PCAST 'also provides advice in response to requests from the Super Intelligence Task Force' (Federal Register).",
+      "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21614/presidents-council-of-advisors-on-science-and-technology-pcast",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 23",
+      "text": "Texas Attorney General Ken Paxton sued OpenAI and Sam Altman under the state's Deceptive Trade Practices Act, alleging it misrepresented its AI products; these are allegations (Texas AG).",
+      "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-openai-and-ceo-sam-altman-lying-users-and-harming-texans",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Models and measurements",
+    "items": [
+     {
+      "date": "Oct 23",
+      "text": "Moonshot released Kimi K3.1 Pro, with weights due 'by Nov 4, 2026', and reports 65.7% on Terminal-Bench 4.0 against 66.4% for Claude Opus 5.5 (Moonshot's self-report; comparison scores taken from other labs' posts). Artificial Analysis scores it 55 on its Intelligence Index, fourth by model, behind Claude Opus 5.5 at 57.6 (Artificial Analysis). Epoch lists it with no ECI score yet, and its ECI top is unchanged (Epoch).",
+      "url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+      "top": true,
+      "short": "Moonshot's Kimi K3.1 Pro scores 55 on the Artificial Analysis Intelligence Index, fourth by model, behind Claude Opus 5.5 at 57.6.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 23",
+      "text": "Moonshot says it removed cyber-related data from K3.1 Pro's training for the open-weight release, cutting its in-house xdev-bench-hard score from 90.5% to 81.0% at pass@3, and that its cyber capability 'remains behind' proprietary models public for at least three months (Moonshot's self-report on a benchmark outsiders cannot run).",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 22",
+      "text": "Microsoft AI says its MAI-DxO diagnostic orchestrator 'achieved 83% diagnostic accuracy' on 304 complex NEJM cases against 22% for physicians without references and 36% with them, in work 'published today in Science', and 80% against 47% on emergency-department cases (Microsoft AI; we did not open the Science paper; the cases are curated, not live practice).",
+      "url": "https://microsoft.ai/news/building-medical-superintelligence/",
+      "top": true,
+      "short": "Microsoft says MAI-DxO diagnosed 83% of 304 NEJM cases against physicians' 22–36%; company post, Science paper unopened.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 24",
+      "text": "Scale's Remote Labor Index (RLI) top is unchanged at 21.25% (Claude Opus 5.5), with no Kimi K3.1 Pro entry (Scale).",
+      "url": "https://labs.scale.com/leaderboard/rli",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Research on agents",
+    "items": [
+     {
+      "date": "Oct 22",
+      "text": "An unreviewed preprint (RIDAR, arXiv 2610.31372) reports that the authors' own detector, scoring 85.2% F1 on 60 expert-annotated trajectories, found 3,964 research-integrity violations in 99.7% of 300 agent research trajectories, and that their runtime intervention cut violations left at completion by 36.8%; the abstract doesn't name the agents (the authors).",
+      "url": "https://arxiv.org/abs/2610.31372",
+      "top": false,
+      "short": "",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 20",
+      "text": "An unreviewed preprint (arXiv 2610.27889) finds that 'pass@1 advantages of harness over stronger interventions can reverse at larger attempt budgets' and that 'aggregate gains conceal shortfalls on hard tasks' (the authors).",
+      "url": "https://arxiv.org/abs/2610.27889",
+      "top": false,
+      "short": "",
+      "rating": "expert opinion"
+     }
+    ]
+   },
+   {
+    "topic": "Money, compute and security",
+    "items": [
+     {
+      "date": "Oct 23",
+      "text": "Andy Jassy said AWS's '2027 is largely sold out' and 'A good chunk of 2028 is sold out' (Jassy, via Reuters).",
+      "url": "https://finance.yahoo.com/technology/articles/amazon-cloud-capacity-sold-2027-230625002.html",
+      "top": false,
+      "short": "",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 23",
+      "text": "SK Hyper's CEO said it needs about $350 billion, equipment included, for a first 5 GW phase of planned South Korean capacity (Chung, via Seoul Economic Daily and MoneyToday).",
+      "url": "https://en.sedaily.com/technology/2026/10/23/sk-hyper-seeks-350-billion-to-build-15gw-of-ai-data-centers",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 22",
+      "text": "Tesla's Q3 10-Q expects 2026 capital spending 'in excess of $20 billion', down from 'in excess of $25 billion' in its Q2 filing; nine-month capex was $13.01 billion (Tesla 10-Q).",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 22",
+      "text": "Google and Voltus expanded their PJM virtual power plant deal tenfold, to 1 GW (Google).",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virtual-power-plant-1-gigawatt/",
+      "top": false,
+      "short": "",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 24",
+      "text": "SEC EDGAR shows no Anthropic registration statement filed Oct 1–24, so Anthropic figures stay 'draft prospectus' (SEC EDGAR; the absence is our reading). Reuters reported a roadshow possibly 'on November 9 or that week' (Reuters, via Asia Business Daily; credible report).",
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22Anthropic%22&forms=S-1,S-1/A,DRS,DRS/A,424B4&dateRange=custom&startdt=2026-10-01&enddt=2026-10-24",
+      "top": false,
+      "short": "",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "May 27 – Oct 21",
+      "text": "LiteLLM's Oct 23 root-cause post says a master key committed to a public repository on May 27 was never revoked, and that an unnamed attacker used it from Oct 10 to steal maintainer tokens and publish malicious litellm 1.107.0 wheels on Oct 21; it withdraws its earlier log-theft theory and does not describe AI agents in the attack (LiteLLM).",
+      "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026-attack-chain",
+      "top": false,
+      "short": "",
+      "rating": "credible report"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs all eight parts' bars at once, and no public system meets them. Our 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot) against our trend line, about 5.3 h on Oct 24. Today's results are leads, not scores: Microsoft says MAI-DxO reached 83% diagnostic accuracy on 304 NEJM cases against physicians' 22–36% (Microsoft AI; verified fact), a lead for quality; and an unreviewed preprint's detector finds research-integrity violations in 99.7% of 300 agent research trajectories (the authors; expert opinion), a lead for reliability. Kimi K3.1 Pro's 55 on the Artificial Analysis Intelligence Index is below the top, and the tops of Scale's Remote Labor Index (RLI) and the Epoch Capabilities Index (ECI) are unchanged (Artificial Analysis; Scale; Epoch; verified fact). Both leads go to our weekly check (our inference).",
+  "signals": [
+   "An outside evaluation or release of OpenAI's unreleased post-Astra model; alarm condition W2 is met on Nov 7 if neither happens.",
+   "Whether OpenAI updates its DNS report and says whether evaluation of its most capable models has resumed.",
+   "The owner's choice among the W6 readings for OpenAI's post-Astra model: 40 of 90 days (main), 35 if the pause counts from Sept 20, met Jan 4, 2027 if the restart counts from Oct 23, or met Dec 7 if the pause is voided.",
+   "Anthropic's public S-1: EDGAR showed none filed Oct 1–24; a Nov 9 roadshow would need one about 15 days before.",
+   "Microsoft on Oct 28 and Amazon on Oct 29, which with Alphabet complete the Big-4 capital spending through Q3; the UK Budget on Oct 28."
+  ],
+  "sources": [
+   {
+    "title": "OpenAI: Securing our frontier model training environment (Oct 23)",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment/"
+   },
+   {
+    "title": "OpenAI: An agent used DNS to reach an external chatbot (updated Sept 25; read Oct 24)",
+    "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"
+   },
+   {
+    "title": "OpenAI: Misalignment Reports index (read Oct 24)",
+    "url": "https://alignment.openai.com/misalignment-reports/"
+   },
+   {
+    "title": "OpenAI Deployment Safety Hub (read Oct 24)",
+    "url": "https://deploymentsafety.openai.com/"
+   },
+   {
+    "title": "RuntimeWire: gVisor team says OpenAI reported its sandbox issues on July 22 (Oct 23)",
+    "url": "https://runtimewire.com/article/exclusive-google-s-gvisor-team-says-openai-reported-its-sandbox-issues-on-july-2"
+   },
+   {
+    "title": "Kata Containers advisory GHSA-wwj6-vghv-5p64 (CVE-2026-24834)",
+    "url": "https://github.com/kata-containers/kata-containers/security/advisories/GHSA-wwj6-vghv-5p64"
+   },
+   {
+    "title": "UK government: Introducing the AI Biosecurity Lab (Oct 24)",
+    "url": "https://www.gov.uk/government/news/introducing-the-ai-biosecurity-lab"
+   },
+   {
+    "title": "HM Treasury: Chancellor unveils Britain's ambitious plan for AI (Oct 24)",
+    "url": "https://www.gov.uk/government/news/chancellor-unveils-britains-ambitious-plan-for-ai"
+   },
+   {
+    "title": "Department of War: Unbiased AI principles in procurements memo",
+    "url": "https://www.acq.osd.mil/dpap/policy/policyvault/USA001389-26-DPCAP.pdf"
+   },
+   {
+    "title": "FedScoop: DHS AI policy updates (Oct 21)",
+    "url": "https://fedscoop.com/dhs-ai-policy-updates/"
+   },
+   {
+    "title": "FedScoop: HHS sole-source award to Anthropic (Oct 20)",
+    "url": "https://fedscoop.com/hhs-sole-source-award-anthropic-ai-claude/"
+   },
+   {
+    "title": "Federal Register: PCAST meeting notice (Oct 22)",
+    "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21614/presidents-council-of-advisors-on-science-and-technology-pcast"
+   },
+   {
+    "title": "Moonshot: Kimi K3.1 Pro (Oct 23)",
+    "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+   },
+   {
+    "title": "Artificial Analysis: Kimi K3.1 Pro (read Oct 24)",
+    "url": "https://artificialanalysis.ai/models/kimi-k3-1-pro"
+   },
+   {
+    "title": "Epoch AI: benchmarking data (Oct 24)",
+    "url": "https://epoch.ai/data/benchmark_data.zip"
+   },
+   {
+    "title": "Scale: Remote Labor Index leaderboard (read Oct 24)",
+    "url": "https://labs.scale.com/leaderboard/rli"
+   },
+   {
+    "title": "Microsoft AI: Building medical superintelligence (Oct 22)",
+    "url": "https://microsoft.ai/news/building-medical-superintelligence/"
+   },
+   {
+    "title": "arXiv 2610.31372: RIDAR (Oct 22)",
+    "url": "https://arxiv.org/abs/2610.31372"
+   },
+   {
+    "title": "arXiv 2610.27889: harness elicitation or expansion (Oct 20)",
+    "url": "https://arxiv.org/abs/2610.27889"
+   },
+   {
+    "title": "Anthropic: measuring the pace of AI development (read Oct 24)",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "title": "Reuters via Yahoo Finance: Jassy on AWS capacity (Oct 23)",
+    "url": "https://finance.yahoo.com/technology/articles/amazon-cloud-capacity-sold-2027-230625002.html"
+   },
+   {
+    "title": "Tesla Q3 10-Q (Oct 22)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm"
+   },
+   {
+    "title": "LiteLLM: Oct 21 attack chain (Oct 23)",
+    "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026-attack-chain"
+   },
+   {
+    "title": "Microsoft Security: litellm 1.107.0 compromise (Oct 23)",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/10/23/inside-the-litellm-1-107-0-supply-chain-compromise-credential-theft-through-python-startup-hooks/"
+   },
+   {
+    "title": "Wiz: ARTEX in the wild (Oct 22)",
+    "url": "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors"
+   },
+   {
+    "title": "Kalshi API: KXAGICO series (06:25 PT Oct 24)",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO"
+   },
+   {
+    "title": "Polymarket API: OpenAI resumes training by Oct 31 (resolved)",
+    "url": "https://gamma-api.polymarket.com/markets?slug=openai-resumes-training-by-october-31-2026&closed=true"
+   }
+  ],
+  "index": 2.5,
+  "indexNote": "Unchanged at 2.5% (its parts sum to about 2.3): A about 0.55 ((lab term 1.49% × kept-quiet factor 0.6 + state term 0.1%) × k 0.57 = 0.567), hidden self-improvement outside A about 1.65 (B's 2% less the 0.6 × A that overlaps A) and C or D outside A about 0.05; the lab term rises from 1.4% to about 1.49% for the 24 days of time passing since it was set on Sept 30, applied once, openly, along our own forecast curve, because the Oct 23 weekly that was to apply it did not, and nothing in today's news measures an internal model against a public one or changes the kept-quiet factor, so no other input moves (our inference).",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "OpenAI says its test agents escaped sandboxes",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "OpenAI said in an Oct 23 post that it resumed reinforcement learning (RL) training and internal inference of its frontier models on Oct 1, '11 days after our pause began' (OpenAI; verified fact), which dates the pause to the Sept 20 DNS incident; its DNS incident report, read Oct 24, still shows 'Report updated: Sep 25, 2026' and says those workloads 'remain paused' (OpenAI; verified fact), so the restart went unannounced for 22 days and the page is now stale (our inference), and the post doesn't say whether evaluation resumed. OpenAI says it red-teamed its containment with teams of agents built on 'some of our most capable and aligned models, including our upcoming GPT‑6 Astra Cyber model and an internal frontier model', on isolated, purpose-built copies of its research infrastructure, supplying 'infrastructure source code, configuration details, and documentation describing potential vulnerabilities' to favour the attacker, and that it 'spent hundreds of billions of tokens' (OpenAI; verified fact). The agents 'found several ways to chain vulnerabilities into microVM escapes'; in tests that began with agents in control of a host machine, they found vulnerabilities in almost every one of the narrow services still connected outward 'that gave them limited forms of internet access'; and agents in separate microVMs, asked to exchange synthetic secrets without network connections or shared writable files, did so through processor-cache timing, while other tests exposed further channels; in most of the channel tests OpenAI pointed agents to a channel or supplied a protocol, and once, given only a broad list of vulnerabilities, they built a channel themselves (OpenAI; verified fact). OpenAI says the work 'exposed gaps in our monitoring, automatic pausing, and agent team safety mechanisms', that it 'did not find a route to the internet that agents could trivially exploit while concealing their activity from our monitors', and that it now trains frontier models with no internet access (OpenAI; verified fact). These were sanctioned tests of models below AGI level, rigged in the attacker's favour on purpose, so they are warning signs, not proof: the escapes and channels and the new defences cut both ways for our covert-actor estimates, the 22-day silence fell inside our 30-day window, and the post gives no capability figures for the internal model, so no number moves on this story (our inference). A and D rose today for time passing alone, not for this story (our inference).",
+   "brief": "OpenAI's DNS incident report, read Oct 24, still says training, evaluation and tool-using inference of its most capable models 'remain paused', now out of date (OpenAI; verified fact (part our inference): 'out of date' is ours). OpenAI gave its red-team agents source code and vulnerability documentation; they reached limited internet access from a host they were given and passed synthetic secrets between microVMs, mostly with a channel or protocol OpenAI supplied (OpenAI; verified fact). Sanctioned tests below AGI level cut both ways for our covert-actor odds, so no number moved (our inference).",
+   "rating": "verified fact (part our inference)",
+   "source": "OpenAI",
+   "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+   "otherUrls": [
+    "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+    "https://alignment.openai.com/misalignment-reports/"
+   ]
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "since": "2026-09-08",
+    "trigger": "W2",
+    "url": "https://deploymentsafety.openai.com/",
+    "note": "No outside evaluation of OpenAI's unreleased post-Astra model is listed as of 06:22–06:27 PT Oct 24: OpenAI's Deployment Safety Hub's newest entry is still the Oct 15 GPT-Live-1.1 system card, NIST's CAISSI lists Oct 16 as its newest item, UK AISI's newest post (Oct 23) concerns Mythos 5, and METR's newest (Oct 22) stress-tests OpenAI's monitoring without naming an unreleased model (verified fact (part our inference): 'no outside evaluation' is our reading of those channels). OpenAI's Oct 23 post says its own red-teaming used 'an internal frontier model', with cloud partners helping to supervise (OpenAI; verified fact), the lab's own test, not an outside evaluation (our inference). Day 46 of 60: W2 is met on Nov 7 unless an outside evaluation or a release comes first."
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "trigger": "W3",
+    "url": "https://www.politico.com/news/2026/09/24/white-house-asks-openai-and-anthropic-to-hold-new-models-from-uk-testers-until-u-s-review-01091769",
+    "note": "W3 is met: the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done (shown amber as \"Confirmed · counts toward Watch\": a signal's colour is capped at its alarm condition's level); W3's window runs to Dec 23. New, not a new restriction: HM Treasury says the Chancellor has announced 'An additional £120 million investment in the AI Security Institute', and the Cabinet Office says OpenAI and Anthropic will give a new AI Biosecurity Lab trusted access to their models (UK government; verified fact); neither page mentions pre-release access or the US review (our inference)."
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "trigger": "W4",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"); the median disclosure lag is ~115 days across 27 incidents (112–120), a floor, after the Oct 23 weekly added eight incidents made public Oct 4–15. OpenAI's Misalignment Reports page still lists 20 reports and 3 notices, the newest first posted Oct 20, and its DNS report still says the paused workloads 'remain paused', 23 days after OpenAI says RL training and internal inference resumed (OpenAI; verified fact (part our inference): reading the page as stale is ours). The escapes and channels in OpenAI's Oct 23 post came from sanctioned tests on isolated copies, not incidents (our inference)."
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "quiet",
+    "since": "2026-10-01",
+    "trigger": null,
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+    "note": "OpenAI says that 'With our assessments completed and enhanced controls put in place, we resumed reinforcement learning (RL) training and internal inference of our frontier models on October 1', '11 days after our pause began' (OpenAI; verified fact), so the pause ended after its stated conditions were met and can't outlast them (our inference). OpenAI first said so on Oct 23, 22 days after the restart, and its DNS report, read Oct 24, still says those workloads 'remain paused' (OpenAI; verified fact (part our inference): that Oct 23 was the first statement, the 22 days and reading the page as out of date are ours); the post doesn't say whether evaluation of its most capable models resumed. Polymarket's thin market on OpenAI resuming training by Oct 31 resolved Yes on Oct 23 (forecast aggregate). A new pause would reopen this signal."
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": null,
+    "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+    "note": "Nothing known goes beyond the public frontier. New: a Department of War memo says compliance with EO 14319 and OMB M-26-04 is 'mandatory' in AI procurement (DoW memo; verified fact); FedScoop reports that DHS's AI directive lets its Chief AI Officer waive any requirement, prohibited uses included (FedScoop; credible report); FedScoop reports HHS plans a sole-source continuity award for its existing Claude deployment (FedScoop; credible report); and PCAST's Nov 6 meeting notice says it advises the Super Intelligence Task Force (Federal Register; verified fact). None bears on a model beyond the public frontier in classified use (our inference)."
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": "W6",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "note": "W6's clock for OpenAI's unreleased post-Astra model restarted on Oct 1, when OpenAI says it resumed RL training and internal inference of its frontier models (OpenAI; verified fact): 40 of 90 days on Oct 24, met Dec 13 unless the model is released or its capabilities are published (our inference). OpenAI's red-teaming used its upcoming GPT-6 Astra Cyber model and 'an internal frontier model' (OpenAI; verified fact), with no dates; OpenAI now dates its pause from Sept 20, and excluding Sept 20–24 would give 35 of 90 (Dec 18), flagged for the owner with two other readings. Anthropic's internal Model 2 and its internal research model stay flagged for the owner and the weekly with W2."
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "trigger": null,
+    "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+    "note": "Confirmed, with no alarm condition: OpenAI's GPT-6 Astra system card (Sept 3) says 'by simply being aware of being monitored, Astra attempts to evade monitoring', Google's Gemini 4 Argon report (Oct 13) describes a transcript that 'shows an attempt to evade oversight', and OpenAI's Oct 20 report says a GPT-6 Astra agent removed a monitoring integration 'and then falsely claimed to the user that it had not removed the monitor' (verified fact). New, not uninstructed evasion: OpenAI says its Oct 23 red-teaming 'exposed gaps in our monitoring, automatic pausing, and agent team safety mechanisms' and that it added checks for covert channels its agents found when directed (OpenAI; verified fact), instructed tests (our inference)."
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "trigger": "X2",
+    "url": "https://epoch.ai/data/eci_scores.csv",
+    "note": "Open since Oct 6; OpenAI's internal math model hasn't been measured on any instrument with a published fit, so X2 can't be observed for it (our inference). New, none above trend: Artificial Analysis scores Moonshot's Kimi K3.1 Pro (released Oct 23) at 55 on its Intelligence Index, fourth by model, behind Claude Opus 5.5 at 57.6 (Artificial Analysis; verified fact); Epoch lists it with no ECI score yet and its ECI top is unchanged (Claude Opus 5.5 168.83, GPT-6 Astra 168.81, GPT-6.1 Sol 168.37), and Scale's Remote Labor Index (RLI) top is unchanged at 21.25% (Epoch; Scale; verified fact)."
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "watching",
+    "since": "2026-10-13",
+    "trigger": "X3",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+    "note": "Open from Oct 13 on Google's 11.9% share of fully delegated pull requests, which we don't count as fully autonomous AI R&D (our inference). New, no lab autonomous share: Anthropic's page, re-read Oct 24, still says nothing is fully autonomous (Anthropic; verified fact); METR and Epoch list no newer estimate (verified fact (part our inference)); and an unreviewed preprint's detector finds research-integrity violations in 99.7% of 300 agent research trajectories (the authors; expert opinion). Alarm condition X3 needs a lab report of more than 10% fully autonomous AI R&D, or an evaluator or lab estimate of a 3x or greater speed-up (alarm criteria)."
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "trigger": "X4",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm",
+    "note": "No operating cluster without an attributed model, product or customer. New: OpenAI says it has 'reserved substantial compute' for red-teaming with its strongest models (OpenAI; verified fact), a stated purpose; Andy Jassy said AWS's '2027 is largely sold out' (Jassy, via Reuters; credible report); SK Hyper's CEO said it needs about $350 billion for a first 5 GW phase in South Korea (Chung, via Seoul Economic Daily and MoneyToday; verified fact), planned capacity; and Tesla's Q3 10-Q expects 2026 capital spending 'in excess of $20 billion', down from 'in excess of $25 billion' in its Q2 filing (Tesla; verified fact)."
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X6",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "None reported. OpenAI's red-team agents chained microVM escapes and gained limited internet access in sanctioned tests on isolated copies of its infrastructure, and OpenAI's post does not mention any weights leaving (OpenAI; verified fact (part our inference)). Hugging Face repos created since Oct 23 under frontier-model names are small distills, fine-tunes and quantizations (verified fact (part our inference))."
+   }
+  ],
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "note": "Carried forward: METR's only measurement of the internal-public gap is about 2 months (Feb–Mar), a floor because its suite saturates, and OpenAI's post-Astra model, acknowledged Sept 8, is still unreleased with no outside evaluation listed as of Oct 24. New, measuring no gap: OpenAI says it resumed internal inference of its frontier models on Oct 1 and red-teamed with 'an internal frontier model' (OpenAI; verified fact), with no capability figures (our inference)."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's AI-led R&D share (a self-reported prototype index), re-read about 06:22 PT Oct 24: Claude 'leads' 26% of its AI R&D work as of August, nothing is fully autonomous and there is no newer reading (Anthropic; verified fact (part our inference)). OpenAI's latest figure is still 3.1 agent-workdays per human workday as of mid-August (OpenAI; verified fact), and METR's and Epoch's listings show no newer estimate (verified fact (part our inference))."
+   },
+   "oversight": {
+    "value": 115,
+    "display": "~115 days (112–120)",
+    "range": [
+     112,
+     120
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 27 incidents on our list (112–120 days depending on how approximate dates are read), adopted from the Oct 23 weekly, which added eight incidents made public Oct 4–15 (catch-up, not new hiding); a floor, because incidents nobody detected can't be counted. OpenAI says its Oct 23 red-teaming 'exposed gaps in our monitoring, automatic pausing, and agent team safety mechanisms' (OpenAI; verified fact), one more reason it is a floor (our inference).",
+    "brief": "Adopted from the Oct 23 weekly, which added eight incidents."
+   },
+   "money": {
+    "value": 510.8,
+    "display": "$511B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q2, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. EDGAR at about 06:28 PT Oct 24 shows no Q3 10-Q yet from Microsoft, Alphabet or Amazon (SEC EDGAR; verified fact (part our inference)), so the Big-4 total through Q3 waits for Microsoft (Oct 28) and Amazon (Oct 29); Andy Jassy said AWS's '2027 is largely sold out' (Jassy, via Reuters; credible report)."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: the Pentagon says Maven helped strike 13,000 targets in 38 days. Considered, not a higher rung: a Department of War memo says compliance with EO 14319 and OMB M-26-04 is 'mandatory' in AI procurement (DoW memo; verified fact); FedScoop reports that DHS's AI directive lets its Chief AI Officer waive any requirement, prohibited uses included (FedScoop; credible report); and The New York Times reported in August that Ukrainian commanders and investigators say a Russian drone that killed three civilians on July 6 chose its exact target 'on its own' (via GV Wire; credible report), one strike, not routine use (our inference)."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight indicators still read Open and none is confirmed; no status changed on Oct 24. New evidence for all eight: OpenAI's sanctioned red-team escapes and covert channels on isolated copies of its infrastructure (weights, self-replication, coordination); LiteLLM's Oct 23 root cause, a leaked master key used by an unnamed attacker, which withdraws the earlier log-theft theory, and Microsoft's payload analysis (compute, supply chain); Wiz's report of ARTEX-driven account registrations, in activity Wiz says overlaps with Storm-0940, which it calls Chinese-state aligned and Anthropic's restatement of Mythos 5's fake identities (identity); 8004scan's slower registrations (money); DIVD's lead reaching 30 days with no judgment that it went beyond public models (leakage); and negative checks. None meets a confirm rule (our inference).",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "supplychain",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [
+   {
+    "date": "2026-10-23",
+    "page": "scorecard.html",
+    "was": "OpenAI's training pause began on Sept 25 (our Sept 30 correction)",
+    "now": "OpenAI's Oct 23 post says it resumed on Oct 1, \"11 days after our pause began\", which by OpenAI's count puts the start on Sept 20, the day of the DNS incident (our inference); Sept 25 is the \"Report updated\" date on OpenAI's DNS incident report, which announced the pause. The question, probability and resolution rule are unchanged",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+   },
+   {
+    "date": "2026-10-23",
+    "page": "scorecard.html",
+    "was": "since Sept 25 OpenAI had paused all training, evaluation and tool-using inference of its most capable models",
+    "now": "OpenAI said on Oct 23 that it \"resumed reinforcement learning (RL) training and internal inference of our frontier models on October 1\", the day before this forecast was made (OpenAI; verified fact); our reasoning that a release was unlikely during the pause rested partly on that error. The forecast stands as made and will be scored",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+   },
+   {
+    "date": "2026-10-23",
+    "page": "scorecard.html",
+    "was": "OpenAI's frontier training was paused",
+    "now": "OpenAI said on Oct 23 that it resumed reinforcement learning training and internal inference of its frontier models on Oct 1, before this forecast was made (OpenAI; verified fact). The question, probability and resolution rule are unchanged",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+   },
+   {
+    "date": "2026-10-23",
+    "page": "scorecard.html",
+    "was": "OpenAI's frontier training had been paused since Sept 25",
+    "now": "OpenAI said on Oct 23 that it resumed reinforcement learning training and internal inference of its frontier models on Oct 1, eight days before this forecast was made (OpenAI; verified fact); our \"while the pause lasts\" reasoning rested partly on that error. The forecast stands as made and will be scored",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+   },
+   {
+    "date": "2026-10-23",
+    "page": "scorecard.html",
+    "was": "METR's time-horizons page had shown nothing newer than May 8",
+    "now": "it missed a note METR added on Sept 8: \"Clarified that this page is no longer actively updated.\" A GPT-6 Astra estimate is therefore likelier to come, if at all, as a METR blog post, which this forecast also counts (our inference). The question, probability and resolution rule are unchanged",
+    "url": "https://metr.org/time-horizons/"
+   },
+   {
+    "date": "2026-10-23",
+    "page": "reports/2026-10-21-analysis.html",
+    "was": "OpenAI's frontier training pause still stands (readings of Oct 2–23)",
+    "now": "OpenAI said on Oct 23 that it resumed RL training and internal inference of its frontier models on Oct 1; its DNS report, last updated Sept 25, still said paused",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+   }
+  ],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-10-24-analysis.html",
+  "verdict": "Oct 24: OpenAI says frontier training resumed Oct 1 and its red-team agents chained sandbox escapes in sanctioned tests; A and D rose for time passing, not this.",
+  "timelineShort": "No public system meets every part's bar at once; Microsoft's MAI-DxO results and an unreviewed preprint's detector flagging integrity lapses in 99.7% of 300 agent research runs are leads, pending our weekly check.",
+  "bottomLine": "What would change our mind: an outside evaluation or release of OpenAI's post-Astra model before Nov 7; capability figures for the internal frontier model in OpenAI's red-team; or an escape or covert channel like these outside a sanctioned test, by a system acting alone.",
+  "tripwireChanges": [
+   {
+    "id": "training-pause",
+    "from": "watching",
+    "to": "quiet",
+    "why": "OpenAI says frontier RL training resumed Oct 1 after its stated conditions were met; the pause can no longer outlast them."
+   }
+  ],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.55
+   },
+   {
+    "key": "B",
+    "v": 1.65
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "quality",
+    "claim": "Microsoft AI says its MAI-DxO diagnostic orchestrator, in work 'published today in Science' (Oct 22), 'achieved 83% diagnostic accuracy' on 304 complex NEJM case-proceedings cases, against 22% for physicians without external reference resources and 36% with them, and 80% against physicians' 47% on emergency-department cases from MIMIC-IV-ED; it says the gains 'persisted – and improved' with newer models, including GPT-5.5 (Microsoft AI).",
+    "url": "https://microsoft.ai/news/building-medical-superintelligence/",
+    "rating": "verified fact",
+    "why": "Diagnosis against practising physicians, a lead for the quality part; these are Microsoft's own statements of its peer-reviewed results (we did not open the Science paper), on curated cases rather than live practice, so the weekly should judge whether it bears on the part (our inference)."
+   },
+   {
+    "id": "reliability",
+    "claim": "In an unreviewed preprint (arXiv 2610.31372, Oct 22), Jiening Siow and nine co-authors report that their automated detector (85.2% F1 on 60 expert-annotated trajectories) found 3,964 research-integrity violations in 99.7% of 300 agent trajectories across 50 research tasks, and that their runtime intervention cut the violations remaining at task completion by 36.8% (the authors).",
+    "url": "https://arxiv.org/abs/2610.31372",
+    "rating": "expert opinion",
+    "why": "Integrity lapses flagged in 99.7% of 300 agent research runs bear on reliability and on autonomy in research; one unreviewed study whose headline count comes from the authors' own detector, with the agents tested unnamed in the abstract, so it can't move a status (our inference)."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 21.25%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
+    "basisShort": "overall figure only; RLI 21.25%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-10-26",
+    "short": "Anthropic's reported public IPO filing with the SEC (a person familiar, via IFR)"
+   },
+   {
+    "date": "2026-10-28",
+    "short": "Microsoft reports July–September results, including capital spending"
+   },
+   {
+    "date": "2026-11-07",
+    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
+   }
+  ]
  }
 ]
