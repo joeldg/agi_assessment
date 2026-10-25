@@ -95,6 +95,25 @@ def _moved(row):
     return row.split('data-label="What moved">', 1)[1].split("</td>", 1)[0]
 
 
+class Numbers(unittest.TestCase):
+    def test_fmt_rounds_half_up_like_the_feed(self):
+        # 2.25 and 1.65 used to show as 2.2 and 1.6 (float formatting rounds half to even); 2.35 showed as 2.4
+        import build_feed
+        cases = {2.25: "2.3", 1.65: "1.7", 2.35: "2.4", 1.05: "1.1", 0.125: "0.13", 0.15: "0.15", 0.5: "0.5",
+                 0.05: "0.05", 0.996: "1", 9.96: "10", 10.5: "10.5", 45: "45", 0: "0", None: "–"}
+        for v, want in cases.items():
+            self.assertEqual(common.fmt(v), want, v)
+            if v not in (None, 10.5):  # the feed shows whole numbers above 10; the pages keep a half point
+                self.assertEqual(build_feed.fmt(v), want, v)
+
+    def test_index_bar_says_the_parts_sum_rounded_half_up(self):
+        # the 2026-10-24 reading: parts 0.55 + 1.65 + 0.05 = 2.25, shown as 2.5
+        run = {"index": 2.5, "indexParts": [{"key": "A", "v": 0.55}, {"key": "B", "v": 1.65}, {"key": "CD", "v": 0.05}]}
+        html = common.index_block(run)
+        self.assertIn("parts sum to 2.3", html)
+        self.assertNotIn("parts sum to 2.2", html)
+
+
 class ArchiveAndTracker(unittest.TestCase):
     """Review round 2: R2-01 (archive quiet days), R2-02 (X4 wording), VR2-01 (measurement tables)."""
     RUNS = [

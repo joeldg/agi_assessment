@@ -18,6 +18,7 @@ import hashlib
 import json
 import re
 import sys
+from decimal import ROUND_HALF_UP, Decimal
 from html import escape, unescape
 from pathlib import Path
 
@@ -131,18 +132,25 @@ def num(v):
         return None
 
 
+def _half_up(v, places):
+    """v rounded half up (as build_feed._q does, from its decimal text, so 2.25 -> 2.3, not the float's 2.2),
+    without trailing zeros."""
+    s = format(Decimal(str(v)).quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP), "f")
+    return s.rstrip("0").rstrip(".") if "." in s else s
+
+
 def fmt(v):
-    """A probability or Index figure as published: 0.25, 0.5, 1.5, 2, 45."""
+    """A probability or Index figure as published: 0.25, 0.5, 1.5, 2, 45. Rounded half up, like build_feed.fmt."""
     v = num(v)
     if v is None:
         return "–"
     if v == 0:
         return "0"
     if abs(v) < 1:
-        return f"{v:.2f}".rstrip("0").rstrip(".") if abs(v * 10 - round(v * 10)) > 1e-9 else f"{v:.1f}"
+        return _half_up(v, 2)
     if abs(v) < 10:
-        return f"{v:.1f}".rstrip("0").rstrip(".")
-    return f"{v:.0f}" if abs(v - round(v)) < 1e-9 else f"{v:.1f}".rstrip("0").rstrip(".")
+        return _half_up(v, 1)
+    return f"{v:.0f}" if abs(v - round(v)) < 1e-9 else _half_up(v, 1)
 
 
 def fmtp(v):
