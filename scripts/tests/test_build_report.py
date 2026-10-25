@@ -592,9 +592,7 @@ class Email(unittest.TestCase):
         self.assertIn(br.SITE + "reports/2026-10-05-analysis.html#corrections", html)
 
     def test_legacy_runs_take_the_legacy_path(self):
-        rs = json.loads((REPO / "data/runs.json").read_text())
-        i = len(rs) - 1
-        html = build_feed.issue_html(rs[i], build_feed.prev_published(rs, i), [])
+        html = self.issue("run_legacy")   # the last two legacy runs, frozen: live runs.json is format 2 from 2026-10-07
         self.assertIn("Read the full report", html)  # the unchanged legacy closing
         self.assertNotIn("Is AGI here, today?", html)
 
