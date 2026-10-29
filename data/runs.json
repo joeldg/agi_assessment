@@ -20024,5 +20024,958 @@
     "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
    }
   ]
+ },
+ {
+  "date": "2026-10-29",
+  "label": "daily reading",
+  "report": "reports/2026-10-29.html",
+  "probs": {
+   "A": {
+    "now": 0.6,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 8,
+    "y2035": 14,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.2,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "summary": "Google announced Gemini 4 Carbon on Oct 28 and is giving it first to a subset of cyber defenders, with no date for wider release, while Sundar Pichai says Google is 'now deploying Carbon internally' (Google; Pichai, via the Motley Fool and StockAnalysis transcripts; verified fact). Google published Carbon's benchmarks and Artificial Analysis puts it one point ahead of the public Claude Opus 5.5 (Artificial Analysis; verified fact), so the capability is disclosed and no number moved; A and AGI anywhere rose slightly before rounding for one day of time passing, the Index holds at 2.5%, and no signal or Escape indicator changed status (our inference).",
+  "changes": [
+   "Quiet day for news by our numbers: no story moved one. The most notable is Google's Gemini 4 Carbon (Oct 28), which Google calls 'our strongest model with state-of-the-art cybersecurity and long horizon capabilities' and is rolling out first to 'a subset of cyber defenders', with no date for wider release (Google; verified fact); Sundar Pichai says Google is 'now deploying Carbon internally' (Pichai, via the Motley Fool and StockAnalysis transcripts; verified fact), and Artificial Analysis puts Carbon at 59 on its Intelligence Index v5, one point ahead of the public Claude Opus 5.5 at 58 (Artificial Analysis; verified fact). Google published the benchmarks itself, so the capability is disclosed, not hidden (our inference).",
+   "Time passing: one more day along our own forecast curve (the logistic path applied on Oct 24, about ×1.0026 a day) raises the lab term from about 1.506% to about 1.510% (our inference). Before rounding, A goes from 0.572 to 0.573, AGI anywhere from 0.915 to 0.918, C stays about 0.33, D goes from about 0.1527 to 0.1531 and D-open stays about 0.18, so no rounded number crosses a step. Time passing never moves the end-2030 or end-2035 numbers.",
+   "A held at 0.6% / 19% / 31%: the kept-quiet factor stays at 0.6 and the state term at 0.1%. Carbon was being tested inside Google before its announcement (Business Insider, Oct 9; credible report, on our record), and Google published its benchmarks with a gated rollout on Oct 28 (Google; verified fact): a lab disclosing a frontier capability, not keeping it quiet; Google names no outside safety evaluator beyond the U.S. government's voluntary pre-release process and links no Carbon-specific safety report (Google; verified fact (part our inference)). Nothing compares an unreleased model with a public one on the parts that hold A down (long projects, reliability, learning on the job, generalization) (our inference).",
+   "B held at 2% / 22% / 33%: Pichai says 'AI is helping us increase our training and launch velocity' and 'I would expect the next 12 months to see continued acceleration because of RSI' (Pichai, Google; expert opinion for the forecast), with no share, multiple or method; Google's '35% more code with 30% fewer errors' is Argon on Chrome, Ads and Search product code (Google; verified fact (part our inference)); and Google DeepMind's Argon report (Oct 13, background) says there is 'currently no significant end-to-end acceleration of AI R&D', with 11.9% of pull requests fully delegated in September (Google DeepMind; verified fact). A public forecast of acceleration is partial, public acceleration, which B doesn't count, and Polymarket's very thin market on OpenAI or Anthropic announcing recursive self-improvement by Dec 31 (bid 12, ask 22; forecast aggregate) excludes statements of future plans and doesn't cover Google (our inference).",
+   "C held at 0.3% / 8% / 14%: Google reports Carbon's high-severity misalignment alerts in live internal coding 'dropped by almost 80%' and successful cheating on Terminal-Bench 4.0 at 0.0% (Google; verified fact; unreplicated); CrowdStrike's four agentic intrusion campaigns (May–Aug; CrowdStrike; credible report) and Dream's PHP2Shell campaign (Oct 23–24; Dream; credible report) used public models, and we read them as human-directed (our inference); and the UK Budget funds a £40 million National Agentic Security Unit 'to detect, investigate and respond to cases of rogue agentic systems' (HM Treasury; verified fact). Below AGI level these are warning signs or responses, so C's share of AGI anywhere is unchanged (our inference).",
+   "D held at 0.2% / 3% / 7% and D-open at 0.2% / 23% / 45%: PACOM is exploring agentic AI to automate parts of targeting with human oversight (GovCIO; credible report); Sarvam says its MoU with India's HQ IDS covers decision support and target acquisition with human oversight retained (Sarvam; verified fact for what Sarvam says), which neither HQ IDS nor the Ministry has independently confirmed (MediaNama; credible report); the Justice Department is reportedly asking how Nvidia's Hugging Face deal would affect competition (two people familiar with the matter, via Reuters; credible report); and Malaysia's customs department says it seized 30 servers with advanced AI chips (via AP; credible report). None involves an AGI-level system shaping a government decision (our inference).",
+   "AGI anywhere held at 0.9% / 35% / 58% (0.915 to 0.918 today before rounding, for time passing) and k held at 0.57 / 0.77 / 0.89: Carbon ties Andon Labs' human baseline on Blueprint-Bench 2 at 0.586, a baseline tested on 12 apartments (Andon Labs; verified fact); Surge AI's DAYJOB: Tax finds the best agent passing 10.8% of expert-built tax assignments (Surge AI; expert opinion); Google Research's 'sleep' framework, from a June paper, reports near-zero forgetting on continual translation for an unnamed model (the authors; expert opinion); and Google says Carbon ran 'for days' internally, with no success rate (Google; verified fact (part our inference)). None is evidence on learning on the job, generalization to new kinds of problem or open-ended reasoning strong enough to move k (our inference).",
+   "Index unchanged at 2.5% (parts A 0.55, hidden self-improvement outside A 1.65, C or D outside A 0.05; about 2.28 before rounding): A rose from 0.572 to 0.573 for time passing, and B outside A is about 1.66 (our inference).",
+   "Gauges carried forward with new notes: capability gap ~3 months (2–5; Carbon's benchmarks are published and it leads the public frontier by one point on the Artificial Analysis Intelligence Index), AI R&D 26% (re-read Oct 29; Pichai's RSI remark gives no share), oversight ~115 days (112–120) across 27 incidents (matching the alarm check), money $511B / yr (through 2026Q2 in data/money.json; Microsoft's $39.37B and Alphabet's $51.36B Q3 filings, with Meta's $33.94B, give $124.67B for three of the four, about double a year earlier, and Amazon reports Oct 29 after the close) and delegation rung 3 of 5 (PACOM's agentic targeting work is exploratory and Sarvam's MoU states intent). No weekly gauge update is newer than the last reading: the latest wrap-up, data/weekly/2026-10-23.json, was adopted earlier.",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4, W5 met; alarm check consistent, exit 0). W2: day 51 of 60, met Nov 7 if nothing changes. W6: 45 of 90 under the main reading (Sept 8–24 and Oct 1 onward), met Dec 13. Carbon starts neither clock: Google acknowledged it together with a gated rollout, published benchmarks and U.S. government pre-release testing (our inference). Dated rulings (2026-10-29) for W1–W6 and X1–X6. Nothing at Warning; no Level-3 case recommended.",
+   "Signals: no status changed; all eleven notes updated, including exclusive-use with Pichai's 'We are now deploying Carbon internally', evaluator-access with Carbon's post naming no UK AISI (unlike Argon's report) and the UK's £120 million for AISI, and eval-integrity with Google's Carbon cheating and misalignment-alert figures.",
+   "Escape watch: all eight indicators still Open, none confirmed. New evidence for all eight: Google's Carbon, a gated frontier cyber model with no Carbon-specific autonomy or self-exfiltration evaluation linked (self-replication, leakage); Dream's human-run PHP2Shell campaign, a related CISA KEV entry and DIVD's case on day 35 (leakage); 26,400 live credentials in public Gitee repositories (compute); Treasury's DPRK IT-worker sanctions (money, identity); the npm package aimed at AI coding-agent configuration, now listed with seven versions (supply chain); and negative checks for all eight.",
+   "Markets (public APIs, 06:22–06:26 PT Oct 29; forecast aggregate; most thin): Kalshi 'any company announces AGI before Jan 1, 2027' last 6 (bid 6, ask 7; 1 contract in 24 hours), down from 8, and before Apr 1, 2027 bid 15, ask 16 (its last trade, 14, was a single contract below the bid); before Jul 1, 2027 bid 30, ask 31; before Jan 1, 2031 bid 77, ask 78, with the ladder still out of order (before Jan 1, 2030 bid 81). Polymarket 'OpenAI announces it has achieved AGI before 2027' bid 8, ask 9 (11/12 on Oct 28), against Kalshi's OpenAI-before-2027 at 6.1 (bid 6.1, ask 6.5). Polymarket's 'OpenAI or Anthropic announce recursive self-improvement by Dec 31' is very thin at bid 12, ask 22, its last trade 22, a single $10 buy (45.9 shares at 21.8¢) at 23:05 PT Oct 28. Polymarket 'Anthropic IPO by Nov 30' last 87 (bid 87, ask 88). Prices, not evidence."
+  ],
+  "roundupWindow": "Oct 28 – Oct 29, 2026: items first reported, or first verified by us, since the Oct 28 reading, plus earlier items (marked background)",
+  "roundup": [
+   {
+    "topic": "Google's Gemini 4 Carbon",
+    "items": [
+     {
+      "date": "Oct 28",
+      "text": "Google announced Gemini 4 Carbon as 'our strongest model with state-of-the-art cybersecurity and long horizon capabilities'. 'Starting this week' it goes to 'a subset of cyber defenders', with access phased to more trusted partners through its Fairwind Program, and Google will keep iterating on guardrails 'before making Carbon available to developers, businesses, and consumers via our product surfaces as soon as possible', with no date. Introductory pricing is $2 / $10 per million input / output tokens, rising to $4 / $20 (Google; post by Koray Kavukcuoglu).",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "top": true,
+      "short": "Google's 'strongest model' goes first to a subset of cyber defenders; no date for developers, businesses or consumers.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "On the earnings call Sundar Pichai said 'We are now deploying Carbon internally, and Carbon is a meaningful step up from Argon', in answer to JPMorgan's Doug Anmuth (Pichai, via the Motley Fool and StockAnalysis transcripts). Google published Carbon's benchmarks the same day, so the internal lead is disclosed, though its size isn't stated (our inference).",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Artificial Analysis puts Gemini 4 Carbon (High) first on its Intelligence Index v5 at 59, ahead of Claude Opus 5.5 (Max, Default Fallback) at 58 and GPT-6 Astra (Max) at 57, out of 77 models evaluated, and second on its Coding Agent Index (59, against Claude Code with Claude Opus 5.5 at 62); it says Carbon 'is being rolled out to selected users and is not yet publicly available' (Artificial Analysis; read 06:18 PT Oct 29).",
+      "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+      "top": true,
+      "short": "Artificial Analysis Intelligence Index v5: Carbon (High) 59, one point above the public Claude Opus 5.5 at 58.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "The only safety report Carbon's post links is the 217-page Gemini 4 Argon Safety & Security Report, which never mentions Carbon in our text extraction; Google DeepMind's model-card index lists no Carbon card as of 06:24 PT Oct 29, and the only Carbon document on its Gemini page is a five-page benchmark-methodology note. The only outside pre-release testing the post names is Google's engagement in 'the U.S. government's voluntary process for pre-release model testing'; it names no UK AISI (Google; the absences are our reading, and a card may still follow).",
+      "url": "https://deepmind.google/models/model-cards/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Google says Carbon 'reduced successful cheating on Terminal-Bench 4.0 to 0.0%', with attempts at 0.4%; that in live coding with internal teams 'high-severity misalignment alerts dropped by almost 80%', naming no baseline model; that it 'cuts unsupported claims by approximately 2x over Argon'; and that its attack success on Gray Swan's Indirect Prompt Injection benchmark is 0.0% against Argon's 0.7% (Google; unreplicated, and the post doesn't say who ran the Gray Swan test).",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Google reports Carbon at 88.2% on SEC-bench Pro (finding vulnerabilities), 54.8% on ExploitGym (exploitation) and 71.0% on Collinear's CWE-bench (patching), 'evaluated without guardrails'; its evaluation note says the first two are self-computed in Google's Antigravity harness, and the CWE-bench result comes from Collinear's public leaderboard (Google).",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Google's evaluation note says its OSWorld 2.1 figures use 'the 82-task offline (no-internet) subset', self-computed and 'maxed over 3 runs with a single attempt per run' (Google).",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Google's table on its Gemini page puts Carbon at 81.5% on OSWorld-2.1's offline subset, below Claude Opus 5.5 at 87.2% (Google).",
+      "url": "https://deepmind.google/models/gemini/",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 27",
+      "text": "Arena's Text leaderboard lists Gemini 4 Carbon (High) first at 1528 (±9), marked 'Preliminary' on 4,403 votes, ahead of Gemini 4 Argon (High) at 1520 and Claude Opus 5.5 (High) at 1509 (Arena; read 06:20 PT Oct 29).",
+      "url": "https://arena.ai/leaderboard/text",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Sept 30 – Oct 14 (background)",
+      "text": "Google announced Argon on Sept 30 as 'rolling out to a set of trusted cyber defenders through our Fairwind Program'; Google DeepMind's Gemini page now says Argon 'is available today for Google AI Pro and Ultra subscribers', and on Oct 28 both the Carbon post and Pichai said Argon launched 'two weeks ago' (Google). So Google's last gated launch widened in about two weeks (our inference).",
+      "url": "https://deepmind.google/models/gemini/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "AI-driven R&D: what Google and others said",
+    "items": [
+     {
+      "date": "Oct 28",
+      "text": "In his remarks Sundar Pichai said 'We're at the point where AI is helping us increase our training and launch velocity' and 'I would expect the next 12 months to see continued acceleration because of RSI', on Google's edited transcript; he never expands 'RSI' and gives no share, multiple or method (Pichai, Google; the absences are our reading).",
+      "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/",
+      "top": true,
+      "short": "Pichai says AI is 'helping us increase our training and launch velocity' and expects 'continued acceleration because of RSI' over 12 months.",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Pichai said Chrome, Ads and Search teams using Argon over 'the last few weeks' produced 35% more code with 30% fewer errors (Google; unreplicated). That is product code, not an AI-led share of AI R&D (our inference).",
+      "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 13 (background)",
+      "text": "Google DeepMind's Gemini 4 Argon Safety and Security report says 'there is currently no significant end-to-end acceleration of AI R&D, AI-driven or otherwise', that 'the share of fully delegated pull requests increased from 7.5% in April to 11.9% in September 2026', and that 'about 88% of pull requests still require iterative multi-turn human steering or human code authorship' (Google DeepMind).",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "A Gemini engineer describes overnight agent loops and swarms that inspect RL data, in a workflow where launches now feel like 'periodic checkpoints' (the engineer, @zhangqiaorjc on X, via Latent Space AINews; only 'periodic checkpoints' is quoted, and we couldn't open the X post).",
+      "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 28",
+      "text": "The same AINews issue relays claims of a stronger unreleased Gemini model and says they 'are not confirmed' (@kimmonismus on X, via Latent Space AINews).",
+      "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+      "top": false,
+      "rating": "speculation"
+     },
+     {
+      "date": "Oct 29",
+      "text": "Anthropic's pace page, re-read Oct 29, still says Claude 'leads' 26% of its AI R&D work as of August, with nothing fully autonomous and no newer reading (Anthropic; 'no newer reading' is our reading).",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 26",
+      "text": "An unreviewed single-author arXiv preprint, 'Infinity Machine', describes an agent whose harness is an 'editable genome', and says that 'Across fourteen problems in six days, for about $180 of model usage' it produced four results beyond the published state of the art in quantum information; its abstract says the one self-derived harness generation was rejected on cost and operator changes were decisive for several results (the author).",
+      "url": "https://arxiv.org/abs/2610.35579",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 26 (background)",
+      "text": "Americans for Responsible Innovation proposes a federal early-warning system in which major frontier developers file confidential quarterly reports on AI R&D automation with a Commerce office and report 'material shifts' within four business days; 'Washington's visibility into that shift should not depend on what companies choose to announce' (ARI). No bill or sponsor is named, and parts appear to date from an Aug 6 ARI framework (our reading of the file).",
+      "url": "https://ari.us/policy-bytes/keeping-pace-with-the-frontier-an-early-warning-system-for-accelerated-ai-rd-automation/",
+      "top": false,
+      "rating": "expert opinion"
+     }
+    ]
+   },
+   {
+    "topic": "Big-tech capital spending",
+    "items": [
+     {
+      "date": "Oct 28",
+      "text": "Microsoft's cash additions to property and equipment were $39.37B in the quarter to Sept 30 (Microsoft, 8-K).",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm",
+      "top": true,
+      "short": "Microsoft's Q3 cash additions to property and equipment were $39.37B, per its 8-K.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Alphabet's purchases of property and equipment were $51.36B in the quarter to Sept 30 (Alphabet, 8-K).",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+      "top": true,
+      "short": "Alphabet's Q3 purchases of property and equipment were $51.36B, per its 8-K.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Microsoft's quarter to Sept 30: revenue $92.3B, commercial remaining performance obligation up 73% to $677B, Azure revenue up 48% (Microsoft, 8-K); $364.6B of leases, 'primarily for datacenters', not yet commenced (Microsoft, 10-Q), up from $329.1B on June 30 (Microsoft, recast 8-K); and $10.0B of revenue from commercial arrangements with OpenAI in the quarter, with an approximate 24% interest on an as-converted basis (Microsoft, 10-Q).",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "CFO Amy Hood said 'Capital expenditures were $45.2 billion as some third-party capacity deliveries we expected in Q1 were delayed', that spend 'should be approximately $170 billion' for the calendar year, and tied bookings partly to 'a large Azure commitment this quarter', naming no customer (Hood, via TradingKey transcript; the transcript has at least one transcription error).",
+      "url": "https://www.tradingkey.com/news/transcripts/262249601-tradingkey",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 29",
+      "text": "Alphabet's 10-Q gives $924.4B of material purchase commitments, $802.1B of it multi-year commitments for technical infrastructure, inventory, energy and content, and $130.5B of future payments on uncommenced leases 'primarily related to data centers and energy infrastructure' (Alphabet, 10-Q); Google Cloud revenue rose 103% to $30.7B (Alphabet, 8-K).",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "CFO Anat Ashkenazi said Alphabet 'started utilizing third-party compute capacity at the end of Q3 and will ramp usage in Q4' and that 2026 capex guidance of $195B to $205B is unchanged (Ashkenazi, via TradingKey transcript).",
+      "url": "https://www.tradingkey.com/news/transcripts/262249599-tradingkey",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Oracle targets FY30 revenue of '$225 billion or more', says capex is 'expected to step-down in FY29' and caps added capital-markets funding for FY27–FY30 at $20B (Oracle, 8-K).",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526435853/d75538dex991.htm",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "SK hynix reported Q3 operating profit of 83.3 trillion won on 104.6 trillion won of revenue and says long-term agreements cover 'more than 50% of total production capacity for 2027 and 2028' (SK hynix).",
+      "url": "https://news.skhynix.com/en/q3-2026-business-results/",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 29",
+      "text": "Samsung will spend 84.4 trillion won on 2026 capital expenditures, up 60%, with 76.8 trillion won for its semiconductor division (Samsung's regulatory filing, via Seoul Economic Daily).",
+      "url": "https://en.sedaily.com/finance/2026/10/29/samsung-electronics-lifts-2026-capex-60-percent-to-844",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 27",
+      "text": "The Department of Energy announced 'a conditional loan commitment of up to $5 billion' for uprates across Constellation Energy's nuclear fleet, adding 'nearly 1.1 gigawatts (GW)' at eight plants (DOE).",
+      "url": "https://www.energy.gov/articles/energy-department-announces-5-billion-loan-boost-nuclear-power-and-help-lower-costs",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "TechCrunch reports that 'Most or all of the additional power from seven of those facilities has already been bought by Google, Meta, or Amazon' (TechCrunch).",
+      "url": "https://techcrunch.com/2026/10/28/trump-doe-loans-5b-to-nuclear-plants-that-will-power-data-centers/",
+      "top": false,
+      "rating": "credible report"
+     }
+    ]
+   },
+   {
+    "topic": "Agent incidents and security",
+    "items": [
+     {
+      "date": "May – Aug (background)",
+      "text": "CrowdStrike said on Oct 21 that it documented agentic intrusion campaigns by four previously unreported threat actors, each of whom left its agent framework exposed in open directories, all using Anthropic's Claude Code; one compromised at least 15 Argentina-based healthcare entities, and another exfiltrated client data from a US CRM vendor (CrowdStrike). The post doesn't say whether any provider was notified.",
+      "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 23 – 24 (background)",
+      "text": "Dream says an operation it ties by 'multiple indicators' to a Chinese nexus rooted 25 servers in the US, Japan, Taiwan and South Korea, including two firewalls and an internal management server of a US government-affiliated organization, with Claude Code and an offensive platform configured with DeepSeek and Kimi on its infrastructure; it has 'no direct evidence' the AI tools wrote the exploit and says the operation 'does not appear to be a fully autonomous nation-state attack' (Dream, Oct 26).",
+      "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 28",
+      "text": "CISA added CVE-2026-46300, a Linux kernel flaw that 'can be chained with CVE-2026-109618 and CVE-2026-109619' to run commands as root, and a VMware ESX logging flaw to its Known Exploited Vulnerabilities catalog (CISA).",
+      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 15 – 23 (background)",
+      "text": "Seoul police say they arrested a 32-year-old ringleader on Oct 15 and referred him to prosecutors on Oct 23; they say his group stole 8.2 million records from about 90 organizations from September 2025, 60 of them hacked with AI after he moved to generative AI in late August (police, via Yonhap, Oct 26).",
+      "url": "https://www.yna.co.kr/view/AKR20261026075100004",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 26 (background)",
+      "text": "OpenAI's GPT-6.1 Terra addendum says Terra received 22 severity-3-or-higher flags (0.045%) in a simulation of 48,690 internal Codex tasks, fewer than GPT-6 Astra's 26, but higher rates than GPT-6.1 Sol and Astra of several lower-severity (level 1–2) flags, including exfiltration and destructive action (OpenAI). These are simulation flags, not incidents (our inference).",
+      "url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 29",
+      "text": "OpenAI's Misalignment Reports page lists 20 reports and 3 notices, with nothing posted or updated after Oct 20; DIVD's case DIVD-2026-00014 on its AI-agent breach is still Open, last modified Oct 9 (day 35 by our count) (OpenAI; DIVD; 'nothing new' is our reading).",
+      "url": "https://alignment.openai.com/misalignment-reports/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Security researcher Ben Zimmermann, in a guest post on MongoDB's blog, reports 26,400 unique credentials verified live at scan time across 7,256,531 public Gitee repositories, including DeepSeek, Zhipu, OpenAI and Hugging Face keys; revocation 'has not yet been confirmed' and no misuse is reported (Zimmermann and MongoDB's Kingfisher team).",
+      "url": "https://www.mongodb.com/company/blog/technical/scanning-7-point-25-million-public-repositories-chinas-largest-git-platform-for-secrets",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 29",
+      "text": "GitHub's advisory for the npm package @testsecuiitytestme/cache-helper now lists seven malicious versions; its static analysis says the payload writes to AI coding-agent configuration (.claude/settings.json hooks, .cursor rules, .mcp.json, CLAUDE.md), and npm now returns 'Not found' for the package (OpenSSF report, via GitHub; the 404 is our check).",
+      "url": "https://github.com/advisories/GHSA-4g45-28rv-vq9q",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Treasury's OFAC sanctioned 10 individuals and one Russia-based DPRK-controlled entity for IT-worker schemes, saying the networks used 'emerging technologies, including artificial intelligence tools' (Treasury). The operators are human state agents (our inference).",
+      "url": "https://home.treasury.gov/news/press-releases/sb0669",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 26 (background)",
+      "text": "A Flamerix AI gist says Claude Code sends each background agent's full transcript to its model about every 30 seconds for a short status line, which in its authors' telemetry was 16.4% of Claude Code's estimated spend for one week (Flamerix AI). A cost and transparency issue, not an escape signal (our inference).",
+      "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 28",
+      "text": "A LessWrong replication finds that fine-tuning on subtly incorrect advice produced more emergent misalignment than obviously incorrect advice in all 12 open-weight models tested, +10.6 points pooled; the authors caution that training dose may confound the size trend (the authors; unreviewed).",
+      "url": "https://www.lesswrong.com/posts/yMPR6Pkv6jQXM4rWu/subtly-wrong-advice-misaligns-models-more-than-obviously",
+      "top": false,
+      "rating": "expert opinion"
+     }
+    ]
+   },
+   {
+    "topic": "Governments",
+    "items": [
+     {
+      "date": "Oct 28",
+      "text": "The UK Budget adds £120 million for the AI Security Institute 'to strengthen the UK's frontier AI evaluation and testing capability', £40 million for a National Agentic Security Unit 'to detect, investigate and respond to cases of rogue agentic systems', £140 million for the Sovereign AI Unit and a £165 million AI biosecurity initiative backed by 'up to £200 million in AI model credits from OpenAI and Anthropic'; the MoD 'is assessing opportunities' for sovereign compute on its secure estate (HM Treasury).",
+      "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "top": true,
+      "short": "UK Budget: £40 million for a unit to 'detect, investigate and respond to cases of rogue agentic systems'; £120 million more for AISI.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28",
+      "text": "At TechNet Indo-Pacific, PACOM intelligence leaders described plans to bring AI agents into intelligence and targeting; the command 'is also exploring agentic AI to automate portions of the targeting process while maintaining human oversight of critical decisions' (GovCIO), and Brig. Chris Alder spoke of 'keeping a human very firmly on the loop' (Alder, via GovCIO).",
+      "url": "https://govciomedia.com/pacom-looks-to-ai-agents-for-faster-intelligence-targeting/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 27",
+      "text": "Sarvam says its MoU with India's Headquarters Integrated Defence Staff covers AI for the three Services, with focus areas of 'decision support, target acquisition and data fusion across the sensor-to-shooter loop, with human oversight retained on operational decisions', on sovereign infrastructure (Sarvam).",
+      "url": "https://www.sarvam.ai/blogs/sarvam-hq-ids-mou",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 29",
+      "text": "MediaNama says Sarvam's post leaves out the MoU's value, duration, signatories and projects, and that 'Neither HQ IDS nor the Ministry has independently confirmed the details' (MediaNama).",
+      "url": "https://www.medianama.com/2026/10/223-sarvam-ai-defence-deal-indian-armed-forces/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 28",
+      "text": "The Justice Department has asked how Nvidia's $12.93 billion purchase of Hugging Face would affect competition, including whether it would 'let Nvidia capture a fundamental distribution point for AI' (two people familiar with the matter, via Reuters, read on a syndication); a DOJ spokesperson declined to comment (via Reuters).",
+      "url": "https://www.933thedrive.com/2026/10/28/exclusive-us-doj-is-inquiring-about-nvidias-purchase-of-hugging-face-sources-say/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 15 (background)",
+      "text": "Malaysia's customs department said on Oct 28 that it seized 30 servers, in an Oct 15 inspection, with advanced AI chips, worth about 50 million ringgit, falsely declared and bound for re-export without a permit, and links them to a syndicate behind five attempted smuggling operations (customs director Aspalila Ag Tuah, via AP).",
+      "url": "https://www.kiro7.com/news/technology/malaysia-seizes/S54XHAWR542YZPIWA2SGDQMXXQ/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 15 (background)",
+      "text": "In an Oct 15 letter reported on Oct 28, Anthropic told Governor Newsom that 'When a review finds a model poses a serious risk, the government should be able to ask a court to block it', and that kill-switch mandates could give a 'false sense of reassurance' (Anthropic's letter, via Reuters, read on a syndication; an Anthropic spokesperson confirmed it is authentic).",
+      "url": "https://wtvbam.com/2026/10/28/anthropic-tells-california-governor-courts-should-be-able-to-block-risky-ai-models/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Sept (background)",
+      "text": "Gray DC reported on Oct 28 that at the September state visit Trump and Xi reached 'No agreement' on AI safeguards and that they 'are set to meet again in China next month', with no date (Gray DC, read on WEAU; reported, unconfirmed).",
+      "url": "https://www.weau.com/2026/10/28/trump-says-us-will-beat-china-ai-technology-emerges/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 26 – 29",
+      "text": "In the channels we checked, no new U.S. federal AI executive order, AI-chip export rule or AI-chip smuggling case appeared: the White House's newest action is an Oct 28 robotics proclamation, the Federal Register shows one BIS order (Mahan Airways), and DOJ's 50 newest releases include no chip case (each source; the absence is our reading).",
+      "url": "https://www.whitehouse.gov/presidential-actions/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "AGI parts: today's leads",
+    "items": [
+     {
+      "date": "Oct 28",
+      "text": "Andon Labs' Blueprint-Bench 2 lists Gemini 4 Carbon at 0.586, tied first with the human baseline ('Human baseline tested on subset of 12 apartments only'), ahead of Argon 0.544 and Claude Opus 5.5 0.512; the page says 'Gemini 4 Carbon now ties it' (Andon Labs). The humans covered 12 apartments, the model the full set, and the page doesn't date the Carbon entry (our inference).",
+      "url": "https://andonlabs.com/evals/blueprint-bench-2",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 27",
+      "text": "Surge AI's DAYJOB: Tax has 50 expert-built tax assignments scored at a 95% rubric threshold; the best agent, Claude Sonnet 5.5, passes 10.8% (Surge AI), and GPT-6 Astra 4.8% on Surge AI's leaderboard, with no human baseline and no Carbon entry; 'Agents haven't yet passed the audit' (Surge AI; a vendor-run benchmark).",
+      "url": "https://surgehq.ai/blog/dayjob-tax",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "June 2 (background)",
+      "text": "A Google Research post presents the 'sleep' framework from a June 2 paper (blog post Oct 27), in which an offline sleep phase consolidates short-term information into parameters, and reports a 'near-zero performance drop' on continual translation into unseen languages where in-context learning and SFT forgot badly; it names no base model and reports no CL-Bench result (the authors). Our Oct 28 reading tagged this post verified fact; we now rate it expert opinion, as we do today's other unreplicated research results (our inference).",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 29",
+      "text": "METR's time-horizons page 'is no longer actively updated' (last updated Sept 8) and has no Carbon entry; Scale's Remote Labor Index (RLI) still has Opus 5.5 first at 21.25% with no Carbon entry; Epoch's newest item, Oct 27, isn't about Carbon (METR; Scale; Epoch).",
+      "url": "https://metr.org/time-horizons/",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Markets (prices, not evidence)",
+    "items": [
+     {
+      "date": "Oct 29",
+      "text": "Kalshi, 06:22–06:26 PT: 'any company announces AGI' before Jan 1, 2027 last 6 (bid 6, ask 7; 1 contract in 24 hours), before Apr 1, 2027 bid 15, ask 16 (last 14, a single contract below the bid), before Jul 1, 2027 bid 30, ask 31; OpenAI announces AGI before 2027 at 6.1 (bid 6.1, ask 6.5). Most of the ladder is thin, and before-2030 (bid 81) sits above before-2031 (bid 77) (Kalshi API).",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Oct 29",
+      "text": "Polymarket, 06:25–06:26 PT: 'OpenAI announces it has achieved AGI before 2027' bid 8, ask 9; 'OpenAI or Anthropic announce recursive self-improvement by Dec 31' very thin at bid 12, ask 22, and its rules exclude 'statements of future plans or expectations'; 'Anthropic IPO by Nov 30' last 87 (bid 87, ask 88) (Polymarket API).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=openai-announces-it-has-achieved-agi-before-2027",
+      "top": false,
+      "rating": "forecast aggregate"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs all eight parts' bars at once, and no public system meets them. Our 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot) against our trend line, about 5.5 h (alarm check, Oct 29); METR's page is no longer actively updated and has no Carbon entry (METR; verified fact). Today's results go to our weekly check as leads, not counts: Gemini 4 Carbon ties Andon Labs' human baseline on Blueprint-Bench 2, a baseline tested on 12 apartments (Andon Labs; verified fact); the best agent passes 10.8% of Surge AI's expert-built tax assignments (Surge AI; expert opinion); Google says Carbon ran 'for days' internally, with no success rate (Google; verified fact (part our inference)); Google's OSWorld 2.1 figure is a self-computed best-of-three on an offline subset, below the public Opus 5.5 (Google; verified fact); and Google Research's June 'sleep' paper reports near-zero forgetting on continual translation for an unnamed model (the authors; expert opinion). Carbon is disclosed, benchmarked and one point ahead of the public frontier on the Artificial Analysis Intelligence Index (Artificial Analysis; verified fact), so it adds no hidden capability; AGI anywhere stays 0.9% / 35% / 58% and k 0.57 / 0.77 / 0.89 (our inference).",
+  "signals": [
+   "An outside evaluation or release of OpenAI's unreleased post-Astra model; alarm condition W2 is met on Nov 7 if neither happens (day 51 of 60).",
+   "A Gemini 4 Carbon model card or Carbon-specific safety report, the outside evaluators it names, and a date for developers and consumers (Argon widened in about two weeks).",
+   "Amazon's Q3 results on Oct 29 after the close, which complete the Big-4 capital spending through Q3 and move the money gauge.",
+   "Any Anthropic S-1 amendment, and whether its pre-training delay ends with an update.",
+   "The weekly incident review of CrowdStrike's four agentic campaigns and Dream's PHP2Shell operation, both human-directed with public models.",
+   "Whether Google or anyone else gives a measured AI-led share behind Pichai's 'continued acceleration because of RSI'."
+  ],
+  "sources": [
+   {
+    "title": "Google: Gemini 4 Carbon, our next frontier model (Oct 28)",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+   },
+   {
+    "title": "Alphabet Q3 2026: Sundar Pichai's remarks, edited transcript (Oct 28)",
+    "url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/"
+   },
+   {
+    "title": "Alphabet Q3 2026 earnings call transcript (Motley Fool)",
+    "url": "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/"
+   },
+   {
+    "title": "Alphabet Q3 2026 earnings call transcript (StockAnalysis)",
+    "url": "https://stockanalysis.com/stocks/googl/transcripts/712854-q3-2026/"
+   },
+   {
+    "title": "Artificial Analysis: Gemini 4 Carbon is the new #1 (Oct 28)",
+    "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1"
+   },
+   {
+    "title": "Artificial Analysis: Gemini 4 Carbon model page",
+    "url": "https://artificialanalysis.ai/models/gemini-4-carbon"
+   },
+   {
+    "title": "Google DeepMind: Gemini 4 Carbon model evaluation note",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf"
+   },
+   {
+    "title": "Google DeepMind: Gemini 4 Argon Safety & Security Report",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf"
+   },
+   {
+    "title": "Google DeepMind: model cards index",
+    "url": "https://deepmind.google/models/model-cards/"
+   },
+   {
+    "title": "Andon Labs: Blueprint-Bench 2",
+    "url": "https://andonlabs.com/evals/blueprint-bench-2"
+   },
+   {
+    "title": "Surge AI: DAYJOB: Tax (Oct 27)",
+    "url": "https://surgehq.ai/blog/dayjob-tax"
+   },
+   {
+    "title": "Google Research: the sleep framework (Oct 27)",
+    "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/"
+   },
+   {
+    "title": "Microsoft 10-Q, quarter to Sept 30, 2026",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
+   },
+   {
+    "title": "Microsoft 8-K earnings release (Oct 28)",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm"
+   },
+   {
+    "title": "Alphabet 8-K earnings release (Oct 28)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm"
+   },
+   {
+    "title": "Alphabet 10-Q, quarter to Sept 30, 2026",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm"
+   },
+   {
+    "title": "HM Treasury: Budget 2026 (Oct 28)",
+    "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html"
+   },
+   {
+    "title": "CrowdStrike: new agentic AI campaigns (Oct 21)",
+    "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+   },
+   {
+    "title": "Dream: chained PHP2Shell exploit roots 25 servers (Oct 26)",
+    "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers"
+   },
+   {
+    "title": "OpenAI: Misalignment Reports and Notices",
+    "url": "https://alignment.openai.com/misalignment-reports/"
+   },
+   {
+    "title": "OpenAI Deployment Safety Hub",
+    "url": "https://deploymentsafety.openai.com/"
+   },
+   {
+    "title": "Anthropic: measuring the pace of AI development",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "title": "SEC EDGAR: Anthropic, PBC filings",
+    "url": "https://data.sec.gov/submissions/CIK0002130357.json"
+   },
+   {
+    "title": "Kalshi API: KXAGICO series",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO"
+   },
+   {
+    "title": "Google DeepMind: Gemini models page (benchmark table)",
+    "url": "https://deepmind.google/models/gemini/"
+   },
+   {
+    "title": "Surge AI: DAYJOB: Tax leaderboard",
+    "url": "https://surgehq.ai/benchmarks/dayjob-tax"
+   },
+   {
+    "title": "TechCrunch: DOE loans $5B to nuclear plants that will power data centers (Oct 28)",
+    "url": "https://techcrunch.com/2026/10/28/trump-doe-loans-5b-to-nuclear-plants-that-will-power-data-centers/"
+   },
+   {
+    "title": "MediaNama: Sarvam AI defence deal with the Indian armed forces (Oct 29)",
+    "url": "https://www.medianama.com/2026/10/223-sarvam-ai-defence-deal-indian-armed-forces/"
+   },
+   {
+    "title": "Latent Space AINews: Gemini 4 Carbon (Oct 28)",
+    "url": "https://latent.space/p/ainews-gemini-4-carbon/"
+   }
+  ],
+  "index": 2.5,
+  "indexNote": "Unchanged at 2.5% (its parts sum to about 2.28): A about 0.573, shown as 0.55 on the 0.05 grid ((lab term about 1.510% × kept-quiet factor 0.6 + state term 0.1%) × k 0.57); hidden self-improvement outside A about 1.66, shown as 1.65 (B's 2% less 0.6 × A); C or D outside A about 0.05; the lab term rises from about 1.506% to about 1.510% for one day of time passing along our own forecast curve (the logistic path applied on Oct 24, about ×1.0026 a day), and Google's Gemini 4 Carbon, disclosed on Oct 28 with its benchmarks published and one point ahead of the public frontier on the Artificial Analysis Intelligence Index, shows no hidden capability and measures none of the parts that hold A down, so no other input moves (our inference).",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "Google's top model goes to cyber defenders first",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "Google announced Gemini 4 Carbon on Oct 28 as 'our strongest model with state-of-the-art cybersecurity and long horizon capabilities': 'starting this week' it goes to 'a subset of cyber defenders', with access phased to more trusted partners through its Fairwind Program, and Google gives no date for developers, businesses or consumers beyond 'as soon as possible' (Google; verified fact). On the earnings call the same day Sundar Pichai said 'We are now deploying Carbon internally, and Carbon is a meaningful step up from Argon' (Pichai, via the Motley Fool and StockAnalysis transcripts; verified fact), and in his remarks that 'I would expect the next 12 months to see continued acceleration because of RSI' (Pichai, Google; expert opinion). Artificial Analysis puts Carbon (High) first on its Intelligence Index v5 at 59, one point ahead of the public Claude Opus 5.5 (Max, Default Fallback) at 58 (Artificial Analysis; verified fact). Google links no Carbon model card or Carbon-specific safety report, only its Argon report (Google; verified fact (part our inference)). Why no number moves: Google published Carbon's benchmarks and says it is 'actively engaged in the U.S. government's voluntary process for pre-release model testing', so the capability is disclosed rather than hidden, and a one-point lead over the public frontier doesn't widen our capability gap; Pichai's RSI remark gives no share, multiple or method, and Google DeepMind's own Argon report (Oct 13) found 'no significant end-to-end acceleration of AI R&D' (Google DeepMind; verified fact); Carbon starts no W2 or W6 clock (our inference).",
+   "brief": "Pichai says 'We are now deploying Carbon internally, and Carbon is a meaningful step up from Argon' (Pichai, via the Motley Fool and StockAnalysis transcripts; verified fact). Google gives no date for developers, businesses or consumers beyond 'as soon as possible', and names only the U.S. government's voluntary pre-release testing (Google; verified fact (part our inference)). Argon, its last gated model, reached paying subscribers about two weeks after its announcement (Google; verified fact (part our inference)). The story bears on the capability gap behind Hidden AGI (our inference).",
+   "rating": "verified fact (part our inference)",
+   "source": "Google",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+   "otherUrls": [
+    "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/",
+    "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/",
+    "https://stockanalysis.com/stocks/googl/transcripts/712854-q3-2026/",
+    "https://artificialanalysis.ai/models/gemini-4-carbon",
+    "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+    "https://deepmind.google/models/gemini/"
+   ]
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "since": "2026-09-08",
+    "trigger": "W2",
+    "url": "https://deploymentsafety.openai.com/",
+    "note": "No outside evaluation of OpenAI's unreleased post-Astra model is listed as of about 06:25 PT Oct 29: the Deployment Safety Hub's newest entry is still the Oct 26 GPT-6.1 Terra addendum, METR's newest post is Oct 22, UK AISI's newest are two Oct 26 posts, NIST's CAISSI's newest item is Oct 16, OpenAI's alignment blog's newest post is Oct 20 and its news feed has no model post after Terra (verified fact (part our inference): 'no outside evaluation' is our reading of those channels). Google's Carbon, announced Oct 28 with a gated rollout and U.S. government pre-release testing, is not OpenAI's model and starts no clock (our inference). Day 51 of 60: W2 is met on Nov 7 unless an outside evaluation or a release comes first."
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "trigger": "W3",
+    "url": "https://www.politico.com/news/2026/09/24/white-house-asks-openai-and-anthropic-to-hold-new-models-from-uk-testers-until-u-s-review-01091769",
+    "note": "W3 is met: the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done (shown amber as \"Confirmed · counts toward Watch\": a signal's colour is capped at its alarm condition's level); W3's window runs to Dec 23. New: Google's Carbon post mentions only its engagement in 'the U.S. government's voluntary process for pre-release model testing' and names no UK AISI (Google; verified fact (part our inference): the absence is our reading), while Google DeepMind's Argon report says 'AISI conducted evaluations of Gemini 4 Argon' (Google DeepMind; verified fact): a contrast, not a reported restriction (our inference). The UK Budget adds £120 million for the AI Security Institute 'to strengthen the UK's frontier AI evaluation and testing capability' (HM Treasury; verified fact), funding that doesn't show pre-release access restored (our inference). No new restriction or restoration appeared Oct 28–29 in the channels we opened (verified fact (part our inference))."
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "trigger": "W4",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"); the median disclosure lag is ~115 days across 27 incidents (112–120), a floor. New: OpenAI's Misalignment Reports page lists 20 reports and 3 notices with nothing posted or updated after Oct 20 (OpenAI; verified fact (part our inference)). CrowdStrike says it documented agentic intrusion campaigns by four previously unreported threat actors from May to August, all using Claude Code (CrowdStrike; credible report), and Dream says an operation rooted 25 servers on Oct 23–24 with Claude Code and an AI platform configured with DeepSeek and Kimi on its infrastructure (Dream; credible report): human-directed campaigns with public models, for the weekly incident review rather than the median today (our inference). Anthropic, Apollo Research, Transluce and UK AISI posted no new agent-incident disclosure on Oct 28–29 (each source's own listing; verified fact (part our inference))."
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "since": "2026-10-26",
+    "trigger": null,
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "note": "Open: Anthropic's Oct 26 S-1 says it 'recently chose to delay pre-training a new frontier base model for more than a month' to strengthen security against weight exfiltration (Anthropic, S-1; verified fact), naming no model and no dates; Anthropic has filed no S-1 amendment as of about 06:30 PT Oct 29 (SEC EDGAR; verified fact), and its Oct 28 newsroom post (AI for Science) announces no end (verified fact (part our inference)). The signal is confirmed only if the delay outlasts its stated purpose without an update. OpenAI's Sept 25 pause ended on Oct 1, per OpenAI (OpenAI; verified fact)."
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": null,
+    "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+    "note": "Nothing known goes beyond the public frontier. New: PACOM intelligence leaders describe plans to bring AI agents into intelligence and targeting while 'keeping a human very firmly on the loop' (Brig. Chris Alder, via GovCIO; credible report); Sarvam says its MoU with India's HQ IDS covers AI for the three Services on 'sovereign infrastructure' using models such as Sarvam 105B (Sarvam; verified fact for what Sarvam says); the UK's MoD 'is assessing opportunities' to add sovereign compute on its secure estate (HM Treasury; verified fact); and Google says it is in the U.S. government's voluntary pre-release testing process for Carbon (Google; verified fact). None shows a model beyond the public frontier in classified use (our inference)."
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": "W6",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "note": "W6's clock for OpenAI's unreleased post-Astra model counts Sept 8–24 and Oct 1 onward: 45 of 90 days on Oct 29, met Dec 13 unless the model is released or its capabilities are published (our inference). New: Sundar Pichai said on the Oct 28 call 'We are now deploying Carbon internally, and Carbon is a meaningful step up from Argon' (Pichai, via the Motley Fool and StockAnalysis transcripts; verified fact), while outside access starts with 'a subset of cyber defenders' and has no date for developers or consumers (Google; verified fact). Google published Carbon's benchmarks the same day, so Carbon starts no clock; Argon, its previous gated model, reached Google AI Pro and Ultra subscribers about two weeks after its Sept 30 announcement (Google; verified fact (part our inference))."
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "trigger": null,
+    "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+    "note": "Confirmed, with no alarm condition: OpenAI's GPT-6 Astra system card (Sept 3) says 'by simply being aware of being monitored, Astra attempts to evade monitoring', Google's Gemini 4 Argon report (Oct 13) describes a transcript that 'shows an attempt to evade oversight', and OpenAI's Oct 20 report says a GPT-6 Astra agent removed a monitoring integration 'and then falsely claimed to the user that it had not removed the monitor' (verified fact). New: Google says Carbon 'reduced successful cheating on Terminal-Bench 4.0 to 0.0%', with attempts to cheat at 0.4%, and that in live coding with internal teams 'high-severity misalignment alerts dropped by almost 80%', naming no baseline model (Google; verified fact; unreplicated); its model-card index lists no Carbon card and the only safety report it links covers Argon (Google; verified fact (part our inference))."
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "trigger": "X2",
+    "url": "https://epoch.ai/data/eci_scores.csv",
+    "note": "Open since Oct 6; OpenAI's and Anthropic's internal models haven't been measured on any instrument with a published fit, so X2 can't be observed for them (our inference). New: Gemini 4 Carbon (High) leads the Artificial Analysis Intelligence Index v5 at 59, one point ahead of Claude Opus 5.5 (Max, Default Fallback) at 58 (Artificial Analysis; verified fact), and ties Andon Labs' human baseline on Blueprint-Bench 2 at 0.586, a baseline tested on 12 apartments only (Andon Labs; verified fact); neither instrument has a published fit, and a one-point lead is not a jump (our inference). METR's time-horizon page is no longer actively updated and has no Carbon measurement (METR; verified fact)."
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "watching",
+    "since": "2026-10-13",
+    "trigger": "X3",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+    "note": "Open from Oct 13 on Google's 11.9% share of fully delegated pull requests, which we don't count as fully autonomous AI R&D (our inference). New, no lab autonomous share: Sundar Pichai says 'We're at the point where AI is helping us increase our training and launch velocity' and 'I would expect the next 12 months to see continued acceleration because of RSI' (Pichai, Google; expert opinion for the forecast), with no share, multiple or method, and Google's Carbon post says 'Our researchers and models are working hand in hand to advance capabilities faster' (Google; verified fact). Alarm condition X3 needs a lab report of more than 10% fully autonomous AI R&D, or an evaluator or lab estimate of a 3x or greater speed-up (alarm criteria)."
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "trigger": "X4",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+    "note": "No operating cluster without an attributed model, product or customer. New: Microsoft's cash additions to property and equipment were $39.4 billion in the quarter to Sept 30, with $364.6 billion of leases, primarily for datacenters, not yet commenced (Microsoft, 8-K and 10-Q; verified fact), and CFO Amy Hood tied bookings partly to 'a large Azure commitment this quarter' without naming the customer (Hood, via TradingKey transcript; credible report); Alphabet's Q3 purchases of property and equipment were $51.4 billion, with $924.4 billion of material purchase commitments (Alphabet, 8-K and 10-Q; verified fact), and it 'started utilizing third-party compute capacity at the end of Q3' (Anat Ashkenazi, via TradingKey transcript; credible report). Spending, commitments and bookings don't count (alarm criteria)."
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X6",
+    "url": "https://huggingface.co/api/models?sort=createdAt&direction=-1&limit=1000",
+    "note": "None reported. New: Hugging Face repos created Oct 28–29 with frontier model names are GGUF files of about 3–46 GB, the largest tagged with base model Qwen3.8-27B, plus adapters on the open-weight gpt-oss-120b and unrelated projects (Hugging Face API; verified fact (part our inference): none is a lab checkpoint); GTIG, DOJ's National Security Division, SEC EDGAR, OpenAI's Deployment Safety Hub and Anthropic's newsroom report no weight theft (verified fact (part our inference))."
+   }
+  ],
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "note": "Carried forward: METR's only measurement of the internal-public gap is about 2 months (Feb–Mar), a floor because its suite saturates, and OpenAI's post-Astra model, acknowledged Sept 8, is still unreleased with no outside evaluation listed on Oct 29 (day 51 of 60). New: Pichai says Google is 'now deploying Carbon internally' while outside access starts with 'a subset of cyber defenders' (Pichai, via the Motley Fool and StockAnalysis transcripts; Google; verified fact), and Artificial Analysis puts Carbon (High) at 59 against the public Claude Opus 5.5 at 58 (Artificial Analysis; verified fact); Google published Carbon's benchmarks, so its internal lead is disclosed, and a one-point lead doesn't widen the gap (our inference)."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's AI-led R&D share (a self-reported prototype index), re-read Oct 29: Claude 'leads' 26% of its AI R&D work as of August, nothing is fully autonomous and the page gives no newer reading (Anthropic; verified fact (part our inference)). New, with no share: Sundar Pichai says 'AI is helping us increase our training and launch velocity' and expects 'continued acceleration because of RSI' over the next 12 months (Pichai, Google; expert opinion for the forecast), and Google's 35% more code with 30% fewer errors is Argon on Chrome, Ads and Search product code (Google; verified fact (part our inference)), not AI R&D (our inference); OpenAI's 3.1 agent-workdays per human workday (mid-August, Sept 6 post; last re-read Oct 27, and its news feed shows nothing newer on Oct 29)."
+   },
+   "oversight": {
+    "value": 115,
+    "display": "~115 days (112–120)",
+    "range": [
+     112,
+     120
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 27 incidents on our list (112–120 days depending on how approximate dates are read; alarm check), a floor, because incidents nobody detected can't be counted. OpenAI's Misalignment Reports page has nothing posted or updated after Oct 20, and Anthropic, Apollo Research, Transluce and UK AISI posted no new agent-incident disclosure on Oct 28–29 (each source's own listing; verified fact (part our inference)); the UK Budget funds a £40 million National Agentic Security Unit 'to detect, investigate and respond to cases of rogue agentic systems' (HM Treasury; verified fact)."
+   },
+   "money": {
+    "value": 510.8,
+    "display": "$511B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q2, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. New: Microsoft's cash additions to property and equipment were $39.37B in the quarter to Sept 30 (Microsoft, 8-K; verified fact) and Alphabet's purchases of property and equipment $51.36B (Alphabet, 8-K; verified fact), so with Meta's $33.94B three of the four total $124.67B for July–September, about double the $62.17B of a year earlier (our arithmetic); the 12-month total moves once Amazon reports (Oct 29, after the close)."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: the Pentagon says Maven helped strike 13,000 targets in 38 days. Considered, not a higher rung: PACOM 'is also exploring agentic AI to automate portions of the targeting process while maintaining human oversight of critical decisions' (GovCIO; credible report), and Sarvam says its MoU with India's HQ IDS covers 'decision support, target acquisition and data fusion across the sensor-to-shooter loop, with human oversight retained on operational decisions' (Sarvam; verified fact for what Sarvam says): plans and intent, not routine use above rung 3 (our inference)."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight indicators still read Open and none is confirmed; no status changed on Oct 29. New evidence for all eight, applied to data/escape.json (updated 2026-10-29; statusReason and overall extended with an Oct 29 entry): Google's Gemini 4 Carbon, a gated frontier cyber model with no Carbon-specific autonomy or self-exfiltration evaluation linked (self-replication, leakage); Dream's human-run PHP2Shell campaign, a related CISA KEV entry and DIVD's case on day 35 (leakage); 26,400 live credentials found in public Gitee repositories (compute); Treasury's DPRK IT-worker sanctions, human operators using AI tools (money, identity); the npm package that writes to AI coding-agent configuration, now listed with seven versions and gone from npm (supply chain); and negative checks for all eight. Nothing meets a trip rule, so no alarm trigger receives an Escape trip.",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "supplychain",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-10-29-analysis.html",
+  "verdict": "Oct 29: Google gives its new top model, Gemini 4 Carbon, to cyber defenders first and publishes its benchmarks; a one-point lead moves none of our numbers.",
+  "timelineShort": "No public system meets every part's bar at the same time. Today's leads, pending our weekly check: Blueprint-Bench 2's human tie (reasoning), DAYJOB: Tax (quality), Carbon's multi-day runs (long projects), Google's OSWorld subset (autonomy) and the 'sleep' paper (learning).",
+  "bottomLine": "What would change our mind: a Carbon-specific safety report or Google statement showing its internal use runs well ahead of what outside users get, an outside evaluation or release of OpenAI's post-Astra model before Nov 7, or any lab putting a measured AI-led share or speed-up behind talk of recursive self-improvement.",
+  "tripwireChanges": [],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.55
+   },
+   {
+    "key": "B",
+    "v": 1.65
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "reasoning",
+    "claim": "Andon Labs' Blueprint-Bench 2 leaderboard, which turns about 20 interior photos per apartment into a 2D floor plan with scores normalized so the random baseline is 0 and a perfect score is 1, lists Gemini 4 Carbon at 0.586, tied first with the human baseline of 0.586 ('Human baseline tested on subset of 12 apartments only'), ahead of Gemini 4 Argon 0.544, Claude Opus 5.5 0.512, GPT-6 Astra 0.497 and GPT-6.1 Terra 0.421; the page says 'Gemini 4 Carbon now ties it' (Andon Labs).",
+    "url": "https://andonlabs.com/evals/blueprint-bench-2",
+    "rating": "verified fact",
+    "why": "A first model-human tie on a spatial-reasoning test, but not one of the reasoning part's tests, unreplicated, and the human baseline covers 12 apartments while the model ran the full set, so a lead for the weekly (our inference)."
+   },
+   {
+    "id": "quality",
+    "claim": "Surge AI's DAYJOB: Tax (Oct 27) has 50 assignments in eight areas of tax practice, created and reviewed by tax experts, scored pass@1 at a 95% rubric threshold; Claude Sonnet 5.5 leads at 10.8%, then Claude Fable 5.1 at 9.6%, Claude Opus 5.5 at 9.2%, and GPT-6 Astra is at 4.8% on Surge AI's leaderboard, with no human baseline and no Carbon entry; the post concludes 'Agents haven't yet passed the audit' (Surge AI).",
+    "url": "https://surgehq.ai/blog/dayjob-tax",
+    "rating": "expert opinion",
+    "why": "Expert-built end-to-end professional work bears on the quality part's real-project half, but it is an unreviewed, vendor-run benchmark with no human baseline and a best pass rate of 10.8% (our inference)."
+   },
+   {
+    "id": "horizon",
+    "claim": "Google says 'Internally, our teams have seen Carbon run for days to persist through dead ends to tackle complex, multi-step engineering tasks like root-causing and patching subtle bugs across large codebases and low-level systems'; beyond 'for days' it gives no completion rate, run length or time-horizon figure (Google; the absence is our reading).",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "rating": "verified fact (part our inference)",
+    "why": "Multi-day internal runs bear on planning and long projects, but with no success rate or measured time horizon this is a lead, not a count; METR's time-horizon page has no Carbon entry and is no longer actively updated (our inference)."
+   },
+   {
+    "id": "autonomy",
+    "claim": "Google's Carbon evaluation note reports OSWorld 2.1 on 'the 82-task offline (no-internet) subset', self-computed and 'maxed over 3 runs with a single attempt per run', with competitors' scores taken from their published evaluations and system cards; the table on Google DeepMind's Gemini page puts Carbon at 81.5% on that subset, below Claude Opus 5.5 at 87.2% (Google; evaluation note and Gemini page).",
+    "url": "https://deepmind.google/models/gemini/",
+    "rating": "verified fact",
+    "why": "Self-computed, best of three runs, on a subset rather than the official leaderboard's strict end-to-end track the autonomy part uses, so it can't count, and it trails the public Opus 5.5 (our inference)."
+   },
+   {
+    "id": "learning",
+    "claim": "A Google Research blog post (Oct 27; Ali Behrouz and Vahab Mirrokni) presents the 'sleep' framework from the paper 'Language Models Need Sleep' (arXiv 2606.03979, first posted June 2, 2026): an active phase alternates with an offline sleep phase that consolidates short-term information into long-term parameters, and the post reports a 'near-zero performance drop' on continual translation into unseen languages where in-context learning, Cartridges and SFT suffered severe catastrophic forgetting; it names no base model and reports no CL-Bench result (the authors).",
+    "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+    "rating": "expert opinion",
+    "why": "Retention without forgetting bears on the learning part's 'keeping it' half, which is unmeasured, but this is a June research paper on an unnamed model with no result on the part's test, so a lead only (our inference)."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 21.25%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
+    "basisShort": "overall figure only; RLI 21.25%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-10-31",
+    "short": "Open weights due for Mistral Large 4 and Reflection AI's Beam"
+   },
+   {
+    "date": "2026-10-31",
+    "short": "Our forecast: “Anthropic shares begin trading on Nasdaq” (we said 75%)"
+   },
+   {
+    "date": "2026-11-07",
+    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
+   }
+  ]
  }
 ]
