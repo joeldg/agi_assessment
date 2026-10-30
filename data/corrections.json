@@ -487,6 +487,25 @@
    "now": "OpenAI said on Oct 23 that it resumed RL training and internal inference of its frontier models on Oct 1; its DNS report, last updated Sept 25, still said paused",
    "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
    "emailed": "2026-10-24"
+  },
+  {
+   "date": "2026-10-30",
+   "page": "calendar.html",
+   "item": "Reflection AI's Beam open weights",
+   "was": "Open weights due for Mistral Large 4 (\"by the end of the month\", Oct 6 post) and Reflection AI's Beam (\"later this month\", Oct 5), dated Oct 31 (our calendar as updated Oct 23)",
+   "now": "Beam's open weights were already public: Reflection AI's Hugging Face repo reflection/Beam-1.0-501B-A23B (Apache 2.0) has its \"Beam is available\" commit at 10:34 UTC on Oct 16 (Hugging Face; verified fact). The calendar now dates Beam's release Oct 16 and Mistral Large 4's Oct 29",
+   "url": "https://huggingface.co/reflection/Beam-1.0-501B-A23B",
+   "emailed": null
+  },
+  {
+   "date": "2026-10-29",
+   "page": "jobs.html",
+   "item": "Baseline edition of 2026-10-06: the item comparing OpenAI's and Anthropic's combined revenue run-rate with the four largest hyperscalers' capex, and J8's starting-status reason that quotes it",
+   "was": "OpenAI's and Anthropic's combined annualized revenue rose about 4.4 times, from about $30B at the end of 2025 to about $135B by July-September 2026 (Epoch AI company data, compiled from company statements and media reports), while quarterly capex at Microsoft, Alphabet, Amazon and Meta rose 39%, from $118.6B in the fourth quarter of 2025 to $165.1B in the second quarter of 2026 (SEC filings). On our reading AI revenue is now growing faster than AI capex: the two labs' run-rates equal about 26% of the four companies' trailing-year capex of about $511B, up from about 8% at the end of 2025.",
+   "now": "Using OpenAI's September 2026 annualized revenue of about $50B, which replaces the earlier figure of about $70B in Epoch AI's company data, the combined run-rate was about $115B, about 3.8 times the end-2025 level and about 22.5% of that capex.",
+   "url": "https://epoch.ai/data/ai-companies",
+   "emailed": null,
+   "section": "jobs"
   }
  ]
 }

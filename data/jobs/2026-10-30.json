@@ -1,0 +1,1883 @@
+{
+ "schema": 1,
+ "date": "2026-10-29",
+ "claimsVersion": "1.0",
+ "baseline": false,
+ "window": {
+  "from": "2026-10-16",
+  "to": "2026-10-29"
+ },
+ "headline": "Big Tech's quarterly capex more than doubles to $202B, $26B above its operating cash flow",
+ "dek": "No claim changed status; J8 needs a second quarter of widening revenue gap. Microsoft, Alphabet, Amazon and Meta spent $201.9B on capex in the third quarter, up 108%, while Anthropic's IPO filing puts its compute costs at 48% of revenue. Compensation fell to 49.9% of GDP, and Stanford's ADP-based data find young workers' losses in AI-exposed jobs deepening.",
+ "strip": [
+  {
+   "id": "J0",
+   "status": "emerging",
+   "prev": "emerging",
+   "pending": null
+  },
+  {
+   "id": "J1",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J2",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J3",
+   "status": "emerging",
+   "prev": "emerging",
+   "pending": null
+  },
+  {
+   "id": "J4",
+   "status": "established",
+   "prev": "established",
+   "pending": null
+  },
+  {
+   "id": "J5",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J6",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J7",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J8",
+   "status": "emerging",
+   "prev": "emerging",
+   "pending": null
+  },
+  {
+   "id": "J9",
+   "status": "emerging",
+   "prev": "emerging",
+   "pending": null
+  },
+  {
+   "id": "J10",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J11",
+   "status": "no-clear-sign",
+   "prev": "no-clear-sign",
+   "pending": null
+  },
+  {
+   "id": "J12",
+   "status": "emerging",
+   "prev": "emerging",
+   "pending": null
+  }
+ ],
+ "moves": [],
+ "pendingOwner": [],
+ "evidence": [
+  {
+   "id": "e1",
+   "text": "In the third quarter of 2026 Microsoft, Alphabet, Amazon and Meta spent a combined $201.9B in cash on property and equipment, up 108% from $97.3B a year earlier and $26.4B more than their combined operating cash flow of $175.5B; only Microsoft ($39.4B against $58.0B) covered its spending from operating cash flow (company earnings releases, our sums). Alphabet ($51.4B against $42.3B) sold $12.4B of stock under its at-the-market program and $28.7B of notes in the quarter and bought back no stock in the first nine months of 2026, and Amazon ($77.3B against $42.4B) raised $48.1B of long-term debt in the quarter.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "Every input is a line in the four companies' own releases; the sums, the 108% and the coverage comparison are our arithmetic.",
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "for"
+    },
+    {
+     "claim": "J1",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Infrastructure revenue lags capex by design. Capex includes non-AI spending, such as Amazon's logistics and Meta's own ad systems. Finance leases are excluded, so the Microsoft and Meta totals understate spending. Debt can be ordinary financing for borrowers this strong.",
+   "top": true
+  },
+  {
+   "id": "e2",
+   "text": "Meta's board, with the written consent of holders of a majority of its voting power, approved a new non-voting Class C stock, effective Jan 19, 2027, after a special committee concluded that debt financing of the size management was considering could hurt Meta's credit ratings and that the new class would let it raise equity, including from sovereign financial institutions (Meta preliminary information statement, Oct 21, 2026). On Oct 26 Meta launched, then priced, two offerings for general corporate purposes: $25.0B of Class A stock at $625 a share under forward sale agreements, which would bring Meta about $24.9B at an initial forward price of about $622.92 a share on settlement by Nov 19, 2027, and $12.5B of 6.50% mandatory convertible preferred stock (Meta release and prospectus supplements).",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066710/meta-20261021.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1326801/000119312526436410/d94886d424b5.htm",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000119312526436405/d133631d424b5.htm",
+    "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-Pricing-of-Offering-of-Depositary-Shares-Representing-Series-A-Mandatory-Convertible-Preferred-Stock-and-Offering-of-Class-A-Common-Stock-in-Connection-with-Forward-Sale-Agreements/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Equity and mandatory convertibles absorb losses rather than amplify them, which cuts against the claim's financial-shock channel. The share-class design also serves founder control: the information statement says Mark Zuckerberg would not support a large Class A issue that reduced his voting power. Meta remains profitable.",
+   "top": true
+  },
+  {
+   "id": "e3",
+   "text": "Meta's 10-Q for the quarter to Sept 30, 2026 puts its maximum exposure to loss in two unconsolidated data-center ventures in Louisiana and Texas at $68.4B, including $41.5B of residual value guarantees. That is up from $46.0B, including $28.1B of guarantees, at Dec 31, 2025; most of the rise comes from the Texas venture, formed in July 2026, for which Meta's June-quarter 10-Q had already disclosed guarantees of up to about $13B. Meta holds 20% of each venture, and their total estimated development costs are about $41B. The same filing lists $454.5B of non-cancelable contractual commitments, mostly for cloud capacity, servers and network infrastructure, and energy.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Meta says residual-value-guarantee payments are not probable and records no liability. The ventures may be ordinary project finance for a strong tenant, and off-balance-sheet vehicles are only partly disclosed. The Texas venture itself (July 2026) was already known; what is new is the size of the exposure.",
+   "top": true
+  },
+  {
+   "id": "e4",
+   "text": "Microsoft recorded $10.0B of revenue from commercial arrangements with OpenAI, including revenue-sharing payments, in the quarter to Sept 30, 2026, about 11% of its $92.3B quarterly revenue and against $24.1B in the whole fiscal year to June 30, 2026, and its receivables from OpenAI rose to $7.2B from $6.0B (Microsoft 10-Q and 10-K). Microsoft holds about 24% of OpenAI on an as-converted basis and has funded $12.0B of a $13.0B commitment.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "The disclosures are Microsoft's own; the 11% share is our arithmetic.",
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Supply deals that are not demand support: the total includes revenue-sharing payments, which come from OpenAI's own sales rather than from compute bought with Microsoft's investment, and OpenAI also pays from its own revenue (about $50B annualized in September, per Epoch AI) and from outside funding.",
+   "top": false
+  },
+  {
+   "id": "e5",
+   "text": "Anthropic's IPO registration statement (Form S-1, filed Oct 26, 2026) lists $77.0B of undrawn note-purchase facilities at June 30, 2026 from three suppliers: Google ($20B), Amazon Web Services ($15B) and Broadcom ($42B, usable only to pay rent under Anthropic's 2026 lease of TPU-based AI equipment from Broadcom). It also reports $110.8B of financing inflows in the first half of 2026, mainly from preferred stock, against $17.2B of cash used in investing, mostly purchases of short-term securities along with capital spending on servers and network equipment.",
+   "eventDate": "2026-06-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Supply deals that are not demand support. The facilities are undrawn, convert into equity, and are partly reducible: Google's by up to $10B if it buys shares alongside the IPO. Anthropic generated positive operating cash flow in the first half of 2026. The S-1 still leaves its total compute commitments blank.",
+   "top": false
+  },
+  {
+   "id": "e6",
+   "text": "Anthropic's S-1 (filed Oct 26, 2026) reports second-quarter 2026 revenue of $11.6B, up 1,368% from a year earlier, against compute and infrastructure expenses of $5.6B, or 48% of revenue, down from 251% in the first quarter of 2025. The company had operating income of $1.0B for the quarter, and operating cash flow of $3.9B in the first half of 2026 against $1.5B of cash used a year earlier.",
+   "eventDate": "2026-06-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "against"
+    }
+   ],
+   "confounder": "This is one lab, and the interim results are unaudited and presented in an IPO filing. Compute is procured 12-18 months ahead, so expenses lag new capacity and the ratio may rise again. The compute line may not capture capital spending under the company's new direct-lease model.",
+   "top": true
+  },
+  {
+   "id": "e7",
+   "text": "In the third quarter of 2026 Google Cloud revenue rose 103% to $30.7B and AWS revenue rose 39% to $46.0B, its fastest growth in nearly five years, and Amazon CEO Andy Jassy said AWS revenue growth is projected at over 40% in both 2027 and 2028. Microsoft's Azure revenue rose 48% and its commercial remaining performance obligation rose 73% to $677B (company earnings releases, Oct 28-29, 2026).",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "company-statement",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Cloud revenue is not all AI revenue, and Google Cloud includes sales of TPU systems. Microsoft does not say how much of its backlog comes from OpenAI, a related party it holds about 24% of. Amazon's projection is a forward-looking company statement.",
+   "top": false
+  },
+  {
+   "id": "e8",
+   "text": "By our sums from the filings, the four companies' third-quarter capex rose 108% from a year earlier while combined revenue at AWS, Google Cloud and Microsoft Cloud rose about 45%, to $140.6B. On Epoch AI's company data (updated Oct 27, 2026), OpenAI's annualized revenue of $50B (September) and Anthropic's $65B (end of July, from press reports; Anthropic's S-1 reports second-quarter revenue of $11.6B, about $46B annualized, so the press figure is the higher one) total about $115B, about 19% of the four companies' capex of about $615B over the four quarters to September. Our Oct 6 estimate of about 26% used an OpenAI figure of about $70B that Epoch now treats as superseded; with the revised figure it would have been about 22.5% of the $511B trailing capex reported then, and the rest of the fall comes from the higher capex since.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://epoch.ai/data/ai-companies",
+   "otherUrls": [
+    "https://epoch.ai/data/ai_companies_revenue_reports.csv",
+    "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
+    "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+   ],
+   "via": null,
+   "rating": "our inference",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Infrastructure revenue lags capex by design, and capex includes non-AI spending. The lab run-rates are unaudited statements that Epoch compiles from media reports. We derived the Microsoft Cloud prior-year figure from its reported 30% growth. Anthropic's figure dates from July, so later growth would raise the ratio.",
+   "top": false
+  },
+  {
+   "id": "e9",
+   "text": "The ICE BofA US High Yield option-adjusted spread rose to 3.40 percentage points on Oct 22, 2026 and fell back to 3.14 on Oct 28, inside its 2026 range of 2.60-3.46. The investment-grade spread was 0.86 on Oct 28, after 0.91 on Oct 23, inside its 2026 range of 0.73-0.94 (FRED BAMLH0A0HYM2, BAMLC0A0CM).",
+   "eventDate": "2026-10-28",
+   "background": false,
+   "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+   "otherUrls": [
+    "https://fred.stlouisfed.org/series/BAMLC0A0CM"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "market-data",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J8",
+     "direction": "against"
+    }
+   ],
+   "confounder": "The general credit cycle and monetary policy. These are market-wide spreads, not AI-specific, and FRED keeps only three years, so there is no pre-2022 range. A single issuer such as CoreWeave can be under stress while the index stays calm.",
+   "top": false
+  },
+  {
+   "id": "e10",
+   "text": "From Oct 15 to Oct 28, 2026 the Nasdaq US Benchmark Business Training and Employment Agencies index (FRED NASDAQNQUSB50205025) rose 6.8%, the Professional Business Support Services index (NASDAQNQUSB50205020) 3.5% and the Computer Services index (NASDAQNQUSB10101010) 3.2%, against 0.1% for the Nasdaq US Benchmark Index (NASDAQNQUSB). The employment-agency index rose 7.1% on Oct 23, the day after Robert Half reported its first adjusted year-on-year rise in talent-solutions revenue since 2022 (2%) and said hiring activity continues to improve. Since Sep 30 the professional-services index has risen 19.0%, against 1.2% for the broad index, but against the benchmark since Dec 31, 2021, the three indexes remain down 68%, 50% and 20%.",
+   "eventDate": "2026-10-28",
+   "background": false,
+   "url": "https://fred.stlouisfed.org/series/NASDAQNQUSB50205025",
+   "otherUrls": [
+    "https://fred.stlouisfed.org/series/NASDAQNQUSB50205020",
+    "https://fred.stlouisfed.org/series/NASDAQNQUSB10101010",
+    "https://fred.stlouisfed.org/series/NASDAQNQUSB",
+    "https://www.sec.gov/Archives/edgar/data/315213/000031521326000049/rhiq32026ex991.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "Index values and Robert Half's statement are primary; setting the release beside the next day's index move is our reading.",
+   "kind": "official-series",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J1",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Interest rates and sector rotation: the 10-year TIPS yield (fred:DFII10) fell from 2.78% to 2.67% over the same days, and on Oct 22, when the benchmark fell 1.2%, the professional-services and employment-agency indexes rose 5.6% and 5.4%. Earnings changes unrelated to AI, such as a cyclical staffing recovery. Index membership changes. We have not identified which members drove the Oct 22 rise, and two weeks is short.",
+   "top": true
+  },
+  {
+   "id": "e11",
+   "text": "Meta shares rose about 3% on Mar 16, 2026 after Reuters reported that Meta planned to cut 20% or more of its staff to offset heavy AI spending; Meta called the report speculative, and its 10-Q records about 8,000 job cuts in May 2026. Cisco shares rose 15% in extended trading on May 13, 2026 when it announced nearly 4,000 job cuts in an AI-focused restructuring together with a raised revenue forecast (Reuters, via CP24 and GV Wire).",
+   "eventDate": "2026-03-16",
+   "background": true,
+   "url": "https://www.cp24.com/news/money/2026/03/16/meta-shares-jump-after-reuters-report-on-plans-for-layoffs-of-20-or-more/",
+   "otherUrls": [
+    "https://gvwire.com/2026/05/13/cisco-to-cut-about-4000-jobs-in-ai-focused-restructuring-as-orders-surge/",
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm"
+   ],
+   "via": "CP24 and GV Wire (Reuters wire copy)",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "Each share move and plan comes from one Reuters story relayed by one outlet; only Meta's later 8,000 cut is confirmed by a primary filing.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J1",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Meta's plan was unconfirmed at the time and the move was only 3%. Cisco's rise came with a raised revenue forecast and higher AI-infrastructure orders, which may explain most of it. The two cases fall in different quarters.",
+   "top": false
+  },
+  {
+   "id": "e12",
+   "text": "Compensation of employees rose 0.8% in the third quarter of 2026 while nominal GDP rose 1.4%, in the BEA's advance estimate (fred:COE and fred:GDP, observation 2026-07-01), so compensation fell to 49.9% of GDP from 50.2% in the second quarter and 51.2% in the fourth quarter of 2022, the lowest since at least 2015 and below its 2015-2021 range of 52.5%-55.4%; the share had already fallen below its 2015-2019 range (52.7% to 53.7%) in late 2021, before ChatGPT's release. Over the year compensation rose 4.5% against 5.9% for nominal GDP; gross domestic income, the indicator's own denominator, is not yet published for the quarter.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://fred.stlouisfed.org/series/COE",
+   "otherUrls": [
+    "https://fred.stlouisfed.org/series/GDP",
+    "https://www.bea.gov/data/gdp/gross-domestic-product"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "The series values are official; the GDP-based shares, ranges and growth rates are our arithmetic.",
+   "kind": "official-series",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J9",
+     "direction": "for"
+    },
+    {
+     "claim": "J0",
+     "direction": "against"
+    }
+   ],
+   "confounder": "The business cycle and a long decline that predates AI: the fall began in late 2021, before generative AI, alongside post-pandemic inflation, wider profit margins and energy prices. This is the advance estimate and will be revised. Nominal GDP includes price effects and differs from GDI by the statistical discrepancy; we use GDP only because third-quarter GDI is not out.",
+   "top": true
+  },
+  {
+   "id": "e13",
+   "text": "Meta's third-quarter release of October 21, 2026 put its headcount at 66,775 on September 30, down 15% from 78,450 a year earlier (per its 2025 third-quarter release), while revenue rose 26% to $64.6 billion, so we calculate quarterly revenue per employee up about 48%; its 10-Q records $1.18 billion of severance in the first nine months of 2026 for the May 2026 cut of about 8,000 employees, with headcount down 16% in engineering and other technical functions and 18% in marketing and sales. Chief people officer Janelle Gale's memo on the cut, first published by Bloomberg and confirmed by Meta to CNN, tied it to running the company more efficiently and offsetting Meta's other investments, in a passage that does not mention AI, and chief executive Mark Zuckerberg said on the January earnings call that projects that once needed big teams were starting to be done by a single very talented person (Meta executives, via CNN).",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
+    "https://abc7news.com/post/meta-cut-8000-jobs-10-staff-pours-billions-ai/18956199/"
+   ],
+   "via": "CNN (Lisa Eadicicco and Clare Duffy, republished by ABC7) for the Gale memo and the Zuckerberg remark",
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "for"
+    }
+   ],
+   "confounder": "AI-washing: the memo names efficiency and paying for Meta's other investments (mainly AI data centres), not AI doing the work. The cut may move spending from staff to capital rather than replace work with AI. Revenue growth reflects ad pricing and volume, the unwinding of 2021-22 over-hiring is still going on, and contractors are not counted in headcount.",
+   "top": false
+  },
+  {
+   "id": "e14",
+   "text": "In results for the quarter to September 30, 2026, released October 28-29, Alphabet reported 204,757 employees, 7.7% more than a year earlier, against revenue up 24.7% to $127.6 billion. Amazon reported 1,638,000 employees (up 4%) against net sales up 12% to $201.9 billion, and Microsoft's 10-Q for its fiscal first quarter says total company headcount fell 2% while revenue rose 19% to $92.3 billion; we calculate quarterly revenue per employee up about 16% at Alphabet, 8% at Amazon and 21% at Microsoft.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-ex99_1.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Price increases and capital-heavy revenue: much of the growth comes from cloud and AI infrastructure sales, which raise revenue per employee without any labor being replaced. Contractors are left out of headcount, Amazon's count is mostly warehouse and logistics staff, and Alphabet's headcount rose 7.7%, so it is not freezing hiring. We have not compared these with each firm's pre-2022 trend.",
+   "top": false
+  },
+  {
+   "id": "e15",
+   "text": "Microsoft offered a voluntary exit package on October 26, 2026 to employees at level 70 and below in participating teams in the US, UK, Canada and India (Microsoft, via KUOW and CBS News). KUOW and CBS News each put the number eligible at about 60,000, roughly a quarter of its workforce, and KUOW reports that about 30% of those eligible took an earlier voluntary retirement offer and that a Microsoft spokesperson said AI is not driving the buyout programs (Microsoft spokesperson, via KUOW).",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://www.kuow.org/technology/2026-10-26/microsoft-offers-voluntary-buyouts-to-a-quarter-of-its-workforce",
+   "otherUrls": [
+    "https://www.valleynewslive.com/2026/10/27/microsoft-offers-buyouts-60000-workers-it-pours-money-into-ai/",
+    "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
+   ],
+   "via": "KUOW (Monica Nickelsburg, Northwest News Network, republished by OPB); CBS News (Megan Cerullo, republished by Valley News Live)",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "Two outlets give the offer's terms and the 60,000 figure, but the 30% take-up and the spokesperson's statement on AI each come only from KUOW.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "against"
+    }
+   ],
+   "confounder": "The reason is the company's own: Microsoft may understate AI's part (the opposite of AI-washing) while it spends heavily on AI infrastructure. These are offers, not cuts; take-up is unknown and Microsoft expects it to be lower than last time.",
+   "top": false
+  },
+  {
+   "id": "e16",
+   "text": "Barclays said with its third-quarter results on October 22, 2026 that about 5,000 roles, some 5% of its staff, will go by the end of the year, about 1,000 of them already cut in the first half (Barclays, via Reuters and PA Media). Finance director Anna Cross said about 60% of the cuts fall in support functions such as developers (via Reuters), and chief executive C.S. Venkatakrishnan linked the reductions to technology investment made over a number of years and called AI the icing on the cake, not the cake (via PA Media).",
+   "eventDate": "2026-10-22",
+   "background": false,
+   "url": "https://www.businessday.co.za/world/international-companies/2026-10-22-barclays-to-slash-5000-jobs-in-ai-powered-cost-cutting-drive/",
+   "otherUrls": [
+    "https://www.lbc.co.uk/business/37dfcfc864244b2c9b5e82595c5440eb/",
+    "https://www.ajbell.co.uk/news/articles/barclays-quarterly-profit-misses-expectations-weak-ficc-showing"
+   ],
+   "via": "Reuters (Lawrence White, republished by Business Day); PA Media (republished by LBC)",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "The 5,000, 5% and 1,000 figures appear in two independent outlets, but the remarks on developers and on AI each come through one outlet, and we did not open Barclays' own announcement.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "against"
+    }
+   ],
+   "confounder": "AI-washing in the coverage rather than by the firm: the chief executive credits mainly years of platform modernisation and gives AI a minor part. Cost pressure after a quarter of weak fixed-income trading also explains the cuts. Of the 5,000 announced, only 1,000 are confirmed gone.",
+   "top": false
+  },
+  {
+   "id": "e17",
+   "text": "American Express took a $336 million restructuring charge for efficiency initiatives in the third quarter (10-Q filed October 23, 2026), and a spokesperson confirmed about 3,500 job cuts, roughly 4.5% of its about 78,000 staff (via Banking Dive). Chief financial officer Christophe Le Caillec said the aim is a leaner, more agile company that is prepared for AI, with fewer management layers and wider spans of control (via CNBC, as relayed by Canadian HR Reporter).",
+   "eventDate": "2026-10-23",
+   "background": false,
+   "url": "https://www.bankingdive.com/news/amex-american-express-cut-3500-employees-ai-squeri/833861/",
+   "otherUrls": [
+    "https://www.hrreporter.com/news/hr-news/amex-to-cut-5-per-cent-of-workforce-to-prepare-for-ai/395071",
+    "https://www.sec.gov/Archives/edgar/data/4962/000000496226000409/axp-20260930.htm"
+   ],
+   "via": "Banking Dive (Lynne Marek, first published on Payments Dive) for the spokesperson; CNBC, relayed by Canadian HR Reporter (Louise Smith), for the CFO",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "for"
+    }
+   ],
+   "confounder": "AI-washing: executives tie the cuts to removing layers and preparing for AI, not to AI doing the work. The cuts are announced, not completed; a one-off gain from selling its stake in Global Business Travel Group paid for them, and revenue rose 9%.",
+   "top": false
+  },
+  {
+   "id": "e18",
+   "text": "Kroger chief executive Greg Foran told staff on October 12, 2026 that about 3,000 corporate jobs will go over the next three years, writing that technology is changing what is possible and that the company must cut duplicative work (Kroger, via AP). At its October 20 investor update Kroger said it expects savings from streamlined processes and a more scalable operating model, with technology and AI improving execution.",
+   "eventDate": "2026-10-12",
+   "background": true,
+   "url": "https://www.opb.org/article/2026/10/13/kroger-fred-meyer-plans-layoff-3000-employees-lean-into-ai/",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/56873/000110465926117103/tm2627753d1_ex99-1.htm",
+    "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/10/23/layoffs-linked-to-changes-in-corporate-ai-spending"
+   ],
+   "via": "AP (Matt Ott, republished by OPB and by Spectrum News NY1)",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "for"
+    }
+   ],
+   "confounder": "AI-washing, and a new chief executive restructuring the company: the memo names technology broadly and duplicated work. The cuts are planned over three years, and no headcount data shows them yet; Kroger has about 409,000 employees.",
+   "top": false
+  },
+  {
+   "id": "e19",
+   "text": "Infosys's fact sheet for the quarter to September 30, 2026 (SEC filing of October 28) shows 332,542 employees, 4,480 more than in June and 0.2% more than a year earlier, against revenue up 1.3% from a year earlier (1.2% from June) to $5,145 million. It hired about 8,000 graduates in the quarter, kept its target of about 20,000 for the year and cut its constant-currency revenue guidance from 1.5-3% to 1-2%, citing soft volumes and pricing pressure from competition and clients' demands for higher productivity; Tech Mahindra's headcount rose from 146,760 in June to 152,206 in September while revenue rose 2.0% from June (6.8% from a year earlier) to $1,693 million (company releases).",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1067491/000106749126000044/exv99w04.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1067491/000106749126000044/exv99w03.htm",
+    "https://www.sec.gov/Archives/edgar/data/1067491/000106749126000044/exv99w05.htm",
+    "https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy27-results/",
+    "https://www.techmahindra.com/insights/press-releases/techmahindra-q1-fy27-results/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "against"
+    },
+    {
+     "claim": "J3",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Demand in client industries and pricing pressure: Infosys cut its guidance on soft volumes. Its finance chief says graduate hiring partly replaces about 13% attrition (roughly 45,000 leavers a year), and visa and trade policy also matter. The productivity demands may be AI-driven deflation in the price of the same work, which would bear on revenue rather than on headcount.",
+   "top": false
+  },
+  {
+   "id": "e20",
+   "text": "Microsoft's 10-Q for the quarter to September 30, 2026 says Microsoft 365 commercial seats, now counted together with paid GitHub seats, grew 5%, mainly in small and medium business and frontline-worker offerings, while revenue per user rose on upsell to Copilot and premium plans. ServiceNow's subscription revenue rose 21% to $3,988 million, with no seat disclosure, and Alphabet said its first-party model APIs now process nearly 32 billion tokens per minute, more than four times a year earlier (results of October 28).",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000092/erq3fy26.htm",
+    "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Vendors are moving from per-seat to usage and per-agent pricing, and Microsoft's seat metric now includes paid GitHub seats, so seat growth (5% here, against 6% in the June quarter on the old definition) is not on the same basis as before or as the token counts. ServiceNow and Alphabet disclose no seat counts.",
+   "top": false
+  },
+  {
+   "id": "e21",
+   "text": "Indeed's software development postings index stood at 80.8 on October 23, 2026 (February 1, 2020 = 100, seasonally adjusted seven-day average), up 24% from 65.3 a year earlier, against 3% growth to 103.7 for all US postings, and IT Systems & Solutions (77.6, up 12%) and Banking & Finance (107.2, up 13%) also rose faster than less-exposed Construction (129.2, up 6%), Physicians & Surgeons (196.1, up 6%) and Personal Care & Home Health (154.7, up 4%) (Indeed Hiring Lab open data). Over the same year Marketing (76.8), Customer Service (86.8) and Accounting (107.1) were each 0.4-3.1% lower and Data & Analytics rose 5% to 62.4, while Nursing (110.6) and Food Preparation & Service (95.8) fell 1.7% and 3.2%, Childcare 10% to 85.3 and Education & Instruction 8% to 108.0, so on this measure the gap with human-heavy sectors narrowed for software, IT and finance but not for marketing or data and analytics.",
+   "eventDate": "2026-10-23",
+   "background": false,
+   "url": "https://github.com/hiring-lab/job_postings_tracker",
+   "otherUrls": [
+    "https://hiringlab.indeed.com/2026/10/22/us-labor-market-snapshot-october-2026/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "The index values are Indeed's own; the year-on-year changes are our arithmetic, the 'exposed' groupings are our classification, and the narrowing reading is our inference, which holds only for some exposed sectors.",
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J3",
+     "direction": "against"
+    },
+    {
+     "claim": "J2",
+     "direction": "against"
+    },
+    {
+     "claim": "J10",
+     "direction": "against"
+    },
+    {
+     "claim": "J5",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Postings are not hires, and job-board coverage changes. The 2021-22 tech hiring boom and bust and the interest-rate cycle drive software postings independently of AI, and the February 2020 base is a level, not a pre-2022 trend. Indeed's sectors are its own title-based groupings, and the index has no split by seniority, so it cannot show junior postings.",
+   "top": false
+  },
+  {
+   "id": "e22",
+   "text": "Mercor's website on October 29, 2026 showed about 673,000 roles created (a live counter its page data labels total unique jobs), an average contracted rate of $94 an hour, daily payouts of more than $4 million and a network of more than 5 million experts, against about 530,000 roles, $111 an hour and more than 30,000 experts recorded in our October 15 edition. We calculate that $4 million a day at $94 an hour and 2,000 hours a year comes to roughly 5,500-7,800 full-time equivalents worldwide, a little below Meta's May 2026 cut of about 8,000 employees.",
+   "eventDate": "2026-10-29",
+   "background": false,
+   "url": "https://www.mercor.com/",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": null,
+   "kind": "company-statement",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J6",
+     "direction": "for"
+    }
+   ],
+   "confounder": "The firm is promoting itself, and its work follows labs' spending cycles. The counters changed sharply in two weeks with no explanation (roles up 143,000, the stated network from 30,000 to 5 million, the average rate down $17). The roles counter counts job listings, not people, and the payouts are global, not US, so these figures cannot track AI-era jobs over time.",
+   "top": false
+  },
+  {
+   "id": "e23",
+   "text": "The Law School Admission Council counted 15,273 applicants for the 2027 admission cycle as of October 14, 2026, up 12.0% from the same date a year earlier and 48.8% from two years earlier, with applications up 14.6%, though it says this is only about 15% of the applicants it expects. LSAC names the uncertain economy and the possible effect of AI on future employment among the reasons, alongside reapplicants and the political environment (LSAC, October 15).",
+   "eventDate": "2026-10-14",
+   "background": true,
+   "url": "https://www.lsac.org/blog/early-2027-data-show-continuing-strong-interest-law-school",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "The counts are LSAC's own data; the list of reasons is LSAC's judgment, reported here as what LSAC says.",
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J3",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Counter-cyclical moves into law school in a weak job market, which would also follow from a weak graduate market for reasons other than AI. LSAC says many applicants cite the political environment, there are more reapplicants, and early-cycle figures are about 15% of the total. We have not compared these with the pre-2022 trend.",
+   "top": false
+  },
+  {
+   "id": "e24",
+   "text": "Advertised training-contract places at 109 UK law firms total 2,549 for 2027, down 1.7% from 2,593 for 2026, with 25 firms raising their numbers, 24 cutting them (Linklaters from 100 to 60) and 60 unchanged, according to Legal Cheek's compilation of September 10, 2026. Legal Cheek says the declines can largely be explained by the rise of solicitor apprenticeships, and suggests AI may affect firms' longer-term recruitment planning.",
+   "eventDate": "2026-09-10",
+   "background": true,
+   "url": "https://www.legalcheek.com/2026/09/exclusive-data-trainee-numbers-fall-by-2-across-over-100-legal-cheek-most-list-firms/",
+   "otherUrls": [],
+   "via": null,
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J3",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Solicitor apprenticeships are replacing some training contracts, and demand for legal work also matters. These are advertised places, not hires, at UK firms only.",
+   "top": false
+  },
+  {
+   "id": "e25",
+   "text": "In the third quarter of 2026, health care was 17.29% of personal consumption spending (fred:DHLCRC1Q027SBEA over fred:PCEC, observation 2026-07-01, from BEA's advance estimate of 29 October). That is up from 17.19% a year earlier and above its 2015-2019 high of 17.20%, but 0.14 point below our 2015-2019 linear trend and inside that fit's band of about -0.21 to +0.24 point. Over the same year financial services and insurance, the nearest AI-exposed category, rose from 7.94% to 8.06% of spending (fred:DIFSRC1Q027SBEA), on its 2015-2019 trend, while housing and utilities fell from 18.23% to 17.98% (fred:DHUTRC1Q027SBEA), below its 2015-2019 high of 18.07% but 0.60 point above our 2015-2019 trend, outside that fit's band of about -0.18 to +0.22 point.",
+   "eventDate": "2026-07-01",
+   "background": true,
+   "url": "https://fred.stlouisfed.org/series/DHLCRC1Q027SBEA",
+   "otherUrls": [
+    "https://fred.stlouisfed.org/series/DIFSRC1Q027SBEA",
+    "https://fred.stlouisfed.org/series/DHUTRC1Q027SBEA",
+    "https://fred.stlouisfed.org/series/PCEC",
+    "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "Shares are our arithmetic on official BEA series and the trend comparison is our own fit.",
+   "kind": "official-series",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J10",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Nominal shares move with relative prices: medical care services prices have risen more slowly than other prices since 2022, so the nominal health share can understate volume growth. BEA's release says health care led the quarter's rise in services spending and that its advance health care estimate rests mainly on BLS payroll data, so this share is not independent of the payroll-share indicator. Ageing raises health spending regardless of AI, and health spending is largely paid by insurers and government. The housing and utilities share sits above trend after rent and utility price rises since 2021, which nominal shares carry, and it fell over the past year; electricity price rises are J4's channel, not a Baumol shift.",
+   "top": false
+  },
+  {
+   "id": "e27",
+   "text": "Tesla's third-quarter update, filed with the SEC on 21 October 2026, says Optimus production has begun on high-volume lines in Fremont, making its first production-quality robots, lists the Fremont line in early ramp and a Texas line under construction, and gives no unit count. On that day's earnings call Elon Musk said reaching a rate of 20,000 robots a week would probably take at least a year, maybe a little longer, and that he expects Tesla to start delivering Optimus to companies outside Tesla around the end of 2027 (via The Next Web and a Singju Post transcript). The update puts Tesla's cumulative unsupervised robotaxi miles at nearly two million at the end of September, up eightfold in the quarter, with Cybercabs carrying riders in Austin since 3 September, against the more than 400 million fully autonomous kilometres (about 250 million miles) that Waymo cites in its October posts.",
+   "eventDate": "2026-10-21",
+   "background": false,
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
+    "https://thenextweb.com/news/tesla-q3-optimus-production-profit-cybercab",
+    "https://singjupost.com/transcript-tesla-tsla-q3-2026-earnings-call/",
+    "https://waymo.com/blog/2026/10/waymo-in-toronto"
+   ],
+   "via": "The Next Web; Singju Post transcript (for Musk's call remarks)",
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "Tesla's own SEC filings for what Tesla says; Musk's call remarks rest on a transcript and an outlet report, both opened.",
+   "kind": "filing",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Starting production is not deploying robots to paid work, and Tesla gives no Optimus unit, customer or price figures; its 10-Q still describes preparations and investments for large-scale Optimus production. Robotaxi miles cover Tesla's own fleet and give no ride count; city-by-city regulatory approvals limit where it runs.",
+   "top": false
+  },
+  {
+   "id": "e28",
+   "text": "In a release of 21 October 2026 and a release and investor call of 26 October, filed with the SEC by its merger partner Churchill Capital Corp XI, Agility Robotics said GXO will deploy Digit humanoids at two more US warehouses, in Statesville, North Carolina and Lebanon, Tennessee, from early 2027, and that four manufacturing customers are in paid programs, among them AGCO, whose pilot at its Hesston, Kansas plant is due to start in 2027. Its count of committed customer facility deployments stays at 9 and its Digit fleet's operating hours at more than 65,000, the figure it gave in June 2026; it targets up to 25 committed facilities by the end of 2027 and says one robot can earn about $500,000 over five years under its illustrative robots-as-a-service model.",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://www.sec.gov/Archives/edgar/data/0002074973/000121390026112934/ea0309843-425_churchill11.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/0002074973/000121390026112934/ea0309843-425_churchill11.htm",
+    "https://www.sec.gov/Archives/edgar/data/0002074973/000121390026111470/ea0309365-425_churchill11.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "Company statements in SEC Rule 425 filings.",
+   "kind": "filing",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Pilots and shipments announced as deployments, and merger publicity ahead of the 2 November Churchill shareholder vote; warehouse tote handling is structured work, not trades or care.",
+   "top": false
+  },
+  {
+   "id": "e29",
+   "text": "KED Global reported on 27 October 2026 that Boston Dynamics has finalised its supplier lineup for the Atlas humanoid, which its headline says is led by Hyundai Mobis, and has asked selected Korean companies to prepare for purchase orders covering 10,000 robots. Citing people familiar with the matter, KED says final quantities and component prices are undecided, with first orders expected as early as late 2027 or early 2028 (via Humanoids Daily's account of the paywalled report, which carries no company comment).",
+   "eventDate": "2026-10-27",
+   "background": false,
+   "url": "https://www.humanoidsdaily.com/news/boston-dynamics-atlas-korean-suppliers-10000-preparations",
+   "otherUrls": [
+    "https://www.kedglobal.com/robotics/newsView/ked202610270008"
+   ],
+   "via": "KED Global, via Humanoids Daily",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "A single outlet's report resting partly on unnamed sources, with no company confirmation.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Pilots and shipments announced as deployments: a request to prepare for orders is neither an order nor a deployment; Hyundai is Boston Dynamics' owner and main customer, so units may go to its own factories rather than replace trades or care work.",
+   "top": false
+  },
+  {
+   "id": "e30",
+   "text": "Between 16 and 27 October 2026 Waymo said it would begin manually driven mapping and testing in Toronto, aiming for first riders in 2028, and in the Madrid region, aiming for 2027; opened Las Vegas airport trips to its current riders there; and said it would add nearly 250 square miles of service over the following week across Los Angeles, Nashville, Orlando, San Diego and the San Francisco Bay Area, giving its volume only as over 20 million trips completed and hundreds of thousands of commercial rides a week. Alphabet's results of 28 October show its Other Bets segment, whose revenue it says comes mainly from autonomous transportation and internet services, with third-quarter revenue of $372 million, up 8% from $344 million a year earlier, and an operating loss of $2.05 billion, against $1.43 billion.",
+   "eventDate": "2026-10-27",
+   "background": false,
+   "url": "https://waymo.com/blog/shorts/more-places/",
+   "otherUrls": [
+    "https://waymo.com/blog/2026/10/waymo-in-toronto",
+    "https://waymo.com/blog/2026/10/waymo-in-madrid-region",
+    "https://waymo.com/blog/shorts/las-airport/",
+    "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "Company statements on Waymo's blog and Alphabet's own results exhibit.",
+   "kind": "company-statement",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "against"
+    }
+   ],
+   "confounder": "City-by-city regulatory approvals; service area and city counts are not ride counts, and Waymo gave no new weekly figure; Other Bets also holds non-Waymo businesses and Alphabet does not break out Waymo; nothing here ties the expansion to driver employment or pay, which the Contradicted mark also needs.",
+   "top": false
+  },
+  {
+   "id": "e31",
+   "text": "Amazon said in its third-quarter results on 29 October 2026 that, since its previous quarterly results, Zoox had begun offering paid rides in its autonomous robotaxis in Las Vegas and started testing in San Diego and Houston, and that Zoox now operates in 12 US cities; it gave no ride or fleet count.",
+   "eventDate": "2026-10-29",
+   "background": false,
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "Company statement in an SEC exhibit.",
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "against"
+    }
+   ],
+   "confounder": "City-by-city regulatory approvals; operating in a city includes testing as well as paid service; paid rides and all rides are counted differently across firms.",
+   "top": false
+  },
+  {
+   "id": "e32",
+   "text": "Utah's Office of Artificial Intelligence Policy announced on 5 October 2026 three new sandbox pilots that let AI systems authorise refills of existing non-controlled maintenance medications (August AI), issue first-time and renewal prescriptions for topical acne treatments (Nolla Health) and draft pelvic-floor physical-therapy plans (Expect Fitness), but its register of agreements lists only the acne pilot as active, from 5 October 2026 to 5 October 2027, with two physicians reviewing every prescription before it is sent at first, then after-the-fact review of every case, and finally a sample of at least 10%, each step requiring at least 95% agreement between the AI and physicians, no missed hard stops, no serious adverse events and the office's written approval. The same register, read on 29 October, says the earlier Doctronic refill pilot is still in its first phase, with a licensed practitioner authorising every request, and the office's director, Zach Boyd, said at a conference in Santa Fe that the state is working on a liability bill and that the medical licensing board, which called in April for that pilot's suspension, has since formed a working group that meets regulators weekly (via Nextgov/FCW).",
+   "eventDate": "2026-10-05",
+   "background": true,
+   "url": "https://www.nextgov.com/artificial-intelligence/2026/10/utah-ai-sandbox-launches-new-health-care-pilots-question-marks/416655/",
+   "otherUrls": [
+    "https://www.hklaw.com/en/insights/publications/2026/10/utah-expands-oaips-pro-human-ai-initiative",
+    "https://www.hklaw.com/en/insights/publications/2026/10/the-ai-doctor-will-see-you-now-chatbot-risks-regulatory-oversight"
+   ],
+   "via": "Nextgov/FCW; Holland & Knight",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "The state's own page was blocked, so the pilot terms rest on Nextgov's report and Holland & Knight's summary of the agreements.",
+   "kind": "press",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Laws passed but delayed or unenforced: sandbox waivers are temporary, limited to Utah and suspend only specified state licensing enforcement, give no liability shield, and the FDA has not ruled on such tools; rules that clarify rather than change who is responsible.",
+   "top": false
+  },
+  {
+   "id": "e33",
+   "text": "Damien Charlotin's AI Hallucination Cases database, last updated on 29 October 2026, counts 2,241 court and tribunal decisions worldwide in which a court found or implied that a party relied on AI-hallucinated material, up from 2,190 on 15 October; its downloadable data list 1,513 US entries, a monetary penalty in 388 entries and a professional sanction in 165. By our count of the data's party field, self-represented litigants alone account for 1,290 entries and lawyers alone for 878, with 12 more naming a lawyer alongside another party.",
+   "eventDate": "2026-10-29",
+   "background": false,
+   "url": "https://www.damiencharlotin.com/hallucinations/",
+   "otherUrls": [],
+   "via": null,
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "A named researcher's private database, rated as in the previous edition; party counts are our arithmetic on its data.",
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J5",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Rules that clarify rather than change who is responsible: sanctions enforce the signing lawyer's existing duty rather than create a new moat; the count grows with coverage and awareness, and most entries involve self-represented litigants.",
+   "top": false
+  },
+  {
+   "id": "e34",
+   "text": "GE Vernova reported on October 28, 2026 that its Power segment EBITDA margin was 21.4% in the third quarter, up 8.0 points from a year earlier and from 18.8% in the second quarter, which it attributed mainly to favorable price and higher volume at Gas Power, and that its gas-equipment backlog and slot reservations grew from 116 to 122 GW, which we calculate as about 6.1 years of the 20 GW of annual output it said it would reach in the third quarter. The 6 GW rise was smaller than the 16 GW added in the second quarter, slot reservations fell from 63 to 58 GW as 13 GW converted to firm orders, and Electrification orders fell 9% organically, which the company puts on large synchronous-condenser orders a year earlier.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000162/gevpressrelease3q26.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000147/gevpressrelease2q26.htm",
+    "https://www.utilitydive.com/news/ge-vernova-in-9b-deal-to-buy-high-voltage-manufacturer-as-gas-turbine-orde/873223/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "The margin, GW and order figures come from GE Vernova's own releases; the 6.1 years is our division of 122 GW by the 20 GW a year stated in the second-quarter release.",
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Reservations that are not firm orders, gas demand for reasons other than data centers, and one maker's share shifting. The release names data centers once and does not mention AI; the margin gain also reflects higher volume, and GE Vernova plans to raise output to 24 GW in 2028 and 30 GW in 2030, so years of backlog will shrink as supply grows.",
+   "top": false
+  },
+  {
+   "id": "e35",
+   "text": "GE Vernova chief executive Scott Strazik said on the October 28, 2026 earnings call that third-quarter gas-equipment orders were priced more than 20% above fourth-quarter 2025 orders, helped by higher-priced turbines and more aeroderivatives, that full-year 2026 gas order pricing per kW will be about 50% above 2025, and that the company sold multiple turbine slots for delivery in 2032 (via The Motley Fool transcript and Utility Dive). He also said gas demand comes from about 100 customers in 25 countries, about 80% of them traditional customers and 20% for data centers, that fourth-quarter order pricing per kW will be lower than the third quarter's because of fewer aeroderivatives and more 50-hertz units, and that 2027's quarterly contract additions may look more like the third and fourth quarters of 2026 than the faster first half while still growing.",
+   "eventDate": "2026-10-28",
+   "background": false,
+   "url": "https://www.fool.com/earnings/call-transcripts/2026/10/28/ge-vernova-gev-q3-2026-earnings-call-transcript/",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000162/gevpressrelease3q26.htm",
+    "https://www.utilitydive.com/news/ge-vernova-in-9b-deal-to-buy-high-voltage-manufacturer-as-gas-turbine-orde/873223/"
+   ],
+   "via": "The Motley Fool transcript and Utility Dive",
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "The CEO's words appear in a call transcript we opened and in Utility Dive, two independent records of what the company said.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Product mix and gas demand for reasons other than data centers. Strazik attributes the price rise to a favorable mix of higher-priced equipment and more aeroderivative turbines, expects per-kW pricing to dip next quarter as more 50-hertz units ship, and puts data centers at only about a fifth of demand.",
+   "top": false
+  },
+  {
+   "id": "e36",
+   "text": "PJM filed an amended proposal for its Reliability Backstop Procurement with FERC on October 29, 2026. It aims to open the procurement on March 1, 2027 and post results by May 10, 2027, buying capacity for terms of up to 15 years at a maximum MW-weighted average of $555 per MW-day against a shortfall of about 6,800 MW (6,831 MW in the 2028/29 Base Residual Auction, to be recalculated); costs would go to load-serving entities by Large Load growth between the actual 2026 summer peak and the 2028/29 forecast, and the target would be cut by capacity that large loads secure through bilateral contracts with suppliers.",
+   "eventDate": "2026-10-29",
+   "background": false,
+   "url": "https://insidelines.pjm.com/pjm-files-amended-reliability-backstop-proposal/",
+   "otherUrls": [
+    "https://insidelines.pjm.com/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "regulator",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Auction rule changes and the price cap: $555 is a ceiling on willingness to pay, not a clearing price, and FERC, which suspended the original plan for five months on September 29, must still accept the amendment. PJM speaks of Large Loads, not data centers specifically.",
+   "top": false
+  },
+  {
+   "id": "e37",
+   "text": "EIA's Electric Power Monthly, released October 23, 2026, puts average residential electricity prices in August 2026 up from August 2025 by 12.1% in the District of Columbia, 11.3% in Virginia, 11.0% in Delaware, 10.4% in Ohio, 9.2% in Pennsylvania, 7.6% in Maryland and 7.2% in Illinois, all wholly or partly in PJM, against 3.4% for the US (18.16 cents per kWh), while West Virginia, wholly in PJM, rose 4.4% and New Jersey fell 0.4%. Data-center states outside PJM were mixed (Iowa 10.2%, Washington 7.2%, Texas 3.3%, Georgia 2.3%, Oregon 0.4%, Arizona -0.3%), and the three largest rises were in states without large data-center clusters (Hawaii 22.5%, Maine 14.1%, New Hampshire 13.1%), so fast rises are not confined to PJM or to data-center regions.",
+   "eventDate": "2026-08-01",
+   "background": true,
+   "url": "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a",
+   "otherUrls": [
+    "https://www.eia.gov/electricity/monthly/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": "The prices are EIA's own table; the percentage changes are our arithmetic, and grouping states by data-center clusters is our reading.",
+   "kind": "official-series",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Natural gas prices, weather (a hot summer), and transmission and other costs unrelated to data centers; the 2026 figures are preliminary, and EIA does not attribute the rises to data-center load. The PJM pattern matches capacity costs reaching retail bills, but Montana and Vermont rose for other reasons.",
+   "top": false
+  },
+  {
+   "id": "e38",
+   "text": "The IMF global copper price (PCOPPUSDM) averaged $14,473 per tonne in September 2026, the highest monthly average since at least January 2015 and up 44.8% from September 2025, while the IMF all-commodities index (PALLFNFINDEXM) rose 32.8%. The gap narrowed in September: in July and August copper ran about 22 points ahead of the broad index (38.6% against 17.0%, and 48.2% against 25.9%).",
+   "eventDate": "2026-09-01",
+   "background": true,
+   "url": "https://fred.stlouisfed.org/series/PCOPPUSDM",
+   "otherUrls": [
+    "https://fred.stlouisfed.org/series/PALLFNFINDEXM"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "official-series",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Tariffs on metals, China's construction cycle and electrification unrelated to AI (vehicles, grids). The all-commodities index rose 32.8% over the same year, so a broad commodity rise explains much of the move.",
+   "top": false
+  },
+  {
+   "id": "e39",
+   "text": "AEP said on October 28, 2026 that it signed 15 GW of new load commitments in the third quarter, raising the incremental contracted load it expects by 2031 to 84 GW, and set a $100 billion five-year capital plan through 2031. Its third-quarter commercial retail electricity sales, measured in kWh, rose 15.2% at its vertically integrated utilities and 18.0% at its transmission and distribution utilities from a year earlier.",
+   "eventDate": "2026-10-28",
+   "background": false,
+   "url": "https://www.sec.gov/Archives/edgar/data/0000004904/000000490426000069/a3q20268kpressreleaseex991.htm",
+   "otherUrls": [
+    "https://www.utilitydive.com/news/aep-transmission-data-center-earnings/873189/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Deals announced but not built, and electrification and industrial load unrelated to AI. AEP's release mentions data centers only in its forward-looking risk statements, saying projected data-center demand is uncertain; Utility Dive reports that the largest driver of the increase is a 10.4 GW data-center campus in Ohio being developed by SB Energy, and that the prior plan was $78 billion.",
+   "top": false
+  },
+  {
+   "id": "e40",
+   "text": "The US Department of Energy announced on October 27, 2026 a conditional commitment of up to $5 billion in loans to Constellation for uprates adding nearly 1.1 GW at eight nuclear plants in Illinois, Maryland and Pennsylvania, in the PJM and MISO regions, and on October 28 closed a $5.1 billion loan package to Alliant Energy for more than 2.6 GW of new gas-fired, storage and upgraded generation in Iowa and Wisconsin. DOE says it has identified about 4.7 GW, 95% of its 5 GW goal for nuclear uprates and restarts by 2029; the restarts it is financing are Palisades (800 MW), Crane (835 MW) and Duane Arnold (615 MW), and NextEra says Duane Arnold will re-enter service no later than the first quarter of 2029.",
+   "eventDate": "2026-10-27",
+   "background": false,
+   "url": "https://www.energy.gov/articles/energy-department-announces-5-billion-loan-boost-nuclear-power-and-help-lower-costs",
+   "otherUrls": [
+    "https://www.energy.gov/articles/energy-department-closes-51-billion-loan-lower-electricity-costs-and-strengthen-grid",
+    "https://www.energy.gov/articles/fact-sheet-project-uprise-delivering-president-trumps-agenda-unleash-american-nuclear",
+    "https://www.sec.gov/Archives/edgar/data/0000753308/000075330826000077/neeq32026exhibit99.htm",
+    "https://www.utilitydive.com/news/doe-loans-constellation-alliant-nuclear-gas/873011/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "The loan terms and the 4.7 GW count are DOE's own statements; the Duane Arnold date is NextEra's.",
+   "kind": "regulator",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Deals announced but not built, and load growth unrelated to AI: DOE cites affordability, reliability and growing demand, never data centers or AI; the Constellation commitment is conditional, and the added capacity is small next to contracted large-load growth.",
+   "top": false
+  },
+  {
+   "id": "e41",
+   "text": "South Korea's climate, energy and environment minister, Kim Sung-hwan, told a National Assembly committee on October 26, 2026 that the ministry will trim the AI data-center power demand in its 12th electricity plan to demand companies have actually confirmed, after raising the projection to 11.9 GW at the 2040 peak from 4 GW in August, because little of the demand behind the government's megaprojects has been specifically confirmed (via Seoul Economic Daily, AI-translated from Korean). The paper reports that of the 8.4 GW that SK, GS and NAVER were to build by 2029, GS has begun construction at Donghae (1.2 GW in 2028 and 1.2 GW more in 2029) and NAVER has a site and plans for 100 MW in 2027 and 200 MW in 2028, while SK has said nothing on 4 GW of planned sites beyond a 100 MW data center it is building with AWS in Ulsan.",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://en.sedaily.com/finance/2026/10/26/korea-to-trim-ai-data-center-power-demand-forecast",
+   "otherUrls": [],
+   "via": "Seoul Economic Daily",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "The minister's words come through one outlet, in an AI translation from Korean.",
+   "kind": "press",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J4",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Korea is outside the markets the J4 indicators track, and trimming an unconfirmed planning forecast says nothing about prices, lead times or margins; slow projects can themselves reflect power and equipment bottlenecks.",
+   "top": false
+  },
+  {
+   "id": "e42",
+   "text": "Visa chief executive Ryan McInerney said on the October 27, 2026 earnings call that Visa has nearly 50 AI partners live and in production, including Shopify's Shop Pay, a number he expects to double in the coming months, and described the quarter as something of a tipping point for users having agents complete real transactions, but said agentic commerce is still very early, 'a very small amount' of Visa's overall business, and will remain very small over the next four quarters (via The Motley Fool and Investing.com transcripts); Visa's release and slide deck give no agentic transaction count or volume. Mastercard's third-quarter release on October 29 quotes its chief executive on advancing agentic commerce but likewise gives no agent-payment volume.",
+   "eventDate": "2026-10-27",
+   "background": false,
+   "url": "https://www.fool.com/earnings/call-transcripts/2026/10/28/visa-v-q4-2026-earnings-call-transcript/",
+   "otherUrls": [
+    "https://www.investing.com/news/transcripts/earnings-call-transcript-visa-tops-q4-2026-estimates-shares-slip-after-hours-93CH-4977161",
+    "https://www.sec.gov/Archives/edgar/data/0001403161/000140316126000126/q42026earningsrelease.htm",
+    "https://s1.q4cdn.com/050606653/files/content_files/4Q26-Earnings-Deck_vFINAL.pdf",
+    "https://www.sec.gov/Archives/edgar/data/0001141391/000114139126000122/ma09302026-exx991xearnings.htm"
+   ],
+   "via": "The Motley Fool and Investing.com transcripts",
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "company-statement",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J11",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Launches without use and pilots counted as adoption: partners live is not usage, 'very small' has no base, and McInerney expects the partner count to double in the coming months. Neither Visa's release and deck nor Mastercard's release mentions agent volumes.",
+   "top": false
+  },
+  {
+   "id": "e43",
+   "text": "Alphabet reported Google Search & other revenue of $63.35 billion for the third quarter of 2026, up 12.0% from $56.57 billion a year earlier and slower than the 17% of the second quarter; on the October 28 call chief business officer Philipp Schindler named currency moves as the largest driver of the slowdown, followed by weaker Asia-Pacific retail advertisers and a normalization after World Cup spending, and said strong growth in AI Mode queries also weighed on revenue because AI Mode monetizes less, while chief financial officer Anat Ashkenazi said the quarter began lapping the late-2025 acceleration in search growth (via The Motley Fool transcript). Google is expanding ads in AI Mode to international markets and adding multi-turn ads in the US, and Schindler said its Universal Commerce Protocol enables direct checkout for hundreds of thousands of brands.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+   "otherUrls": [
+    "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/",
+    "https://www.theregister.com/ai-and-ml/2026/10/29/google-struggling-to-make-ai-mode-searches-pay/5306181"
+   ],
+   "via": "The Motley Fool transcript and The Register",
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J11",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Ad market cycle and currency: Schindler named currency as the largest factor and also cited weaker Asia-Pacific retail advertisers and a normalization after World Cup spending. Search revenue still grew 12% and Alphabet says query growth is the highest in five years, so AI answers are changing how search is monetized more than they are shrinking it.",
+   "top": false
+  },
+  {
+   "id": "e44",
+   "text": "Amazon said in its third-quarter 2026 results release of October 29 that Alexa for Shopping, which it calls its agentic shopping assistant, was used by more than 400 million customers in the last 12 months, with customer interactions up 570% from a year earlier, and that more than 100 new capabilities let customers handle tasks such as gift lists, Subscribe & Save deliveries, payments and memberships by conversation. The release gives no figure for purchases or sales made through the assistant.",
+   "eventDate": "2026-09-30",
+   "background": true,
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J11",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Users counted as adoption: 'used by' over 12 months counts any interaction, not purchases an agent completes, and this is Amazon's own assistant inside its own store rather than outside agents buying from merchants; no share of transactions or sales is disclosed.",
+   "top": false
+  },
+  {
+   "id": "e45",
+   "text": "Chainalysis reported on October 14, 2026 that more than 138 million payments had been made over the x402 agent-payment protocol on the Base blockchain by the end of June 2026, the close of its 2026 reporting period, and that over 87% of x402 payments in the 16 months to September 2026 were between a hundredth of a cent and ten cents, with model inference among the largest categories. It gave no dollar value, and while it notes signs of maturation, such as more wallets being refunded within 30 days, it describes agentic commerce, in the words of experts it interviewed, as still in an experimentation phase.",
+   "eventDate": "2026-07-01",
+   "background": true,
+   "url": "https://www.chainalysis.com/blog/north-america-crypto-adoption-2026/",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": "Chainalysis's own report; it gives counts of payments, not their value.",
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J11",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Launches without use and pilots counted as adoption: these are counts, not value, and mostly machine-to-machine micropayments for inference, data and API services, gaming, gambling and token issuance rather than customer purchases. Chainalysis says it excluded one-off wallets but reports no value.",
+   "top": false
+  },
+  {
+   "id": "e46",
+   "text": "Loudoun County, Virginia's Board of Supervisors voted unanimously on October 20, 2026 for measures intended to eliminate data-center uses on George Washington University's Virginia Science and Technology Campus in Ashburn, which Amazon Web Services bought earlier in 2026 and where the university will keep operating for four and a half years. Under a preliminary deal still to be finalized, Amazon stated its intent to withdraw its data-center application and forgo legal action over data-center development there, agreed to convey about 25 acres to the county and offered $5 million to its housing trust fund, with the remaining 97 acres fast-tracked for housing and mixed use; the county says Amazon acknowledged significant opposition to data-center development at the site (Loudoun County).",
+   "eventDate": "2026-10-20",
+   "background": false,
+   "url": "https://www.loudoun.gov/CivicAlerts.aspx?aid=10944",
+   "otherUrls": [
+    "https://247wallst.com/investing/2026/10/24/amazon-just-walked-away-from-a-427-million-data-center-plan-after-neighbors-fought-back"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "regulator",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Opposition over land use, by-right approval and data-center saturation in Loudoun that predates AI. The deal is preliminary and not yet final, and Amazon trades the data-center use for a fast-tracked housing rezoning, so it moves capacity elsewhere rather than showing a cut in AI build-out. Loudoun's county-wide pause on new data-center applications was put off to November 17 for a legal review (24/7 Wall St).",
+   "top": false
+  },
+  {
+   "id": "e47",
+   "text": "Three more local governments restricted data centers in the window: Volusia County, Florida's council voted 6-0 on October 20, 2026 to bar data centers with a peak load of 50 megawatts or more from its unincorporated areas, citing its aquifer and infrastructure capacity (Spectrum News 13); Clackamas County, Oregon's commissioners unanimously adopted a 120-day pause on October 22 (county release); and San Diego's council unanimously approved a 45-day halt, extendable to nearly two years, on October 27, ratifying an executive order the mayor had signed pausing data-center development (City News Service, via KPBS; NBC San Diego). DeSoto County, Florida's commission also rejected DCIP Group's requests to rezone about 238 acres on October 27 and a 554-acre ranch on October 28 for a planned data-center complex, after approving 34 acres for it in March and adopting a one-year moratorium on new data-center applications in July (Suncoast Searchlight, via WGCU).",
+   "eventDate": "2026-10-28",
+   "background": false,
+   "url": "https://www.clackamas.us/news/2026-10-22/clackamas-county-commissioners-unanimously-approve-temporary-data-center-moratorium",
+   "otherUrls": [
+    "https://mynews13.com/fl/orlando/news/2026/10/21/volusia-county-bans-large-scale-data-centers-in-unincorporated-areas",
+    "https://www.kpbs.org/news/politics/2026/10/27/san-diego-city-council-unanimously-passes-moratorium-on-data-centers",
+    "https://www.nbcsandiego.com/news/local/data-center-moratorium-unanimously-passes-at-san-diego-city-council/4092956/",
+    "https://www.wgcu.org/top-story/2026-10-29/desoto-data-center-proposal-blocked-again-wednesday-night"
+   ],
+   "via": "City News Service, via KPBS (San Diego); Suncoast Searchlight, via WGCU (DeSoto)",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Opposition over water, power, land and noise that predates AI: Clackamas and San Diego adopted temporary pauses to write rules, San Diego's pause is largely symbolic for the Navy-owned site whose data-center idea prompted it, Volusia's ban covers only unincorporated land, and DeSoto's staff cited missing details on water use and gas turbines. None of the four cited AI itself.",
+   "top": false
+  },
+  {
+   "id": "e48",
+   "text": "Two cities declined to pause data centers in the window. Memphis's council split 6-6 on October 20, 2026 on a temporary data-center moratorium, which failed on the tie with one member absent (WMC, via WSMV; CNN, via KRDO); the same night it passed on final reading an ordinance that bars routine evaporative and once-through cooling at data centers and sets a schedule to phase out their carbon-based electricity (WMC, via WSMV). Aurora, Colorado's council fell one vote short on October 26 of taking up an indefinite moratorium again, voting 6-5 when its rules required seven, after rejecting a six-month moratorium in August, and the mayor said he would bring the motion back at the next regular meeting (Colorado Politics; Denver7).",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://www.wsmv.com/2026/10/21/memphis-city-council-declines-pass-data-center-moratorium/",
+   "otherUrls": [
+    "https://krdo.com/news/2026/10/20/after-a-city-council-meeting-on-data-centers-devolved-into-chaos-memphis-will-vote-on-whether-to-pause-new-construction/",
+    "https://www.coloradopolitics.com/2026/10/26/aurora-city-council-votes-down-indefinite-data-center-moratorium/",
+    "https://www.denver7.com/news/local-news/in-your-community/aurora-arapahoe-county/aurora-city-council-halts-effort-to-reconsider-a-data-center-moratorium-amid-trident-data-center-fight"
+   ],
+   "via": "WMC, via WSMV; CNN, via KRDO",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "Each city's vote rests on two outlets, but the Memphis cooling and power ordinance rests on WMC alone.",
+   "kind": "press",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Project-by-project land-use politics and jobs and tax-base arguments rather than a verdict on AI. Memphis adopted binding water and power rules the same night and its mayor ordered a 90-day study, and in Aurora the developer of the contested Trident project, Vantage, agreed to look for other sites while the council advanced zoning that would bar data centers within 750 feet of homes, so both outcomes are partial. The outlets differ on the Memphis moratorium's length (12 months in WMC's account, 18 months after amendment in CNN's).",
+   "top": false
+  },
+  {
+   "id": "e49",
+   "text": "On Chubb's third-quarter earnings call on October 21, 2026, chief executive Evan Greenberg called AI liability a growing and emerging exposure not contemplated in casualty underwriting so far and said he can imagine a combination of coverage clarifications and, ultimately, exclusions and separate AI-related liability coverages, with underwriting and pricing to tell risks apart. On W. R. Berkley's third-quarter call, chief executive W. Robert Berkley Jr. said the insurer has worked to make sure its AI liability exposure is identified, understood and controlled and that it is paid for it, and that it uses exclusionary language in policies when appropriate (Chubb and W. R. Berkley executives, via Insurance Journal).",
+   "eventDate": "2026-10-21",
+   "background": false,
+   "url": "https://www.insurancejournal.com/news/national/2026/10/22/889993.htm",
+   "otherUrls": [
+    "https://www.insurancejournal.com/news/national/2026/10/21/889753.htm",
+    "https://www.sec.gov/Archives/edgar/data/0000896159/000119312526426866/d160822dex991.htm"
+   ],
+   "via": "Insurance Journal",
+   "rating": "expert opinion",
+   "ratingQual": null,
+   "ratingNote": "Named executives' judgments and descriptions of practice, relayed by one trade outlet, not a filing or transcript we opened.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Exclusions that clarify cover rather than remove it, and statements rather than filings: neither executive gave a count of policies carrying AI exclusions, Chubb also expects separate affirmative AI cover, and Berkley frames its approach as pricing the risk rather than refusing it.",
+   "top": false
+  },
+  {
+   "id": "e50",
+   "text": "Marsh chief executive John Doyle (the company was branded Marsh McLennan until January 2026) said on its third-quarter earnings call on October 15, 2026 that a broad AI exclusion in insurance policies could create real confusion and uncertainty and that AI claim activity has been very limited to date, and Reuters reports he called for a more nuanced approach. Marsh Risk chief executive Nick Studer said AI that changes an existing peril is impossible to unbundle from the causal pathways to a loss, so excluding it would lead to uncertainty, contention and gaps in cover (Marsh executives, via Reuters, published by Insurance Journal).",
+   "eventDate": "2026-10-15",
+   "background": true,
+   "url": "https://www.insurancejournal.com/news/national/2026/10/16/889136.htm",
+   "otherUrls": [],
+   "via": "Reuters, published by Insurance Journal",
+   "rating": "expert opinion",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "against"
+    }
+   ],
+   "confounder": "A broker's commercial interest: brokers place cover, so broad exclusions cost them business. Doyle described an industry debate, not a retreat from exclusions, and gave no figures on how many policies carry them.",
+   "top": false
+  },
+  {
+   "id": "e51",
+   "text": "Arbol, a New York-based parametric insurer, launched a policy on October 20, 2026 that pays data-center developers and their financiers a set amount if a government action halting or suspending data-center construction as a class stays in effect past an agreed waiting period; it does not cover site-specific permit denials and, per Bloomberg, excludes places with moratoriums already in force (Artemis; Bloomberg, via Claims Journal). Arbol chief executive Siddhartha Jha said companies representing tens of billions of dollars of data-center construction value have lined up to buy policies since broker outreach began in September (Arbol's chief executive, via Bloomberg).",
+   "eventDate": "2026-10-20",
+   "background": false,
+   "url": "https://www.artemis.bm/news/arbol-launches-parametric-insurance-for-gov-imposed-data-center-construction-moratoriums/",
+   "otherUrls": [
+    "https://www.claimsjournal.com/news/national/2026/10/20/340826.htm"
+   ],
+   "via": "Artemis; Bloomberg, via Claims Journal",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "A new product with undisclosed limits, capacity and pricing. Reading it as capital now pricing moratoriums as a material risk is our inference, and by transferring that risk it may let projects proceed despite the threat of pauses, which cuts against reading it as a brake.",
+   "top": false
+  },
+  {
+   "id": "e52",
+   "text": "Anthropic's S-1 registration statement, filed with the SEC on October 26, 2026, says that no single insurer, and potentially not the insurance industry in aggregate, may have the capacity or expertise to underwrite the exposure from a catastrophic AI incident, and that the company may be unable to obtain cover for certain AI-related liabilities on commercially reasonable terms or at all. Among risks to its facilities it lists physical attacks motivated by opposition to AI and to data-center development, and moratoriums on new data-center construction that some state and local jurisdictions are considering or have approved, which it says could delay or prevent facilities it depends on for compute.",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "otherUrls": [
+    "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index.htm",
+    "https://programbusiness.com/news/anthropic-warns-ai-liability-could-exceed-insurance-capacity/"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Standard risk-factor language written to limit legal exposure before an offering: it names risks without saying any has delayed a deployment, and the same filing says the company intends to expand its own data-center footprint.",
+   "top": false
+  },
+  {
+   "id": "e53",
+   "text": "Cook County College Teachers Union Local 1600, which represents City Colleges of Chicago faculty and professional staff, reached a tentative four-year contract at about 3:45 a.m. on October 19, 2026, hours before a strike set to begin that day; the union says it includes safeguards on the use of artificial intelligence and, per the Chicago Crusader's account of its announcement, a new joint committee to examine AI use, alongside raises meant to keep pace with inflation and protected health insurance (WBEZ; CBS Chicago; Chicago Crusader). Union members and the City Colleges Board of Trustees still have to approve it.",
+   "eventDate": "2026-10-19",
+   "background": false,
+   "url": "https://www.wbez.org/education/2026/10/19/city-colleges-of-chicago-reach-late-night-tentative-contract-agreement-to-avoid-strike",
+   "otherUrls": [
+    "https://www.jobsnhire.com/articles/60237/20261023/city-colleges-chicago-faculty-union-reaches-tentative-contract-ai-safeguards-hours-before-strike.htm",
+    "https://www.cbsnews.com/chicago/news/faculty-staff-union-agreement-city-colleges-of-chicago/",
+    "https://chicagocrusader.com/city-colleges-faculty-reach-tentative-deal-averting-strike/"
+   ],
+   "via": "WBEZ; CBS Chicago; Chicago Crusader (union announcement)",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Stoppages over pay and benefits with AI as a side issue, and AI clauses that govern use rather than limit it: the contract text is unpublished and unratified, and a joint committee does not restrict AI use.",
+   "top": false
+  },
+  {
+   "id": "e54",
+   "text": "Senator Ron Wyden, the top Democrat on the Senate Finance Committee, released on October 23, 2026 the text of the Stability and Opportunity for Workers Act, which he presents as preparing for AI job losses: it would expand unemployment insurance, lengthen extended benefits in downturns (the outlets differ on whether to 52 weeks in all or by up to 52 more) and pay income support to displaced workers while they retrain (CQ-Roll Call, via CPA Practice Advisor; Newsweek). A companion bill would impose an excise tax on data-center operators and end their bonus depreciation, research credit and Opportunity Zone benefits; Newsweek alone reports Chuck Schumer, Michael Bennet and Elizabeth Warren as cosponsors and a jobseeker's allowance for workers outside regular insurance such as gig workers.",
+   "eventDate": "2026-10-23",
+   "background": false,
+   "url": "https://www.cpapracticeadvisor.com/2026/10/26/sen-ron-wyden-pushes-bills-to-tax-data-centers-aid-displaced-workers/192477/",
+   "otherUrls": [
+    "https://www.newsweek.com/unemployment-benefits-would-get-boost-under-new-bill-linked-to-ai-fears-12620438"
+   ],
+   "via": "CQ-Roll Call, via CPA Practice Advisor; Newsweek",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "The release and the main contents rest on two outlets, but the cosponsors, minimum standards and jobseeker's allowance rest on Newsweek alone, and the two outlets differ on the extended-benefit length.",
+   "kind": "press",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J7",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Bills introduced with no path to passage, and payments still tied to work: neither text had a bill number in the federal bill-status records we checked through October 29, Democrats are in the Finance Committee minority, Transition Wages require retraining and unemployment insurance depends on prior work. Wyden himself said these are not the only changes needed.",
+   "top": false
+  },
+  {
+   "id": "e55",
+   "text": "Federal bill-status files on govinfo, as fetched on October 29, 2026, show that none of five AI-linked income, tax or worker-transition bills before Congress moved past committee referral in the window: Sanders's American A.I. Sovereign Wealth Fund Act (S. 4825), Casar's AI Tax and Work Protection Act (H.R. 10044), Warner's National Workforce Transition Fund Act (S. 5055), Kelly's Make AI Work for Americans Act (S. 5518) and Schatz's FUTURE of Workers Act (S. 5664) all remain at referral. No new bill of that kind appears among the 78 House bills introduced from October 16 to 26, and the Senate files list no bill introduced after October 15.",
+   "eventDate": "2026-10-26",
+   "background": false,
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s4825.xml",
+   "otherUrls": [
+    "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr10044.xml",
+    "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s5055.xml",
+    "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s5518.xml",
+    "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s5664.xml"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": "part our inference",
+   "ratingNote": null,
+   "kind": "filing",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J7",
+     "direction": "against"
+    }
+   ],
+   "confounder": "The pre-election calendar: Congress moves few bills in the weeks before the November 3 midterms, and the Senate recorded no new bills after October 15, so a quiet window says little about these bills' prospects.",
+   "top": false
+  },
+  {
+   "id": "e56",
+   "text": "South Korea's Ministry of Health and Welfare set up a Basic Social Policy Task Force and, under it, the first central-government team dedicated to basic income, according to government information reported on April 10, 2026, with the aim of putting the scale and budget of a 2027 pilot for young and middle-aged adults into the 2027 budget proposal; the outlet reports the government's motive as concern that AI will cause structural unemployment and decouple labor from income (The Asia Business Daily). The planned model is a participation income paid for certified socially useful activity rather than unconditionally, and no amount, scale or funding source had been set.",
+   "eventDate": "2026-04-10",
+   "background": true,
+   "url": "https://view.asiae.co.kr/en/article/2026041010003852773",
+   "otherUrls": [
+    "https://www.mafra.go.kr/bbs/home/792/579390/artclView.do",
+    "https://www.koreaherald.com/article/10859253"
+   ],
+   "via": "The Asia Business Daily",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J7",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Pilots motivated by poverty or regional decline rather than AI, and income tied to activity: the welfare ministry's design is conditional on certified participation. Korea's larger existing program, the rural basic income pilot, whose agriculture ministry opened about 18 more depopulating counties to it for 2027 on October 8, 2026 at 150,000 won a month in local vouchers with the national funding share raised to 50%, is justified by depopulation and ageing, not AI. We have not found whether the welfare ministry's pilot is in the 2027 budget the National Assembly is now reviewing.",
+   "top": false
+  },
+  {
+   "id": "e57",
+   "text": "In Pew Research Center's survey of 3,488 US adults conducted June 22-28, 2026 and published October 29, 60% said they would be uncomfortable with their own doctor using AI for things like diagnoses and treatments, against 30% comfortable; 46% did not want AI to have any part in decisions on health-insurance claims, and 5% were open to AI making those decisions with no human review.",
+   "eventDate": "2026-06-28",
+   "background": true,
+   "url": "https://www.pewresearch.org/science/2026/10/29/americans-are-open-to-ai-in-healthcare-but-want-humans-making-final-calls/",
+   "otherUrls": [],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J12",
+     "direction": "for"
+    }
+   ],
+   "confounder": "Attitudes, not any measured slowdown, and question wording specific to healthcare: most respondents were open to AI when a human makes the final review, which supports human-in-the-loop rules more than bans.",
+   "top": false
+  },
+  {
+   "id": "e58",
+   "text": "In a survey of nearly 9,000 chief executives, finance chiefs and senior executives in seven countries, including about 1,000 US firms in the Atlanta Fed's Survey of Business Uncertainty and fielded in May-July 2026 (January 2026 for Germany's employment questions), 87% of firms on average (88% in the US) said AI had no effect on their employment over the past three years, and the average effect was close to zero, with small positive readings of 0.1% to 0.2% in the US, Canada, Germany and Mexico (NBER working paper 34836 by Ivan Yotzov, Jose Maria Barrero, Nicholas Bloom, Steven J. Davis and co-authors, revised October 2026). The executives expect AI to lower their own employment by about 0.4% over the next three years (1.3% in both the US and the UK) and estimate that it has added 0.2% a year to labor productivity growth so far.",
+   "eventDate": "2026-07",
+   "background": true,
+   "url": "https://www.nber.org/papers/w34836",
+   "otherUrls": [
+    "https://www.nber.org/system/files/working_papers/w34836/w34836.pdf"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "research",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "for"
+    },
+    {
+     "claim": "J2",
+     "direction": "against"
+    }
+   ],
+   "confounder": "Executives' own attribution: it can miss AI's effect through hiring that never happened, or through competitors. The forward numbers are expectations, not outcomes, and cover incumbent firms only, as the authors note. The US sample is about 1,000 firms.",
+   "top": true
+  },
+  {
+   "id": "e59",
+   "text": "The Stanford Digital Economy Lab's Transformation Tracker, updated on 21 October 2026, finds no decisive evidence of an AI-driven economic transformation: output growth, total factor productivity growth and labor productivity growth all rate as neutral, with labor productivity growth showing no break from recent levels. Of its 12 indicators, three rate as strong evidence under the lab's test (the capital share, information-processing equipment's share of private nonresidential equipment, and software and R&D's share of private nonresidential fixed assets, the first and last of which the lab says are continuing long-running upward trends) and two as mild (the 10-year real interest rate and electricity generation growth).",
+   "eventDate": "2026-10-21",
+   "background": false,
+   "url": "https://digitaleconomy.stanford.edu/project/indicators/transformation-tracker/",
+   "otherUrls": [
+    "https://indicators.stanford.edu/transformation",
+    "https://hai.stanford.edu/news/tracking-ais-real-time-footprint-on-the-labor-market"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "research",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "for"
+    },
+    {
+     "claim": "J9",
+     "direction": "for"
+    }
+   ],
+   "confounder": "The tracker tests for explosive growth, a far higher bar than a normal transition, so a neutral reading does not rule out smaller AI effects. Its capital-stock series are annual and lag. The AI capex boom itself lifts the investment-share indicators, and the capital share's rise predates generative AI.",
+   "top": false
+  },
+  {
+   "id": "e60",
+   "text": "The Federal Open Market Committee's statement of 28 October 2026 said that job gains have kept pace with the workforce, that the unemployment rate has changed little and that productivity growth is strong. At his press conference the same day, Chair Kevin Warsh called conditions on the employment side of the Fed's mandate quite positive. He also said that productivity has improved, though it cannot be measured precisely, and that in his judgment most of that change began before the current AI developments and has been under way for a couple of years (preliminary transcript).",
+   "eventDate": "2026-10-28",
+   "background": false,
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+   "otherUrls": [
+    "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20261028.pdf",
+    "https://www.federalreserve.gov/monetarypolicy/fomcpresconf20261028.htm"
+   ],
+   "via": null,
+   "rating": "expert opinion",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "regulator",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "for"
+    }
+   ],
+   "confounder": "A policymaker's reading of the same official aggregates the tracker already uses, so it is not independent evidence. The business cycle and AI-related investment are lifting demand for labor in construction and power. The press-conference transcript is marked preliminary.",
+   "top": false
+  },
+  {
+   "id": "e61",
+   "text": "Goldman Sachs economist Joseph Briggs wrote in a note on 22 October 2026 that a modest labor-market headwind from AI is emerging but that near-term headwinds remain smaller than feared earlier this year. As Fortune summarizes the note, job growth in the most AI-exposed industries ran about 10,000 below its long-run trend over the past three months, roughly offset by AI-related construction hiring, and AI-attributed layoffs in Challenger's tracking pulled back sharply from their spring peak. He also estimated that, under Goldman's forecast that AI eventually lifts productivity by 15%, up to 9% of workers could be displaced during the transition, and that past automation-related job losses were concentrated in recessions (via Fortune).",
+   "eventDate": "2026-10-22",
+   "background": false,
+   "url": "https://fortune.com/2026/10/22/goldman-sachs-forecast-how-many-jobs-lost-to-ai-9-percent/",
+   "otherUrls": [],
+   "via": "Fortune",
+   "rating": "expert opinion",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "for"
+    },
+    {
+     "claim": "J2",
+     "direction": "against"
+    }
+   ],
+   "confounder": "A bank's reading of BLS industry payrolls and Challenger counts, relayed by one outlet, and we could not open the note itself. Three months is a short window. The offsetting construction hiring is itself part of the AI boom. Displacement may arrive with the next downturn, as the note argues, so a calm expansion does not settle the question.",
+   "top": false
+  },
+  {
+   "id": "e62",
+   "text": "In Norwegian register data on private-sector wage earners aged 21-60 through July 2026, employment in the most AI-exposed fifth of occupations grew about 1.5 percentage points more than in the least-exposed fifth since August-October 2022 (95% interval -3.8 to +6.8), and among workers aged 21-30 the gap was -0.8 points (interval -8.6 to +7.0), according to the October 2026 release of the AI Labor Market Index by Øystein Hernæs (Frisch Centre) and Andreas Kostøl (BI Norwegian Business School). Measured from November 2024-January 2025, the three months before Claude Code's release, workers aged 21-30 in the most-exposed occupations trail those in the least-exposed by 2.9 points on the main exposure measure (interval -6.9 to +1.1) and by 3.8 points on an alternative measure (interval -7.2 to -0.4).",
+   "eventDate": "2026-07",
+   "background": true,
+   "url": "https://kiindeksen.no/en/the-index.html",
+   "otherUrls": [
+    "https://kiindeksen.no/en/",
+    "https://docs.iza.org/dp18767.pdf"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "research",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "for"
+    },
+    {
+     "claim": "J3",
+     "direction": "against"
+    }
+   ],
+   "confounder": "This is Norway, not the US, with a different labor market and slower AI adoption. The August-October 2022 reference sits at the end of the post-pandemic recovery. Exposure scores measure what AI could do, not actual use. The intervals are wide, and the young-worker gap since early 2025 is negative and excludes zero on one measure.",
+   "top": false
+  },
+  {
+   "id": "e63",
+   "text": "The Stanford Digital Economy Lab's Canaries Dashboard, built on ADP payroll records and updated on 21 October 2026 with data through September 2026, finds that every AI-exposure group has added employment since November 2022, with the slowest growth in the two most exposed groups (1.0% and 1.8% a year, against 2.1% in the least exposed) and differences it calls modest. For workers aged 22-25 it finds that declines in exposed occupations persist and deepen: in its data, their employment in the most-exposed fifth of occupations has fallen 3.4% a year since November 2022 and 3.7% over the past year, against growth of 2.1% a year since November 2022 and 0.2% over the past year in the least-exposed fifth, and employment of young software developers and customer service representatives has fallen 5.2% and 5.4% a year.",
+   "eventDate": "2026-09",
+   "background": true,
+   "url": "https://digitaleconomy.stanford.edu/project/indicators/canaries-dashboard/",
+   "otherUrls": [
+    "https://hai.stanford.edu/news/tracking-ais-real-time-footprint-on-the-labor-market"
+   ],
+   "via": null,
+   "rating": "verified fact",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "research",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "against"
+    },
+    {
+     "claim": "J3",
+     "direction": "for"
+    }
+   ],
+   "confounder": "ADP's client base may not represent all employers. Interest rates and the post-2022 tech correction hit young software workers. The dashboard is descriptive, not causal. Remote-work exposure overlaps with AI exposure.",
+   "top": true
+  },
+  {
+   "id": "e66",
+   "text": "San Francisco Fed research director Sylvain Leduc wrote on 15 October 2026 that, in contrast to its effect on technology prices, the AI buildout has had limited impact on the aggregate labor market, with unemployment close to the bank's estimate of its longer-run natural rate. He added that firms' demand for entry-level jobs requiring at least some college has declined notably over the past three years while demand for intermediate and senior jobs held steady (SF FedViews, citing Lightcast postings).",
+   "eventDate": "2026-10-15",
+   "background": true,
+   "url": "https://www.frbsf.org/research-and-insights/publications/fedviews/2026/10/sf-fedviews-october-15-2026/",
+   "otherUrls": [],
+   "via": null,
+   "rating": "expert opinion",
+   "ratingQual": null,
+   "ratingNote": null,
+   "kind": "regulator",
+   "dataKind": "official",
+   "bears": [
+    {
+     "claim": "J0",
+     "direction": "for"
+    },
+    {
+     "claim": "J3",
+     "direction": "for"
+    }
+   ],
+   "confounder": "A Fed economist's reading of the same aggregates, not independent evidence. Postings are not hires. The rate cycle and the post-2022 tech correction weigh on entry-level demand.",
+   "top": false
+  },
+  {
+   "id": "e67",
+   "text": "The Associated Press reported on 29 October 2026 that Ford said in June 2026 it had hired or promoted 350 veteran engineers after AI tools it deployed for quality-control work did not perform at the expected level, while a Ford spokesperson told the AP that AI use has been an important part of the company's quality gains, alongside its teams' technical expertise. The same report says hiring managers in fields including finance, marketing, law and health told the staffing firm Robert Half earlier in 2026 that their companies had cut roles mainly because of AI or automation and then hired again for the same or similar roles.",
+   "eventDate": "2026-06",
+   "background": true,
+   "url": "https://www.ksat.com/business/2026/10/29/what-to-consider-if-a-company-that-made-ai-related-job-cuts-wants-you-back/",
+   "otherUrls": [],
+   "via": "Associated Press, republished by KSAT",
+   "rating": "credible report",
+   "ratingQual": null,
+   "ratingNote": "One wire report relays Ford's June claim, and we could not open Ford's own statement, so it stays a credible report.",
+   "kind": "press",
+   "dataKind": "private",
+   "bears": [
+    {
+     "claim": "J2",
+     "direction": "against"
+    }
+   ],
+   "confounder": "One firm's account, relayed by one outlet. We could not open Ford's own statement or a second outlet. Rehiring into similar roles can reflect re-scoped jobs or changes in demand, and there is no count of how common reversals are.",
+   "top": false
+  }
+ ],
+ "nullCase": {
+  "text": "In a survey of nearly 9,000 executives in seven countries, fielded mainly in May-July 2026, 87% of firms said AI had no effect on their employment over the past three years, and the average effect was close to zero (NBER working paper 34836). Norwegian register data through July 2026 find employment in the most AI-exposed fifth of occupations growing about 1.5 percentage points more than in the least exposed since late 2022, within an interval that includes zero; Stanford's Transformation Tracker finds no break in labor productivity growth; and in Stanford's ADP payroll data every AI-exposure group has added jobs since November 2022, at 1.0% and 1.8% a year in the two most exposed groups against 2.1% in the least exposed, differences the lab calls modest. J0 stays at Emerging: these sources agree, but J0's own exposure indicator, Federal Reserve research on unemployment and job-finding by AI exposure, still points the other way, so its Supported mark (\"two sources of different kinds agree, across two releases.\") is not met.",
+  "evidence": [
+   "e58",
+   "e62",
+   "e59",
+   "e63"
+  ]
+ },
+ "releases": [
+  {
+   "series": "fred:BAMLC0A0CM",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 0.86,
+   "note": "10 new observations"
+  },
+  {
+   "series": "fred:BAMLH0A0HYM2",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 3.14,
+   "note": "10 new observations"
+  },
+  {
+   "series": "fred:COE",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 16487.969,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:DFII10",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 2.67,
+   "note": "10 new observations"
+  },
+  {
+   "series": "fred:DHLCRC1Q027SBEA",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 3858.671,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:DHUTRC1Q027SBEA",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 4012.778,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:DIFSRC1Q027SBEA",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 1797.607,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:GDP",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 33010.036,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:NASDAQNQUSB",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 5570.74,
+   "note": "9 new observations"
+  },
+  {
+   "series": "fred:NASDAQNQUSB10101010",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 2930.2,
+   "note": "9 new observations"
+  },
+  {
+   "series": "fred:NASDAQNQUSB50205020",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 4093.78,
+   "note": "9 new observations"
+  },
+  {
+   "series": "fred:NASDAQNQUSB50205025",
+   "period": "2026-10-28",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 1787,
+   "note": "9 new observations"
+  },
+  {
+   "series": "fred:PALLFNFINDEXM",
+   "period": "2026-09-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 222.4285486100514,
+   "note": "2 new observations, 4 revised"
+  },
+  {
+   "series": "fred:PCEC",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 22312.825,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:PCESV",
+   "period": "2026-07-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 15391.326,
+   "note": "1 new observation"
+  },
+  {
+   "series": "fred:PCOPPUSDM",
+   "period": "2026-09-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 14473.05590909091,
+   "note": "2 new observations"
+  },
+  {
+   "series": "fred:PPIACO",
+   "period": "2026-09-01",
+   "released": null,
+   "firstSeen": "2026-10-29",
+   "value": 295.708,
+   "note": "1 new observation, 4 revised"
+  }
+ ],
+ "gaps": [
+  "36 sources could not be opened (paywalls, or sites that block automated access); items rest on other copies or sources.",
+  "No JOLTS, payroll employment, productivity or labor-share release arrived in the window, and third-quarter gross domestic income is not yet published, so the compensation share uses GDP and the official job-flow indicators are unchanged since the last edition.",
+  "The labs' revenue figures are point-in-time run-rates from July and September, so we cannot yet compare AI revenue with third-quarter capex on a matched basis; Anthropic's filing also leaves its total compute commitments blank.",
+  "Most of the eight pinned per-seat software vendors report in November and December, and Microsoft now counts paid GitHub seats in its seat metric, so the seat comparison is not on the same basis as before.",
+  "We have not compared the large firms' revenue per employee with their pre-2022 trends, and we have no measured share-price reaction to this window's job cuts at Meta, American Express, Barclays or Kroger.",
+  "We have not identified which member companies drove the rises in the labor-priced stock indexes, so we cannot separate a sector rotation or a cyclical staffing recovery from a re-rating.",
+  "Mercor's counters changed sharply in two weeks without explanation, and no source counts new AI-era roles in full-time equivalents over time.",
+  "We found no count of liability policies carrying AI exclusions and no new court ruling on liability for AI decisions; the insurance evidence in this edition is executives' statements.",
+  "Neither Visa nor Mastercard disclosed a value or count for payments made by AI agents, and Chainalysis's x402 counts carry no dollar value.",
+  "The Federal Reserve's distributional wealth data for the third quarter are not yet out, so the wealth side of J9 is unchanged."
+ ],
+ "corrections": [
+  {
+   "date": "2026-10-29",
+   "page": "jobs.html",
+   "item": "Baseline edition of 2026-10-06: the item comparing OpenAI's and Anthropic's combined revenue run-rate with the four largest hyperscalers' capex, and J8's starting-status reason that quotes it",
+   "was": "OpenAI's and Anthropic's combined annualized revenue rose about 4.4 times, from about $30B at the end of 2025 to about $135B by July-September 2026 (Epoch AI company data, compiled from company statements and media reports), while quarterly capex at Microsoft, Alphabet, Amazon and Meta rose 39%, from $118.6B in the fourth quarter of 2025 to $165.1B in the second quarter of 2026 (SEC filings). On our reading AI revenue is now growing faster than AI capex: the two labs' run-rates equal about 26% of the four companies' trailing-year capex of about $511B, up from about 8% at the end of 2025.",
+   "now": "Using OpenAI's September 2026 annualized revenue of about $50B, which replaces the earlier figure of about $70B in Epoch AI's company data, the combined run-rate was about $115B, about 3.8 times the end-2025 level and about 22.5% of that capex.",
+   "url": "https://epoch.ai/data/ai-companies"
+  }
+ ],
+ "edition": "2026-10-29",
+ "source": "post_agi_work@c3ba98e"
+}

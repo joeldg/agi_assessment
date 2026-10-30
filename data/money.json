@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-30",
  "capexDefinition": "Cash purchases of property and equipment from each company's SEC filings (XBRL: PaymentsToAcquirePropertyPlantAndEquipment; for Amazon, PaymentsToAcquireProductiveAssets), converted from year-to-date to quarterly values. Excludes finance leases.",
  "capexByCompany": {
   "MSFT": [
@@ -77,7 +77,7 @@
     "q": "2025Q3",
     "end": "2025-09-30",
     "usd_b": 19.39,
-    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/",
     "form": "10-Q"
    },
    {
@@ -100,6 +100,13 @@
     "usd_b": 35.8,
     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/",
     "form": "10-K"
+   },
+   {
+    "q": "2026Q3",
+    "end": "2026-09-30",
+    "usd_b": 39.37,
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/",
+    "form": "10-Q"
    }
   ],
   "GOOGL": [
@@ -177,7 +184,7 @@
     "q": "2025Q3",
     "end": "2025-09-30",
     "usd_b": 23.95,
-    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000091/",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/",
     "form": "10-Q"
    },
    {
@@ -199,6 +206,13 @@
     "end": "2026-06-30",
     "usd_b": 44.92,
     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q3",
+    "end": "2026-09-30",
+    "usd_b": 51.35,
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/",
     "form": "10-Q"
    }
   ],
@@ -277,7 +291,7 @@
     "q": "2025Q3",
     "end": "2025-09-30",
     "usd_b": 35.09,
-    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000123/",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/",
     "form": "10-Q"
    },
    {
@@ -299,6 +313,13 @@
     "end": "2026-06-30",
     "usd_b": 54.21,
     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/",
+    "form": "10-Q"
+   },
+   {
+    "q": "2026Q3",
+    "end": "2026-09-30",
+    "usd_b": 77.26,
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/",
     "form": "10-Q"
    }
   ],
@@ -564,13 +585,24 @@
     "AMZN": 54.21,
     "META": 30.12
    }
+  },
+  {
+   "q": "2026Q3",
+   "end": "2026-09-30",
+   "usd_b": 201.9,
+   "by": {
+    "MSFT": 39.37,
+    "GOOGL": 51.35,
+    "AMZN": 77.26,
+    "META": 33.94
+   }
   }
  ],
  "ttm": {
-  "asOf": "2026Q2",
-  "usd_b": 510.8,
-  "prevYear_b": 291.3,
-  "yoyPct": 75.4
+  "asOf": "2026Q3",
+  "usd_b": 615.4,
+  "prevYear_b": 329.7,
+  "yoyPct": 86.7
  },
  "spendVsCapability": [
   {
@@ -712,6 +744,16 @@
    "capabilityDate": "2026-04-07",
    "aboveSuiteRange": true,
    "stale": true
+  },
+  {
+   "q": "2026Q3",
+   "end": "2026-09-30",
+   "spend": 595.6,
+   "capability": 26185.0,
+   "capabilityModel": "claude_mythos_preview_early_inspect",
+   "capabilityDate": "2026-04-07",
+   "aboveSuiteRange": true,
+   "stale": true
   }
  ],
  "latestMeasured": {
@@ -828,8 +870,8 @@
    "date": "2025-12-31",
    "metric": "annual revenue (2025)",
    "usd_b": 4.6,
-   "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
-   "note": "From a draft IPO prospectus reviewed by Reuters (not a public SEC filing)"
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "note": "Anthropic's public S-1, filed Oct 26, 2026: '$4.6 billion' for 2025 (its quarterly table sums to $4,585M, our arithmetic). Until Oct 30 our row cited the same $4.6B from a draft prospectus reviewed by Reuters"
   },
   {
    "company": "Anthropic",
@@ -843,9 +885,9 @@
    "company": "Anthropic",
    "date": "2026-03-31",
    "metric": "quarterly revenue (Q1 2026)",
-   "usd_b": 4.73,
-   "url": "https://fortune.com/2026/09/29/anthropic-ipo-s-1-prospectus-income-statement/",
-   "note": "From the leaked draft prospectus, as reported by Fortune"
+   "usd_b": 4.731,
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "note": "Anthropic's public S-1, filed Oct 26, 2026 (quarterly results table): $4,731M. Until Oct 30 our row had $4.73B, from the leaked draft prospectus as reported by Fortune"
   },
   {
    "company": "Anthropic",
@@ -859,9 +901,9 @@
    "company": "Anthropic",
    "date": "2026-06-30",
    "metric": "quarterly revenue (Q2 2026)",
-   "usd_b": 11.5,
-   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
-   "note": "From the draft prospectus (Reuters/FT); the WSJ reported $11.6B"
+   "usd_b": 11.555,
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "note": "Anthropic's public S-1, filed Oct 26, 2026 (quarterly results table): $11,555M; its text rounds this to $11.6B. Reports of the leaked draft prospectus had $11.5B (Reuters/FT) and $11.6B (WSJ); our row had $11.5B until Oct 30"
   },
   {
    "company": "Anthropic",
@@ -877,7 +919,7 @@
    "metric": "quarterly revenue (Q3 2026)",
    "usd_b": 16.8,
    "url": "https://www.calcalistech.com/ctechnews/article/tgb6eqw4z",
-   "note": "Told to prospective investors at an investor day on Oct 14, per two people who attended (Reuters, via CTech), up from $11.6B in Q2 by their account (our Q2 row, from the draft prospectus, has $11.5B). The FT reported the figure first and Bloomberg reported the same $16.8B, citing people familiar (via The Next Web). Anthropic also told the investors it was profitable on an adjusted basis in the quarter (via Reuters). Not published by Anthropic, which declined to comment to Bloomberg (via The Next Web) and did not immediately respond to Reuters; not a public SEC filing (credible report)"
+   "note": "Told to prospective investors at an investor day on Oct 14, per two people who attended (Reuters, via CTech), up from $11.6B in Q2 by their account (the public S-1's quarterly table has $11,555M for Q2). The FT reported the figure first and Bloomberg reported the same $16.8B, citing people familiar (via The Next Web). Anthropic also told the investors it was profitable on an adjusted basis in the quarter (via Reuters). Not published by Anthropic, which declined to comment to Bloomberg (via The Next Web) and did not immediately respond to Reuters (credible report). Its public S-1, filed Oct 26, leaves Q3 revenue blank (verified fact: Anthropic S-1)"
   },
   {
    "company": "OpenAI",
@@ -948,66 +990,66 @@
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-10-23",
-   "price_pct": 6,
+   "date": "2026-10-30",
+   "price_pct": 7,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:15 PT (about 123 contracts sold at 6, traded 05:28 PT Oct 23); bid/ask 6/7. With about 38.3k contracts and a 1-point spread it is not thin by our rule, but open interest is only about 17.5k and the ask is shallow (about 4 contracts offered at 7). Was 9 on Oct 9."
+   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:15 PT (50 contracts bought at 7, traded 08:50 PT Oct 30); bid/ask 6/7. With about 38.9k contracts traded and a 1-point spread it is not thin by our rule; open interest is about 17.6k and about 55 contracts traded in the 24 hours before the read. Was 6 on Oct 23 and 9 on Oct 9."
   },
   {
    "market": "Any company announces it has achieved AGI before Apr 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-10-23",
-   "price_pct": 19,
+   "date": "2026-10-30",
+   "price_pct": 17,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:15 PT (traded 14:43 PT Oct 22); bid/ask 18/19; thin market: only about 1.4 contracts traded in the 24 hours before the read, though about 23.1k have traded in total, just above our ~20k line. Was 25 on Oct 9."
+   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:15 PT (one buy sweep at 11:06 PT Oct 29 filled about 231 contracts at 17 and 50 at 16); bid/ask 15/17. Thin market (borderline): about 25.7k contracts traded in total, above our ~20k line, but none in the 24 hours before the read, and a 2-point spread. Was 19 on Oct 23 and 25 on Oct 9."
   },
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2028",
    "venue": "Kalshi",
-   "date": "2026-10-23",
+   "date": "2026-10-30",
    "price_pct": 39,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:15 PT (0.93 contracts at 39, traded 11:57 PT Oct 23, after sellers traded about 450 contracts at 38 to 40 at 21:45 PT Oct 21); bid/ask 38/39; thin market: about 21.8k contracts traded, open interest about 9.2k and under 1 contract traded in the 24 hours before the read. The earlier before-Oct 1, 2027 rung (KXAGICO-COMP-27Q3, last 41, bid/ask 41/42) is priced above this later rung, an impossible ordering in a thin ladder. Was 61 on Oct 9."
+   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:15 PT (about 11.7 contracts at 39, traded 07:16 PT Oct 30; it traded 41 on Oct 28); bid/ask 39/40. Thin market (borderline): about 22.6k contracts traded, near our ~20k line, open interest about 9.6k and about 22 contracts traded in the 24 hours before the read. The earlier before-Oct 1, 2027 rung (KXAGICO-COMP-27Q3, last 35, bid/ask 34/38; thin: a 4-point spread and no trades in the 24 hours before the read) is now priced below this later rung, so the impossible ordering we noted on Oct 23 is gone. Was 39 on Oct 23 and 61 on Oct 9."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2026",
    "venue": "Kalshi",
-   "date": "2026-10-23",
-   "price_pct": 4.2,
+   "date": "2026-10-30",
+   "price_pct": 6.2,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API (OAIAGI-26), last trade as read at 13:15 PT (traded 10:06 PT Oct 23); bid/ask 4.1/4.2. About 365k contracts traded and a 0.1-point spread, so not thin by our rule, though only 1 contract is bid at 4.1 and trades between 07:17 and 07:42 PT Oct 23 ran from 5.2 to 6.8. Was 8 on Oct 9 (then bid/ask 8.1/12.9)."
+   "note": "Live API (OAIAGI-26), last trade as read at 13:15 PT (3.75 contracts at 6.2, traded 07:41 PT Oct 30); bid/ask 6.2/6.7. About 367k contracts traded and a 0.5-point spread, so not thin by our rule, though the book is shallow (about 3.6 contracts bid and 4 offered). Was 4.2 on Oct 23 and 8 on Oct 9."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2027",
    "venue": "Kalshi",
-   "date": "2026-10-23",
-   "price_pct": 45,
+   "date": "2026-10-30",
+   "price_pct": 43.45,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API (OAIAGI-27), last trade as read at 13:15 PT (0.17 contracts at 45, traded 09:31 PT Oct 23); bid/ask 44.5/45; about 296k contracts traded and a 0.5-point spread, so not thin by our rule, though the bid is shallow (about 1 contract). Was 43.2 on Oct 9."
+   "note": "Live API (OAIAGI-27) midpoint as read at 13:15 PT; bid/ask 43.0/43.9. The last trade (0.2 contracts at 41.1, 20:03 PT Oct 29) sits below the bid and is stale, so we do not use it. About 301k contracts traded and a 0.9-point spread, so not thin by our rule, though only 0.2 contracts traded in the 24 hours before the read. Was 45 on Oct 23 (then a last trade) and 43.2 on Oct 9."
   },
   {
    "market": "OpenAI announces it has achieved AGI before 2027",
    "venue": "Polymarket",
-   "date": "2026-10-23",
-   "price_pct": 9.5,
+   "date": "2026-10-30",
+   "price_pct": 9,
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "note": "Live API midpoint, read 13:15 PT; bid/ask 9/10; volume about $334k (USD), not thin. The API's last-trade field (8) sits below the bid and is not used. Was 15.5 on Oct 9."
+   "note": "Live API midpoint, read 13:15 PT; bid/ask 8/10; volume about $345k (USD), not thin. The last trade (10) is at the ask. Was 9.5 on Oct 23 and 15.5 on Oct 9."
   },
   {
    "market": "Anthropic IPOs by Oct 31, 2026",
    "venue": "Polymarket",
-   "date": "2026-10-23",
-   "price_pct": 0.15,
+   "date": "2026-10-30",
+   "price_pct": 0.1,
    "url": "https://polymarket.com/event/anthropic-ipo-by",
-   "note": "Live API midpoint, read 13:15 PT; bid/ask 0.1/0.2; volume about $1.30M (USD), not thin. Was 0.6 on Oct 9. Other dates in the same event, bid/ask at the same read: by Nov 15 3.2/5.0, by Nov 20 47/53 (thin: about $8.2k traded, all in the past 24 hours), by Nov 25 58/61 (thin: about $2.8k traded), by Nov 30 67/68, by Dec 15 77/80 (thin: a 3-point spread), by Dec 31 80/81. On Oct 9 they were 10/11 (Nov 15), 67/68 (Nov 30) and 76/77 (Dec 31)."
+   "note": "Live API, read 13:15 PT. The book had no bid, so there is no midpoint; the figure shown is the last trade (0.1), at the ask of 0.1. Volume is about $1.53M (USD), so the market is not thin by volume, but the book is one-sided. It closes at 23:59 ET on Oct 31 (20:59 PT). Was 0.15 (a midpoint) on Oct 23 and 0.6 on Oct 9. Other dates in the same event, bid/ask at the same read: by Nov 15 0.6/1.7; by Nov 20 52/54 (about $69k traded, no longer thin); by Nov 25 78/80 (borderline: about $38k traded, liquidity about $5.4k); by Nov 30 82/84; by Dec 15 89/90 (no longer thin); by Dec 31 89.4/90.3. On Oct 23 they were 3.2/5.0 (Nov 15), 47/53 (Nov 20, thin), 58/61 (Nov 25, thin), 67/68 (Nov 30), 77/80 (Dec 15, thin) and 80/81 (Dec 31)."
   },
   {
    "market": "Anthropic IPOs by Nov 30, 2026",
    "venue": "Polymarket",
-   "date": "2026-10-23",
-   "price_pct": 67.5,
+   "date": "2026-10-30",
+   "price_pct": 83,
    "url": "https://polymarket.com/event/anthropic-ipo-by",
-   "note": "Live API midpoint (will-anthropic-ipo-by-november-30-2026), read 13:15 PT; bid/ask 67/68; volume about $447k (USD), not thin. Bid/ask was also 67/68 on Oct 9."
+   "note": "Live API midpoint (will-anthropic-ipo-by-november-30-2026), read 13:15 PT; bid/ask 82/84; last trade 84; volume about $564k (USD), not thin. Was 67.5 on Oct 23 (bid/ask 67/68, the same as on Oct 9). Anthropic filed its public S-1 on Oct 26, between the two reads (EDGAR)."
   }
  ],
  "signals": [
@@ -1130,16 +1172,31 @@
    "date": "2026-10-22",
    "text": "DeepSeek has reportedly raised about $15B (about 100 billion yuan), with potential investors including CATL and Tencent (credible report: Bloomberg, via TechCrunch; DeepSeek did not immediately respond to TechCrunch); TechCrunch gives no valuation, calls it one of the biggest funding rounds in China and notes it came two days after the US ordered federal civilian agencies to remove DeepSeek's AI technology from their systems (via TechCrunch). A named lab raising capital, so not an X4 candidate (our inference).",
    "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/"
+  },
+  {
+   "date": "2026-10-26",
+   "text": "Anthropic's public S-1 puts its expected future fixed or minimum guaranteed purchase commitments, mostly cloud hosting and other third-party infrastructure, at about $265.6B at June 30, 2026 (unaudited). It also reports new and amended agreements after June 30 with about $245B of future minimum payments, some subject to contractual conditions, plus about $21B of minimum payments under short-term agreements. Named commitments include at least $44.9B with Microsoft (Nov 2026 to May 2033), at least about $114.5B with Google (Apr 2026 to Jul 2033), at least $110B with Amazon (May 2026 to Apr 2036) and up to $120.5B with SpaceXAI, formerly X.AI LLC, into 2029. The SpaceXAI figure is about $3.1B a month once all capacity is delivered, which Anthropic expects in December 2026, and after initial periods ending in January and March 2027 either party can cancel each agreement on 90 days' notice. On top of that is an estimated $125B to $150B for more TPU compute delivered in 2028 to 2031, which is not in its commitments table (verified fact: Anthropic S-1). The S-1 leaves its own total committed spend blank, and because the $245B includes amended agreements the figures may overlap, so we do not add them up (our inference). Named buyer and sellers, so not an X4 candidate (our inference). It confirms Anthropic as a SpaceXAI compute customer, which narrows the SpaceX 'Customer B' lead of Oct 22 but does not settle it (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "Microsoft's 10-Q for the quarter to Sept 30 records $10.0B of revenue from commercial arrangements with OpenAI, including revenue-sharing payments. Its accounts receivable from OpenAI rose to $7.2B from $6.0B at June 30, it has paid in $12.0B of its $13.0B funding commitment, and it booked $272M of net gains from its OpenAI investments, against $4.1B of net losses a year earlier (verified fact: Microsoft 10-Q). Named buyer and seller, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
+  },
+  {
+   "date": "2026-10-29",
+   "text": "Microsoft priced $25B of notes in ten tranches due 2028 to 2066 (trade date Oct 29, settling Nov 4). Its preliminary prospectus supplement says the proceeds are for general corporate purposes, which may include working capital, capital expenditures, share repurchases, acquisitions and debt repayment, and does not tie them to AI (verified fact: Microsoft pricing term sheet and preliminary prospectus supplement; the $25B total is our arithmetic from the tranche sizes). Debt that may help fund the capex build, from a named borrower, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526439794/d799291dfwp.htm"
   }
  ],
  "notes": [
   "Capex is cash purchases of property and equipment and excludes finance leases, so it is lower than the 'capex including finance leases' headline some companies quote (Microsoft in particular; Meta's headline adds about $1B a quarter in lease principal). Amazon is gross, not net of incentives.",
   "An independent read of each company's earnings releases matches the SEC XBRL-derived quarterly capex exactly.",
-  "Not yet reported: calendar Q3 2026 capex for Microsoft, Amazon and Alphabet (Meta reported on Oct 21 and filed its 10-Q on Oct 22; EDGAR read Oct 23), and Nvidia Q3 FY2027 (late November; no date announced when we checked on Oct 23).",
-  "Anthropic figures labelled 'draft prospectus' come from a leaked, non-public draft reported by Reuters, Fortune, the FT and the WSJ (via Fortune). EDGAR full-text searches on Oct 23, 2026 found no public Anthropic S-1, S-1/A, F-1, F-1/A, 424B4 or DRS (confidential draft submissions are not public, so the absence is our reading of the search). Bloomberg reports that formal IPO marketing could start as early as the week of Nov 9, with trading possibly before Thanksgiving (Nov 26), and that the dates are fluid (credible report, via The Next Web); Reuters reports the IPO is likely after the November midterms (credible report).",
+  "Calendar Q3 2026 has now been reported by all four: Meta filed its 10-Q on Oct 22, Microsoft on Oct 28, Alphabet on Oct 29 and Amazon on Oct 30 (EDGAR filing dates, read Oct 30); the capex figures come only from scripts/update_sec.py. Nvidia reports Q3 FY2027 (the quarter ended Oct 25, 2026) on Nov 17, 2026, with its call at 2 p.m. PT (Nvidia, Oct 28).",
+  "Anthropic, PBC filed a public S-1 on Oct 26, 2026 (EDGAR, CIK 0002130357), and EDGAR now also lists its earlier draft registration statements (a DRS on June 1 and five DRS/A, July 13 to Oct 9). The S-1 leaves the price range, share count, Q3 2026 revenue, the Oct 31 run-rate and its total committed spend blank, and no S-1/A had been filed when we read EDGAR on Oct 30 (verified fact: EDGAR and the S-1). Where the S-1 gives a figure we cite it; figures still labelled 'draft prospectus' come from the leaked draft as reported by Reuters, Fortune, the FT and the WSJ (via Fortune). Bloomberg reports that formal IPO marketing could start as early as the week of Nov 9, with trading possibly before Thanksgiving (Nov 26), and that the dates are fluid (credible report, via The Next Web); Reuters reports the IPO is likely after the November midterms (credible report).",
   "Run-rates annualize one recent period and are often floors; they are not comparable with quarterly revenue and are never plotted on the same axis.",
-  "Kalshi's 'any company before Apr 1, 2027' market stood at 19% on Oct 23, 2026 (Pacific) (live API: last trade 19 on Oct 22, bid/ask 18/19, thin), down from 25% on Oct 9, 30% on Oct 2 and 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price.",
-  "Anthropic's and OpenAI's run-rates are not like for like: per Reuters and the FT (via Investing.com), both Oct 8, Anthropic counts revenue from sales through cloud partners such as AWS and Google Cloud, and OpenAI does not (credible report)."
+  "Kalshi's 'any company before Apr 1, 2027' market stood at 17% on Oct 30, 2026 (Pacific) (live API: last trade 17 on Oct 29, bid/ask 15/17, thin), down from 19% on Oct 23, 25% on Oct 9, 30% on Oct 2 and 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price.",
+  "Anthropic's and OpenAI's run-rates are not like for like (our inference). Anthropic's S-1 says sales to customers through cloud-provider marketplaces made up about 47% of its 2025 revenue and 48% in the first half of 2026 (verified fact: Anthropic S-1), while per Reuters and the FT (via Investing.com), both Oct 8, OpenAI does not count revenue from sales through cloud partners (credible report)."
  ],
  "method": "Context, not a test. Capex is total cash purchases of property and equipment by Microsoft, Alphabet, Amazon and Meta (mostly AI data centers; also non-AI spending such as Amazon logistics), summed by calendar quarter when all four have reported. The capability line is the best METR-measured frontier time horizon released by each quarter end; readings above 16 hours are beyond METR's reliable range, and quarters after METR's latest measurement can miss newer models. Models take months to train on new capacity, so spending often leads releases. Our actual test for hidden compute is alarm condition X4."
 }

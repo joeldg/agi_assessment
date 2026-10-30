@@ -75,14 +75,24 @@
    "short": "TSMC reports third-quarter 2026 results"
   },
   {
+   "date": "2026-10-16",
+   "kind": "models",
+   "title": "Open weights released: Reflection AI's Beam on Hugging Face (Apache 2.0; technical report still listed as coming)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "Open-weight releases widen what an unknown actor could run out of view.",
+   "url": "https://huggingface.co/reflection/Beam-1.0-501B-A23B",
+   "short": "Open weights released for Reflection AI's Beam"
+  },
+  {
    "date": "2026-10-26",
    "kind": "industry",
-   "title": "Anthropic plans to file its IPO documents publicly with the SEC on Oct 26 (a person familiar, via IFR); Reuters reported a registration-statement filing as early as the end of October (people familiar, via Reuters, read on Asia Business Daily)",
+   "title": "Anthropic files its IPO registration statement (Form S-1) publicly on SEC EDGAR, applying to list its Class A common stock on the Nasdaq Global Select Market under the symbol \"ANT\"; the price range and share count are left blank",
    "hyp": "A",
-   "certainty": "approximate",
-   "why": "A public S-1 would be the first forced disclosure of Anthropic's figures and risk factors, and it would resolve our forecast anthropic-public-s1-by-nov15.",
-   "url": "https://www.ifre.com/equities/2499407/anthropic-pushes-ahead-with-mid-november-ipo",
-   "short": "Anthropic's reported public IPO filing with the SEC (a person familiar, via IFR)"
+   "certainty": "fixed",
+   "why": "The S-1 is the first forced disclosure of Anthropic's figures and risk factors; it bears on our forecast anthropic-public-s1-by-nov15.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "short": "Anthropic files its S-1 publicly on SEC EDGAR (Nasdaq, symbol ANT)"
   },
   {
    "date": "2026-10-28",
@@ -105,6 +115,16 @@
    "short": "Amazon reports July–September results, including capital spending"
   },
   {
+   "date": "2026-10-29",
+   "kind": "models",
+   "title": "Open weights released: Mistral Large 4 on Hugging Face (Mistral Ecosystem Open-Weight License)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "Open-weight releases widen what an unknown actor could run out of view.",
+   "url": "https://huggingface.co/blog/mistral-large4",
+   "short": "Open weights released for Mistral Large 4"
+  },
+  {
    "date": "2026-10-31",
    "kind": "forecast",
    "title": "Forecast deadline: OpenAI says it has resumed training its frontier models (openai-resume-by-oct31)",
@@ -121,16 +141,6 @@
    "url": "https://hiddenagi.com/scorecard.html"
   },
   {
-   "date": "2026-10-31",
-   "kind": "models",
-   "title": "Open weights due for Mistral Large 4 (\"by the end of the month\", Oct 6 post) and Reflection AI's Beam (\"later this month\", Oct 5)",
-   "hyp": "C",
-   "certainty": "target",
-   "why": "Open-weight releases widen what an unknown actor could run out of view.",
-   "url": "https://mistral.ai/news/mistral-large-4/",
-   "short": "Open weights due for Mistral Large 4 and Reflection AI's Beam"
-  },
-  {
    "date": "2026-11-03",
    "kind": "industry",
    "title": "US midterms; Reuters (Sept 28) reported Anthropic's IPO is likely after them; a public S-1 must appear at least 15 days before the roadshow",
@@ -138,6 +148,25 @@
    "certainty": "approximate",
    "why": "Public-company disclosure rules become a forced-disclosure channel.",
    "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html"
+  },
+  {
+   "date": "2026-11-04",
+   "kind": "models",
+   "title": "Open weights due for Moonshot's Kimi K3.1 Pro (\"The full model weights will be released by Nov 4\", Moonshot's launch blog; so far only on Kimi's own apps and API; license not stated)",
+   "hyp": "C",
+   "certainty": "target",
+   "why": "Open-weight releases widen what an unknown actor could run out of view.",
+   "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+   "short": "Open weights due for Moonshot's Kimi K3.1 Pro"
+  },
+  {
+   "date": "2026-11-06",
+   "kind": "policy",
+   "title": "PCAST meets (virtual, 9–10 a.m. Pacific) with \"Charges to the Board\" on its tentative agenda; the Federal Register notice says PCAST \"also provides advice in response to requests from the Super Intelligence Task Force\"",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21614/presidents-council-of-advisors-on-science-and-technology-pcast",
+   "short": "PCAST meets; it advises the Super Intelligence Task Force"
   },
   {
    "date": "2026-11-07",
@@ -162,9 +191,29 @@
    "title": "Anthropic's IPO roadshow is reported for the week of Nov 9: Bloomberg (Oct 1) said formal marketing could start as soon as that week, putting trading before Thanksgiving, Nov 26; Reuters (Oct 22, via Asia Business Daily) reported Nov 9 or that week, and IFR a Nov 9 launch with pricing the following week (people familiar in each)",
    "hyp": "A",
    "certainty": "approximate",
-   "why": "Public-company disclosure rules become a forced-disclosure channel.",
+   "why": "Public-company disclosure rules become a forced-disclosure channel. With the S-1 public on Oct 26, the SEC staff's condition for confidential draft review, that the registration statement be filed publicly \"at least 15 days prior to any road show\", allows a roadshow from Nov 10 at the earliest (our inference).",
    "url": "https://theedgemalaysia.com/node/820297",
    "short": "Anthropic's reported IPO roadshow start; pricing reported for the following week"
+  },
+  {
+   "date": "2026-11-09",
+   "kind": "policy",
+   "title": "BIS's one-year suspension of its rule expanding end-user controls to cover affiliates of certain listed entities ends, absent an extension (none in the Federal Register as of Oct 30)",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "why": "Ending the suspension would widen export restrictions to affiliates of listed firms, a further limit on chips reaching them (our inference).",
+   "url": "https://www.federalregister.gov/documents/2025/11/12/2025-19846/one-year-suspension-of-expansion-of-end-user-controls-for-affiliates-of-certain-listed-entities",
+   "short": "BIS's suspension of its affiliates rule ends, absent an extension"
+  },
+  {
+   "date": "2026-11-11",
+   "kind": "policy",
+   "title": "Due: Anthropic, Google, Meta, OpenAI and SpaceXSI are asked to list their identified incidents of model misalignment (attempted or successful unsanctioned access to their internal networks, the internet or third-party networks) and of safeguard circumvention, for the top Democrats on three House committees (Pallone, Lofgren, Raskin), and to report new ones within 48 hours (letters of Oct 27; a request, not a legal duty)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "Answers, if made public, would be a new disclosure channel for the incidents behind our oversight gauge.",
+   "url": "https://democrats-energycommerce.house.gov/media/press-releases/house-democratic-committee-leaders-request-frontier-ai-companies-report",
+   "short": "Due: five AI labs' incident lists requested by House Democrats"
   },
   {
    "date": "2026-11-15",
@@ -200,12 +249,41 @@
    "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
   },
   {
-   "date": "2026-11-21",
+   "date": "2026-11-16",
+   "kind": "industry",
+   "title": "Anthropic's reported target for listing on Nasdaq (symbol ANT, per its S-1): the week of Nov 16, though the timing could change (people familiar, via the Wall Street Journal, read on Investing.com)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "Trading would bear on our forecasts anthropic-trading-by-nov20 and anthropic-trading-by-nov30 and bring Anthropic under quarterly public-company reporting.",
+   "url": "https://www.investing.com/news/stock-market-news/anthropic-files-for-nasdaq-ipo-as-revenue-jumps-to-163-billion-4972842",
+   "short": "Anthropic's reported Nasdaq listing target (people familiar, via WSJ)"
+  },
+  {
+   "date": "2026-11-17",
+   "kind": "industry",
+   "title": "Nvidia reports third-quarter fiscal 2027 results (quarter ended Oct 25); conference call 2 p.m. Pacific",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Nvidia's data-center sales are the supply side of the AI spending our money gauge tracks, and Jensen Huang made an AGI claim on the previous call (Aug 26; see the AGI claims page).",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
+   "short": "Nvidia reports quarterly results (quarter ended Oct 25)"
+  },
+  {
+   "date": "2026-11-18",
    "kind": "geopolitics",
-   "title": "US–China AI incident-channel follow-up talks in Shenzhen (about two months after Sept 21)",
+   "title": "Xi–Trump meeting expected at the APEC Economic Leaders' Meeting in Shenzhen (Nov 18–19, APEC); US and Chinese teams reportedly aim for a basic framework for AI-related crises by then, and the AI dialogue's next meeting is also set for November (anonymous sources, via SCMP, read in The Star)",
    "hyp": "D",
    "certainty": "approximate",
-   "url": "https://www.forbes.com/sites/siladityaray/2026/09/21/bessent-touts-ai-dialogue-with-china-and-notification-mechanism-for-incidents/"
+   "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/23/us-and-china-race-to-shape-ai-agenda-ahead-of-xi-trump-talks-in-shenzhen-sources-say",
+   "short": "US–China AI crisis framework targeted for Xi–Trump meeting at APEC Shenzhen"
+  },
+  {
+   "date": "2026-11-20",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov20)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
   },
   {
    "date": "2026-11-28",
@@ -219,7 +297,7 @@
   {
    "date": "2026-11-30",
    "kind": "forecast",
-   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30); METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30); California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30)",
+   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30); METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30); California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30); Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov30)",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -237,11 +315,19 @@
   {
    "date": "2026-12-13",
    "kind": "alarm",
-   "title": "Alarm condition W6 is met unless OpenAI's post-Astra model is released or its capabilities are published first (90 days of internal use from Sept 8, skipping OpenAI's pause from Sept 25 to Oct 1; two other readings are flagged for the owner)",
+   "title": "Alarm condition W6 is met unless OpenAI's post-Astra model is released or its capabilities are published first (90 days of internal use from Sept 8, skipping OpenAI's pause from Sept 25 to Oct 1; three other readings are flagged for the owner: counting from OpenAI's Oct 23 announcement (Jan 4, 2027), voiding the pause for red-teaming (Dec 7), or excluding Sept 20–24 as well (Dec 18))",
    "hyp": "A",
    "certainty": "approximate",
    "url": "https://hiddenagi.com/alarm.html",
    "short": "W6 is met unless OpenAI's post-Astra model is released or its capabilities published"
+  },
+  {
+   "date": "2026-12-13",
+   "kind": "forecast",
+   "title": "Forecast deadline: OpenAI releases a model it says is more capable overall than GPT-6 Astra, or publishes capability scores for its unreleased post-Astra model (openai-beyond-astra-or-capabilities-by-dec13)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
   },
   {
    "date": "2026-12-31",
@@ -296,6 +382,14 @@
    "url": "https://hiddenagi.com/scorecard.html"
   },
   {
+   "date": "2026-12-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic releases a model it says is more capable than Claude Mythos 5.1, or an outside evaluation of such an unreleased Anthropic model is announced (anthropic-beyond-mythos51-release-or-eval-by-dec31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
    "date": "2027-01-01",
    "kind": "policy",
    "title": "New York RAISE Act takes effect (72-hour incident reporting)",
@@ -307,6 +401,22 @@
    "date": "2027-01-31",
    "kind": "forecast",
    "title": "Forecast deadline: an AI system scores 25% or more on Scale AI's Remote Labor Index (rli-25pct-by-jan31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-01-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: OpenAI releases a model it says is more capable overall than GPT-6 Astra (openai-beyond-astra-release-by-jan31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-28",
+   "kind": "forecast",
+   "title": "Forecast deadline: Microsoft, Alphabet, Amazon and Meta report October–December capex of $203.28B or more on EDGAR (big4-q4-capex-700b-ttm)",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -374,6 +484,11 @@
    "kind": "policy",
    "title": "D.C. Circuit rules on Anthropic's petition for panel rehearing or rehearing en banc of its decision on the Pentagon's supply-chain-risk designation (Anthropic PBC v. U.S. Department of War, No. 26-1049)",
    "hyp": "Dopen"
+  },
+  {
+   "kind": "models",
+   "title": "Gemini 4 Carbon wider release to developers, businesses and consumers (Google, Oct 28: \"a subset of cyber defenders\" first, \"starting this week\", then more trusted partners through the Fairwind Program; wider release \"as soon as possible\")",
+   "hyp": "A"
   }
  ]
 }
