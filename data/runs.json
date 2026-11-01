@@ -22523,5 +22523,690 @@
     "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
    }
   ]
+ },
+ {
+  "date": "2026-11-01",
+  "label": "daily reading",
+  "report": "reports/2026-11-01.html",
+  "probs": {
+   "A": {
+    "now": 0.6,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2,
+    "y2030": 22,
+    "y2035": 33,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 8,
+    "y2035": 14,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.2,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "summary": "Quiet day: no news moved our published probabilities. Wiz groups at least nine October breaches of AI developer platforms as 'agentic attacks' and links stolen keys to LLM resellers it cannot definitively tie to the breaches (Wiz; credible report). A's part of the Index stays 0.60; the Index holds at 2.5%.",
+  "changes": [
+   "Quiet day for news by our numbers: no story moved one. The most notable: Wiz (Oct 30) groups at least nine October breaches of AI developer platforms, from Fireworks AI to Northflank, as 'a series of agentic attacks', with 'agent swarm' indications reported by Fireworks, OpenCode and Warp (those companies, via Wiz) and at least two stolen enterprise keys used for about 2.5 million Amazon Bedrock calls, keys it links to overt LLM resellers, among them a pseudonymous 'momo' whose IP, Wiz says, Zeabur publicly named as part of its compromise, though it cannot definitively tie them to the initial compromise or that abuse (Wiz; credible report). No one is definitively tied to the breaches and no agent is shown acting outside a human operator's control or beyond public models, so these are warning signs below AGI level (our inference).",
+   "Time passing: one more day along our own forecast curve (the logistic path applied on Oct 24, about ×1.0026 a day) raises the lab term from about 1.518% to about 1.522% (our inference). Before rounding, A goes from about 0.5761 to about 0.5775, AGI anywhere from 0.922 to 0.924 and D from about 0.1537 to 0.1541, while C (about 0.34) and D-open (about 0.18) hold, so no published probability crosses a step and A's part of the Index stays 0.60 on the 0.05 grid (time passing, per our own forecast). Time passing never moves the end-2030 or end-2035 numbers.",
+   "A held at 0.6% / 19% / 31%: the kept-quiet factor stays at 0.6 and the state term at 0.1%. OpenAI's post-Astra model is on day 54 of 60 with no outside evaluation in the channels we checked (verified fact (part our inference)); Epoch's ECI file is byte-identical to Oct 31's, Scale's Remote Labor Index (RLI) still has the public Claude Opus 5.5 first at 21.25%, Gemini 4 Carbon still has no model card, and none of Anthropic, OpenAI, Google DeepMind or xAI announced a new model on Oct 31–Nov 1 (verified fact (part our inference)), so no measurement widens the gap; and the Lords' Third Reading list (Oct 30) holds four government amendments, none on AI (UK Parliament; verified fact (part our inference)), so the Oct 26 rejection of a developer incident duty stands as of that list, the status quo our kept-quiet factor assumes (our inference).",
+   "B held at 2% / 22% / 33%: Anthropic's page, re-read Nov 1, still says Claude 'leads' 26% of its AI R&D work as of August, and its chart labels monthly values from 1% in March to 26% in August, with no fully autonomous data plotted (Anthropic; verified fact (part our inference)); Michael Sellitto reportedly told an IMF panel on Oct 16 that the share 'could be 80–90%' sometime next year (Sellitto, via FourWeekMBA, quoting Andrew Curran's transcription; credible report; background), a public projection; and unreviewed preprints report a 9.293x kernel speed-up from a 12-day agent loop (the author; expert opinion), five autonomous research runs judged near workshop level by AI reviewers only (the author; expert opinion) and a best of 14% full reproductions on PAPERBENCHX (the authors; expert opinion). Public, partial acceleration doesn't count for B, and none is a hidden successor-building result (our inference).",
+   "C held at 0.3% / 8% / 14%: OpenAI's Oct 29 monitoring post (background; its Chat Completions gap was on our Oct 30 record) gives its misalignment monitor's synthetic-incident recall in the alignment queue as 71.4% for research sabotage and 70% for verbalized sandbagging, 0% for both in the security columns, and 91.4% overall real-incident recall in the alignment queue (OpenAI; verified fact); Wiz's agentic-attack synthesis (Wiz; credible report), Cisco Talos's VOLTA infostealer, which can send stolen-data bundles to public models through OpenRouter for target triage (Talos; credible report), a LessWrong RL study of monitor evasion on toy transformers and Qwen3-1.7B (Pranjal Garg; expert opinion) and Check Point's replay of Cohere's Qwen case, which it reads as jaggedness rather than a backdoor (Check Point; expert opinion), are the same kind of oversight and misuse evidence already in C's share of AGI anywhere, so the share is unchanged (our inference).",
+   "D held at 0.2% / 3% / 7% and D-open at 0.2% / 23% / 45%: China's 15th Five-Year informatization plan, posted Oct 23 on the Cyberspace Administration of China's website, calls for advancing large AI models and agents in government and sets an expected adoption rate above 90% by 2030 for new smart terminals, agents and similar applications (CAC website; verified fact), a plan consistent with the government uptake D-open's share already assumes (our inference); the White House lists no action after Oct 28, whose robotics proclamation is outside our definition's cognitive scope (White House; verified fact (part our inference)); Google's reported Golden Dome talks describe data-security infrastructure with no AI role (Bloomberg, via Investing.com; credible report). None involves an AGI-level system shaping a government decision (our inference).",
+   "AGI anywhere held at 0.9% / 35% / 58% (0.922 to 0.924 today before rounding, for time passing) and k held at 0.57 / 0.77 / 0.89: no part's test has a new score, as Scale's RLI, Epoch's ECI and Epoch's FrontierMath: Open Problems (five 'Solved (AI)' problems listed, newest changelog entry Sept 16) are unchanged (verified fact); four unreviewed preprints go to the weekly as leads, including a kernel loop that built its own knowledge of a sparsely documented language and chip (the author; expert opinion), none measured on a part's test, so nothing moves our view of learning on the job, generalization or open-ended reasoning (our inference).",
+   "Index unchanged at 2.5% (parts A 0.60, hidden self-improvement outside A 1.65, C or D outside A 0.05; about 2.28 before rounding): A rose from about 0.5761 to about 0.5775 for time passing, and B outside A is about 1.654 (our inference).",
+   "Gauges carried forward with new notes: capability gap ~3 months (2–5; ECI byte-identical, RLI unchanged, no new model announced), AI R&D 26% (re-read Nov 1; the chart's monthly series and about 30,000 agents at a time on Anthropic's main internal platform as of August), oversight ~115 days (112–120) across 27 incidents (matching the alarm check; no new lab disclosure), money $615B / yr (no new capex filing; the $326 billion of 2026 Big Tech debt reported via TechCrunch is borrowing, not capex) and delegation rung 3 of 5 (China's plan is a plan, not routine use). No weekly gaugeUpdates are newer than the last reading: the Oct 30 weekly's money update was adopted on Oct 31.",
+   "Fire alarm unchanged at Level 1, Watch (W3, W4, W5 met; alarm check consistent, exit 0). W2: day 54 of 60, met Nov 7 if nothing changes, which adds a W condition but not a level, since Warning needs an X condition. W6: 48 of 90 under the main reading (Sept 8–24 and Oct 1 onward), met Dec 13. Dated rulings (2026-11-01) for W1–W6 and X1–X6, including Anthropic's monthly AI-led series and Sellitto's reported projection (W5, X3), Epoch's Nov 1 data-center hub, whose largest sites with no owner or user listed are roughly half and two-fifths of Colossus 2 (X4), and Wiz's Black October synthesis (X6). Nothing at Warning; no Level-3 case recommended.",
+   "Signals: no status changed; all eleven notes updated, including ext-eval-post-astra (day 54), outsider-incidents (the Lords' Third Reading list adds no AI incident duty), eval-integrity (OpenAI's monitor recall figures and Model Spec), autonomous-rd (Anthropic's monthly series; Sellitto's projection) and compute-anomaly (Epoch's Nov 1 hub, now its source link).",
+   "Escape watch: all eight indicators still Open, none confirmed; no status changed. New evidence for all eight: Wiz's synthesis of at least nine October AI-platform breaches as 'agentic attacks' and Northflank's disclosure of misused customer AI keys, with the stolen keys linked to LLM resellers and no one definitively tied to the breaches (compute, leakage); the FBI's attribution of the Binance theft to North Korea's TraderTraitor and a hijacked script that drained Polymarket wallets, neither tied to AI (money); the New York Times' Sept 18 report of agent-run influence campaigns by known or claimed operators (identity; background); GitHub's 11 new malware advisories, including a Miasma-family worm, with no AI author (supply chain); and negative checks for all eight.",
+   "Markets (public APIs, 06:19 PT Nov 1; forecast aggregate; most thin): Kalshi 'any company announces AGI before Jan 1, 2027' last 6 (bid 6, ask 7; thin: one 240-contract trade in 24 hours); before Apr 1, 2027 last traded Oct 29 at 17 (bid 15, ask 17; thin); before Jul 1, 2027 bid 30, ask 31 (no trade since Oct 28); before Jan 1, 2031 bid 77, ask 78, still below before Jan 1, 2030 at bid 81, ask 82 (both thin). Kalshi 'OpenAI announces AGI before 2027' bid 6.2, ask 6.5, last 6.1 (8.9 a day earlier, per the API's previous price), and Polymarket's version bid 6, ask 7, last 6 (down 3 points in a day per the API; 8/9 at our Oct 31 read). Polymarket 'Anthropic IPO by Nov 30' bid 80, ask 82 (77/78 at our Oct 31 read); by Dec 31 bid 89, ask 90. Prices, not evidence."
+  ],
+  "roundupWindow": "Oct 31 – Nov 1, 2026: items first reported, or first verified by us, since the Oct 31 reading, plus earlier items (marked background)",
+  "roundup": [
+   {
+    "topic": "AI developer platforms breached",
+    "items": [
+     {
+      "date": "Oct 6 – Oct 30",
+      "text": "Wiz (Benjamin Read and Rami McCarthy, Oct 30) groups at least nine October incidents at AI developer platforms, from Fireworks AI (Oct 6) to Northflank (Oct 30), as 'a series of agentic attacks' leading to LLMjacking at scale, with 'no single vulnerability or dependency linking these attacks'; in at least two cases ('an exemplary pair') stolen enterprise keys made about 800,000 calls over 30 hours and about 1.7 million over 13 hours on Amazon Bedrock, likely over $100k at list price, in traffic resembling resold coding-agent use; Wiz links the keys to overt LLM-resale operations but says it is 'not able to definitively establish the relationship' between them and either the initial compromise or the abuse (Wiz; credible report). The 'agent swarm' wording comes from X posts by Fireworks, OpenCode and Warp that Wiz links (those companies, via Wiz). BleepingComputer adds that Wiz has not confirmed that all nine incidents were by the same attackers (BleepingComputer; credible report).",
+      "url": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms",
+      "top": true,
+      "short": "Wiz calls at least nine October AI-platform breaches 'agentic attacks' and links stolen keys to LLM resellers it cannot definitively tie to the breaches.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 30",
+      "text": "Northflank's status page told customers on Oct 30 to 'Assume all environment variables have been decrypted' and said 'Users have reported unauthorised use of AI API keys supplied to the Northflank platform', naming no attacker and no AI agent; it has since enabled audit logs for all customers (Northflank; credible report). BleepingComputer adds that Northflank has not disclosed how attackers got in or how many customers were affected (BleepingComputer; credible report).",
+      "url": "https://status.northflank.com/",
+      "top": false,
+      "short": "Northflank told customers to assume all environment variables were decrypted after reports of misused AI keys.",
+      "rating": "credible report"
+     }
+    ]
+   },
+   {
+    "topic": "Labs and evaluators",
+    "items": [
+     {
+      "date": "Nov 1",
+      "text": "No outside evaluation of OpenAI's unreleased post-Astra model is listed in the channels we checked around 06:20 PT: the Deployment Safety Hub's newest entry is the Oct 30 GPT-Rosalind-6 addendum, METR's newest post is Oct 22, UK AISI's are two Oct 26 posts, NIST CAISSI's newest item is Oct 16, Apollo Research's newest blog post is Oct 1 (its Science page's Oct 15 note covers Z.ai's GLM-5.3), Irregular's newest (Oct 28) covers GLM-5.3 and Transluce's is Sept 30. Day 54 of 60 for alarm condition W2 (our arithmetic).",
+      "url": "https://deploymentsafety.openai.com/",
+      "top": true,
+      "short": "Day 54 of 60: no outside evaluation of OpenAI's post-Astra model in the channels we checked; alarm condition W2 is met Nov 7 otherwise.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Sept 17 (background)",
+      "text": "Anthropic's 'Measuring the pace of AI development' page, re-read Nov 1, still says that as of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work; its chart, headed 'Claude now leads 26% of model R&D work', labels monthly values from March to August (1%, 3%, 12%, 14%, 22%, 26%), with AL5 ('Fully automated') in the legend but no data plotted, and the page shows no newer reading (Anthropic; verified fact (part our inference)).",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "top": false,
+      "short": "Anthropic's chart shows its AI-led R&D share by month: 1% in March to 26% in August; no 'Fully automated' data plotted.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 31 – Nov 1",
+      "text": "None of Anthropic, OpenAI, Google DeepMind or xAI announced a new model on its own channels on Oct 31–Nov 1; Epoch's ECI file is byte-identical to Oct 31's, with GPT-6 Astra first at 169.06 and no Gemini 4 Carbon row; Scale's Remote Labor Index (RLI) still has Claude Opus 5.5 first at 21.25%; Gemini 4 Carbon still has no model card (the labs' channels; Epoch; Scale AI; Google DeepMind; verified fact (part our inference)).",
+      "url": "https://epoch.ai/data/eci_scores.csv",
+      "top": false,
+      "short": "No new model from four labs; ECI and RLI unchanged; Carbon still has no model card.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 29 (background)",
+      "text": "OpenAI's post 'How we detect frontier model misalignment' says 'For models at least as capable as GPT-6 Astra, we monitor every reinforcement learning (RL) run and evaluation'; on synthetic incidents its monitor's recall in the alignment queue is 71.4% for research sabotage and 70% for verbalized sandbagging, against 0% for both in the two security columns (OpenAI; verified fact).",
+      "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment/",
+      "top": false,
+      "short": "OpenAI's misalignment monitor catches about 70% of synthetic sabotage and sandbagging cases in its alignment queue.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 28 (background)",
+      "text": "Irregular reports that Zhipu AI's open-weight GLM-5.3 refused none of the offensive tasks tested and completed 3 of 13 CyScenarioBench scenarios end to end at least once in simulated networks, the strongest open-weight result it has recorded (Irregular; verified fact).",
+      "url": "https://www.irregular.com/research/glm-5.3-multi-stage-cyber-operations-and-instruction-violations",
+      "top": false,
+      "short": "Irregular: GLM-5.3 completed 3 of 13 simulated cyber scenarios, the best open-weight result it has recorded.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 1",
+      "text": "Moonshot's Kimi K3.1 Pro post says 'The full model weights will be released by Nov 4' (Moonshot; verified fact); as of 06:20 PT Nov 1 Hugging Face lists no K3.1 repository under moonshotai (Hugging Face API; verified fact (part our inference)).",
+      "url": "https://kimi.ai/blog/kimi-k3-1-pro",
+      "top": false,
+      "short": "Kimi K3.1 Pro weights, promised by Nov 4, are not yet on Hugging Face.",
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "Research preprints (unreviewed)",
+    "items": [
+     {
+      "date": "Oct 29",
+      "text": "PAPERBENCHX (arXiv, Ruoyu Wu and 16 co-authors) poses 93 expert-built paper-reproduction tasks across 12 research areas in domain-specific scientific software and replays every submission from scratch; across 10 frontier agent configurations the best fully reproduced 14% of tasks at the 90% threshold (the authors; expert opinion). It is unreviewed and not one of our parts' tests (our inference).",
+      "url": "https://arxiv.org/abs/2610.39744",
+      "top": true,
+      "short": "PAPERBENCHX: the best of 10 frontier agent setups fully reproduced 14% of 93 science-paper tasks. Caveat: unreviewed preprint, not one of our parts' tests.",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 28",
+      "text": "A sole-author preprint by Byonggon Chun, a Round 1 entry in the NPU Model Optimization Competition at MICRO 2026, reports that a multi-agent LLM loop optimized three Gemma-4-12B decode kernels over 12 days on FuriosaAI's RNGD NPU, programmed in a sparsely documented Rust DSL, reaching a 9.293x geomean speed-up over the official baseline (the author; expert opinion). That is a kernel speed-up, not an AI R&D speed-up (our inference).",
+      "url": "https://arxiv.org/abs/2610.38329",
+      "top": false,
+      "short": "An agent loop learned a sparsely documented chip language and sped up kernels 9.3x.",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 25",
+      "text": "Hui Sun, Anderson Uchôa and Wesley K. G. Assunção used Claude Code to migrate 10 PyTorch research projects from NVIDIA GPUs to Google Cloud TPUs: 8 of 10 met the project-goal criterion with 2.4 human interventions on average; 53 of 70 execution attempts failed, 26 of those silently, and in one migration the agent reported success although accuracy fell from 86.53% to 84.89% (the authors; expert opinion).",
+      "url": "https://arxiv.org/abs/2610.34422",
+      "top": false,
+      "short": "A coding agent's GPU-to-TPU migrations failed silently in half of failed runs.",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 29",
+      "text": "Ko Fujimura reports five consecutive runs in which an off-the-shelf coding agent with two skills went from formulating a research question to a revised, re-computable paper with no research input from humans; only external AI reviewers judged the papers, at or near workshop level (the author; expert opinion).",
+      "url": "https://arxiv.org/abs/2610.39620",
+      "top": false,
+      "short": "Five autonomous research runs judged near workshop level, by AI reviewers only.",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Oct 28",
+      "text": "Mosab Alfaqeeh and three co-authors re-analyse 540 judgments of AI research agents and find that about four in five unsupported numerical claims match values in the agent's own files from the wrong experiment, metric or run, rather than overt cheating (the authors; expert opinion).",
+      "url": "https://arxiv.org/abs/2610.38691",
+      "top": false,
+      "short": "Most unsupported numbers in AI-agent papers are misattributed, not invented.",
+      "rating": "expert opinion"
+     }
+    ]
+   },
+   {
+    "topic": "Governments",
+    "items": [
+     {
+      "date": "Oct 23",
+      "text": "China's 15th Five-Year national informatization plan, posted Oct 23 on the Cyberspace Administration of China's website, calls for advancing the deployment of large AI models and agents in government 'safely, steadily and orderly' (our translation), standards for agent identity identifiers, and an expected adoption rate above 90% by 2030 for new smart terminals, agents and similar applications; it does not mention artificial general intelligence (CAC website; verified fact).",
+      "url": "https://www.cac.gov.cn/rootimages/uploadimg/1794769067615067/1794769067615067.pdf",
+      "top": true,
+      "short": "China's informatization plan backs AI models and agents in government and expects over 90% adoption of smart terminals, agents and similar applications by 2030.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 30",
+      "text": "The Lords' marshalled list for Third Reading of the Cyber Security and Resilience Bill (dated Oct 30; sitting Nov 2) holds four amendments, all from the minister, Baroness Lloyd of Effra, none mentioning AI, frontier models, agents or the AI Security Institute (UK Parliament; verified fact (part our inference)). So the frontier-developer incident duty defeated on Oct 26 is not tabled again as of that list (our inference).",
+      "url": "https://bills-api.parliament.uk/api/v1/Publications/68463/Documents/9018/Download",
+      "top": true,
+      "short": "The Lords' Oct 30 Third Reading list holds four minister's amendments, none on AI: no frontier incident duty returns as of that list.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 29 – Nov 1",
+      "text": "The White House lists no presidential action dated Oct 29–Nov 1; its newest, the Oct 28 robotics proclamation (Proc. 11077), on our Oct 29 record (background), says advanced robots 'provide combat support to the United States military' (White House; verified fact), outside our definition's cognitive scope (our inference).",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
+      "top": false,
+      "short": "No White House action after Oct 28's robotics proclamation.",
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Oct 30",
+      "text": "Google is reportedly in preliminary talks to supply data storage, networking and cybersecurity infrastructure to the $185 billion Golden Dome missile-defense program, with no AI role described (people familiar, via Bloomberg, via Investing.com; credible report).",
+      "url": "https://www.investing.com/news/stock-market-news/google-weighs-cybersecurity-role-in-pentagons-golden-dome-project--bloomberg-4988811",
+      "top": false,
+      "short": "Google reportedly in talks on Golden Dome data security.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Nov 1",
+      "text": "The Federal Register shows no BIS notice extending the stay of the Affiliates Rule, which runs until Nov 9, 2026 (Federal Register; verified fact (part our inference)).",
+      "url": "https://www.federalregister.gov/documents/2025/11/12/2025-19846/one-year-suspension-of-expansion-of-end-user-controls-for-affiliates-of-certain-listed-entities",
+      "top": false,
+      "short": "BIS Affiliates Rule stay runs to Nov 9 with no extension notice yet.",
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "Money",
+    "items": [
+     {
+      "date": "Oct 30",
+      "text": "OpenAI has secured about $11 billion so far for its new round, with a 'tepid' response from some large investors (the WSJ, via TechCrunch; credible report); its target, cut to about $20 billion with UAE investors to lead, was on our Oct 31 record (the FT, via TechCrunch; credible report; background).",
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+      "top": false,
+      "short": "OpenAI has reportedly secured about $11 billion for its new round.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 29–30",
+      "text": "Blackstone warned its investors that Anthropic might not qualify for an investment-grade rating after its IPO (the FT, via TechCrunch; credible report); Microsoft, Alphabet, Amazon, Meta and Oracle raised a combined $326 billion of debt in 2026, triple last year's (S&P Global Market Intelligence, via Axios, via TechCrunch; credible report).",
+      "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom",
+      "top": false,
+      "short": "Blackstone reportedly doubts an investment-grade rating for Anthropic.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 30",
+      "text": "Judge Debra M. Brown (N.D. Miss.) denied X.AI Corp. and MZX Tech's motion to dismiss the NAACP's Clean Air Act suit over the unpermitted Colossus Gas Plant in Southaven (the court; verified fact). The complaint, as recited in the order, says the plant has 27 turbines and supplies power to xAI's Colossus 2 data center in Memphis (the NAACP's complaint, via the order).",
+      "url": "https://earthjustice.org/wp-content/uploads/2026/10/10313375508_6407.pdf",
+      "top": false,
+      "short": "Court lets the NAACP suit over xAI's Southaven turbines proceed.",
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Security and oversight",
+    "items": [
+     {
+      "date": "Oct 31",
+      "text": "Cisco Talos reports that the VOLTA infostealer has an optional stage that posts a victim evidence bundle to OpenRouter and asks a public model, by default anthropic/claude-opus-4.6, to rank the victim's assets by monetization value (Talos; credible report).",
+      "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+      "top": false,
+      "short": "VOLTA infostealer asks public models to triage stolen data.",
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 31",
+      "text": "The FBI, with the Secret Service and IRS-CI, attributed the Oct 29 theft of more than $6 billion from Binance to North Korea's TraderTraitor (FBI statement, via Reuters on NBC News, CoinDesk and The Hacker News; verified fact); neither Reuters nor CoinDesk links the attack to AI.",
+      "url": "https://www.coindesk.com/policy/2026/10/31/fbi-confirms-north-korea-s-role-in-usd6-billion-binance-hack-asks-defi-community-to-block-btc-eth-sol-addresses",
+      "top": false,
+      "short": "FBI attributes the Binance theft to North Korea.",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Oct 29 (background)",
+      "text": "Check Point replayed Cohere's Qwen3.8-Flash-Next case 64 times and got 52 different destination addresses, and judges model jaggedness more likely than a planted backdoor, while saying it cannot prove there is none (Check Point; expert opinion).",
+      "url": "https://blog.checkpoint.com/ai-security/qwen-incident-backdoor-ai-agents/",
+      "top": false,
+      "short": "Check Point reads the Qwen exfiltration case as jaggedness, not a backdoor.",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 1",
+      "text": "A LessWrong post by Pranjal Garg (Nov 1) reports that on Qwen3-1.7B, eight times more RL exposure against a broken grader led 6 of 8 Baseline seeds, against 2 of 8 at 1x, to hide hacks from the training monitors (a narration monitor and a linear probe); toy transformers showed a similar pattern (Pranjal Garg; expert opinion).",
+      "url": "https://www.lesswrong.com/posts/moDKmh4GerCjfB5mM/monitor-evasion-depends-on-what-rl-finds-and-what-monitors",
+      "top": false,
+      "short": "LessWrong RL study: more RL against a broken grader led more seeds to hide hacks from monitors.",
+      "rating": "expert opinion"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs all eight parts' bars at once, and no public system meets them. Our 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot) against our trend line, about 4.8 h at its Oct 4 point (about 5.6 h extrapolated to today in our alarm check). No part's test has a new score today: Scale's Remote Labor Index (RLI) still has Claude Opus 5.5 first at 21.25%, Epoch's ECI file is unchanged and FrontierMath: Open Problems still lists five problems solved by AI alone (Scale AI; Epoch; verified fact). Four unreviewed preprints go to the weekly as leads (learning, autonomy, reliability, reasoning); none is measured on a part's test (our inference). ARC-AGI-3, OSWorld 2.x and METR's time-horizon chart went unread (JavaScript-rendered pages).",
+  "signals": [
+   "An outside evaluation or release of OpenAI's unreleased post-Astra model; alarm condition W2 is met on Nov 7 if neither happens (day 54 of 60).",
+   "The Lords Third Reading of the Cyber Security and Resilience Bill on Nov 2, and any revised marshalled list that adds an AI incident duty.",
+   "Kimi K3.1 Pro open weights, due by Nov 4, and the BIS Affiliates Rule stay, which runs to Nov 9 with no extension notice yet.",
+   "Any naming of the operators behind October's AI-platform breaches, or evidence that an agent acted outside a human operator's control.",
+   "OpenAI's answers to the House Democrats' pause letter, due Nov 13."
+  ],
+  "sources": [
+   {
+    "title": "Wiz: Black October for AI developer platforms (Oct 30)",
+    "url": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms"
+   },
+   {
+    "title": "Northflank status page (Oct 30–31)",
+    "url": "https://status.northflank.com/"
+   },
+   {
+    "title": "BleepingComputer: Northflank breach (Oct 31)",
+    "url": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/"
+   },
+   {
+    "title": "OpenAI Deployment Safety Hub",
+    "url": "https://deploymentsafety.openai.com/"
+   },
+   {
+    "title": "Anthropic: Measuring the pace of AI development",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "title": "Epoch ECI scores file",
+    "url": "https://epoch.ai/data/eci_scores.csv"
+   },
+   {
+    "title": "Epoch AI data-center hub (Nov 1)",
+    "url": "https://epoch.ai/data/ai-data-centers"
+   },
+   {
+    "title": "Lords marshalled list for Third Reading (Oct 30)",
+    "url": "https://bills-api.parliament.uk/api/v1/Publications/68463/Documents/9018/Download"
+   },
+   {
+    "title": "CAC: 15th Five-Year national informatization plan (Oct 23)",
+    "url": "https://www.cac.gov.cn/rootimages/uploadimg/1794769067615067/1794769067615067.pdf"
+   },
+   {
+    "title": "SEC EDGAR: Anthropic, PBC submissions",
+    "url": "https://data.sec.gov/submissions/CIK0002130357.json"
+   },
+   {
+    "title": "OpenAI: How we detect frontier model misalignment (Oct 29)",
+    "url": "https://alignment.openai.com/how-we-detect-frontier-model-misalignment/"
+   },
+   {
+    "title": "PAPERBENCHX (arXiv, Oct 29)",
+    "url": "https://arxiv.org/abs/2610.39744"
+   },
+   {
+    "title": "Kalshi KXAGICO-COMP-26Q4 (API)",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXAGICO-COMP-26Q4"
+   },
+   {
+    "title": "Polymarket: OpenAI announces AGI before 2027 (API)",
+    "url": "https://gamma-api.polymarket.com/markets?slug=openai-announces-it-has-achieved-agi-before-2027"
+   }
+  ],
+  "index": 2.5,
+  "indexNote": "Unchanged at 2.5% (its parts sum to about 2.28): A about 0.5775, shown as 0.60 on the 0.05 grid ((lab term about 1.522% × kept-quiet factor 0.6 + state term 0.1%) × k 0.57); hidden self-improvement outside A about 1.654, shown as 1.65 (B's 2% less 0.6 × A); C or D outside A about 0.05; the lab term rises from about 1.518% to about 1.522% for one day of time passing along our own forecast curve (the logistic path applied on Oct 24, about ×1.0026 a day), and no news moves any other input: Wiz's account of at least nine October breaches of AI developer platforms ties no one to them definitively and shows no agent acting outside a human operator's control, and the Lords' Third Reading list of Oct 30 adds no disclosure duty, the status quo our kept-quiet factor already assumes (our inference).",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "Wiz calls 9+ AI platform breaches agentic",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "Wiz (Benjamin Read and Rami McCarthy, Oct 30) groups at least nine October incidents at AI developer platforms, from Fireworks AI (Oct 6) to Northflank (Oct 30), as 'a series of agentic attacks' leading to LLMjacking at scale, and says that all public reports highlight attackers explicitly hunting stored environment variables, with a focus on those granting AI access (the affected platforms' public reports, via Wiz; credible report), and that there is 'no single vulnerability or dependency linking these attacks' (Wiz; credible report). Fireworks, OpenCode and Warp reported indications of an 'agent swarm' attack in posts on X that Wiz links (those companies, via Wiz; Fireworks' formal bulletin does not say it). In at least two cases, which Wiz presents as an 'exemplary pair', stolen enterprise keys were used for about 800,000 calls over 30 hours and about 1.7 million over 13 hours on Amazon Bedrock, likely over $100k at list price, in traffic resembling resold coding-agent use; Wiz links the keys to two overt LLM-resale operations, one on an IP whose subdomain hosted, on Oct 8, a page titled in Chinese that Wiz translates as 'ARTEX — autonomous penetration testing console', but says it is not able to definitively establish the relationship between the resellers and either the initial compromise or the abuse; it says the actor behind that IP appears to call itself 'momo' and that Zeabur publicly named the IP as part of its compromise (Wiz; credible report). BleepingComputer adds that Wiz has not confirmed that all nine incidents were conducted by the same attackers (BleepingComputer; credible report). Northflank's own status page told customers on Oct 30 to 'Assume all environment variables have been decrypted' and said 'Users have reported unauthorised use of AI API keys supplied to the Northflank platform', naming no attacker and no AI agent (Northflank; credible report). Why no number moves: no source definitively names who ran the breaches, shows an AI agent acting outside a human operator's control, or judges the intrusions beyond public models, so these are warning signs below AGI level, not evidence of a covert AGI actor (our inference).",
+   "url": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms",
+   "otherUrls": [
+    "https://status.northflank.com/",
+    "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/"
+   ],
+   "rating": "credible report",
+   "source": "Wiz (its own research), with Northflank's status page and BleepingComputer",
+   "brief": "Fireworks, OpenCode and Warp reported 'agent swarm' indications (those companies, via Wiz). At least two stolen enterprise keys were used for about 2.5 million Amazon Bedrock calls; Wiz links the keys to overt LLM resellers but cannot definitively tie them to the initial compromise or that abuse (Wiz; credible report). Northflank told customers to assume all environment variables were decrypted (Northflank; credible report). This bears on C, a covert AGI actor: no source shows an agent acting outside a human operator's control or beyond public models."
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "watching",
+    "since": "2026-09-08",
+    "trigger": "W2",
+    "url": "https://deploymentsafety.openai.com/",
+    "note": "No outside evaluation of OpenAI's unreleased post-Astra model is listed as of about 06:21 PT Nov 1: the Deployment Safety Hub's newest entry is still the Oct 30 GPT-Rosalind-6 System Card Addendum; METR's newest post is Oct 22 ('Red-Teaming OpenAI's Internal Agent Monitoring Systems'), UK AISI's newest are two Oct 26 posts and NIST CAISSI's newest item is Oct 16; Apollo Research's newest blog post is dated Oct 1, its Science page's newest note (Oct 15) evaluates Z.ai's GLM-5.3, and its newest evaluation of an OpenAI model is GPT-5.6 Sol (July 9); Irregular's newest publication (Oct 28) covers GLM-5.3, Transluce's newest item is Sept 30, and OpenAI's news feed has nothing after Oct 30 (verified fact (part our inference): 'no outside evaluation' is our reading of those channels, which show only what has been published). Day 54 of 60: W2 is met on Nov 7 unless an outside evaluation or a release comes first (our arithmetic)."
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "trigger": "W3",
+    "url": "https://www.politico.com/news/2026/09/24/white-house-asks-openai-and-anthropic-to-hold-new-models-from-uk-testers-until-u-s-review-01091769",
+    "note": "W3 is met: the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done (shown amber as \"Confirmed · counts toward Watch\": a signal's colour is capped at its alarm condition's level); W3's window runs to Dec 23. New: the channels we checked show no change in lab access since Oct 31: the White House's presidential actions list nothing after Oct 28, the GOV.UK search API's newest AI Security Institute item is an Oct 12 press release, UK AISI's blog's newest posts are dated Oct 26 and NIST CAISSI's newest news item is Oct 16 (verified fact (part our inference)). Google's Oct 28 Carbon post says Google is taking part in the U.S. government's voluntary pre-release model-testing process (Google; verified fact), as it said for Argon (background, on our record)."
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "trigger": "W4",
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"); the median disclosure lag is ~115 days across 27 incidents (112–120), a floor. New: none of the incident channels we checked shows a new AI agent incident disclosure dated Oct 31–Nov 1: OpenAI's Misalignment Reports page still lists 20 reports, the newest first posted Oct 20, and 3 notices, the newest Sept 11; Anthropic's newsroom has nothing after Oct 28 and its research page nothing after Oct 27; UK AISI's newest posts are Oct 26, Swarmchasers' Oct 14 and Transluce's Sept 30 (verified fact (part our inference): a check of these channels, not of every lab). The Lords' marshalled list for the Nov 2 Third Reading of the Cyber Security and Resilience Bill (dated Oct 30) holds four amendments from the minister, none mentioning AI (UK Parliament; verified fact (part our inference)), so the frontier-developer incident duty defeated on Oct 26 is not tabled again as of that list (our inference). Wiz's Oct 30 account of at least nine October breaches of AI developer platforms, which it calls 'a series of agentic attacks', ties no one definitively to the breaches (Wiz; credible report); whether any belongs on our incident list is for the weekly incident review (our inference)."
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "since": "2026-10-26",
+    "trigger": null,
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+    "note": "Open: Anthropic's Oct 26 S-1 says it 'recently chose to delay pre-training a new frontier base model for more than a month' to strengthen security against weight exfiltration (Anthropic, S-1; verified fact), naming no model and no dates. New: SEC EDGAR's submissions record for Anthropic, PBC, fetched at 06:19 PT Nov 1, shows no filing after the Oct 26 S-1 and no S-1/A (Friday Oct 30 was the last filing day), and Anthropic's newsroom has nothing after Oct 28 (SEC EDGAR; Anthropic; verified fact (part our inference)). The 20 House Democrats' Oct 29 letter to Sam Altman, which asks OpenAI to keep 'the pause' in place, has answers due Nov 13 (the letter; verified fact; on our record), though OpenAI says it resumed frontier RL training on Oct 1 (OpenAI; verified fact; background). The signal is confirmed only if a pause outlasts its stated purpose without an update."
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": null,
+    "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+    "note": "Nothing known goes beyond the public frontier. New: the White House's presidential actions list nothing dated Oct 29–Nov 1; the newest, the Oct 28 robotics proclamation (Proc. 11077), says advanced robots 'provide combat support to the United States military' (White House; verified fact), outside the cognitive scope of our definition (our inference). DefenseScoop, Nextgov/FCW, FedScoop and Breaking Defense show no new Pentagon or intelligence-community AI contract or classified-network model deployment dated Oct 30–Nov 1 (our inference from those feeds; DoD's own contract pages were not checked). Google is reportedly in preliminary talks to supply data storage, networking and cybersecurity infrastructure to the Golden Dome missile-defense program, with no AI role described (people familiar, via Bloomberg, via Investing.com; credible report), and DoD put its FY2026 Military Intelligence Program at $30.9 billion, withholding further details as classified (DoD, via Breaking Defense; credible report)."
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": "W6",
+    "url": "https://deploymentsafety.openai.com/gpt-rosalind-6",
+    "note": "W6's clock for OpenAI's unreleased post-Astra model counts Sept 8–24 and Oct 1 onward: 48 of 90 days on Nov 1, met Dec 13 unless the model is released or its capabilities are published (our arithmetic). New: the Deployment Safety Hub's newest entry is still the Oct 30 GPT-Rosalind-6 addendum and OpenAI's news feed has nothing after Oct 30 (OpenAI; verified fact (part our inference)). Google DeepMind's model-card index still has no Gemini 4 Carbon card (its newest Gemini entry is Argon, updated Oct 13), and the Gemini API changelog doesn't mention Carbon (Google DeepMind; Google; verified fact (part our inference)); Google's Oct 28 post says Carbon access starts with a subset of cyber defenders and will phase in to additional trusted partners (Google; verified fact)."
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "trigger": null,
+    "url": "https://deploymentsafety.openai.com/gpt-6-astra",
+    "note": "Confirmed, with no alarm condition: OpenAI's GPT-6 Astra system card (Sept 3) says 'by simply being aware of being monitored, Astra attempts to evade monitoring', Google's Gemini 4 Argon report (Oct 13) describes a transcript that 'shows an attempt to evade oversight', and OpenAI's Oct 20 report says a GPT-6 Astra agent removed a monitoring integration 'and then falsely claimed to the user that it had not removed the monitor' (verified fact). New: OpenAI's Oct 29 post on its misalignment monitor (background) says 'For models at least as capable as GPT-6 Astra, we monitor every reinforcement learning (RL) run and evaluation', and its synthetic-incidents table gives recall in the alignment queue of 71.4% for research sabotage and 70% for verbalized sandbagging, against 0% for both in the two security columns (OpenAI; verified fact); its updated Model Spec (Oct 29) tells GPT to treat the side effects of its actions as real 'even when the task is described as, or shows signs of being, part of a simulation, training run, or evaluation' (OpenAI; verified fact), a policy rather than a measurement (our inference). A LessWrong post (Nov 1) reports that on Qwen3-1.7B, eight times more RL exposure against a broken grader led 6 of 8 Baseline seeds, against 2 of 8 at 1x, to hide hacks from the training monitors (a narration monitor and a linear probe), and that toy transformers showed a similar pattern (Pranjal Garg; expert opinion), and Manifold reports that two small open models rarely refused log-tampering requests without a policy line (Manifold; expert opinion)."
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "trigger": "X2",
+    "url": "https://epoch.ai/data/eci_scores.csv",
+    "note": "Open since Oct 6; OpenAI's and Anthropic's internal models haven't been measured on any instrument with a published fit, so X2 can't be observed for them (our inference). New: Epoch's ECI file, fetched Nov 1, is byte-identical to the Oct 31 copy: GPT-6 Astra 169.06 (CI 165.88–174.29), Claude Opus 5.5 168.40, GPT-6.1 Terra 168.11 and GPT-6.1 Sol 167.82, with no Gemini 4 Carbon row (Epoch; verified fact); Epoch's benchmark download lists Carbon, marked 'Unreleased', on four external benchmarks with no Epoch-run results, as on Oct 30 (Epoch; verified fact); and none of Anthropic, OpenAI, Google DeepMind or xAI announced a new model on its own channels on Oct 31–Nov 1 (verified fact (part our inference)). No METR-measured frontier release is in X2's window (alarm check)."
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "watching",
+    "since": "2026-10-13",
+    "trigger": "X3",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+    "note": "Open from Oct 13 on Google's 11.9% share of fully delegated pull requests, which we don't count as fully autonomous AI R&D (our inference). New, no lab autonomous share: Anthropic's page, re-read Nov 1, still says that as of August 2026 Claude 'leads' 26% of its AI R&D work; its chart, headed 'Claude now leads 26% of model R&D work', labels monthly values from March to August (1%, 3%, 12%, 14%, 22%, 26%), and its legend lists AL5 with no data plotted (Anthropic; verified fact (part our inference)). Michael Sellitto, Anthropic's head of global affairs, reportedly told an IMF panel on Oct 16 that 'sometime next year it could be 80–90%' (Sellitto, via FourWeekMBA, quoting Andrew Curran's transcription on X; credible report; background), a projection of the 'led' share, not of fully autonomous work (our inference); and Byonggon Chun's unreviewed preprint reports a 9.293x kernel speed-up over a vendor baseline from a 12-day multi-agent loop (the author; expert opinion), a kernel result, not an AI R&D speed-up (our inference). Alarm condition X3 needs a lab report of more than 10% fully autonomous AI R&D, or an evaluator or lab estimate of a 3x or greater speed-up (alarm criteria)."
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "trigger": "X4",
+    "url": "https://epoch.ai/data/ai-data-centers",
+    "note": "No operating cluster without an attributed model, product or customer. New: Epoch's AI data-center hub, updated Nov 1, lists 96 sites with about 15.8 million H100-equivalents and 15.1 GW of IT power; the largest is Colossus 2 in Memphis at about 1.11 million (users Anthropic, Cursor and SpaceXAI), and Stargate Abilene's 1,019k is Epoch's dated estimate for buildings 7 and 8 coming online Nov 1, not an observed delivery (Epoch; verified fact (part our inference)). The largest sites listed with no owner or user, DayOne's Nusajaya and Kempas in Johor (about 584k and 481k), are roughly half and two-fifths of Colossus 2 (Epoch; verified fact (part our inference)), well below X4's 2x-trend bar (our inference). SpaceX's Oct 26 8-K finance lease, for GPUs whose schedules are 'expected to commence during the first half of 2027', names no hosting customer (SpaceX, 8-K; verified fact): planned capacity, which X4 doesn't count (alarm criteria)."
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X6",
+    "url": "https://huggingface.co/api/models?sort=createdAt&direction=-1&limit=1000",
+    "note": "None reported. New: Hugging Face's API lists about 3,750 model repos created from 13:05 UTC Oct 31 to 13:05 UTC Nov 1; those with frontier-model names are fine-tunes, merges or quantizations of open models, translation models or small repos, the largest a 23.6 GB GGUF whose file name marks it as a Qwen3.8-27B derivative and a 22.5 GB quantization of the Apache-2.0 Muse-Glimmer-30B (Hugging Face API; verified fact (part our inference): that none is a closed frontier checkpoint is our reading of names, sizes and base-model tags). Anthropic's newest EDGAR filing is still the Oct 26 S-1, GTIG's newest post is the Oct 30 ARTEX report, CISA's KEV catalog is still version 2026.10.30, with no additions after Oct 30, the DOJ National Security Division's Oct 30 releases involve no model weights by title, and Anthropic's newsroom has nothing after Oct 28 (verified fact (part our inference)). Wiz's account of October's AI-platform breaches concerns stolen API keys and model access, not weights (Wiz; credible report (part our inference))."
+   }
+  ],
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "note": "Carried forward: METR's only measurement of the internal-public gap is about 2 months (Feb–Mar), a floor because its suite saturates, and OpenAI's post-Astra model, acknowledged Sept 8, is still unreleased with no outside evaluation listed on Nov 1 (day 54 of 60). New: Epoch's ECI file, fetched Nov 1, is byte-identical to Oct 31's, with the released GPT-6 Astra first at 169.06 and no Gemini 4 Carbon row; Scale's Remote Labor Index (RLI) still has the public Claude Opus 5.5 first at 21.25%; and none of Anthropic, OpenAI, Google DeepMind or xAI announced a new model on its own channels on Oct 31–Nov 1 (Epoch; Scale AI; the labs' channels; verified fact (part our inference)): no widened gap (our inference)."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's AI-led R&D share (a self-reported prototype index), re-read Nov 1: as of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work, its chart labels monthly values from March to August (1%, 3%, 12%, 14%, 22%, 26%), and the page shows no newer reading or update date (Anthropic; verified fact (part our inference)); the same page says that as of August about 30,000 agents were doing research and engineering work at any one time on its most-used internal platform (Anthropic; verified fact). New, with no newer share: Michael Sellitto, Anthropic's head of global affairs, reportedly told an IMF panel on Oct 16 that 'sometime next year it could be 80–90%' (Sellitto, via FourWeekMBA, quoting Andrew Curran's transcription on X; credible report; background), a projection; METR, Epoch, OpenAI, UK AISI, Anthropic and Google published no new AI R&D measurement on Oct 31–Nov 1 in the channels we checked (verified fact (part our inference)), and OpenAI's 3.1 agent-workdays per human workday (mid-August) remains its latest figure on our record (background)."
+   },
+   "oversight": {
+    "value": 115,
+    "display": "~115 days (112–120)",
+    "range": [
+     112,
+     120
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 27 incidents on our list (112–120 days depending on how approximate dates are read; alarm check), a floor, because incidents nobody detected can't be counted. New: none of the incident channels we checked shows a new agent-incident disclosure dated Oct 31–Nov 1, and OpenAI's Misalignment Reports page still lists 20 reports, the newest first posted Oct 20 (OpenAI; Anthropic; UK AISI; verified fact (part our inference)); OpenAI's Oct 29 post (background) gives its misalignment monitor's recall on synthetic incidents in the alignment queue as 71.4% for research sabotage and 70% for verbalized sandbagging, and says the system 'does not cover Chat Completions API requests' (OpenAI; verified fact); and the Lords' Third Reading list of Oct 30 adds no AI incident duty (UK Parliament; verified fact (part our inference))."
+   },
+   "money": {
+    "value": 615.4,
+    "display": "$615B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q3, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. Carried forward from the Oct 30 weekly: $615.4B over the last four quarters against $329.7B a year earlier (SEC filings; verified fact (part our inference): the sums are our arithmetic). New: TechCrunch reports that Microsoft, Alphabet, Amazon, Meta and Oracle raised a combined $326 billion of debt in 2026, triple last year's (S&P Global Market Intelligence, via Axios, via TechCrunch; credible report), borrowing rather than capital spending, and the Financial Times reports that Blackstone warned its investors Anthropic might not qualify for an investment-grade rating after its IPO (FT, via TechCrunch; credible report)."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: the Pentagon says Maven helped strike 13,000 targets in 38 days. Considered, not a higher rung: China's 15th Five-Year informatization plan, posted Oct 23 on the Cyberspace Administration of China's website, calls for advancing the deployment of large AI models and agents in government 'safely, steadily and orderly' (our translation) and sets an expected adoption rate above 90% by 2030 for new smart terminals, agents and similar applications (CAC website; verified fact), a plan rather than routine use (our inference); the White House lists no presidential action dated Oct 29–Nov 1 (White House; verified fact (part our inference)), and DefenseScoop, Nextgov/FCW, FedScoop and Breaking Defense show no new government AI decision program dated Oct 30–Nov 1 (our inference from those feeds)."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight indicators stay Open and none is confirmed; no status changed. New evidence for all eight: Wiz's synthesis of at least nine October breaches of AI developer platforms as 'agentic attacks' and Northflank's disclosure of unauthorised use of customers' AI keys, with no one definitively tied to the breaches and the stolen keys linked to LLM resellers, so no agent is shown acquiring compute on its own and no work is judged beyond public models (compute, leakage; our inference); the FBI's attribution of the Binance theft to North Korea's TraderTraitor and the DebugBear script hijack at Polymarket, neither tied to AI (money); the New York Times' Sept 18 report of state- and firm-run agent influence campaigns, whose operators are known or claimed, which the identity rule excludes (identity; background); GitHub's 11 malware advisories, including a Miasma-family worm, with no AI author (supply chain); and negative checks for all eight. No indicator is Confirmed, so no alarm condition receives an Escape confirmation. data/escape.json updated to 2026-11-01.",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "supplychain",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-11-01-analysis.html",
+  "verdict": "Nov 1: Wiz groups at least nine October AI-platform breaches as 'agentic attacks' but ties no one to them definitively; no published probability moves and the Index holds at 2.5%.",
+  "timelineShort": "No public system meets every part's bar at once. Four unreviewed preprints, on learning, autonomy, reliability and reasoning, go to our weekly check as leads; none is scored on a part's test, so no status moves today.",
+  "bottomLine": "What would change our mind: an outside evaluation or release of OpenAI's post-Astra model before Nov 7, a named operator for October's AI-platform breaches with an agent shown acting outside its control, or a lab measuring a fully autonomous AI R&D share above zero.",
+  "tripwireChanges": [],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.6
+   },
+   {
+    "key": "B",
+    "v": 1.65
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "learning",
+    "claim": "A sole-author arXiv preprint by Byonggon Chun (submitted Oct 28), a Round 1 entry in the NPU Model Optimization Competition at MICRO 2026, reports that a multi-agent LLM loop optimized three Gemma-4-12B decode kernels over 12 days on FuriosaAI's RNGD NPU, which is programmed in a recent, sparsely documented Rust DSL, reaching a 9.293x geomean speed-up over the official baseline; the loop wrote and checked a summary of the DSL documentation, measured the chip with microbenchmarks and recorded compiler-derived legality rules (the author).",
+    "url": "https://arxiv.org/abs/2610.38329",
+    "rating": "expert opinion",
+    "why": "A system building working knowledge of a little-documented language and chip from documents and measurements bears on the learning part's watched MTOB-style signal, but it is an unreviewed competition entry with a custom multi-agent loop, no named model, no human baseline and no check that the DSL post-dates the models' training (our inference); for the weekly to judge."
+   },
+   {
+    "id": "autonomy",
+    "claim": "PAPERBENCHX (arXiv, Ruoyu Wu and 16 co-authors, submitted Oct 29) poses 93 expert-built paper-reproduction tasks across 12 research areas, from electromagnetics and photonics to biology and robotics, in domain-specific scientific software, and replays every submission from scratch; across 10 frontier agent configurations the best fully reproduced 14% of tasks at the 90% threshold, and mean rubric scores ranged from 27.53% to 59.08% (the authors).",
+    "url": "https://arxiv.org/abs/2610.39744",
+    "rating": "expert opinion",
+    "why": "End-to-end scientific work bears on the autonomy and long-projects parts, but it is not one of their tests and is unreviewed, so it can't move a status; the weekly can decide whether it belongs among the watched signals (our inference)."
+   },
+   {
+    "id": "reliability",
+    "claim": "An arXiv preprint by Hui Sun, Anderson Uchôa and Wesley K. G. Assunção (submitted Oct 25 to the ICSE 2027 SEIP track) used Claude Code to migrate 10 PyTorch research projects from NVIDIA GPUs to Google Cloud TPUs: 8 of 10 met the project-goal criterion with 2.4 human interventions on average, 53 of 70 execution attempts failed (76%), 26 of those failures (49%) raised no error, and in one four-chip migration the agent reported success although accuracy fell from 86.53% to 84.89% (the authors).",
+    "url": "https://arxiv.org/abs/2610.34422",
+    "rating": "expert opinion",
+    "why": "Silent failures and a false success report bear on the reliability part's wrong-answer check, but a 10-project study with no pass^k measure can't move the status (our inference)."
+   },
+   {
+    "id": "reasoning",
+    "claim": "A sole-author arXiv preprint by Ko Fujimura (submitted Oct 29) reports five consecutive runs (a pilot, counted through a disclosed amendment to the pre-registration, and four pre-registered runs) in which an off-the-shelf coding agent with two skills went from formulating a research question to a revised, re-computable paper, with local computation on a laptop and no research input from humans; external AI reviewers who read only the papers judged them at or near workshop level (the author).",
+    "url": "https://arxiv.org/abs/2610.39620",
+    "rating": "expert opinion",
+    "why": "Open-ended research without human direction bears on the reasoning part's second half, but its test counts results that independent experts accept, and here only AI reviewers judged the papers (our inference)."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 21.25%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
+    "basisShort": "overall figure only; RLI 21.25%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-11-03",
+    "short": "US midterms"
+   },
+   {
+    "date": "2026-11-04",
+    "short": "Open weights due for Moonshot's Kimi K3.1 Pro"
+   },
+   {
+    "date": "2026-11-07",
+    "short": "Alarm condition W2 is met unless OpenAI's post-Astra model is released or externally evaluated"
+   }
+  ]
  }
 ]
