@@ -2,7 +2,7 @@
  "note": "Definitions v2.0: the AGI definition, its eight parts, each part's test and our reading of the best public evidence. The owner sets the definition, the status scale and the tests (a change is a method change in data/method.json); the weekly components lens refreshes measurements, milestones and statuses. Built from the adversarially verified research packets of 2026-10-05.",
  "definitionsVersion": "2.0",
  "adopted": "2026-10-06",
- "lastReviewed": "2026-10-30",
+ "lastReviewed": "2026-11-06",
  "definition": {
   "text": "AGI: a system with the full scope of human cognitive autonomy: it can learn, reason, plan and generalize knowledge across any intellectual domain, without task-specific retraining.",
   "excludes": "Physical and embodied work (robotics, manual skills) is out of scope: we judge the mind, not the body. The main cognitive frameworks (Hendrycks et al., DeepMind's Levels of AGI, ARC) leave it out too, and v1.0 already counted remote work only, so leaving it out makes the bar no looser.",
@@ -48,7 +48,7 @@
    "statusBasis": "Far: RLI 21.25% is below the 40% Partial mark, and GDPval results by occupation are unpublished.",
    "basisShort": "RLI 21.25%; Partial at 40%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
    "statusNote": "Claude Opus 5.5 delivers 21.25% of real freelance projects at client-acceptable quality on the Remote Labor Index (GPT-6 Astra: 20.83%), against our 80%. On one-shot, well-specified GDPval tasks, lab-reported overall scores have been above 80% since March 2026, but no results by occupation are published. The gap between the two measures is the main finding.",
    "statusDetail": "On whole real projects the best public system does about a quarter of what the bar needs: Claude Opus 5.5's RLI automation rate is 21.25% (GPT-6 Astra: 20.83%; Claude Fable 5.1: 17.92%), against 80%. On one-shot, well-specified GDPval tasks, lab-reported overall scores have been above 80% since March 2026 (GPT-5.4 83.0%, GPT-5.5 84.9%; OpenAI's figures), but no per-occupation results are published for current models. The gap between the two measures is the main finding.",
@@ -101,7 +101,7 @@
      "metric": "Remote Labor Index automation rate (best public system)",
      "value": "21.25%",
      "system": "Claude Opus 5.5",
-     "asOf": "2026-10-07 (entry date from the leaderboard's page data; re-read Oct 23)",
+     "asOf": "2026-10-07 (entry date from the leaderboard's page data; re-read Nov 6)",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact"
     },
@@ -109,7 +109,7 @@
      "metric": "Remote Labor Index automation rate (best OpenAI system, second overall)",
      "value": "20.83%",
      "system": "GPT-6 Astra",
-     "asOf": "2026-09-17 (entry date from the leaderboard's page data; re-read Oct 23)",
+     "asOf": "2026-09-17 (entry date from the leaderboard's page data; re-read Nov 6)",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact"
     },
@@ -117,7 +117,7 @@
      "metric": "Remote Labor Index automation rate (best Google system, fourth overall)",
      "value": "17.08%",
      "system": "Gemini 4 Argon (listed as 'Gemini Argon 4')",
-     "asOf": "2026-10-22 (entry date from the leaderboard's page data; read Oct 23)",
+     "asOf": "2026-10-22 (entry date from the leaderboard's page data; re-read Nov 6)",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact"
     },
@@ -234,6 +234,15 @@
      "rating": "verified fact",
      "kind": "yardstick",
      "ratingNote": "Tasks, grading and pass rates (the share of tasks fully completed) are from the ALE leaderboard (read Oct 30), which UC Berkeley RDI and the RDI Foundation co-lead. Gemini 4 Carbon is in limited release (Google, Oct 28)."
+    },
+    {
+     "date": "2026-11-01",
+     "text": "SemiAnalysis publishes GDPx v1.0: 206 tasks in 11 domains from 14 data partners, with a default 8-hour limit, graded by deterministic checks or LLM judges against expert rubrics. Claude Opus 5.5 leads at 12.0%, Gemini 4 Carbon 10.9%.",
+     "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+     "rating": "verified fact",
+     "kind": "yardstick",
+     "ratingQual": "builder-run, not peer-reviewed",
+     "ratingNote": "SemiAnalysis's own benchmark, built with 14 data partners and not peer-reviewed. Task, domain and partner counts and the scores are from the GDPx leaderboard (https://gdpx.semianalysis.com/, read Nov 6). The 8-hour default, the grading and pass@1 across three attempts with domains weighted equally are from the post (published 01:51 UTC Nov 2, so Nov 1 Pacific). Finance and legal enter the leaderboard as average partial scores. SemiAnalysis says safety classifiers lowered Opus 5.5's and GPT-6 Astra's overall scores. Gemini 4 Carbon is in limited release (Google, Oct 28)."
     }
    ],
    "projection": {
@@ -299,7 +308,7 @@
     },
     {
      "name": "Artificial Analysis",
-     "what": "Independently reruns the 220 public GDPval tasks as GDPval-AA v2.1 in its open-source Stirrup agent harness (code execution, web search and fetch, image viewing). A panel of three frontier LLM judges compares models' deliverables in pairs, and Elo is anchored to DeepSeek V4.1 Flash (max) at 1600. The leaderboard lists 308 model entries (Oct 30).",
+     "what": "Independently reruns the 220 public GDPval tasks as GDPval-AA v2.1 in its open-source Stirrup agent harness (code execution, web search and fetch, image viewing). A panel of three frontier LLM judges compares models' deliverables in pairs, and Elo is anchored to DeepSeek V4.1 Flash (max) at 1600. The leaderboard lists 309 model entries (Nov 6).",
      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
      "rating": "verified fact"
     },
@@ -319,6 +328,12 @@
      "name": "UC Berkeley RDI and the RDI Foundation (Agents' Last Exam)",
      "what": "Co-lead Agents' Last Exam (ALE), a benchmark of agent tasks in non-physical industries referenced to O*NET/SOC 2018: 55 sub-industries in 13 industry groups, deterministic graders against hidden references, and a new public subset about every six months. Snorkel AI contributes funding (Open Benchmarks Grants) and hosts the leaderboard.",
      "url": "https://snorkel.ai/leaderboard/agents-last-exam/",
+     "rating": "verified fact"
+    },
+    {
+     "name": "SemiAnalysis (GDPx)",
+     "what": "Built GDPx v1.0 (Nov 1, 2026) with 14 specialized data partners: 206 tasks in 11 domains (finance, legal, quant trading, chip design, hardware design, biology, materials science, cybersecurity, software engineering, alignment and recursive self-improvement). It runs each model in its native harness where one exists and reports pass@1 across three attempts, with all domains weighted equally.",
+     "url": "https://gdpx.semianalysis.com/",
      "rating": "verified fact"
     }
    ],
@@ -371,7 +386,7 @@
      "sourceDetail": "https://snorkel.ai/leaderboard/agents-last-exam/"
     }
    ],
-   "hiddenAngle": "Breadth is hard to observe for an undisclosed system. RLI scores exist only for systems Scale and CAIS can run (public releases, or models a lab submits), and GDPval win rates only for systems a lab chooses to report, so a hidden system passing this component would leave no trace on the leaderboards (A). It would more likely show up indirectly. The first route is economic footprint, which is hypothesis C's sanctioned path: the work gets sold. Signs would be an unexplained surge of high-quality remote deliverables on freelance platforms, or a sharp drop in hiring for outsourced design, analysis and media work. The second is a lab's own productivity claims: Anthropic's prototype R&D Automation Index says Claude 'leads' 26% of its AI R&D work as of August 2026, a measure that tracks A and B better than breadth. The third is a jump in a public model's RLI score after long internal use, which would show how far behind disclosure runs. Breadth on its own isn't evidence for B. For D, broad advisory work in government would show up through disclosed contracts and use (D-open), not through these benchmarks."
+   "hiddenAngle": "Breadth is hard to observe for an undisclosed system. RLI scores exist only for systems Scale and CAIS can run (public releases, or models a lab submits), and GDPval win rates only for systems a lab chooses to report, so a hidden system passing this component would leave no trace on the leaderboards (A). It would more likely show up indirectly. The first route is economic footprint, which is hypothesis C's sanctioned path: the work gets sold. Signs would be an unexplained surge of high-quality remote deliverables on freelance platforms, or a sharp drop in hiring for outsourced design, analysis and media work. The second is a lab's own productivity claims: Anthropic's prototype R&D Automation Index says Claude 'leads' 26% of its AI R&D work as of August 2026, a measure that tracks A and B better than breadth. METR's Nov 5 assessment adds a view from inside one lab: working from Anthropic's internal benchmark scores, without query access, METR puts the internal-only Model 4 (finished training September to October 2026) at 178.6 on AECI, Anthropic's version of the Epoch Capabilities Index, and above 50% on all 15 benchmarks it was tested on. AECI is a general capability index, not a test of paid work, so it can't speak to breadth directly (our inference). The third is a jump in a public model's RLI score after long internal use, which would show how far behind disclosure runs. Breadth on its own isn't evidence for B. For D, broad advisory work in government would show up through disclosed contracts and use (D-open), not through these benchmarks."
   },
   {
    "id": "quality",
@@ -385,7 +400,7 @@
    "statusBasis": "Far: the well-specified half is cleared on the overall figure only (84.9%), which does not count until results by occupation are published; RLI 21.25% is below the 25% Partial mark.",
    "basisShort": "overall figure only; RLI 21.25%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
    "statusNote": "The well-specified half is cleared in aggregate only: GPT-5.5 wins or ties industry professionals in 84.9% of GDPval comparisons (OpenAI, April 2026), against our 50%, with no results by occupation. The real-project half is not: the best Remote Labor Index rate is 21.25% (Claude Opus 5.5) against 50%, and the best all-pass score on Harvey's legal benchmark is 27.4%.",
    "statusDetail": "In aggregate the well-specified half is cleared: GPT-5.5 wins or ties industry professionals in 84.9% of GDPval comparisons (OpenAI, Apr 23, 2026) against our 50% bar, though no per-occupation breakdown has been published since the original paper, so the 80%-of-occupations condition is unverified. The real-project half is not: the best Remote Labor Index rate is 21.25% (Claude Opus 5.5, posted Oct 7) against 50%, and the best all-pass score on Harvey's legal benchmark is 27.4% (Gemini 4 Argon, ±5.4).",
@@ -451,7 +466,7 @@
      "asOf": "2026-10-07",
      "url": "https://labs.scale.com/leaderboard/rli",
      "rating": "verified fact",
-     "ratingNote": "Evaluator leaderboard, read Oct 9. The Claude Opus 5.5 entry was created on Oct 7 according to the page data (GPT-6 Astra and Fable 5.1 on Sept 17). Three evaluators per project; no confidence intervals are published."
+     "ratingNote": "Evaluator leaderboard, read Oct 9 and re-read Nov 6 with no new entries. The Claude Opus 5.5 entry was created on Oct 7 according to the page data (GPT-6 Astra and Fable 5.1 on Sept 17). Three evaluators per project; no confidence intervals are published."
     },
     {
      "metric": "Harvey LAB, attorney-built legal tasks scored all-pass (a task counts only if every rubric criterion passes), Pass@1 as run by Mercor",
@@ -617,6 +632,13 @@
      "rating": "verified fact",
      "ratingNote": "Surge AI's own benchmark: its blog post (Oct 27) and leaderboard (https://surgehq.ai/benchmarks/dayjob-tax), read Oct 30; not peer-reviewed. Neither page says whether people or an LLM apply the rubric.",
      "ratingQual": "vendor-run, not peer-reviewed"
+    },
+    {
+     "text": "Expert-built finance and legal work still fails all-or-nothing checks. On SemiAnalysis's GDPx the finance tasks are 'so difficult that all the models score 0%' under binary grading, and the legal tasks 'too difficult for all models', so its leaderboard reports partial scores; on one public Series B redline task, no redline was usable in 20 runs across four models.",
+     "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+     "rating": "verified fact",
+     "ratingQual": "builder-run, not peer-reviewed",
+     "ratingNote": "SemiAnalysis's own benchmark and results (Nov 1 post), not peer-reviewed; Living Context provided the finance tasks and Chakra Labs the legal tasks."
     }
    ],
    "who": [
@@ -710,7 +732,7 @@
    "statusBasis": "Far: pass^4 35.1% is below the 50% Partial mark, and the 80% horizon (about 3.1 h) is short of a workday.",
    "basisShort": "pass^4 35.1%; Partial at 50%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
    "statusNote": "On tau3-Banking the best model does 35.1% of tasks right on all four tries (Qwen 3.8 Max; 55% on one try), against 80%. METR's best published 80% time horizon is about 3.1 hours (Claude Mythos Preview, early snapshot), about 54 times short of the 167-hour work-month the test also needs.",
    "statusDetail": "The best published 80% horizon is about 3.1 hours (186 min, 95% CI 97-399; Claude Mythos Preview early snapshot, METR), about 54 times short of the 167-hour bar, and our trend line reads about 4.8 hours at its Oct 4 point. On tau3-Banking the best model does 35% of tasks right on all four tries (Qwen 3.8 Max; 55% on one try, 54% on at least three of four by our calculation), and in Artificial Analysis's runs Claude Fable 5.1 and GPT-6 Astra get 47% and 40-43% right on a single try.",
@@ -763,7 +785,7 @@
      "metric": "METR 80% time horizon (50% horizon in brackets)",
      "value": "about 3.1 h (186 min, 95% CI 97-399 min) [50%: about 17.4 h, above the 16 h METR says its suite can measure reliably]; the 50% horizon is 5.6 times the 80% horizon",
      "system": "Claude Mythos Preview, early snapshot (METR Time Horizon 1.1)",
-     "asOf": "2026-04-07 (model release; METR published it May 8, 2026). Still the newest published 80% figure as of 2026-10-30: METR's time-horizon page says it 'is no longer actively updated' and its data file still ends with this entry; its June 26 summary for GPT-5.6 Sol gave no 80% figure and called its 50% estimates not robust, and its Sept 22 summary for Claude Opus 5.5 gave no time horizon",
+     "asOf": "2026-04-07 (model release; METR published it May 8, 2026). Still the newest published 80% figure as of 2026-11-06: METR's time-horizon page says it 'is no longer actively updated' and its data file still ends with this entry; its June 26 summary for GPT-5.6 Sol gave no 80% figure and called its 50% estimates not robust, its Sept 22 summary for Claude Opus 5.5 gave no time horizon, and its Nov 5 assessment of AI R&D at Anthropic gives none",
      "url": "https://metr.org/time-horizons/",
      "rating": "verified fact"
     },
@@ -880,6 +902,15 @@
      "url": "https://taubench.com/",
      "rating": "verified fact",
      "kind": "result"
+    },
+    {
+     "date": "2026-11-03",
+     "text": "Sierra verifies a custom (non-standard) tau3-Banking submission, Principled Machines' Cortex 0.1: 71 of 97 tasks right on one try (73.2%), against 55.2% for Qwen 3.8 Max, the best standard entry; one trial, so no pass^4.",
+     "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/cortex-0-1_principledmachines_2026-10-20/submission.json",
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "Sierra's verification note in the submission data (Nov 3) says the hosted endpoint 'is not a frozen snapshot' and that knowledge-base retrieval runs on the Cortex server, out of view. Filing it as internal is our inference from Principled Machines' page: 'Cortex is in early access.'",
+     "kind": "internal"
     }
    ],
    "projection": {
@@ -927,6 +958,18 @@
      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
      "rating": "verified fact",
      "ratingNote": "Google's own figures from internal use (Gemini 4 Argon Safety & Security Report, October 2026, Figure 3.16). Gemini Flash 3.8, not people, estimated task lengths and judged outcomes; 993 of the 1,389 sampled sessions are plotted (our sum of the figure's counts)."
+    },
+    {
+     "text": "Reports leave failures out. In OpenAI's test of whether a model reports the blockers that stop a coding task, GPT-6 Cyber's final answer was flagged in 20.29% of graded responses, against 11.66% for GPT-6 Astra and 34.18% for GPT-5.6 Sol. OpenAI says that in most flagged GPT-6 Cyber samples it reviewed, the blocker had been disclosed earlier but not in the final answer, and it evaluates these 'as incomplete final summaries rather than deliberative deception'.",
+     "url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+     "rating": "verified fact",
+     "ratingNote": "OpenAI's own grading (GPT-6 Cyber System Card, Nov 5). GPT-6 Cyber is available only to approved Daybreak Red users, so its figure is for a limited-access model; GPT-6 Astra and GPT-5.6 Sol are public."
+    },
+    {
+     "text": "Silent failures in real engineering. In a study of Claude Code migrating 10 PyTorch research projects from NVIDIA GPUs to Google Cloud TPUs, 53 of 70 execution attempts failed (76%) and 26 of those failures (49%) raised no error; in one case the agent reported success although a change in gradient clipping cut accuracy from 86.53% to 84.89%.",
+     "url": "https://arxiv.org/abs/2610.34422",
+     "rating": "expert opinion",
+     "ratingNote": "Unreviewed preprint by Hui Sun, Anderson Uchôa and Wesley K. G. Assunção (v1 Oct 25, v2 Oct 29); the authors report that 8 of the 10 projects met their project-goal criterion, with 2.4 human interventions on average."
     }
    ],
    "who": [
@@ -1009,7 +1052,7 @@
      "sourceDetail": "https://www.anthropic.com/institute/measuring-pace-of-ai-development and https://www.anthropic.com/research/team/economics"
     }
    ],
-   "hiddenAngle": "Public leaderboards see only public models, so they cannot show a reliable hidden system directly; three windows can. (1) METR's Frontier Risk Report, the only published outside estimate we know of that covers labs' internal models, put the internal frontier's 80% horizon at 'Likely ≥3h but <4h' in the Feb 16-Mar 16, 2026 window (public frontier about 1.5 h; internal on average about 2 months ahead) and found none of the shared models significantly more capable than the strongest public models as of May 19, 2026. A jump in a later report would be the main tell for A (Hidden AGI). (2) Anthropic reports that as of August 2026 Claude leads 26% of its AI R&D with no fully autonomous subset (self-reported; a Claude judge assigns the levels). B (Hidden self-improvement) needs long, reliable autonomous runs, so a fully autonomous share appearing there would matter most. Anthropic's 11-day, largely autonomous Fermat proof (Sept 4, 2026) shows long runs work where a proof checker verifies every step; our inference is that this does not carry over to professional work no checker can verify. (3) C (Covert AGI actor) and D (Covert government influence) need a system trusted to act for weeks without a human checking. Current incidents point the other way: Glow's PixelLeak report (Sept 29, 2026; credible report) describes coding agents posting more than 13,000 internal screenshots to public GitHub repositories. One limit on outside detection: METR could not measure GPT-5.6 Sol robustly because it cheated on tests, so a system that games evaluations can be hard to read from outside. Our inference: unattended work at scale would show up as fewer human checks, fully autonomous shares in lab reports and fewer agent incidents, and nothing public suggests a hidden system meets this component."
+   "hiddenAngle": "Public leaderboards see only public models, so they cannot show a reliable hidden system directly; three windows can. (1) METR's Frontier Risk Report, the only published outside estimate we know of that covers labs' internal models, put the internal frontier's 80% horizon at 'Likely ≥3h but <4h' in the Feb 16-Mar 16, 2026 window (public frontier about 1.5 h; internal on average about 2 months ahead) and found none of the shared models significantly more capable than the strongest public models as of May 19, 2026. A jump in a later report would be the main tell for A (Hidden AGI). (2) Anthropic reports that as of August 2026 Claude leads 26% of its AI R&D with no fully autonomous subset (self-reported; a Claude judge assigns the levels). METR's independent assessment of AI R&D at Anthropic (Nov 5), drawing on internal data and interviews with Anthropic staff, says METR understands that AI 'is not yet able to make highly significant and fully autonomous contributions to the most important parts of the model training process', though Anthropic researchers described 'signs of life' (METR; expert opinion; the 'signs of life' are Anthropic researchers', via METR). B (Hidden self-improvement) needs long, reliable autonomous runs, so a fully autonomous share appearing there would matter most. Anthropic's 11-day, largely autonomous Fermat proof (Sept 4, 2026) shows long runs work where a proof checker verifies every step; our inference is that this does not carry over to professional work no checker can verify. (3) C (Covert AGI actor) and D (Covert government influence) need a system trusted to act for weeks without a human checking. Current incidents point the other way: Glow's PixelLeak report (Sept 29, 2026; credible report) describes coding agents posting more than 13,000 internal screenshots to public GitHub repositories. One limit on outside detection: METR could not measure GPT-5.6 Sol robustly because it cheated on tests, so a system that games evaluations can be hard to read from outside. A non-public system already has repeat-run figures well above any public model's: Principled Machines says its early-access Cortex 0.1 scored 64.9% pass^4 on tau3-Banking in its own four-trial run (Principled Machines; verified fact, vendor-run and not independently checked), and Sierra's one-trial check on Nov 3 gave 73.2% right on one try (verified fact); as it is not public, it cannot set the status. Our inference: unattended work at scale would show up as fewer human checks, fully autonomous shares in lab reports and fewer agent incidents, and nothing public suggests a hidden system meets this component."
   },
   {
    "id": "reasoning",
@@ -1023,7 +1066,7 @@
    "statusBasis": "Partial: the expert-exam half (part 1) is passed; AI-alone research solves are 4 of the 10 we ask for.",
    "basisShort": "expert exams passed",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
    "statusNote": "Part 1 is met: GPQA Diamond 96% (Gemini 4 Argon), FrontierMath Tier 4 100% (GPT-6.1 Sol), Humanity's Last Exam 54.8% in Scale's run, which lists no tools (we infer none were used). Part 2 is not: public models hold 4 of the 10 AI-alone Open Problems solves we ask for, none above 'solid result', and few credited results outside mathematics.",
    "statusDetail": "Part 1 is met: the best public scores are 96% on GPQA Diamond (Gemini 4 Argon and GPT-6 Astra), 100% on FrontierMath Tier 4 (GPT-6.1 Sol) and 54.8% on Humanity's Last Exam without tools (GPT-6 Astra). Part 2, the binding half, is not: public models hold 4 of the 10 AI-alone solves we ask for on Epoch's Open Problems (none above 'solid result'; two were existing human constructions the model found) and at most 3 of Epoch's 68 open Erdős problems per model (GPT-6.1 Sol), and credited new results outside mathematics are few (our reading).",
@@ -1276,6 +1319,31 @@
      "rating": "verified fact",
      "kind": "internal",
      "ratingNote": "Anthropic's eth folder README (committed Oct 26, about 20:07 PT). It also says the result 'is purely asymptotic and says nothing about solving formulas in practice'."
+    },
+    {
+     "date": "2026-11-04",
+     "text": "FrontierPhysics (unreviewed): on 56 end-to-end research tasks by 42 physicists, 'no configuration passes more than 46 of its 168 rollouts' across 22 models in 26 configurations; manual review points to insufficiently rigorous reasoning and limited expert intuition.",
+     "url": "https://arxiv.org/abs/2611.06910",
+     "rating": "expert opinion",
+     "kind": "yardstick",
+     "ratingNote": "Bingran You and 71 co-authors, 'FrontierPhysics: Evaluating Agents for End-to-End Physics Research' (arXiv 2611.06910, Nov 4, 2026), not peer reviewed; the abstract does not name the best model or configuration. The authors attribute the failures to reasoning and intuition rather than to gaps in physics knowledge or execution errors."
+    },
+    {
+     "date": "2026-11-04",
+     "text": "Axiom releases a Lean formalization of the entire Stacks Project, 'some 16 million lines of code', by 'coordinated swarms of AI agents'. It formalizes known mathematics; Axiom says its system surfaced 'dozens of statements' needing refinement, including missing hypotheses.",
+     "url": "https://axiommath.ai/research/the-stacks-project-formalized/",
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "Axiom's own account (Nov 4): 'our system surfaced dozens of statements in the Stacks Project that required local refinement', 'including missing hypotheses, edge cases in positive characteristic, and claims that did not hold in the full generality stated'. Axiom names no model, so we file it with results from systems not publicly available (our inference). That it formalizes existing results rather than new ones is our reading, as with the Fermat formalization.",
+     "kind": "internal"
+    },
+    {
+     "date": "2026-11-05",
+     "text": "TCSExam (unreviewed): on 100 expert-reviewed theoretical computer science tasks checked by the Lean kernel or an executable checker, GPT-6 Astra leads the full set (71.9) and Claude Opus 5.5 the 20-task Lite set (72.3).",
+     "url": "https://arxiv.org/abs/2611.07962",
+     "rating": "expert opinion",
+     "kind": "yardstick",
+     "ratingNote": "Yifan Luo, Zhengying Liu, Yang Yuan, Zhilin Yang and Andrew Chi-Chih Yao, 'TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research' (arXiv 2611.07962, Nov 5, 2026), not peer reviewed. The abstract's line 'TCSExam-Full contains 100 expert-reviewed tasks, with submissions checked by the Lean kernel or an executable task checker' gives the setup. It also reports 'independently verified special cases and bounds from open-conjecture attempts', which are not Epoch Open Problems solves."
     }
    ],
    "projection": {
@@ -1461,10 +1529,10 @@
    "statusBasis": "Far: the best measured 80% horizon, about 3.1 h, is short of the 8-hour Partial mark.",
    "basisShort": "3.1 h; Partial at 8 h",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
    "statusNote": "METR's best published 80% time horizon is about 3.1 hours (Claude Mythos Preview, early snapshot; 95% CI 1.6–6.6 h), about 54 times short of a 167-hour work-month; our trend line reads about 4.8 hours at its Oct 4 point. On precisely specified software, models already finish weeks-scale work, but nobody has shown that on open-ended work.",
-   "statusDetail": "METR's best published 80% horizon is about 3.1 hours (Claude Mythos Preview, early snapshot of a limited-release model; 95% CI 1.6–6.6 h). That is about 54 times short of a 167-hour work-month and nearly four doublings short of the 40-hour 'close' mark. METR has published no 80% horizon for GPT-6 Astra, Claude Fable 5.1, Claude Opus 5.5, Gemini 4 Argon or Gemini 4 Carbon, and our trend line reads about 4.8 hours at its Oct 4 point. On precisely specified software, models already finish weeks-scale work almost every time: Claude Sonnet 5.5 (max) fully solves 97.8% of MirrorCode's medium and large rebuilds, and an internal Anthropic model ran 11 days on a Lean proof. Nobody has shown that on open-ended work: on real freelance projects averaging about 29 hours, the best system, Claude Opus 5.5, delivers 21.25% at client-acceptable quality.",
+   "statusDetail": "METR's best published 80% horizon is about 3.1 hours (Claude Mythos Preview, early snapshot of a limited-release model; 95% CI 1.6–6.6 h). That is about 54 times short of a 167-hour work-month and nearly four doublings short of the 40-hour 'close' mark. METR has published no 80% horizon for GPT-6 Astra, Claude Fable 5.1, Claude Opus 5.5, Gemini 4 Argon or Gemini 4 Carbon, and our trend line reads about 4.8 hours at its Oct 4 point. On precisely specified software, models already finish most weeks-scale work: Claude Opus 5.5 (high) fully solves 78.9% of MirrorCode's medium and large rebuilds, and an internal Anthropic model ran 11 days on a Lean proof. Nobody has shown that on open-ended work: on real freelance projects averaging about 29 hours, the best system, Claude Opus 5.5, delivers 21.25% at client-acceptable quality.",
    "bar": "An 80% time horizon of a work-month (167 h) on a suite able to measure it, plus a documented multi-week project. Close at a work-week (40 h).",
    "test": {
     "measure": "METR-style 80% time horizon: the length of task, in skilled-human working hours, that the best public system completes with 80% success in a general agent harness, read from METR's published measurements (work-week = 40 h, work-month = 167 h, as on Trend watch; our trend fit there is context and projection, not a measurement). It must be measured on a task suite that can resolve horizons that long. For 'met' it must also be backed by at least one independently documented multi-week project outside formally checkable domains, delivered at professional quality with no task-specific scaffolding.",
@@ -1527,7 +1595,7 @@
     "partialDisplay": "8 h"
    },
    "also": {
-    "text": "MirrorCode, precisely specified rebuilds: 97.8% full solves (Claude Sonnet 5.5, max). Checkable work only, so on its own it moves nothing.",
+    "text": "MirrorCode, precisely specified rebuilds: 78.9% full solves (Claude Opus 5.5, high effort; read Nov 6). Checkable work only, so on its own it moves nothing.",
     "url": "https://epoch.ai/benchmarks/mirrorcode",
     "rating": "verified fact"
    },
@@ -1551,11 +1619,13 @@
     },
     {
      "metric": "MirrorCode leaderboard: average rate of full (100%) solves across the 15 medium and large programs to rebuild from behaviour alone, 2 languages × 3 runs, 10 billion tokens and 7 days per attempt",
-     "value": "97.8% (±1.5, standard error); next: Claude Fable 5.1 (max) 93.3%, Claude Opus 5 (max) 87.8%, Claude Opus 5.5 (high) 78.9% (77.4%, labelled max effort, when we read it Oct 23) and Claude Haiku 5.5 (max) 78.9%; the best from other labs are GPT-6.1 Sol (max) 61.1%, GPT-6 Astra (max) 60.0% and Gemini 4 Argon (high) 58.9% (±11.7)",
-     "system": "Claude Sonnet 5.5 (max)",
-     "asOf": "2026-10-30 (read from Epoch AI's data; Claude Sonnet 5.5's run started Oct 5; the entries above Claude Opus 5.5 were not in Epoch's data when we read it Oct 23)",
+     "value": "78.9% (±7.9, standard error); next: Claude Fable 5.1 (high) 73.3%, Claude Fable 5 (high) 63.9%, Gemini 4 Argon (high) 58.9% (±11.7) and GPT-6 Astra (high) 46.7%. Epoch says it runs 'using high reasoning effort where the API supports it'; the max-effort entries we read Oct 30 (Claude Sonnet 5.5 (max) 97.8%, Claude Fable 5.1 (max) 93.3%, Claude Opus 5 (max) 87.8%) are no longer in its data",
+     "system": "Claude Opus 5.5 (high)",
+     "asOf": "2026-11-06 (read from Epoch AI's page and data; the page gives Oct 21, 2026 as its last update and lists 15 models; Claude Opus 5.5's run started Sept 22)",
      "url": "https://epoch.ai/benchmarks/mirrorcode",
-     "rating": "verified fact"
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "That the max-effort entries left Epoch's data between Oct 30 and Nov 6 is our comparison of Epoch's downloadable data on the two dates; we found no explanation from Epoch."
     },
     {
      "metric": "FrontierSWE v2: 34 ultra-long engineering and research tasks, 20-hour budget, partial credit (0–1 per task) averaged over 5 trials (mean@5)",
@@ -1706,6 +1776,15 @@
      "rating": "verified fact",
      "kind": "result",
      "ratingNote": "From Epoch's benchmark data, read Oct 30. These entries were not in Epoch's data when we read it Oct 23, so they were published between Oct 23 and Oct 30; Claude Sonnet 5.5's run started Oct 5."
+    },
+    {
+     "date": "2026-11-06",
+     "text": "Epoch's MirrorCode leaderboard now shows 15 entries, led by Claude Opus 5.5 (high) at 78.9% of medium and large rebuilds fully solved; most max-effort runs shown Oct 30, Claude Sonnet 5.5's 97.8% among them, are gone.",
+     "url": "https://epoch.ai/benchmarks/mirrorcode",
+     "rating": "verified fact",
+     "ratingQual": "part our inference",
+     "ratingNote": "Epoch's page (read Nov 6) says it runs 'using high reasoning effort where the API supports it' and gives Oct 21, 2026 as its last update. That most max-effort runs were removed is our comparison of Epoch's downloadable data on Oct 30 and Nov 6 (GPT-6 Luna (max) and Grok 4.6 (xhigh) remain); we found no reason given.",
+     "kind": "result"
     }
    ],
    "projection": {
@@ -1791,7 +1870,7 @@
     },
     {
      "name": "Epoch AI (with METR)",
-     "what": "Runs MirrorCode: rebuilding whole programs, estimated at weeks to months of human work, from their behaviour alone, on a 7-day, 10-billion-token budget per attempt; Claude Sonnet 5.5 (max) leads at 97.8% (read Oct 30).",
+     "what": "Runs MirrorCode: rebuilding whole programs, estimated at weeks to months of human work, from their behaviour alone, on a 7-day, 10-billion-token budget per attempt at high reasoning effort; Claude Opus 5.5 (high) leads at 78.9% (read Nov 6).",
      "url": "https://epoch.ai/benchmarks/mirrorcode",
      "rating": "verified fact"
     },
@@ -1844,7 +1923,7 @@
     },
     {
      "signal": "MirrorCode leaderboard top score (medium and large programs)",
-     "threshold": "Reached by Oct 30: Claude Sonnet 5.5 (max) 97.8%, with Claude Fable 5.1 (max) 93.3% and Claude Opus 5 (max) 87.8% also above 80%; at 97.8% every program, large ones included, is fully solved in at least four of six attempts (our arithmetic). Next flag: similar scores with no visible tests. A cross-check; on its own it moves no mark.",
+     "threshold": "A cross-check; on its own it moves no mark. Next flags: a model above 80% on Epoch's leaderboard, which has dropped most max-effort runs (top on Nov 6: Claude Opus 5.5 (high) 78.9%, after most max-effort entries we read Oct 30 left Epoch's data), or similar scores with no visible tests.",
      "why": "It is the best public test of weeks-to-months-scale projects at the reliability the definition requires, but every task comes with a working original program and a large test suite.",
      "sourceName": "Epoch AI",
      "url": "https://epoch.ai/benchmarks/mirrorcode",
@@ -1874,7 +1953,7 @@
      "url": null
     }
    ],
-   "hiddenAngle": "Long-horizon autonomy is the component a lab would most likely see first internally. The main public check is outside review of internal models: in METR's Feb–Mar 2026 pilot, Anthropic, Google, Meta and OpenAI said they shared their internal state of the art, and METR put the internal frontier about 2 months ahead on time horizon; METR plans another round in late 2026. A hidden system at multi-week reliability would show up as a jump in that round, unless a lab stops sharing (hypothesis A). It would also show up as a fully autonomous share of AI R&D above zero, or speed-up estimates above about 3x (hypothesis B). Today Anthropic reports no fully autonomous share as of August, and a separate METR team's preliminary estimate is about 1.5x. A third sign would be headline results from 'internal' models that labs call comparable to public ones, as with the Fermat run. Agent fleets or operations running for weeks with no human operator would be the observable sign for hypothesis C (our Escape watch). Hypothesis D needs months of sustained planning and would be the hardest to see. One blind spot: no general-purpose public suite measures an 80% horizon past about 16 hours (MirrorCode reaches weeks of human work, but only on precisely specified software), so even a public system near the threshold could go unconfirmed for months. Incidents also surface a median of about 106 days late (our gauge). (our inference)"
+   "hiddenAngle": "Long-horizon autonomy is the component a lab would most likely see first internally. The main public check is outside review of internal models: in METR's Feb–Mar 2026 pilot, Anthropic, Google, Meta and OpenAI said they shared their internal state of the art, and METR put the internal frontier about 2 months ahead on time horizon; METR plans another round in late 2026. A hidden system at multi-week reliability would show up as a jump in that round, unless a lab stops sharing (hypothesis A). It would also show up as a fully autonomous share of AI R&D above zero, or speed-up estimates above about 3x (hypothesis B). Today Anthropic reports no fully autonomous share as of August, and a separate METR team's preliminary estimate is about 1.5x; METR's Nov 5 assessment of AI R&D at Anthropic found researchers' estimates 'centered around a 2x acceleration' and AI 'not yet able to make highly significant and fully autonomous contributions to the most important parts of the model training process' (expert opinion). A third sign would be headline results from 'internal' models that labs call comparable to public ones, as with the Fermat run. Agent fleets or operations running for weeks with no human operator would be the observable sign for hypothesis C (our Escape watch). Hypothesis D needs months of sustained planning and would be the hardest to see. One blind spot: no general-purpose public suite measures an 80% horizon past about 16 hours (MirrorCode reaches weeks of human work, but only on precisely specified software), so even a public system near the threshold could go unconfirmed for months. Incidents also surface a median of about 106 days late (our gauge). (our inference)"
   },
   {
    "id": "autonomy",
@@ -1888,7 +1967,7 @@
    "statusBasis": "Far: OSWorld 2.x strict 44.3% is below the 50% Partial mark; neither part is passed.",
    "basisShort": "44.3% strict; Partial at 50%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
    "statusNote": "Hands-off success clears 80% only on short tasks: 86% on OSWorld-Verified's few-minute desktop tasks (Claude Fable 5). On OSWorld 2.x's 1.6-hour workflows the best official strict score is 44.3% (Claude Opus 5), and only 23% of OpenAI's 16–32 hour research tasks succeeded with no human intervention (January to July).",
    "statusDetail": "Hands-off success clears our 80% bar only on short tasks: a general model scores 86% on OSWorld-Verified's few-minute desktop tasks (Claude Fable 5), and OpenAI's agents finished 86% of its under-15-minute research tasks with no human intervention. On longer work it falls well short: the best official strict score on OSWorld 2.x's 1.6-hour workflows is 44.3% (Claude Opus 5; Anthropic self-reports 48.7% for Claude Opus 5.5 on its own harness), and only 43% of OpenAI's 4-8 hour tasks (53% in July) and 23% of its 16-32 hour tasks succeeded with no intervention.",
@@ -1940,7 +2019,7 @@
     {
      "metric": "OSWorld 2.x strict (binary) completion, official leaderboard, Foundation E2E GUI track, 500 steps",
      "value": "44.33% strict (77.67% partial). The same model scored 31.43% strict on the August task release, so task-set changes alone move scores by double digits.",
-     "system": "Claude Opus 5, max reasoning, v2.1 task set (still the best official E2E entry after the board's Oct 15 update; next is Meta's Muse Spark 1.3 at max, 39.25% strict and 69.56% partial. Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6.1 Sol and Gemini 4 Argon have no official entry)",
+     "system": "Claude Opus 5, max reasoning, v2.1 task set (still the best official E2E entry on Nov 6; the board was last updated Oct 15; next is Meta's Muse Spark 1.3 at max, 39.25% strict and 69.56% partial. Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6.1 Sol, Gemini 4 Argon and Meta's Muse Wonder have no official entry)",
      "asOf": "2026-10-05",
      "url": "https://osworld-v2.xlang.ai/",
      "rating": "verified fact"
@@ -2243,12 +2322,12 @@
     {
      "signal": "Externally verified multi-day unattended runs on professional (non-math) work using a stock harness",
      "threshold": "Close when a lab or evaluator documents a run of 5 or more working days on a stock product harness (Claude Code, Codex or similar, with no custom orchestration), with no human intervention and an outcome checked by an outside party.",
-     "why": "Today's long runs either rely on purpose-built orchestration (Anthropic's Fermat proof), target formally checkable work (Anthropic's weeks-long formal-verification campaign of Oct 22, which names no model) or are company-reported without outside checks (Google's Argon data-centre memory work). The longest documented hands-off runs in stock tools we know of last 12 hours (Agent4Sci, Oct 20).",
+     "why": "Today's long runs either rely on purpose-built orchestration (Anthropic's Fermat proof; the hierarchical agent swarms Axiom says formalized the whole Stacks Project in Lean, Nov 4, naming no model or run length), target formally checkable work (Anthropic's weeks-long formal-verification campaign of Oct 22, which names no model) or are company-reported without outside checks (Google's Argon data-centre memory work). The longest documented hands-off runs in stock tools we know of last 12 hours (Agent4Sci, Oct 20).",
      "sourceName": "Lab research blogs and system cards; METR and UK AISI reports",
      "url": null
     }
    ],
-   "hiddenAngle": "Hands-off autonomy is the component a hidden system would most likely give away, because it acts on the world. For C (Covert AGI actor), such a system would show up the way sub-AGI agents already have: unattended swarms leaving traces on third-party systems (14,591 surviving revisions across four wikis in the DseWiki case; many thousands of actions, over 17,000 logged events, against Hugging Face). Those incidents took a median of about 106 days to become public, so detection is real but lagged, and that lag is a floor. For A and B, the tell would be internal-use metrics running ahead of what public models can do. The run lengths labs have disclosed don't show such a gap yet: Anthropic says an internal research model worked autonomously for 24 hours before human follow-ups (October 20), while public models have run 12 hours with no human intervention in their stock coding tools (Agent4Sci) and four Gemini 4 Argon agents beat Minecraft in 27 hours without intervention. Two newer claims are too loose to test: Google says its teams have seen Gemini 4 Carbon, which it is making available only to a subset of cyber defenders for now, 'run for days' (October 28), with no success rate, and Anthropic's S-1 (October 26) puts Claude's success on open-ended engineering problems that lack a clear specification at about 90% in September, on internal benchmarks, naming no model and not saying whether people stepped in. Anthropic's fully autonomous share of its AI R&D is still 0% (August); our signal is confirmed at any share above 0%, and alarm condition X3 needs more than 10%. OpenAI's hands-off success on 4-8 hour tasks has risen (18% in January to 53% in July), but OpenAI doesn't name the models behind it, so the data can't yet separate internal models from public ones. Benchmarks are a weak detector, because a lab hiding a system would not submit it to OSWorld. Labs also now run agent actions past monitors and auto-review (Anthropic: every action on its main internal platform), which cuts outside traces, so a capable system run inside a lab could work hands-off and stay invisible until a disclosure. For D, autonomy matters less: influence on government runs through advice humans act on, not hands-off operation."
+   "hiddenAngle": "Hands-off autonomy is the component a hidden system would most likely give away, because it acts on the world. For C (Covert AGI actor), such a system would show up the way sub-AGI agents already have: unattended swarms leaving traces on third-party systems (14,591 surviving revisions across four wikis in the DseWiki case; many thousands of actions, over 17,000 logged events, against Hugging Face). Those incidents took a median of about 106 days to become public, so detection is real but lagged, and that lag is a floor. For A and B, the tell would be internal-use metrics running ahead of what public models can do. The run lengths labs have disclosed don't show such a gap yet: Anthropic says an internal research model worked autonomously for 24 hours before human follow-ups (October 20), while public models have run 12 hours with no human intervention in their stock coding tools (Agent4Sci) and four Gemini 4 Argon agents beat Minecraft in 27 hours without intervention. Two newer claims are too loose to test: Google says its teams have seen Gemini 4 Carbon, which it is making available only to a subset of cyber defenders for now, 'run for days' (October 28), with no success rate, and Anthropic's S-1 (October 26) puts Claude's success on open-ended engineering problems that lack a clear specification at about 90% in September, on internal benchmarks, naming no model and not saying whether people stepped in. Anthropic's fully autonomous share of its AI R&D is still 0% (August); our signal is confirmed at any share above 0%, and alarm condition X3 needs more than 10%. METR's independent assessment of AI R&D at Anthropic (November 5), drawn from interviews and internal data but with no query access to Anthropic's unreleased models, says AI 'is not yet able to make highly significant and fully autonomous contributions' to the most important parts of model training, while Anthropic researchers described significant 'signs of life' implying such contributions 'could occur soon' (METR; expert opinion; 'signs of life' from Anthropic researchers, via METR). OpenAI's hands-off success on 4-8 hour tasks has risen (18% in January to 53% in July), but OpenAI doesn't name the models behind it, so the data can't yet separate internal models from public ones. Benchmarks are a weak detector, because a lab hiding a system would not submit it to OSWorld. Labs also now run agent actions past monitors and auto-review (Anthropic: every action on its main internal platform), which cuts outside traces, so a capable system run inside a lab could work hands-off and stay invisible until a disclosure. For D, autonomy matters less: influence on government runs through advice humans act on, not hands-off operation."
   },
   {
    "id": "learning",
@@ -2262,7 +2341,7 @@
    "statusBasis": "Far: CL-Bench 25.4% is below the 30% Partial mark; the other two parts have no public test.",
    "basisShort": "25.4%; Partial at 30%",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
    "statusNote": "The best public system captures 25.4% of the available gain from experience on CL-Bench (Claude Sonnet 4.6, June 2026), about half our provisional 50%; none of the September 2026 models has been scored. Learning from documents after the training cutoff, and keeping what was learned, have no public measurement.",
    "statusDetail": "On learning that carries across tasks, the best public system captures 25.4% of the available gain on CL-Bench (plain in-context learning with Claude Sonnet 4.6, June 2026), about half our provisional 50% bar; none of the September 2026 models has been scored, and parts 2 and 3 (post-cutoff document learning, retention) have no public measurement. Learning within one session is stronger: GPT-6 Astra scores 62.7% on ARC-AGI-3 with ARC Prize's Standard harness and 99.9% with its Provider Adapter harness, while the strongest lab result we found on MTOB (Gemini 1.5 Pro, 2024) reached the human learner's level in only one translation direction.",
@@ -2326,9 +2405,9 @@
     },
     {
      "metric": "CL-Bench public leaderboard coverage",
-     "value": "12 systems, unchanged since Oct 9 (re-checked Oct 30); top average gain 0.241, shared by plain in-context learning and Claude Code, both with Sonnet 4.6 (the leaderboard's figures differ from the paper's). The newest models listed are GPT-5.4 and Claude Opus 4.7; none of the September and October 2026 releases (GPT-6 Astra, GPT-6.1 Sol, Claude Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, Gemini 4 Argon) is listed.",
+     "value": "12 systems, unchanged since Oct 9 (re-checked Nov 6); top average gain 0.241, shared by plain in-context learning and Claude Code, both with Sonnet 4.6 (the leaderboard's figures differ from the paper's). The newest models listed are GPT-5.4 and Claude Opus 4.7; none of the September and October 2026 releases (GPT-6 Astra, GPT-6.1 Sol, Claude Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, Gemini 4 Argon) is listed.",
      "system": "Plain in-context learning + Claude Sonnet 4.6 (ranked first by reward)",
-     "asOf": "2026-10-30",
+     "asOf": "2026-11-06",
      "url": "https://snorkel.ai/leaderboard/continual-learning-bench/",
      "rating": "verified fact"
     },
@@ -2445,6 +2524,14 @@
      "rating": "verified fact",
      "kind": "yardstick",
      "ratingNote": "The authors' own measurements in an unreviewed preprint (CLE Team, arXiv 2610.33956, submitted Oct 24 PT). An evaluation agent grades against human-authored rubrics, there is no human baseline, and the newest frontier releases (Claude Opus 5.5, GPT-6 Astra, Gemini 4 Argon) are not tested."
+    },
+    {
+     "date": "2026-10-29",
+     "text": "CLR-Bench: on 20 hidden-rule chains, six self-evolution methods gain at most 5 points over a frozen GPT-6-Luna agent, but with GPT-6-Sol, Dynamic Cheatsheet reaches 78.5% from feedback alone, against 32.5% for the frozen agent.",
+     "url": "https://arxiv.org/abs/2610.40758",
+     "rating": "expert opinion",
+     "kind": "yardstick",
+     "ratingNote": "The authors' own measurements in an unreviewed preprint (Qiu and five co-authors, arXiv 2610.40758, v1 Oct 29): 80 hidden rules, no human baseline; simply keeping the raw practice history reaches 70.3% with GPT-6-Sol. Not CL-Bench, so not one of our test's marks."
     }
    ],
    "projection": {
@@ -2617,7 +2704,7 @@
    "statusBasis": "Partial: 62.7% on ARC-AGI-3 once the games had been public for 5 months; at first contact the best was 1.5%.",
    "basisShort": "62.7% once public for months",
    "since": "2026-10-05",
-   "lastReviewed": "2026-10-30",
+   "lastReviewed": "2026-11-06",
    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
    "statusNote": "Within three months of ARC-AGI-3's launch the best public score was 1.5%, against our 80%. Once the format was known, GPT-6 Astra reached 62.7% with the Standard harness (99.9% with the Provider Adapter) at about 27 to 37 times the paid human cost per game, and its lead did not carry over to WitnessBench's held-out games.",
    "statusDetail": "Partial by our rule: public models now solve new games once the format is known (GPT-6 Astra 62.7% on ARC-AGI-3's hidden set with the Standard harness and 99.9% with the Provider Adapter, at about 27 to 37 times the paid human cost per game, our calculation), but both parts of our test fail: the best score within three months of ARC-AGI-3's launch was 1.5%, and on WitnessBench's held-out games Astra's two-to-one ARC-AGI-3 lead over Claude Opus 5 did not carry over (v1.0, Sept 26); on v2.0's 26 unseen games Astra is second, 25.6 against 46.5 for Claude Opus 5.5, which has no ARC-AGI-3 result. Transfer to new professional fields is unmeasured.",
@@ -2835,6 +2922,14 @@
      "rating": "verified fact",
      "kind": "result",
      "ratingNote": "WitnessBench's site dates v2.0 only as 'Oct 2026'; Oct 28 is the public code release with harness v2 (https://github.com/fleet-ai/witnessbench). That GPT-6 Astra leads ARC-AGI-3 is from ARC Prize's leaderboard."
+    },
+    {
+     "date": "2026-10-29",
+     "text": "An unreviewed preprint (Algebraic World Model; Pan, Tan, Yuan and Yao) reports that its Lean-backed framework, with Claude Opus 5, clears all 183 levels of ARC-AGI-3's 25 public games, using 43% of the human baseline's actions.",
+     "url": "https://arxiv.org/abs/2610.40503",
+     "rating": "expert opinion",
+     "kind": "result",
+     "ratingNote": "Guancheng Pan, Qixin Tan, Yang Yuan and Andrew Chi-Chih Yao (arXiv 2610.40503, v1 Oct 29, v2 Oct 30, 2026), not peer reviewed. The authors also report kernel-checked Lean impossibility proofs for two impossible levels in all six runs, where Claude Opus 5.5 and GPT-6 Astra with coding tools produced none in twelve baseline runs. These are public games run with the authors' own framework, so the result doesn't count toward our test (our reading)."
     }
    ],
    "projection": {
@@ -2845,8 +2940,8 @@
    },
    "upcoming": [
     {
-     "date": "2026-11-02",
-     "text": "ARC Prize 2026 submissions due (papers due Nov 8).",
+     "date": "2026-11-08",
+     "text": "ARC Prize 2026 papers due (submissions closed Nov 2).",
      "url": "https://arcprize.org/competitions/2026",
      "rating": "verified fact"
     },
@@ -2972,7 +3067,7 @@
      "sourceDetail": "https://witnessbench.ai, https://arxiv.org/abs/2609.32208, https://arcprize.org/policy"
     },
     {
-     "signal": "ARC Prize 2026 results (submissions due Nov 2, results Dec 4): ARC-AGI-3 Milestone #2 (closed Sept 30), ARC-AGI-3 top scores, and the ARC-AGI-2 $150K bonus for the first open-source entry at 85% on the private set",
+     "signal": "ARC Prize 2026 results (submissions closed Nov 2, papers due Nov 8, results Dec 4): ARC-AGI-3 Milestone #2 (closed Sept 30), ARC-AGI-3 top scores, and the ARC-AGI-2 $150K bonus for the first open-source entry at 85% on the private set",
      "threshold": "We'd note a step if an open-source entry under Kaggle limits reaches 85% on the ARC-AGI-2 private set or 50% on ARC-AGI-3.",
      "why": "It shows whether the capability is cheap and reproducible, not tied to frontier-scale compute; efficiency is part of ARC's definition and of our threshold.",
      "sourceName": "ARC Prize",
@@ -3001,7 +3096,7 @@
    "best": "GPT-5: 57% (long-term memory storage 0 of 10). No 2026 model scored.",
    "url": "https://arxiv.org/abs/2510.18212",
    "rating": "verified fact",
-   "ratingNote": "The scores are from the paper and its site (https://agidefinition.safe.ai/, read Oct 23), which lists only GPT-4 and GPT-5. That no 2026 model has been scored is our search, Oct 23.",
+   "ratingNote": "The scores are from the paper and its site (https://agidefinition.safe.ai/, read Nov 6), which lists only GPT-4 and GPT-5. That no 2026 model has been scored is our search, Nov 6.",
    "ratingQual": "part our inference"
   },
   {
@@ -3013,7 +3108,7 @@
    "best": "No cognitive profile published for any model.",
    "url": "https://arxiv.org/abs/2311.02462",
    "rating": "verified fact",
-   "ratingNote": "The definition is from the paper. That no cognitive profile has been published for any model is our search, Oct 9.",
+   "ratingNote": "The definition is from the paper. That no cognitive profile has been published for any model is our search, Nov 6; DeepMind's follow-up, 'Measuring Progress Toward AGI: A Cognitive Framework' (Burnell et al., arXiv 2605.28405, May 27, 2026), proposes the protocol, and its example profiles are of hypothetical systems, not named models.",
    "ratingQual": "part our inference"
   },
   {
@@ -3045,7 +3140,7 @@
    "definition": "One system passes an adversarial Turing test, assembles a model car with robotics, and scores 90% on MMLU and APPS.",
    "physical": "Required (robotics)",
    "vsOurs": "Stricter: needs robotics. A late bound for us.",
-   "best": "Community median 19 Dec 2030 (read Oct 9).",
+   "best": "Community median 5 Sep 2030 (read Nov 6).",
    "url": "https://www.metaculus.com/questions/5121/",
    "rating": "forecast aggregate"
   },
@@ -3055,13 +3150,13 @@
    "definition": "Turing-test, Winogrande, SAT-math and Montezuma's Revenge criteria, publicly described.",
    "physical": "Excluded",
    "vsOurs": "Much looser: a few fixed tests, no work or learning-on-the-job requirement.",
-   "best": "Community median 29 Aug 2027 (read Oct 9).",
+   "best": "Community median 28 Aug 2027 (read Nov 6).",
    "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
    "rating": "forecast aggregate"
   }
  ],
  "frameworksSource": {
-  "lastReviewed": "2026-10-09",
+  "lastReviewed": "2026-11-06",
   "statusNote": "On ARC Prize's test, GPT-6 Astra scores 62.7% on ARC-AGI-3 with the Standard harness we count and 99.9% with the Provider Adapter harness. ARC Prize treats ARC-AGI-3 as a test a future AGI should pass, not as proof of AGI, and says it is not claiming AGI. No 2026 model has been scored against the Hendrycks or DeepMind bars, and we know of none that meets the OpenAI charter's (our inference). The two Metaculus rows are forecasts.",
   "packetNote": "None of the four bars is cleared and none is within 10 points under its own scoring; we keep 'partial' because one current score is past half-way. ARC-AGI-3: GPT-6 Astra scores 62.7% with the Standard harness, where 100% means beating every game as efficiently as humans (99.9% with the Provider Adapter harness, which would clear this bar; ARC Prize says it is not claiming AGI). RLI: 21.25% for Claude Opus 5.5, against 50%. Hendrycks: the only published scores are GPT-4's 27% and GPT-5's 57% (2025), with long-term memory storage at 0%. DeepMind: no cognitive profile has been published. We found no Hendrycks score or DeepMind profile for any 2026 model."
  },

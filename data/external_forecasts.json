@@ -17,24 +17,24 @@
    "who": "Kalshi market",
    "what": "Any company announces AGI before Jan 1, 2027",
    "date": "2027-01-01",
-   "p": 7,
-   "asOf": "2026-10-30",
-   "definition": "Same rules as the Apr 2027 and Jan 2028 rungs: any company explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level, near-AGI or toward-AGI remarks. Not our definition. Last trade 7 at 08:50 PT Oct 30 (50 contracts, yes taker); 6 on Oct 23 and 9 on Oct 9. It closes at 20:59 PT Dec 31, 2026.",
+   "p": 9,
+   "asOf": "2026-11-06",
+   "definition": "Same rules as the Apr 2027 and Jan 2028 rungs: any company explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level, near-AGI or toward-AGI remarks. Not our definition. Last trade 9 at 12:25 PT Nov 6, part of one sell sweep of about 370 contracts at 9; it traded between 6 and 13 during the week, about 5.0k contracts since our Oct 30 read. It was 7 on Oct 30, 6 on Oct 23 and 9 on Oct 9. It closes at 20:59 PT Dec 31, 2026.",
    "bar": "announcement",
    "gap": "Measures an announcement, not whether a system meeting our definition exists.",
-   "rating": "forecast aggregate (Kalshi API last trade 7, bid/ask 6/7, read 13:15 PT Oct 30, 2026; not thin by our rule: about 38.9k contracts traded, a 1-point spread and about 55 in the 24 h before the read, though only 50 contracts were offered at the ask)",
+   "rating": "forecast aggregate (Kalshi API last trade 9, bid/ask 8/9, midpoint 8.5, read 13:17 PT Nov 6, 2026; not thin by our rule: about 43.9k contracts traded, a 1-point spread and about 1.35k in the 24 h before the read; order book at 13:18 PT: bid 8 with about 2.3k contracts, ask 9 with about 228)",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
   },
   {
    "who": "Kalshi market",
    "what": "Any company announces AGI before Apr 1, 2027",
    "date": "2027-04-01",
-   "p": 17,
-   "asOf": "2026-10-30",
-   "definition": "Any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level, near-AGI or toward-AGI remarks. Not our definition. Spiked briefly after GPT-6 Astra (closes of 65% on Sept 4 and 62% on Sept 7, intraday high 84%); 24–34% from Sept 17 to Oct 2; last trade 30 on Oct 2 and 25 on Oct 9; 17 in our daily readings from Oct 12 and 19 from Oct 19, with its last trade 19 at 14:43 PT Oct 22 and under 2 contracts traded in the 24 h before the Oct 23 read. Its latest trades were one yes-taker sweep at 11:06 PT Oct 29 (about 231 contracts at 17 and 50 at 16), and nothing traded in the 24 h before the Oct 30 read.",
+   "p": 18,
+   "asOf": "2026-11-06",
+   "definition": "Any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level, near-AGI or toward-AGI remarks. Not our definition. Spiked briefly after GPT-6 Astra (closes of 65% on Sept 4 and 62% on Sept 7, intraday high 84%); 24–34% from Sept 17 to Oct 2; last trade 30 on Oct 2 and 25 on Oct 9; 17 in our daily readings from Oct 12 and 19 from Oct 19, with its last trade 19 at 14:43 PT Oct 22 and under 2 contracts traded in the 24 h before the Oct 23 read. One yes-taker sweep at 11:06 PT Oct 29 (about 231 contracts at 17 and 50 at 16) set the 17 we read on Oct 30. In the week to Nov 6 it traded 16 to 27 on Nov 3 (about 3.1k contracts, volume-weighted average 21), 18 to 19 on Nov 4 and 18 on Nov 6, its last trade 18 at 11:28 PT Nov 6 (125 contracts, yes taker).",
    "bar": "announcement",
    "gap": "Measures an announcement, not whether a system meeting our definition exists.",
-   "rating": "forecast aggregate (Kalshi API last trade 17, bid/ask 15/17, midpoint 16, read 13:15 PT Oct 30, 2026; thin market (borderline): about 25.7k contracts traded in total, above the ~20k threshold, but none in the 24 h before the read and a 2-point spread)",
+   "rating": "forecast aggregate (Kalshi API last trade 18, bid/ask 17/18, midpoint 17.5, read 13:17 PT Nov 6, 2026; no longer thin by our rule: about 29.4k contracts traded, up from 25.7k, a 1-point spread and 295 contracts in the 24 h before the read; order book at 13:18 PT: bid 17 with about 1.4k contracts, ask 18 with about 3.3k)",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "barV1": "announcement",
    "gapV1": "Measures an announcement, not the existence of a strict-bar system."
@@ -42,13 +42,13 @@
   {
    "who": "Metaculus community",
    "what": "First weakly general AI system, community median",
-   "date": "2027-09-04",
+   "date": "2027-08-28",
    "p": 50,
-   "asOf": "2026-10-30",
+   "asOf": "2026-11-06",
    "definition": "Metaculus weakly-general-AI question (Q3479): one unified, publicly announced system that reliably passes a Loebner-Silver-Prize-type Turing test, scores 90% or more on Winogrande or a comparable set, reaches the 75th percentile on a circa-2015-2020 SAT math section from page images, and learns Montezuma's Revenge well enough to explore all 24 rooms within the equivalent of 100 hours of play.",
    "bar": "narrower",
    "gap": "Four fixed tests that a typical college-educated person finds easy, with no professional-work, multi-week or reliability test, so an early bound. It needs a public announcement, so it can never count a hidden system.",
-   "rating": "forecast aggregate (Metaculus community prediction, read on the question page at 13:21 PT Oct 30, 2026; about 1.8k forecasters; middle half 21 Sep 2026 to 20 Oct 2029, from the page's embedded community aggregate)",
+   "rating": "forecast aggregate (Metaculus community prediction, read on the question page at 13:27 PT Nov 6, 2026; about 1.8k forecasters; middle half 20 Sep 2026 to 18 Oct 2029, from the page's Community row)",
    "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/"
   },
   {
@@ -81,12 +81,12 @@
    "who": "Kalshi market",
    "what": "Any company announces AGI before Jan 1, 2028",
    "date": "2028-01-01",
-   "p": 39,
-   "asOf": "2026-10-30",
-   "definition": "Same rules as the Apr 2027 rung: any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level, near-AGI or toward-AGI remarks. Not our definition. 61 on Oct 9; 56 on Oct 13 after one sell sweep on Oct 12; 52 to 53 in our daily readings from Oct 16 to Oct 20 and 50 on Oct 21; sellers then traded about 450 contracts at 38 to 40 at 21:45 PT Oct 21, and it traded 39 at 11:57 PT Oct 23. It traded 41 on Oct 28 and last traded 39 at 07:16 PT Oct 30 (about 12 contracts). The before-Oct 1, 2027 rung (last 35, bid/ask 34/38, thin) now trades below this rung, so the impossible ordering we noted on Oct 23 is gone.",
+   "p": 49,
+   "asOf": "2026-11-06",
+   "definition": "Same rules as the Apr 2027 rung: any company (including small private ones with major-press coverage) explicitly announcing it has achieved AGI; its rules exclude AGI-like, AGI-level, near-AGI or toward-AGI remarks. Not our definition. 61 on Oct 9; 56 on Oct 13 after one sell sweep on Oct 12; 52 to 53 in our daily readings from Oct 16 to Oct 20 and 50 on Oct 21; sellers then traded about 450 contracts at 38 to 40 at 21:45 PT Oct 21, and it traded 39 at 11:57 PT Oct 23. It traded 41 on Oct 28 and 39 at 07:16 PT Oct 30. In the week to Nov 6 it traded 37 to 49 (about 1.5k contracts since Oct 30), including one sell sweep of about 500 contracts at 38 to 47 at 20:30 PT Nov 5; its last trade was 49 at 12:56 PT Nov 6 (1 contract, yes taker), with about 4.9k contracts offered at 49. The before-Oct 1, 2027 rung (last 35, bid/ask 34/35) still trades below this rung, so the ladder stays in order. Kalshi's OpenAI-only market (OAIAGI-27: OpenAI announces it has attained AGI by Dec 31, 2027, with no explicit-wording clause) has a midpoint of 63.2 (bid/ask 60.4/66.0, thin by spread), above this any-company rung; under the same rules one company could not be likelier than any company, so we put the gap down to OAIAGI's looser wording and two thin books (our inference).",
    "bar": "announcement",
    "gap": "Measures an announcement, not whether a system meeting our definition exists.",
-   "rating": "forecast aggregate (Kalshi API last trade 39, bid/ask 39/40, read 13:15 PT Oct 30, 2026; thin market (borderline): about 22.6k contracts traded, near the ~20k threshold, open interest about 9.6k and about 22 contracts traded in the 24 h before the read)",
+   "rating": "forecast aggregate (Kalshi API last trade 49, bid/ask 48/49, read 13:17 PT Nov 6, 2026; thin market (borderline): about 24.2k contracts traded, near the ~20k threshold; the bid was 43 at our 13:16 PT read and in the 13:18 PT order book (midpoint 46), so the real spread was up to 6 points, and the last trade was a single contract)",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "barV1": "announcement",
    "gapV1": "Measures an announcement, not the existence of a strict-bar system."
@@ -164,11 +164,11 @@
    "what": "Powerful AI widely available within a few years, company belief",
    "date": "2029-10-26",
    "p": 50,
-   "asOf": "2026-10-26",
-   "definition": "In its S-1 registration statement, filed with the SEC on Oct 26, 2026, Anthropic writes: \"We believe that Powerful AI, a highly capable and impactful form of frontier AI characterized by the following key attributes, will become widely available within a few years\". The attributes are cognitive capabilities \"matching or exceeding those of top human experts across most professional and scientific disciplines\"; navigating every interface available to a human working virtually; reasoning through complex tasks autonomously \"over extended periods—lasting hours, days, or weeks\"; coordinating across instances and with humans and other AI systems; and controlling lab equipment, robots and other machines through digital connections. A belief with no exact date and no probability. We read \"a few years\" as about three from the filing and plot it at 50% as an approximation, as for Hassabis (our inference).",
+   "asOf": "2026-11-02",
+   "definition": "In its S-1 registration statement, filed with the SEC on Oct 26, 2026, Anthropic writes: \"We believe that Powerful AI, a highly capable and impactful form of frontier AI characterized by the following key attributes, will become widely available within a few years\". The attributes are cognitive capabilities \"matching or exceeding those of top human experts across most professional and scientific disciplines\"; navigating every interface available to a human working virtually; reasoning through complex tasks autonomously \"over extended periods—lasting hours, days, or weeks\"; coordinating across instances and with humans and other AI systems; and controlling lab equipment, robots and other machines through digital connections. Its amended filing (S-1/A, accepted on EDGAR at 06:24 PT Nov 2, 2026) repeats the same sentence. A belief with no exact date and no probability. We read \"a few years\" as about three from the Oct 26 filing and plot it at 50% as an approximation, as for Hassabis (our inference).",
    "bar": "different",
    "gap": "A higher skill bar than ours (top experts in most disciplines) and it adds digital control of lab equipment and robots, but it has no learning-on-the-job, any-domain or reliability clause, so neither is clearly easier; 'widely available' means a release, so it can never count a hidden system.",
-   "rating": "expert opinion (lab's own forecast, in Anthropic's S-1 filed with the SEC on Oct 26, 2026; the wording is checked in the filing, and the three-year plotting date is our inference)",
+   "rating": "expert opinion (lab's own forecast, in Anthropic's S-1 filed with the SEC on Oct 26, 2026 and repeated in its S-1/A of Nov 2; the wording is checked in both filings, and the three-year plotting date is our inference)",
    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
   },
   {
@@ -186,6 +186,20 @@
    "gapV1": "Coding only, so it should arrive before our bar."
   },
   {
+   "who": "Metaculus community",
+   "what": "First general AI system, community median",
+   "date": "2030-09-05",
+   "p": 50,
+   "asOf": "2026-11-06",
+   "definition": "Metaculus general-AI question: requires a public announcement plus robotics and an adversarial Turing test; stricter on robotics, can't resolve on a hidden system.",
+   "bar": "different",
+   "gap": "Adds robotics and an adversarial Turing test and needs a public announcement, so it can never count a hidden system; it has no learning-on-the-job, multi-week or reliability test.",
+   "rating": "forecast aggregate (Metaculus community prediction, read on the question page at 13:22 PT Nov 6, 2026; about 1.9k forecasters; middle half 7 Mar 2028 to 22 Jun 2036, from the page's Community row and its embedded community aggregate)",
+   "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
+   "barV1": "different",
+   "gapV1": "Adds robotics and needs a public announcement, so it can never count a hidden system."
+  },
+  {
    "who": "Eli Lifland (AI Futures)",
    "what": "Top-expert-dominating AI (TED-AI), median",
    "date": "2032-07-15",
@@ -200,20 +214,6 @@
    "gapV1": "Top-expert level on virtually all cognitive tasks, so it should arrive after our bar."
   },
   {
-   "who": "Metaculus community",
-   "what": "First general AI system, community median",
-   "date": "2030-09-23",
-   "p": 50,
-   "asOf": "2026-10-30",
-   "definition": "Metaculus general-AI question: requires a public announcement plus robotics and an adversarial Turing test; stricter on robotics, can't resolve on a hidden system.",
-   "bar": "different",
-   "gap": "Adds robotics and an adversarial Turing test and needs a public announcement, so it can never count a hidden system; it has no learning-on-the-job, multi-week or reliability test.",
-   "rating": "forecast aggregate (Metaculus community prediction, read on the question page at 13:20 PT Oct 30, 2026; about 1.9k forecasters; middle half 22 Mar 2028 to 9 Jul 2036, from the page's embedded community aggregate)",
-   "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
-   "barV1": "different",
-   "gapV1": "Adds robotics and needs a public announcement, so it can never count a hidden system."
-  },
-  {
    "who": "AI safety leaders survey (Summit on Existential Security)",
    "what": "AGI (automates >90% of 2025-economy roles), respondents' median 50% year",
    "date": "2033-07-01",
@@ -226,6 +226,18 @@
    "url": "https://forum.effectivealtruism.org/posts/LxuKuQd69Qx5FKhNZ/survey-of-ai-safety-leaders-on-x-risk-agi-timelines-and",
    "barV1": "stricter",
    "gapV1": "More than 90% of all roles, physical ones included, so it should come after our bar, which counts remote professional work."
+  },
+  {
+   "who": "Forecasting Research Institute (LEAP expert panel)",
+   "what": "AGI that most LEAP panelists agree exists, experts' median year if it happens before 2100",
+   "date": "2050-07-01",
+   "p": 40,
+   "asOf": "2026-06-02",
+   "definition": "Wave 8 of FRI's Longitudinal Expert AI Panel, fielded Apr 20 to May 11, 2026 and published Jun 2, 2026, asked for the probability that, before 2100, more than 50% of LEAP panelists will agree AGI exists, and the year if so. AGI is a commercially available AI system that can outperform the 90th percentile professional human employee in every primarily non-physical occupation (based on 2025 performance) on at least 90% of the economically useful non-physical tasks they perform, at an inference cost no more than 5x that of equivalent human labor. The median expert gives 80% that this happens before 2100 and, conditional on it happening, a median year of 2050 (25% by 2039, 75% by 2065); superforecasters give 80% and a median year of 2047. Because the years are conditional, we plot the experts' 2050 at 40% (80% × 50%), at mid-year (our inference).",
+   "bar": "stricter",
+   "gap": "Outperform the 90th-percentile professional on at least 90% of the tasks in every non-physical occupation, at no more than 5x the cost of human labor, and commercially available, so it should come after a system meets our definition; it resolves on most panelists agreeing, so it can never count a hidden system.",
+   "rating": "forecast aggregate (median of FRI's LEAP expert panel, Wave 8, from FRI's own post of Jun 2, 2026; the 40% plotting point is our inference from the conditional median)",
+   "url": "https://forecastingresearch.substack.com/p/leap-wave-8-ai-timelines"
   }
  ],
  "noteV1": "Outside forecasts of when AGI arrives, plotted against our strict-AGI curve. None uses our exact definition. Each entry's bar says how it compares: announcement (measures an announcement, not whether a system exists), narrower (an easier milestone, so an early bound), stricter (a harder milestone, so a late bound), different (a different test) or own-definition (the forecaster's own, unstated bar); gap says how in one line. A median is plotted as a 50% point at that date. Market prices come from the market's public API, dated in Pacific time."

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-11-06",
  "metr": {
   "source": "https://metr.org/time-horizons/",
   "dataUrl": "https://metr.org/assets/benchmark_results_1_1.yaml",
@@ -1289,10 +1289,10 @@
    }
   },
   "x2": {
-   "date": "2026-10-30",
+   "date": "2026-11-06",
    "metric": "p50",
-   "trendNow": 1755.4,
-   "fourX": 7021.5,
+   "trendNow": 1822.8,
+   "fourX": 7291.2,
    "suiteLimit": 960,
    "observable": false
   },
@@ -1304,13 +1304,48 @@
    "unit": "%",
    "threshold": 50,
    "thresholdLabel": "Mostly AI-led",
-   "note": "Anthropic's own prototype index, Claude-judged and graded internally. The fully autonomous share was 0% at both points. Two measurements are too few to fit a trend, so no projection is drawn until there are at least four.",
+   "note": "Anthropic's own prototype index (the Anthropic R&D Automation Index, v2026.07), Claude-judged and graded internally against a basket of tasks frozen in July 2026. Points are the monthly readings labelled on Anthropic's chart; February is unlabelled there and described only as 'under 1%' (plotted at 1). The chart draws 90% measurement intervals but gives no figures for them. Anthropic says Claude was not operating fully autonomously for any measured subset of the work as of August, and its chart shows no fully automated share in any month (our reading). No projection is drawn for this series.",
    "points": [
     {
      "date": "2026-02-15",
      "v": 1,
      "approx": true,
      "label": "under 1% (February)",
+     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+    },
+    {
+     "date": "2026-03-15",
+     "v": 1,
+     "approx": true,
+     "label": "1% (March)",
+     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+    },
+    {
+     "date": "2026-04-15",
+     "v": 3,
+     "approx": true,
+     "label": "3% (April)",
+     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+    },
+    {
+     "date": "2026-05-15",
+     "v": 12,
+     "approx": true,
+     "label": "12% (May)",
+     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+    },
+    {
+     "date": "2026-06-15",
+     "v": 14,
+     "approx": true,
+     "label": "14% (June)",
+     "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+    },
+    {
+     "date": "2026-07-15",
+     "v": 22,
+     "approx": true,
+     "label": "22% (July)",
      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
     },
     {

@@ -47,6 +47,16 @@
    "short": "UK Commons committee questions senior policy staff from OpenAI, Anthropic, Meta and Google DeepMind"
   },
   {
+   "date": "2026-10-13",
+   "kind": "models",
+   "title": "Gemini 4 Argon released to developers and enterprises via the API and to Google AI Ultra and Pro subscribers (Google)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Limited to trusted cyber defenders (Fairwind Program) from Sept 30; its release to paying users resolved our forecast gemini4-by-nov30 yes, and a gated frontier model reaching the public narrows the released-versus-internal gap our A estimate tracks (our inference).",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+   "short": "Gemini 4 Argon released to developers, enterprises and paid subscribers"
+  },
+  {
    "date": "2026-10-14",
    "kind": "industry",
    "title": "Anthropic's reported pre-IPO investor day at its San Francisco headquarters (Bloomberg, Oct 1, people familiar; no public S-1 on EDGAR as of Oct 2)",
@@ -152,12 +162,12 @@
   {
    "date": "2026-11-04",
    "kind": "models",
-   "title": "Open weights due for Moonshot's Kimi K3.1 Pro (\"The full model weights will be released by Nov 4\", Moonshot's launch blog; so far only on Kimi's own apps and API; license not stated)",
+   "title": "Open weights released: Moonshot's Kimi K3.1 Pro on Hugging Face (public and ungated; Kimi K3.1-Pro License; about 1.56 TB)",
    "hyp": "C",
-   "certainty": "target",
+   "certainty": "fixed",
    "why": "Open-weight releases widen what an unknown actor could run out of view.",
-   "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
-   "short": "Open weights due for Moonshot's Kimi K3.1 Pro"
+   "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+   "short": "Open weights released for Moonshot's Kimi K3.1 Pro"
   },
   {
    "date": "2026-11-06",
@@ -167,6 +177,16 @@
    "certainty": "fixed",
    "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21614/presidents-council-of-advisors-on-science-and-technology-pcast",
    "short": "PCAST meets; it advises the Super Intelligence Task Force"
+  },
+  {
+   "date": "2026-11-06",
+   "kind": "models",
+   "title": "New OpenAI models, possibly the next Astra and Sol, could come as soon as Nov 6 (people with knowledge, via The Information, read on FourWeekMBA)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "If the next Astra is the unreleased model OpenAI acknowledged on Sept 8, its release on Nov 6 would keep alarm condition W2 from being met on Nov 7 and resolve openai-postastra-eval-or-release-by-nov7 yes (our inference). OpenAI's news feed lists GPT-6 Cyber on Nov 5 and no new Astra or Sol model as of 13:39 PT Nov 6 (OpenAI).",
+   "url": "https://fourweekmba.com/ai-openais-next-astra-could-come-as-soon-as-friday-64-days-on/",
+   "short": "OpenAI's next models reported as soon as Nov 6, possibly Astra and Sol"
   },
   {
    "date": "2026-11-07",
@@ -218,7 +238,7 @@
   {
    "date": "2026-11-15",
    "kind": "forecast",
-   "title": "Forecast deadline: Anthropic's IPO registration statement (S-1 or equivalent) is publicly filed on SEC EDGAR (anthropic-public-s1-by-nov15)",
+   "title": "Forecast deadline: Anthropic's IPO registration statement (S-1 or equivalent) is publicly filed on SEC EDGAR (anthropic-public-s1-by-nov15); resolved yes on Oct 26",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -226,7 +246,7 @@
   {
    "date": "2026-11-15",
    "kind": "forecast",
-   "title": "Forecast deadline: Microsoft, Alphabet, Amazon and Meta report July–September capex of $186.57B or more on EDGAR (big4-q3-capex-600b-ttm)",
+   "title": "Forecast deadline: Microsoft, Alphabet, Amazon and Meta report July–September capex of $186.57B or more on EDGAR (big4-q3-capex-600b-ttm); resolved yes on Oct 30",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -297,7 +317,7 @@
   {
    "date": "2026-11-30",
    "kind": "forecast",
-   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30); METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30); California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30); Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov30)",
+   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30), resolved yes on Oct 13; METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30); California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30); Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov30)",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -328,15 +348,6 @@
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
-  },
-  {
-   "date": "2026-12-31",
-   "kind": "models",
-   "title": "Gemini 4 Argon wider release: limited to trusted cyber defenders (Fairwind Program) since Sept 30; paid API customers and Google AI Ultra subscribers come next",
-   "hyp": "A",
-   "certainty": "target",
-   "why": "Google says the wider release comes \"as soon as possible\"; Google DeepMind's Koray Kavukcuoglu said in the week of Sept 21 that he hoped for well before year-end.",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
   },
   {
    "date": "2026-12-31",
@@ -398,6 +409,15 @@
    "url": "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/04/ny-overhauls-frontier-ai-transparency-law"
   },
   {
+   "date": "2027-01-04",
+   "kind": "alarm",
+   "title": "Alarm condition W2 is met for Anthropic's internal-only Models 3 and 4 unless either is released or an outside evaluation of it is announced first (clock from METR's Nov 5 report; weekly ruling of Nov 6, flagged for the owner)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "url": "https://hiddenagi.com/alarm.html",
+   "short": "W2 is met for Anthropic's Models 3 and 4 unless released or externally evaluated"
+  },
+  {
    "date": "2027-01-31",
    "kind": "forecast",
    "title": "Forecast deadline: an AI system scores 25% or more on Scale AI's Remote Labor Index (rli-25pct-by-jan31)",
@@ -412,6 +432,16 @@
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-01",
+   "kind": "policy",
+   "title": "Super Intelligence Force's report on AI's risks and opportunities, reportedly due within 120 days (TechCrunch, Daily Wire); start unstated, counted here from Oct 4",
+   "hyp": "Dopen",
+   "certainty": "approximate",
+   "why": "Led by DNI Jay Clayton (Trump, via TechCrunch), the Force reports to Trump and chief of staff Susie Wiles and is to report on AI's risks and benefits with policy recommendations (Daily Wire); that report could add or remove disclosure duties for frontier labs (our inference). The date assumes the 120 days run from the Oct 4 announcement (our inference).",
+   "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+   "short": "Super Intelligence Force's reported 120-day report, counted from Oct 4"
   },
   {
    "date": "2027-02-28",
@@ -488,6 +518,11 @@
   {
    "kind": "models",
    "title": "Gemini 4 Carbon wider release to developers, businesses and consumers (Google, Oct 28: \"a subset of cyber defenders\" first, \"starting this week\", then more trusted partners through the Fairwind Program; wider release \"as soon as possible\")",
+   "hyp": "A"
+  },
+  {
+   "kind": "research",
+   "title": "METR's next Frontier Risk Report, a review of the labs' internal models: METR \"tentatively\" plans to run \"a similar process in late 2026\" (METR, May 19)",
    "hyp": "A"
   }
  ]

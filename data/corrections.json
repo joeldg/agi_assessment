@@ -515,6 +515,26 @@
    "now": "Ten operating rows in Epoch's data centers CSV have empty Owner and Users fields; the largest is about half the largest site, far below X4's scale, so X4 is still not met (Epoch; verified fact (part our inference))",
    "url": "https://epoch.ai/data/ai-data-centers",
    "emailed": "2026-11-06"
+  },
+  {
+   "date": "2026-11-05",
+   "page": "jobs.html",
+   "item": "Baseline edition of 2026-10-06: the two items on the JOLTS hires rate in Information, and J2's starting-status reason that cites the August reading",
+   "was": "The JOLTS hires rate averaged 2.1% over June-August 2026 in Information (bls:JTS510000000000000HIR; 1.6% in August, tied with October 2023 as its lowest reading since January 2017 apart from April 2020) ... Measured against each industry's own 2017-2019 average, we find Information 16 points and Professional and business services 4 points behind the average of Construction, Health care and Leisure and hospitality ..., which puts Information at the bottom edge of its 2017-2019 range on this comparison and Professional and business services inside it. (Also: the sector's hires rate fell to 1.6% in August 2026, below its 2017-2019 range of 2.4% to 3.5%.)",
+   "now": "With the September data released on November 3, 2026, BLS revised Information's August 2026 hires rate to 2.5% (bls:JTS510000000000000HIR), inside its 2017-2019 range of 2.4% to 3.5%, and Professional and business services' to 4.3% (fred:JTS540099HIR). By our calculation on the revised data, Information's June-August average is 2.4% and about 6 points behind the comparison industries, inside its 2017-2019 range on that measure, and Professional and business services is about 3 points behind, also inside its range, so Information did not reach the bottom edge of its range in August.",
+   "url": "https://data.bls.gov/timeseries/JTS510000000000000HIR",
+   "emailed": null,
+   "section": "jobs"
+  },
+  {
+   "date": "2026-11-05",
+   "page": "jobs.html",
+   "item": "Baseline edition of 2026-10-06: the labor-share item, and J9's starting-status reason that describes a fifth straight quarterly fall",
+   "was": "The BLS nonfarm business labor share (FRED PRS85006173, index 2017=100) was 93.446 in the second quarter of 2026, down from 96.723 a year earlier and 97.871 in the first quarter of 2025, ... while output per hour (OPHNFB) rose 2.2% over the year. (J9's reason: the share fell for a fifth straight quarter to 93.4 in the second quarter of 2026.)",
+   "now": "BLS's annual revision, published with its third-quarter release of November 5, 2026, puts the second-quarter 2026 labor share at 94.362, against 96.113 a year earlier and 96.861 in the first quarter of 2025, and output per hour up 2.3% over the year (fred:PRS85006173, fred:OPHNFB). The revised share rose in the fourth quarter of 2025, from 95.254 to 95.643, so it fell in four of the five quarters to mid-2026 rather than five in a row; it stays below its 2015-2021 range of 98.9-104.2 and fell further, to 93.729, in the third quarter.",
+   "url": "https://fred.stlouisfed.org/series/PRS85006173",
+   "emailed": null,
+   "section": "jobs"
   }
  ]
 }

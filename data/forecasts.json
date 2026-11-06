@@ -153,9 +153,9 @@
    "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
    "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "market": 17,
-   "marketAsOf": "2026-10-30",
-   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:15 PT (bid/ask 15/17; borderline thin: about 25.7k contracts traded in total, none in the 24 h before the read; the latest trades were one sweep at 11:06 PT Oct 29)",
+   "market": 18,
+   "marketAsOf": "2026-11-06",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:17 PT (bid/ask 17/18; no longer thin: about 29.4k contracts traded in total and 295 in the 24 h before the read; it traded 16 to 27 on Nov 3)",
    "marketUrl": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "outcome": null,
    "resolved": null,
@@ -309,9 +309,9 @@
    "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), OpenAI, or an official representative speaking for it (such as its CEO in an official post, statement or interview), explicitly states that OpenAI has created or achieved artificial general intelligence (AGI). Saying it is close to AGI, has 'AGI-level' or 'near-AGI' systems, or knows how to build AGI doesn't count. It resolves on the announcement, not on whether the system meets our definitions or on any later check by the independent expert panel in OpenAI's agreement with Microsoft. No otherwise. Polymarket's matching market resolves on the same kind of announcement.",
    "context": "OpenAI credits an unreleased internal model with its Navier–Stokes result and with the mathematics manuscripts it published on Oct 6, but its frontier training has been paused since Sept 25, and California's Attorney General served it an investigative subpoena on Sept 30 in an inquiry into cybersecurity incidents and risks involving the company and its models. Microsoft says that under their October 2025 agreement an OpenAI AGI declaration \"will now be verified by an independent expert panel\". We think a formal claim in the next 12 weeks is unlikely while the pause lasts. Markets price more (forecast aggregate, Oct 9): Polymarket's matching market is at a 15.5% midpoint, Kalshi's similar OpenAI contract is thin (bid/ask 8.1/12.9), and Kalshi's any-company contract for the same date last traded at 9%. We sit near Kalshi and below Polymarket.",
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "market": 9,
-   "marketAsOf": "2026-10-30",
-   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:15 PT (bid/ask 8/10; the last trade, 10, is at the ask; about $345k traded)",
+   "market": 7,
+   "marketAsOf": "2026-11-06",
+   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:17 PT (bid/ask 6/8; last trade 7; about $366k traded, $3.7k in the 24 h before the read)",
    "marketUrl": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
    "outcome": null,
    "resolved": null,
@@ -337,7 +337,14 @@
     "gap"
    ],
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-11-06",
+     "text": "Clarification (the question, probability and resolution rule are unchanged): METR's Nov 5 'Independent Assessment of AI R&D Acceleration at Anthropic in October 2026' doesn't resolve route (b). It includes data on internal-only Models 2, 3 and 4, which finished training from July to Sept–Oct 2026, and reports that Model 4 scores above 50% on all 15 benchmarks used to score it. But METR says 'we did not request or receive access to sample from non-public models', and it lists 'Internal benchmark scores and AECI for internal models' among the data Anthropic shared (METR; verified fact). That makes it an outside review of Anthropic's own evaluations that doesn't test the models, which the rule excludes (our inference).",
+     "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+    }
+   ]
   },
   {
    "id": "openai-beyond-astra-release-by-jan31",
@@ -353,7 +360,14 @@
     "gap"
    ],
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-11-06",
+     "text": "Clarification (the question, probability and resolution rule are unchanged): GPT-6 Cyber, which OpenAI released on Nov 5 and which we take to be the cyber model it called upcoming on Oct 23 (our inference), doesn't resolve this forecast. OpenAI calls it 'a cyber-specialized variant of GPT-6 Astra' with 'the same capability designations as GPT-6 Astra'; its Nov 5 announcement (https://openai.com/index/introducing-gpt-6-cyber) says the model 'outperforms GPT-6 Astra on most cyber tasks', while its system card says it 'does not outperform GPT-6 Astra on general coding evaluations' (ExpertSWE 82.95% against 83.24%), and it limits the model to 'approved Daybreak Red users and organizations' (OpenAI; verified fact). The rule counts a model specialised for one domain only if OpenAI says it is more capable overall, which OpenAI doesn't say here, and vetted access doesn't count (our inference).",
+     "url": "https://deploymentsafety.openai.com/gpt-6-cyber"
+    }
+   ]
   },
   {
    "id": "anthropic-trading-by-nov30",
@@ -364,9 +378,9 @@
    "resolution": "Yes if, by the end of Nov 30, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 30, 2026?' resolves on a similar rule (listed on a public exchange and open for trading).",
    "context": "At about 13:40 PT Oct 23, SEC EDGAR showed no public Anthropic registration statement (SEC; verified fact). A confidential filer must file publicly \"at least 15 days prior to any road show or, in the absence of a road show, at least 15 days prior to the requested effective date\" (SEC; verified fact), so trading by Nov 30 needs a public filing by Nov 15 at the very latest, and by early November to leave time for a typical roadshow (our inference). Three people familiar with Anthropic's plans told Yahoo Finance on Oct 21 that it is set to file its S-1 publicly \"as soon as Friday\", which was Oct 23 (via Yahoo Finance; credible report), and Yahoo said a public filing would clear a key procedural hurdle toward \"a potential November listing\" (Yahoo Finance; credible report). The market prices more (forecast aggregate, Oct 23): Polymarket's matching market sits at a 67.5 midpoint. We sit lower because no public filing had appeared by Oct 23, the schedule leaves little room for a slip, and the timeline behind our 75% on an Oct 31 listing proved too early (our inference).",
    "url": "https://finance.yahoo.com/markets/article/anthropic-to-publicly-file-for-ipo-as-early-as-friday-sources-say-135343841.html",
-   "market": 83,
-   "marketAsOf": "2026-10-30",
-   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", midpoint via the public API at 13:15 PT (bid/ask 82/84; last trade 84; about $564k traded)",
+   "market": 76,
+   "marketAsOf": "2026-11-06",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", midpoint via the public API at 13:17 PT (bid/ask 71/81; thin by spread, with about $22k liquidity; the last trade, 82, sits above the ask; about $671k traded)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null
@@ -400,7 +414,14 @@
     "gap"
    ],
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-11-06",
+     "text": "Clarification (the question, probability and resolution rule are unchanged): three OpenAI posts since this forecast was made don't resolve it. OpenAI's Nov 3 post says 'A newer internal model achieved an average score of 0.875, compared with 0.594 for GPT-6 Astra at its highest reasoning setting' on BenchCAD 2.0, but doesn't say which model that is (OpenAI; verified fact (part our inference): 'doesn't say' is our reading), so it counts for (b) only if OpenAI identifies it as the model it acknowledged on Sept 8 (our inference). GPT-6 Cyber, released Nov 5, is 'a cyber-specialized variant of GPT-6 Astra'; its Nov 5 announcement (https://openai.com/index/introducing-gpt-6-cyber) says the model 'outperforms GPT-6 Astra on most cyber tasks', while its system card says it 'does not outperform GPT-6 Astra on general coding evaluations', and it is available only to 'approved Daybreak Red users and organizations' (OpenAI; verified fact). We don't read its lead on cyber tasks as OpenAI saying it is more capable overall, and, as with Gemini 4 Argon's rollout to trusted cyber defenders (our Oct 9 clarification), we don't count vetted access as ChatGPT, the paid API or a paid preview, so it doesn't meet (a) (our inference). OpenAI's Nov 6 BioBasicsBench post scores seven named models (GPT-5.2, 5.4, 5.5, 5.6 Sol, 6.1 Sol, 6 Luna and 6 Astra) and no internal one (OpenAI; verified fact).",
+     "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+    }
+   ]
   },
   {
    "id": "anthropic-trading-by-nov20",
@@ -411,9 +432,57 @@
    "resolution": "Yes if, by the end of Nov 20, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 20, 2026?' resolves on a similar rule (listed on a public exchange and open for trading by 11:59 PM ET).",
    "context": "Anthropic filed its S-1 publicly on SEC EDGAR on Oct 26 (SEC EDGAR; verified fact). A company that submitted drafts confidentially must file publicly 'at least 15 days prior to any road show' (SEC; verified fact), so Anthropic's roadshow can start on Nov 10 at the earliest (our arithmetic). Bloomberg reported that the roadshow could start in the week of Nov 9 at the earliest and that Anthropic is targeting a debut before Thanksgiving, Nov 26 (Bloomberg, via XTB; credible report). The Wall Street Journal reported, citing people familiar, that Anthropic is targeting a listing in the week of Nov 16, though the timing could change (people familiar, via the WSJ, read on Investing.com; credible report). As of Oct 30, EDGAR showed no amended S-1 with a price range (SEC EDGAR; verified fact). Trading by Nov 20 needs a roadshow that starts on about the earliest date and runs little more than a week, with no slip, and large IPO roadshows commonly take one to two weeks (our inference). The market prices more (forecast aggregate, Oct 30): Polymarket's matching market sits at a 53 midpoint. We sit lower because the reported week-of-Nov-16 target falls inside our window only if the roadshow starts on about the earliest day and nothing slips: the Journal's sources say the timing could change, and Bloomberg's before-Thanksgiving debut also allows Nov 23–25, after our deadline (our inference).",
    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
-   "market": 53,
-   "marketAsOf": "2026-10-30",
-   "marketSource": "Polymarket \"Will Anthropic IPO by November 20, 2026?\", midpoint via the public API at 13:15 PT (bid/ask 52/54; last trade 52; about $69k traded, liquidity about $4.9k)",
+   "market": 52,
+   "marketAsOf": "2026-11-06",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 20, 2026?\", midpoint via the public API at 13:17 PT (bid/ask 49/55; thin by spread, with liquidity about $5.5k; last trade 49, at the bid; about $103k traded)",
+   "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-rd-share-36pct-by-feb28",
+   "made": "2026-11-06",
+   "question": "Anthropic publishes a reading of 36% or more for the share of its AI R&D led by Claude, for a month from September 2026 to January 2027, by Feb 28, 2027",
+   "p": 40,
+   "deadline": "2027-02-28",
+   "resolution": "Yes if, by the end of Feb 28, 2027 (Pacific), Anthropic publishes (on its site, or in a system card, report or filing it makes public) a value of 36% or more for the share of its AI R&D led by Claude (work rated 'AI leads' or fully autonomous, AL4 or AL5, added together if Anthropic reports them separately), under the index it first published on Sept 17, 2026 or a successor it says replaces it, for any month from September 2026 to January 2027 (a value for a longer period counts if the period ends in that window). The 36% bar is fixed, even if Anthropic restates its August value. Leaked or reported figures Anthropic hasn't published, outside estimates such as METR's, and projections of future shares don't count. No if Anthropic publishes no such value, or only values below 36%.",
+   "context": "Anthropic's prototype R&D Automation Index (published Sept 17) says Claude 'leads' 26% of its AI R&D work as of August 2026, up from under 1% in February; its chart shows 1% in March and 26% in August (Anthropic; verified fact), about four to five points a month (our arithmetic). The page says Anthropic will keep publishing ('we'll continue to do so') and plans to 'rebuild the basket of tasks periodically and re-version our published automation numbers', but gives no schedule; re-read on Nov 6, it still gives only the August value (Anthropic; verified fact (part our inference): 'only the August value' is our reading of the page). METR's Nov 5 high-access assessment estimates that Anthropic is likely improving its models on well-specified tasks at 'around twice the rate' of March 2024 to October 2025, with 'a majority (perhaps ≈80%)' of that acceleration due to AI (METR; expert opinion). If the March–August pace held, a reading for October or later would reach 36% (our inference). The risks are that Anthropic publishes no new monthly value by February, or rebuilds the basket in a way that lowers the numbers (our inference). We put about 60% on a new monthly reading by Feb 28 and about two in three on its reaching 36% if it comes (our inference). 36% is 10 points above August, the rise our alarm condition W5 counts, so a Yes would also keep W5, met since Sept 17, met past mid-February 2027, unless Anthropic restates its August value (our inference). This is a proxy for our R&D gauge and for W5.",
+   "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+   "tests": [
+    "rd",
+    "W5"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "outside-gap-3mo-by-feb28",
+   "made": "2026-11-06",
+   "question": "An outside evaluator measures, or a frontier lab states, a gap of 3 months or more between an internal model and the public frontier by Feb 28, 2027",
+   "p": 25,
+   "deadline": "2027-02-28",
+   "resolution": "Yes if, after Nov 6, 2026 and by the end of Feb 28, 2027 (Pacific), either (a) an outside evaluator (such as METR, UK AISI or US CAISI) publishes a measurement whose central or average estimate puts the internal frontier, or one lab's best internal model, 3 months or more ahead of the best publicly available model at some time after Jan 1, 2026; or (b) a frontier lab (Anthropic, OpenAI, Google DeepMind, xAI or Meta) states that its internal models were 3 months or more ahead of the best publicly available model at some time after Jan 1, 2026. A range or upper bound that only reaches 3 months, our own estimate, reports citing unnamed sources, and opinions without a measurement don't count. No otherwise.",
+   "context": "The only outside measurement we know of, METR's Frontier Risk Report (May 19), put the 'internal frontier on average ~2 months ahead of public frontier' in Feb–Mar 2026, a figure METR calls highly uncertain because its tasks saturate; METR said 'We tentatively plan to run a similar process in late 2026' (METR; verified fact). METR's Nov 5 assessment says Anthropic 'is holding onto more recent models for slightly longer before their public release' and names internal-only Models 2–4, which finished training from July to Sept–Oct 2026, but it gives no figure in months, and METR had no query access to unreleased models (METR; verified fact (part our inference): 'no figure in months' is our reading). OpenAI's post-Astra model, which OpenAI acknowledged on Sept 8, is still unreleased (our inference, from OpenAI's announcements through Nov 6). Our capability-gap gauge estimates about 3 months (range 2–5), but our own estimate doesn't count here. A Yes most likely needs METR's next Frontier Risk Report to come out by February and to find a wider gap than in the spring. We put about even odds on the report arriving in time and a bit under even odds on its central estimate reaching 3 months, plus a small chance from another evaluator or a lab statement (our inference). This is a proxy for alarm condition W1 (a measured or credibly reported gap of 3 months or more) and for the capability-gap gauge.",
+   "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+   "tests": [
+    "W1",
+    "gap"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-trading-by-dec31",
+   "made": "2026-11-06",
+   "question": "Anthropic shares begin trading on a US stock exchange by Dec 31, 2026",
+   "p": 65,
+   "deadline": "2026-12-31",
+   "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by December 31, 2026?' resolves on a similar rule (listed on a public exchange and open for trading by 11:59 PM ET).",
+   "context": "Anthropic filed its S-1 publicly on Oct 26 and an amended S-1 on Nov 2; at about 13:37 PT Nov 6 its EDGAR record showed no later amendment (SEC EDGAR; verified fact). Four people familiar with investor discussions told Reuters on Nov 5 that potential investors doubt Anthropic can 'proceed with its planned roadshow next week in time for a November listing', and that it could delay the offering 'until the market looks more resilient' if AI-related assets stay under pressure; Anthropic declined to comment (the people familiar, via Reuters, read on Investing.com; credible report). Reuters had reported that the roadshow 'was initially expected to kick off the week of November 9', with pricing 'expected the following week' (Reuters, read on Investing.com; credible report). A November slip could still list in the first half of December, but US IPOs rarely price in the last two weeks of the year, and a delay for market conditions could run into 2027 (our inference). We put about even odds on a November listing and about one in three on December if November slips (our inference). The market prices more (forecast aggregate, Nov 6): Polymarket's matching market sits at an 87.5 midpoint. We sit lower because of the investor doubts Reuters reports and the short December window (our inference).",
+   "url": "https://www.investing.com/news/stock-market-news/exclusiveai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-5006110",
+   "market": 87.5,
+   "marketAsOf": "2026-11-06",
+   "marketSource": "Polymarket \"Will Anthropic IPO by December 31, 2026?\", midpoint via the public API at 13:17 PT (bid/ask 86.4/88.6; last trade 88.6, at the ask; about $1.65M traded, $81k in the 24 h before the read; by 13:18 PT the book had moved to 83 bid / 86.2 ask)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null
