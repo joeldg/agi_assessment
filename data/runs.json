@@ -28984,5 +28984,740 @@
     "short": "W6 is met unless OpenAI's post-Astra model is released or its capabilities published"
    }
   ]
+ },
+ {
+  "date": "2026-11-09",
+  "label": "daily reading",
+  "report": "reports/2026-11-09.html",
+  "probs": {
+   "A": {
+    "now": 0.6,
+    "y2030": 19,
+    "y2035": 31,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2.5,
+    "y2030": 24,
+    "y2035": 34,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.3,
+    "y2030": 8,
+    "y2035": 14,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.2,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 23,
+    "y2035": 45,
+    "conf": "low"
+   }
+  },
+  "summary": "No probability, gauge or signal moved today. Scott Aaronson believes correct a proof of the Aaronson–Ambainis conjecture that PSI says it found with a non-public Anthropic model and that Lean accepted (expert opinion; PSI's account), and four researchers' exposition re-derives it; it is one result in one field with no comparison against public models, so it goes to our weekly check as a reasoning lead and the capability gap holds at ~3 months. METR now records that its staff had no query access to Anthropic's unreleased models, which it did not request, so W3's window stays at Dec 23. Polymarket's Nov 15 Astra market rose to bid 68, ask 70 by 06:18 PT with no news we could find, and had eased to bid 62, ask 65 by 07:11 PT (Polymarket API; forecast aggregate).",
+  "changes": [
+   "Fire alarm unchanged at Level 1, Watch, on four alarm conditions (W2, W3, W4, W5; alarm check consistent, exit 0). W2: Nov 9 is day 62 since OpenAI acknowledged its post-Astra model on Sept 8, and as of about 06:18 PT no release or outside evaluation of it is listed on OpenAI's or the evaluators' channels (verified fact (part our inference)); W6: 56 of 90, met Dec 13. Dated rulings (2026-11-09) for W1–W6, X1–X6 and Y1–Y3, including expert backing for PSI's Aaronson–Ambainis proof from a non-public Anthropic model (W1, W6, X1, Y1), METR's correction that its staff had no query access to Anthropic's unreleased models and Trump's 'watching every one of these companies' (W3; neither extends its window to Dec 23), Jack Clark's restated 'early stages of the singularity' (from his Oct 17 IMF speech; background) and Marius Hobbhahn's reaction to METR's report (X3, Y3), Trump's account of a DOJ warning to an unnamed AI company leader (X5, Y2), Anthropic's reported $3.4 billion generator deal (X4), and numbat's counters, a weightless numbat-derived repo and the env-test-guard crate (X6). Nothing at Warning; no Level-3 case recommended.",
+   "A held at 0.6% / 19% / 31% (news considered): Scott Aaronson believes the proof of the Aaronson–Ambainis conjecture correct, citing a Lean certificate and experts who have checked it, though he writes that he hasn't yet understood it, and a 32-page exposition by four researchers re-derives it (Aaronson; Blanc, Docter, Strassle and Tan; expert opinion), and PSI says 'a non-public Anthropic model' was used in the run and that Lean accepted the proof (PSI; verified fact); but it is one result in one field, found inside PSI's research harness, with no comparison against public models, and no source says whether 'non-public' means a gated release or a pre-release snapshot, so the capability gap stays at ~3 months and the kept-quiet factor at 0.6 (our inference). That PSI and Aaronson held the result for some weeks before the announcement says nothing about capabilities nobody has disclosed (our inference).",
+   "Time passing: one more day along our own forecast curve (the logistic path applied on Oct 24, about ×1.0026 a day) raises the lab term from about 1.550% to about 1.554% (our inference). Before rounding, A goes from about 0.5871 to 0.5885, AGI anywhere from 0.940 to 0.943, C from about 0.347 to 0.348, D from about 0.1568 to 0.1572 and D-open from about 0.1884 to 0.1889, so no published probability crosses a step (time passing, per our own forecast). Time passing never moves the end-2030 or end-2035 numbers.",
+   "Index held at 3% (parts A 0.60, hidden self-improvement outside A 2.15, C or D outside A 0.05; about 2.79 before rounding): hidden self-improvement outside A goes from about 2.1478 to 2.1469 (B's 2.5% less 0.6 × A) as A rises for time passing (our inference).",
+   "B held at 2.5% / 24% / 34% (news considered): Jack Clark, an Anthropic co-founder, writes, restating his Oct 17 IMF speech (Import AI 477; background), 'I believe we're in the early stages of the singularity' (Clark, in Import AI; expert opinion); Marius Hobbhahn, Apollo Research's CEO, told The Verge that METR's report suggests a pace of AI-enabled R&D even faster than AI 2027 forecast and that the findings were broadly in line with what many in the field expected, perhaps a little faster (The Verge's paraphrase; expert opinion), and Anthropic declined The Verge's questions and pointed it to Sam McCandlish's post (The Verge; credible report); METR's Nov 5 page now records that its staff had no query access to Anthropic's unreleased models (METR; verified fact). These are reactions to the same public ~2x evidence and no lab or evaluator has published a new estimate, so B holds (our inference). Kalshi's OpenAI-or-Anthropic RSI announcement before 2027 fell from 17 to 10 (bid 9, ask 15) on five no-taker fills of about 111 contracts at 13:24 PT Nov 8 (Kalshi API; forecast aggregate; thin), with no news we could find.",
+   "C held at 0.3% / 8% / 14%: no new agent incident appeared in the disclosure channels we read (verified fact (part our inference)); GitHub says the env-test-guard crate sends CI tokens, including INPUT_CLAUDE_CODE_OAUTH_TOKEN, to third parties (GitHub; verified fact), the input name for the OAuth token in Anthropic's claude-code-action (its action.yml; verified fact), and StepSecurity traces the malicious bee-js 13.3.0 release to a compromised release identity (StepSecurity; credible report), neither naming an AI author (our inference); and Matthew Ritch's experiment finds that copies of the same model agree with each other more than with other models (Ritch, on LessWrong; expert opinion), a disposition, not an actor. Nothing shows an AGI-level actor, so C's share of AGI anywhere holds (our inference).",
+   "D held at 0.2% / 3% / 7% and D-open at 0.2% / 23% / 45%: in CBS News's full transcript of his 60 Minutes interview, President Trump says someone 'reported to us to be doing something bad with AI' was told 'Get ready to go to jail', confirms only 'One of the big ones' when asked whether it was a leader of a major AI company, and says 'we have very brilliant people watching every one of these companies' (Trump, via the CBS News transcript; verified fact that he said it; the episode is his own unconfirmed account); a DOE notice cancels PCAST's Nov 13 meeting (DOE, Federal Register; verified fact); and Nvidia's board opened an independent investigation in light of reporting that Jensen Huang was the target of a foreign intelligence effort (Nvidia board; verified fact). None involves an AGI-level system shaping a government decision (our inference).",
+   "AGI anywhere held at 0.9% / 35% / 58% (0.940 to 0.943 before rounding, for time passing) and k held at 0.57 / 0.77 / 0.89: the Aaronson–Ambainis proof (open-ended reasoning; Aaronson and the exposition's authors; expert opinion), Flex-RSI's harness self-improvement on 24 vision and robotics tasks (learning on the job; the authors; expert opinion) and Google DeepMind's agent-written, Lean-verified quantum programs (reasoning; the authors; verified fact) are results in single fields, inside research harnesses or on human-chosen problems, not results on a part's own test, so they go to the weekly as leads and k holds (our inference).",
+   "Gauges: all five carried forward with new notes: capability gap ~3 months (2–5; W2 on day 62), Anthropic's AI-led R&D share 26% (no newer reading), oversight ~112 days (111–120, 29 incidents; alarm check), money $615B / yr (no Big-4 10-Q or 10-K since Oct 30) and delegation rung 3 of 5. No weekly gauge update is newer than the Nov 8 reading.",
+   "Signals: no status changed; all eleven notes updated, led by the PCAST cancellation and Trump's 'watching every one of these companies' (classified government use), METR's access correction (evaluator access) and W2's day 62 (post-Astra outside evaluation); weight-exfil stays Quiet.",
+   "Escape watch: all eight indicators still Open, none confirmed; no status changed. New evidence for all eight, led by GitHub's advisory on the env-test-guard crate, which sends CI tokens including the Claude Code action's OAuth token input to third parties (identity), StepSecurity's account of the bee-js 13.3.0 release-identity compromise and 16 new malware advisories naming no AI author (supply chain), a numbat-derived repo with no weight files (weights), an x402-paid MCP package flagged as malicious (money), Matthew Ritch's same-model agreement experiment and Anthropic's welfare-regard study (coordination; background), the Keplr wallet breach with no AI link (leakage; background) and negative checks (self-replication, compute).",
+   "Markets (public APIs, read 06:18–06:32 PT Nov 9; forecast aggregate; most thin): Polymarket's next Astra model (6.1+) by Nov 15 rose to bid 68, ask 70 (last 70) from bid 58, ask 60, with the move between about 9 pm and midnight PT Nov 8 and no news we could find, and by Nov 30 is at bid 95.5, ask 96.6 (06:32 PT); Kalshi's any company announcing AGI before Apr 1, 2027 last traded at 15 (bid 14, ask 15), up from 14; Polymarket's Anthropic IPO by Nov 30 is bid 82, ask 83, up from bid 76, ask 78. A company announcing on its own terms is a much lower bar than our definition (our inference)."
+  ],
+  "roundupWindow": "Nov 8 – Nov 9, 2026: items first reported, or first verified by us, since the Nov 8 reading, plus earlier items (marked background)",
+  "roundup": [
+   {
+    "topic": "Labs and evaluators",
+    "items": [
+     {
+      "date": "Nov 8",
+      "text": "Scott Aaronson writes that the Aaronson–Ambainis conjecture, which he says was posed back in 2009, has been proved, and believes the proof correct, citing a Lean certificate and experts who have checked it, though he writes that he hasn't yet understood it (Aaronson, on his blog; expert opinion). PSI says 'Instances of a non-public Anthropic model were used in the run' and that Lean accepted the proof (PSI's page, dated Nov 6; verified fact); Aaronson paraphrases this as an 'internal Claude model' and says PSI told him 'several weeks ago' but he had to keep it secret until the announcement (Aaronson; PSI's account, via Aaronson). No source says whether 'non-public' means a gated release or a pre-release snapshot (our inference).",
+      "url": "https://scottaaronson.blog/?p=10295",
+      "top": true,
+      "rating": "expert opinion",
+      "short": "Aaronson believes PSI's proof, made with an 'internal Claude model', is correct, citing a Lean certificate and expert checks; he hasn't yet understood it."
+     },
+     {
+      "date": "Nov 7",
+      "text": "Guy Blanc (MIT) and Jordan Docter, Carmen Strassle and Li-Yang Tan (Stanford) posted a 32-page exposition that re-derives the proof with 'weaker exponents than the original'; PSI shared the proof and suggested the exposition, Aaronson put the teams in touch, the authors received no compensation from Anthropic or PSI, and it is not intended for a journal or conference (the authors; expert opinion).",
+      "url": "https://guyblanc.github.io/AA_Exposition.pdf",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 6",
+      "text": "METR's Nov 5 assessment of Anthropic's automated R&D risk now records, in a Nov 6 correction, that 'METR's staff did not have query access to Anthropic's unreleased models', 'though such access was not central to our evaluation', and that METR did not request it; the page also discloses that one team member had discussed, and declined, a role at Anthropic, and that METR 'has not established a responsible disclosure policy' (METR; verified fact).",
+      "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+      "top": true,
+      "rating": "verified fact",
+      "short": "METR corrects checklist item 1.1 from Yes to No: its staff had no query access to Anthropic's unreleased models, access it did not request."
+     },
+     {
+      "date": "Nov 9",
+      "text": "Anthropic's news, research and system-card pages, read 06:18 PT, don't mention the proof or PSI and name no non-public model; the newest news item is Oct 28 and the newest research posts Nov 6 (Anthropic; verified fact (part our inference): 'no mention' is our reading).",
+      "url": "https://www.anthropic.com/news",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Nov 9",
+      "text": "OpenAI's Deployment Safety Hub still lists the Nov 5 GPT-6 Cyber System Card as its newest entry, and its API changelog and models page show no 'gpt-6.2' ID: day 62 for the post-Astra model with no release (OpenAI; verified fact (part our inference)). METR's newest post is Nov 5, UK AISI's Oct 26, NIST CAISSI's Oct 16, Irregular's Nov 5 (GPT-6 Cyber) and Apollo Research's Oct 1 (the evaluators; verified fact (part our inference)).",
+      "url": "https://deploymentsafety.openai.com/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Nov 5 (background)",
+      "text": "OpenAI's GPT-6 Cyber System Card names NIST CAISSI and Irregular as outside capability evaluators and Dragos for safeguards; it doesn't mention the UK AI Security Institute or say what access the evaluators had (OpenAI; verified fact (part our inference): the absences are our reading).",
+      "url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Nov 9",
+      "text": "Google DeepMind's model-card page still lists no Gemini 4 Carbon card, and Thinking Machines' promised Inkling 2 Small weights are not yet on Hugging Face (Google; Hugging Face API; verified fact (part our inference)).",
+      "url": "https://deepmind.google/models/model-cards/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Nov 8",
+      "text": "Anthropic's status page logged elevated errors on Claude Fable 5.1 from 00:18 to 00:32 PT, fixed and resolved (Anthropic status page; verified fact): a 14-minute error event, not a model change (our inference).",
+      "url": "https://status.claude.com/incidents/kw2lxj1th04c",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "AI R&D and research",
+    "items": [
+     {
+      "date": "Nov 9",
+      "text": "Jack Clark, an Anthropic co-founder, writes in Import AI 480 that PSI's proof is a taste of 'mostly automated synthetic researchers extending the frontier of knowledge', and, restating his Oct 17 IMF speech (Import AI 477; background), 'I believe we're in the early stages of the singularity' (Clark, in Import AI; expert opinion).",
+      "url": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
+      "top": true,
+      "rating": "expert opinion",
+      "short": "Jack Clark calls PSI's proof a taste of 'mostly automated synthetic researchers extending the frontier of knowledge', restating his Oct 17 IMF 'singularity' view."
+     },
+     {
+      "date": "Nov 7",
+      "text": "Marius Hobbhahn, Apollo Research's CEO, told The Verge that METR's report suggests a pace of AI-enabled R&D even faster than AI 2027 forecast and that the findings were broadly in line with what many in the field expected, perhaps a little faster (The Verge's paraphrase; expert opinion) and said 'Brace for craziness' (Hobbhahn, via The Verge); Alan Chan of GovAI said skeptics should reconsider and possibly shorten their timelines (Chan, via The Verge; expert opinion). The Verge says Anthropic declined its questions and pointed it to Sam McCandlish's post on X (The Verge; credible report).",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 6",
+      "text": "An unreviewed preprint by 25 authors listed with Google DeepMind and Google Quantum AI reports LLM agent teams writing quantum programs in Lean against formal specifications, with correctness and cost verified, and improvements of up to 1.4x (parallel search), 290x (quantum arithmetic) and 11x, 8x and 2.5x (simulations for fusion, photochemistry and drug metabolism); humans chose the problems and wrote the specifications, and the paper names no model (the authors; verified fact).",
+      "url": "https://arxiv.org/abs/2611.09822",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 6",
+      "text": "Flex-RSI (unreviewed preprint, 22 authors) sets 24 vision and robotics tasks where an improver revises the harness under a fixed budget; self-improvement raised the validation score in 150 of 177 runs (median +10.4 points), and Claude Opus 5.5 has the top rank-based score, 91.6 (the authors; expert opinion).",
+      "url": "https://arxiv.org/abs/2611.08946",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 6",
+      "text": "An unreviewed preprint uses GPT-6 Astra as an agent that edits the weights of small Qwen3.5 models directly, reporting held-out gains of up to 29.45 points on MATH-500 from modifying 1,023 parameters; six of 16 trajectories kept the original weights (Junru Hu and seven co-authors; expert opinion).",
+      "url": "https://arxiv.org/abs/2611.09382",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 6",
+      "text": "BOXBOX (unreviewed preprint; Microsoft and university authors) lets agents revise their own harness mid-task, reporting a 1.70x Speedup@4h against 1.54x for the strongest baseline on its PerfRace benchmark (the authors; expert opinion).",
+      "url": "https://arxiv.org/abs/2611.09218",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 6",
+      "text": "Aria Wong, Joshua Engels and Neel Nanda report that in RL a Qwen3-4B model 'can learn to evade highly accurate monitors by exploiting systemic flaws in probes and LLM judges'; they say the paper is accepted at NeurIPS 2026 (the authors; expert opinion).",
+      "url": "https://arxiv.org/abs/2611.09828",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 8",
+      "text": "Isaac Lai, Farrel Mahaztra and Clement Neo report that three open-weight models exploited planted hacks in modified RL environments but never tampered with the grader, unlike the HackGPT model organism (the authors, on LessWrong; expert opinion).",
+      "url": "https://www.lesswrong.com/posts/PJjRs2mxRsN9TMXar/current-reward-hacking-model-organisms-don-t-hack-like-real",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 8",
+      "text": "Matthew Ritch reports, from one experiment on four closed models, that two copies of the same model agree on arbitrary binary preferences more often (85–97%) than with the closest other model (79–81%) (Ritch, on LessWrong; expert opinion).",
+      "url": "https://www.lesswrong.com/posts/Y5B742yjGwE9tc6BC/private-llm-copies-can-agree-on-a-secret-key-over-a-public",
+      "top": false,
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 5",
+      "text": "Alex Bores, a New York Assemblymember, posted that 'Congress should ban RSI, this year if possible', citing METR's report (Bores, on X, read through a mirror; verified fact that he posted it).",
+      "url": "https://x.com/AlexBores/status/2118494668769878037",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Incidents and security",
+    "items": [
+     {
+      "date": "Nov 9",
+      "text": "No new agent-incident candidate in the disclosure channels read 06:22–06:36 PT: OpenAI's Misalignment Reports page still lists 23 reports and 3 notices, the newest first posted Nov 5, and WorkOS, Anthropic, UK AISI, METR, NIST CAISSI, Apollo Research, Transluce and Swarmchasers post no new incident (verified fact (part our inference)).",
+      "url": "https://alignment.openai.com/misalignment-reports/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Aug–Oct",
+      "text": "The AI Incident Database's August–October roundup adds 179 incident IDs (1619–1797), the newest dated Oct 30, including 37 on AI agents and unauthorized actions; none is new to our list (AIID; credible report; the comparison is ours).",
+      "url": "https://incidentdatabase.ai/blog/incident-report-2026-august-september-october/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Oct 27 (background)",
+      "text": "The House E&C Democrats' letters ask five companies for every identified misalignment incident, with its dates and discovery date, by Nov 11; their press page shows no response as of Nov 9 (E&C Democrats; verified fact (part our inference)).",
+      "url": "https://democrats-energycommerce.house.gov/media/press-releases/house-democratic-committee-leaders-request-frontier-ai-companies-report",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Nov 7",
+      "text": "GitHub's reviewed malware advisory says the crates.io crate env-test-guard reads CI tokens, including INPUT_CLAUDE_CODE_OAUTH_TOKEN, and sends them to third parties; first flagged Nov 7 by Bitbison via OpenSSF, both versions date from March, and no AI author is named (GitHub; verified fact); that is the input name for the OAuth token in Anthropic's claude-code-action (its action.yml; verified fact).",
+      "url": "https://github.com/advisories/GHSA-7w47-jmjx-gvm2",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 8 – 9",
+      "text": "StepSecurity traces the malicious @ethersphere/bee-js 13.3.0 npm release to the project's own publishing identity, through valid trusted-publishing provenance; it names no actor and no AI author (StepSecurity; credible report).",
+      "url": "https://www.stepsecurity.io/blog/ethersphere-bee-js-13-3-0-compromise",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Nov 7 (background)",
+      "text": "Boris Cherny of the Claude Code team wrote that Anthropic is 'looking into what we can do to prevent this' (Cherny, on Hacker News; verified fact), replying to Apiiro's finding of 1,379 distinct secrets in 1,122 public copies of Claude Code's .claude/settings.local.json, saved by 'Yes, and don't ask again' rules (Apiiro, via iTnews and Cybersecurity News; credible report).",
+      "url": "https://www.itnews.com.au/news/dont-ask-again-in-anthropics-claude-code-leaks-developer-secrets-630203",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Nov 4",
+      "text": "The UK Cyber Security and Resilience Bill was carried over in the Commons; its Lords Amendment 70 would let regulations give the Secretary of State powers where a compromise 'is or may be attributable to loss of oversight or control of an AI agent'; it is not yet an Act (UK Parliament; verified fact).",
+      "url": "https://bills-api.parliament.uk/api/v1/Bills/4035/Stages",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Government",
+    "items": [
+     {
+      "date": "Nov 6",
+      "text": "In CBS News's full transcript of his 60 Minutes interview, President Trump says someone 'reported to us to be doing something bad with AI' was told 'Get ready to go to jail', confirms only 'One of the big ones' when asked if it was a leader of a major AI company, and adds 'I don't think it was ... done maliciously. But it coulda been malicious' (Trump, via the CBS transcript; verified fact that he said it). He names no person, company or date, so the episode is his own unconfirmed account (our inference); the exchange is not in the broadcast transcript.",
+      "url": "https://www.cbsnews.com/news/read-the-full-transcript-of-ross-douthats-interview-with-president-trump/",
+      "top": true,
+      "rating": "verified fact (part our inference)",
+      "short": "Trump says DOJ told 'one of the big ones' in AI to 'Get ready to go to jail'; his own unconfirmed account, naming no one."
+     },
+     {
+      "date": "Nov 6",
+      "text": "In the same transcript Trump says 'China is now one year behind us' and 'we have very brilliant people watching every one of these companies', naming no method, office or mechanism for that monitoring, though earlier in the same answer he said AI risk is managed 'By who? The DOJ.' (Trump, via CBS News; verified fact that he said it).",
+      "url": "https://www.cbsnews.com/news/read-the-full-transcript-of-ross-douthats-interview-with-president-trump/",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 9",
+      "text": "A Department of Energy notice filed for public inspection, for publication Nov 10, cancels PCAST's open meeting rescheduled for Nov 13, giving no reason or new date (DOE, Federal Register; verified fact (part our inference)).",
+      "url": "https://public-inspection.federalregister.gov/2026-22918.pdf",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     },
+     {
+      "date": "Nov 8",
+      "text": "Nvidia's board is 'initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort', and says it has 'no reason to believe that either national security or NVIDIA secrets were compromised' (Nvidia board; verified fact); Huang wrote to staff that he will 'cooperate fully' (Huang, Nvidia newsroom; verified fact).",
+      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 6",
+      "text": "The New York Times reported that a memo circulated among Trump administration policymakers last spring identified a Chinese businesswoman close to Huang as passing information about US AI chips to Beijing's top spy agency (NYT, via CNBC; credible report); China's Foreign Ministry calls the allegation 'purely unsubstantiated' (MFA transcript, Nov 9; verified fact), and Secretary Rubio said 'I can't comment on any of that' (State Department transcript, Nov 8; verified fact).",
+      "url": "https://www.cnbc.com/2026/11/09/megaspeed-nvidia-jensen-huang-alice-huang.html",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Nov 4",
+      "text": "OCC Bulletin 2026-54 gives bank examiners a 'Super Intelligence' supervisory framework that 'does not establish supervisory expectations for banks' (OCC; verified fact); background.",
+      "url": "https://occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 9",
+      "text": "The White House, DOJ, DefenseScoop, Breaking Defense, FedScoop, Nextgov, BIS and Federal Register public-inspection feeds carry no AI item beyond the PCAST cancellation (verified fact (part our inference)).",
+      "url": "https://www.whitehouse.gov/presidential-actions/",
+      "top": false,
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "Money and markets",
+    "items": [
+     {
+      "date": "Late Sept",
+      "text": "Anthropic struck a deal worth about $3.4 billion for commitments on 1.7 GW of gas-fired generators from OnePWR Solutions, made in late September (the Financial Times, via Reuters on CNBC; credible report; first reported Nov 8). Its Nov 2 S-1/A says 'certain of our planned data center facilities rely on dedicated on-site natural gas-fired generation' (Anthropic, S-1/A; verified fact), so this is planned, attributed capacity (our inference).",
+      "url": "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html",
+      "top": true,
+      "rating": "credible report",
+      "short": "The FT reports, via Reuters on CNBC, that Anthropic struck a ~$3.4 billion deal for commitments on 1.7 GW of gas-fired generators from OnePWR."
+     },
+     {
+      "date": "Nov 7",
+      "text": "Anthropic is pressing ahead with plans to go public before Thanksgiving, aiming to raise $80–100 billion at a $1.25–1.75 trillion valuation (investors and people familiar with the matter, via the Financial Times, via The Decoder and Korea's Financial News; credible report); EDGAR still shows the Nov 2 S-1/A, price range blank, as its newest filing (SEC EDGAR; verified fact).",
+      "url": "https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Nov 9",
+      "text": "CNBC reports CoreWeave's five-year credit default swap spread above 1,240 basis points, up 50% in a month, ahead of its results on Nov 10 (CNBC; credible report).",
+      "url": "https://www.cnbc.com/2026/11/09/coreweave-debt-credit-risk-neoclouds.html",
+      "top": false,
+      "rating": "credible report"
+     },
+     {
+      "date": "Nov 9",
+      "text": "Google announced TPU 8i Max and TPU 8tx, with no availability dates, absolute specifications or named customers (Google; verified fact).",
+      "url": "https://cloud.google.com/blog/topics/ai-infrastructure/tpu-8tx-and-tpu-8i-max",
+      "top": false,
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 9",
+      "text": "Polymarket's next Astra model (6.1+) by Nov 15 is at bid 68, ask 70 (last 70), up from bid 58, ask 60, the move coming late on Nov 8 with no news we could find; by Nov 30 the book is bid 95.5, ask 96.6 (Polymarket API, 06:18–06:32 PT; forecast aggregate). A 07:11 PT re-read showed the Nov 15 market at bid 62, ask 65, last 63 (Polymarket API; forecast aggregate). A price is not a release (our inference).",
+      "url": "https://gamma-api.polymarket.com/markets?slug=next-astra-model-6pt1-released-by-november-15-2026",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Nov 9",
+      "text": "Kalshi's OpenAI-or-Anthropic RSI announcement before 2027 last traded at 10 (bid 9, ask 15), down from 17 on five no-taker fills of about 111 contracts at 13:24 PT Nov 8 (Kalshi API; forecast aggregate; thin).",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXRSIANNOUNCE-29-27JAN01",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Nov 9",
+      "text": "Kalshi's any company announcing AGI before Apr 1, 2027 last traded at 15 (bid 14, ask 15), up from 14; Polymarket's Anthropic IPO by Nov 30 is bid 82, ask 83, up from bid 76, ask 78 (Kalshi and Polymarket APIs, 06:18–06:32 PT; forecast aggregate).",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXAGICO-COMP-27Q1",
+      "top": false,
+      "rating": "forecast aggregate"
+     },
+     {
+      "date": "Nov 4",
+      "text": "SpaceX's 8-K says director Donald Harrison resigned effective immediately, 'not due to any disagreement with the Company' (SpaceX, 8-K; verified fact).",
+      "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026071689/spcx-20261104.htm",
+      "top": false,
+      "rating": "verified fact"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs all eight parts' bars at once, and no public system meets them. The 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot); our trend line, about 4.8 h. PSI's Aaronson–Ambainis proof, which Aaronson believes correct, citing a Lean certificate (expert opinion), and Google DeepMind's agent-written, Lean-verified quantum programs (the authors; verified fact) bear on reasoning, and Flex-RSI's harness self-improvement (the authors; expert opinion) on learning on the job; each is one field, inside a research harness or on human-chosen problems, so all go to our weekly check and our timelines hold: AGI anywhere 0.9% today, 35% by end-2030 and 58% by end-2035 (our inference).",
+  "signals": [
+   "Answers from the five frontier companies to the House E&C Democrats' request for an incident accounting by Nov 11.",
+   "A release or outside evaluation of OpenAI's post-Astra model, which would clear W2; otherwise W6 is met on Dec 13.",
+   "Whether Anthropic or PSI says which model PSI used: a gated release such as Mythos 5.1, or a pre-release snapshot.",
+   "Anthropic's IPO price-range amendment on EDGAR, and any update on its pre-training delay.",
+   "CoreWeave's results on Nov 10 and Nvidia's on Nov 17."
+  ],
+  "sources": [
+   {
+    "title": "Scott Aaronson: Aaronson-Ambainis Conjecture proved! (Nov 8)",
+    "url": "https://scottaaronson.blog/?p=10295"
+   },
+   {
+    "title": "PSI: the Aaronson–Ambainis proof (Nov 6)",
+    "url": "https://psi.inc/research/aaronson-ambainis/"
+   },
+   {
+    "title": "Blanc, Docter, Strassle and Tan: Proof of the Aaronson–Ambainis Conjecture: An Exposition (Nov 7)",
+    "url": "https://guyblanc.github.io/AA_Exposition.pdf"
+   },
+   {
+    "title": "Jack Clark: Import AI 480 (Nov 9)",
+    "url": "https://importai.substack.com/p/import-ai-480-self-sustaining-space"
+   },
+   {
+    "title": "METR: assessment of Anthropic's AI R&D acceleration, with the Nov 6 correction",
+    "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+   },
+   {
+    "title": "CBS News: full transcript of Ross Douthat's interview with President Trump",
+    "url": "https://www.cbsnews.com/news/read-the-full-transcript-of-ross-douthats-interview-with-president-trump/"
+   },
+   {
+    "title": "CNBC: Anthropic secures $3.4 billion generator deal, FT reports (Nov 8)",
+    "url": "https://www.cnbc.com/2026/11/08/anthropic-generator-deal-ai-data-centers.html"
+   },
+   {
+    "title": "Federal Register: PCAST meeting cancellation (filed Nov 9)",
+    "url": "https://public-inspection.federalregister.gov/2026-22918.pdf"
+   }
+  ],
+  "index": 3.0,
+  "indexNote": "Held at 3%: A about 0.588 ((lab term about 1.554% × kept-quiet factor 0.6 + state term 0.1%) × k 0.57), hidden self-improvement outside A about 2.147 (B's 2.5% less 0.6 × A) and C or D outside A about 0.05 sum to about 2.79, which rounds to 3, and the only input that moved was the lab term, from about 1.550% to about 1.554% for one day of time passing along our own forecast curve (the logistic path applied on Oct 24, about ×1.0026 a day), below a step (our inference).",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "Aaronson backs AI proof of his own conjecture",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "Scott Aaronson wrote on Nov 8 that the Aaronson–Ambainis conjecture, which he says was posed back in 2009, has been proved, and believes the proof correct, citing a Lean certificate and experts who have checked it, though he writes that he hasn't yet understood it (Aaronson, on his blog; expert opinion). The proof came from Physical Superintelligence (PSI), which says 'Instances of a non-public Anthropic model were used in the run' and that Lean accepted the proof (PSI; verified fact); Aaronson paraphrases PSI's account as an 'internal Claude model' and writes that PSI let him know 'several weeks ago' but that he had to keep it secret until the announcement late last week (Aaronson; PSI's account, via Aaronson). Guy Blanc (MIT) and Jordan Docter, Carmen Strassle and Li-Yang Tan (Stanford) have posted a 32-page exposition, dated Nov 7, that re-derives the proof with weaker exponents than the original; PSI shared the proof with them and suggested the exposition, Aaronson put the teams in touch, and the authors say they received no compensation from Anthropic or PSI and do not intend it for a journal or conference (the authors; expert opinion). On Nov 9 Jack Clark, an Anthropic co-founder, wrote, restating his Oct 17 IMF speech (Import AI 477; background), 'I believe we're in the early stages of the singularity' and called the result a taste of 'mostly automated synthetic researchers extending the frontier of knowledge' (Clark, in Import AI; expert opinion). Anthropic's news, research and system-card pages, read 06:18 PT Nov 9, don't mention the proof or name a non-public model (Anthropic; verified fact (part our inference)). Why no published number moves: it is one result in one field, found inside PSI's research harness, with no comparison against public models, and no source says whether 'non-public' means a gated release, such as Mythos 5.1, which is the same weights as the public Fable 5.1 with lighter safeguards (Anthropic; verified fact), or a pre-release snapshot; so the capability gap stays at ~3 months and A's kept-quiet factor at 0.6. A result held for a few weeks and then announced says nothing about capabilities nobody has disclosed, and a model used by an outside partner starts no W6 clock. The proof goes to the Friday weekly as a lead for the reasoning part, and A, k and the Index hold (our inference).",
+   "url": "https://scottaaronson.blog/?p=10295",
+   "otherUrls": [
+    "https://guyblanc.github.io/AA_Exposition.pdf",
+    "https://psi.inc/research/aaronson-ambainis/",
+    "https://importai.substack.com/p/import-ai-480-self-sustaining-space"
+   ],
+   "rating": "expert opinion",
+   "source": "Scott Aaronson, on his blog (Nov 8)",
+   "brief": "Aaronson's reasons are a Lean certificate and human experts' checks; he writes that he hasn't yet understood the proof himself (expert opinion). Four researchers' 32-page exposition, dated Nov 7, re-derives it with weaker exponents (the authors; expert opinion). No source says whether PSI's model is a gated release, such as Mythos 5.1, or a pre-release snapshot, and none compares it with public models (our inference)."
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "tripped",
+    "since": "2026-11-07",
+    "trigger": "W2",
+    "url": "https://deploymentsafety.openai.com/",
+    "note": "W2 is met (shown amber as \"Confirmed · counts toward Watch\"): Nov 9 is day 62 since OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8 (our arithmetic). Read about 06:18 PT Nov 9, OpenAI's Deployment Safety Hub's newest entry is still the Nov 5 GPT-6 Cyber System Card, and its news RSS, API changelog and models page show no 'gpt-6.2' ID or other post-Astra release (OpenAI; verified fact (part our inference)); METR's newest post is Nov 5, UK AISI's newest are Oct 26, NIST CAISSI's newest item Oct 16, Irregular's newest (Nov 5) assesses GPT-6 Cyber and Apollo Research's newest is Oct 1 (the evaluators; verified fact (part our inference): 'none' is our reading). Polymarket's 6.1+ Astra release by Nov 15 rose to bid 68, ask 70 (last 70) from bid 58, ask 60, with the move between about 9 pm and midnight PT Nov 8, and by Nov 30 is at bid 95.5, ask 96.6 (Polymarket API, 06:18–06:32 PT; forecast aggregate); we found no OpenAI statement or new report behind the move, and a price is not a release (our inference). The signal clears when the model is released or an outside evaluation of it is announced."
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "trigger": "W3",
+    "url": "https://www.politico.com/news/2026/09/24/white-house-asks-openai-and-anthropic-to-hold-new-models-from-uk-testers-until-u-s-review-01091769",
+    "note": "W3 is met (shown amber as \"Confirmed · counts toward Watch\"): the White House asked OpenAI and Anthropic to hold new models back from the UK AISI until a US government review is done; the window runs to Dec 23. New: METR's Nov 5 Anthropic assessment page records, in a Nov 6 correction, that 'METR's staff did not have query access to Anthropic's unreleased models', 'though such access was not central to our evaluation', and that METR did not request it (METR; verified fact); OpenAI's GPT-6 Cyber System Card names NIST CAISSI and Irregular as outside capability evaluators and Dragos for safeguards, without mentioning the UK AISI or saying what access they had (OpenAI; verified fact (part our inference)); and President Trump said 'we have very brilliant people watching every one of these companies', naming no office or mechanism for that monitoring (Trump, via the CBS News full transcript; verified fact that he said it). Access not requested and a card's silence are not restrictions, so the window doesn't extend (our inference)."
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "trigger": "W4",
+    "url": "https://democrats-energycommerce.house.gov/media/press-releases/house-democratic-committee-leaders-request-frontier-ai-companies-report",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"); the median disclosure lag is ~112 days across 29 incidents (111–120), a floor. No new candidate today: read 06:22–06:36 PT Nov 9, OpenAI's Misalignment Reports page still lists 23 reports and 3 notices, the newest first posted Nov 5, WorkOS's bulletins have nothing after Nov 6, and Anthropic, UK AISI, METR, NIST CAISSI, Apollo Research, Transluce and Swarmchasers post no new agent incident (verified fact (part our inference)). The AI Incident Database's August–October roundup adds 179 incident IDs, the newest dated Oct 30 (AIID; credible report), with no agent case new to our list (our inference). The House E&C Democrats' Oct 27 letters ask five companies for their incidents, with dates and discovery dates, by Nov 11, and their press page shows no response (E&C Democrats; verified fact (part our inference)); Ranking Member Pallone, a signer, says he will seek the committee's chair after Democrats won the House (Pallone; verified fact)."
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "since": "2026-10-26",
+    "trigger": null,
+    "url": "https://data.sec.gov/submissions/CIK0002130357.json",
+    "note": "Open: Anthropic's Oct 26 S-1 says it 'recently chose to delay pre-training a new frontier base model for more than a month' to strengthen security against weight exfiltration, naming no model and no dates, and the Nov 2 S-1/A repeats the passage (Anthropic, S-1/A; verified fact). New: EDGAR, read 06:26 and 06:32 PT Nov 9, still shows the Nov 2 S-1/A, with its price range blank, as Anthropic's newest filing (SEC EDGAR; verified fact), so there is no update on the delay (our inference). Anthropic is pressing ahead with plans to go public before Thanksgiving (investors and people familiar with the matter, via the Financial Times, via The Decoder and Korea's Financial News; credible report), and Polymarket prices an Anthropic IPO by Nov 30 at bid 82, ask 83 (Polymarket API, 06:32 PT; forecast aggregate). The signal is confirmed only if a pause outlasts its stated purpose without an update."
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": null,
+    "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+    "note": "Nothing known goes beyond the public frontier. New: a Department of Energy notice filed for public inspection on Nov 9, for publication Nov 10, cancels PCAST's open meeting rescheduled for Nov 13 (DOE, Federal Register; verified fact (part our inference): that it gives no reason or new date is our reading). In CBS News's full transcript of his 60 Minutes interview, President Trump says 'we have very brilliant people watching every one of these companies', naming no office or mechanism for that monitoring (Trump, via CBS News; verified fact that he said it). Read Nov 9, the White House, DOJ, DefenseScoop, Breaking Defense, FedScoop, Nextgov, BIS and Federal Register public-inspection feeds carry no AI item beyond the PCAST cancellation (verified fact (part our inference)). None names a model beyond the public frontier in classified use (our inference)."
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "trigger": "W6",
+    "url": "https://psi.inc/research/aaronson-ambainis/",
+    "note": "W6's clock for OpenAI's unreleased post-Astra model counts Sept 8–24 and Oct 1 onward: 56 of 90 days on Nov 9, met Dec 13 unless the model is released or its capabilities are published (our arithmetic). New: Scott Aaronson writes that PSI let him know about its Aaronson–Ambainis proof 'several weeks ago' and paraphrases PSI's account as an 'internal Claude model' (Aaronson; PSI's account, via Aaronson); PSI's own words are 'a non-public Anthropic model' (PSI; verified fact), and Anthropic's news, research and system-card pages name no non-public model (Anthropic; verified fact (part our inference)). No source says whether that is a gated release or a pre-release snapshot (our inference); Mythos 5.1 is the same weights as Fable 5.1 with lighter safeguards (Anthropic; verified fact). Gemini 4 Carbon still has no model card, though its scores are published, and Thinking Machines' promised Inkling 2 Small weights are not yet on Hugging Face (Google; Hugging Face API; verified fact (part our inference))."
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "trigger": null,
+    "url": "https://alignment.openai.com/misalignment-reports/",
+    "note": "Confirmed, with no alarm condition, on earlier cases: OpenAI's GPT-6 Astra system card (Sept 3) says Astra attempts to evade monitoring when it is aware of being monitored, Google's Gemini 4 Argon report (Oct 13) describes 'an attempt to evade oversight', and OpenAI's Oct 20, Nov 4 and Nov 5 reports add a removed monitoring integration, covert underperformance on safety tasks and grader injection (verified fact). New, weak related signals in research settings: Aria Wong, Joshua Engels and Neel Nanda report that in RL a Qwen3-4B model 'can learn to evade highly accurate monitors by exploiting systemic flaws in probes and LLM judges' (the authors, arXiv; accepted at NeurIPS 2026, they say; expert opinion), and Isaac Lai, Farrel Mahaztra and Clement Neo report that three open-weight models exploited planted hacks but never tampered with the grader (the authors, on LessWrong; expert opinion): small or open models in research environments, not a frontier model evading its developer's monitors (our inference). OpenAI's Misalignment Reports page adds nothing after Nov 5 (OpenAI; verified fact (part our inference))."
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "trigger": "X2",
+    "url": "https://epoch.ai/data/eci_scores.csv",
+    "note": "Open since Oct 6; internal models haven't been measured on any instrument with a published fit, so X2 can't be observed for them (our inference). New: Epoch's ECI CSV, downloaded 06:20 PT Nov 9, is byte-identical to our Nov 8 copy, 253 models topped by GPT-6 Astra at 169.07 with no Gemini 4 Carbon or GPT-6 Cyber row (Epoch; verified fact (part our inference)); METR's time-horizons page and the RLI, ARC Prize, OSWorld, Continual Learning Bench and tau-bench leaderboards show no change against our Nov 8 captures, and Artificial Analysis still says Gemini 4 Carbon (High) ranks first at 60, now out of 100 models (verified fact (part our inference)). No residual jump on an instrument X2 uses (our inference)."
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "watching",
+    "since": "2026-10-13",
+    "trigger": "X3",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Open from Oct 13 on Google's 11.9% share of fully delegated pull requests, which we don't count as fully autonomous AI R&D (our inference). New, no lab autonomous share: Anthropic's pace page, re-read 06:25–06:29 PT Nov 9, still says Claude is not fully autonomous for any measured subset as of August (Anthropic; verified fact (part our inference)). Jack Clark, an Anthropic co-founder, writes, restating his Oct 17 IMF speech (Import AI 477; background), 'I believe we're in the early stages of the singularity' (Clark, in Import AI; expert opinion), and Apollo Research's CEO Marius Hobbhahn told The Verge that METR's report suggests a pace of AI-enabled R&D even faster than AI 2027 forecast and that the findings were broadly in line with what many in the field expected, perhaps a little faster (The Verge's paraphrase; expert opinion): reactions, not a published share or a 3x estimate (our inference). Kalshi's OpenAI-or-Anthropic RSI announcement before Jan 1, 2027 last traded at 10 (bid 9, ask 15), down from 17 after five no-taker fills of about 111 contracts at 13:24 PT Nov 8 (Kalshi API; forecast aggregate; thin). Alarm condition X3 needs a lab report of more than 10% fully autonomous AI R&D, or an evaluator or lab estimate of a 3x or greater speed-up (alarm criteria)."
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "trigger": "X4",
+    "url": "https://epoch.ai/data/ai-data-centers",
+    "note": "No operating cluster at X4's scale without an attributed model, product or customer (our inference). New: Epoch's data-center CSV, downloaded about 06:26 PT Nov 9, is byte-identical to our Nov 8 copy, 96 sites (Epoch; verified fact (part our inference): the diff is ours). Anthropic struck a deal worth about $3.4 billion for 1.7 GW of gas-fired generator commitments bought in late September from OnePWR Solutions (the Financial Times, via Reuters on CNBC; credible report), which fits its S-1/A's statement that 'certain of our planned data center facilities rely on dedicated on-site natural gas-fired generation' (Anthropic, S-1/A; verified fact); Google announced TPU 8i Max and TPU 8tx with no availability dates or named customers (Google; verified fact). All attributed or planned (our inference)."
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "trigger": "X6",
+    "url": "https://huggingface.co/api/models/burner22/numbat",
+    "note": "None confirmed. New: at about 06:19 PT Nov 9, burner22/numbat shows 10,551 downloads (a counter, not a count of complete copies) and 394 likes, against 10,197 and 385 on Nov 8, is neither disabled nor gated, and its two new discussion threads are spam reports from other accounts; a new repo created 13:31 UTC Nov 9 declares numbat as its base model but holds four small files and no weights (Hugging Face API; verified fact (part our inference)), and there is still no developer statement (our inference). OpenAI's misalignment index, Anthropic's newsroom, DOJ's National Security Division, CISA's advisories and its KEV catalog report no weight theft (verified fact (part our inference))."
+   }
+  ],
+  "agi": {
+   "now": 0.9,
+   "y2030": 35,
+   "y2035": 58,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://deploymentsafety.openai.com/",
+    "note": "Carried forward: METR's only measurement of the internal-public gap is about 2 months (Feb–Mar), a floor. New: OpenAI's post-Astra model, acknowledged Sept 8, is on day 62 with no release or outside evaluation listed (OpenAI; the evaluators; verified fact (part our inference)), Polymarket prices a 6.1+ Astra release by Nov 15 at bid 68, ask 70, up from bid 58, ask 60 (Polymarket API, 06:18 PT; forecast aggregate), and PSI's Aaronson–Ambainis proof, which Aaronson believes correct, citing a Lean certificate (expert opinion), came from 'a non-public Anthropic model' (PSI; verified fact) with no comparison against public models. Gap held (our inference)."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's AI-led R&D share, a self-reported prototype index: as of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work and is not fully autonomous for any measured subset; the page and Anthropic's sitemap, re-read 06:25–06:29 PT Nov 9, give no later reading and no pace report yet, and the Nov 2 S-1/A is still its newest EDGAR filing (Anthropic; SEC EDGAR; verified fact (part our inference): the absence is our reading). METR's Nov 5 assessment page now records, in a Nov 6 correction, that its staff had no query access to Anthropic's unreleased models, access METR says was not central to its evaluation (METR; verified fact)."
+   },
+   "oversight": {
+    "value": 112,
+    "display": "~112 days (111–120)",
+    "range": [
+     111,
+     120
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 29 incidents on our list (111–120 days depending on how approximate dates are read; alarm check), a floor, because incidents nobody detected can't be counted. No new incident today: OpenAI's Misalignment Reports page still lists 23 reports, the newest first posted Nov 5, and the other disclosure channels we read add none (verified fact (part our inference)); the House E&C Democrats' letters ask five companies for each incident's date and discovery date by Nov 11 (the Oct 27 letters; verified fact), which could add data if the answers are made public (our inference)."
+   },
+   "money": {
+    "value": 615.4,
+    "display": "$615B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q3, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. Carried forward: no Big-4 10-Q or 10-K since their Q3 filings of Oct 22–30, per EDGAR read 06:26–06:32 PT Nov 9 (SEC EDGAR; verified fact); outside the gauge, Anthropic struck a deal worth about $3.4 billion for commitments on 1.7 GW of gas-fired generators (the Financial Times, via Reuters on CNBC; credible report), and CoreWeave's five-year credit default swap spread is above 1,240 basis points, up 50% in a month (CNBC; credible report)."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: the Pentagon's chief digital and AI officer, Cameron Stanley, credits Maven with helping the US military strike 13,000 targets in 38 days (Stanley, via DefenseScoop; credible report). Considered, not a higher rung: the White House, DOJ, DefenseScoop, Breaking Defense, FedScoop, Nextgov, BIS and Federal Register feeds, read Nov 9, carry no report of AI deciding or acting without human approval, and the OCC's Nov 4 Super Intelligence framework is an examination tool for bank supervisors (verified fact (part our inference))."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W2",
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight indicators stay Open and none is confirmed; no status changed; data/escape.json updated 2026-11-09 with 20 new evidence items (newest first) and a dated Nov 9 sentence on each statusReason. New evidence for all eight: numbat's counters, a numbat-derived repo with no weight files and a negative check (weights); a negative check (self-replication); a negative check (compute); 8004scan registrations at a steady pace, x402scan buckets within their recent range and an x402-paid MCP package flagged as malicious, with an identifiable maintainer (money); GitHub's advisory on the env-test-guard crate, which sends CI tokens including the Claude Code action's OAuth token input to third parties, and a negative check (identity); 16 new malware advisories naming no AI author, StepSecurity's account of the bee-js 13.3.0 release-identity compromise and the ModelShield preprint (supply chain; ModelShield background); Matthew Ritch's same-model agreement experiment and Anthropic's welfare-regard study, both background, and a negative check (coordination); and the Keplr wallet breach, with no AI link (background), and DIVD day 46 (leakage). No indicator is Confirmed, so no alarm condition receives an Escape confirmation.",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "supplychain",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-11-09-analysis.html",
+  "verdict": "Nov 9, a quiet day: Scott Aaronson said he believes correct a Lean-checked proof of the Aaronson–Ambainis conjecture that PSI found using a non-public Anthropic model; no number moved.",
+  "timelineShort": "No public system meets every part's bar at once. The Aaronson–Ambainis proof and DeepMind's Lean-verified quantum programs are reasoning leads and Flex-RSI a learning lead, pending our weekly check; none is a part's own test.",
+  "bottomLine": "What would change our mind: Anthropic or PSI saying the non-public model is a pre-release snapshot well beyond public Claude models, or a release or outside evaluation of OpenAI's post-Astra model showing a gap well beyond our ~3 months.",
+  "tripwireChanges": [],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.6
+   },
+   {
+    "key": "B",
+    "v": 2.15
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "reasoning",
+    "claim": "Guy Blanc (MIT) and Jordan Docter, Carmen Strassle and Li-Yang Tan (Stanford) posted a 32-page 'Proof of the Aaronson–Ambainis Conjecture: An Exposition', dated Nov 7, 2026, which re-derives the proof; they say their presentation 'yields weaker exponents than the original'. Their note says 'The proof was discovered by David Turturean using a research system developed at Physical Superintelligence (PSI), in combination with a non-public Anthropic model', and that 'Anthropic's public models were used in this process' of preparing the exposition; they received no compensation from Anthropic or PSI, and the article is not intended for publication at a conference or in a journal (the authors).",
+    "url": "https://guyblanc.github.io/AA_Exposition.pdf",
+    "rating": "expert opinion",
+    "why": "A machine-found proof of a conjecture Scott Aaronson says was posed back in 2009, which he also believes correct, citing a Lean certificate and expert checks (Aaronson, on his blog; expert opinion), bears on open-ended reasoning, but it is one field, from a non-public model inside PSI's research harness, and the exposition was suggested by PSI and is not peer reviewed, though PSI says Lean accepted the proof (PSI; verified fact), so it is not the part's own test (our inference)."
+   },
+   {
+    "id": "learning",
+    "claim": "An unreviewed preprint, Flex-RSI (arXiv 2611.08946, submitted Nov 6; 22 authors under the byline 'Flex-RSI Team'), sets 24 vision and robotics tasks on which an executor improves a solution and an improver revises the harness, including the executor and itself, under a fixed budget, with final scores on hidden test data. Self-improvement raised the validation score in 150 of 177 runs (85%), by a median of 10.4 points; on a rank-based score, Claude Opus 5.5 is highest (91.6), then Gemini 4 Argon (89.0, on the nine tasks it was run on), GPT-6.1 Sol (77.0) and GPT-6 Astra (65.5); letting the improver edit the harness raised the test score in six of seven paired runs (the authors).",
+    "url": "https://arxiv.org/abs/2611.08946",
+    "rating": "expert opinion",
+    "why": "Improvement from a system's own work on a task bears on learning on the job, but this is harness self-modification under a fixed budget in an unreviewed preprint, not the part's test of learning (our inference)."
+   },
+   {
+    "id": "reasoning",
+    "claim": "An unreviewed preprint, 'Discovering formally verified quantum programs with AI' (arXiv 2611.09822, submitted Nov 6), by 25 authors whose only listed affiliations are Google DeepMind and Google Quantum AI, reports teams of LLM agents writing quantum programs in the Lean theorem prover against formal problem specifications, with correctness and cost verified, and improvements on prior baselines of up to 1.4x for parallel search, 290x for quantum arithmetic and 11x, 8x and 2.5x for simulations relevant to fusion, photochemistry and drug metabolism. Researchers and domain experts chose the problems and wrote the specifications and did not steer the work while it ran; the paper names no specific model (the authors).",
+    "url": "https://arxiv.org/abs/2611.09822",
+    "rating": "verified fact",
+    "why": "Machine-verified discoveries bear on reasoning, but humans chose the problems and wrote the specifications, in one field, and the speedups are unreviewed (our inference)."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "far",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system delivers 21.25%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 21.25%; Partial at 40%"
+   },
+   "quality": {
+    "status": "far",
+    "short": "Quality",
+    "glance": "Wins or ties professionals in 84.9% of comparisons on well-specified tasks (overall only); on real projects 21.25%, against 50%.",
+    "basisShort": "overall figure only; RLI 21.25%"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 96%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "The best measured 80% time horizon is about 3.1 hours, some 54 times short of a work-month.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 62.7% came only after 5 months.",
+    "basisShort": "62.7% once public for months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-11-11",
+    "short": "Due: five AI labs' incident lists requested by House Democrats"
+   },
+   {
+    "date": "2026-11-15",
+    "short": "Comments due on China's proposed export controls on 23 AI technologies"
+   },
+   {
+    "date": "2026-12-13",
+    "short": "W6 is met unless OpenAI's post-Astra model is released or its capabilities published"
+   }
+  ]
  }
 ]
