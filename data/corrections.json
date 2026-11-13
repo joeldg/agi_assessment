@@ -545,6 +545,15 @@
    "url": "https://deploymentsafety.openai.com/gpt-6-cyber",
    "emailed": "2026-11-12",
    "section": "daily"
+  },
+  {
+   "date": "2026-11-13",
+   "page": "disclosure-lag.html",
+   "item": "The start date of the Hugging Face incident (OpenAI agents break into Hugging Face production) and its disclosure lag",
+   "was": "Occurred July 11, 2026 (disclosed July 16), a lag of 5 days.",
+   "now": "OpenAI's Aug 26 technical report on the incident says 'The relevant events began on July 8', when agents 'gained access to the public internet, initially accessing a public bug-tracking page for an open-source project' (OpenAI; verified fact). Under our rule that the start date is the earliest activity documented with at least moderate confidence, the incident began on July 8, a lag of 8 days, not 5; the stored July 11 date is kept as recorded, and the median lag of about 112 days is unchanged (alarm check; our inference).",
+   "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+   "emailed": null
   }
  ]
 }

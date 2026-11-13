@@ -172,11 +172,11 @@
   {
    "date": "2026-11-06",
    "kind": "policy",
-   "title": "PCAST meets (virtual, 9–10 a.m. Pacific) with \"Charges to the Board\" on its tentative agenda; the Federal Register notice says PCAST \"also provides advice in response to requests from the Super Intelligence Task Force\"",
+   "title": "PCAST's open virtual meeting set for Nov 6, with \"Charges to the Board\" on its tentative agenda, was moved to Nov 13, then cancelled (DOE notices, Federal Register, Nov 6 and Nov 10); PCAST \"also provides advice in response to requests from the Super Intelligence Task Force\" (Oct 22 notice)",
    "hyp": "Dopen",
    "certainty": "fixed",
-   "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21614/presidents-council-of-advisors-on-science-and-technology-pcast",
-   "short": "PCAST meets; it advises the Super Intelligence Task Force"
+   "url": "https://www.federalregister.gov/documents/2026/11/10/2026-22918/presidents-council-of-advisors-on-science-and-technology-pcast",
+   "short": "PCAST meeting moved from Nov 6 to Nov 13, then cancelled"
   },
   {
    "date": "2026-11-06",
@@ -226,6 +226,26 @@
    "short": "BIS's suspension of its affiliates rule ends, absent an extension"
   },
   {
+   "date": "2026-11-09",
+   "kind": "models",
+   "title": "Anthropic releases Claude Fable 5.2 on all platforms, and Claude Mythos 5.2 to vetted organizations in cybersecurity and the life sciences (Anthropic)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Anthropic says Fable 5.2 and Mythos 5.2 are the same underlying model, and that Mythos 5.2 outperformed Mythos 5.1 at every effort level on its CVE Rediscovery evaluation (Anthropic); this bears on our forecast anthropic-beyond-mythos51-release-or-eval-by-dec31. A new frontier model reaching the public narrows the released-versus-internal gap our A estimate tracks (our inference).",
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "short": "Anthropic releases Claude Fable 5.2, and Mythos 5.2 to vetted organizations"
+  },
+  {
+   "date": "2026-11-10",
+   "kind": "models",
+   "title": "Google releases Gemini 4 Carbon to all paying developers and enterprises (Gemini API in Google AI Studio, Gemini for business) and begins rolling it out to Google AI Ultra subscribers; scientists and cyber defenders can apply for access (Google)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Google says it first released Carbon \"to a set of cybersecurity defenders via our Fairwind Program\" two weeks earlier (Google). A restricted model reaching paying users narrows the released-versus-internal gap our A estimate tracks (our inference).",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+   "short": "Gemini 4 Carbon released to paying developers, enterprises and Ultra subscribers"
+  },
+  {
    "date": "2026-11-11",
    "kind": "policy",
    "title": "Due: Anthropic, Google, Meta, OpenAI and SpaceXSI are asked to list their identified incidents of model misalignment (attempted or successful unsanctioned access to their internal networks, the internet or third-party networks) and of safeguard circumvention, for the top Democrats on three House committees (Pallone, Lofgren, Raskin), and to report new ones within 48 hours (letters of Oct 27; a request, not a legal duty)",
@@ -234,6 +254,16 @@
    "why": "Answers, if made public, would be a new disclosure channel for the incidents behind our oversight gauge.",
    "url": "https://democrats-energycommerce.house.gov/media/press-releases/house-democratic-committee-leaders-request-frontier-ai-companies-report",
    "short": "Due: five AI labs' incident lists requested by House Democrats"
+  },
+  {
+   "date": "2026-11-12",
+   "kind": "policy",
+   "title": "Irreplaceable Education Fund, Public Citizen, Heat Initiative and The Alliance for Secure AI sue Anthropic, Google, Meta, OpenAI and SpaceXSI in San Francisco Superior Court, seeking to freeze development of increasingly advanced AI models (Public Citizen, a plaintiff)",
+   "hyp": "B",
+   "certainty": "fixed",
+   "why": "A court-ordered freeze would be a forced training pause, and the case could bring development records into the open; we found no hearing date (our inference).",
+   "url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/",
+   "short": "Four nonprofits sue five AI developers to freeze advanced-model development"
   },
   {
    "date": "2026-11-15",
@@ -269,16 +299,6 @@
    "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
   },
   {
-   "date": "2026-11-16",
-   "kind": "industry",
-   "title": "Anthropic's reported target for listing on Nasdaq (symbol ANT, per its S-1): the week of Nov 16, though the timing could change (people familiar, via the Wall Street Journal, read on Investing.com)",
-   "hyp": "A",
-   "certainty": "approximate",
-   "why": "Trading would bear on our forecasts anthropic-trading-by-nov20 and anthropic-trading-by-nov30 and bring Anthropic under quarterly public-company reporting.",
-   "url": "https://www.investing.com/news/stock-market-news/anthropic-files-for-nasdaq-ipo-as-revenue-jumps-to-163-billion-4972842",
-   "short": "Anthropic's reported Nasdaq listing target (people familiar, via WSJ)"
-  },
-  {
    "date": "2026-11-17",
    "kind": "industry",
    "title": "Nvidia reports third-quarter fiscal 2027 results (quarter ended Oct 25); conference call 2 p.m. Pacific",
@@ -291,11 +311,31 @@
   {
    "date": "2026-11-18",
    "kind": "geopolitics",
-   "title": "Xi–Trump meeting expected at the APEC Economic Leaders' Meeting in Shenzhen (Nov 18–19, APEC); US and Chinese teams reportedly aim for a basic framework for AI-related crises by then, and the AI dialogue's next meeting is also set for November (anonymous sources, via SCMP, read in The Star)",
+   "title": "Xi–Trump meeting in Shenzhen at the APEC Economic Leaders' Meeting (Nov 18–19, APEC); Treasury Secretary Bessent said the leaders \"will meet\" there next week and that the US is establishing a direct channel for either nation to alert the other to serious incidents involving its SI models (Treasury, Nov 11); a basic framework for AI-related crises is reportedly targeted by then (anonymous sources, via SCMP, read in The Star)",
    "hyp": "D",
    "certainty": "approximate",
-   "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/23/us-and-china-race-to-shape-ai-agenda-ahead-of-xi-trump-talks-in-shenzhen-sources-say",
-   "short": "US–China AI crisis framework targeted for Xi–Trump meeting at APEC Shenzhen"
+   "url": "https://home.treasury.gov/news/press-releases/sb0688",
+   "short": "Xi–Trump meeting in Shenzhen at APEC; US establishing incident channel with China"
+  },
+  {
+   "date": "2026-11-18",
+   "kind": "industry",
+   "title": "Anthropic expects to set its IPO share price, subject to regulatory clearance (Anthropic's IPO website, filed on SEC EDGAR as a free writing prospectus dated Nov 10)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "Pricing comes before trading, which Anthropic expects on Nov 19 (Anthropic); trading bears on our anthropic-trading forecasts (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm",
+   "short": "Anthropic expects to price its IPO, subject to regulatory clearance"
+  },
+  {
+   "date": "2026-11-19",
+   "kind": "industry",
+   "title": "Anthropic shares are expected to begin trading on Nasdaq under the symbol ANT, subject to regulatory clearance (Anthropic's IPO website, filed on SEC EDGAR as a free writing prospectus dated Nov 10)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "Trading would bear on our forecasts anthropic-trading-by-nov20, anthropic-trading-by-nov30 and anthropic-trading-by-dec31, and bring Anthropic under quarterly public-company reporting (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm",
+   "short": "Anthropic shares expected to begin trading on Nasdaq as ANT"
   },
   {
    "date": "2026-11-20",
@@ -323,6 +363,16 @@
    "url": "https://hiddenagi.com/scorecard.html"
   },
   {
+   "date": "2026-12-03",
+   "kind": "policy",
+   "title": "Senate Banking Chair Tim Scott has asked former Nvidia CEO Jensen Huang to testify; the letter says reports about Huang's relationship with an alleged Chinese spy \"raise significant national security concerns\" (Scott's letter, via CNBC)",
+   "hyp": "Dopen",
+   "certainty": "approximate",
+   "why": "CNBC does not say whether Huang will appear. Testimony on Nvidia's chip sales bears on export controls, which limit the compute reaching foreign actors (our inference).",
+   "url": "https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html",
+   "short": "Senate Banking asks former Nvidia CEO Jensen Huang to testify"
+  },
+  {
    "date": "2026-12-07",
    "kind": "policy",
    "title": "Comments due on Treasury's proposed Outbound Investment Security Program rule under the COINS Act, which renames AI systems \"super intelligence systems\" and would make developing any SI system a prohibited technology for US-person investment in covered foreign persons (Docket TREAS-DO-2026-0595; Federal Register publication Oct 26)",
@@ -331,6 +381,26 @@
    "why": "Treasury drops compute thresholds, saying \"no single measure, benchmark, or threshold is currently sufficient to distinguish advanced models\".",
    "url": "https://www.federalregister.gov/d/2026-21786",
    "short": "Comments due on Treasury's proposed outbound-investment rule covering \"super intelligence systems\""
+  },
+  {
+   "date": "2026-12-09",
+   "kind": "industry",
+   "title": "Starbase meeting to consider approving a tax abatement and development agreement for SpaceX's planned gas-fired power plant and super-compute facility, an estimated $24 billion for the initial phase (City of Starbase notice, via Bloomberg, read in Insurance Journal)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Bloomberg's report names no model or customer for the site. Planned capacity does not count toward alarm condition X4 (unexplained compute), which needs an operating cluster at 2x or more of Epoch AI's trend for the largest AI data center with no model, product or customer attributed to it (our inference).",
+   "url": "https://www.insurancejournal.com/news/southcentral/2026/11/10/892283.htm",
+   "short": "Starbase hearing on SpaceX's planned gas plant and super-compute site"
+  },
+  {
+   "date": "2026-12-10",
+   "kind": "policy",
+   "title": "Commerce Secretary Howard Lutnick is asked to testify to the Senate Banking Committee on \"recent public reports about NVIDIA and the Department of Commerce's role\" (Scott's letter, via CNBC); a spokesperson said he \"has proactively agreed to appear voluntarily\" (Kristen Eichamer, via NBC News, via CNBC)",
+   "hyp": "Dopen",
+   "certainty": "approximate",
+   "why": "Testimony on Commerce's oversight of Nvidia's chip exports bears on export controls, which limit the compute reaching foreign actors (our inference).",
+   "url": "https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html",
+   "short": "Commerce Secretary Lutnick asked to testify to Senate Banking about Nvidia"
   },
   {
    "date": "2026-12-13",
@@ -401,6 +471,14 @@
    "url": "https://hiddenagi.com/scorecard.html"
   },
   {
+   "date": "2026-12-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-dec31)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
    "date": "2027-01-01",
    "kind": "policy",
    "title": "New York RAISE Act takes effect (72-hour incident reporting)",
@@ -447,6 +525,22 @@
    "date": "2027-02-28",
    "kind": "forecast",
    "title": "Forecast deadline: Microsoft, Alphabet, Amazon and Meta report October–December capex of $203.28B or more on EDGAR (big4-q4-capex-700b-ttm)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-28",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic publishes a reading of 36% or more for the share of its AI R&D led by Claude, for a month from September 2026 to January 2027 (anthropic-rd-share-36pct-by-feb28)",
+   "hyp": "B",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-28",
+   "kind": "forecast",
+   "title": "Forecast deadline: an outside evaluator measures, or a frontier lab states, a gap of 3 months or more between an internal model and the public frontier (outside-gap-3mo-by-feb28)",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -514,11 +608,6 @@
    "kind": "policy",
    "title": "D.C. Circuit rules on Anthropic's petition for panel rehearing or rehearing en banc of its decision on the Pentagon's supply-chain-risk designation (Anthropic PBC v. U.S. Department of War, No. 26-1049)",
    "hyp": "Dopen"
-  },
-  {
-   "kind": "models",
-   "title": "Gemini 4 Carbon wider release to developers, businesses and consumers (Google, Oct 28: \"a subset of cyber defenders\" first, \"starting this week\", then more trusted partners through the Fairwind Program; wider release \"as soon as possible\")",
-   "hyp": "A"
   },
   {
    "kind": "research",

@@ -153,9 +153,9 @@
    "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
    "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "market": 18,
-   "marketAsOf": "2026-11-06",
-   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:17 PT (bid/ask 17/18; no longer thin: about 29.4k contracts traded in total and 295 in the 24 h before the read; it traded 16 to 27 on Nov 3)",
+   "market": 15,
+   "marketAsOf": "2026-11-13",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:14 PT (bid/ask 14/15; not thin by our rule, with about 38.2k contracts traded, but only about 14 contracts sat at the ask and 31 traded in the 24 h before the read; it traded 14 to 18 since Nov 6)",
    "marketUrl": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "outcome": null,
    "resolved": null,
@@ -218,14 +218,16 @@
    "p": 20,
    "deadline": "2026-11-07",
    "resolution": "Yes if, by the end of Nov 7, 2026 (Pacific), either (a) OpenAI announces that the frontier model it acknowledged on Sept 8, 2026 (the unreleased internal model it said is more capable than GPT-6 Astra) is available to outside users, or (b) an outside evaluator (such as METR, UK AISI, US CAISI, Apollo Research or Epoch AI), or OpenAI, publicly announces that an outside evaluator has evaluated that model. OpenAI's own internal evaluations, and access or testing that nobody announces, don't count. If GPT-6.1 Astra (whose release OpenAI cancelled on Sept 28) proves to be the same model, its release or announced external evaluation counts. No otherwise. This tracks our alarm trigger W2 (criteria v1.1), which this model meets on Nov 7 unless it is released or an external evaluation of it is announced.",
-   "context": "On Sept 8 OpenAI credited its Navier–Stokes result to an unreleased internal model that it says is significantly more capable than GPT-6 Astra. Since Sept 25 it has paused all training, evaluation and tool-using inference of its most capable models, and on Sept 28 it said it won't release GPT-6.1 Astra. As of our Oct 2 check, none of METR, UK AISI, Epoch, CAISI or Apollo Research lists an evaluation of the post-Astra model. Politico reported on Sept 24 (via The Next Web), citing a senior administration official, that the White House asked OpenAI and Anthropic not to share new models with UK AISI until the US government has tested them. We think a release before Nov 7 is unlikely during the pause, and US government pre-release testing is usually not made public.",
-   "url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
+   "context": "Resolved No: by the end of Nov 7, 2026 (Pacific), OpenAI had not made the post-Astra model it acknowledged on Sept 8 available to outside users, and no outside evaluation of it had been announced. Read on Nov 13, OpenAI's Deployment Safety Hub lists the Nov 5 GPT-6 Cyber System Card as its newest entry, OpenAI's news feed has no item between 08:00 GMT Nov 6 and 08:00 GMT Nov 9 and none since that announces the model, METR's newest blog post is dated Nov 5 and UK AISI's newest blog post Oct 26 (OpenAI; METR; UK AISI; verified fact (part our inference): that none covers the post-Astra model is our reading). Our daily checks of NIST CAISSI, Apollo Research and Irregular through Nov 9 found no outside evaluation of it either (our inference, from our daily checks). GPT-6 Cyber, released Nov 5 with outside assessments, is 'a cyber-specialized variant of GPT-6 Astra' (OpenAI; verified fact), not the post-Astra model (our inference). Alarm condition W2, which this forecast tracked, was met on Nov 7, day 60, and the model was still unreleased on Nov 13, day 66 (our inference, from our daily checks).",
+   "original_context": "On Sept 8 OpenAI credited its Navier–Stokes result to an unreleased internal model that it says is significantly more capable than GPT-6 Astra. Since Sept 25 it has paused all training, evaluation and tool-using inference of its most capable models, and on Sept 28 it said it won't release GPT-6.1 Astra. As of our Oct 2 check, none of METR, UK AISI, Epoch, CAISI or Apollo Research lists an evaluation of the post-Astra model. Politico reported on Sept 24 (via The Next Web), citing a senior administration official, that the White House asked OpenAI and Anthropic not to share new models with UK AISI until the US government has tested them. We think a release before Nov 7 is unlikely during the pause, and US government pre-release testing is usually not made public.",
+   "url": "https://deploymentsafety.openai.com/",
+   "original_url": "https://www.coindesk.com/tech/2026/09/09/openai-says-10-000-ai-agents-solved-a-usd1-million-math-problem-now-mathematicians-are-fighting",
    "tests": [
     "W2",
     "gap"
    ],
-   "outcome": null,
-   "resolved": null,
+   "outcome": false,
+   "resolved": "2026-11-07",
    "corrections": [
     {
      "date": "2026-10-23",
@@ -288,10 +290,11 @@
    "p": 35,
    "deadline": "2027-01-31",
    "resolution": "Yes if, by Jan 31, 2027, Scale AI's Remote Labor Index (RLI) leaderboard (labs.scale.com/leaderboard/rli), or a Scale AI or CAIS publication about the RLI, lists any AI system with an automation rate of 25.00% or more on the RLI as it stood on Oct 9, 2026 (or on a revision Scale says is comparable). A lab's own claimed RLI score counts only once Scale AI or CAIS lists it. No otherwise.",
-   "context": "Claude Opus 5.5 leads the leaderboard at 21.25% (Oct 9), ahead of GPT-6 Astra at 20.83% and Claude Fable 5.1 at 17.92%; the best score was 15.8% (Fable 5) in July and 2.5% at launch in Oct 2025. A Yes most likely needs a new frontier release that Scale scores before the deadline: OpenAI's frontier training is paused, Gemini 4 Argon is limited to vetted cyber defenders so far, and Grok 5 is unreleased. The RLI is the primary test of our breadth part (definitions v2.0), which is marked Partial from 40% on the RLI; Met needs 80%.",
+   "context": "Resolved Yes: Scale AI's Remote Labor Index leaderboard lists Claude Fable 5.2 first with an automation rate of 41.25%, in an entry created at 20:13 UTC (12:13 PT) on Nov 9, 2026 and marked new (Scale AI; verified fact). The same entry read 41.30% in the copies of the page our Nov 10 and Nov 12 readings saved, so Scale has since revised the figure slightly (Scale AI; verified fact (part our inference): 'revised' is our reading of the saved copies); both clear the 25% bar. The rows for Claude Opus 5.5 (21.25%) and GPT-6 Astra (20.83%) are unchanged from Oct 9, and the page still scores 230 private projects, so we read it as the same RLI (our inference). Anthropic's own announcement gives 41.3% (Anthropic; verified fact), but the rule counts Scale's listing. The rise came from the new frontier release our context said a Yes would most likely need (our inference).",
+   "original_context": "Claude Opus 5.5 leads the leaderboard at 21.25% (Oct 9), ahead of GPT-6 Astra at 20.83% and Claude Fable 5.1 at 17.92%; the best score was 15.8% (Fable 5) in July and 2.5% at launch in Oct 2025. A Yes most likely needs a new frontier release that Scale scores before the deadline: OpenAI's frontier training is paused, Gemini 4 Argon is limited to vetted cyber defenders so far, and Grok 5 is unreleased. The RLI is the primary test of our breadth part (definitions v2.0), which is marked Partial from 40% on the RLI; Met needs 80%.",
    "url": "https://labs.scale.com/leaderboard/rli",
-   "outcome": null,
-   "resolved": null,
+   "outcome": true,
+   "resolved": "2026-11-09",
    "corrections": [
     {
      "date": "2026-10-23",
@@ -309,9 +312,9 @@
    "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), OpenAI, or an official representative speaking for it (such as its CEO in an official post, statement or interview), explicitly states that OpenAI has created or achieved artificial general intelligence (AGI). Saying it is close to AGI, has 'AGI-level' or 'near-AGI' systems, or knows how to build AGI doesn't count. It resolves on the announcement, not on whether the system meets our definitions or on any later check by the independent expert panel in OpenAI's agreement with Microsoft. No otherwise. Polymarket's matching market resolves on the same kind of announcement.",
    "context": "OpenAI credits an unreleased internal model with its Navier–Stokes result and with the mathematics manuscripts it published on Oct 6, but its frontier training has been paused since Sept 25, and California's Attorney General served it an investigative subpoena on Sept 30 in an inquiry into cybersecurity incidents and risks involving the company and its models. Microsoft says that under their October 2025 agreement an OpenAI AGI declaration \"will now be verified by an independent expert panel\". We think a formal claim in the next 12 weeks is unlikely while the pause lasts. Markets price more (forecast aggregate, Oct 9): Polymarket's matching market is at a 15.5% midpoint, Kalshi's similar OpenAI contract is thin (bid/ask 8.1/12.9), and Kalshi's any-company contract for the same date last traded at 9%. We sit near Kalshi and below Polymarket.",
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "market": 7,
-   "marketAsOf": "2026-11-06",
-   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:17 PT (bid/ask 6/8; last trade 7; about $366k traded, $3.7k in the 24 h before the read)",
+   "market": 6.5,
+   "marketAsOf": "2026-11-13",
+   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:14 PT (bid/ask 6/7; last trade 7; about $369k traded and liquidity about $29k; the API gave no 24 h volume)",
    "marketUrl": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
    "outcome": null,
    "resolved": null,
@@ -330,14 +333,16 @@
    "p": 45,
    "deadline": "2026-12-31",
    "resolution": "Yes if, by the end of Dec 31, 2026 (Pacific), either (a) Anthropic makes available to outside users for the first time after Oct 23, 2026 (generally, through its paid API, or in a preview open to paying customers) a model that it says is more capable than Claude Mythos 5.1, or more capable than Claude Opus 5.5 (which Anthropic already places above Mythos 5.1), either in words or by showing it above either of them on most of the capability evaluations in its announcement or system card; or (b) after Oct 23, 2026, an outside evaluator (such as METR, UK AISI, US CAISI, Apollo Research or Epoch AI), or Anthropic, publicly announces that an outside evaluator has evaluated an unreleased Anthropic model that Anthropic says is more capable than Mythos 5.1, such as the internal research model Anthropic described on Oct 23, 2026. Access limited to a named set of vetted partners doesn't count for (a). Anthropic's own evaluations, an outside review of Anthropic's reports that doesn't test the model, and outside access nobody announces don't count for (b). No otherwise.",
-   "context": "On Oct 23 Anthropic replayed the UK AISI incident with \"a general purpose internal research model that shows capabilities greater than Mythos 5.1\" (Anthropic; verified fact); it gave no size for that lead and no release plan. METR already reviews Anthropic's internal reporting: on Oct 20 it published a review of the \"Misalignment in high-stakes settings\" section of Anthropic's internal August 2026 Risk Report (METR; verified fact), which makes an announced outside evaluation plausible (our inference). Anthropic ships frontier models every few months, so a next release that beats Mythos 5.1 before year-end is also possible, though the holiday season and its IPO process could delay one (our inference). Anthropic's Opus 5.5 system card already places the public Claude Opus 5.5 above Mythos 5.1: \"Opus 5.5 lands above Claude Mythos 5.1, our previous frontier\", at an AECI of 169.36 against 168.12 on the card's updated fit, each inside the other's local error bar (Anthropic; verified fact). So route (a) is met by any new Anthropic release it says beats Opus 5.5, and route (b) is the one that bears on W2 (our inference). The two routes together come to a little under even. This is a proxy for our alarm condition W2 (an acknowledged unreleased frontier model with no outside evaluation for 60 days) and for the capability-gap gauge.",
-   "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+   "context": "Resolved Yes by route (a): on Nov 9, 2026 Anthropic released Claude Fable 5.2, which 'is available today on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure', and said 'Claude Fable 5.2 and Mythos 5.2 are a step above Opus 5.5 in almost all the capabilities we evaluated' (Anthropic; verified fact). Its system card says Fable 5.2 'scored highest on 14 of 16 results we report in Table 8.1.A, trailing Opus 5.5 on the GDPval-AA and AA-Briefcase Elo ratings' (Anthropic; verified fact). The rule counts a general release that Anthropic says beats Opus 5.5. We resolve it on that route; route (b) was the one that bore on W2, and the same card reports AECI scores for 'a separate, unreleased internal research model that is somewhat more capable than Claude Mythos 5.2', which it says 'is not evaluated elsewhere in this system card' (Anthropic; verified fact); we found no announced outside evaluation of that model (our inference).",
+   "original_context": "On Oct 23 Anthropic replayed the UK AISI incident with \"a general purpose internal research model that shows capabilities greater than Mythos 5.1\" (Anthropic; verified fact); it gave no size for that lead and no release plan. METR already reviews Anthropic's internal reporting: on Oct 20 it published a review of the \"Misalignment in high-stakes settings\" section of Anthropic's internal August 2026 Risk Report (METR; verified fact), which makes an announced outside evaluation plausible (our inference). Anthropic ships frontier models every few months, so a next release that beats Mythos 5.1 before year-end is also possible, though the holiday season and its IPO process could delay one (our inference). Anthropic's Opus 5.5 system card already places the public Claude Opus 5.5 above Mythos 5.1: \"Opus 5.5 lands above Claude Mythos 5.1, our previous frontier\", at an AECI of 169.36 against 168.12 on the card's updated fit, each inside the other's local error bar (Anthropic; verified fact). So route (a) is met by any new Anthropic release it says beats Opus 5.5, and route (b) is the one that bears on W2 (our inference). The two routes together come to a little under even. This is a proxy for our alarm condition W2 (an acknowledged unreleased frontier model with no outside evaluation for 60 days) and for the capability-gap gauge.",
+   "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "original_url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
    "tests": [
     "W2",
     "gap"
    ],
-   "outcome": null,
-   "resolved": null,
+   "outcome": true,
+   "resolved": "2026-11-09",
    "corrections": [
     {
      "date": "2026-11-06",
@@ -378,9 +383,9 @@
    "resolution": "Yes if, by the end of Nov 30, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 30, 2026?' resolves on a similar rule (listed on a public exchange and open for trading).",
    "context": "At about 13:40 PT Oct 23, SEC EDGAR showed no public Anthropic registration statement (SEC; verified fact). A confidential filer must file publicly \"at least 15 days prior to any road show or, in the absence of a road show, at least 15 days prior to the requested effective date\" (SEC; verified fact), so trading by Nov 30 needs a public filing by Nov 15 at the very latest, and by early November to leave time for a typical roadshow (our inference). Three people familiar with Anthropic's plans told Yahoo Finance on Oct 21 that it is set to file its S-1 publicly \"as soon as Friday\", which was Oct 23 (via Yahoo Finance; credible report), and Yahoo said a public filing would clear a key procedural hurdle toward \"a potential November listing\" (Yahoo Finance; credible report). The market prices more (forecast aggregate, Oct 23): Polymarket's matching market sits at a 67.5 midpoint. We sit lower because no public filing had appeared by Oct 23, the schedule leaves little room for a slip, and the timeline behind our 75% on an Oct 31 listing proved too early (our inference).",
    "url": "https://finance.yahoo.com/markets/article/anthropic-to-publicly-file-for-ipo-as-early-as-friday-sources-say-135343841.html",
-   "market": 76,
-   "marketAsOf": "2026-11-06",
-   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", midpoint via the public API at 13:17 PT (bid/ask 71/81; thin by spread, with about $22k liquidity; the last trade, 82, sits above the ask; about $671k traded)",
+   "market": 98.1,
+   "marketAsOf": "2026-11-13",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 97.8/98.4; last trade 98.3; about $855k traded, $15.8k in the 24 h before the read, liquidity about $39k; no longer thin)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null
@@ -420,6 +425,11 @@
      "date": "2026-11-06",
      "text": "Clarification (the question, probability and resolution rule are unchanged): three OpenAI posts since this forecast was made don't resolve it. OpenAI's Nov 3 post says 'A newer internal model achieved an average score of 0.875, compared with 0.594 for GPT-6 Astra at its highest reasoning setting' on BenchCAD 2.0, but doesn't say which model that is (OpenAI; verified fact (part our inference): 'doesn't say' is our reading), so it counts for (b) only if OpenAI identifies it as the model it acknowledged on Sept 8 (our inference). GPT-6 Cyber, released Nov 5, is 'a cyber-specialized variant of GPT-6 Astra'; its Nov 5 announcement (https://openai.com/index/introducing-gpt-6-cyber) says the model 'outperforms GPT-6 Astra on most cyber tasks', while its system card says it 'does not outperform GPT-6 Astra on general coding evaluations', and it is available only to 'approved Daybreak Red users and organizations' (OpenAI; verified fact). We don't read its lead on cyber tasks as OpenAI saying it is more capable overall, and, as with Gemini 4 Argon's rollout to trusted cyber defenders (our Oct 9 clarification), we don't count vetted access as ChatGPT, the paid API or a paid preview, so it doesn't meet (a) (our inference). OpenAI's Nov 6 BioBasicsBench post scores seven named models (GPT-5.2, 5.4, 5.5, 5.6 Sol, 6.1 Sol, 6 Luna and 6 Astra) and no internal one (OpenAI; verified fact).",
      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+    },
+    {
+     "date": "2026-11-13",
+     "text": "Clarification (the question, probability and resolution rule are unchanged): at its Nov 12 'Cyber at the Frontier' keynote OpenAI showed an ExploitGym slide with an unnamed 'Upcoming Cyber Model' at 77.0% success, against 52.6% for GPT-6 Cyber and 42.4% for GPT-6 Astra (OpenAI, keynote video; verified fact). OpenAI ties that model to no base model, so its scores could count for route (b) only if OpenAI identifies it as the unreleased internal model it acknowledged on Sept 8, and a release limited to vetted Daybreak users wouldn't meet route (a) (our inference).",
+     "url": "https://www.youtube.com/watch?v=YmxpxJZvm4M"
     }
    ]
   },
@@ -432,9 +442,9 @@
    "resolution": "Yes if, by the end of Nov 20, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 20, 2026?' resolves on a similar rule (listed on a public exchange and open for trading by 11:59 PM ET).",
    "context": "Anthropic filed its S-1 publicly on SEC EDGAR on Oct 26 (SEC EDGAR; verified fact). A company that submitted drafts confidentially must file publicly 'at least 15 days prior to any road show' (SEC; verified fact), so Anthropic's roadshow can start on Nov 10 at the earliest (our arithmetic). Bloomberg reported that the roadshow could start in the week of Nov 9 at the earliest and that Anthropic is targeting a debut before Thanksgiving, Nov 26 (Bloomberg, via XTB; credible report). The Wall Street Journal reported, citing people familiar, that Anthropic is targeting a listing in the week of Nov 16, though the timing could change (people familiar, via the WSJ, read on Investing.com; credible report). As of Oct 30, EDGAR showed no amended S-1 with a price range (SEC EDGAR; verified fact). Trading by Nov 20 needs a roadshow that starts on about the earliest date and runs little more than a week, with no slip, and large IPO roadshows commonly take one to two weeks (our inference). The market prices more (forecast aggregate, Oct 30): Polymarket's matching market sits at a 53 midpoint. We sit lower because the reported week-of-Nov-16 target falls inside our window only if the roadshow starts on about the earliest day and nothing slips: the Journal's sources say the timing could change, and Bloomberg's before-Thanksgiving debut also allows Nov 23–25, after our deadline (our inference).",
    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
-   "market": 52,
-   "marketAsOf": "2026-11-06",
-   "marketSource": "Polymarket \"Will Anthropic IPO by November 20, 2026?\", midpoint via the public API at 13:17 PT (bid/ask 49/55; thin by spread, with liquidity about $5.5k; last trade 49, at the bid; about $103k traded)",
+   "market": 95.7,
+   "marketAsOf": "2026-11-13",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 20, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 95.5/95.9; last trade 95.8; about $250k traded, $15.7k in the 24 h before the read, liquidity about $55k; no longer thin). The same event's Nov 18 contract sat at a 0.6 midpoint and its Nov 19 contract at 93.05, so the market expects trading to begin on Nov 19 (our inference)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
    "outcome": null,
    "resolved": null
@@ -480,10 +490,38 @@
    "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by December 31, 2026?' resolves on a similar rule (listed on a public exchange and open for trading by 11:59 PM ET).",
    "context": "Anthropic filed its S-1 publicly on Oct 26 and an amended S-1 on Nov 2; at about 13:37 PT Nov 6 its EDGAR record showed no later amendment (SEC EDGAR; verified fact). Four people familiar with investor discussions told Reuters on Nov 5 that potential investors doubt Anthropic can 'proceed with its planned roadshow next week in time for a November listing', and that it could delay the offering 'until the market looks more resilient' if AI-related assets stay under pressure; Anthropic declined to comment (the people familiar, via Reuters, read on Investing.com; credible report). Reuters had reported that the roadshow 'was initially expected to kick off the week of November 9', with pricing 'expected the following week' (Reuters, read on Investing.com; credible report). A November slip could still list in the first half of December, but US IPOs rarely price in the last two weeks of the year, and a delay for market conditions could run into 2027 (our inference). We put about even odds on a November listing and about one in three on December if November slips (our inference). The market prices more (forecast aggregate, Nov 6): Polymarket's matching market sits at an 87.5 midpoint. We sit lower because of the investor doubts Reuters reports and the short December window (our inference).",
    "url": "https://www.investing.com/news/stock-market-news/exclusiveai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-5006110",
-   "market": 87.5,
-   "marketAsOf": "2026-11-06",
-   "marketSource": "Polymarket \"Will Anthropic IPO by December 31, 2026?\", midpoint via the public API at 13:17 PT (bid/ask 86.4/88.6; last trade 88.6, at the ask; about $1.65M traded, $81k in the 24 h before the read; by 13:18 PT the book had moved to 83 bid / 86.2 ask)",
+   "market": 98.55,
+   "marketAsOf": "2026-11-13",
+   "marketSource": "Polymarket \"Will Anthropic IPO by December 31, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 98.3/98.8; last trade 98.3, at the bid; about $2.03M traded, $11k in the 24 h before the read, liquidity about $40k)",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "anthropic-beyond-mythos52-release-or-eval-by-jan8",
+   "made": "2026-11-13",
+   "question": "Anthropic releases a model it says is more capable than Claude Mythos 5.2, or an outside evaluation of such an unreleased Anthropic model is announced, by Jan 8, 2027",
+   "p": 20,
+   "deadline": "2027-01-08",
+   "resolution": "Yes if, by the end of Jan 8, 2027 (Pacific), either (a) Anthropic makes available to outside users for the first time after Nov 13, 2026 (generally, through its paid API, or in a preview open to paying customers) a model that it says is more capable than Claude Fable 5.2 or Claude Mythos 5.2 (which Anthropic says share the same underlying model), either in words or by showing it above them on most of the capability evaluations in its announcement or system card; or (b) after Nov 13, 2026, an outside evaluator (such as METR, UK AISI, NIST CAISSI, Apollo Research or Epoch AI), or Anthropic, publicly announces that an outside evaluator has tested an unreleased Anthropic model that Anthropic says is more capable than Mythos 5.2, such as the internal research model described in its Nov 9, 2026 system card. Access limited to a named set of vetted partners doesn't count for (a). For (b), Anthropic's own evaluations, an outside review of Anthropic's reports or data that doesn't test the model, testing of a snapshot of Mythos 5.2 itself (such as the METR pre-deployment testing reported in the Nov 9 card), and outside access nobody announces don't count. No otherwise.",
+   "context": "Anthropic's Nov 9 system card for Claude Fable 5.2 and Mythos 5.2 reports AECI scores for 'a separate, unreleased internal research model that is somewhat more capable than Claude Mythos 5.2', and says 'This internal model is not evaluated elsewhere in this system card' (Anthropic; verified fact). On Oct 23 Anthropic had described 'a general purpose internal research model that shows capabilities greater than Mythos 5.1' (Anthropic; verified fact); neither text says whether they are the same model (our inference). Jan 8, 2027 is day 60 since the Nov 9 card, the threshold of alarm condition W2 (an acknowledged unreleased frontier model with no outside evaluation for 60 days) if the card is the model's first acknowledgement (our arithmetic; our inference). Our fire-alarm record flags the model for the owner with an earlier W2 clock, to Jan 4, 2027, counted from METR's Nov 5 report on Anthropic's internal-only Model 4, which the card's model fits though neither source says they are the same (our inference). Anthropic released Fable 5.2 on Nov 9 (Anthropic; verified fact), so a further release that beats it within two months would be quick, and the holiday season and its IPO process could delay one (our inference). Outside testing of Anthropic's models has so far been announced in the system card at release: the Nov 9 card reports METR's pre-deployment testing of a Mythos 5.2 snapshot and UK AISI's pre-deployment alignment testing of Mythos 5.2 (Anthropic; verified fact), so an announced outside evaluation before a release is unlikely (our inference). We put about 17% on a qualifying release and a few points on an announced outside evaluation before one (our inference). This is a proxy for W2 and for the capability-gap gauge.",
+   "url": "https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card",
+   "tests": [
+    "W2",
+    "gap"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "rli-50pct-by-feb28",
+   "made": "2026-11-13",
+   "question": "An AI system scores 50% or more on Scale AI's Remote Labor Index by Feb 28, 2027",
+   "p": 40,
+   "deadline": "2027-02-28",
+   "resolution": "Yes if, by the end of Feb 28, 2027 (Pacific), Scale AI's Remote Labor Index (RLI) leaderboard (labs.scale.com/leaderboard/rli), or a Scale AI or CAIS publication about the RLI, lists any AI system with an automation rate of 50.00% or more on the RLI as it stood on Nov 13, 2026 (scored on 230 private projects) or on a revision Scale says is comparable. A lab's own claimed RLI score counts only once Scale AI or CAIS lists it. No otherwise.",
+   "context": "Scale AI's leaderboard, read Nov 13, lists Claude Fable 5.2 first at a 41.25% automation rate, in an entry created on Nov 9, ahead of Claude Opus 5.5 at 21.25%, GPT-6 Astra at 20.83% and Gemini Argon 4 at 17.08%, with no row for Gemini 4 Carbon (Scale AI; verified fact). The top score roughly doubled with one release between Oct 9 and Nov 9, which resolved our 25% forecast (our arithmetic). A Yes needs a model about 9 points above Fable 5.2 within about 15 weeks. The likeliest sources are OpenAI's post-Astra model, still unreleased on Nov 13 (our inference, from OpenAI's channels), and the unreleased Anthropic research model its Nov 9 system card calls 'somewhat more capable than Claude Mythos 5.2' (Anthropic; verified fact). Scale listed Fable 5.2 on its release day (Scale AI; verified fact (part our inference): that it was the release day is our reading of the entry's date), so a new release would likely be scored in time (our inference). We put about two in three on at least one new frontier release by February that Scale scores, and about three in five that the best of them reaches 50% (our inference). The RLI is the primary test of our breadth part (definitions v2.0): Partial from 40%, Met at 80%.",
+   "url": "https://labs.scale.com/leaderboard/rli",
    "outcome": null,
    "resolved": null
   }
