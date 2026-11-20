@@ -85,10 +85,12 @@
    "p": 50,
    "deadline": "2026-11-30",
    "resolution": "A GPT-6 Astra entry on METR's time-horizons page or blog.",
-   "context": "METR's page has shown nothing newer than May 8, and its suite is saturated above 16 hours.",
-   "url": "https://metr.org/time-horizons/",
-   "outcome": null,
-   "resolved": null,
+   "context": "Resolved Yes: METR's Nov 20 post 'AI R&D-relevant model capabilities are improving rapidly and are getting harder to measure' gives GPT-6 Astra a pooled TH1.1 + TH2 50% time horizon of '40 h (13–2645)' (standard estimates, 95% CI), and 29 h and 32 h under two alternative estimates, against 39 h for Opus 5.5 (METR; verified fact). The post covers 'public models relevant to AI R&D acceleration, up to Opus 5.5 and GPT-6 Astra' and says 'Current public frontier models have an estimated time horizon of up to 27 hours on the verifiable subset of our TH2 tasks' (METR; verified fact). Our rule counts METR's blog as well as its time-horizons page. That page says it is 'no longer actively updated' and has added no model since its May 8 entry (METR; verified fact). The estimate pools METR's older TH1.1 tasks with its new TH2 suite and has a very wide interval, so it does not line up directly with the 80% horizons on our trend line (our inference).",
+   "original_context": "METR's page has shown nothing newer than May 8, and its suite is saturated above 16 hours.",
+   "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+   "original_url": "https://metr.org/time-horizons/",
+   "outcome": true,
+   "resolved": "2026-11-20",
    "corrections": [
     {
      "date": "2026-10-23",
@@ -153,9 +155,9 @@
    "original_context": "Kalshi prices 62% on \"any company announces AGI before Apr 1, 2027\". We are lower because offhand \"AGI era\" remarks don't count.",
    "original_url": "https://www.tradingview.com/news/benzinga:282574e02094b:0-openai-s-gpt-6-astra-beats-all-levels-of-i-m-not-a-robot-challenge-here-s-when-agi-will-arrive-according-to-prediction-markets/",
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "market": 15,
-   "marketAsOf": "2026-11-13",
-   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:14 PT (bid/ask 14/15; not thin by our rule, with about 38.2k contracts traded, but only about 14 contracts sat at the ask and 31 traded in the 24 h before the read; it traded 14 to 18 since Nov 6)",
+   "market": 10,
+   "marketAsOf": "2026-11-20",
+   "marketSource": "Kalshi KXAGICO-COMP-27Q1, last trade via the public API at 13:15 PT (bid/ask 10/11; thin: only 0.05 contracts sat at the 11 ask and the nearest offer of 10 or more contracts was at 13; no contracts traded in the 24 h before the read, and the last print, 10 at 19:43 PT Nov 18, was 0.11 contracts; the last trade of size was 16, about 59 contracts, at 13:16 PT Nov 17; about 38.6k contracts traded in all)",
    "marketUrl": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
    "outcome": null,
    "resolved": null,
@@ -206,10 +208,12 @@
    "p": 30,
    "deadline": "2026-11-30",
    "resolution": "Yes if, by Nov 30, 2026, the Governor's office, the Government Operations Agency or Cal OES publicly releases the §3 recommendations: the document itself, or a summary that states the recommendation on each of items a–d (onsite verifiers, verified safety filings, a kill switch, loss-of-control incident reporting). A statement that recommendations were delivered, without their content, doesn't count.",
-   "context": "Replaces the withdrawn kill-switch forecast. The signed order (Sept 18) tells the Government Operations Agency, with Cal OES, to submit recommendations to the Governor's office no later than Nov 16, 2026. It doesn't require publishing them, so release depends on the Governor's office; deadlines like this often slip.",
-   "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf",
-   "outcome": null,
-   "resolved": null
+   "context": "Resolved Yes: on Nov 18, 2026 the Governor's office announced the recommendations, linking the Government Operations Agency's report 'AI Safety in 2026 and Beyond: Recommendations for Legislative Enhancements to California’s AI Safety Laws', 'A Report to the Governor from the California Government Operations Agency' dated Nov 16, 2026 (California Governor's office; GovOps; verified fact). The report says that 'In response to Executive Order N-9-26' GovOps, with Cal OES and outside AI experts, 'has developed recommendations for legislative action', and it covers standards, independent verification organizations, critical safety incident reporting (to include 'any situations of loss-of-control') and emergency shutdown through a verified 'Risk Containment Protocol' rather than a single kill switch (GovOps; verified fact). That is the document itself, which the rule counts (our inference). The report is dated on the order's Nov 16 deadline and was published two days later, so the slip we expected did not happen (our inference).",
+   "original_context": "Replaces the withdrawn kill-switch forecast. The signed order (Sept 18) tells the Government Operations Agency, with Cal OES, to submit recommendations to the Governor's office no later than Nov 16, 2026. It doesn't require publishing them, so release depends on the Governor's office; deadlines like this often slip.",
+   "url": "https://www.govops.ca.gov/wp-content/uploads/sites/11/2026/11/FINAL_-AI-Safety-in-2026-and-Beyond-v2.pdf",
+   "original_url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf",
+   "outcome": true,
+   "resolved": "2026-11-18"
   },
   {
    "id": "openai-postastra-eval-or-release-by-nov7",
@@ -313,8 +317,8 @@
    "context": "OpenAI credits an unreleased internal model with its Navier–Stokes result and with the mathematics manuscripts it published on Oct 6, but its frontier training has been paused since Sept 25, and California's Attorney General served it an investigative subpoena on Sept 30 in an inquiry into cybersecurity incidents and risks involving the company and its models. Microsoft says that under their October 2025 agreement an OpenAI AGI declaration \"will now be verified by an independent expert panel\". We think a formal claim in the next 12 weeks is unlikely while the pause lasts. Markets price more (forecast aggregate, Oct 9): Polymarket's matching market is at a 15.5% midpoint, Kalshi's similar OpenAI contract is thin (bid/ask 8.1/12.9), and Kalshi's any-company contract for the same date last traded at 9%. We sit near Kalshi and below Polymarket.",
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
    "market": 6.5,
-   "marketAsOf": "2026-11-13",
-   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:14 PT (bid/ask 6/7; last trade 7; about $369k traded and liquidity about $29k; the API gave no 24 h volume)",
+   "marketAsOf": "2026-11-20",
+   "marketSource": "Polymarket \"OpenAI announces it has achieved AGI before 2027?\", midpoint via the public API at 13:15 PT (bid/ask 6/7; last trade 6; about $391k traded, $6.5k in the 24 h before the read, liquidity about $24.4k; not thin). Kalshi's similar OpenAI contract (OAIAGI-26) last traded at 5.7 (bid/ask 4.1/6.7; thin)",
    "marketUrl": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
    "outcome": null,
    "resolved": null,
@@ -358,14 +362,16 @@
    "p": 40,
    "deadline": "2027-01-31",
    "resolution": "Yes if, by the end of Jan 31, 2027 (Pacific), OpenAI makes available to outside users for the first time after Oct 23, 2026 (in ChatGPT, through its paid API, or in a preview open to paying customers) a model that it says is more capable overall than GPT-6 Astra, either in words or by showing it above GPT-6 Astra on most of the capability evaluations in its announcement or system card. A model specialised for one domain, such as the GPT-6 Astra Cyber model OpenAI called \"upcoming\" on Oct 23, 2026, counts only if OpenAI says it is more capable overall. Access limited to a named set of vetted partners doesn't count. No otherwise.",
-   "context": "OpenAI credits its Navier–Stokes result to an unreleased internal model that it says is significantly more capable than GPT-6 Astra (OpenAI, via CoinDesk, Sept 9; credible report). On Oct 23 OpenAI said it resumed reinforcement learning training and internal inference of its frontier models on Oct 1 (OpenAI; verified fact). Its DNS incident report, updated Sept 25, said that when training restarts it \"will begin a fresh run with additional alignment improvements\" (OpenAI; verified fact). If the Oct 1 restart began that fresh run, about four months remain to train, test and ship a new model by Jan 31; OpenAI could instead release the existing post-Astra model (our inference). This is a proxy for alarm condition W6 (exclusive internal use of an unreleased model for 90 days or more), which clears when the model is released or its capabilities are published, and for the capability-gap gauge.",
-   "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+   "context": "Resolved Yes: on Nov 17, 2026 OpenAI released GPT-6.2 Astra, 'available to all Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex' and to developers 'through the OpenAI API' (OpenAI; verified fact). Its announcement shows GPT-6.2 Astra above GPT-6 Astra on all 14 capability charts that include both models, comparing each model's best result (its other two charts are alignment measures), among them GDPval v2, where 'GPT‑6.2 Astra leads the models we tested, up 6.2 percentage points from GPT‑6 Astra', and Terminal-Bench-Science 0.1, where it 'scores 9 percentage points higher than GPT-6 Astra' (OpenAI; verified fact (part our inference): the count of charts is ours, from the chart data in the page). Its system card, published Nov 17, calls GPT-6.2 Astra and Sol 'the most capable models we have deployed externally to date' and puts GPT-6.2 Astra above GPT-6 Astra on four of the five AI self-improvement evaluations, below on PostTrainBench Lite (74.79% against 76.97%) (OpenAI; verified fact). The rule counts a general release shown above GPT-6 Astra on most of the capability evaluations in its announcement or system card (our inference). This forecast was a proxy for alarm condition W6, but the two have parted: neither the announcement nor the system card says GPT-6.2 Astra is the unreleased model OpenAI acknowledged on Sept 8 (OpenAI; verified fact (part our inference): the absence is our reading), so W6 still runs for that model, at 67 of 90 days on Nov 20, and is met on Dec 13 unless that model is released or its capabilities are published (our inference, from our alarm check).",
+   "original_context": "OpenAI credits its Navier–Stokes result to an unreleased internal model that it says is significantly more capable than GPT-6 Astra (OpenAI, via CoinDesk, Sept 9; credible report). On Oct 23 OpenAI said it resumed reinforcement learning training and internal inference of its frontier models on Oct 1 (OpenAI; verified fact). Its DNS incident report, updated Sept 25, said that when training restarts it \"will begin a fresh run with additional alignment improvements\" (OpenAI; verified fact). If the Oct 1 restart began that fresh run, about four months remain to train, test and ship a new model by Jan 31; OpenAI could instead release the existing post-Astra model (our inference). This is a proxy for alarm condition W6 (exclusive internal use of an unreleased model for 90 days or more), which clears when the model is released or its capabilities are published, and for the capability-gap gauge.",
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+   "original_url": "https://openai.com/index/securing-our-frontier-model-training-environment",
    "tests": [
     "W6",
     "gap"
    ],
-   "outcome": null,
-   "resolved": null,
+   "outcome": true,
+   "resolved": "2026-11-17",
    "corrections": [
     {
      "date": "2026-11-06",
@@ -381,14 +387,16 @@
    "p": 50,
    "deadline": "2026-11-30",
    "resolution": "Yes if, by the end of Nov 30, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 30, 2026?' resolves on a similar rule (listed on a public exchange and open for trading).",
-   "context": "At about 13:40 PT Oct 23, SEC EDGAR showed no public Anthropic registration statement (SEC; verified fact). A confidential filer must file publicly \"at least 15 days prior to any road show or, in the absence of a road show, at least 15 days prior to the requested effective date\" (SEC; verified fact), so trading by Nov 30 needs a public filing by Nov 15 at the very latest, and by early November to leave time for a typical roadshow (our inference). Three people familiar with Anthropic's plans told Yahoo Finance on Oct 21 that it is set to file its S-1 publicly \"as soon as Friday\", which was Oct 23 (via Yahoo Finance; credible report), and Yahoo said a public filing would clear a key procedural hurdle toward \"a potential November listing\" (Yahoo Finance; credible report). The market prices more (forecast aggregate, Oct 23): Polymarket's matching market sits at a 67.5 midpoint. We sit lower because no public filing had appeared by Oct 23, the schedule leaves little room for a slip, and the timeline behind our 75% on an Oct 31 listing proved too early (our inference).",
-   "url": "https://finance.yahoo.com/markets/article/anthropic-to-publicly-file-for-ipo-as-early-as-friday-sources-say-135343841.html",
-   "market": 98.1,
-   "marketAsOf": "2026-11-13",
-   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 97.8/98.4; last trade 98.3; about $855k traded, $15.8k in the 24 h before the read, liquidity about $39k; no longer thin)",
+   "context": "Resolved Yes: Anthropic says its “Class A common stock began trading on the Nasdaq Global Select Market on November 19, 2026” under the symbol “ANT”, and on Nov 20 it announced the closing of its initial public offering of 1,127,000,000 Class A shares at $83.00 a share (Anthropic; verified fact). SEC EDGAR shows Anthropic's Form 8-A on Nov 17, the exchange's certification and a notice of effectiveness dated Nov 18, and the final prospectus (Form 424B4) on Nov 19 (SEC EDGAR; verified fact). The shares opened at $111.50 (Fox Business; Fortune; verified fact). Trading began eleven days before our deadline (our arithmetic).",
+   "original_context": "At about 13:40 PT Oct 23, SEC EDGAR showed no public Anthropic registration statement (SEC; verified fact). A confidential filer must file publicly \"at least 15 days prior to any road show or, in the absence of a road show, at least 15 days prior to the requested effective date\" (SEC; verified fact), so trading by Nov 30 needs a public filing by Nov 15 at the very latest, and by early November to leave time for a typical roadshow (our inference). Three people familiar with Anthropic's plans told Yahoo Finance on Oct 21 that it is set to file its S-1 publicly \"as soon as Friday\", which was Oct 23 (via Yahoo Finance; credible report), and Yahoo said a public filing would clear a key procedural hurdle toward \"a potential November listing\" (Yahoo Finance; credible report). The market prices more (forecast aggregate, Oct 23): Polymarket's matching market sits at a 67.5 midpoint. We sit lower because no public filing had appeared by Oct 23, the schedule leaves little room for a slip, and the timeline behind our 75% on an Oct 31 listing proved too early (our inference).",
+   "url": "https://www.anthropic.com/news/ipo-close",
+   "original_url": "https://finance.yahoo.com/markets/article/anthropic-to-publicly-file-for-ipo-as-early-as-friday-sources-say-135343841.html",
+   "market": 99.95,
+   "marketAsOf": "2026-11-20",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 30, 2026?\", closed at 10:51 PT Nov 19 and resolved Yes (outcome prices Yes 1, No 0) via the public API at 13:15 PT Nov 20; 99.95 is the midpoint of the final pre-close book (bid/ask 99.9/100; last trade 99.9), not a live price; about $939k traded",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
-   "outcome": null,
-   "resolved": null
+   "outcome": true,
+   "resolved": "2026-11-19"
   },
   {
    "id": "big4-q4-capex-700b-ttm",
@@ -412,14 +420,16 @@
    "p": 25,
    "deadline": "2026-12-13",
    "resolution": "Yes if, by the end of Dec 13, 2026 (Pacific), either (a) OpenAI makes available to outside users for the first time after Oct 30, 2026 (in ChatGPT, through its paid API, or in a preview open to paying customers) a model that it says is more capable overall than GPT-6 Astra, either in words or by showing it above GPT-6 Astra on most of the capability evaluations in its announcement or system card; or (b) OpenAI publishes, in a system card, addendum, blog post or report, scores on named capability evaluations for the unreleased internal model it acknowledged on Sept 8, 2026 as more capable than GPT-6 Astra. Access limited to a named set of vetted partners doesn't count for (a). For (b), statements that the model is more capable without evaluation scores, results the model produced (such as proofs), safety or misalignment reports without capability scores, and leaked or reported figures don't count. No otherwise.",
-   "context": "Our alarm condition W6 (a lab using a model internally for 90 days or more without releasing it or publishing its capabilities) stood at 46 of 90 days for OpenAI's unreleased post-Astra model on Oct 30 under our main reading. It is met on Dec 13 unless the model is released or its capabilities are published (our inference, from our alarm check). OpenAI said on Oct 23 that it resumed RL training and internal inference of its frontier models on Oct 1 (OpenAI; verified fact). Since then it has published addenda for GPT-6.1 Terra, on Oct 26, and an updated GPT-6 Luna, on Oct 29 (OpenAI; verified fact). Neither addendum says the model is more capable overall than GPT-6 Astra, and Luna's gives 51.75% on SEC-Bench Pro against 85.4% for GPT-6 Astra (OpenAI; verified fact (part our inference): 'neither says' is our reading). OpenAI has published results it credits to the post-Astra model, such as proofs, but no capability scores for it (our inference). Six weeks leaves little time to ship that model or one from a fresh run, so we sit below our 40% on a release by Jan 31 (our inference). This is a proxy for W6 and for the capability-gap gauge.",
-   "url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum",
+   "context": "Resolved Yes by route (a): on Nov 17, 2026 OpenAI released GPT-6.2 Astra, 'available to all Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex' and to developers 'through the OpenAI API' (OpenAI; verified fact). Its announcement shows GPT-6.2 Astra above GPT-6 Astra on all 14 capability charts that include both models, comparing each model's best result (its other two charts are alignment measures), among them GDPval v2, where 'GPT‑6.2 Astra leads the models we tested, up 6.2 percentage points from GPT‑6 Astra', and Terminal-Bench-Science 0.1, where it 'scores 9 percentage points higher than GPT-6 Astra' (OpenAI; verified fact (part our inference): the count of charts is ours, from the chart data in the page). Its system card, published Nov 17, calls GPT-6.2 Astra and Sol 'the most capable models we have deployed externally to date' and puts GPT-6.2 Astra above GPT-6 Astra on four of the five AI self-improvement evaluations, below on PostTrainBench Lite (74.79% against 76.97%) (OpenAI; verified fact). The rule counts a general release shown above GPT-6 Astra on most of the capability evaluations in its announcement or system card (our inference). Route (b) is not met: OpenAI has published no capability scores for a model it identifies as the one it acknowledged on Sept 8 (our inference, from OpenAI's announcements through Nov 20). This forecast was a proxy for alarm condition W6, but the two have parted: neither the announcement nor the system card says GPT-6.2 Astra is the unreleased model OpenAI acknowledged on Sept 8 (OpenAI; verified fact (part our inference): the absence is our reading), so W6 still runs for that model, at 67 of 90 days on Nov 20, and is met on Dec 13 unless that model is released or its capabilities are published (our inference, from our alarm check).",
+   "original_context": "Our alarm condition W6 (a lab using a model internally for 90 days or more without releasing it or publishing its capabilities) stood at 46 of 90 days for OpenAI's unreleased post-Astra model on Oct 30 under our main reading. It is met on Dec 13 unless the model is released or its capabilities are published (our inference, from our alarm check). OpenAI said on Oct 23 that it resumed RL training and internal inference of its frontier models on Oct 1 (OpenAI; verified fact). Since then it has published addenda for GPT-6.1 Terra, on Oct 26, and an updated GPT-6 Luna, on Oct 29 (OpenAI; verified fact). Neither addendum says the model is more capable overall than GPT-6 Astra, and Luna's gives 51.75% on SEC-Bench Pro against 85.4% for GPT-6 Astra (OpenAI; verified fact (part our inference): 'neither says' is our reading). OpenAI has published results it credits to the post-Astra model, such as proofs, but no capability scores for it (our inference). Six weeks leaves little time to ship that model or one from a fresh run, so we sit below our 40% on a release by Jan 31 (our inference). This is a proxy for W6 and for the capability-gap gauge.",
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+   "original_url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum",
    "tests": [
     "W6",
     "gap"
    ],
-   "outcome": null,
-   "resolved": null,
+   "outcome": true,
+   "resolved": "2026-11-17",
    "corrections": [
     {
      "date": "2026-11-06",
@@ -440,14 +450,16 @@
    "p": 40,
    "deadline": "2026-11-20",
    "resolution": "Yes if, by the end of Nov 20, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by November 20, 2026?' resolves on a similar rule (listed on a public exchange and open for trading by 11:59 PM ET).",
-   "context": "Anthropic filed its S-1 publicly on SEC EDGAR on Oct 26 (SEC EDGAR; verified fact). A company that submitted drafts confidentially must file publicly 'at least 15 days prior to any road show' (SEC; verified fact), so Anthropic's roadshow can start on Nov 10 at the earliest (our arithmetic). Bloomberg reported that the roadshow could start in the week of Nov 9 at the earliest and that Anthropic is targeting a debut before Thanksgiving, Nov 26 (Bloomberg, via XTB; credible report). The Wall Street Journal reported, citing people familiar, that Anthropic is targeting a listing in the week of Nov 16, though the timing could change (people familiar, via the WSJ, read on Investing.com; credible report). As of Oct 30, EDGAR showed no amended S-1 with a price range (SEC EDGAR; verified fact). Trading by Nov 20 needs a roadshow that starts on about the earliest date and runs little more than a week, with no slip, and large IPO roadshows commonly take one to two weeks (our inference). The market prices more (forecast aggregate, Oct 30): Polymarket's matching market sits at a 53 midpoint. We sit lower because the reported week-of-Nov-16 target falls inside our window only if the roadshow starts on about the earliest day and nothing slips: the Journal's sources say the timing could change, and Bloomberg's before-Thanksgiving debut also allows Nov 23–25, after our deadline (our inference).",
-   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
-   "market": 95.7,
-   "marketAsOf": "2026-11-13",
-   "marketSource": "Polymarket \"Will Anthropic IPO by November 20, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 95.5/95.9; last trade 95.8; about $250k traded, $15.7k in the 24 h before the read, liquidity about $55k; no longer thin). The same event's Nov 18 contract sat at a 0.6 midpoint and its Nov 19 contract at 93.05, so the market expects trading to begin on Nov 19 (our inference)",
+   "context": "Resolved Yes: Anthropic says its “Class A common stock began trading on the Nasdaq Global Select Market on November 19, 2026” under the symbol “ANT”, and on Nov 20 it announced the closing of its initial public offering of 1,127,000,000 Class A shares at $83.00 a share (Anthropic; verified fact). SEC EDGAR shows Anthropic's Form 8-A on Nov 17, the exchange's certification and a notice of effectiveness dated Nov 18, and the final prospectus (Form 424B4) on Nov 19 (SEC EDGAR; verified fact). The shares opened at $111.50 (Fox Business; Fortune; verified fact). Trading began one day before our deadline, in the week of Nov 16 that the Journal's sources had reported; the slip that kept us below the market did not come (our inference).",
+   "original_context": "Anthropic filed its S-1 publicly on SEC EDGAR on Oct 26 (SEC EDGAR; verified fact). A company that submitted drafts confidentially must file publicly 'at least 15 days prior to any road show' (SEC; verified fact), so Anthropic's roadshow can start on Nov 10 at the earliest (our arithmetic). Bloomberg reported that the roadshow could start in the week of Nov 9 at the earliest and that Anthropic is targeting a debut before Thanksgiving, Nov 26 (Bloomberg, via XTB; credible report). The Wall Street Journal reported, citing people familiar, that Anthropic is targeting a listing in the week of Nov 16, though the timing could change (people familiar, via the WSJ, read on Investing.com; credible report). As of Oct 30, EDGAR showed no amended S-1 with a price range (SEC EDGAR; verified fact). Trading by Nov 20 needs a roadshow that starts on about the earliest date and runs little more than a week, with no slip, and large IPO roadshows commonly take one to two weeks (our inference). The market prices more (forecast aggregate, Oct 30): Polymarket's matching market sits at a 53 midpoint. We sit lower because the reported week-of-Nov-16 target falls inside our window only if the roadshow starts on about the earliest day and nothing slips: the Journal's sources say the timing could change, and Bloomberg's before-Thanksgiving debut also allows Nov 23–25, after our deadline (our inference).",
+   "url": "https://www.anthropic.com/news/ipo-close",
+   "original_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "market": 99.95,
+   "marketAsOf": "2026-11-20",
+   "marketSource": "Polymarket \"Will Anthropic IPO by November 20, 2026?\", closed at 10:50 PT Nov 19 and resolved Yes (outcome prices Yes 1, No 0) via the public API at 13:15 PT Nov 20; 99.95 is the midpoint of the final pre-close book (bid/ask 99.9/100; last trade 99.9), not a live price; about $358k traded",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
-   "outcome": null,
-   "resolved": null
+   "outcome": true,
+   "resolved": "2026-11-19"
   },
   {
    "id": "anthropic-rd-share-36pct-by-feb28",
@@ -479,7 +491,14 @@
     "gap"
    ],
    "outcome": null,
-   "resolved": null
+   "resolved": null,
+   "corrections": [
+    {
+     "date": "2026-11-20",
+     "text": "Clarification (the question, probability and resolution rule are unchanged): METR's Nov 20 capability update doesn't resolve this forecast. It presents evidence on 'public models relevant to AI R&D acceleration, up to Opus 5.5 and GPT-6 Astra', gives no gap in months between internal and public models, and says 'These trends do not account for internal models. It’s possible that internal models are far beyond the current frontier.' (METR; verified fact (part our inference): 'no gap in months' is our reading). A possibility stated without a measurement doesn't count under the rule (our inference).",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    }
+   ]
   },
   {
    "id": "anthropic-trading-by-dec31",
@@ -488,14 +507,16 @@
    "p": 65,
    "deadline": "2026-12-31",
    "resolution": "Yes if, by the end of Dec 31, 2026 (Eastern), shares of Anthropic (Anthropic, PBC, or a holding company listed in its place) open for regular trading on a US national securities exchange, such as Nasdaq or the NYSE, in an IPO or a direct listing, as shown by the exchange, an Anthropic announcement or an SEC filing. Pricing without trading, when-issued or grey-market trading, and private secondary sales don't count. No otherwise. Polymarket's 'Will Anthropic IPO by December 31, 2026?' resolves on a similar rule (listed on a public exchange and open for trading by 11:59 PM ET).",
-   "context": "Anthropic filed its S-1 publicly on Oct 26 and an amended S-1 on Nov 2; at about 13:37 PT Nov 6 its EDGAR record showed no later amendment (SEC EDGAR; verified fact). Four people familiar with investor discussions told Reuters on Nov 5 that potential investors doubt Anthropic can 'proceed with its planned roadshow next week in time for a November listing', and that it could delay the offering 'until the market looks more resilient' if AI-related assets stay under pressure; Anthropic declined to comment (the people familiar, via Reuters, read on Investing.com; credible report). Reuters had reported that the roadshow 'was initially expected to kick off the week of November 9', with pricing 'expected the following week' (Reuters, read on Investing.com; credible report). A November slip could still list in the first half of December, but US IPOs rarely price in the last two weeks of the year, and a delay for market conditions could run into 2027 (our inference). We put about even odds on a November listing and about one in three on December if November slips (our inference). The market prices more (forecast aggregate, Nov 6): Polymarket's matching market sits at an 87.5 midpoint. We sit lower because of the investor doubts Reuters reports and the short December window (our inference).",
-   "url": "https://www.investing.com/news/stock-market-news/exclusiveai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-5006110",
-   "market": 98.55,
-   "marketAsOf": "2026-11-13",
-   "marketSource": "Polymarket \"Will Anthropic IPO by December 31, 2026?\", midpoint via the public API at 13:14 PT (bid/ask 98.3/98.8; last trade 98.3, at the bid; about $2.03M traded, $11k in the 24 h before the read, liquidity about $40k)",
+   "context": "Resolved Yes: Anthropic says its “Class A common stock began trading on the Nasdaq Global Select Market on November 19, 2026” under the symbol “ANT”, and on Nov 20 it announced the closing of its initial public offering of 1,127,000,000 Class A shares at $83.00 a share (Anthropic; verified fact). SEC EDGAR shows Anthropic's Form 8-A on Nov 17, the exchange's certification and a notice of effectiveness dated Nov 18, and the final prospectus (Form 424B4) on Nov 19 (SEC EDGAR; verified fact). The shares opened at $111.50 (Fox Business; Fortune; verified fact). The listing went ahead in November despite the investor doubts Reuters reported on Nov 5, which had kept us well below the market (our inference).",
+   "original_context": "Anthropic filed its S-1 publicly on Oct 26 and an amended S-1 on Nov 2; at about 13:37 PT Nov 6 its EDGAR record showed no later amendment (SEC EDGAR; verified fact). Four people familiar with investor discussions told Reuters on Nov 5 that potential investors doubt Anthropic can 'proceed with its planned roadshow next week in time for a November listing', and that it could delay the offering 'until the market looks more resilient' if AI-related assets stay under pressure; Anthropic declined to comment (the people familiar, via Reuters, read on Investing.com; credible report). Reuters had reported that the roadshow 'was initially expected to kick off the week of November 9', with pricing 'expected the following week' (Reuters, read on Investing.com; credible report). A November slip could still list in the first half of December, but US IPOs rarely price in the last two weeks of the year, and a delay for market conditions could run into 2027 (our inference). We put about even odds on a November listing and about one in three on December if November slips (our inference). The market prices more (forecast aggregate, Nov 6): Polymarket's matching market sits at an 87.5 midpoint. We sit lower because of the investor doubts Reuters reports and the short December window (our inference).",
+   "url": "https://www.anthropic.com/news/ipo-close",
+   "original_url": "https://www.investing.com/news/stock-market-news/exclusiveai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-5006110",
+   "market": 99.95,
+   "marketAsOf": "2026-11-20",
+   "marketSource": "Polymarket \"Will Anthropic IPO by December 31, 2026?\", closed at 10:50 PT Nov 19 and resolved Yes (outcome prices Yes 1, No 0) via the public API at 13:15 PT Nov 20; 99.95 is the midpoint of the final pre-close book (bid/ask 99.9/100; last trade 99.9), not a live price; about $2.24M traded",
    "marketUrl": "https://polymarket.com/event/anthropic-ipo-by",
-   "outcome": null,
-   "resolved": null
+   "outcome": true,
+   "resolved": "2026-11-19"
   },
   {
    "id": "anthropic-beyond-mythos52-release-or-eval-by-jan8",
@@ -522,6 +543,46 @@
    "resolution": "Yes if, by the end of Feb 28, 2027 (Pacific), Scale AI's Remote Labor Index (RLI) leaderboard (labs.scale.com/leaderboard/rli), or a Scale AI or CAIS publication about the RLI, lists any AI system with an automation rate of 50.00% or more on the RLI as it stood on Nov 13, 2026 (scored on 230 private projects) or on a revision Scale says is comparable. A lab's own claimed RLI score counts only once Scale AI or CAIS lists it. No otherwise.",
    "context": "Scale AI's leaderboard, read Nov 13, lists Claude Fable 5.2 first at a 41.25% automation rate, in an entry created on Nov 9, ahead of Claude Opus 5.5 at 21.25%, GPT-6 Astra at 20.83% and Gemini Argon 4 at 17.08%, with no row for Gemini 4 Carbon (Scale AI; verified fact). The top score roughly doubled with one release between Oct 9 and Nov 9, which resolved our 25% forecast (our arithmetic). A Yes needs a model about 9 points above Fable 5.2 within about 15 weeks. The likeliest sources are OpenAI's post-Astra model, still unreleased on Nov 13 (our inference, from OpenAI's channels), and the unreleased Anthropic research model its Nov 9 system card calls 'somewhat more capable than Claude Mythos 5.2' (Anthropic; verified fact). Scale listed Fable 5.2 on its release day (Scale AI; verified fact (part our inference): that it was the release day is our reading of the entry's date), so a new release would likely be scored in time (our inference). We put about two in three on at least one new frontier release by February that Scale scores, and about three in five that the best of them reaches 50% (our inference). The RLI is the primary test of our breadth part (definitions v2.0): Partial from 40%, Met at 80%.",
    "url": "https://labs.scale.com/leaderboard/rli",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "openai-sept8-model-released-or-scored-by-dec31",
+   "made": "2026-11-20",
+   "question": "OpenAI says a model it has released is the unreleased model it acknowledged on Sept 8, or publishes capability scores for that model, by Dec 31, 2026",
+   "p": 15,
+   "deadline": "2026-12-31",
+   "resolution": "Yes if, by the end of Dec 31, 2026 (Pacific), OpenAI either (a) states that a model available to outside users (in ChatGPT, through its paid API, or in a preview open to paying customers) is, or is a version of, the unreleased internal model it acknowledged on Sept 8, 2026 as more capable than GPT-6 Astra (the model it credited with its Navier–Stokes result); or (b) publishes, in a system card, addendum, blog post or report, scores on named capability evaluations for a model it identifies as that model. Our own inference that a released model is that model, reports citing unnamed sources, access limited to a named set of vetted partners, and scores for internal models OpenAI doesn't identify as that model don't count. No otherwise.",
+   "context": "OpenAI released GPT-6.2 Astra on Nov 17 and shows it above GPT-6 Astra on all 14 capability charts in its announcement that include both models (OpenAI; verified fact (part our inference): the count is ours). That resolved our two forecasts on a model more capable than GPT-6 Astra. Neither its announcement nor its system card mentions the model OpenAI acknowledged on Sept 8 (OpenAI; verified fact (part our inference): the absence is our reading). Our alarm condition W6 (a model used internally for 90 days or more without release or published capabilities) stands at 67 of 90 days for that model on Nov 20 and is met on Dec 13 unless OpenAI releases it or publishes its capabilities; W2 has been met since Nov 7 (our inference, from our alarm check). OpenAI made a major release without making that link, and the holidays leave little room for another release this year, so we put a Yes at about one in seven (our inference). A Yes by Dec 13 would clear W6 before it is met. This is a proxy for W6 and for the capability-gap gauge.",
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+   "tests": [
+    "W6",
+    "gap"
+   ],
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "ca-frontier-oversight-bill-by-feb28",
+   "made": "2026-11-20",
+   "question": "A bill to require oversight of frontier AI developers by independent verification organizations, or to give California emergency-shutdown powers over frontier models, is introduced in the California Legislature by Feb 28, 2027",
+   "p": 45,
+   "deadline": "2027-02-28",
+   "resolution": "Yes if, by the end of Feb 28, 2027 (Pacific), a bill introduced after Nov 20, 2026 in the California Senate or Assembly, as shown on leginfo.legislature.ca.gov, has text (as introduced, or as amended by the deadline) that would (a) require large frontier AI developers to submit to ongoing oversight or assessment by licensed independent verification organizations, (b) require them to maintain a risk containment or shutdown protocol verified by such an organization, or (c) give a state official or agency authority to order a frontier model shut down, or to cap its development or use. A bill that only states an intent to legislate on these subjects, or only funds or studies them, doesn't count. No otherwise.",
+   "context": "The Government Operations Agency's report under Executive Order N-9-26, dated Nov 16 and released by the Governor's office on Nov 18, is titled 'AI Safety in 2026 and Beyond: Recommendations for Legislative Enhancements to California’s AI Safety Laws'. It says 'Every large frontier developer must submit to ongoing oversight by licensed independent verification organizations' and must create a 'Risk Containment Protocol (RCP), tested and verified on an ongoing basis by an IVO', and that the state should have authority to cap the development and use of recursive self-improvement (GovOps; verified fact). The Governor's release names no bill or sponsor for these proposals; it points to two laws already signed, SB 813 (McNerney) on independent verification organizations and AB 1405 (Bauer-Kahan) on a registry of AI auditors, and calls on Congress and the President to review and adopt the state's framework (California Governor's office; verified fact (part our inference): that it names no bill or sponsor for the new proposals is our reading). A legislator could carry the recommendations early in the new session, but large California bills are often introduced with intent language and given substance by amendment in the spring, which the rule doesn't count, so we sit just under even (our inference).",
+   "url": "https://www.govops.ca.gov/wp-content/uploads/sites/11/2026/11/FINAL_-AI-Safety-in-2026-and-Beyond-v2.pdf",
+   "outcome": null,
+   "resolved": null
+  },
+  {
+   "id": "metr-horizon-newest-frontier-by-feb28",
+   "made": "2026-11-20",
+   "question": "METR publishes a time-horizon estimate for GPT-6.2 Astra, Claude Fable 5.2 or Claude Mythos 5.2 by Feb 28, 2027",
+   "p": 35,
+   "deadline": "2027-02-28",
+   "resolution": "Yes if, by the end of Feb 28, 2027 (Pacific), METR publishes on its own website (blog, notes, research pages, time-horizons page or data it links there) a 50% or 80% time-horizon estimate, as a number in text, a table or downloadable data, for GPT-6.2 Astra, Claude Fable 5.2 or Claude Mythos 5.2 (including a snapshot METR says is one of them). A figure attributed to METR only in a lab's system card or in press reports doesn't count. No otherwise.",
+   "context": "METR's Nov 20 capability update gave GPT-6 Astra a pooled 50% time horizon of '40 h (13–2645)', covered 'public models relevant to AI R&D acceleration, up to Opus 5.5 and GPT-6 Astra' and says 'we only test models up to Opus 5.5 in this report' (METR; verified fact). OpenAI released GPT-6.2 Astra on Nov 17, and Anthropic introduced Claude Fable 5.2 and Claude Mythos 5.2 on Nov 9 (OpenAI; Anthropic; verified fact). The update gives no time horizon for any of them; GPT-6.2 Astra appears in its figure data only in a series of Epoch Capabilities Index scores (our inference, from METR's text and figure data). METR's time-horizons page says it is 'no longer actively updated' and has added no model since its May 8 entry, and its Sept 22 summary of its Opus 5.5 pre-deployment evaluation gives no time horizon (METR; verified fact (part our inference): 'no time horizon' is our reading). A Yes most likely needs another capability update by February (our inference). The Nov 20 post's web address labels it a Q4 2026 update, but the post states no schedule for the next one, and its title says capabilities are 'getting harder to measure' (METR; verified fact (part our inference): 'states no schedule' is our reading). A quarterly series could bring the next update in February or in March, after our deadline, and it might again stop short of the newest models, so we put about one in three on a qualifying estimate in time (our inference). Our trend line rests on METR measurements, so a Yes would let us refresh it (our inference).",
+   "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
    "outcome": null,
    "resolved": null
   }

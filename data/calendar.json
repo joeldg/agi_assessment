@@ -184,7 +184,7 @@
    "title": "New OpenAI models, possibly the next Astra and Sol, could come as soon as Nov 6 (people with knowledge, via The Information, read on FourWeekMBA)",
    "hyp": "A",
    "certainty": "approximate",
-   "why": "If the next Astra is the unreleased model OpenAI acknowledged on Sept 8, its release on Nov 6 would keep alarm condition W2 from being met on Nov 7 and resolve openai-postastra-eval-or-release-by-nov7 yes (our inference). OpenAI's news feed lists GPT-6 Cyber on Nov 5 and no new Astra or Sol model as of 13:39 PT Nov 6 (OpenAI).",
+   "why": "If the next Astra is the unreleased model OpenAI acknowledged on Sept 8, its release on Nov 6 would keep alarm condition W2 from being met on Nov 7 and resolve openai-postastra-eval-or-release-by-nov7 yes (our inference). OpenAI's news feed lists GPT-6 Cyber on Nov 5 and no new Astra or Sol model as of 13:39 PT Nov 6 (OpenAI). OpenAI released GPT-6.2 Astra and GPT-6.2 Sol on Nov 17 (OpenAI).",
    "url": "https://fourweekmba.com/ai-openais-next-astra-could-come-as-soon-as-friday-64-days-on/",
    "short": "OpenAI's next models reported as soon as Nov 6, possibly Astra and Sol"
   },
@@ -299,6 +299,26 @@
    "url": "https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf"
   },
   {
+   "date": "2026-11-16",
+   "kind": "industry",
+   "title": "OpenAI announces its first embedded assessments with Apollo Research, METR, Transluce and Goodfire. Apollo and Transluce get selected public and unreleased models, and METR gets checkpoints and rollouts from OpenAI's largest reinforcement-learning run to date. OpenAI says assessors \"maintain independence in publishing their assessments\", subject to its redaction of confidential information and any disclosure delays it requests (OpenAI)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "The post names no model, so it is not yet an announced outside evaluation of the model OpenAI acknowledged on Sept 8 under alarm condition W2 (our inference).",
+   "url": "https://openai.com/index/our-first-phase-of-embedded-assessments/",
+   "short": "OpenAI announces embedded assessments with Apollo Research, METR, Transluce and Goodfire"
+  },
+  {
+   "date": "2026-11-16",
+   "kind": "policy",
+   "title": "California's Attorney General sues OpenAI in San Francisco Superior Court over cybersecurity incidents, alleging that developing and testing advanced AI models without adequate safeguards and monitoring creates a public nuisance and violates the state's Unfair Competition Law (California AG)",
+   "hyp": "C",
+   "certainty": "fixed",
+   "why": "The case could bring OpenAI's records of agent incidents into the open; we found no hearing date (our inference).",
+   "url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+   "short": "California's Attorney General sues OpenAI over cybersecurity incidents in testing its models"
+  },
+  {
    "date": "2026-11-17",
    "kind": "industry",
    "title": "Nvidia reports third-quarter fiscal 2027 results (quarter ended Oct 25); conference call 2 p.m. Pacific",
@@ -309,38 +329,58 @@
    "short": "Nvidia reports quarterly results (quarter ended Oct 25)"
   },
   {
-   "date": "2026-11-18",
-   "kind": "geopolitics",
-   "title": "Xi–Trump meeting in Shenzhen at the APEC Economic Leaders' Meeting (Nov 18–19, APEC); Treasury Secretary Bessent said the leaders \"will meet\" there next week and that the US is establishing a direct channel for either nation to alert the other to serious incidents involving its SI models (Treasury, Nov 11); a basic framework for AI-related crises is reportedly targeted by then (anonymous sources, via SCMP, read in The Star)",
-   "hyp": "D",
-   "certainty": "approximate",
-   "url": "https://home.treasury.gov/news/press-releases/sb0688",
-   "short": "Xi–Trump meeting in Shenzhen at APEC; US establishing incident channel with China"
+   "date": "2026-11-17",
+   "kind": "models",
+   "title": "OpenAI releases GPT-6.2 Astra and GPT-6.2 Sol in ChatGPT Work, Codex and the API, \"the most capable models we have deployed externally to date\", and says \"GPT-6.2 Astra is our first externally released model to meet the High threshold for AI Self-Improvement\" (OpenAI's announcement and GPT-6.2 system card)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "OpenAI does not say whether GPT-6.2 Astra is the model it acknowledged on Sept 8, so alarm condition W2 stays met (our inference). The release bears on our forecasts openai-beyond-astra-or-capabilities-by-dec13 and openai-beyond-astra-release-by-jan31 (our inference).",
+   "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+   "short": "OpenAI releases GPT-6.2 Astra and Sol, its most capable deployed models"
   },
   {
    "date": "2026-11-18",
    "kind": "industry",
-   "title": "Anthropic expects to set its IPO share price, subject to regulatory clearance (Anthropic's IPO website, filed on SEC EDGAR as a free writing prospectus dated Nov 10)",
+   "title": "Anthropic prices its IPO at $83.00 a Class A share (Anthropic), on the night of Nov 18, above its marketed range of $70 to $78 (Fortune)",
    "hyp": "A",
-   "certainty": "approximate",
-   "why": "Pricing comes before trading, which Anthropic expects on Nov 19 (Anthropic); trading bears on our anthropic-trading forecasts (our inference).",
-   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm",
-   "short": "Anthropic expects to price its IPO, subject to regulatory clearance"
+   "certainty": "fixed",
+   "why": "Pricing came before trading, which began on Nov 19 (Anthropic).",
+   "url": "https://www.anthropic.com/news/ipo-close",
+   "short": "Anthropic prices its IPO at $83 a share, above its range"
+  },
+  {
+   "date": "2026-11-18",
+   "kind": "models",
+   "title": "Google releases Gemini 4 Neon on the paid Gemini API tier in Google AI Studio and Android Studio, in the Gemini app for Google AI Pro and Ultra subscribers, and in Gemini for business (Google)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "Google's model card says Neon's capability gain over Gemini 4 Argon \"falls below our MCC threshold\" and that its full Safety & Security Report \"will be available in the coming days\" (Google DeepMind).",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+   "short": "Google releases Gemini 4 Neon to paying developers, subscribers and businesses"
+  },
+  {
+   "date": "2026-11-19",
+   "kind": "geopolitics",
+   "title": "Xi and Trump meet in Shenzhen during the APEC leaders' meeting; Xi says the two countries should 'ensure that AI always remains under human control' (China's government, Xinhua readout)",
+   "hyp": "D",
+   "certainty": "fixed",
+   "url": "https://english.www.gov.cn/news/202611/19/content_WS6afed4bbc6d00ca5f9a0e787.html",
+   "short": "Xi and Trump meet in Shenzhen at APEC"
   },
   {
    "date": "2026-11-19",
    "kind": "industry",
-   "title": "Anthropic shares are expected to begin trading on Nasdaq under the symbol ANT, subject to regulatory clearance (Anthropic's IPO website, filed on SEC EDGAR as a free writing prospectus dated Nov 10)",
+   "title": "Anthropic shares begin trading on the Nasdaq Global Select Market under the symbol ANT (Anthropic)",
    "hyp": "A",
-   "certainty": "approximate",
-   "why": "Trading would bear on our forecasts anthropic-trading-by-nov20, anthropic-trading-by-nov30 and anthropic-trading-by-dec31, and bring Anthropic under quarterly public-company reporting (our inference).",
-   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm",
-   "short": "Anthropic shares expected to begin trading on Nasdaq as ANT"
+   "certainty": "fixed",
+   "why": "Trading resolves our forecasts anthropic-trading-by-nov20, anthropic-trading-by-nov30 and anthropic-trading-by-dec31 yes, and brings Anthropic under the SEC's periodic and current reporting (our inference).",
+   "url": "https://www.anthropic.com/news/ipo-close",
+   "short": "Anthropic shares begin trading on Nasdaq as ANT"
   },
   {
    "date": "2026-11-20",
    "kind": "forecast",
-   "title": "Forecast deadline: Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov20)",
+   "title": "Forecast deadline: Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov20), resolved yes on Nov 19",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -357,20 +397,50 @@
   {
    "date": "2026-11-30",
    "kind": "forecast",
-   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30), resolved yes on Oct 13; METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30); California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30); Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov30)",
+   "title": "Forecast deadlines: Gemini 4 public or paid preview (gemini4-by-nov30), resolved yes on Oct 13; METR time-horizon estimate for GPT-6 Astra (metr-astra-horizon-by-nov30), resolved yes on Nov 20; California publishes the EO N-9-26 recommendations (ca-eo-n926-recs-published-by-nov30), resolved yes on Nov 18; Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-nov30), resolved yes on Nov 19",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
   },
   {
+   "date": "2026-12-01",
+   "kind": "policy",
+   "title": "Former Nvidia CEO Jensen Huang appears for a transcribed interview before the House Select Committee on China, the House Foreign Affairs Committee and the House Intelligence Committee; Nvidia general counsel Tim Teter follows on Dec 2 (the committees' chairmen, Nov 17)",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "why": "Fortune calls it closed-door testimony (Fortune). Answers on Nvidia's chip sales bear on export controls, which limit the compute reaching foreign actors (our inference).",
+   "url": "https://chinaselectcommittee.house.gov/media/press-releases/jensen-huang-and-nvidia-agree-to-appear-before-congress",
+   "short": "Jensen Huang's transcribed interview with three House committees; Nvidia's general counsel on Dec 2"
+  },
+  {
+   "date": "2026-12-01",
+   "kind": "industry",
+   "title": "Transluce's six weeks of privileged access to a handful of OpenAI models, \"including at least one internal-only model\", start in early December; \"The agreement prevents us from publishing results related to internal-only models\" (Transluce)",
+   "hyp": "A",
+   "certainty": "approximate",
+   "why": "An outside evaluator with access to an internal-only model is a new channel (our inference), but Transluce may not publish results on internal-only models (Transluce). OpenAI says Transluce and OpenAI intend a follow-on assessment of about eight weeks in early 2027 (OpenAI). Dec 1 stands for \"early December\" (our inference).",
+   "url": "https://transluce.org/embedded-assessment-pilot-with-openai",
+   "short": "Transluce starts six weeks of access to OpenAI models, at least one internal-only"
+  },
+  {
    "date": "2026-12-03",
    "kind": "policy",
-   "title": "Senate Banking Chair Tim Scott has asked former Nvidia CEO Jensen Huang to testify; the letter says reports about Huang's relationship with an alleged Chinese spy \"raise significant national security concerns\" (Scott's letter, via CNBC)",
+   "title": "Senate Banking Chair Tim Scott asked former Nvidia CEO Jensen Huang to testify on Dec 3 (Scott's letter, via CNBC); on Nov 18 Scott said Huang and Commerce Secretary Lutnick \"both have agreed\" and \"We will hopefully have this done before Christmas\" (Scott, on CNBC's Squawk Box, via TNW); the hearing date is not yet decided (Politico, via Bloomberg Law)",
    "hyp": "Dopen",
    "certainty": "approximate",
-   "why": "CNBC does not say whether Huang will appear. Testimony on Nvidia's chip sales bears on export controls, which limit the compute reaching foreign actors (our inference).",
+   "why": "Dec 3 is the requested date, not a scheduled hearing (our inference). Testimony on Nvidia's chip sales bears on export controls, which limit the compute reaching foreign actors (our inference).",
    "url": "https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html",
-   "short": "Senate Banking asks former Nvidia CEO Jensen Huang to testify"
+   "short": "Requested date for Jensen Huang's Senate Banking testimony; he agreed, date unset"
+  },
+  {
+   "date": "2026-12-04",
+   "kind": "research",
+   "title": "ARC Prize 2026 results announced for its ARC-AGI-3, ARC-AGI-2 and paper tracks, $2M in prizes; submissions were due Nov 2 (ARC Prize)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "why": "ARC-AGI-3 bears on the generalization and learning parts of definitions v2.0, but competition entries are separate from the frontier-model ARC-AGI-3 scores we watch, so the results are context, not a mark (our inference).",
+   "url": "https://arcprize.org/competitions/2026",
+   "short": "ARC Prize 2026 results announced"
   },
   {
    "date": "2026-12-07",
@@ -398,7 +468,7 @@
    "title": "Commerce Secretary Howard Lutnick is asked to testify to the Senate Banking Committee on \"recent public reports about NVIDIA and the Department of Commerce's role\" (Scott's letter, via CNBC); a spokesperson said he \"has proactively agreed to appear voluntarily\" (Kristen Eichamer, via NBC News, via CNBC)",
    "hyp": "Dopen",
    "certainty": "approximate",
-   "why": "Testimony on Commerce's oversight of Nvidia's chip exports bears on export controls, which limit the compute reaching foreign actors (our inference).",
+   "why": "On Nov 18 Scott said Huang and Lutnick \"both have agreed\" (Scott, on CNBC's Squawk Box, via TNW); Dec 10 is the requested date, not a scheduled hearing (our inference). Testimony on Commerce's oversight of Nvidia's chip exports bears on export controls, which limit the compute reaching foreign actors (our inference).",
    "url": "https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html",
    "short": "Commerce Secretary Lutnick asked to testify to Senate Banking about Nvidia"
   },
@@ -414,7 +484,7 @@
   {
    "date": "2026-12-13",
    "kind": "forecast",
-   "title": "Forecast deadline: OpenAI releases a model it says is more capable overall than GPT-6 Astra, or publishes capability scores for its unreleased post-Astra model (openai-beyond-astra-or-capabilities-by-dec13)",
+   "title": "Forecast deadline: OpenAI releases a model it says is more capable overall than GPT-6 Astra, or publishes capability scores for its unreleased post-Astra model (openai-beyond-astra-or-capabilities-by-dec13), resolved yes on Nov 17",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -465,7 +535,7 @@
   {
    "date": "2026-12-31",
    "kind": "forecast",
-   "title": "Forecast deadline: Anthropic releases a model it says is more capable than Claude Mythos 5.1, or an outside evaluation of such an unreleased Anthropic model is announced (anthropic-beyond-mythos51-release-or-eval-by-dec31)",
+   "title": "Forecast deadline: Anthropic releases a model it says is more capable than Claude Mythos 5.1, or an outside evaluation of such an unreleased Anthropic model is announced (anthropic-beyond-mythos51-release-or-eval-by-dec31), resolved yes on Nov 9",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -473,7 +543,15 @@
   {
    "date": "2026-12-31",
    "kind": "forecast",
-   "title": "Forecast deadline: Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-dec31)",
+   "title": "Forecast deadline: Anthropic shares begin trading on a US stock exchange (anthropic-trading-by-dec31), resolved yes on Nov 19",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "forecast",
+   "title": "Forecast deadline: OpenAI says a model it has released is the unreleased model it acknowledged on Sept 8, or publishes capability scores for that model (openai-sept8-model-released-or-scored-by-dec31)",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -496,9 +574,27 @@
    "short": "W2 is met for Anthropic's Models 3 and 4 unless released or externally evaluated"
   },
   {
+   "date": "2027-01-08",
+   "kind": "forecast",
+   "title": "Forecast deadline: Anthropic releases a model it says is more capable than Claude Mythos 5.2, or an outside evaluation of such an unreleased Anthropic model is announced (anthropic-beyond-mythos52-release-or-eval-by-jan8)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-01-19",
+   "kind": "policy",
+   "title": "Comments due on BIS's interim final rule \"Addressing Remote Access to Advanced Semiconductors\", in effect since Nov 19: data centers already providing significant volumes of compute to companies headquartered in Macau or Country Group D:5 must obtain a license within 90 days of the effective date \"or face future export restrictions\" (BIS, Federal Register)",
+   "hyp": "Dopen",
+   "certainty": "fixed",
+   "why": "The 90 days from Nov 19 end on Feb 17, 2027 (our arithmetic). Remote-access controls limit the compute reaching foreign actors (our inference).",
+   "url": "https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors",
+   "short": "Comments due on BIS's interim rule on remote access to advanced chips"
+  },
+  {
    "date": "2027-01-31",
    "kind": "forecast",
-   "title": "Forecast deadline: an AI system scores 25% or more on Scale AI's Remote Labor Index (rli-25pct-by-jan31)",
+   "title": "Forecast deadline: an AI system scores 25% or more on Scale AI's Remote Labor Index (rli-25pct-by-jan31), resolved yes on Nov 9",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -506,7 +602,7 @@
   {
    "date": "2027-01-31",
    "kind": "forecast",
-   "title": "Forecast deadline: OpenAI releases a model it says is more capable overall than GPT-6 Astra (openai-beyond-astra-release-by-jan31)",
+   "title": "Forecast deadline: OpenAI releases a model it says is more capable overall than GPT-6 Astra (openai-beyond-astra-release-by-jan31), resolved yes on Nov 17",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -541,6 +637,30 @@
    "date": "2027-02-28",
    "kind": "forecast",
    "title": "Forecast deadline: an outside evaluator measures, or a frontier lab states, a gap of 3 months or more between an internal model and the public frontier (outside-gap-3mo-by-feb28)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-28",
+   "kind": "forecast",
+   "title": "Forecast deadline: a bill to require oversight of frontier AI developers by independent verification organizations, or to give California emergency-shutdown powers over frontier models, is introduced in the California Legislature (ca-frontier-oversight-bill-by-feb28)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-28",
+   "kind": "forecast",
+   "title": "Forecast deadline: METR publishes a time-horizon estimate for GPT-6.2 Astra, Claude Fable 5.2 or Claude Mythos 5.2 (metr-horizon-newest-frontier-by-feb28)",
+   "hyp": "A",
+   "certainty": "fixed",
+   "url": "https://hiddenagi.com/scorecard.html"
+  },
+  {
+   "date": "2027-02-28",
+   "kind": "forecast",
+   "title": "Forecast deadline: an AI system scores 50% or more on Scale AI's Remote Labor Index (rli-50pct-by-feb28)",
    "hyp": "A",
    "certainty": "fixed",
    "url": "https://hiddenagi.com/scorecard.html"
@@ -593,11 +713,6 @@
    "kind": "policy",
    "title": "FTC subpoenas to third-party organizations in its AI safety-incidents probe, which it \"will also issue … at a later date\" (a person familiar, via Axios, via CBS News); earlier reports named METR as a possible target",
    "hyp": "C"
-  },
-  {
-   "kind": "industry",
-   "title": "OpenAI announces its contracts with third-party safety assessors (on Oct 8 it said it is \"actively finalizing\" them, with details \"in the coming weeks\")",
-   "hyp": "A"
   },
   {
    "kind": "policy",

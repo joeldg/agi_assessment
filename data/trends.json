@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-20",
  "metr": {
   "source": "https://metr.org/time-horizons/",
   "dataUrl": "https://metr.org/assets/benchmark_results_1_1.yaml",
@@ -1289,10 +1289,10 @@
    }
   },
   "x2": {
-   "date": "2026-11-13",
+   "date": "2026-11-20",
    "metric": "p50",
-   "trendNow": 1892.8,
-   "fourX": 7571.2,
+   "trendNow": 1965.5,
+   "fourX": 7862.0,
    "suiteLimit": 960,
    "observable": false
   },
@@ -1397,6 +1397,166 @@
      "model": "Claude Fable 5.2",
      "label": "41.25% (Claude Fable 5.2; entry dated Nov 9 in the leaderboard's page data)",
      "url": "https://labs.scale.com/leaderboard/rli"
+    }
+   ]
+  },
+  "metrPooled": {
+   "label": "METR 50% time horizon on its combined Time Horizon 1.1 and TH2 suite",
+   "unit": "minutes",
+   "note": "METR's combined suite, published Nov 20, 2026: its 222 Time Horizon 1.1 tasks plus 36 harder TH2 tasks whose score thresholds run up to 200 hours, run on public models up to Claude Opus 5.5 and GPT-6 Astra at xhigh or higher reasoning effort (the highest available setting for models older than February 2026). METR says a given model has a lower 50% horizon on the combined suite than on Time Horizon 1.1 alone, and most TH2 task times are METR researchers' estimates: of the 34 TH2 tasks given (score, time) points, 3 have successful human baselines and 31 researcher estimates. So we keep these points apart from the Time Horizon 1.1 points we fit. lo and hi are METR's 95% intervals, bootstrapped over task families and runs; for Claude Fable 5.1, GPT-6 Astra and Claude Opus 5.5 the upper bounds run past the suite's 200-hour ceiling. frontier is METR's own flag. METR's frontier-trend fit for this suite doubles every 3.61 months, or 110 days (95% CI 2.08 to 4.94 months). METR gives 80% horizons only by task set, not on the combined suite. Measured points only: we fit no trend to this series and draw no projection for it.",
+   "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+   "published": "2026-11-20",
+   "longestTaskMinutes": 12000,
+   "points": [
+    {
+     "date": "2024-05-13",
+     "v": 7.11,
+     "lo": 3.82,
+     "hi": 13.53,
+     "model": "GPT-4o",
+     "frontier": true,
+     "label": "GPT-4o: about 7 min (95% CI 4 min to 14 min)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2024-12-05",
+     "v": 35.25,
+     "lo": 15.66,
+     "hi": 66.07,
+     "model": "o1",
+     "frontier": true,
+     "label": "o1: about 35 min (95% CI 16 min to 1.1 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2025-08-07",
+     "v": 180.56,
+     "lo": 97.88,
+     "hi": 334.46,
+     "model": "GPT-5",
+     "frontier": true,
+     "label": "GPT-5: about 3.0 h (95% CI 1.6 h to 5.6 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2025-11-24",
+     "v": 275.37,
+     "lo": 144.68,
+     "hi": 510.98,
+     "model": "Claude Opus 4.5",
+     "frontier": true,
+     "label": "Claude Opus 4.5: about 4.6 h (95% CI 2.4 h to 8.5 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-02-05",
+     "v": 384.05,
+     "lo": 193.38,
+     "hi": 729.59,
+     "model": "Claude Opus 4.6",
+     "frontier": true,
+     "label": "Claude Opus 4.6: about 6.4 h (95% CI 3.2 h to 12 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-03-05",
+     "v": 356.67,
+     "lo": 199.46,
+     "hi": 592.05,
+     "model": "GPT-5.4",
+     "frontier": false,
+     "label": "GPT-5.4: about 5.9 h (95% CI 3.3 h to 9.9 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-04-16",
+     "v": 502.97,
+     "lo": 257.94,
+     "hi": 937.61,
+     "model": "Claude Opus 4.7",
+     "frontier": true,
+     "label": "Claude Opus 4.7: about 8.4 h (95% CI 4.3 h to 16 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-04-23",
+     "v": 664.34,
+     "lo": 365.9,
+     "hi": 1116.4,
+     "model": "GPT-5.5",
+     "frontier": true,
+     "label": "GPT-5.5: about 11 h (95% CI 6.1 h to 19 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-05-28",
+     "v": 710.61,
+     "lo": 366.91,
+     "hi": 1268.14,
+     "model": "Claude Opus 4.8",
+     "frontier": true,
+     "label": "Claude Opus 4.8: about 12 h (95% CI 6.1 h to 21 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-06-09",
+     "v": 934.74,
+     "lo": 534.84,
+     "hi": 1939.3,
+     "model": "Claude Fable 5",
+     "frontier": true,
+     "label": "Claude Fable 5: about 16 h (95% CI 8.9 h to 32 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-07-09",
+     "v": 716.59,
+     "lo": 393.39,
+     "hi": 1239.23,
+     "model": "GPT-5.6 Sol",
+     "frontier": false,
+     "label": "GPT-5.6 Sol: about 12 h (95% CI 6.6 h to 21 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-07-24",
+     "v": 1194.81,
+     "lo": 566.79,
+     "hi": 5174.83,
+     "model": "Claude Opus 5",
+     "frontier": true,
+     "label": "Claude Opus 5: about 20 h (95% CI 9.4 h to 86 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-09-01",
+     "v": 1812.89,
+     "lo": 718.74,
+     "hi": 18464.1,
+     "model": "Claude Fable 5.1",
+     "frontier": true,
+     "label": "Claude Fable 5.1: about 30 h (95% CI 12 h to 308 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-09-03",
+     "v": 2416.33,
+     "lo": 791.51,
+     "hi": 158701.0,
+     "model": "GPT-6 Astra",
+     "frontier": true,
+     "label": "GPT-6 Astra: about 40 h (95% CI 13 h to 2,645 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
+    },
+    {
+     "date": "2026-09-22",
+     "v": 2337.38,
+     "lo": 714.87,
+     "hi": 75176.6,
+     "model": "Claude Opus 5.5",
+     "frontier": false,
+     "label": "Claude Opus 5.5: about 39 h (95% CI 12 h to 1,253 h)",
+     "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"
     }
    ]
   }

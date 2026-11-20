@@ -430,7 +430,7 @@
   ]
  },
  "capex_definition": "Cash purchases of property and equipment from each company's SEC filings (XBRL: PaymentsToAcquirePropertyPlantAndEquipment; for Amazon, PaymentsToAcquireProductiveAssets), converted from year-to-date to quarterly values. Excludes finance leases.",
- "capex_source": "SEC EDGAR XBRL company facts, pulled 2026-11-13",
+ "capex_source": "SEC EDGAR XBRL company facts, pulled 2026-11-20",
  "nvda_datacenter": [
   {
    "q": "FY2024Q1",
@@ -515,6 +515,12 @@
    "end": "2026-07-26",
    "usd_b": 89.023,
    "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000073/q2fy27cfocommentary.htm"
+  },
+  {
+   "q": "FY2027Q3",
+   "end": "2026-10-25",
+   "usd_b": 107.6,
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm"
   }
  ],
  "lab_revenue": [
@@ -657,6 +663,14 @@
   {
    "company": "OpenAI",
    "date": "2026-09-30",
+   "metric": "quarterly revenue (Q3 2026)",
+   "usd_b": 10.0,
+   "url": "https://thenextweb.com/news/openai-revenue-q3-10bn-operating-loss",
+   "note": "About $10B, up almost 50% on Q2, shared with investors on Nov 10, per The Information (a person familiar) and Bloomberg (people familiar), via The Next Web; PYMNTS gives the same figure from published reports on the investor presentation (credible report). Adjusted operating loss $10.9B, against $10.1B in Q2, from documents reviewed by the WSJ (via The Next Web). OpenAI declined to comment to Bloomberg; not confirmed by OpenAI"
+  },
+  {
+   "company": "OpenAI",
+   "date": "2026-09-30",
    "metric": "annualized run-rate",
    "usd_b": 50.0,
    "url": "https://www.investing.com/news/stock-market-news/openais-annualized-revenue-20-billion-less-than-previously-signaled-ft-reports-4939854",
@@ -667,83 +681,83 @@
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-11-13",
-   "price_pct": 6,
+   "date": "2026-11-20",
+   "price_pct": 4,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:14 PT (6 at 11:06 PT Nov 13, about 78 contracts, yes taker); bid/ask 5/6, the same in a first reading at 13:13 PT. About 57.0k contracts traded, a 1-point spread and a deep book (about 4.9k contracts at the 5 bid, about 3.6k at the 6 ask), so not thin; 96 contracts traded in the 24 hours before the read and about 13.1k since the Nov 6 read, between 5 and 9. A new, earlier rung, before Dec 1, 2026 (KXAGICO-COMP-26NOV, opened 13:42 PT Nov 6), had bid/ask 5/7 at the same read (thin: about 2.4k contracts); its midpoint (6) sits above this rung's (5.5), an inversion inside the spreads. Was 9 on Nov 6, 7 on Oct 30, 6 on Oct 23 and 9 on Oct 9."
+   "note": "Live API (KXAGICO-COMP-26Q4), last trade as read at 13:15 PT (4 at 12:06 PT Nov 20, about 155 contracts, taker on the No side); bid/ask 4/5, the same in a first reading. About 63.4k contracts traded, a 1-point spread and a deep book (about 3.3k contracts at the 4 bid, about 5.7k at the 5 ask), so not thin; about 312 contracts traded in the 24 hours before the read and about 6.4k since the Nov 13 read, between 4 and 6, the move to 4 coming on Nov 20. The earlier rung, before Dec 1, 2026 (KXAGICO-COMP-26NOV), had bid/ask 1/2 and last 1 at the same read (thin: about 7.2k contracts); its midpoint (1.5) is now below this rung's (4.5), so the Nov 13 inversion is gone. Was 6 on Nov 13, 9 on Nov 6, 7 on Oct 30, 6 on Oct 23 and 9 on Oct 9."
   },
   {
    "market": "Any company announces it has achieved AGI before Apr 1, 2027",
    "venue": "Kalshi",
-   "date": "2026-11-13",
-   "price_pct": 15,
+   "date": "2026-11-20",
+   "price_pct": 10,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:14 PT (15 at 05:33 PT Nov 13, two prints, about 31 contracts, yes taker); bid/ask 14/15 (14/16 in a first reading at 13:13 PT). Not thin by our rule (about 38.2k contracts traded, a 1-point spread), but the ask was shallow (about 14 contracts, against about 1.4k at the bid) and only 31 contracts traded in the 24 hours before the read. It traded 14 to 18 since the Nov 6 read, about 8.8k contracts. Was 18 on Nov 6, 17 on Oct 30, 19 on Oct 23 and 25 on Oct 9."
+   "note": "Live API (KXAGICO-COMP-27Q1), last trade as read at 13:15 PT (10 at 19:43 PT Nov 18, a 0.11-contract print, taker on the No side); bid/ask 10/11, the same in a first reading. Thin: the 11 ask held 0.05 contracts (0.05 more at 12), so the nearest offer of 10 or more contracts gives 10/13 (3 points), and no contracts traded in the 24 hours before the read; the bid is deep (about 3.0k contracts at 10). About 38.6k contracts traded in total, only about 395 since the Nov 13 read, between 10 and 16; the last trade of size was 16 at 13:16 PT Nov 17 (about 59 contracts, taker on the Yes side). Was 15 on Nov 13, 18 on Nov 6, 17 on Oct 30, 19 on Oct 23 and 25 on Oct 9."
   },
   {
    "market": "Any company announces it has achieved AGI before Jan 1, 2028",
    "venue": "Kalshi",
-   "date": "2026-11-13",
-   "price_pct": 56,
+   "date": "2026-11-20",
+   "price_pct": 47,
    "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:14 PT (56 at 11:29 PT Nov 13, about 17 contracts, yes taker); bid/ask 56/57, the same in a first reading at 13:13 PT. No longer thin by our rule: about 31.4k contracts traded (24.2k on Nov 6) and a 1-point spread, but only about 4 contracts sat at the bid (about 696 at the ask), so the level is fragile (our inference). About 1.6k contracts traded in the 24 hours before the read and about 7.2k since Nov 6, between 38 and 74: 43 to 74 on Nov 11, 54 to 70 on Nov 12 and 55 to 58 on Nov 13. The ladder is in order around it: the before-Oct 1, 2027 rung (KXAGICO-COMP-27Q3) last 39, bid/ask 36/39, and the before-Apr 1, 2028 rung (KXAGICO-COMP-28Q1) bid/ask 62/64. Further out it is not: the Apr 1, 2028 rung's midpoint (63) is above the Jul 1, 2028 rung's (60.5), and the Jan 1, 2030 rung's (79.5) above the Jan 1, 2031 rung's (77.5), all thin. Was 49 on Nov 6, 39 on Oct 30, 39 on Oct 23 and 61 on Oct 9."
+   "note": "Live API (KXAGICO-COMP-27Q4), last trade as read at 13:15 PT (47 at 19:39 PT Nov 19, a 0.02-contract print, taker on the Yes side); bid/ask 46/48, the same in a first reading. Thin again: the 48 ask held 0.02 contracts (0.02 more at 49), so the nearest offer of 10 or more contracts gives 46/51 (5 points), with only 25 contracts at the 46 bid; about 34.2k contracts traded in total and 92 in the 24 hours before the read. About 2.83k contracts traded since the Nov 13 read, between 37 and 59, most on Nov 16 (37 to 59, about 1.54k contracts), then 46 to 50 on Nov 17 to 19; the last trade of size was 50 at 14:43 PT Nov 19 (about 72 contracts, taker on the Yes side). The ladder is in order around it: before Oct 1, 2027 (KXAGICO-COMP-27Q3) last 33, bid/ask 32/34, and before Apr 1, 2028 (KXAGICO-COMP-28Q1) bid/ask 62/63, both thin. Further out, the Apr 1, 2028 rung's midpoint (62.5) is still above the Jul 1, 2028 rung's (60.5) and the Oct 1, 2028 rung's (61.5), while the Jan 1, 2030 rung's (70) is now below the Jan 1, 2031 rung's (75.5), so that Nov 13 inversion is gone; all thin. Was 56 on Nov 13, 49 on Nov 6, 39 on Oct 30, 39 on Oct 23 and 61 on Oct 9."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2026",
    "venue": "Kalshi",
-   "date": "2026-11-13",
-   "price_pct": 5.75,
+   "date": "2026-11-20",
+   "price_pct": 5.4,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API (OAIAGI-26) midpoint as read at 13:14 PT; bid/ask 4.3/7.2, the same in a first reading at 13:13 PT; last trade 4.5 (about 16 contracts, 01:50 PT Nov 13), inside the spread. Thin market by spread: 2.9 points on a midpoint of about 5.75, with about 18 contracts at the bid and 54 at the ask, though about 384k contracts traded in total (359 in the 24 hours before the read). It traded 3.8 to 13.9 since the Nov 6 read, the whole range on Nov 11, about 3.1k contracts. Was 5.8 on Nov 6, 6.2 on Oct 30, 4.2 on Oct 23 and 8 on Oct 9."
+   "note": "Live API (OAIAGI-26) midpoint as read at 13:15 PT; bid/ask 4.1/6.7, the same in a first reading; last trade 5.7 (10:53 PT Nov 20, one sweep of about 222 contracts at 5.7 and 33 at 5.6, taker on the Yes side), inside the spread. Thin by spread: 2.6 points on a midpoint of 5.4, with about 2 contracts at the 4.1 bid (the nearest bid of 10 or more contracts was 4, against an offer of 10 or more at 6.4) and about 46 at the ask, though about 391k contracts traded in total (about 828 in the 24 hours before the read). It traded 3.1 to 10 since the Nov 13 read, about 7.4k contracts, 7 to 10 on Nov 16. Was 5.75 on Nov 13, 5.8 on Nov 6, 6.2 on Oct 30, 4.2 on Oct 23 and 8 on Oct 9."
   },
   {
    "market": "OpenAI announces it has attained AGI by Dec 31, 2027",
    "venue": "Kalshi",
-   "date": "2026-11-13",
-   "price_pct": 50.7,
+   "date": "2026-11-20",
+   "price_pct": 46.35,
    "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
-   "note": "Live API (OAIAGI-27) midpoint as read at 13:14 PT; bid/ask 48.1/53.3, the same in a first reading at 13:13 PT; last trade 53.3 (about 27 contracts at 53.2 to 53.3, yes taker, 12:28 PT Nov 13), at the ask. Thin market by spread: 5.2 points, with about 23 contracts at the bid and about 530 at the ask, though about 309k contracts traded in total (241 in the 24 hours before the read). It traded 47.2 to 68 since the Nov 6 read, about 2.1k contracts. With a book this thin, the 12.5-point fall from Nov 6 is a noisy level (our inference). Was 63.2 on Nov 6 and 43.45 on Oct 30 (midpoints), 45 on Oct 23 and 43.2 on Oct 9."
+   "note": "Live API (OAIAGI-27) midpoint as read at 13:15 PT; bid/ask 43/49.7, the same in a first reading; last trade 49.7 (10:18 PT Nov 20, 14 contracts at 49.7 at the end of a sweep up from 49, taker on the Yes side), at the ask. Thin by spread: 6.7 points, with 1 contract at the 43 bid (the nearest bid of 10 or more contracts gives 42/49.7) and 38 at the ask, though about 313k contracts traded in total (about 1.75k in the 24 hours before the read). A 1-contract print at 43 at 13:16 PT took the 43 bid, and a 1-contract bid at 43 was back by 13:17 PT. It traded 35.1 to 69.9 since the Nov 13 read, about 3.7k contracts. With a book this thin, the level is noisy (our inference). Was 50.7 on Nov 13, 63.2 on Nov 6 and 43.45 on Oct 30 (midpoints), 45 on Oct 23 and 43.2 on Oct 9."
   },
   {
    "market": "OpenAI announces it has achieved AGI before 2027",
    "venue": "Polymarket",
-   "date": "2026-11-13",
+   "date": "2026-11-20",
    "price_pct": 6.5,
    "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-   "note": "Live API midpoint, read 13:14 PT; bid/ask 6/7 (the same in a first reading at 13:13 PT); last trade 7; volume about $369k (USD) and liquidity about $29k, not thin; the API gave no 24-hour volume for this market. Was 7 on Nov 6 (bid/ask 6/8), 9 on Oct 30, 9.5 on Oct 23 and 15.5 on Oct 9."
+   "note": "Live API midpoint, read 13:15 PT; bid/ask 6/7 (the same in a first reading); last trade 6; volume about $391k (USD), about $6.5k in the 24 hours before the read, and liquidity about $24.4k, not thin. Was 6.5 on Nov 13, 7 on Nov 6 (bid/ask 6/8), 9 on Oct 30, 9.5 on Oct 23 and 15.5 on Oct 9."
   },
   {
    "market": "Anthropic IPOs by Oct 31, 2026 (resolved No)",
    "venue": "Polymarket",
-   "date": "2026-11-13",
+   "date": "2026-11-20",
    "price_pct": 0,
    "url": "https://polymarket.com/event/anthropic-ipo-by",
-   "note": "Closed and resolved No: the gamma API (queried with &closed=true, re-read 13:14 PT Nov 13; the plain slug query returns nothing) shows outcomePrices Yes 0 / No 1, umaResolutionStatus resolved and a closedTime of 23:01 PT Oct 31 (06:01 UTC Nov 1). The final trade before close, 0.1, is not a live price. About $1.53M (USD) traded. Was 0.1 on Oct 30 (last trade, no bid), 0.15 on Oct 23 and 0.6 on Oct 9."
+   "note": "Closed and resolved No: the gamma API (queried with &closed=true, re-read 13:15 PT Nov 20) shows outcomePrices Yes 0 / No 1, umaResolutionStatus resolved and a closedTime of 23:01 PT Oct 31 (06:01 UTC Nov 1). The final trade before close, 0.1, is not a live price. About $1.53M (USD) traded. Was 0.1 on Oct 30 (last trade, no bid), 0.15 on Oct 23 and 0.6 on Oct 9."
   },
   {
-   "market": "Anthropic IPOs by Nov 20, 2026",
+   "market": "Anthropic IPOs by Nov 20, 2026 (resolved Yes)",
    "venue": "Polymarket",
-   "date": "2026-11-13",
-   "price_pct": 95.7,
+   "date": "2026-11-20",
+   "price_pct": 100,
    "url": "https://polymarket.com/event/anthropic-ipo-by",
-   "note": "Live API midpoint (will-anthropic-ipo-by-november-20-2026), read 13:14 PT; bid/ask 95.5/95.9 (the same in a first reading at 13:13 PT); last trade 95.8. No longer thin: a 0.4-point spread, about $250k (USD) traded, about $15.7k of it in the 24 hours before the read, and liquidity about $55k. The rise follows Anthropic's Nov 10 S-1/A No. 2, which set a price range, and its IPO website, which says the final IPO price is expected to be determined on Nov 18 (verified fact: S-1/A No. 2 and Anthropic free writing prospectus), and a report that the shares are expected to begin trading on Nasdaq on Nov 19 (credible report: Bloomberg News, via Reuters on Investing.com); the link is our inference. Was 52 on Nov 6 (thin by spread, bid/ask 49/55); bid/ask 52/54 on Oct 30 and 47/53 on Oct 23."
+   "note": "Closed and resolved Yes: the gamma API (will-anthropic-ipo-by-november-20-2026, queried with &closed=true, read 13:15 PT Nov 20) shows outcomePrices Yes 1 / No 0, umaResolutionStatus resolved and a closedTime of 10:50 PT Nov 19, the day Anthropic's shares began trading on Nasdaq (verified fact: Anthropic). The final book before close, bid/ask 99.9/100 and last 99.9, is not a live price. About $358k (USD) traded. Was 95.7 on Nov 13 (midpoint), 52 on Nov 6 (thin by spread, bid/ask 49/55), bid/ask 52/54 on Oct 30 and 47/53 on Oct 23."
   },
   {
-   "market": "Anthropic IPOs by Nov 30, 2026",
+   "market": "Anthropic IPOs by Nov 30, 2026 (resolved Yes)",
    "venue": "Polymarket",
-   "date": "2026-11-13",
-   "price_pct": 98.1,
+   "date": "2026-11-20",
+   "price_pct": 100,
    "url": "https://polymarket.com/event/anthropic-ipo-by",
-   "note": "Live API midpoint (will-anthropic-ipo-by-november-30-2026), read 13:14 PT; bid/ask 97.8/98.4 (the same in a first reading at 13:13 PT); last trade 98.3. No longer thin: a 0.6-point spread, about $855k (USD) traded, about $15.8k in the 24 hours before the read, liquidity about $39k. Was 76 on Nov 6 (thin by spread, bid/ask 71/81), 83 on Oct 30, 67.5 on Oct 23 and 67.5 on Oct 9. Other dates in the same event, bid/ask at the same read: by Nov 15 no bid, 0.1 ask; by Nov 16 0.1/0.2; by Nov 17 0.1/0.2; by Nov 18 0.5/0.7; by Nov 19 93/93.1; by Nov 20 95.5/95.9; by Nov 23 96/96.8 (borderline thin: $533 traded in 24 hours, and the last trade, 96.9, above the ask is stale); by Nov 24 95/96.9 (thin, borderline: about $23.5k traded, $276 in 24 hours; its midpoint, 95.95, sits below the Nov 23 rung's 96.4, a small ladder inversion); by Nov 25 96.3/97.4; by Dec 15 98.4/98.7; by Dec 31 98.3/98.8. The step from the Nov 18 rung (0.6) to the Nov 19 rung (93.05) matches the reported Nov 19 trading date (our inference). On Nov 6 they were 0.5/0.7 (Nov 15), 49/55 (Nov 20), 71/74 (Nov 25), 83/87 (Dec 15) and 86.4/88.6 (Dec 31)."
+   "note": "Closed and resolved Yes: the gamma API (will-anthropic-ipo-by-november-30-2026, queried with &closed=true, read 13:15 PT Nov 20) shows outcomePrices Yes 1 / No 0, umaResolutionStatus resolved and a closedTime of 10:51 PT Nov 19; the final book, bid/ask 99.9/100, is not a live price. About $939k (USD) traded. The rest of the event has settled the same way: the Nov 15, Nov 16, Nov 17 and Nov 18 dates resolved No (each closed at 23:01 PT on its date, Nov 18's at 21:29 PT), and the Nov 19, Nov 23, Nov 24, Nov 25, Dec 15 and Dec 31 dates resolved Yes (closed 10:50 to 10:51 PT Nov 19). That the Nov 18 date resolved No, although the price was set on Nov 18, fits resolution on the first trade on Nov 19 (our inference). Was 98.1 on Nov 13, 76 on Nov 6 (thin by spread, bid/ask 71/81), 83 on Oct 30, 67.5 on Oct 23 and 67.5 on Oct 9."
   }
  ],
  "notes": [
   "Capex is cash purchases of property and equipment and excludes finance leases, so it is lower than the 'capex including finance leases' headline some companies quote (Microsoft in particular; Meta's headline adds about $1B a quarter in lease principal). Amazon is gross, not net of incentives.",
   "An independent read of each company's earnings releases matches the SEC XBRL-derived quarterly capex exactly.",
-  "Calendar Q3 2026 has now been reported by all four: Meta filed its 10-Q on Oct 22, Microsoft on Oct 28, Alphabet on Oct 29 and Amazon on Oct 30 (EDGAR filing dates, read Oct 30); the capex figures come only from scripts/update_sec.py. Nvidia reports Q3 FY2027 (the quarter ended Oct 25, 2026) on Nov 17, 2026, with results at about 1:20 p.m. PT and its call at 2 p.m. PT, a date its Nov 12 CEO-transition release keeps 'as previously scheduled' (Nvidia, Oct 28 and Nov 12); until then the newest Nvidia data-center figure is FY2027 Q2.",
-  "Anthropic, PBC filed a public S-1 on Oct 26, 2026, its first amendment (S-1/A) on Nov 2 and a second (S-1/A No. 2) on Nov 10, followed by five free writing prospectuses accepted Nov 10 to Nov 12 (EDGAR, CIK 0002130357, read 13:37 PT Nov 13, with no later amendment and no final prospectus yet); EDGAR also lists its earlier draft registration statements (a DRS on June 1 and five DRS/A, July 13 to Oct 9). S-1/A No. 2 sets an estimated price range of $70.00 to $78.00 a share for 825,000,000 Class A shares (801,351,354 sold by Anthropic and 23,648,646 by selling stockholders, with an underwriters' option on 123,750,000 more), to list on the Nasdaq Global Select Market as 'ANT', plus a concurrent $26.0B private placement of non-voting Class N shares at the IPO price; it gives Run-Rate Revenue of about $81B at Oct 31, 2026 and an aggregate committed spend of about $900.9B, against about $895.4B in the first S-1/A (verified fact: EDGAR, S-1/A No. 2 and the first S-1/A). Anthropic's IPO website, filed as a free writing prospectus dated Nov 10, says the final IPO price is expected to be determined on Nov 18, Eastern time (verified fact: Anthropic free writing prospectus). Where a filing gives a figure we cite it; figures still labelled 'draft prospectus' come from the leaked draft as reported by Reuters, Fortune, the FT and the WSJ (via Fortune). The shares are expected to begin trading on Nasdaq on Nov 19, and the offering has drawn about six times the orders for the shares available (credible report: Bloomberg News, via Reuters on Investing.com, Nov 12).",
+  "Calendar Q3 2026 has now been reported by all four: Meta filed its 10-Q on Oct 22, Microsoft on Oct 28, Alphabet on Oct 29 and Amazon on Oct 30 (EDGAR filing dates, read Oct 30); the capex figures come only from scripts/update_sec.py. Nvidia reported Q3 FY2027 (the quarter ended Oct 25, 2026) on Nov 17, 2026: data-center revenue was a record $107.6B, up 21% from Q2 and 110% from a year earlier, out of total revenue of $115.8B, and it expects Q4 FY2027 revenue of $130.0B, plus or minus 3% (verified fact: Nvidia CFO commentary and release, 8-K). Its CFO commentary and release give data-center revenue in billions to one decimal, so the FY2027 Q3 row is $107.6B where earlier rows carry three decimals; Nvidia had filed no 10-Q for the quarter when we checked EDGAR on Nov 20.",
+  "Anthropic, PBC filed a public S-1 on Oct 26, 2026 and amendments on Nov 2 (S-1/A), Nov 10 (S-1/A No. 2) and Nov 17 (S-1/A No. 3), with a Form 8-A on Nov 17; on Nov 18 came a Rule 462(b) registration (S-1MEF) adding shares, Nasdaq's listing certification, the SEC's notice of effectiveness and a pricing free writing prospectus, and on Nov 19 its final prospectus (424B4), another free writing prospectus and two S-8s (EDGAR, CIK 0002130357, read Nov 20); EDGAR also lists its earlier draft registration statements (a DRS on June 1 and five DRS/A, July 13 to Oct 9). It priced 980,000,000 Class A shares at $83.00 on Nov 18 (956,351,354 sold by Anthropic and 23,648,646 by selling stockholders), $81.34B in all, above the $70.00 to $78.00 range of S-1/A No. 2 and up from its 825,000,000 shares, with a concurrent $26.0B private placement of 313,253,007 non-voting Class N shares at the IPO price (verified fact: Anthropic pricing free writing prospectus and S-1/A No. 2). The shares began trading on the Nasdaq Global Select Market as 'ANT' on Nov 19, and on Nov 20 Anthropic closed the offering, including the underwriters' full option for 147,000,000 more shares: 1,127,000,000 shares, about $93.5B gross, about $91.6B of it received by Anthropic (verified fact: Anthropic). S-1/A No. 2 gives Run-Rate Revenue of about $81B at Oct 31, 2026 and an aggregate committed spend of about $900.9B, against about $895.4B in the first S-1/A (verified fact: EDGAR, S-1/A No. 2 and the first S-1/A); we have not yet read S-1/A No. 3 or the final prospectus for newer figures. Where a filing gives a figure we cite it; figures still labelled 'draft prospectus' come from the leaked draft as reported by Reuters, Fortune, the FT and the WSJ (via Fortune).",
   "Run-rates annualize one recent period and are often floors; they are not comparable with quarterly revenue and are never plotted on the same axis.",
-  "Kalshi's 'any company before Apr 1, 2027' market stood at 15% on Nov 13, 2026 (Pacific) (live API: last trade 15 at 05:33 PT Nov 13, bid/ask 14/15 at 13:14 PT; not thin by our rule, with about 38.2k contracts traded, though only about 14 contracts were offered at the ask), down from 18% on Nov 6, after 17% on Oct 30, 19% on Oct 23, 25% on Oct 9, 30% on Oct 2 and 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price.",
+  "Kalshi's 'any company before Apr 1, 2027' market stood at 10% on Nov 20, 2026 (Pacific) (live API: last trade 10, a 0.11-contract print at 19:43 PT Nov 18; bid/ask 10/11 at 13:15 PT, with about 3.0k contracts at the bid). It is thin: the 11 ask held 0.05 contracts and the nearest offer of 10 or more contracts was 13, no contracts traded in the 24 hours before the read, and the last trade of size was 16 at 13:16 PT Nov 17 (about 59 contracts). It was 15% on Nov 13, 18% on Nov 6, 17% on Oct 30, 19% on Oct 23, 25% on Oct 9, 30% on Oct 2 and 32% on Sept 29. A widely repeated 62% figure from early September does not match the current price.",
   "Anthropic's and OpenAI's run-rates are not like for like (our inference). Anthropic's S-1 says sales to customers through cloud-provider marketplaces made up about 47% of its 2025 revenue and 48% in the first half of 2026 (verified fact: Anthropic S-1), while per Reuters and the FT (via Investing.com), both Oct 8, OpenAI does not count revenue from sales through cloud partners (credible report)."
  ],
  "signals": [
@@ -908,6 +922,11 @@
    "url": "https://live.euronext.com/en/financial-news/oracle-abandons-7-billion-tencent-ai-deal-under-trump-pressure-ft-reports"
   },
   {
+   "date": "2026-11-04",
+   "text": "Riot Platforms' Q3 10-Q names the tenant it calls the Frontier AI Lab, the counterparty it gives for both its Corsicana and Rockdale leases: 'Anthropic PBC (the \"Frontier AI Lab\")'. The Corsicana lease, signed Oct 28 and binding from Nov 4, covers 910 MW of critical IT load in three phases (400, 200 and 310 MW) at a base rent of $130.0 per kilowatt per month, rising 3% a year, triple net, with an initial term running to the 15th anniversary of the start of Phase 3 and two five-year extension options; the Rockdale lease covers 191 MW, the first 96 MW expected in December 2027, for 20 years from full deployment expected in June 2028 (verified fact: Riot 10-Q). Riot's release had not named the lab (our Nov 4 signal), so the 10-Q answers that signal's open question. A named tenant and planned capacity, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1167419/000110465926122417/riot-20260930x10q.htm"
+  },
+  {
    "date": "2026-11-05",
    "text": "Microsoft has tightened oversight of some data-center projects from the neocloud providers Nebius, IREN and Nscale, stepping away from projects it deems risky, debating internally whether to sign new neocloud deals (though it has not fully ruled them out) and not exercising an option to more than double its existing agreement with Nscale to rent more computing power at a Texas data center (credible report: people familiar, via Bloomberg News, via Reuters, via Investing.com). A Microsoft spokesperson said its infrastructure approach is built on flexibility and optionality, and Nebius and Nscale did not respond (via Reuters). IREN's 10-Q, filed Nov 5, says it is making a Microsoft-requested network design change across its Horizon deployments, with delivery dates extended without delay credits (verified fact: IREN 10-Q). A named buyer, so not an X4 candidate (our inference).",
    "url": "https://www.investing.com/news/stock-market-news/microsoft-tightens-oversight-of-neocloud-data-center-projects-bloomberg-news-reports-5005281"
@@ -953,6 +972,11 @@
    "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Third-Quarter-2026-Results/default.aspx"
   },
   {
+   "date": "2026-11-10",
+   "text": "Fermi's Q3 10-Q reports that on Nov 10 it entered into a non-binding letter of intent with an unnamed 'investment-grade hyperscaler' (the 'IG Tenant') for about 600 MW of powered land at Project Matador, subject to the negotiation and execution of definitive documentation (verified fact: Fermi 10-Q). An unnamed buyer, but planned capacity under a non-binding letter, which X4 does not count, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/0002071778/000207177826000058/frmi-20260930.htm"
+  },
+  {
    "date": "2026-11-11",
    "text": "Nvidia's board accepted Jensen Huang's resignation as president, CEO and director, effective immediately; CFO Colette Kress is interim CEO and stays CFO, and Harvey C. Jones becomes chair (verified fact: Nvidia 8-K, date of report Nov 11, and Nvidia release, Nov 12). Neither gives a reason or says anything about his equity or severance, and the release keeps Q3 FY2027 results on Nov 17 as previously scheduled (verified fact: Nvidia 8-K and release). On Nov 8 the board had opened an independent investigation of reporting that Huang had been the target of a foreign intelligence effort (verified fact: Nvidia board statement). CNBC reports that he resigned after two extramarital affairs were made public, and that Nvidia shares fell 11% in the week to Nov 12 (credible report: CNBC). A departure at the main AI chip supplier, but no equity given up on the record, so not an X4 candidate (our inference).",
    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
@@ -981,6 +1005,31 @@
    "date": "2026-11-12",
    "text": "SpaceX plans to invest more than $74B in two supercomputing campuses, more than $24B at Starbase, Texas, and about $50B in Cochise County, Arizona (credible report: SpaceX's statement, via Reuters on Investing.com); Reuters says the Arizona campus still needs county approval, with a public hearing set for December. Named investor and planned capacity, which X4 does not count, so not an X4 candidate (our inference).",
    "url": "https://www.investing.com/news/stock-market-news/spacex-to-invest-over-74-billion-in-supercompute-facilities-in-texas-arizona-5022690"
+  },
+  {
+   "date": "2026-11-16",
+   "text": "ChronoScale (formerly Ekso Bionics, per EDGAR) says a GPU Services Agreement between STN One Incorporated and an unnamed 'leading frontier artificial intelligence lab', for a data center project in Odessa, Texas, is to pass by assignment and novation to OD1 JV Holdings LLC, a partnership of a ChronoScale subsidiary and an STN affiliate that the ChronoScale subsidiary manages. The agreement 'is expected to provide up to $7.5 billion in total contract value' to the partnership over about six years, assuming full performance and delivery and excluding extension periods and additional tranches; the first tranche is expected in the fourth quarter of 2026 and the rest in the first half of 2027, and credit support from an unnamed investment-grade technology company backstops a substantial portion of the first phase (verified fact: ChronoScale 8-K, date of report Nov 16, filed Nov 18). The 8-K's press release (Exhibit 99.1) puts the up to $7.5 billion on 'the confirmed 65 MW first phase' of a 'contemplated 350 MW deployment', with a right of first offer on the remaining 285 MW (verified fact: ChronoScale 8-K); its 40 MW figure is a warrant-vesting threshold for a possible second site. An unnamed frontier-lab buyer with capacity due from Q4 2026: a lead to resolve, but capacity not yet delivered, so not yet an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1549084/000149315226052998/form8-k.htm"
+  },
+  {
+   "date": "2026-11-16",
+   "text": "TensorWave agreed to provide OpenAI 457 MW of IT capacity on AMD Instinct MI455X GPUs (AMD Helios rack-scale systems) across multiple unnamed US data-center sites under a six-year agreement, coming online from the first half of 2027 with full deployment expected by early 2028; it gives no contract value (verified fact: TensorWave release, via Business Wire on FinancialContent). A named buyer and planned capacity, so not an X4 candidate (our inference).",
+   "url": "https://www.financialcontent.com/article/bizwire-2026-11-16-tensorwave-announces-agreement-with-openai-to-deliver-more-than-450mw-of-amd-powered-ai-infrastructure"
+  },
+  {
+   "date": "2026-11-17",
+   "text": "Nvidia's Q3 FY2027 CFO commentary (the quarter ended Oct 25) says supply commitments rose from $279B to $390B in the quarter, mainly for multi-year memory procurement, and inventory from $31.6B to $39.7B 'to support our Rubin product ramp'; its guarantees reach a maximum gross exposure of $118.0B: up to $105.0B of credit support, taking effect as each building is completed, for SB Energy's PORTS-Pike campus in Ohio, which 'will exclusively host NVIDIA infrastructure under 20-year leases to OpenAI, subject to limited exceptions', $3.5B of land, power and shell guarantees for neoclouds and $9.5B of power and systems credit support; and it lists $20B of future equity investment commitments, saying its equity investments are 'focused on frontier labs, infrastructure financiers, and other private companies', without naming any (verified fact: Nvidia CFO commentary, 8-K). Nvidia shares closed at $155.46 on Nov 17, before the results, and at $145.98 on Nov 19, about 6% lower (verified fact: Nasdaq; the percentage is our arithmetic). The largest guarantee names OpenAI; the unnamed equity commitments are a lead to resolve, not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm"
+  },
+  {
+   "date": "2026-11-18",
+   "text": "Anthropic priced its IPO at $83.00 a Class A share for 980,000,000 shares (956,351,354 sold by Anthropic and 23,648,646 by selling stockholders), or $81.34B, with an underwriters' option on 147,000,000 more shares, all to be sold by Anthropic, and a concurrent $26.0B private placement of 313,253,007 Class N shares at the same price; trading was set for Nov 19 and settlement for Nov 20 (verified fact: Anthropic pricing free writing prospectus; EDGAR lists the final prospectus, a 424B4, on Nov 19). That is above the $70 to $78 range of S-1/A No. 2 and up from its 825,000,000 shares (verified fact: Anthropic S-1/A No. 2). Fortune put the valuation at $1.5T at the IPO price, without giving the share count (credible report: Fortune), against $965B post-money in the May Series H (verified fact: Anthropic). A named company raising public capital, so not an X4 candidate (our inference).",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+  },
+  {
+   "date": "2026-11-20",
+   "text": "Anthropic closed its IPO of 1,127,000,000 Class A shares at $83.00, including the underwriters' full option for 147,000,000 more, for about $93.5B gross, about $91.6B of it received by Anthropic, alongside the $26.0B Class N placement to AMD, Broadcom, Google, Micron, Microsoft, NVIDIA and TSMC Partners (verified fact: Anthropic). On its first day of trading, Nov 19, the stock opened at $111.50 and closed at $97.17, about 34% and 17% above the offer price, on volume of about 857M shares (verified fact: Nasdaq; the percentages are our arithmetic). Fortune put the market value at that close just short of $1.8T, adding that calculations on a lower share count give roughly $1.3T (credible report: Fortune). Polymarket resolved its Anthropic IPO markets for Nov 20, Nov 30 and Dec 31 Yes (Polymarket API; forecast aggregate). A named company, so not an X4 candidate (our inference).",
+   "url": "https://www.anthropic.com/news/ipo-close"
   }
  ]
 }
