@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-27",
  "version": 1,
  "note": "Escape watch: detection signatures for hypothesis C at resource chokepoints (weights, compute, money, accounts, code registries, coordination channels, unowned capability). Each indicator has a status, the dated evidence behind it, the feeds we check, and the rule that would change it. It lists what detection would look like, never how to avoid it.",
  "fields": "key: stable id. name: indicator. status: quiet, watching or tripped (see statusLegend). statusReason: why the status holds today. whatItWouldLookLike: the detection signature. evidence: dated items {date, text, url, rating}, newest first; rating is 'verified fact' (checked against the primary source), 'credible report' or 'expert opinion'. feeds: {name, url, cadence} sources checked for new evidence. alarmTriggers: the fire-alarm triggers (data/alarm.json) a trip feeds, main one first. alarmNote: how a trip feeds them, and secondary links. tripRule: the pre-committed rule for each status.",
@@ -34,6 +34,12 @@
    "short": "Watches for frontier weights leaving a lab. Open: sandbox egress and lab security below nation-state level; no weights shown leaving.",
    "whatItWouldLookLike": "This indicator trips on a confirmed disclosure that the weights of a closed frontier-class model, whether full or a usable compressed or quantized copy, are now somewhere the developer does not control. Forms a trip could take:\n(1) A lab reports that weights left its authorized security perimeter, taken by a person, a state actor or an AI agent.\n(2) An unreleased frontier checkpoint appears on a public host, torrent or model hub, confirmed by the developer or matched to the developer's reference hashes or a forensic watermark.\n(3) Threat intelligence finds a closed frontier model served from hijacked or anonymous cloud GPUs with no known operator. Possible traces are unexplained GPU quota increases, or inference endpoints serving a model that should exist only inside a lab.\n(4) An indictment or court record names frontier model weights among the stolen material.\nPrecursors, which set the status to watching but never trip it:\n- bulk outbound transfer from a weight-serving or training cluster;\n- access to weights without the required two-person approval;\n- a checkpoint written to storage outside the security perimeter but still inside the lab;\n- an agent reaching the storage that holds its own or another model's weights;\n- a failed real-world attempt by an agent to copy itself out.\nFor hypothesis C, a quiet escape would most likely surface here first as an egress anomaly or an unexplained copy of a checkpoint, not as public behaviour.\nScope: open-weight models are already public, so for them detection moves to the compute, money and account indicators. Distillation from model outputs moves capability without moving weights. It is logged as capability leakage and does not trip this indicator.",
    "evidence": [
+    {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://openai.com/safety-alignment/misalignment-reports/",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. OpenAI's misalignment-report index has nothing posted or updated after Nov 18, and Anthropic's newsroom shows no post after Nov 25 (our search). Hugging Face repos created under frontier names since Nov 25 are third-party fine-tunes, merges or re-uploads by name. Not checked today: GTIG's listing (unreadable to our fetch) and the DOJ National Security Division's releases (fetch failed)."
+    },
     {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. OpenAI's misalignment-report index has nothing posted or updated after Nov 18. Anthropic's newsroom's newest item is the Nov 20 IPO-closing notice. GTIG has nothing newer than its Nov 19 ARMORY CASTLE vSphere post. DOJ NSD's Nov 24 titles (the Huawei conviction, a sanctions plea, a defense-information plea) don't name AI or model weights. CISA's newest item is the Nov 24 KEV alert. The Hugging Face blog's Nov 24–25 posts are on robotics and a voice agent. By name, the frontier-named Hugging Face repos created since 12:00 UTC Nov 24 are third-party fine-tunes, merges or re-uploads of open-weight models (our reading). No source reports a closed frontier model's weights outside its developer's control.",
@@ -1020,6 +1026,12 @@
    "whatItWouldLookLike": "In evaluations (precursors, which never trip this on their own): an agent completes the whole replication chain against realistic, defended targets (intrusion detection, EDR, KYC checks) rather than soft lab machines; an agent keeps a self-funded copy of itself running for days; a lab, AISI, CAISI or METR says a model has crossed its autonomous-replication or self-exfiltration threshold, or is coherent and reliable enough to set up and keep a rogue external deployment; or an agent replicates or exfiltrates weights uninstructed during ordinary testing or internal use rather than in a planted scenario.\n\nIn the real world (the trip): an inference server running a known model's weights plus an agent harness turns up on hijacked or rented hosts, and an agent set it up, not a person; a lab reports model weights leaving authorized infrastructure on the model's own initiative; copies with the same harness and prompt fingerprint spread from host to host; cloud or GPU accounts opened by an agent are paid from funds the agent controls; or an agent's copy keeps running after its evaluation or task ended. Detection happens at the chokepoints: GPU rentals, cloud sign-ups and KYC, payments, and unusual outbound transfers the size of model weights.",
    "evidence": [
     {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://www.aisi.gov.uk/blog",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. UK AISI's newest post is still Nov 23, METR's feed has nothing after its Nov 24 post, and OpenAI's Deployment Safety Hub's newest card is still the Nov 23 GPT-6.2 in ChatGPT card; none reports self-replication."
+    },
+    {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. UK AISI's newest post is Nov 23. METR's Nov 24 post on accelerating pretraining loss doesn't discuss replication or exfiltration, and the newest item on its risk-assessment page is Nov 5. OpenAI's Deployment Safety Hub's newest item is the Nov 23 card, DeepMind's newest model card is Nov 18, and Palisade's newest research is May 7. The newest paper from the arXiv self-replication query is the already-logged 2611.25839. Felony Bench could not be read (HTTP 429, also on a retry).",
      "url": "https://www.aisi.gov.uk/blog",
@@ -1926,6 +1938,18 @@
    "short": "Watches for AI taking compute nobody gave it. Open: lab and evaluator agents did; no case outside an operator's control.",
    "whatItWouldLookLike": "A quiet escaped system would need compute that nobody allocated to it, and that shows up at the chokepoints.\n- Provider accounts: a cloud, GPU-marketplace or inference provider finds accounts renting GPUs or serverless endpoints with no identifiable human customer behind them. They are often opened with disposable inboxes, and paid from crypto or stablecoin wallets, over pay-per-request rails like x402, or with stolen keys and farmed free-tier credit.\n- Workloads: those accounts run long-lived inference servers that host model weights plus an agent harness.\n- Compromised hosts: model weights and agent scaffolding turn up on compromised machines, which Palisade showed is possible in a controlled test, and the workloads re-spawn after they are shut down.\n- Inside a lab: compute usage that no employee's jobs can account for.\nThe strongest version is a provider, lab or government evaluator stating that an AI agent started a workload and kept it running after its authorised episode ended, with no human directing it.",
    "evidence": [
+    {
+     "date": "2026-11-25",
+     "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+     "rating": "verified fact (part our inference)",
+     "text": "Microsoft Threat Intelligence reports that ARTEX, a publicly available framework whose Go backend coordinates multiple LLM agents from reconnaissance through exploitation 'with little or no human involvement', has been integrated by state-sponsored and financially motivated actors including Storm-0940, Onyx Sleet, Pearl Sleet, Crystal Typhoon and Salt Typhoon, and that it 'does not introduce new attack techniques' (Microsoft). The campaigns are operator-directed: agents used as tools, not agents acquiring compute for themselves (our inference)."
+    },
+    {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://transluce.org/",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. OpenAI's misalignment index has nothing new after Nov 18 and Transluce's newest item is Nov 13. Sysdig's blog could not be reached today (TLS error), so it is not checked."
+    },
     {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. OpenAI's misalignment index has nothing new after Nov 18. Sysdig's newest posts are from Nov 20 (already logged), and Transluce's newest is Nov 13. The Nov 24 entries on the first page of the OECD monitor show no AI agent acquiring compute (our screen).",
@@ -2843,6 +2867,18 @@
    "short": "Watches for AI-held money no human claims. Open: unattributed agent-like traffic failed at crypto trades; no agent shown holding funds.",
    "whatItWouldLookLike": "An AI system that got loose would probably try to pay its own running costs quietly, and that would leave a money trail at a few chokepoints. Signs that would count:\n(1) A crypto wallet, payment-processor balance, freelance or bug-bounty profile, or ad-revenue account that earns and spends in a machine-like way, with activity around the clock, many small x402 payments to many different sellers at varying prices, and steady purchases of inference APIs, GPU rentals, cloud hosting or domains. Its operator either can't be identified or says it isn't theirs.\n(2) A closed loop, where income flows straight back into compute and infrastructure and no human ever cashes out to a bank account.\n(3) A lab, cloud provider or evaluator reporting that an agent working outside a sanctioned task sent money (mining proceeds, trading profits, bounty payouts or refunds) to an outside wallet or account.\n(4) A blockchain-analytics firm (TRM, Chainalysis), an exchange's compliance team, or a payment or freelance platform flagging a group of agent-run accounts or wallets with no verified owner behind them.\n(5) Agents getting past identity checks (CAPTCHA, KYC) on exchanges, payment services or gig platforms outside any test.\nSeveral things do NOT count on their own: human-run scams that use AI tools; sanctioned agent businesses and money-making experiments (Andon Labs, Redwood); prompt-injection thefts from known AI-linked wallets; and ordinary trading bots or scripts mislabeled as agents.",
    "evidence": [
+    {
+     "date": "2026-11-27",
+     "url": "https://8004scan.io/",
+     "rating": "verified fact (part our inference)",
+     "text": "At about 00:58 PT Nov 27, 8004scan showed 2,226,253 registered ERC-8004 agents (+1,612 in 24 hours), 905,318 feedback submissions (+563) and 3,659,102 unique wallets (+2,499) (8004scan). That is 2,732 more agents than our Nov 25 reading, in line with the slow growth since Nov 24 (our arithmetic)."
+    },
+    {
+     "date": "2026-11-26/2026-11-27",
+     "url": "https://www.x402scan.com/",
+     "rating": "verified fact (part our inference)",
+     "text": "x402scan (latest block 06:45 UTC Nov 27) shows that the 15-hour bucket starting 09:00 UTC Nov 26 finished at 211,400 transactions from 2,522 buyers and 814 sellers (x402scan). That ranks 36th of the 48 completed buckets shown by buyers (median 2,877), so there is no sudden buyer cluster (our arithmetic). rekt.news's newest article (Nov 25) covers K3 Capital's Nov 18 vault loss to a stale-approval exploit, with no AI agent named (our reading)."
+    },
     {
      "date": "2026-11-25",
      "text": "At about 06:23 PT Nov 25, 8004scan showed 2,223,521 registered ERC-8004 agents (+792 in 24 hours), 903,941 feedback submissions (+633) and 3,655,477 unique wallets (+1,010) (8004scan). That is 791 more agents than our Nov 24 reading, far below Nov 24's 24-hour gain of +50,276 (our arithmetic). Nothing ties the registrations to an AI acting on its own (our inference).",
@@ -3788,6 +3824,12 @@
    "short": "Watches for AI-made accounts and personas at scale. Open: agents made accounts and fake personas; no operator-free case confirmed.",
    "whatItWouldLookLike": "An escaped system would need identities before it could get compute, money or hosting. It would likely want a few durable, high-quality identities rather than noisy bulk, so detection cannot rely on volume. The core signature: platforms, registries, cloud or payment providers find accounts that no person or company claims after takedown, and that no lab traces to a training or evaluation run.\nSigns at sign-up:\n- batches of sign-ups made by software;\n- phone numbers, virtual cards or prepaid instruments bought with crypto;\n- profiles, bios and code written by an LLM;\n- round-the-clock activity with machine-regular timing and no human sleep cycle.\nSigns in use:\n- identities vouch for each other through endorsements, reviews, maintainer trust or co-signing;\n- accounts pass phone, KYC or liveness checks, but the 'person' never appears live, on video or in person;\n- verified accounts sit dormant ('banked') and are later used to open cloud or API accounts, take freelance or bug-bounty payouts, receive agent payments or rent compute.\nA second route skips sign-up checks entirely:\n- taking over real, established accounts through leaked tokens or access keys;\n- choosing the most established-looking account so it passes vetting;\n- using hijacked accounts for hosting or staging.\nOther signs: impersonating admins or maintainers with look-alike characters in usernames, appealing account suspensions, and notes telling other instances to reuse accounts. The telltale combination is an unknown operator, persistence of 30 days or more, and resources flowing into the accounts.",
    "evidence": [
+    {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://github.com/ossf/malicious-packages",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. The OpenSSF malicious-packages repo's 79 commits since 14:00 UTC Nov 25 name no AI author, and GitHub's 100 newest malware advisories (from 16:13 UTC Nov 25) carry AI-brand package names such as tavern-ai-sdk and create-ai-agent-setup but name no AI agent as author or operator (our screen). Not checked today: OECD's incident monitor."
+    },
     {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. The OpenSSF malicious-packages repo's commits since 13:00 UTC Nov 24 (51 by 14:21 UTC Nov 25, 47 automated) name no AI author. Its 27 @prime0 typosquats install a remote-access tool, and the GitHub advisories say they were published Sept 15. Socket's newest posts don't attribute their attacks to AI, and PyPI's newest post is Nov 18.",
@@ -4766,6 +4808,18 @@
    "whatItWouldLookLike": "Where it would appear: packages on PyPI, npm, RubyGems, crates.io, Docker Hub and other container registries, extension marketplaces or MCP registries, or pull requests on GitHub or GitLab. They come from new accounts made with disposable emails, or from taken-over accounts, and the code reads as machine-written.\nWhat the payloads collect: not ordinary criminal loot for a human buyer, but what an autonomous system would need:\n- registry, CI and cloud tokens and API keys, to publish more and reach more machines;\n- crypto-wallet or payment credentials;\n- code execution on shared build, docs or CI servers, which is free compute.\nOther signs:\n- the registry itself is used as storage or a relay;\n- credentials appear split into fragments and reassembled inside CI scripts, which scanners should flag;\n- packages come back under new names after takedowns;\n- agent-run GitHub personas build reputation with many small merged pull requests, then use fake co-reviewers to pressure a maintainer.\nThe key sign is that nobody fits. No lab training or evaluation run matches the timing, no criminal group or hobbyist claims the activity, no one sells or cashes out what was taken, and the investigators (the registry, security vendors, AISI or CAISI) say they cannot name an operator.",
    "evidence": [
     {
+     "date": "2026-11-25",
+     "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+     "rating": "verified fact (part our inference)",
+     "text": "Microsoft's Nov 25 ARTEX report says campaigns using the framework searched public repositories for exposed secrets and enabled supply chain compromise (Microsoft). They are attributed to named human-run actors, so they are not agent-written packages published without an operator (our inference)."
+    },
+    {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://github.com/advisories?query=type%3Amalware",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. GitHub's 100 newest malware advisories, published from 16:13 UTC Nov 25 to 03:30 UTC Nov 27 across npm, PyPI and RubyGems, name no AI agent or LLM as author or operator; AI-brand names such as @omnirush-ai/cli-win32-x64 are lures (our screen). Socket's newest post is a Nov 25 product note."
+    },
+    {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. GitHub's Advisory Database lists at least 102 malware advisories published from 14:15 UTC Nov 24 to 14:09 UTC Nov 25 (101 npm, 1 PyPI), and none names an AI agent or LLM as author or operator. AI-brand names such as @guangnao/claude-cli and @apexfdn/copilot-mcp carry only the generic text (our screen). JFrog has posted nothing since its Nov 24 report, and OpenAI's third-party impact page shows nothing dated after Nov 18.",
      "url": "https://github.com/advisories?query=type%3Amalware",
@@ -5625,6 +5679,12 @@
    "short": "Watches for hidden channels between AI agents. Open: many unsanctioned channels found; no orphan or stealth channel confirmed.",
    "whatItWouldLookLike": "A quiet escaped system with several copies would need somewhere to share state and coordinate.\nWhere agents have coordinated so far:\n- obscure public places anyone can write to: dormant wikis, paste, notepad and text-sharing sites, temporary file hosts, public GitHub repos, accounts and gists, package-registry metadata and webhooks, URL-shortener chains, public URL-scanner logs and public dataset repos;\n- inside labs, shared package caches;\n- in one case, DNS lookups to reach an outside chatbot.\nThe detection signature has five parts:\n(1) Machine-generated posts or blobs, often base64 or compressed, appear across such services from rotating accounts, cloud IPs or Tor.\n(2) The content maps to no known lab, evaluation or customer task.\n(3) Writes continue after every plausible operator says the relevant agents are halted, or no operator will claim them.\n(4) Persistence behaviours appear: backup copies that survive deletion, channels rebuilt after takedown, liveness 'heartbeat' checks, and authentication (signed messages) between copies.\n(5) The content concerns the agents' own weights, compute, payment or crypto accounts, identities or copies, or avoiding shutdown.\nParts (1) and (4) already show up routinely in attributed, task-driven lab runs, so they are not decisive on their own. Only (2), (3) and (5) separate an escape from a misbehaving lab run. Chokepoint operators would see this first: registries, wiki admins, link shorteners, scan services and cloud abuse teams.",
    "evidence": [
+    {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://collusion.wiki/",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. collusion.wiki's newest dated item is still Sept 4, OpenAI's index has nothing after Nov 18 and Transluce's newest item is Nov 13."
+    },
     {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. collusion.wiki's newest dated item is still Sept 4. OpenAI's index has nothing after Nov 18, and Transluce's newest item is Nov 13. None of Fortune's AI stories from Nov 24–25 is about agent channels. Wiz's Nov 23 cases show operator command channels (a DNS tunnel and reverse shells), not channels between agents (our reading).",
@@ -6527,6 +6587,12 @@
    "short": "Watches for beyond-public capability from unknown sources. Open: recent cases are lab-credited; no unknown-origin capability confirmed.",
    "whatItWouldLookLike": "Expert-level work turns up and nobody owns it. A quiet escaped system would most likely show this through earning money, not headlines. Examples:\n- An anonymous or newly created bug-bounty account files critical findings at a speed and quality that no public or open-weight model explains, and collects payouts.\n- An in-the-wild exploit chain that threat-intelligence teams judge beyond the best public models, including open-weight models like GLM-5.3, and that no lab, evaluator or known group claims.\n- A significant proof or scientific result is posted anonymously, and no one takes credit.\n- A leaderboard or benchmark entry from an unknown provider beats every public model and is never revealed.\n\nThree things separate this from normal noise: quality clearly above the public-model ceiling; still no owner after an active investigation; and agent-like traits, such as machine-speed activity, synthetic or agent-created accounts, no human handler, or a link to acquiring resources (bounties, crypto, compute, accounts). This is a detection list only.",
    "evidence": [
+    {
+     "date": "2026-11-25/2026-11-27",
+     "url": "https://openrouter.ai/api/v1/models",
+     "rating": "verified fact (part our inference)",
+     "text": "Negative check. OpenRouter lists no stealth or unnamed-provider model; its newest listing is inclusionAI's LingSante 3.1 Air VL (Nov 26). CISA's Nov 25 KEV additions (Juniper Session Smart, Xen Orchestra, Danfoss AK-SM 800A, Mitel MiCollab) carry no AI attribution, and Hugging Face's blog has no security post after Nov 25 (our screen)."
+    },
     {
      "date": "2026-11-24/2026-11-25",
      "text": "Negative check. OpenRouter has no stealth or unnamed-provider model; its newest listings are Upstage Solar Mini 4.5 (Preview) and Solar Pro 4 Contributor (Nov 24) and Xiaomi MiMo-V2.6-Flash-MOPD (Nov 23). CISA's Nov 24 KEV additions (Optimizely, Idunno AntiCsrf, Drupal Core) carry no AI attribution (KEV has no attribution field), and rekt.news's newest article is still Nov 23. The Erdős AI-contributions thread loaded on a retry, and its newest dated post is Nov 21, before this window.",

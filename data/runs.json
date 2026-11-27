@@ -41779,5 +41779,546 @@
     "short": "W6 is met unless OpenAI's post-Astra model is released or its capabilities published"
    }
   ]
+ },
+ {
+  "date": "2026-11-27",
+  "label": "daily reading",
+  "report": "reports/2026-11-27.html",
+  "probs": {
+   "A": {
+    "now": 0.6,
+    "y2030": 20,
+    "y2035": 32,
+    "conf": "low–medium"
+   },
+   "B": {
+    "now": 2.5,
+    "y2030": 25,
+    "y2035": 34,
+    "conf": "low"
+   },
+   "C": {
+    "now": 0.4,
+    "y2030": 8.5,
+    "y2035": 14,
+    "conf": "low"
+   },
+   "D": {
+    "now": 0.2,
+    "y2030": 3,
+    "y2035": 7,
+    "conf": "low"
+   },
+   "Dopen": {
+    "now": 0.2,
+    "y2030": 24,
+    "y2035": 46,
+    "conf": "low"
+   }
+  },
+  "summary": "Quiet day for our published numbers. Scott Aaronson wrote on Nov 25 that he is virtually certain, from multiple reliable sources, that AI labs are sitting on one or more bombshells in algorithms that break deployed cryptosystems, while much less confident about their specific nature. A GitHub repository created Nov 25, crediting colleagues at Anthropic and Claude, posts a shorter machine-checked Lean proof of the Riemann Hypothesis that no mathematician has read through. On Google DeepMind's podcast (Nov 19), Koray Kavukcuoglu said, as The Decoder reports, that agents now control part of the compute for Gemini experiments. The fire alarm stays at Level 1, Watch; the Index holds at 3%.",
+  "changes": [
+   "A now held at 0.6% (time passing): two more days along our own forecast curve raise the lab term from about 1.620% to about 1.628% and A from about 0.611 to about 0.614, short of the next rounding step (about 25 days away unless news moves it; our arithmetic). There was no Nov 26 reading, so this covers two days.",
+   "AGI anywhere, C, D and D-open now held (time passing): before rounding, over the two days AGI anywhere goes from about 0.981 to 0.985, C from about 0.370 to 0.372, D from about 0.164 to 0.165 and D-open from about 0.197 to 0.198; no published number crosses a rounding step.",
+   "All end-2030 and end-2035 numbers, k (0.57 / 0.77 / 0.89) and the kept-quiet factor (0.6) held (news, no move): Scott Aaronson's Nov 25 report that unnamed sources leave him virtually certain AI labs are sitting on cryptography results names no lab, model or result, and he is much less confident about their nature (Aaronson; expert opinion (unnamed sources)); the shorter Lean proof of the Riemann Hypothesis posted Nov 25 has passed machine checks only and bears on reasoning, which the weekly judges (sent as componentLeads).",
+   "Capability gap held at 3 months (news, no move): Aaronson's report gives no gap in months, and no lab or evaluator published one Nov 25–27 (our search).",
+   "B held at 2.5% / 25% / 34% (news, no move): Koray Kavukcuoglu's remark on Google DeepMind's Nov 19 podcast that AI agents control part of the compute for Gemini experiments, with the lab still far from full recursive self-improvement (Kavukcuoglu, via The Decoder; credible report), is public, partial automation with no share or speed-up estimate; Anthropic's pace page, re-read Nov 27, still says Claude is not operating fully autonomously for any measured subset of its AI R&D (Anthropic; verified fact).",
+   "Index held at 3% (about 2.80 before rounding; parts 0.60 / 2.15 / 0.05).",
+   "Gauges: all five carried forward with no value change; notes updated with Nov 25–27 items (gap: Aaronson; rd: Kavukcuoglu, pace page re-read; oversight: Microsoft's ARTEX report; money: Nvidia's reported Southeast Asia shipment halt; delegation: the White House's Nov 25 critical-infrastructure release and Commerce's SI Exports notice). No weekly newer than the Nov 20 wrap-up, adopted Nov 21.",
+   "Fire alarm held at Level 1 (Watch) on W2, W3, W4 and W5: W2 is on day 80, W6's clock stands at 74 of 90 days (met Dec 13 unless the post-Astra model is released or its capabilities published); rulings dated 2026-11-27 were added to all 15 alarm conditions, none newly met.",
+   "Escape watch: 11 new evidence items across all eight indicators; no status changed.",
+   "Signals: no status changed; notes and links updated."
+  ],
+  "roundupWindow": "Nov 25 – Nov 27, 2026: items first reported, or first verified by us, since the Nov 25 reading, plus earlier items (marked background)",
+  "roundup": [
+   {
+    "topic": "Mathematics and AI",
+    "items": [
+     {
+      "date": "Nov 25",
+      "text": "Scott Aaronson wrote that he is 'virtually certain, from multiple reliable sources, that the AI labs are now sitting on one or more bombshells' in algorithms that break currently deployed cryptosystems, but 'much, much less confident about the specific nature of those bombshells', and that exact statements may have been mangled in retelling (Aaronson, on Shtetl-Optimized; expert opinion (unnamed sources)).",
+      "url": "https://scottaaronson.blog/?p=10379",
+      "rating": "expert opinion (unnamed sources)",
+      "top": true,
+      "short": "Aaronson: unnamed sources leave him virtually certain labs sit on cryptography bombshells; he is much less sure of the specifics."
+     },
+     {
+      "date": "Nov 25",
+      "text": "In the same post Aaronson writes that his working assumption is that 'any proof that comes directly from OpenAI or Anthropic is correct barring information to the contrary', and that he now feels a proof of P ≠ NP is not far (Aaronson, on Shtetl-Optimized; expert opinion).",
+      "url": "https://scottaaronson.blog/?p=10379",
+      "rating": "expert opinion"
+     },
+     {
+      "date": "Nov 25",
+      "text": "A GitHub repository created Nov 25 says it gives a shorter Lean 4 proof of the Riemann Hypothesis and of GRH for Dirichlet L-functions, 'based on Levent Alpöge's, with Claude' and 'produced in collaboration with my colleagues at Anthropic, and Claude', in editions of about 300,000 and 76,000 lines under an Anthropic copyright notice; it says the proof 'has passed machine checks only' and that 'No mathematician has read it through' (repository README; verified fact).",
+      "url": "https://github.com/lsernau/grh-lean",
+      "rating": "verified fact",
+      "top": true,
+      "short": "A repository crediting Anthropic colleagues and Claude posts a 76,000-line Lean proof of the Riemann Hypothesis; machine-checked, unread by mathematicians."
+     },
+     {
+      "date": "Nov 25",
+      "text": "After posting its six Cogentic papers, Google Research added a prior-work citation to the bimatrix Nash equilibrium paper and a concurrent-work citation to Fotakis, Kritharidis, Platanos and Tolias (2026) in its Nov 24 prophet-inequalities paper; its commits through Nov 27 add no Lean files (Google Research, GitHub commits; verified fact (part our inference): the absence is our check).",
+      "url": "https://github.com/google-research/google-research/commits/master/cogentic_research_papers",
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   },
+   {
+    "topic": "AI doing AI R&D",
+    "items": [
+     {
+      "date": "Nov 19 (background)",
+      "text": "On Google DeepMind's podcast, Koray Kavukcuoglu, SVP at Google DeepMind and Chief AI Architect at Google, said, in The Decoder's Nov 25 paraphrase, that AI agents control part of the compute themselves to run experiments for the next Gemini, that the lab is still far from full recursive self-improvement, and that it does not reward the agents' chains of thought in training so their reasoning stays reviewable (Kavukcuoglu, via The Decoder; credible report).",
+      "url": "https://www.youtube.com/watch?v=FORdPIWOH5k",
+      "rating": "credible report",
+      "top": true,
+      "short": "DeepMind's Kavukcuoglu: agents control part of the compute for Gemini experiments; full recursive self-improvement still far off (via The Decoder)."
+     },
+     {
+      "date": "Nov 27",
+      "text": "Re-read Nov 27, Anthropic's pace page still says that as of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work and 'is not operating fully autonomously for any measured subset of AI R&D work' (Anthropic; verified fact).",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "rating": "verified fact"
+     }
+    ]
+   },
+   {
+    "topic": "Oversight, incidents and security",
+    "items": [
+     {
+      "date": "Nov 25",
+      "text": "Microsoft Threat Intelligence reports that ARTEX, an openly available framework whose backend coordinates multiple LLM agents through an attack 'with little or no human involvement', has been integrated by state-sponsored and financially motivated actors including Storm-0940, Onyx Sleet, Pearl Sleet, Crystal Typhoon and Salt Typhoon, can reach privileged access 'in a matter of minutes', and 'does not introduce new attack techniques' (Microsoft Threat Intelligence; verified fact).",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+      "rating": "verified fact",
+      "top": true,
+      "short": "Microsoft: state and criminal groups run ARTEX, whose LLM agents attack with little or no human involvement, using known techniques."
+     }
+    ]
+   },
+   {
+    "topic": "Governments and geopolitics",
+    "items": [
+     {
+      "date": "Nov 25–26",
+      "text": "The Financial Times reports, citing three people familiar with the matter, that Nvidia told partners including Dell and Supermicro to halt server shipments to Malaysia, Singapore, Thailand and Indonesia after tighter US export controls on Chinese cloud access, and CNBC that dealers have listed thousands of B300 chips for sale (FT; CNBC; via The Decoder; credible report).",
+      "url": "https://the-decoder.com/nvidia-halts-server-shipments-to-malaysia-singapore-thailand-and-indonesia-after-tighter-us-export-controls/",
+      "rating": "credible report",
+      "top": true,
+      "short": "FT: Nvidia halted server shipments to four Southeast Asian countries after US cloud-access export controls (via The Decoder)."
+     },
+     {
+      "date": "Nov 25",
+      "text": "The White House's critical-infrastructure release says the administration is pursuing a whole-of-government effort to modernize and secure federal systems, names Kirsten Davies as its nominee to lead the Office of the National Cyber Director, and restates that the President established a Super Intelligence Force chaired by Director of National Intelligence Jay Clayton (White House; verified fact).",
+      "url": "https://www.whitehouse.gov/releases/2026/11/president-trump-unleashes-whole-of-government-effort-to-protect-americas-critical-infrastructure/",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 27",
+      "text": "Commerce's International Trade Administration establishes an On-Demand Consortia pathway under its Super Intelligence (SI) Exports Program, authorized by Executive Order 14320, 'Promoting the Export of the American SI Technology Stack' (Commerce, Federal Register; verified fact).",
+      "url": "https://www.federalregister.gov/documents/2026/11/27/2026-24107/american-si-exports-program-on-demand-consortia-for-specific-foreign-opportunities",
+      "rating": "verified fact"
+     },
+     {
+      "date": "Nov 25",
+      "text": "Anthropic CEO Dario Amodei, answering an Axios report that some employees believe humanity will hand authority to superintelligent systems, wrote on X that handing over governance to AI is a bad idea and that AI must be governed by 'legitimate democratic processes' (Amodei, via The Decoder; credible report).",
+      "url": "https://the-decoder.com/anthropic-ceo-dario-amodei-says-letting-ai-govern-society-would-be-a-bad-idea/",
+      "rating": "credible report"
+     }
+    ]
+   },
+   {
+    "topic": "Markets",
+    "items": [
+     {
+      "date": "Nov 27",
+      "text": "Kalshi's company-announces-AGI-before-2027 contract last traded 0.04 (book 0.03 / 0.04, about 616 contracts in 24 hours), up from 0.02 on Nov 25, and the before-April-2027 contract 0.15 (0.14 / 0.15, thin); we found no story behind the moves, and these markets resolve on a company announcement, not on our definition (Kalshi API, 01:01 PT Nov 27; forecast aggregate).",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO",
+      "rating": "forecast aggregate"
+     }
+    ]
+   },
+   {
+    "topic": "Escape watch",
+    "items": [
+     {
+      "date": "Nov 25–27",
+      "text": "Escape watch: 11 new evidence items and no status change; 8004scan added 1,612 registered agents in 24 hours, and x402scan's latest completed bucket ranks 36th of 48 by buyers, so no unusual buyer cluster (8004scan; x402scan; verified fact (part our inference)).",
+      "url": "https://8004scan.io/",
+      "rating": "verified fact (part our inference)"
+     }
+    ]
+   }
+  ],
+  "timeline": "AGI (definitions v2.0) needs every part's bar at once, and no public system meets them; the snapshot copies data/agi_components.json. The 80% time horizon is about 3.1 h measured (METR, Claude Mythos Preview, early snapshot); our trend line, about 6.4 h. A Nov 25 repository crediting colleagues at Anthropic and Claude posts a shorter machine-checked Lean proof of the Riemann Hypothesis that no mathematician has read through, bearing on the reasoning part; Aaronson's report that labs sit on cryptography results is unverified and names no system (our inference). AGI anywhere holds at 1% / 36% / 59%.",
+  "signals": [
+   "Any lab statement or outside report that confirms, names or dates the cryptography results Scott Aaronson says labs are sitting on, and the model behind them.",
+   "A mathematician's read-through of the Riemann Hypothesis proof, or of the shorter 76,000-line Lean edition posted Nov 25.",
+   "Whether OpenAI or an evaluator ties a released model to the one OpenAI acknowledged on Sept 8: W2 runs on day 80, and the exclusive-use clock is at 74 of 90, met Dec 13 if nothing changes.",
+   "A share or speed-up figure from Google DeepMind for the agent-run experiments Kavukcuoglu describes, and Google Research's release of the Lean formalizations for its six Cogentic papers.",
+   "The Nov 28 internal deadline for proposed legislative language on a federal definition of Super Intelligence, committee action on H.R. 11157 and the Dec 11 expiry of the continuing resolution that funds the Genesis Mission."
+  ],
+  "sources": [
+   {
+    "title": "Scott Aaronson, Shtetl-Optimized: HOLY SHIT HOLY SHIT HOLY SHIT HOLY SHIT (Nov 25)",
+    "url": "https://scottaaronson.blog/?p=10379"
+   },
+   {
+    "title": "lsernau/grh-lean: a short Lean 4 proof of the Generalized Riemann Hypothesis (README, Nov 25)",
+    "url": "https://github.com/lsernau/grh-lean"
+   },
+   {
+    "title": "Google DeepMind podcast: Is Gemini our path to AGI? (Nov 19)",
+    "url": "https://www.youtube.com/watch?v=FORdPIWOH5k"
+   },
+   {
+    "title": "The Decoder: AI agents now control part of DeepMind's compute for Gemini experiments (Nov 25)",
+    "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/"
+   },
+   {
+    "title": "Microsoft Threat Intelligence: What defenders need to know about ARTEX (Nov 25)",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+   },
+   {
+    "title": "The Decoder: Nvidia halts server shipments to four Southeast Asian countries (Nov 26)",
+    "url": "https://the-decoder.com/nvidia-halts-server-shipments-to-malaysia-singapore-thailand-and-indonesia-after-tighter-us-export-controls/"
+   },
+   {
+    "title": "Anthropic: Measuring the pace of AI development (re-read Nov 27)",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+   },
+   {
+    "title": "Google Research: Cogentic research papers, commit history",
+    "url": "https://github.com/google-research/google-research/commits/master/cogentic_research_papers"
+   },
+   {
+    "title": "White House: whole-of-government effort to protect critical infrastructure (Nov 25)",
+    "url": "https://www.whitehouse.gov/releases/2026/11/president-trump-unleashes-whole-of-government-effort-to-protect-americas-critical-infrastructure/"
+   },
+   {
+    "title": "Federal Register: American SI Exports Program, On-Demand Consortia (Nov 27)",
+    "url": "https://www.federalregister.gov/documents/2026/11/27/2026-24107/american-si-exports-program-on-demand-consortia-for-specific-foreign-opportunities"
+   },
+   {
+    "title": "Kalshi API: KXAGICO series",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXAGICO"
+   }
+  ],
+  "index": 3,
+  "indexNote": "Held at 3%: A about 0.614 ((lab term about 1.628% × kept-quiet factor 0.6 + state term 0.1%) × k 0.57), hidden self-improvement outside A about 2.132 (B's 2.5% less 0.6 × A) and C or D outside A about 0.05 sum to about 2.80, which rounds to 3; the lab term rose from about 1.620% to about 1.628% for two days of time passing along our own forecast curve, and Scott Aaronson's Nov 25 report of cryptography results held by labs (Aaronson; expert opinion (unnamed sources)), which names no lab, model or result, moved no input (our inference).",
+  "needle": {
+   "quiet": true,
+   "hypothesis": null,
+   "from": null,
+   "to": null,
+   "subject": "Aaronson hears AI labs hold crypto bombshells",
+   "headline": "Quiet day: no news moved our numbers.",
+   "detail": "Scott Aaronson wrote on Nov 25 that he is 'virtually certain, from multiple reliable sources, that the AI labs are now sitting on one or more bombshells' in algorithms that break currently deployed cryptosystems, but that until he sees details or hears directly from someone at a lab he is 'much, much less confident about the specific nature of those bombshells', and that he does not want to spread unverified rumours (Aaronson, on Shtetl-Optimized; expert opinion (unnamed sources)). Why no number moves: the claim is secondhand, names no lab, model or result and gives no capability gap in months; holding back a working attack on deployed cryptography until it can be disclosed safely would be a security choice about one result, not an AGI-level system kept from the public; and a rumour that reaches a public blog within days cuts against long secrecy (our inference).",
+   "brief": "Aaronson adds that exact statements may have been mangled in retelling, and that he does not want cryptography to overshadow the mathematics (Aaronson; expert opinion). In the same post he writes that he now feels a proof of P ≠ NP is not far, and that any proof coming directly from OpenAI or Anthropic is, as a working assumption, correct barring information to the contrary (Aaronson; expert opinion). No lab has commented on cryptography results (our search).",
+   "rating": "expert opinion (unnamed sources)",
+   "url": "https://scottaaronson.blog/?p=10379",
+   "source": "Scott Aaronson (Shtetl-Optimized)"
+  },
+  "tripwires": [
+   {
+    "id": "ext-eval-post-astra",
+    "hyp": "A",
+    "signal": "External evaluation of OpenAI's unreleased post-Astra model",
+    "status": "tripped",
+    "since": "2026-11-07",
+    "note": "W2 is met (shown amber as \"Confirmed · counts toward Watch\"): Nov 27 is day 80 since OpenAI acknowledged a model beyond GPT-6 Astra on Sept 8 (our arithmetic). OpenAI's news feed has nothing after Nov 24, and the Deployment Safety Hub's newest card is still the Nov 23 GPT-6.2 in ChatGPT card (OpenAI; verified fact (part our inference): the absences are our search); no source ties a released or evaluated model to the Sept 8 one.",
+    "url": "https://deploymentsafety.openai.com/",
+    "trigger": "W2"
+   },
+   {
+    "id": "evaluator-access",
+    "hyp": "A",
+    "signal": "Labs or governments restrict independent evaluator access",
+    "status": "tripped",
+    "since": "2026-09-24",
+    "note": "W3 is met (shown amber as \"Confirmed · counts toward Watch\") on OpenAI's temporary request that UK AISI process unsummarised chain-of-thought only with OpenAI models, disclosed in the GPT-6.2 system card; the window runs to Feb 15, 2027 at the latest. Google's Nov 24 Gemini 4 Neon report skipped a new ESTP capability round under its own rule, a lab choice rather than a restriction (Google DeepMind; verified fact (part our inference)). No new instance found Nov 25–27; UK AISI's newest post is still Nov 23 (our search).",
+    "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_neon_safety_report.pdf",
+    "trigger": "W3"
+   },
+   {
+    "id": "outsider-incidents",
+    "hyp": "C",
+    "signal": "Agent incidents made public by outsiders, or kept quiet by a lab that knew",
+    "status": "tripped",
+    "since": "2026-09-04",
+    "note": "W4 is met (shown amber as \"Confirmed · counts toward Watch\"); the median disclosure lag is ~112 days across 30 incidents (111–118), a floor. New: Microsoft's Nov 25 ARTEX report describes agent campaigns run by named state-sponsored and criminal actors (Microsoft Threat Intelligence; verified fact), operator-directed and outside the list's rule (our inference).",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+    "trigger": "W4"
+   },
+   {
+    "id": "training-pause",
+    "hyp": "B",
+    "signal": "Training pause outlasts its stated conditions without an update",
+    "status": "watching",
+    "since": "2026-10-26",
+    "note": "Open: Anthropic's final prospectus (Form 424B4, filed Nov 19) repeats the paragraph on delaying pre-training, with no date and no resumption language (Anthropic, SEC filing; verified fact). Anthropic's newsroom shows no post after Nov 25 (our search, Nov 27); EDGAR was not re-checked today.",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+    "trigger": null
+   },
+   {
+    "id": "gov-classified-use",
+    "hyp": "D",
+    "signal": "A frontier model beyond the public one in classified government use",
+    "status": "watching",
+    "since": "2026-09-29",
+    "note": "Nothing known goes beyond the public frontier. The White House's Nov 25 critical-infrastructure release restates the Super Intelligence Force chaired by DNI Jay Clayton (White House; verified fact) and says nothing about classified use of a model beyond the public one (our reading).",
+    "url": "https://www.whitehouse.gov/releases/2026/11/president-trump-unleashes-whole-of-government-effort-to-protect-americas-critical-infrastructure/",
+    "trigger": null
+   },
+   {
+    "id": "exclusive-use",
+    "hyp": "A",
+    "signal": "Labs keep their best models for their own use instead of selling access",
+    "status": "watching",
+    "since": "2026-09-29",
+    "note": "Open: the post-Astra model's clock stands at 74 of 90 days on Nov 27, met Dec 13 unless the model is released or its capabilities published (our arithmetic). Scott Aaronson writes that unnamed sources leave him 'virtually certain' AI labs are sitting on cryptography 'bombshells' (Aaronson; expert opinion (unnamed sources)); it names no lab, model or start date, so no new clock is dated (our inference).",
+    "url": "https://scottaaronson.blog/?p=10379",
+    "trigger": "W6"
+   },
+   {
+    "id": "eval-integrity",
+    "hyp": "A",
+    "signal": "A frontier model is documented sandbagging evaluations or evading its developer's monitors without being instructed to",
+    "status": "tripped",
+    "since": "2026-09-03",
+    "note": "Confirmed since Sept 3 (no alarm condition). Anthropic's Nov 24 Siren post says 'Every model we ran on Siren frequently suspected that it was being tested' (Anthropic; verified fact). Nothing new from a lab or evaluator Nov 25–27 (our search).",
+    "url": "https://safeguards.anthropic.com/2026/siren/",
+    "trigger": null
+   },
+   {
+    "id": "above-trend-jump",
+    "hyp": "B",
+    "signal": "Capability jump well above the METR or Epoch trend",
+    "status": "watching",
+    "since": "2026-10-06",
+    "note": "Open: METR's Nov 24 post says OpenAI's base-model log-perplexity has fallen about seven times faster since early 2026 than from 2022 through 2025 (METR; verified fact), with no consensus on what it implies and no comparable acceleration in benchmark scores (METR; expert opinion). Read Nov 25, Epoch's ECI had Claude Fable 5.2 highest at 173.4 and ARC-AGI-3 had it first at 81.2% (Epoch AI; ARC Prize; verified fact); neither was re-read today, and METR's feed has nothing after Nov 24 (our search).",
+    "url": "https://metr.org/blog/2026-11-24-interpreting-a-recent-acceleration-in-pretraining-loss/",
+    "trigger": "X2"
+   },
+   {
+    "id": "autonomous-rd",
+    "hyp": "B",
+    "signal": "A lab reports a fully autonomous AI R&D share above 0%",
+    "status": "watching",
+    "since": "2026-10-13",
+    "note": "Open: on Google DeepMind's podcast, published Nov 19, Koray Kavukcuoglu said, in The Decoder's paraphrase, that AI agents control part of the compute themselves to run experiments for the next Gemini, with the lab still far from full recursive self-improvement (Kavukcuoglu, via The Decoder; credible report); he gives no share. Anthropic's pace page, re-read Nov 27, says Claude is not operating fully autonomously for any measured subset of AI R&D work (Anthropic; verified fact).",
+    "url": "https://www.youtube.com/watch?v=FORdPIWOH5k",
+    "trigger": "X3"
+   },
+   {
+    "id": "compute-anomaly",
+    "hyp": "A",
+    "signal": "Unexplained compute or power purchases with no matching release",
+    "status": "watching",
+    "since": "2026-09-10",
+    "note": "Open: the Financial Times reports that Nvidia told partners to halt server shipments to Malaysia, Singapore, Thailand and Indonesia after tighter US export controls, and CNBC that dealers have listed thousands of B300 chips for sale (FT; CNBC; via The Decoder; credible report): supply looking for buyers, not unexplained purchases with no matching release (our inference).",
+    "url": "https://the-decoder.com/nvidia-halts-server-shipments-to-malaysia-singapore-thailand-and-indonesia-after-tighter-us-export-controls/",
+    "trigger": "X4"
+   },
+   {
+    "id": "weight-exfil",
+    "hyp": "C",
+    "signal": "Model weights exfiltrated, by an agent or a person",
+    "status": "quiet",
+    "since": "2026-09-29",
+    "note": "Quiet: no source reports closed frontier model weights outside their developer's control. Hugging Face repos created under frontier names since Nov 25 are third-party fine-tunes, merges or re-uploads by name (Hugging Face API; verified fact (part our inference)).",
+    "url": "https://huggingface.co/api/models?search=fable&sort=createdAt&direction=-1&limit=15",
+    "trigger": "X6"
+   }
+  ],
+  "agi": {
+   "now": 1,
+   "y2030": 36,
+   "y2035": 59,
+   "conf": "low–medium",
+   "k": {
+    "now": 0.57,
+    "y2030": 0.77,
+    "y2035": 0.89
+   },
+   "note": "AGI anywhere (public or hidden), definitions v2.0: a system with the full scope of human cognitive autonomy, meeting all eight parts' bars at once; physical and embodied work is out of scope."
+  },
+  "gauges": {
+   "gap": {
+    "value": 3,
+    "display": "~3 months",
+    "range": "2–5 months",
+    "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+    "note": "Held at about 3 months (range 2–5), our estimate anchored on METR's measurement of the internal frontier 'on average ~2 months ahead of public frontier' in Feb–Mar 2026 (METR; verified fact), which we treat as a floor, and on OpenAI's Nov 22 chart, whose internal-model lead converts to about 2.4–2.6 months (our inference). New: Scott Aaronson writes that unnamed sources leave him 'virtually certain' AI labs are sitting on cryptography 'bombshells', while much less confident about their nature (Aaronson, on Shtetl-Optimized; expert opinion (unnamed sources)); it gives no gap in months, so the estimate holds (our inference)."
+   },
+   "rd": {
+    "value": 26,
+    "display": "26%",
+    "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+    "note": "Anthropic's AI-led R&D share, a self-reported prototype index: as of August 2026 Claude 'leads' 26% of Anthropic's AI R&D work. Re-read Nov 27, the pace page has no reading later than August and says Claude 'is not operating fully autonomously for any measured subset of AI R&D work', and the RSP updates page's newest entry is Aug 14 (Anthropic; verified fact): no newer lab figure. On Google DeepMind's podcast, published Nov 19, Koray Kavukcuoglu said, in The Decoder's paraphrase, that AI agents control part of the compute themselves to run experiments for the next Gemini, with the lab still far from full recursive self-improvement (Kavukcuoglu, via The Decoder; credible report): no share or speed-up figure (our inference)."
+   },
+   "oversight": {
+    "value": 111.5,
+    "display": "~112 days (111–118)",
+    "range": [
+     110.5,
+     118
+    ],
+    "url": "disclosure-lag.html",
+    "note": "Median disclosure lag across the 30 incidents on our list (111–118 days depending on how approximate dates are read; alarm check), a floor, because incidents nobody detected can't be counted. New: Microsoft's Nov 25 report says ARTEX coordinates LLM agents from reconnaissance through exploitation 'with little or no human involvement' and that named state-sponsored and financially motivated actors have integrated it (Microsoft Threat Intelligence; verified fact); these are operator-directed campaigns, outside the list's rule (our inference)."
+   },
+   "money": {
+    "value": 615.4,
+    "display": "$615B / yr",
+    "url": "money.html",
+    "note": "Total capital spending by Microsoft, Alphabet, Amazon and Meta over the last 12 months (through 2026Q3, SEC filings): all property and equipment, not AI-only; spending alone can't reveal hidden capability, which alarm condition X4 tests. Carried forward from the 2026Q3 filings. New: the Financial Times reports, citing three people familiar with the matter, that Nvidia told partners such as Dell and Supermicro to halt server shipments to Malaysia, Singapore, Thailand and Indonesia after tighter US export controls (FT, via The Decoder; credible report): a supply redirection, not capex (our inference)."
+   },
+   "delegation": {
+    "value": 3,
+    "display": "rung 3 of 5",
+    "url": "https://defensescoop.com/2026/09/22/maven-smart-system-ai-james-mazol-cameron-stanley-defensetalks/",
+    "note": "Rung 3, AI generates options that humans approve at scale: Cameron Stanley, then the Pentagon's chief digital and AI officer, credited Maven in September with helping the US military strike 13,000 targets in 38 days (Stanley, via DefenseScoop; credible report). Nothing new at a higher rung: the White House's Nov 25 critical-infrastructure release restates the Super Intelligence Force chaired by DNI Jay Clayton (White House; verified fact), and Commerce's Nov 27 notice adds an On-Demand Consortia pathway to its SI Exports Program (Commerce, Federal Register; verified fact): policy and export programs, not routine use at a higher rung (our inference). The Congressional Research Service wrote on Oct 5 that 'DOD is not publicly known to be using Claude—or any other frontier AI model—within autonomous weapon systems' (CRS; verified fact). The rung is our inference."
+   }
+  },
+  "alarm": {
+   "level": 1,
+   "met": [
+    "W2",
+    "W3",
+    "W4",
+    "W5"
+   ],
+   "criteria": "1.2",
+   "since": "2026-09-29",
+   "icon": "◐",
+   "status": "warn",
+   "name": "Watch"
+  },
+  "escape": {
+   "watching": 8,
+   "tripped": 0,
+   "quiet": 0,
+   "note": "All eight indicators stay Open and none is confirmed; no status changed. 11 new evidence items across all eight boards, led by Microsoft's Nov 25 ARTEX report, operator-directed agent campaigns that cannot confirm an indicator (Microsoft Threat Intelligence; verified fact (part our inference)), and quiet activity counts on 8004scan and x402scan (our arithmetic).",
+   "changes": [],
+   "newEvidence": [
+    "weights",
+    "selfrep",
+    "compute",
+    "money",
+    "identity",
+    "supplychain",
+    "coordination",
+    "leakage"
+   ]
+  },
+  "corrections": [],
+  "format": 2,
+  "defs": "2.0",
+  "analysis": "reports/2026-11-27-analysis.html",
+  "verdict": "Nov 27 holds every number: Scott Aaronson says unnamed sources leave him virtually certain AI labs sit on cryptography bombshells, though he is far less sure what they are.",
+  "timelineShort": "No public system meets every part's bar at once. A shorter machine-checked Lean proof of the Riemann Hypothesis, crediting Anthropic colleagues and Claude, bears on reasoning, pending our weekly check; no mathematician has read it through.",
+  "bottomLine": "An expert hearing that labs hold back cryptographic results is a reason to watch for disclosure, not proof of hidden AGI: one result in one field is not all eight parts at once (our inference). What would change our mind: a lab or evaluator confirming withheld results and naming the model and its time in internal use.",
+  "tripwireChanges": [],
+  "indexParts": [
+   {
+    "key": "A",
+    "v": 0.6
+   },
+   {
+    "key": "B",
+    "v": 2.15
+   },
+   {
+    "key": "CD",
+    "v": 0.05
+   }
+  ],
+  "secrecyNow": 0.6,
+  "componentLeads": [
+   {
+    "id": "reasoning",
+    "claim": "A GitHub repository created Nov 25 (lsernau/grh-lean) says it holds 'A Lean 4 proof of the Riemann Hypothesis and of the Generalized Riemann Hypothesis for Dirichlet L-functions', 'based on Levent Alpöge's, with Claude', and is 'a shorter version, produced in collaboration with my colleagues at Anthropic, and Claude', in a readable edition of about 300,000 lines and a compact one of about 76,000; it says the proof 'has passed machine checks only' and 'No mathematician has read it through', and carries a 'Copyright 2026 Anthropic, PBC' notice (repository README).",
+    "url": "https://github.com/lsernau/grh-lean",
+    "rating": "verified fact",
+    "why": "Bears on reasoning (new research results by AI alone): a shorter formal certificate of the claimed proof, still without a human read-through (our inference)."
+   },
+   {
+    "id": "reasoning",
+    "claim": "Google Research's Nov 25 commits to its Cogentic papers added a prior-work citation to the bimatrix Nash equilibrium paper (abstract, Section 1.1, Table 1 and bibliography) and a concurrent-work citation to Fotakis, Kritharidis, Platanos and Tolias (2026) in its Nov 24 prophet-inequalities paper; the commits through Nov 27 add no Lean files (Google Research, GitHub commits).",
+    "url": "https://github.com/google-research/google-research/commits/master/cogentic_research_papers",
+    "rating": "verified fact (part our inference)",
+    "why": "Bears on how new the AI-produced results are; the Lean formalizations the papers describe are still unpublished (our inference)."
+   }
+  ],
+  "components": {
+   "breadth": {
+    "status": "partial",
+    "short": "Breadth",
+    "glance": "On real freelance projects the best system, Claude Fable 5.2, delivers 41.25%, against 80%; results by occupation for the other half are unpublished.",
+    "basisShort": "RLI 41.25%; Close at 60%"
+   },
+   "quality": {
+    "status": "partial",
+    "short": "Quality",
+    "glance": "On real projects the best system delivers 41.25%, against 50%; on well-specified tasks, wins or ties reach 84.9% overall, with no occupation results.",
+    "basisShort": "RLI 41.25%; occupation results unpublished"
+   },
+   "reliability": {
+    "status": "far",
+    "short": "Reliability",
+    "glance": "On a hard agent test the best model gets 35.1% of tasks right on all four tries, against 80%.",
+    "basisShort": "pass^4 35.1%; Partial at 50%"
+   },
+   "reasoning": {
+    "status": "partial",
+    "short": "Reasoning",
+    "glance": "Expert exams are passed (GPQA Diamond 97%); new research results by AI alone: 4 of the 10 we ask for.",
+    "basisShort": "expert exams passed"
+   },
+   "horizon": {
+    "status": "far",
+    "short": "Long projects",
+    "glance": "METR's time-horizon page puts the 80% horizon at about 3.1 hours, 54 times short of a work-month; higher new estimates use a saturated suite.",
+    "basisShort": "3.1 h; Partial at 8 h"
+   },
+   "autonomy": {
+    "status": "far",
+    "short": "Autonomy",
+    "glance": "Hands-off on few-minute tasks (86%); on 1.6-hour workflows 44.3% strict, against 80%.",
+    "basisShort": "44.3% strict; Partial at 50%"
+   },
+   "learning": {
+    "status": "far",
+    "short": "Learning",
+    "glance": "Captures about a quarter of the available gain from experience (25.4%, against 50%); keeping it is unmeasured.",
+    "basisShort": "25.4%; Partial at 30%"
+   },
+   "generalization": {
+    "status": "partial",
+    "short": "Generalization",
+    "glance": "At first contact with a new kind of game the best score was 1.5%, against 80%; 79.3% came only after 7.5 months.",
+    "basisShort": "79.3% once public for 7.5 months"
+   }
+  },
+  "furthest": {
+   "id": "horizon",
+   "short": "Long projects",
+   "display": "3.1 h",
+   "targetDisplay": "167 h (a work-month)"
+  },
+  "dates": [
+   {
+    "date": "2026-11-28",
+    "short": "Due: the President's science adviser submits proposed legislative language for a federal definition of…"
+   },
+   {
+    "date": "2026-11-30",
+    "short": "Deadline for 4 of our forecasts, including “Google releases Gemini 4” (we said 70%)"
+   },
+   {
+    "date": "2026-12-13",
+    "short": "W6 is met unless OpenAI's post-Astra model is released or its capabilities published"
+   }
+  ]
  }
 ]
